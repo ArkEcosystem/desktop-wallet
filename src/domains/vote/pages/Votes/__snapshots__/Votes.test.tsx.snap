@@ -470,7 +470,7 @@ exports[`Votes should filter current delegates 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -478,35 +478,35 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Status
@@ -514,7 +514,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -522,35 +522,35 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Votes
@@ -558,13 +558,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Profile
@@ -572,13 +572,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Comm.
@@ -586,13 +586,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Payout
@@ -600,13 +600,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Min.
@@ -614,13 +614,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Commission (Daily)
@@ -628,7 +628,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -636,22 +636,22 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
@@ -1406,7 +1406,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -1414,35 +1414,35 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Status
@@ -1450,7 +1450,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -1458,35 +1458,35 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Votes
@@ -1494,13 +1494,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Profile
@@ -1508,13 +1508,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Comm.
@@ -1522,13 +1522,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Payout
@@ -1536,13 +1536,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Min.
@@ -1550,13 +1550,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Commission (Daily)
@@ -1564,7 +1564,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -1572,22 +1572,22 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
@@ -2894,7 +2894,7 @@ exports[`Votes should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -2902,35 +2902,35 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Status
@@ -2938,7 +2938,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -2946,35 +2946,35 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Votes
@@ -2982,13 +2982,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Profile
@@ -2996,13 +2996,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Comm.
@@ -3010,13 +3010,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Payout
@@ -3024,13 +3024,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Min.
@@ -3038,13 +3038,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Commission (Daily)
@@ -3052,7 +3052,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -3060,22 +3060,22 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
@@ -4833,7 +4833,7 @@ exports[`Votes should select a delegate 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -4841,35 +4841,35 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Status
@@ -4877,7 +4877,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -4885,35 +4885,35 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Votes
@@ -4921,13 +4921,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Profile
@@ -4935,13 +4935,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Comm.
@@ -4949,13 +4949,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Payout
@@ -4963,13 +4963,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Min.
@@ -4977,13 +4977,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Commission (Daily)
@@ -4991,7 +4991,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -4999,22 +4999,22 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
@@ -6318,7 +6318,7 @@ exports[`Votes should select an address without vote 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -6326,35 +6326,35 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Status
@@ -6362,7 +6362,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -6370,35 +6370,35 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Votes
@@ -6406,13 +6406,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Profile
@@ -6420,13 +6420,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Comm.
@@ -6434,13 +6434,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Payout
@@ -6448,13 +6448,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Min.
@@ -6462,13 +6462,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Commission (Daily)
@@ -6476,7 +6476,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--9"
                       role="columnheader"
@@ -6484,22 +6484,22 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
@@ -9002,7 +9002,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -9010,35 +9010,35 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                           My Address
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Wallet Type
@@ -9046,7 +9046,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -9054,35 +9054,35 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end"
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
                           Balance
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                          data-testid="table__Sort"
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-bdfBwQ gvFuTp"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
-                            width="10"
+                            role="img"
+                            width="8"
                           >
                             <svg>
-                              sort.svg
+                              chevron-down.svg
                             </svg>
                           </div>
                         </div>
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top ml-15"
+                        class="flex flex-inline align-top ml-15 "
                       >
                         <div>
                           Delegate
@@ -9090,13 +9090,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Rank
@@ -9104,13 +9104,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top justify-center "
                       >
                         <div>
                           Profile
@@ -9118,13 +9118,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center no-border"
+                        class="flex flex-inline align-top justify-center no-border "
                       >
                         <div>
                           Status
@@ -9132,13 +9132,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
                            

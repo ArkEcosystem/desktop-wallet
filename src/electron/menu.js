@@ -18,7 +18,7 @@ module.exports = function () {
 			aboutWindow({
 				adjust_window_size: true,
 				icon_path: isProduction
-					? path.resolve(__dirname, "./static/128x128.png")
+					? path.resolve(__dirname, "../static/128x128.png")
 					: path.resolve(__dirname, "../app/assets/icons/128x128.png"),
 				copyright: [
 					`<p style="text-align: center">Distributed under ${packageJson.license} license</p>`,

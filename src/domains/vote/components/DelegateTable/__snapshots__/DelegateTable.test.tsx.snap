@@ -24,7 +24,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -32,35 +32,35 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -68,7 +68,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -76,35 +76,35 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -112,13 +112,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -126,13 +126,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -140,13 +140,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -154,13 +154,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -168,13 +168,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -182,7 +182,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -190,22 +190,22 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -842,7 +842,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -850,35 +850,35 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -886,7 +886,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -894,35 +894,35 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -930,13 +930,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -944,13 +944,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -958,13 +958,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -972,13 +972,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -986,13 +986,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -1000,7 +1000,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -1008,22 +1008,22 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -1650,7 +1650,7 @@ exports[`DelegateTable should render 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1658,35 +1658,35 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -1694,7 +1694,7 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1702,35 +1702,35 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -1738,13 +1738,13 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -1752,13 +1752,13 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -1766,13 +1766,13 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -1780,13 +1780,13 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -1794,13 +1794,13 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -1808,7 +1808,7 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -1816,22 +1816,22 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -2459,7 +2459,7 @@ exports[`DelegateTable should render loading state 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -2467,35 +2467,35 @@ exports[`DelegateTable should render loading state 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -2503,7 +2503,7 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2511,35 +2511,35 @@ exports[`DelegateTable should render loading state 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -2547,13 +2547,13 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -2561,13 +2561,13 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -2575,13 +2575,13 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -2589,13 +2589,13 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -2603,13 +2603,13 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -2617,7 +2617,7 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -2625,22 +2625,22 @@ exports[`DelegateTable should render loading state 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -3890,7 +3890,7 @@ exports[`DelegateTable should render pagination 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -3898,35 +3898,35 @@ exports[`DelegateTable should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -3934,7 +3934,7 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -3942,35 +3942,35 @@ exports[`DelegateTable should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -3978,13 +3978,13 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -3992,13 +3992,13 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -4006,13 +4006,13 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -4020,13 +4020,13 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -4034,13 +4034,13 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -4048,7 +4048,7 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -4056,22 +4056,22 @@ exports[`DelegateTable should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -4472,7 +4472,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -4480,35 +4480,35 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -4516,7 +4516,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -4524,35 +4524,35 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -4560,13 +4560,13 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -4574,13 +4574,13 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -4588,13 +4588,13 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -4602,13 +4602,13 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -4616,13 +4616,13 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -4630,7 +4630,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -4638,22 +4638,22 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -5280,7 +5280,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -5288,35 +5288,35 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -5324,7 +5324,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -5332,35 +5332,35 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -5368,13 +5368,13 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -5382,13 +5382,13 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -5396,13 +5396,13 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -5410,13 +5410,13 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -5424,13 +5424,13 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -5438,7 +5438,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -5446,22 +5446,22 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -6101,7 +6101,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -6109,35 +6109,35 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -6145,7 +6145,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -6153,35 +6153,35 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -6189,13 +6189,13 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -6203,13 +6203,13 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -6217,13 +6217,13 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -6231,13 +6231,13 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -6245,13 +6245,13 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -6259,7 +6259,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -6267,22 +6267,22 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -6938,7 +6938,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -6946,35 +6946,35 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -6982,7 +6982,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -6990,35 +6990,35 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -7026,13 +7026,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -7040,13 +7040,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -7054,13 +7054,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -7068,13 +7068,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -7082,13 +7082,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -7096,7 +7096,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -7104,22 +7104,22 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -7757,7 +7757,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -7765,35 +7765,35 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -7801,7 +7801,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -7809,35 +7809,35 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -7845,13 +7845,13 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -7859,13 +7859,13 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -7873,13 +7873,13 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -7887,13 +7887,13 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -7901,13 +7901,13 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -7915,7 +7915,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -7923,22 +7923,22 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -8578,7 +8578,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -8586,35 +8586,35 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -8622,7 +8622,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -8630,35 +8630,35 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -8666,13 +8666,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -8680,13 +8680,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -8694,13 +8694,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -8708,13 +8708,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -8722,13 +8722,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -8736,7 +8736,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -8744,22 +8744,22 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -9387,7 +9387,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -9395,35 +9395,35 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -9431,7 +9431,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -9439,35 +9439,35 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -9475,13 +9475,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -9489,13 +9489,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -9503,13 +9503,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -9517,13 +9517,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -9531,13 +9531,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -9545,7 +9545,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -9553,22 +9553,22 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -10205,7 +10205,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -10213,35 +10213,35 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -10249,7 +10249,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -10257,35 +10257,35 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -10293,13 +10293,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -10307,13 +10307,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -10321,13 +10321,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -10335,13 +10335,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -10349,13 +10349,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -10363,7 +10363,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -10371,22 +10371,22 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
@@ -11024,7 +11024,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -11032,35 +11032,35 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top  "
               >
                 <div>
                   Delegate Name
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Status
@@ -11068,7 +11068,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -11076,35 +11076,35 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Rank
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Votes
@@ -11112,13 +11112,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Profile
@@ -11126,13 +11126,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Comm.
@@ -11140,13 +11140,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Payout
@@ -11154,13 +11154,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top justify-center "
               >
                 <div>
                   Min.
@@ -11168,13 +11168,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Commission (Daily)
@@ -11182,7 +11182,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -11190,22 +11190,22 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Vote
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="table__Sort"
+                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ gvFuTp"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
-                    width="10"
+                    role="img"
+                    width="8"
                   >
                     <svg>
-                      sort.svg
+                      chevron-down.svg
                     </svg>
                   </div>
                 </div>
