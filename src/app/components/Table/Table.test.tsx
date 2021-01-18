@@ -1,6 +1,6 @@
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render, within } from "testing-library";
 
 import { Table } from "./Table";
 
@@ -43,19 +43,23 @@ describe("Table", () => {
 	});
 
 	it("should change sort order on th click", () => {
-		const { getByTestId } = render(<Table columns={columns} data={data} />);
-		const th = getByTestId("table__th--0");
-		act(() => {
-			fireEvent.click(th);
-		});
+		const { getAllByRole, getByRole } = render(<Table columns={columns} data={data} />);
 
-		expect(getByTestId("table__ChevronUp")).toBeTruthy();
+		const th = getAllByRole("columnheader")[0];
 
 		act(() => {
 			fireEvent.click(th);
 		});
 
-		expect(getByTestId("table__ChevronDown")).toBeTruthy();
+		expect(th).toHaveTextContent("chevron-down.svg");
+
+		expect(within(th).getByRole("img")).toHaveClass("rotate-180");
+
+		act(() => {
+			fireEvent.click(th);
+		});
+
+		expect(within(th).getByRole("img")).not.toHaveClass("rotate-180");
 	});
 
 	it("should hide header", () => {

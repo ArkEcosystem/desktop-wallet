@@ -211,6 +211,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
+			sortDescFirst: true,
 			cellWidth: "w-50",
 		},
 		{
