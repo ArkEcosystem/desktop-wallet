@@ -179,7 +179,7 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		await waitFor(() => expect(getByTestId("WalletVote__skeleton")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
