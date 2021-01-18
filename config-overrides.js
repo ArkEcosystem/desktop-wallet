@@ -33,6 +33,10 @@ const copyFiles = () =>
 					from: path.join(__dirname, "dist/main/main.js"),
 					to: path.join(__dirname, "build/electron/index.js"),
 				},
+				{
+					from: path.join(__dirname, "src/app/assets/icons"),
+					to: path.join(__dirname, "build/static"),
+				},
 			],
 		}),
 	);
