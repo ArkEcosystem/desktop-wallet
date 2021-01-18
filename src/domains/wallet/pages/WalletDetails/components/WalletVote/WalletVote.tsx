@@ -14,12 +14,13 @@ import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 type WalletVoteProps = {
 	wallet: ReadWriteWallet;
 	onButtonClick: (address?: string) => void;
+	isLoading?: boolean;
 };
 
-export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
+export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
-	if (!wallet.hasSyncedWithNetwork()) {
+	if (isLoading) {
 		return <section data-testid="WalletVote">{<WalletVoteSkeleton />}</section>;
 	}
 
