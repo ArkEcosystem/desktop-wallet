@@ -3776,93 +3776,92 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 data-testid="WalletVote"
               >
                 <div
-                  class="flex items-center"
-                  data-testid="WalletVote__skeleton"
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="mb-0 font-bold"
+                  >
+                    My Vote
+                  </h2>
+                  <span
+                    class="ml-1 text-2xl font-bold text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    (0/1)
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-4"
+                  data-testid="WalletVote__empty"
                 >
                   <div
-                    class="flex items-center mr-4 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="Circle-uw7h4j-0 JkqUV border-transparent"
+                      class="Circle-uw7h4j-0 JkqUV border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                      <div
+                        class="sc-bdfBwQ bOxyah"
+                        height="21"
+                        width="21"
+                      >
+                        <svg>
+                          vote.svg
+                        </svg>
+                      </div>
                     </div>
                     <div
-                      class="Circle-uw7h4j-0 JkqUV border-transparent"
+                      class="flex -space-x-3"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
+                      <span
+                        class="inline-block"
+                      >
+                        <div
+                          class="Circle-uw7h4j-0 JkqUV border-theme-secondary-500 dark:border-theme-secondary-700"
+                        />
                       </span>
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-10"
+                    class="flex flex-1 justify-between"
                   >
-                    <span>
+                    <div
+                      class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
+                    >
                       <span
-                        class="flex items-center leading-none"
+                        class="mr-2"
                       >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 150px; height: 14px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
+                        You have not yet voted for a Delegate
                       </span>
-                    </span>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="mt-1 mr-auto"
                       >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 16px;"
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                         >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ml-auto"
-                  >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 44px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                          Learn more
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <button
+                      class="Button-mdtvtf-0 cyPweQ"
+                      data-testid="WalletVote__button"
+                      type="button"
+                    >
+                      Vote
+                    </button>
                   </div>
                 </div>
               </section>
@@ -3874,93 +3873,72 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 data-testid="WalletRegistrations"
               >
                 <div
-                  class="flex items-center"
-                  data-testid="WalletRegistrations__skeleton"
+                  class="flex mb-4"
+                >
+                  <h2
+                    class="mb-0 font-bold"
+                  >
+                    Registrations
+                  </h2>
+                </div>
+                <div
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-4 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="Circle-uw7h4j-0 JkqUV border-transparent"
+                      class="Circle-uw7h4j-0 JkqUV border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                      <div
+                        class="sc-bdfBwQ fPrsah text-xl"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          delegate.svg
+                        </svg>
+                      </div>
                     </div>
                     <div
-                      class="Circle-uw7h4j-0 JkqUV border-transparent"
+                      class="Circle-uw7h4j-0 JkqUV border-theme-secondary-500 dark:border-theme-secondary-700"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-1 justify-between"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
+                      <span
+                        class="mr-2"
+                      >
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mt-1 mr-auto"
+                      >
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
                         >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
+                          Learn more
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
                           >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    class="flex flex-col justify-between h-10"
-                  >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 150px; height: 14px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 16px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ml-auto"
-                  >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 44px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
                   </div>
                 </div>
               </section>
