@@ -169,14 +169,15 @@ export const Dropdown = ({
 
 	return (
 		<div ref={ref} className="relative">
-			<span className="dropdown__toggle" onClick={toggle}>
+			<span data-testid="dropdown__toggle" onClick={toggle}>
 				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
 			</span>
 
 			{isOpen && (
 				<Wrapper
+					data-testid="dropdown__content"
 					position={position}
-					className={`dropdown__content opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
+					className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
 				>
 					{renderOptions(options, select)}
 					{children && <div>{children}</div>}

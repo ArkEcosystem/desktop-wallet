@@ -1,4 +1,4 @@
-const setStyles = (styles: object, element: any) => {
+const setStyles = (styles: Record<string, any>, element: Element) => {
 	Object.assign(element.style, styles);
 };
 
@@ -7,10 +7,10 @@ const numberFromPixels = (value: string): number => (value ? parseInt(value.repl
 export const resizeDropdownsHandler = (eventOrReference: any, initialHeight?: number) => {
 	const OFFSET = 30;
 
-	const dropdownToggles = (eventOrReference.current || document).querySelectorAll(".dropdown__toggle");
+	const dropdownToggles = (eventOrReference.current || document).querySelectorAll('[data-testid="dropdown__toggle"]');
 
 	for (const toggle of dropdownToggles) {
-		const dropdown = toggle.parentElement.querySelector(".dropdown__content");
+		const dropdown = toggle.parentElement.querySelector('[data-testid="dropdown__content"]');
 
 		if (!dropdown) {
 			continue;

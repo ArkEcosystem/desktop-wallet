@@ -45,191 +45,189 @@ exports[`FilterTransactions should open dropdown list with all transaction types
         </button>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl w-80 max-h-128 overflow-y-auto"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl w-80 max-h-128 overflow-y-auto"
+        data-testid="dropdown__content"
+        style="overflow-y: visible; opacity: 100;"
       >
         <div
-          data-testid="dropdown__content"
+          class="pt-5 pb-1"
         >
           <div
-            class="pt-5 pb-1"
+            class="mt-4 first:mt-0"
+          >
+            <ul>
+              <ul
+                data-testid="dropdown__options"
+              >
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--all-0"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      All
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </ul>
+          </div>
+          <div
+            class="mt-4 first:mt-0"
           >
             <div
-              class="mt-4 first:mt-0"
-            >
-              <ul>
-                <ul
-                  data-testid="dropdown__options"
-                >
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--all-0"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        All
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-              </ul>
-            </div>
-            <div
-              class="mt-4 first:mt-0"
+              class="mx-8 -my-2"
             >
               <div
-                class="mx-8 -my-2"
-              >
-                <div
-                  class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                  type="horizontal"
-                />
-              </div>
-              <ul>
-                <li
-                  class="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500"
-                >
-                  CORE
-                </li>
-                <ul
-                  data-testid="dropdown__options"
-                >
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-0"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Transfer
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-1"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Second Signature
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-2"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Delegate Registration
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-3"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Vote
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-4"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Vote / Unvote
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-5"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Multisignature
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-6"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        IPFS
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-7"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Multipayment
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-8"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Timelock
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-9"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Timelock Claim
-                      </span>
-                    </div>
-                  </li>
-                  <li
-                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                    data-testid="dropdown__option--core-10"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span>
-                        Timelock Refund
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-              </ul>
+                class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                type="horizontal"
+              />
             </div>
+            <ul>
+              <li
+                class="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500"
+              >
+                CORE
+              </li>
+              <ul
+                data-testid="dropdown__options"
+              >
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-0"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Transfer
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-1"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Second Signature
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-2"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Delegate Registration
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-3"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Vote
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-4"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Vote / Unvote
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-5"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Multisignature
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-6"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      IPFS
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-7"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Multipayment
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-8"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Timelock
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-9"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Timelock Claim
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-10"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Timelock Refund
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </ul>
           </div>
         </div>
       </div>
