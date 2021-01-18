@@ -12,7 +12,7 @@ export const searchAddresses = async (
 	profile: Profile,
 	derivationMode?: string,
 ) => {
-	const addressMap: Record<string, string> = {};
+	const addressMap: Record<string, any> = {};
 	const coinName = coin.manifest().get<string>("name");
 	const slip44 = coin.config().get<number>("network.crypto.slip44");
 
@@ -26,18 +26,27 @@ export const searchAddresses = async (
 			path = formatLedgerDerivationPath({ coinType: slip44, account: cursor });
 		}
 
+		if (!path) {
+			continue;
+		}
+
 		const publicKey = await coin.ledger().getPublicKey(path);
 		const address = await coin.identity().address().fromPublicKey(publicKey);
 
 		// Already imported
 		if (!profile.wallets().findByAddress(address)) {
-			addressMap[address] = path;
+			addressMap[address] = {
+				address,
+				path,
+				index: cursor,
+				timestamp: new Date().getTime(),
+			};
 		}
 	}
 	return addressMap;
 };
 
-export const searchWallets = async (addressMap: Record<string, string>, coin: Coins.Coin) => {
+export const searchWallets = async (addressMap: Record<string, any>, coin: Coins.Coin) => {
 	const wallets: LedgerData[] = [];
 	const addresses = Object.keys(addressMap);
 
@@ -45,9 +54,9 @@ export const searchWallets = async (addressMap: Record<string, string>, coin: Co
 
 	for (const identity of response.items()) {
 		const wallet: LedgerData = {
+			...addressMap[identity.address()!],
 			address: identity.address(),
 			balance: identity.balance(),
-			path: addressMap[identity.address()!],
 		};
 		wallets.push(wallet);
 	}

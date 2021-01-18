@@ -47,14 +47,10 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 			try {
 				const instance = await env.coin(coin, network);
+				const derivationMode = derivationModes[currentDerivationModeIndex];
 
-				const addressMap = await searchAddresses(
-					indexes,
-					instance,
-					profile,
-					derivationModes[currentDerivationModeIndex],
-				);
-				const lazyWallets = Object.entries(addressMap).map(([address, path]) => ({ address, path }));
+				const addressMap = await searchAddresses(indexes, instance, profile, derivationMode);
+				const lazyWallets = Object.values(addressMap);
 
 				if (!lazyWallets.length) {
 					return dispatch({ type: "next" });
