@@ -12,10 +12,16 @@ type Props = {
 const ConfigurationContext = React.createContext<any>(undefined);
 
 export const ConfigurationProvider = ({ children }: Props) => {
-	const [configuration, setConfiguration] = React.useState<any>({
+	const [configuration, setConfig] = React.useState<any>({
 		// Domain specific configuration defaults
 		dashboard: null,
+		// Initial state of profile. Handled in profile synchronizer.
+		profileIsSyncing: true,
 	});
+
+	const setConfiguration = (config: any) => {
+		setConfig({ ...configuration, ...config });
+	};
 
 	return (
 		<ConfigurationContext.Provider value={{ ...configuration, setConfiguration } as ConfigurationContextType}>

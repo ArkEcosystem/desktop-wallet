@@ -18,120 +18,133 @@ type TransactionsProps = {
 	isCompact?: boolean;
 	profile: Profile;
 	isVisible?: boolean;
+	walletsCount?: number;
+	isLoading?: boolean;
 };
 
-export const Transactions = memo(({ emptyText, isCompact, profile, isVisible = true }: TransactionsProps) => {
-	const { t } = useTranslation();
+export const Transactions = memo(
+	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = false }: TransactionsProps) => {
+		const { t } = useTranslation();
 
-	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
-	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
-	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
-	const [isLoading, setIsLoading] = useState(true);
-	const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [profile]);
+		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
+		const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+		const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
+		const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(
+			undefined,
+		);
+		const [isLoadingTransactions, setIsLoading] = useState(isLoading);
+		const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [
+			profile,
+		]);
 
-	const fetchTransactions = useCallback(
-		async ({ flush, mode }: { flush: boolean; mode: string }) => {
-			let currentTransactions = [...transactions];
+		const fetchTransactions = useCallback(
+			async ({ flush, mode }: { flush: boolean; mode: string }) => {
+				let currentTransactions = [...transactions];
+				setIsLoading(true);
 
-			if (flush) {
-				profile.transactionAggregate().flush();
-				currentTransactions = [];
-				setTransactions([]);
+				if (flush) {
+					profile.transactionAggregate().flush();
+					currentTransactions = [];
+					setTransactions([]);
+				}
+
+				const methodMap = {
+					all: "transactions",
+					sent: "sentTransactions",
+					received: "receivedTransactions",
+				};
+				const method = methodMap[mode as keyof typeof methodMap];
+
+				const limit = { limit: 30 };
+				const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
+				// @ts-ignore
+				const response = await profile.transactionAggregate()[method](queryParams);
+				const transactionsAggregate = response.items();
+
+				setTransactions(currentTransactions.concat(transactionsAggregate));
+				setIsLoading(false);
+			},
+			[transactions, profile, selectedTransactionType, setIsLoading, setTransactions, walletsCount], // eslint-disable-line react-hooks/exhaustive-deps
+		);
+
+		useEffect(() => {
+			if (isVisible && !isLoading) {
+				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 			}
+			// eslint-disable-next-line
+		}, [activeTransactionModeTab, selectedTransactionType, walletsCount, isLoading]);
 
-			const methodMap = {
-				all: "transactions",
-				sent: "sentTransactions",
-				received: "receivedTransactions",
-			};
-			const method = methodMap[mode as keyof typeof methodMap];
+		if (!isVisible) return <></>;
 
-			setIsLoading(true);
-
-			const limit = { limit: 30 };
-			const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
-			// @ts-ignore
-			const response = await profile.transactionAggregate()[method](queryParams);
-			const transactionsAggregate = response.items();
-
-			setIsLoading(false);
-
-			setTransactions(currentTransactions.concat(transactionsAggregate));
-		},
-		[transactions, profile, selectedTransactionType, setIsLoading, setTransactions],
-	);
-
-	useEffect(() => {
-		if (isVisible) fetchTransactions({ flush: true, mode: activeTransactionModeTab });
-		// eslint-disable-next-line
-	}, [activeTransactionModeTab, selectedTransactionType]);
-
-	if (!isVisible) return <></>;
-
-	return (
-		<Section className="flex-1" data-testid="dashboard__transactions-view">
-			<div className="flex relative justify-between">
-				<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
-				<FilterTransactions onSelect={(_, type) => setSelectedTransactionType(type)} className="mt-6" />
-			</div>
-			<Tabs
-				className="mb-8"
-				activeId={activeTransactionModeTab}
-				onChange={(id) => setActiveTransactionModeTab(id as string)}
-			>
-				<TabList className="w-full">
-					<Tab tabId="all">{t("TRANSACTION.ALL_HISTORY")}</Tab>
-					<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
-					<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
-				</TabList>
-			</Tabs>
-
-			<TransactionTable
-				transactions={transactions}
-				exchangeCurrency={exchangeCurrency}
-				hideHeader={!isLoading && transactions.length === 0}
-				isLoading={isLoading}
-				skeletonRowsLimit={8}
-				onRowClick={setTransactionModalItem}
-				isCompact={isCompact}
-			/>
-
-			{transactions.length > 0 && (
-				<Button
-					data-testid="transactions__fetch-more-button"
-					variant="secondary"
-					className="mt-10 mb-5 w-full"
-					disabled={isLoading}
-					onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
+		return (
+			<Section className="flex-1" data-testid="dashboard__transactions-view">
+				<div className="flex relative justify-between">
+					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+					<FilterTransactions
+						onSelect={(_, type) => {
+							setSelectedTransactionType(type);
+						}}
+						className="mt-6"
+					/>
+				</div>
+				<Tabs
+					className="mb-8"
+					activeId={activeTransactionModeTab}
+					onChange={(id) => setActiveTransactionModeTab(id as string)}
 				>
-					{isLoading ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
-				</Button>
-			)}
+					<TabList className="w-full">
+						<Tab tabId="all">{t("TRANSACTION.ALL_HISTORY")}</Tab>
+						<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
+						<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
+					</TabList>
+				</Tabs>
 
-			{!isLoading && transactions.length === 0 && !selectedTransactionType && (
-				<EmptyBlock className="-mt-5">
-					{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
-				</EmptyBlock>
-			)}
-
-			{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
-				<EmptyResults
-					className="flex-1"
-					title={t("COMMON.EMPTY_RESULTS.TITLE")}
-					subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				<TransactionTable
+					transactions={transactions}
+					exchangeCurrency={exchangeCurrency}
+					hideHeader={!isLoadingTransactions && transactions.length === 0}
+					isLoading={isLoadingTransactions}
+					skeletonRowsLimit={8}
+					onRowClick={setTransactionModalItem}
+					isCompact={isCompact}
 				/>
-			)}
 
-			{transactionModalItem && (
-				<TransactionDetailModal
-					isOpen={!!transactionModalItem}
-					transactionItem={transactionModalItem}
-					onClose={() => setTransactionModalItem(undefined)}
-				/>
-			)}
-		</Section>
-	);
-});
+				{transactions.length > 0 && (
+					<Button
+						data-testid="transactions__fetch-more-button"
+						variant="secondary"
+						className="mt-10 mb-5 w-full"
+						disabled={isLoadingTransactions}
+						onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
+					>
+						{isLoadingTransactions ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
+					</Button>
+				)}
+
+				{transactions.length === 0 && !selectedTransactionType && !isLoadingTransactions && (
+					<EmptyBlock className="-mt-5">
+						{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
+					</EmptyBlock>
+				)}
+
+				{transactions.length === 0 && !!selectedTransactionType && !isLoadingTransactions && (
+					<EmptyResults
+						className="flex-1"
+						title={t("COMMON.EMPTY_RESULTS.TITLE")}
+						subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+					/>
+				)}
+
+				{transactionModalItem && (
+					<TransactionDetailModal
+						isOpen={!!transactionModalItem}
+						transactionItem={transactionModalItem}
+						onClose={() => setTransactionModalItem(undefined)}
+					/>
+				)}
+			</Section>
+		);
+	},
+);
 
 Transactions.displayName = "Transactions";

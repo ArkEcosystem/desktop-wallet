@@ -10,6 +10,7 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, wai
 
 import { LedgerTabs } from "./LedgerTabs";
 
+jest.setTimeout(10000);
 describe("LedgerTabs", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
@@ -75,8 +76,6 @@ describe("LedgerTabs", () => {
 	const submitSelector = () => screen.getByTestId("Paginator__submit-button");
 
 	it("should render connection step", async () => {
-		jest.setTimeout(10000);
-
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockRejectedValue(new Error("Failed"));

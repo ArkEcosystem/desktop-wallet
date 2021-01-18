@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
@@ -222,10 +222,10 @@ describe("Welcome", () => {
 	});
 
 	it("should render without profiles", () => {
-		const emptyEnv = new Environment({ coins: {}, httpClient, storage: new StubStorage() });
+		env.reset({ coins: {}, httpClient, storage: new StubStorage() });
 
 		const { container, asFragment, getByText } = renderWithRouter(
-			<EnvironmentProvider env={emptyEnv}>
+			<EnvironmentProvider env={env}>
 				<Welcome />
 			</EnvironmentProvider>,
 		);
