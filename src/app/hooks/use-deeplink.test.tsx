@@ -116,7 +116,7 @@ describe("useDeeplink hook", () => {
 
 	it("should subscribe to deeplink listener and navigate when no method found", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
-			callback(event, "ark:vote?coin=ark&network=mainnet&delegate=alessio"),
+			callback(event, "ark:vote?coin=ark&network=ark.mainnet&delegate=alessio"),
 		);
 
 		window.history.pushState(
