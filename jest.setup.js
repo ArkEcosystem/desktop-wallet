@@ -54,15 +54,14 @@ beforeAll(async () => {
 	await env.verify();
 	await env.boot();
 
-	await Promise.allSettled(
-		env
-			.profiles()
-			.values()
-			.map(async (profile) => {
-				await profile.restore();
-				return restoreProfileTestPassword(profile);
-			}),
-	);
+	for (const profile of env.profiles().values()) {
+		try {
+			await profile.restore();
+			restoreProfileTestPassword(profile);
+		} catch (error) {
+			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
+		}
+	}
 });
 
 beforeEach(() => {
