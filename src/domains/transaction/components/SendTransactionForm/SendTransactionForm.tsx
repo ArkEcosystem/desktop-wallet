@@ -1,7 +1,7 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { useEnvironmentContext } from "app/contexts";
+import { useFees } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -24,10 +24,10 @@ export const SendTransactionForm = ({
 	profile,
 	transactionType,
 }: SendTransactionFormProps) => {
-	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
+	const { findByType } = useFees();
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
@@ -49,20 +49,17 @@ export const SendTransactionForm = ({
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const setTransactionFees = async (senderWallet: ReadWriteWallet) => {
-			await env.fees().syncAll();
-			const transactionFees = env
-				.fees()
-				.findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
+			const transactionFees = await findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
 
 			setFees(transactionFees);
 			setValue("fees", transactionFees);
-			setValue("fee", transactionFees.avg || transactionFees.static, { shouldValidate: true, shouldDirty: true });
+			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
 		};
 
 		if (senderWallet) {
 			setTransactionFees(senderWallet);
 		}
-	}, [env, setFees, setValue, profile, senderAddress, transactionType]);
+	}, [setFees, setValue, profile, senderAddress, transactionType, findByType]);
 
 	useEffect(() => {
 		if (network) {
