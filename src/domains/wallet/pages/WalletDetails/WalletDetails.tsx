@@ -118,13 +118,17 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 						<div className="flex">
 							{showWalletVote && (
 								<div className="flex-1 pr-12 last:pr-0">
-									<WalletVote wallet={activeWallet} onButtonClick={handleVoteButton} />
+									<WalletVote
+										wallet={activeWallet}
+										onButtonClick={handleVoteButton}
+										isLoading={isLoading}
+									/>
 								</div>
 							)}
 
 							{showWalletRegistrations && (
 								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-secondary-300 dark:border-theme-secondary-800">
-									<WalletRegistrations wallet={activeWallet} />
+									<WalletRegistrations wallet={activeWallet} isLoading={isLoading} />
 								</div>
 							)}
 						</div>
