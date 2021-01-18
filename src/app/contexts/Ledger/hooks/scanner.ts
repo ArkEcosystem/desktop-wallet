@@ -34,10 +34,6 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 	const isSelected = useCallback((path: string) => selected.some((item) => path === item), [selected]);
 	const isFailed = useCallback((path: string) => failed.some((item) => path === item), [failed]);
 	const hasNewWallet = useMemo(() => wallets.some((item) => item.isNew), [wallets]);
-	const hasMoreDerivationModes = useMemo(() => derivationModes.length - 1 > currentDerivationModeIndex, [
-		derivationModes,
-		currentDerivationModeIndex,
-	]);
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
 	const canRetry = useMemo(() => failed.length > 0, [failed]);
 
@@ -73,8 +69,13 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 	// Actions - Scan
 
 	const scanMore = useCallback(() => scan(createRange(page, limitPerPage)), [scan, page]);
-	// TODO:
-	const scanRetry = useCallback(() => scan([]), [scan, failed]);
+	const scanRetry = useCallback(async () => {
+		if (!failed.length) {
+			return;
+		}
+		const failedIndexes = wallets.filter((wallet) => failed.includes(wallet.path)).map((wallet) => wallet.index);
+		await scan(failedIndexes);
+	}, [scan, failed, wallets]);
 
 	// Recursive callback that will increase the page
 	// and run on each re-rendering until it finds a new wallet or fail
