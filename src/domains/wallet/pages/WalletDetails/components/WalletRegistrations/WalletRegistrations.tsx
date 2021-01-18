@@ -13,24 +13,25 @@ type DelegateInfo = {
 	isResigned: boolean;
 };
 
-type WalletRegistrationsProps = { wallet: ReadWriteWallet };
+type WalletRegistrationsProps = { wallet: ReadWriteWallet; isLoading?: boolean };
 
-export const WalletRegistrations = ({ wallet }: WalletRegistrationsProps) => {
+export const WalletRegistrations = ({ wallet, isLoading }: WalletRegistrationsProps) => {
 	const { t } = useTranslation();
 
-	if (!wallet.hasSyncedWithNetwork()) {
+	if (isLoading) {
 		return <section data-testid="WalletRegistrations">{<WalletRegistrationsSkeleton />}</section>;
 	}
 
-	const delegate = wallet.isDelegate()
-		? {
-				username: wallet.username(),
-				isResigned: wallet.isResignedDelegate(),
-		  }
-		: undefined;
+	const delegate =
+		wallet.hasSyncedWithNetwork() && wallet.isDelegate()
+			? {
+					username: wallet.username(),
+					isResigned: wallet.isResignedDelegate(),
+			  }
+			: undefined;
 
-	const isMultiSignature = wallet.isMultiSignature();
-	const isSecondSignature = wallet.isSecondSignature();
+	const isMultiSignature = wallet.hasSyncedWithNetwork() && wallet.isMultiSignature();
+	const isSecondSignature = wallet.hasSyncedWithNetwork() && wallet.isSecondSignature();
 
 	const renderRegistrations = () => {
 		if (!delegate && !isSecondSignature && !isMultiSignature) {

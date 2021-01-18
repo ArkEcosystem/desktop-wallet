@@ -7,6 +7,7 @@ export * from "./use-clipboard";
 export * from "./use-currency-display";
 export * from "./use-deeplink";
 export * from "./use-env-synchronizer";
+export * from "./use-fees";
 export * from "./use-previous";
 export * from "./use-profile-synchronizer";
 export * from "./use-query-params";

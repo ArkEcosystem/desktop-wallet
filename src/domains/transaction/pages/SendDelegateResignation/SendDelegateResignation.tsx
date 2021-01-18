@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useFees } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { isMnemonicError } from "domains/transaction/utils";
@@ -39,6 +39,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const { findByType } = useFees();
 
 	const crumbs = [
 		{
@@ -63,14 +64,14 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	useEffect(() => {
 		const setTransactionFees = async (wallet: ReadWriteWallet) => {
-			await env.fees().syncAll();
-			const fees = env.fees().findByType(wallet.coinId(), wallet.networkId(), "delegateResignation");
+			const fees = await findByType(wallet.coinId(), wallet.networkId(), "delegateResignation");
+
 			setValue("fees", fees);
 			setValue("fee", fees?.avg);
 		};
 
 		setTransactionFees(activeWallet);
-	}, [env, setValue, activeWallet]);
+	}, [setValue, activeWallet, findByType]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);

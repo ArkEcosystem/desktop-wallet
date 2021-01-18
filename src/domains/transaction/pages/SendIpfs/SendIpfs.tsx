@@ -48,7 +48,10 @@ export const SendIpfs = () => {
 		register("senderAddress", sendIpfs.senderAddress());
 		register("hash", sendIpfs.hash());
 		register("fees");
-		register("fee", common.fee(fees, activeWallet?.balance?.(), activeWallet?.network?.()));
+		register(
+			"fee",
+			common.fee(() => fees, activeWallet?.balance?.(), activeWallet?.network?.()),
+		);
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
