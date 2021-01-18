@@ -227,7 +227,7 @@ describe("Transactions", () => {
 		});
 	});
 
-	it("should abort previous request", async () => {
+	it.only("should abort previous request", async () => {
 		nock.cleanAll();
 		const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 
@@ -240,7 +240,7 @@ describe("Transactions", () => {
 			}))
 			.get("/api/transactions")
 			.query((params) => !!params.senderId)
-			.delayBody(200)
+			.delayBody(500)
 			.reply(200, () => ({
 				meta,
 				data: data.slice(0, 1),
@@ -264,9 +264,9 @@ describe("Transactions", () => {
 
 		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(4), { timeout: 500 });
 
-		fireEvent.click(getByTestId("tabs__tab-button-sent"));
 		fireEvent.click(getByTestId("tabs__tab-button-received"));
+		fireEvent.click(getByTestId("tabs__tab-button-sent"));
 
-		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(3), { timeout: 500 });
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(1), { timeout: 1000 });
 	});
 });
