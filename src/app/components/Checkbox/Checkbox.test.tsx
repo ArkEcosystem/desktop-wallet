@@ -24,32 +24,8 @@ describe("Checkbox", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render a primary color", () => {
-		const { container } = render(<Checkbox color="primary" />);
-
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render a success color", () => {
-		const { container } = render(<Checkbox color="success" />);
-
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render a danger color", () => {
-		const { container } = render(<Checkbox color="danger" />);
-
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render a warning color", () => {
-		const { container } = render(<Checkbox color="warning" />);
-
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render a hint color", () => {
-		const { container } = render(<Checkbox color="hint" />);
+	it.each(["info", "success", "warning", "danger", "hint"])("should render a %s color", (color) => {
+		const { container } = render(<Checkbox color={color} />);
 
 		expect(container).toMatchSnapshot();
 	});
