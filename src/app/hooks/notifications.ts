@@ -135,6 +135,7 @@ export const useNotifications = () => {
 
 		return {
 			notifications: {
+				notifyReceivedTransactions,
 				syncReceivedTransactions,
 				formatNotification,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),

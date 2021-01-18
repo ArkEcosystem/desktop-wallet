@@ -45,6 +45,28 @@ describe("WalletListItem", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with default BTC as default exchangeCurrency", () => {
+		const mockExchangeCurrency = jest.spyOn(wallet, "exchangeCurrency").mockReturnValue(undefined);
+		const { container, getByText } = renderWithRouter(
+			<table>
+				<tbody>
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} />
+					</Route>
+				</tbody>
+			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByText(wallet.alias())).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
+		mockExchangeCurrency.mockRestore();
+	});
+
 	it("should trigger onAction callback if provided", () => {
 		const onAction = jest.fn();
 

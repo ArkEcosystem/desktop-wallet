@@ -11,13 +11,18 @@ type Props = {
 export const EnvironmentContext = React.createContext<any>(undefined);
 
 export const EnvironmentProvider = ({ children, env }: Props) => {
+	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const [state, setState] = React.useState<any>(undefined);
 
 	const persist = React.useCallback(async () => {
-		await env.persist();
+		// e2e ci tests hang when persist is called
+		if (!isDemo) {
+			await env.persist();
+		}
+
 		// Force update
 		setState({});
-	}, [env]);
+	}, [env, isDemo]);
 
 	return (
 		<EnvironmentContext.Provider value={{ env, state, persist } as Context}>{children}</EnvironmentContext.Provider>

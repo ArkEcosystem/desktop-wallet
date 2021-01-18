@@ -2,7 +2,6 @@ import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
 
 import { ProfileCard } from "./ProfileCard";
 
@@ -14,9 +13,7 @@ const options = [
 ];
 
 describe("ProfileCard", () => {
-	beforeAll(async () => {
-		await env.verify(fixtureData);
-		await env.boot();
+	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 

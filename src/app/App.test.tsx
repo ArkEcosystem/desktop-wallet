@@ -9,6 +9,7 @@ import * as utils from "utils/electron-utils";
 import {
 	act,
 	env,
+	fireEvent,
 	getDefaultProfileId,
 	RenderResult,
 	renderWithRouter,
@@ -61,6 +62,10 @@ describe("App", () => {
 		jest.clearAllMocks();
 	});
 
+	beforeEach(async () => {
+		env.reset();
+	});
+
 	it("should render splash screen", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
@@ -81,7 +86,7 @@ describe("App", () => {
 
 		jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
 
-		const { getByTestId, getByText } = renderWithRouter(<App />);
+		const { getByTestId, getByText } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
@@ -90,6 +95,45 @@ describe("App", () => {
 		expect(document.body).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
 	});
 
+	it("should enter profile", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		});
+
+		const passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		expect(history.location.pathname).toMatch("/");
+
+		await act(async () => {
+			fireEvent.click(getAllByTestId("Card")[1]);
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toBeInTheDocument();
+		});
+
+		await act(async () => {
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SignIn__submit-button"));
+		});
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 500));
+		});
+
+		const profileDashboardUrl = `/profiles/${passwordProtectedProfile.id()}/dashboard`;
+		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
+	});
 	it("should close splash screen if not demo", async () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 
