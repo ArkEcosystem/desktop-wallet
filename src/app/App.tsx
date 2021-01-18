@@ -15,19 +15,19 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { ToastContainer } from "react-toastify";
-import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
+import { useDeeplink, useEnvSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
 import { i18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
@@ -36,11 +36,12 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
-	const { env, persist } = useEnvironmentContext();
+	const { env } = useEnvironmentContext();
 	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
+	useProfileSynchronizer();
 	useDeeplink();
 
 	useEffect(() => {
@@ -60,15 +61,17 @@ const Main = () => {
 
 	useLayoutEffect(() => {
 		const boot = async () => {
-			/* istanbul ignore next */
-			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
-
 			try {
-				await env.verify(shouldUseFixture ? fixtureData : undefined);
+				/* istanbul ignore next */
+				const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
+				if (__DEMO__) {
+					migrateProfileFixtures(env);
+				}
+
+				await env.verify();
 				await env.boot();
-				await runAll();
+				runAll();
 				await loadPlugins();
-				await persist();
 			} catch (error) {
 				console.error(error);
 				handleError(error);
@@ -78,7 +81,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, persist, runAll, loadPlugins]);
+	}, [env, handleError, runAll, loadPlugins]);
 
 	const renderContent = () => {
 		if (showSplash) {
@@ -108,7 +111,9 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
-	const storage = __DEV__ ? new StubStorage() : "indexeddb";
+	const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
+	/* istanbul ignore next */
+	const storage = __DEV__ || __DEMO__ ? new StubStorage() : "indexeddb";
 	const [env] = useState(
 		() =>
 			new Environment({

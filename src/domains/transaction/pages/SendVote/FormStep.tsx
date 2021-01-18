@@ -47,9 +47,14 @@ export const FormStep = ({
 	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
-		const voteFees = env.fees().findByType(wallet.coinId(), wallet.networkId(), "vote");
-		setFees(voteFees);
-		setValue("fees", voteFees);
+		const setVoteFees = async (senderWallet: ReadWriteWallet) => {
+			await env.fees().syncAll();
+			const voteFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
+			setFees(voteFees);
+			setValue("fees", voteFees);
+		};
+
+		setVoteFees(wallet);
 	}, [env, setFees, wallet, setValue]);
 
 	useEffect(() => {

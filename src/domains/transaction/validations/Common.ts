@@ -39,6 +39,13 @@ export const common = (t: any) => ({
 					});
 				}
 
+				if (feeSatoshi.isZero() || feeSatoshi.isNegative()) {
+					return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM", {
+						min: 0,
+						coinId: network.coin(),
+					});
+				}
+
 				return true;
 			},
 		},
