@@ -11,7 +11,7 @@ export const useFees = () => {
 	const formatWithDefaultStatic = useCallback((fees: TransactionFee) => {
 		const isZero = (fee: FeeInput) => BigNumber.make(fee).isZero() || BigNumber.make(fee).isNegative();
 		const setWithFallback = (fee: FeeInput, fallbackFee: FeeInput) =>
-			isZero(fee) ? String(fallbackFee) : String(fee);
+			!fee || isZero(fee) ? String(fallbackFee) : String(fee);
 
 		return {
 			avg: setWithFallback(fees.avg, fees.static),
