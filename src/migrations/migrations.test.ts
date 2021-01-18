@@ -4,7 +4,7 @@ import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { env } from "utils/testing-library";
 
-import { migrateProfileFixtures, restoreProfileTestPassword } from "./";
+import { migrateProfileFixtures, migrateProfiles, restoreProfileTestPassword } from "./";
 
 describe("Migrations", () => {
 	beforeAll(async () => {
@@ -67,5 +67,20 @@ describe("Migrations", () => {
 		expect(profile.usesPassword()).toBe(false);
 		restoreProfileTestPassword(profile);
 		expect(profile.usesPassword()).toBe(false);
+	});
+
+	it("should throw error if migration fails", () => {
+		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+		expect(() => migrateProfiles(env, fixtureData.profiles, "1")).rejects.toEqual(
+			new Error(
+				"Migration failed for profile [b999d134-7a24-481e-a95d-bc47c543bfc9]. Reason: Invalid Version: 1",
+			),
+		);
+		expect(() => migrateProfileFixtures(env, "1")).rejects.toEqual(
+			new Error(
+				"Migration failed for profile [b999d134-7a24-481e-a95d-bc47c543bfc9]. Reason: Invalid Version: 1",
+			),
+		);
 	});
 });

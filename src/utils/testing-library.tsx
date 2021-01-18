@@ -16,9 +16,14 @@ import { StubStorage } from "tests/mocks";
 
 const ProfileSynchronizer = ({ children }: { children?: React.ReactNode }) => {
 	const { profile, profileIsSyncing } = useProfileSynchronizer();
-	if (!profile?.id()) return <>{children}</>;
 
-	if (profileIsSyncing) return <></>;
+	if (!profile?.id()) {
+		return <>{children}</>;
+	}
+
+	if (profileIsSyncing) {
+		return <></>;
+	}
 
 	return <>{children}</>;
 };
