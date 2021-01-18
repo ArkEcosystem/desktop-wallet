@@ -75,6 +75,23 @@ describe("useUpdater hook", () => {
 		await waitFor(() => expect(result.current.downloadStatus).toBe("idle"));
 	});
 
+	it("should handle failed update check in notifyForUpdates", async () => {
+		const consoleSpy = jest.spyOn(console, "log");
+
+		jest.spyOn(electron.ipcRenderer, "invoke").mockRejectedValueOnce(new Error("Error!"));
+
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
+		const { result } = renderHook(() => useUpdater(), { wrapper });
+
+		await act(async () => {
+			result.current.notifyForUpdates();
+		});
+
+		expect(consoleSpy).toHaveBeenCalledWith("Checking for update failed: Error!");
+
+		consoleSpy.mockRestore();
+	});
+
 	it("should handle notifyForUpdates and find newer version", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useUpdater(), { wrapper });
