@@ -227,7 +227,7 @@ describe("Transactions", () => {
 		});
 	});
 
-	it.only("should abort previous request", async () => {
+	it("should abort previous request", async () => {
 		nock.cleanAll();
 		const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 
