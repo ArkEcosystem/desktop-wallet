@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should render with profile image 1`] = `
+<DocumentFragment>
+  <div
+    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+    data-testid="ProfileAvatar__image"
+  >
+    <img
+      alt="John Doe"
+      class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
+      src="avatarImage"
+      title="John Doe"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Avatar should render with svg 1`] = `
+<DocumentFragment>
+  <div
+    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+    data-testid="ProfileAvatar__svg"
+  >
+    <img
+      alt="John Doe"
+      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+      title="John Doe"
+    />
+    <span
+      class="absolute font-semibold text-white"
+    >
+      JO
+    </span>
+  </div>
+</DocumentFragment>
+`;

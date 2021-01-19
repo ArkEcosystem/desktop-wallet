@@ -432,20 +432,6 @@ describe("SendTransfer", () => {
 				expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7 … f1b89abb49877"),
 			);
 
-			// Copy Transaction
-			const copyMock = jest.fn();
-			const clipboardOriginal = navigator.clipboard;
-
-			// @ts-ignore
-			navigator.clipboard = { writeText: copyMock };
-
-			fireEvent.click(getByTestId("SendTransfer__button--copy"));
-
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
-
-			// @ts-ignore
-			navigator.clipboard = clipboardOriginal;
-
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
@@ -533,17 +519,6 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7 … f1b89abb49877");
 
-			// Copy Transaction
-			const copyMock = jest.fn();
-			const clipboardOriginal = navigator.clipboard;
-
-			// @ts-ignore
-			navigator.clipboard = { writeText: copyMock };
-
-			fireEvent.click(getByTestId("SendTransfer__button--copy"));
-
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionFixture.data.id));
-
 			expect(signMock).toHaveBeenCalledWith(
 				expect.objectContaining({
 					data: expect.anything(),
@@ -562,8 +537,6 @@ describe("SendTransfer", () => {
 				}),
 			);
 
-			// @ts-ignore
-			navigator.clipboard = clipboardOriginal;
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();

@@ -228,7 +228,7 @@ exports[`Votes should filter current delegates 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -241,7 +241,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -402,7 +402,7 @@ exports[`Votes should filter current delegates 1`] = `
                             <span>
                               <input
                                 checked=""
-                                class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
+                                class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
                                 color="success"
                                 name="all"
                                 type="checkbox"
@@ -418,7 +418,7 @@ exports[`Votes should filter current delegates 1`] = `
                           >
                             <span>
                               <input
-                                class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
+                                class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
                                 color="success"
                                 name="current"
                                 type="checkbox"
@@ -476,6 +476,36 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
+                        class="flex flex-inline align-top justify-start "
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
                         class="flex flex-inline align-top  "
                       >
                         <div>
@@ -500,7 +530,7 @@ exports[`Votes should filter current delegates 1`] = `
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -508,36 +538,6 @@ exports[`Votes should filter current delegates 1`] = `
                       >
                         <div>
                           Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Rank
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -559,76 +559,6 @@ exports[`Votes should filter current delegates 1`] = `
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Comm.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Payout
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--7"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Min.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--8"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Commission (Daily)
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -664,12 +594,23 @@ exports[`Votes should filter current delegates 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -711,79 +652,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -830,7 +699,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH mr-2"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
                           data-testid="Avatar"
                         >
                           <div
@@ -856,7 +725,7 @@ exports[`Votes should filter current delegates 1`] = `
                             data-testid="DelegateTable__footer--address"
                           >
                             <div
-                              class="inline-flex items-center"
+                              class="inline-flex items-center no-ligatures"
                             >
                               <span
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -1213,7 +1082,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1224,7 +1093,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       />
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -1412,6 +1281,36 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
+                        class="flex flex-inline align-top justify-start "
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
                         class="flex flex-inline align-top  "
                       >
                         <div>
@@ -1436,7 +1335,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -1444,36 +1343,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       >
                         <div>
                           Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Rank
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -1495,76 +1364,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Comm.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Payout
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--7"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Min.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--8"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Commission (Daily)
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -1600,12 +1399,23 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -1647,79 +1457,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -1744,12 +1482,23 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -1781,79 +1530,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #2
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -1878,12 +1555,23 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -1915,79 +1603,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #3
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -2012,12 +1628,23 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -2049,79 +1676,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -2146,12 +1701,23 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #12
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -2183,79 +1749,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #12
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -2302,7 +1796,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH mr-2"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
                           data-testid="Avatar"
                         >
                           <div
@@ -2328,7 +1822,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                             data-testid="DelegateTable__footer--address"
                           >
                             <div
-                              class="inline-flex items-center"
+                              class="inline-flex items-center no-ligatures"
                             >
                               <span
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -2699,7 +2193,7 @@ exports[`Votes should render 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -2712,7 +2206,7 @@ exports[`Votes should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -2900,6 +2394,36 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
+                        class="flex flex-inline align-top justify-start "
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
                         class="flex flex-inline align-top  "
                       >
                         <div>
@@ -2924,7 +2448,7 @@ exports[`Votes should render 1`] = `
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -2932,36 +2456,6 @@ exports[`Votes should render 1`] = `
                       >
                         <div>
                           Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Rank
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -2983,76 +2477,6 @@ exports[`Votes should render 1`] = `
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Comm.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Payout
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--7"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Min.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--8"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Commission (Daily)
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -3088,12 +2512,23 @@ exports[`Votes should render 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -3135,79 +2570,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -3232,12 +2595,23 @@ exports[`Votes should render 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -3269,79 +2643,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #2
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -3366,12 +2668,23 @@ exports[`Votes should render 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -3403,79 +2716,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #3
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -3500,12 +2741,23 @@ exports[`Votes should render 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -3537,79 +2789,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -3634,12 +2814,23 @@ exports[`Votes should render 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #12
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -3671,79 +2862,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #12
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -3790,7 +2909,7 @@ exports[`Votes should render 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH mr-2"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
                           data-testid="Avatar"
                         >
                           <div
@@ -3816,7 +2935,7 @@ exports[`Votes should render 1`] = `
                             data-testid="DelegateTable__footer--address"
                           >
                             <div
-                              class="inline-flex items-center"
+                              class="inline-flex items-center no-ligatures"
                             >
                               <span
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -4178,7 +3297,7 @@ exports[`Votes should render with no wallets 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -4191,7 +3310,7 @@ exports[`Votes should render with no wallets 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -4638,7 +3757,7 @@ exports[`Votes should select a delegate 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -4651,7 +3770,7 @@ exports[`Votes should select a delegate 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -4839,6 +3958,36 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
+                        class="flex flex-inline align-top justify-start "
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
                         class="flex flex-inline align-top  "
                       >
                         <div>
@@ -4863,7 +4012,7 @@ exports[`Votes should select a delegate 1`] = `
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -4871,36 +4020,6 @@ exports[`Votes should select a delegate 1`] = `
                       >
                         <div>
                           Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Rank
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -4922,76 +4041,6 @@ exports[`Votes should select a delegate 1`] = `
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Comm.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Payout
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--7"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Min.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--8"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Commission (Daily)
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -5027,12 +4076,23 @@ exports[`Votes should select a delegate 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -5074,79 +4134,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -5171,12 +4159,23 @@ exports[`Votes should select a delegate 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -5208,79 +4207,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #2
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -5305,12 +4232,23 @@ exports[`Votes should select a delegate 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -5342,79 +4280,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #3
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -5439,12 +4305,23 @@ exports[`Votes should select a delegate 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -5476,79 +4353,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -5573,12 +4378,23 @@ exports[`Votes should select a delegate 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #12
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -5610,79 +4426,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #12
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -5729,7 +4473,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH mr-2"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
                           data-testid="Avatar"
                         >
                           <div
@@ -5755,7 +4499,7 @@ exports[`Votes should select a delegate 1`] = `
                             data-testid="DelegateTable__footer--address"
                           >
                             <div
-                              class="inline-flex items-center"
+                              class="inline-flex items-center no-ligatures"
                             >
                               <span
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -6123,7 +4867,7 @@ exports[`Votes should select an address without vote 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -6136,7 +4880,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -6324,6 +5068,36 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
+                        class="flex flex-inline align-top justify-start "
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
                         class="flex flex-inline align-top  "
                       >
                         <div>
@@ -6348,7 +5122,7 @@ exports[`Votes should select an address without vote 1`] = `
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
-                      data-testid="table__th--1"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -6356,36 +5130,6 @@ exports[`Votes should select an address without vote 1`] = `
                       >
                         <div>
                           Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Rank
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -6407,76 +5151,6 @@ exports[`Votes should select an address without vote 1`] = `
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Comm.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Payout
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--7"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Min.
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--8"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Commission (Daily)
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--9"
                       role="columnheader"
                       style="cursor: pointer;"
                       title="Toggle SortBy"
@@ -6512,12 +5186,23 @@ exports[`Votes should select an address without vote 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -6549,79 +5234,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -6646,12 +5259,23 @@ exports[`Votes should select an address without vote 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #2
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -6683,79 +5307,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #2
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -6780,12 +5332,23 @@ exports[`Votes should select an address without vote 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #3
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -6817,79 +5380,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #3
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -6914,12 +5405,23 @@ exports[`Votes should select an address without vote 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -6951,79 +5453,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -7048,12 +5478,23 @@ exports[`Votes should select an address without vote 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
+                    <td
+                      class="w-20"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-start font-bold text-theme-secondary-text "
+                      >
+                        <span>
+                          #12
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -7085,79 +5526,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
-                          #12
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
                           %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          ...
                         </span>
                       </div>
                     </td>
@@ -7204,7 +5573,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH mr-2"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
                           data-testid="Avatar"
                         >
                           <div
@@ -7230,7 +5599,7 @@ exports[`Votes should select an address without vote 1`] = `
                             data-testid="DelegateTable__footer--address"
                           >
                             <div
-                              class="inline-flex items-center"
+                              class="inline-flex items-center no-ligatures"
                             >
                               <span
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -7597,7 +5966,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -7610,7 +5979,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -7814,7 +6183,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                         </svg>
                                       </div>
                                       <span
-                                        class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                                       >
                                         <div
                                           class="sc-bdfBwQ fdfkzt"
@@ -8120,7 +6489,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -8133,7 +6502,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -8337,7 +6706,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                         </svg>
                                       </div>
                                       <span
-                                        class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                                       >
                                         <div
                                           class="sc-bdfBwQ fdfkzt"
@@ -8643,7 +7012,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -8656,7 +7025,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -8860,7 +7229,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                         </svg>
                                       </div>
                                       <span
-                                        class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                                       >
                                         <div
                                           class="sc-bdfBwQ fdfkzt"
@@ -9096,23 +7465,9 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center "
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
-                      data-testid="table__th--6"
+                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -9126,7 +7481,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
-                      data-testid="table__th--7"
+                      data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
@@ -9151,7 +7506,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -9165,7 +7520,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center"
+                          class="inline-flex items-center no-ligatures"
                         >
                           <span
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -9207,7 +7562,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -9232,22 +7587,6 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         <span>
                           #
                         </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah text-xl text-theme-primary-600"
-                          data-testid="AddressRow__profile"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            msq.svg
-                          </svg>
-                        </div>
                       </div>
                     </td>
                     <td>
@@ -9289,7 +7628,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -9303,7 +7642,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center"
+                          class="inline-flex items-center no-ligatures"
                         >
                           <span
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -9366,11 +7705,6 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
-                      />
-                    </td>
-                    <td>
-                      <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <button
@@ -9392,7 +7726,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -9406,7 +7740,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center"
+                          class="inline-flex items-center no-ligatures"
                         >
                           <span
                             class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -9454,11 +7788,6 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     <td>
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text"
-                      />
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
                       />
                     </td>
                     <td>

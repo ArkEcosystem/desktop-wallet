@@ -153,6 +153,7 @@ export const translations: { [key: string]: any } = {
 		YOUR_WALLETS: "Your Wallets",
 
 		PRIMARY_OPTIONS: "Manage Address",
+		REGISTRATION_OPTIONS: "Register",
 		ADDITIONAL_OPTIONS: "Additional Options",
 
 		STAR_WALLET: "Add to favorites",
@@ -180,7 +181,7 @@ export const translations: { [key: string]: any } = {
 			MULTISIGNATURE: "Multisignature",
 			RECEIVE_FUNDS: "Receive Funds",
 			RECEIVE_FUNDS_QR: "QR",
-			REGISTER_DELEGATE: "Register Delegate",
+			REGISTER_DELEGATE: "Delegate",
 			RESIGN_DELEGATE: "Resign Delegate",
 			SECOND_SIGNATURE: "Second Signature",
 			SIGN_MESSAGE: "Sign Message",

@@ -66,6 +66,12 @@ export const DelegateRow = ({
 
 	return (
 		<TableRow>
+			<TableCell
+				className="w-20"
+				innerClassName={`justify-start font-bold text-theme-secondary-text ${getColorSelected()}`}
+			>
+				<span>#{delegate.rank()}</span>
+			</TableCell>
 			<TableCell variant="start" innerClassName={`space-x-4 font-bold ${getColorSelected()}`}>
 				<Avatar size="lg" address={delegate.address()} noShadow />
 				<span>{delegate.username()}</span>
@@ -86,46 +92,7 @@ export const DelegateRow = ({
 				className="w-20"
 				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
-				<span>#{delegate.rank()}</span>
-			</TableCell>
-
-			<TableCell
-				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
-			>
 				<span>%</span>
-			</TableCell>
-
-			<TableCell className="w-20" innerClassName={`justify-center ${getColorSelected()}`}>
-				<Icon name="Msq" className="text-xl text-theme-primary-600" />
-			</TableCell>
-
-			<TableCell
-				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
-			>
-				<span>...</span>
-			</TableCell>
-
-			<TableCell
-				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
-			>
-				<span>...</span>
-			</TableCell>
-
-			<TableCell
-				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
-			>
-				<span>...</span>
-			</TableCell>
-
-			<TableCell
-				className="w-40"
-				innerClassName={`justify-end font-bold text-theme-secondary-text ${getColorSelected()}`}
-			>
-				<span>...</span>
 			</TableCell>
 
 			<TableCell variant="end" className="w-40" innerClassName={`justify-end ${getColorSelected()}`}>

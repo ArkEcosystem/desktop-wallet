@@ -14,12 +14,13 @@ import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 type WalletVoteProps = {
 	wallet: ReadWriteWallet;
 	onButtonClick: (address?: string) => void;
+	isLoading?: boolean;
 };
 
-export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
+export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
-	if (!wallet.hasSyncedWithNetwork()) {
+	if (isLoading) {
 		return <section data-testid="WalletVote">{<WalletVoteSkeleton />}</section>;
 	}
 
@@ -34,7 +35,7 @@ export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
 	const maxVotes = wallet.network().maximumVotesPerWallet();
 
 	const hasNoVotes = votes.length === 0;
-	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
+	const votesHelpLink = "https:////";
 
 	const renderVotes = () => {
 		if (hasNoVotes) {

@@ -3,6 +3,7 @@ import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
+import { useFees } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
 import {
 	TransactionDetail,
@@ -15,7 +16,6 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FormStep = ({
-	profile,
 	unvotes,
 	votes,
 	wallet,
@@ -28,6 +28,7 @@ export const FormStep = ({
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 
+	const { findByType } = useFees();
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 
@@ -48,14 +49,14 @@ export const FormStep = ({
 
 	useEffect(() => {
 		const setVoteFees = async (senderWallet: ReadWriteWallet) => {
-			await env.fees().syncAll();
-			const voteFees = env.fees().findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
+			const voteFees = await findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
+
 			setFees(voteFees);
 			setValue("fees", voteFees);
 		};
 
 		setVoteFees(wallet);
-	}, [env, setFees, wallet, setValue]);
+	}, [env, setFees, wallet, setValue, findByType]);
 
 	useEffect(() => {
 		setValue("fee", fees.avg, { shouldValidate: true, shouldDirty: true });

@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useFees } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
@@ -34,6 +34,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
 	const [crumbs, setCrumbs] = useState<Crumb[]>([]);
+	const { findByType } = useFees();
 
 	const { registrationType } = useParams();
 
@@ -46,21 +47,14 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
 
-	const getFeesByRegistrationType = useCallback(
-		(type: string) => env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), type),
-		[env, activeWallet],
-	);
-
 	const setFeesByRegistrationType = useCallback(
 		async (type: string) => {
-			await env.fees().syncAll();
-			const fees = getFeesByRegistrationType(type);
+			const fees = await findByType(activeWallet.coinId(), activeWallet.networkId(), type);
 
 			setValue("fees", fees);
-			/* istanbul ignore next */
-			setValue("fee", fees?.avg || fees?.static);
+			setValue("fee", fees?.avg);
 		},
-		[getFeesByRegistrationType, setValue, env],
+		[setValue, activeWallet, findByType],
 	);
 
 	useEffect(() => {
@@ -251,28 +245,15 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 								)}
 
 								{registrationForm && activeTab === stepCount && (
-									<div className="flex justify-end space-x-3">
-										<Button
-											data-testid="Registration__button--back-to-wallet"
-											variant="secondary"
-											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
-											}
-										>
-											{t("COMMON.BACK_TO_WALLET")}
-										</Button>
-
-										<Button
-											data-testid="Registration__download-button"
-											variant="secondary"
-											className="space-x-2"
-										>
-											<Icon name="Download" />
-											<span>{t("COMMON.DOWNLOAD")}</span>
-										</Button>
-									</div>
+									<Button
+										data-testid="Registration__button--back-to-wallet"
+										variant="secondary"
+										onClick={() =>
+											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+										}
+									>
+										{t("COMMON.BACK_TO_WALLET")}
+									</Button>
 								)}
 							</div>
 						</div>

@@ -13,7 +13,7 @@ exports[`InputFee should render 1`] = `
         class="InputGroup-sc-1obbdqe-3 bgPpWR"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
           data-testid="InputCurrency"
           type="text"
           value="2"
@@ -58,7 +58,7 @@ exports[`InputFee should render 1`] = `
     >
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -67,7 +67,7 @@ exports[`InputFee should render 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -76,7 +76,7 @@ exports[`InputFee should render 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -101,7 +101,7 @@ exports[`InputFee should update fee if value property changes 1`] = `
         class="InputGroup-sc-1obbdqe-3 bgPpWR"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
           data-testid="InputCurrency"
           type="text"
           value="1"
@@ -146,7 +146,7 @@ exports[`InputFee should update fee if value property changes 1`] = `
     >
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -155,7 +155,7 @@ exports[`InputFee should update fee if value property changes 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -164,7 +164,7 @@ exports[`InputFee should update fee if value property changes 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -189,7 +189,7 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
         class="InputGroup-sc-1obbdqe-3 bgPpWR"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
           data-testid="InputCurrency"
           type="text"
           value="1.355"
@@ -234,7 +234,7 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
     >
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -243,7 +243,7 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -252,7 +252,7 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -277,7 +277,7 @@ exports[`InputFee should update fee when clicking on max 1`] = `
         class="InputGroup-sc-1obbdqe-3 bgPpWR"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
           data-testid="InputCurrency"
           type="text"
           value="10"
@@ -322,7 +322,7 @@ exports[`InputFee should update fee when clicking on max 1`] = `
     >
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -331,7 +331,7 @@ exports[`InputFee should update fee when clicking on max 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -340,7 +340,7 @@ exports[`InputFee should update fee when clicking on max 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -365,7 +365,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
         class="InputGroup-sc-1obbdqe-3 bgPpWR"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
           data-testid="InputCurrency"
           type="text"
           value="1"
@@ -410,7 +410,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
     >
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -419,7 +419,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"
@@ -428,7 +428,7 @@ exports[`InputFee should update fee when clicking on min 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
         data-testid="SelectionBarOption"
         role="radio"
         type="button"

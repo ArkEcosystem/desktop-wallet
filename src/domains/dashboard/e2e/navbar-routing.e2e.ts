@@ -10,25 +10,25 @@ createFixture(`NavBar routing`, [
 ]);
 
 test("should navigate to profile dashboard", async (t) => {
-	await t.click(Selector("p").withExactText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 });
 
 test("should navigate to plugins", async (t) => {
-	await t.click(Selector("p").withExactText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.COMMON.PLUGINS));
 	await t.expect(getLocation()).contains("/plugins");
 	await t.expect(Selector("h1").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE).exists).ok();
 });
 
 test("should navigate to exchange", async (t) => {
-	await t.click(Selector("p").withExactText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.EXCHANGE.PAGE_EXCHANGE.TITLE));
 	await t.expect(getLocation()).contains("/exchange");
 	await t.expect(Selector("h1").withExactText(translations.EXCHANGE.PAGE_EXCHANGE.TITLE).exists).ok();
 });
 
 test("should navigate to news", async (t) => {
-	await t.click(Selector("p").withExactText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.NEWS.NEWS));
 	await t.expect(getLocation()).contains("/news");
 	await t.expect(Selector("h1").withExactText(translations.NEWS.PAGE_NEWS.TITLE).exists).ok();
@@ -36,7 +36,7 @@ test("should navigate to news", async (t) => {
 
 // TODO: Update send button in navbar to use a wallet by default
 // test("should navigate to transaction send page", async (t) => {
-// 	await t.click(Selector("p").withExactText("John Doe"));
+// 	await t.click(Selector("span").withText("John Doe"));
 // 	await t.click(Selector("[data-testid=navbar__buttons--send]"));
 // 	await t.click(
 // 		Selector("div").withExactText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION),
@@ -45,7 +45,7 @@ test("should navigate to news", async (t) => {
 // });
 
 test("should navigate back to portfolio", async (t) => {
-	await t.click(Selector("p").withExactText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.NEWS.NEWS));
 	await t.click(Selector("a").withExactText(translations.COMMON.PORTFOLIO));
 	await t.expect(getLocation()).contains("/dashboard");
