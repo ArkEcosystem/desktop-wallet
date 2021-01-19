@@ -15,7 +15,7 @@ exports[`SelectRecipient should render disabled 1`] = `
         />
       </div>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
         data-testid="SelectRecipient__input"
         disabled=""
         type="text"
@@ -55,7 +55,7 @@ exports[`SelectRecipient should render empty 1`] = `
         />
       </div>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
         data-testid="SelectRecipient__input"
         type="text"
         value=""
@@ -95,7 +95,7 @@ exports[`SelectRecipient should render invalid 1`] = `
       </div>
       <input
         aria-invalid="true"
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
         data-testid="SelectRecipient__input"
         type="text"
         value=""
@@ -145,7 +145,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
         </div>
       </div>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
         data-testid="SelectRecipient__input"
         type="text"
         value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"

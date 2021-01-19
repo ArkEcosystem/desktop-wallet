@@ -110,7 +110,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                       aria-controls="CustomPeers__network-menu"
                       aria-labelledby="CustomPeers__network-label"
                       autocomplete="off"
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="CustomPeers__network-input"
                       placeholder="Enter a cryptoasset name"
@@ -141,7 +141,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 />
               </label>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                 data-testid="PeerForm__name-input"
                 name="name"
                 value="ROBank"
@@ -162,7 +162,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 />
               </label>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                 data-testid="PeerForm__host-input"
                 name="host"
                 value="http://167.114.29.48:4003/api"

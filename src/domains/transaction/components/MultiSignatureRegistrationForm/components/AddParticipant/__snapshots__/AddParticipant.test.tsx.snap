@@ -45,7 +45,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -182,7 +182,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -271,7 +271,7 @@ exports[`Add Participant should fail to find 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -408,7 +408,7 @@ exports[`Add Participant should fail to find 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -497,7 +497,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -634,7 +634,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -711,7 +711,7 @@ exports[`Add Participant should render custom participants 1`] = `
               />
             </div>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -844,7 +844,7 @@ exports[`Add Participant should render custom participants 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -932,7 +932,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               </div>
             </div>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -1065,7 +1065,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -1136,7 +1136,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -1224,7 +1224,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               </div>
             </div>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -1357,7 +1357,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -1428,7 +1428,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     class="max-w-sm"
                   >
                     <div
-                      class="inline-flex items-center"
+                      class="inline-flex items-center no-ligatures"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"

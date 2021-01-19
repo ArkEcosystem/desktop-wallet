@@ -67,7 +67,7 @@ exports[`CreateWallet 1st step should render 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -154,7 +154,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -794,7 +794,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1246,7 +1246,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1700,7 +1700,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1776,7 +1776,7 @@ exports[`CreateWallet should render 4th step 1`] = `
     </div>
     <div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
         data-testid="TransactionDetail"
       >
         <div
@@ -1811,7 +1811,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         </div>
       </div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd"
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd undefined no-ligatures"
         data-testid="TransactionDetail"
       >
         <div
@@ -1826,7 +1826,7 @@ exports[`CreateWallet should render 4th step 1`] = `
             class="font-semibold"
           >
             <div
-              class="inline-flex items-center"
+              class="inline-flex items-center no-ligatures"
             >
               <span
                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -1870,7 +1870,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         </span>
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />
@@ -2279,7 +2279,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
