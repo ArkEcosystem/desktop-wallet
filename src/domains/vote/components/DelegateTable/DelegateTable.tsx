@@ -164,6 +164,7 @@ export const DelegateTable = ({
 
 	const handleSelectPage = (page: number) => {
 		setCurrentPage(page);
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	const paginator = (items: ReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
