@@ -1,13 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
@@ -26,10 +25,7 @@ export const SendIpfs = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-	// eslint-disable-next-line
-	const [_, copy] = useClipboard({
-		resetAfter: 1000,
-	});
+
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -122,10 +118,6 @@ export const SendIpfs = () => {
 		}
 
 		setActiveTab(newIndex);
-	};
-
-	const copyTransaction = () => {
-		copy(transaction.id());
 	};
 
 	const crumbs = [
@@ -236,30 +228,16 @@ export const SendIpfs = () => {
 								)}
 
 								{activeTab === 4 && (
-									<>
-										<Button
-											data-testid="SendIpfs__button--back-to-wallet"
-											variant="secondary"
-											className="block"
-											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
-											}
-										>
-											{t("COMMON.BACK_TO_WALLET")}
-										</Button>
-
-										<Button
-											onClick={copyTransaction}
-											data-testid="SendIpfs__button--copy"
-											variant="secondary"
-											className="space-x-2"
-										>
-											<Icon name="Copy" />
-											<span>{t("COMMON.COPY")}</span>
-										</Button>
-									</>
+									<Button
+										data-testid="SendIpfs__button--back-to-wallet"
+										variant="secondary"
+										className="block"
+										onClick={() =>
+											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+										}
+									>
+										{t("COMMON.BACK_TO_WALLET")}
+									</Button>
 								)}
 							</div>
 						</div>

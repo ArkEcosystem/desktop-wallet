@@ -364,27 +364,15 @@ export const SendVote = () => {
 								)}
 
 								{activeTab === 4 && (
-									<>
-										<Button
-											data-testid="SendVote__button--back-to-wallet"
-											variant="secondary"
-											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
-											}
-										>
-											{t("COMMON.BACK_TO_WALLET")}
-										</Button>
-										<Button
-											variant="secondary"
-											className="space-x-2"
-											data-testid="SendVote__button--download"
-										>
-											<Icon name="Download" />
-											<span>{t("COMMON.DOWNLOAD")}</span>
-										</Button>
-									</>
+									<Button
+										data-testid="SendVote__button--back-to-wallet"
+										variant="secondary"
+										onClick={() =>
+											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+										}
+									>
+										{t("COMMON.BACK_TO_WALLET")}
+									</Button>
 								)}
 							</div>
 						</div>

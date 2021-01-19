@@ -245,28 +245,15 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 								)}
 
 								{registrationForm && activeTab === stepCount && (
-									<div className="flex justify-end space-x-3">
-										<Button
-											data-testid="Registration__button--back-to-wallet"
-											variant="secondary"
-											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
-											}
-										>
-											{t("COMMON.BACK_TO_WALLET")}
-										</Button>
-
-										<Button
-											data-testid="Registration__download-button"
-											variant="secondary"
-											className="space-x-2"
-										>
-											<Icon name="Download" />
-											<span>{t("COMMON.DOWNLOAD")}</span>
-										</Button>
-									</div>
+									<Button
+										data-testid="Registration__button--back-to-wallet"
+										variant="secondary"
+										onClick={() =>
+											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+										}
+									>
+										{t("COMMON.BACK_TO_WALLET")}
+									</Button>
 								)}
 							</div>
 						</div>
