@@ -1,4 +1,4 @@
-const setStyles = (styles: Record<string, any>, element: Element) => {
+const setStyles = (styles: Record<string, any>, element: any) => {
 	Object.assign(element.style, styles);
 };
 
