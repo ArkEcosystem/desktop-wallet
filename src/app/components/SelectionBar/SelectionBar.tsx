@@ -17,15 +17,16 @@ export const SelectionBar = ({ children }: GroupProps) => (
 
 const SelectionBarOptionStyled = styled.button`
 	& {
-		padding: 0.6875rem 1.25rem 0.625rem;
+		${tw`mr-px last:mr-0 text-theme-secondary-900 dark:text-theme-secondary-600`};
 	}
 	&[aria-checked="true"] {
-		${tw`text-theme-success-600 border-theme-success-600 bg-theme-success-100 font-semibold`}
+		-webkit-text-stroke: 0.5px var(--theme-color-success-600);
+		${tw`text-theme-success-600 border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
 	}
 	& + &:after {
 		content: "";
 		width: 1px;
-		${tw`bg-theme-secondary-300 top-1/2 absolute left-0 block h-6 transform -translate-y-1/2`};
+		${tw`bg-theme-secondary-300 dark:bg-theme-secondary-800 top-1/2 absolute block -left-px h-6 transform -translate-y-1/2`};
 	}
 `;
 
@@ -46,7 +47,7 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+			className="relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
 		>
 			{children}
 		</SelectionBarOptionStyled>
