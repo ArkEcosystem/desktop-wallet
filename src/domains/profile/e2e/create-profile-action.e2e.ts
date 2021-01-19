@@ -30,8 +30,8 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 
 	// Check welcome with created profiles
 	await t.expect(getLocation()).notContains("/profiles/create");
-	await t.expect(Selector("p").withText("John Doe").exists).ok();
-	await t.expect(Selector("p").withText("Anne Doe").exists).ok();
+	await t.expect(Selector("span").withText("John Doe").exists).ok();
+	await t.expect(Selector("span").withText("Anne Doe").exists).ok();
 });
 
 test("should create a profile with password and navigate to welcome screen", async (t) => {
@@ -51,7 +51,7 @@ test("should create a profile with password and navigate to welcome screen", asy
 
 	// Check welcome with created profiles
 	await t.expect(getLocation()).notContains("/profiles/create");
-	await t.expect(Selector("p").withText("John Doe").exists).ok();
-	await t.expect(Selector("p").withText("Joe Bloggs").exists).ok();
+	await t.expect(Selector("span").withText("John Doe").exists).ok();
+	await t.expect(Selector("span").withText("Joe Bloggs").exists).ok();
 	await t.expect(Selector("span").withText("N/A").exists).ok();
 });

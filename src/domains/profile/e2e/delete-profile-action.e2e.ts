@@ -8,9 +8,9 @@ const translations = buildTranslations();
 createFixture(`Delete Profile action`);
 
 test("should delete profile from profile card menu", async (t) => {
-	await t.click(Selector('[data-testid="ProfileCard"] [data-testid="dropdown__toggle"]').child(0));
+	await t.click(Selector('[data-testid="Card"] [data-testid="dropdown__toggle"]').child(0));
 	await t.click(
-		Selector('[data-testid="ProfileCard"] [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="Card"] [data-testid="dropdown__option--1"]').withText(
 			translations.COMMON.DELETE,
 		),
 	);
