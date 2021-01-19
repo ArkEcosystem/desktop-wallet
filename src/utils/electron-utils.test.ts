@@ -1,14 +1,6 @@
 import electron from "electron";
 
-import {
-	exitApp,
-	isIdle,
-	openExternal,
-	openFile,
-	saveFile,
-	setScreenshotProtection,
-	setThemeSource,
-} from "./electron-utils";
+import { isIdle, openExternal, openFile, saveFile, setScreenshotProtection, setThemeSource } from "./electron-utils";
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
@@ -249,24 +241,6 @@ describe("Electron utils", () => {
 	});
 
 	describe("openExternal", () => {
-		const externalLink = "https://ark.io";
-		let openExternalMock: jest.SpyInstance;
-
-		beforeEach(() => {
-			openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
-		});
-
-		afterEach(() => {
-			openExternalMock.mockRestore();
-		});
-
-		it("should open an external link", () => {
-			openExternal(externalLink);
-			expect(openExternalMock).toHaveBeenCalledWith(externalLink);
-		});
-	});
-
-	describe("exitApp", () => {
 		let ipcRendererMock: jest.SpyInstance;
 
 		beforeEach(() => {
@@ -277,10 +251,18 @@ describe("Electron utils", () => {
 			ipcRendererMock.mockRestore();
 		});
 
-		it("should quit electron app", () => {
-			exitApp();
-			expect(ipcRendererMock).toHaveBeenCalledWith("exit-app");
+		it.each(["http://foo.bar/", "https://foo.bar/"])("should open links with a valid protocol (%s)", (link) => {
+			openExternal(link);
+			expect(ipcRendererMock).toHaveBeenCalledWith("open-external", link);
 		});
+
+		it.each(["ftp://foo.bar/", "smb://foo.bar/", "file://foo/bar", "\\\\\\\\foo\\bar"])(
+			"should not open links with an invalid protocol (%s)",
+			(link) => {
+				expect(() => openExternal(link)).toThrow();
+				expect(ipcRendererMock).not.toHaveBeenCalled();
+			},
+		);
 	});
 
 	describe("isIdle", () => {

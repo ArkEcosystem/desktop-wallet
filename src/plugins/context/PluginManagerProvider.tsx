@@ -40,14 +40,14 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const trigger = useCallback(() => setState({}), []);
 
-	const reportPlugin = useCallback(async (plugin: PluginController) => {
+	const reportPlugin = useCallback((plugin: PluginController) => {
 		const name = plugin.config().get("name");
 		const version = plugin.config().get("version");
 
 		const url = `https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=${name}&plugin_version=${version}`;
 
 		try {
-			await openExternal(url);
+			openExternal(url);
 		} catch (e) {
 			/* istanbul ignore next */
 			toasts.error(e.message);

@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, screen } from "electron";
+import { app, BrowserWindow, ipcMain, screen, shell } from "electron";
 import isDev from "electron-is-dev";
 import winState from "electron-window-state";
 import path from "path";
@@ -62,6 +62,14 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 
 ipcMain.on("exit-app", function (_event, args) {
 	app.quit();
+});
+
+ipcMain.on("open-external", function (_event, url) {
+	try {
+		shell.openExternal(url);
+	} catch (error) {
+		console.log(error);
+	}
 });
 
 function createWindow() {
