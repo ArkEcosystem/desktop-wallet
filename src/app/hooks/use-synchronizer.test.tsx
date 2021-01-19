@@ -68,4 +68,28 @@ describe("Synchronizer Hook", () => {
 
 		await waitFor(() => expect(clearInterval).toHaveBeenCalledTimes(2));
 	});
+
+	it("should stop jobs and clear timers", async () => {
+		const Component = () => {
+			const { start, stop } = useSynchronizer(jobs);
+
+			useEffect(() => {
+				start();
+			}, [start]);
+
+			return <button onClick={() => stop({ clearTimers: true })}>Stop</button>;
+		};
+
+		render(<Component />);
+
+		jest.advanceTimersByTime(200);
+
+		await waitFor(() => expect(onCall).toHaveBeenCalledTimes(6));
+
+		act(() => {
+			fireEvent.click(screen.getByRole("button"));
+		});
+
+		await waitFor(() => expect(clearInterval).toHaveBeenCalledTimes(2));
+	});
 });
