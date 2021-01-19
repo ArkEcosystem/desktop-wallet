@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Badge } from "app/components/Badge";
 import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
 import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
@@ -20,9 +21,21 @@ export const ProfileCard = ({ profile, actions, onClick, onSelect, showSettings 
 		onSelect={onSelect}
 	>
 		<div className="flex flex-col justify-center items-center">
-			<ProfileAvatar profile={profile} size="2xl" />
+			<div className="relative">
+				<ProfileAvatar profile={profile} size="2xl" />
+				{profile.usesPassword() && (
+					<Badge
+						className="bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
+						icon="Lock"
+						iconWidth={13}
+						iconHeight={18}
+						size="lg"
+						position="bottom-right"
+					/>
+				)}
+			</div>
 
-			<span className="mt-3 font-semibold text-theme-secondary-700 max-w-32 truncate">{profile.name()}</span>
+			<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">{profile.name()}</span>
 		</div>
 	</Card>
 );
