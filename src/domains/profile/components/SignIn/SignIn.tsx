@@ -1,10 +1,10 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
+import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -92,30 +92,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		>
 			<div className="mt-8">
 				<div className="flex items-center space-x-3">
-					{profile.avatar().endsWith("</svg>") ? (
-						<AvatarWrapper size="lg" data-testid="profile-card__user--avatar" noShadow>
-							<img
-								src={`data:image/svg+xml;utf8,${profile.avatar()}`}
-								title={profile.name()}
-								alt={profile.name()}
-							/>
-							<span className="absolute font-semibold text-theme-background">
-								{profile.name().slice(0, 2).toUpperCase()}
-							</span>
-						</AvatarWrapper>
-					) : (
-						<div
-							className="w-11 h-11 rounded-full bg-theme-secondary-100"
-							data-testid="profile-card__user--avatarImage"
-						>
-							<img
-								src={profile.avatar()}
-								className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-								title={profile.name()}
-								alt={profile.name()}
-							/>
-						</div>
-					)}
+					<ProfileAvatar profile={profile} />
 
 					<div className="flex flex-col">
 						<p className="text-sm font-semibold text-theme-secondary-700">{t("COMMON.NAME")}</p>

@@ -102,16 +102,18 @@ export const Welcome = () => {
 									{t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
 								</p>
 
-								<div className="mt-5 flex flex-wrap justify-center">
-									{profiles.map((profile: Profile, index: number) => (
-										<ProfileCard
-											onClick={() => handleClick(profile)}
-											key={index}
-											profile={profile}
-											actions={profileCardActions}
-											onSelect={(action: any) => handleProfileAction(profile, action)}
-										/>
-									))}
+								<div className="mt-8">
+									<div className="-my-2.5 flex flex-wrap justify-center">
+										{profiles.map((profile: Profile, index: number) => (
+											<ProfileCard
+												onClick={() => handleClick(profile)}
+												key={index}
+												profile={profile}
+												actions={profileCardActions}
+												onSelect={(action: any) => handleProfileAction(profile, action)}
+											/>
+										))}
+									</div>
 								</div>
 							</>
 						) : (
@@ -120,7 +122,7 @@ export const Welcome = () => {
 							</p>
 						)}
 
-						<div className="flex flex-col justify-center mt-5 md:flex-row">
+						<div className="flex flex-col justify-center mt-8 md:flex-row">
 							<Button
 								variant="secondary"
 								className="mt-2 md:mt-0"
