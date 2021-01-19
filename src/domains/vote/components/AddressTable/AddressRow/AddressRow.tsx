@@ -153,16 +153,6 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 					<TableCell innerClassName="justify-center">
 						{hasVotes && (
 							<Icon
-								name="Msq"
-								className="text-xl text-theme-primary-600"
-								data-testid="AddressRow__profile"
-							/>
-						)}
-					</TableCell>
-
-					<TableCell innerClassName="justify-center">
-						{hasVotes && (
-							<Icon
 								name="StatusOk"
 								className="text-theme-success-600"
 								width={22}
