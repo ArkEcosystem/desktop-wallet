@@ -15,14 +15,14 @@ export const ProfileAvatar = ({ profile, size }: ProfileAvatarProps) =>
 			<span className="absolute font-semibold text-white">{profile.name().slice(0, 2).toUpperCase()}</span>
 		</AvatarWrapper>
 	) : (
-		<div className="w-11 h-11 rounded-full bg-theme-secondary-100" data-testid="ProfileAvatar__image">
+		<AvatarWrapper size={size} data-testid="ProfileAvatar__image">
 			<img
 				src={profile.avatar()}
 				className="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
 				title={profile.name()}
 				alt={profile.name()}
 			/>
-		</div>
+		</AvatarWrapper>
 	);
 
 ProfileAvatar.defaultProps = {
