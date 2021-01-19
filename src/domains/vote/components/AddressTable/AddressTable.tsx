@@ -54,12 +54,6 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 					disableSortBy: true,
 				},
 				{
-					Header: t("COMMON.PROFILE"),
-					accessor: "profile",
-					className: "justify-center",
-					disableSortBy: true,
-				},
-				{
 					Header: t("COMMON.STATUS"),
 					accessor: "status",
 					className: "justify-center no-border",
