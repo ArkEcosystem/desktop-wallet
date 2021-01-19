@@ -64,6 +64,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 
 			nextWallets = uniqBy([...nextWallets, ...payload, ...wallets], pathMapper);
 
+			// Display only empty addresses from the last derivation
 			if (hasMoreDerivationModes) {
 				nextWallets = nextWallets.filter((item) => !item.isNew);
 			}
