@@ -88,16 +88,15 @@ const openFile = async (defaultPath?: string | null, options?: DialogOptions) =>
 	return readFileSync(filePaths[0], encode);
 };
 
-const openExternal = (url: string) => electron.shell.openExternal(url);
+const openExternal = (url: string) => {
+	if (/^https?:\/\//.test(url)) {
+		ipcRenderer.send("open-external", url);
+	}
+};
 
 const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
 
-const exitApp = () => {
-	ipcRenderer.send("exit-app");
-};
-
 export {
-	exitApp,
 	isDev,
 	isIdle,
 	openExternal,

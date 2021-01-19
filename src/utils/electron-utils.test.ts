@@ -1,14 +1,6 @@
 import electron from "electron";
 
-import {
-	exitApp,
-	isIdle,
-	openExternal,
-	openFile,
-	saveFile,
-	setScreenshotProtection,
-	setThemeSource,
-} from "./electron-utils";
+import { isIdle, openExternal, openFile, saveFile, setScreenshotProtection, setThemeSource } from "./electron-utils";
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
@@ -249,25 +241,9 @@ describe("Electron utils", () => {
 	});
 
 	describe("openExternal", () => {
-		const externalLink = "https://ark.io";
-		let openExternalMock: jest.SpyInstance;
-
-		beforeEach(() => {
-			openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
-		});
-
-		afterEach(() => {
-			openExternalMock.mockRestore();
-		});
-
-		it("should open an external link", () => {
-			openExternal(externalLink);
-			expect(openExternalMock).toHaveBeenCalledWith(externalLink);
-		});
-	});
-
-	describe("exitApp", () => {
 		let ipcRendererMock: jest.SpyInstance;
+
+		const externalLink = "https://ark.io";
 
 		beforeEach(() => {
 			ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
@@ -277,9 +253,9 @@ describe("Electron utils", () => {
 			ipcRendererMock.mockRestore();
 		});
 
-		it("should quit electron app", () => {
-			exitApp();
-			expect(ipcRendererMock).toHaveBeenCalledWith("exit-app");
+		it("should open an external link", () => {
+			openExternal(externalLink);
+			expect(ipcRendererMock).toHaveBeenCalledWith("open-external", externalLink);
 		});
 	});
 
