@@ -22,7 +22,7 @@ test("should return to welcome page when application is idle", async (t) => {
 		await t.expect(title).contains(part);
 	}
 
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 	await t.expect(Selector('[data-testid="transactions__fetch-more-button"]').exists).ok();

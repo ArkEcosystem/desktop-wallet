@@ -18,7 +18,7 @@ createFixture(
 );
 
 test("should import a wallet by mnemonic", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
 	// Navigate to import page
@@ -50,7 +50,7 @@ test("should import a wallet by mnemonic", async (t) => {
 });
 
 test("should import a wallet by address", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
 	// Navigate to import page
@@ -85,7 +85,7 @@ test("should import a wallet by address", async (t) => {
 });
 
 test("should show an error message for invalid address", async (t) => {
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to import page
@@ -118,7 +118,7 @@ test("should show an error message for invalid address", async (t) => {
 test("should show an error message for duplicate address", async (t) => {
 	let passphraseInput: Selector;
 
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	// Navigate to import page
