@@ -58,7 +58,10 @@ export const searchWallets = async (addressMap: Record<string, any>, coin: Coins
 			address: identity.address(),
 			balance: identity.balance(),
 		};
-		wallets.push(wallet);
+
+		if (wallet.path) {
+			wallets.push(wallet);
+		}
 	}
 
 	return wallets;

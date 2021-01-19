@@ -74,7 +74,7 @@ export const LedgerTable = ({
 	network: Network;
 } & ReturnType<typeof useLedgerScanner>) => {
 	const { t } = useTranslation();
-	const isAllSelected = wallets.length > 0 && selectedWallets.length === wallets.length;
+	const isAllSelected = !isScanning && wallets.length > 0 && selectedWallets.length === wallets.length;
 
 	const columns = [
 		{
