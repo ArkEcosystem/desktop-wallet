@@ -112,7 +112,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                             />
                             <span
@@ -775,7 +775,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                             />
                             <span
@@ -1428,7 +1428,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                             />
                             <span
@@ -2075,7 +2075,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
                             />
                             <span
@@ -3117,7 +3117,7 @@ exports[`CreateProfile should store profile 1`] = `
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/png;base64,avatarImage"
                             />
                             <div
@@ -3773,7 +3773,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                             />
                             <span
@@ -4417,7 +4417,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           >
                             <img
                               alt="Avatar"
-                              class="min-h-full"
+                              class="object-cover min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                             />
                             <span

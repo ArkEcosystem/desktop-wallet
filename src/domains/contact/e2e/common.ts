@@ -5,7 +5,7 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 const translations = buildTranslations();
 
 export const goToContacts = async (t: any) => {
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
 	await t.click(Selector('[data-testid="navbar__useractions"]'));

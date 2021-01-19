@@ -21,4 +21,9 @@ describe("Badge", () => {
 			expect(container).toMatchSnapshot();
 		},
 	);
+
+	it.each(["md", "lg"])("should render with size '%s'", (size) => {
+		const { container } = render(<Badge icon="settings" size={size} />);
+		expect(container).toMatchSnapshot();
+	});
 });

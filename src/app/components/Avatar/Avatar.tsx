@@ -17,11 +17,13 @@ export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; n
 	${({ size }) => {
 		switch (size) {
 			case "sm":
-				return tw`w-8 h-8`;
+				return tw`w-8 h-8 text-sm`;
 			case "lg":
-				return tw`w-11 h-11`;
+				return tw`w-11 h-11 text-sm`;
 			case "xl":
-				return tw`w-16 h-16`;
+				return tw`w-16 h-16 text-sm`;
+			case "2xl":
+				return tw`w-20 h-20 text-2xl`;
 			default:
 				return tw`w-10 h-10`;
 		}

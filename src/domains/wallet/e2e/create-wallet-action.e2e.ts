@@ -48,7 +48,7 @@ createFixture(
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
-	await t.click(Selector("p").withText("John Doe"));
+	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
 	// Navigate to create page

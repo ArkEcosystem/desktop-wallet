@@ -1,4 +1,5 @@
 import tw, { css } from "twin.macro";
+import { Position, Size } from "types";
 
 const baseStyle = [
 	css`
@@ -9,12 +10,12 @@ const baseStyle = [
 	tw`absolute transform`,
 ];
 
-const shape = "flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle";
+const shape = "flex border-2 rounded-full justify-center items-center align-middle";
 const colors = "bg-theme-background border-transparent";
 
 export const defaultClasses = `${shape} ${colors}`;
 
-const getPosition = (position: string): any => {
+const getPosition = (position?: Position): any => {
 	switch (position) {
 		case "bottom":
 			return tw`bottom-1 translate-y-full`;
@@ -36,4 +37,17 @@ const getPosition = (position: string): any => {
 	}
 };
 
-export const getStyles = ({ position }: any) => [...baseStyle, getPosition(position)];
+const getSize = (size?: Size) => {
+	switch (size) {
+		case "lg":
+			return tw`w-8 h-8`;
+		default:
+			return tw`w-5 h-5`;
+	}
+};
+
+export const getStyles = ({ position, size }: { position?: Position; size?: Size }) => [
+	...baseStyle,
+	getPosition(position),
+	getSize(size),
+];
