@@ -46,7 +46,7 @@ const useProfileJobs = (profile?: Profile) => {
 
 		const syncDelegates = {
 			callback: () => env.delegates().syncAll(),
-			interval: Intervals.Short,
+			interval: Intervals.Long,
 		};
 
 		const syncFees = {
