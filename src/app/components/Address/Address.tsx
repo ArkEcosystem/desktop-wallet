@@ -34,7 +34,7 @@ export const Address = ({ address, addressClass, walletNameClass, fontWeight, wa
 	};
 
 	return (
-		<div className="inline-flex items-center">
+		<div className="inline-flex items-center no-ligatures">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"

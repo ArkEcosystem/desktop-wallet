@@ -107,7 +107,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 						className="mt-auto text-lg font-bold text-theme-text"
 					/>
 
-					<span className="mt-1 text-xs font-semibold truncate text-theme-secondary-text">
+					<span className="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures">
 						{wallet.address()}
 					</span>
 				</div>
