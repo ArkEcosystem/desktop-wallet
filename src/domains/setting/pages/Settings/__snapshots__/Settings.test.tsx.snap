@@ -479,7 +479,7 @@ exports[`Settings should change a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--currentPassword"
                           name="currentPassword"
                           type="password"
@@ -524,7 +524,7 @@ exports[`Settings should change a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
@@ -569,7 +569,7 @@ exports[`Settings should change a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
@@ -1157,7 +1157,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           </label>
                           <input
                             aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
@@ -1187,7 +1187,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="passphraseLanguage"
                               readonly=""
@@ -1222,7 +1222,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-381-menu"
                                     aria-labelledby="downshift-381-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-380-input"
                                     name="passphraseLanguage"
@@ -1271,7 +1271,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -1306,7 +1306,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-383-menu"
                                     aria-labelledby="downshift-383-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-382-input"
                                     name="currency"
@@ -1359,7 +1359,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -1394,7 +1394,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-385-menu"
                                     aria-labelledby="downshift-385-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-384-input"
                                     name="language"
@@ -1443,7 +1443,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="marketProvider"
                               readonly=""
@@ -1478,7 +1478,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-387-menu"
                                     aria-labelledby="downshift-387-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-386-input"
                                     name="marketProvider"
@@ -1527,7 +1527,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="timeFormat"
                               readonly=""
@@ -1562,7 +1562,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-389-menu"
                                     aria-labelledby="downshift-389-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-388-input"
                                     name="timeFormat"
@@ -1747,7 +1747,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                                 data-testid="select-list__input"
                                 name="automaticSignOutPeriod"
                                 readonly=""
@@ -1782,7 +1782,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                       aria-controls="downshift-391-menu"
                                       aria-labelledby="downshift-391-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-390-input"
                                       name="automaticSignOutPeriod"
@@ -2630,7 +2630,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                                 data-testid="select-list__input"
                                 name="load-plugins"
                                 readonly=""
@@ -2659,7 +2659,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                       aria-controls="downshift-1399-menu"
                                       aria-labelledby="downshift-1399-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-1398-input"
                                       name="load-plugins"
@@ -3257,7 +3257,7 @@ exports[`Settings should render 1`] = `
                             />
                           </label>
                           <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
@@ -3282,7 +3282,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="passphraseLanguage"
                               readonly=""
@@ -3317,7 +3317,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-1-menu"
                                     aria-labelledby="downshift-1-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-0-input"
                                     name="passphraseLanguage"
@@ -3366,7 +3366,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -3401,7 +3401,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-3-menu"
                                     aria-labelledby="downshift-3-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-2-input"
                                     name="currency"
@@ -3454,7 +3454,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -3489,7 +3489,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-5-menu"
                                     aria-labelledby="downshift-5-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-4-input"
                                     name="language"
@@ -3538,7 +3538,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="marketProvider"
                               readonly=""
@@ -3573,7 +3573,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-7-menu"
                                     aria-labelledby="downshift-7-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-6-input"
                                     name="marketProvider"
@@ -3622,7 +3622,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="timeFormat"
                               readonly=""
@@ -3657,7 +3657,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-9-menu"
                                     aria-labelledby="downshift-9-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-8-input"
                                     name="timeFormat"
@@ -3841,7 +3841,7 @@ exports[`Settings should render 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                                 data-testid="select-list__input"
                                 name="automaticSignOutPeriod"
                                 readonly=""
@@ -3876,7 +3876,7 @@ exports[`Settings should render 1`] = `
                                       aria-controls="downshift-11-menu"
                                       aria-labelledby="downshift-11-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-10-input"
                                       name="automaticSignOutPeriod"
@@ -4599,7 +4599,7 @@ exports[`Settings should render password settings 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
@@ -4644,7 +4644,7 @@ exports[`Settings should render password settings 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
@@ -5890,7 +5890,7 @@ exports[`Settings should render plugin settings 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                                 data-testid="select-list__input"
                                 name="load-plugins"
                                 readonly=""
@@ -5919,7 +5919,7 @@ exports[`Settings should render plugin settings 1`] = `
                                       aria-controls="downshift-1287-menu"
                                       aria-labelledby="downshift-1287-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-1286-input"
                                       name="load-plugins"
@@ -6459,7 +6459,7 @@ exports[`Settings should set a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--currentPassword"
                           name="currentPassword"
                           type="password"
@@ -6504,7 +6504,7 @@ exports[`Settings should set a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
@@ -6549,7 +6549,7 @@ exports[`Settings should set a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
@@ -7078,7 +7078,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--currentPassword"
                           name="currentPassword"
                           type="password"
@@ -7123,7 +7123,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
@@ -7168,7 +7168,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
@@ -7754,7 +7754,7 @@ exports[`Settings should update profile 1`] = `
                             />
                           </label>
                           <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
@@ -7779,7 +7779,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="passphraseLanguage"
                               readonly=""
@@ -7814,7 +7814,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-39-menu"
                                     aria-labelledby="downshift-39-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-38-input"
                                     name="passphraseLanguage"
@@ -7863,7 +7863,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -7898,7 +7898,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-41-menu"
                                     aria-labelledby="downshift-41-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-40-input"
                                     name="currency"
@@ -7951,7 +7951,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -7986,7 +7986,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-43-menu"
                                     aria-labelledby="downshift-43-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-42-input"
                                     name="language"
@@ -8035,7 +8035,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="marketProvider"
                               readonly=""
@@ -8070,7 +8070,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-45-menu"
                                     aria-labelledby="downshift-45-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-44-input"
                                     name="marketProvider"
@@ -8119,7 +8119,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                               data-testid="select-list__input"
                               name="timeFormat"
                               readonly=""
@@ -8154,7 +8154,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-47-menu"
                                     aria-labelledby="downshift-47-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-46-input"
                                     name="timeFormat"
@@ -8339,7 +8339,7 @@ exports[`Settings should update profile 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
                                 data-testid="select-list__input"
                                 name="automaticSignOutPeriod"
                                 readonly=""
@@ -8374,7 +8374,7 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="downshift-49-menu"
                                       aria-labelledby="downshift-49-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-48-input"
                                       name="automaticSignOutPeriod"

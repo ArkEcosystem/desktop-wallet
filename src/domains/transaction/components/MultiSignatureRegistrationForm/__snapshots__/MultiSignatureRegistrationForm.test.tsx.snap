@@ -66,7 +66,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                         />
                       </div>
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
                         data-testid="SelectRecipient__input"
                         name="address"
                         type="text"
@@ -199,7 +199,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                               class="max-w-sm"
                             >
                               <div
-                                class="inline-flex items-center"
+                                class="inline-flex items-center no-ligatures"
                               >
                                 <span
                                   class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -258,7 +258,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 class="InputGroup-sc-1obbdqe-3 bgPpWR"
               >
                 <input
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                   data-testid="MultiSignatureRegistrationForm__min-participants"
                   name="minParticipants"
                   type="number"
@@ -296,7 +296,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     class="InputGroup-sc-1obbdqe-3 bgPpWR"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -412,7 +412,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
           </div>
           <div>
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 coAmnd"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 coAmnd undefined no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -447,7 +447,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               </div>
             </div>
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -462,7 +462,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="inline-flex items-center"
+                    class="inline-flex items-center no-ligatures"
                   >
                     <span
                       class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -499,7 +499,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               </div>
             </div>
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -591,7 +591,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                                 class="max-w-lg"
                               >
                                 <div
-                                  class="inline-flex items-center"
+                                  class="inline-flex items-center no-ligatures"
                                 >
                                   <span
                                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -632,7 +632,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                                 class="max-w-lg"
                               >
                                 <div
-                                  class="inline-flex items-center"
+                                  class="inline-flex items-center no-ligatures"
                                 >
                                   <span
                                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -652,7 +652,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               </div>
             </div>
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -682,7 +682,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               </div>
             </div>
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -804,7 +804,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
 exports[`MultiSignature Registration Form should render transaction details 1`] = `
 <DocumentFragment>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
@@ -838,7 +838,7 @@ exports[`MultiSignature Registration Form should render transaction details 1`] 
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
@@ -855,7 +855,7 @@ exports[`MultiSignature Registration Form should render transaction details 1`] 
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj undefined no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
