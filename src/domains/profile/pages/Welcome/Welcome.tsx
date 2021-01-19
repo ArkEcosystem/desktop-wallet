@@ -87,7 +87,7 @@ export const Welcome = () => {
 						</Trans>
 					</h1>
 
-					<div className="mx-auto w-64 lg:w-96">
+					<div className="mx-auto w-72">
 						<Image name="WelcomeBanner" />
 					</div>
 
@@ -102,8 +102,8 @@ export const Welcome = () => {
 									{t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
 								</p>
 
-								<div className="mt-8 space-y-3">
-									{profiles.map((profile: any, index: number) => (
+								<div className="mt-5 flex flex-wrap justify-center">
+									{profiles.map((profile: Profile, index: number) => (
 										<ProfileCard
 											onClick={() => handleClick(profile)}
 											key={index}
@@ -120,7 +120,7 @@ export const Welcome = () => {
 							</p>
 						)}
 
-						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
+						<div className="flex flex-col justify-center mt-5 md:flex-row">
 							<Button
 								variant="secondary"
 								className="mt-2 md:mt-0"
