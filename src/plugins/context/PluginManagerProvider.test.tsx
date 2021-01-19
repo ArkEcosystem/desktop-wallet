@@ -41,7 +41,7 @@ describe("PluginManagerProvider", () => {
 	});
 
 	it("should report plugin", () => {
-		const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
+		const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
 
 		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
 
@@ -59,7 +59,11 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		expect(openExternalMock).toHaveBeenCalled();
+		expect(ipcRendererMock).toHaveBeenCalledWith(
+			"open-external",
+			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=undefined",
+		);
+		ipcRendererMock.mockRestore();
 	});
 
 	it("should delete plugin", async () => {

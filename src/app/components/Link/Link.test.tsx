@@ -14,7 +14,7 @@ describe("Link", () => {
 
 	it("should render external", () => {
 		const { getByTestId } = renderWithRouter(
-			<Link to="https://ark.io" isExternal>
+			<Link to="https://ark.io/" isExternal>
 				ARK.io
 			</Link>,
 		);
@@ -29,8 +29,9 @@ describe("Link", () => {
 	});
 
 	it("should open an external link", () => {
-		const externalLink = "https://ark.io";
-		const openExternalMock = jest.spyOn(electron.shell, "openExternal");
+		const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
+
+		const externalLink = "https://ark.io/";
 
 		const { asFragment, getByTestId } = renderWithRouter(<Link to={externalLink} isExternal />);
 
@@ -38,16 +39,14 @@ describe("Link", () => {
 			fireEvent.click(getByTestId("Link"));
 		});
 
-		expect(openExternalMock).toHaveBeenCalledWith(externalLink);
+		expect(ipcRendererMock).toHaveBeenCalledWith("open-external", externalLink);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show a toast when trying to open an invalid external link", () => {
 		const externalLink = "invalid-url";
+
 		const toastSpy = jest.spyOn(toasts, "error");
-		const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation(() => {
-			throw new Error();
-		});
 
 		const { asFragment, getByTestId } = renderWithRouter(<Link to={externalLink} isExternal />);
 
@@ -57,8 +56,6 @@ describe("Link", () => {
 
 		expect(toastSpy).toHaveBeenCalled();
 		expect(asFragment()).toMatchSnapshot();
-
-		openExternalMock.mockRestore();
 	});
 
 	it("should render with tooltip", () => {

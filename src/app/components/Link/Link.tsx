@@ -70,11 +70,11 @@ export const Link = ({ tooltip, ...props }: Props) => {
 		<Tooltip content={tooltip} disabled={!tooltip}>
 			{props.isExternal ? (
 				<Anchor
-					onClick={async (event) => {
+					onClick={(event) => {
 						event.stopPropagation();
 						event.preventDefault();
 						try {
-							await openExternal(props.to);
+							openExternal(props.to);
 						} catch {
 							toasts.error(t("COMMON.ERRORS.INVALID_URL", { url: props.to }));
 						}
