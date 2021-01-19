@@ -15,11 +15,7 @@ test("should navigate to create profile and back to welcome screen", async (t) =
 	await t.click(Selector("h1").withExactText(translations.PROFILE.PAGE_CREATE_PROFILE.TITLE));
 
 	// Navigate back
-	await t.click(Selector("button").withExactText("Back"));
+	await t.click(Selector("button").withExactText(translations.COMMON.BACK));
 
-	const title = await Selector("h1").textContent;
-
-	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
-		await t.expect(title).contains(part);
-	}
+	await t.expect(Selector("span").withText(translations.COMMON.DESKTOP_WALLET).exists).ok();
 });

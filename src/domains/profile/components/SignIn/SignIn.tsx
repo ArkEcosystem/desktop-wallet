@@ -4,7 +4,7 @@ import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import { ProfileCardContent } from "domains/profile/components/ProfileCard";
+import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -86,11 +86,21 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		<Modal
 			title={t("PROFILE.MODAL_SIGN_IN.TITLE")}
 			description={t("PROFILE.MODAL_SIGN_IN.DESCRIPTION")}
+			size="md"
 			isOpen={isOpen}
 			onClose={onClose}
 		>
 			<div className="mt-8">
-				<ProfileCardContent profile={profile} />
+				<div className="flex items-center space-x-3">
+					<ProfileAvatar profile={profile} />
+
+					<div className="flex flex-col">
+						<p className="text-sm font-semibold text-theme-secondary-700">{t("COMMON.NAME")}</p>
+						<p className="font-semibold text-theme-text" data-testid="profile-card__user--name">
+							<span>{profile.name()}</span>
+						</p>
+					</div>
+				</div>
 			</div>
 
 			<Divider dashed={true} />
