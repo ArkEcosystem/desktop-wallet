@@ -69,6 +69,7 @@ export const LedgerTable = ({
 	isFailed,
 	toggleSelect,
 	toggleSelectAll,
+	isScanning,
 }: {
 	network: Network;
 } & ReturnType<typeof useLedgerScanner>) => {
@@ -103,7 +104,7 @@ export const LedgerTable = ({
 
 	const { isBusy } = useLedgerContext();
 
-	const showSkeleton = isBusy && wallets.length === 0;
+	const showSkeleton = isScanning || (isBusy && wallets.length === 0);
 
 	const skeletonRows = new Array(5).fill({});
 	const data = showSkeleton ? skeletonRows : wallets;
@@ -173,7 +174,11 @@ export const LedgerScanStep = ({
 	const { isBusy, isConnected } = useLedgerContext();
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
-	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry, scanMore } = ledgerScanner;
+	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry, scanMore, isScanning } = ledgerScanner;
+
+	useEffect(() => {
+		setValue("isFinished", !isScanning, { shouldDirty: true, shouldValidate: true });
+	}, [isScanning, setValue]);
 
 	useEffect(() => {
 		if (canRetry) {
@@ -190,9 +195,11 @@ export const LedgerScanStep = ({
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
+		register("isFinished", { required: true });
 
 		return () => {
 			unregister("wallets");
+			unregister("isFinished");
 		};
 	}, [register, unregister]);
 
@@ -220,10 +227,14 @@ export const LedgerScanStep = ({
 						data-testid="LedgerScanStep__view-more"
 						variant="secondary"
 						className="w-full"
-						disabled={!isConnected || canRetry || isBusy}
+						disabled={!isConnected || canRetry || isBusy || isScanning}
 						onClick={scanMore}
 					>
-						{isBusy ? <Spinner size="sm" color="primary" /> : <span>{t("COMMON.VIEW_MORE")}</span>}
+						{isScanning || isBusy ? (
+							<Spinner size="sm" color="primary" />
+						) : (
+							<span>{t("COMMON.VIEW_MORE")}</span>
+						)}
 					</Button>
 				</div>
 			</Tooltip>

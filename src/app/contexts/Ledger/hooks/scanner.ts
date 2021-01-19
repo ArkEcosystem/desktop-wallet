@@ -1,5 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { useCallback, useMemo, useReducer } from "react";
+import { useCallback, useMemo, useReducer, useState } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
 import { useLedgerContext } from "../Ledger";
@@ -36,6 +36,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 	const hasNewWallet = useMemo(() => wallets.some((item) => item.isNew), [wallets]);
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
 	const canRetry = useMemo(() => failed.length > 0, [failed]);
+	const [isScanning, setIsScanning] = useState(false);
 
 	const scan = useCallback(
 		async (indexes: number[]) => {
@@ -81,8 +82,11 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 	// and run on each re-rendering until it finds a new wallet or fail
 	const scanUntilNewOrFail = useCallback(async () => {
 		if (hasNewWallet || canRetry) {
+			setIsScanning(false);
 			return;
 		}
+
+		setIsScanning(true);
 
 		await scanMore();
 	}, [scanMore, hasNewWallet, canRetry]);
@@ -93,6 +97,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 	const toggleSelectAll = () => dispatch({ type: "toggleSelectAll" });
 
 	return {
+		isScanning,
 		canRetry,
 		hasNewWallet,
 		isFailed,

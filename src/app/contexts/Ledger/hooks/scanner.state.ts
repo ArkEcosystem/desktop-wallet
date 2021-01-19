@@ -64,20 +64,20 @@ export const scannerReducer = (state: State, action: Action): State => {
 
 			nextWallets = uniqBy([...nextWallets, ...payload, ...wallets], pathMapper);
 
-			const nextSelected = uniq([...state.selected, ...payloadIndexes]);
-			const nextFailed = pull(state.failed, ...nextWallets.map(pathMapper));
-			const nextCurrentDerivationMode =
-				hasNew && hasMoreDerivationModes
-					? state.currentDerivationModeIndex + 1
-					: state.currentDerivationModeIndex;
+			if (hasMoreDerivationModes) {
+				nextWallets = nextWallets.filter((item) => !item.isNew);
+			}
 
 			return {
 				...state,
-				currentDerivationModeIndex: nextCurrentDerivationMode,
+				currentDerivationModeIndex:
+					hasNew && hasMoreDerivationModes
+						? state.currentDerivationModeIndex + 1
+						: state.currentDerivationModeIndex,
 				page: hasNew && hasMoreDerivationModes ? 0 : state.page + 1,
 				wallets: sortBy(nextWallets, [(item) => item.timestamp, (item) => item.index]),
-				selected: nextSelected,
-				failed: nextFailed,
+				selected: uniq([...state.selected, ...payloadIndexes]),
+				failed: pull(state.failed, ...nextWallets.map(pathMapper)),
 				loading: [],
 			};
 		}

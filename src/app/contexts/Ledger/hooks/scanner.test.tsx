@@ -80,7 +80,7 @@ describe("Use Ledger Scanner", () => {
 					<ul>
 						{wallets.map((x) => (
 							<li key={x.path}>
-								<p>{`Index: ${x.path}`}</p>
+								<p>{`Path: ${x.path}`}</p>
 								<p>{`Address: ${x.address}`}</p>
 								<p>{`Failed: ${isFailed(x.path)}`}</p>
 								<p>{`Selected: ${isSelected(x.path)}`}</p>
@@ -117,7 +117,7 @@ describe("Use Ledger Scanner", () => {
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 	});
 
-	it.only("should scan until new", async () => {
+	it("should scan until new", async () => {
 		nock.cleanAll();
 
 		nock("https://dwallets.ark.io/api")

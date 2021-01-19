@@ -21,6 +21,7 @@ export const customDerivationModes = {
 	ARK: {
 		legacy: (slip44: number, cursor: number) => formatLedgerDerivationPath({ coinType: slip44, account: cursor }),
 		bip44: (slip44: number, cursor: number) => {
+			/** The legacy mode also starts with this path, so it doesn't need to be scanned again */
 			if (cursor === 0) {
 				return;
 			}
