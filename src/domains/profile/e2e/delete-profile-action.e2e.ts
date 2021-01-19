@@ -8,12 +8,10 @@ const translations = buildTranslations();
 createFixture(`Delete Profile action`);
 
 test("should delete profile from profile card menu", async (t) => {
-	await t.click(Selector('[data-testid="ProfileCard"] [data-testid="dropdown__toggle"]').child(0));
+	await t.click(Selector('[data-testid="Card"] [data-testid="dropdown__toggle"]').child(0));
 	await t.click(
-		Selector('[data-testid="ProfileCard"] [data-testid="dropdown__option--1"]').withText(
-			translations.COMMON.DELETE,
-		),
+		Selector('[data-testid="Card"] [data-testid="dropdown__option--1"]').withText(translations.COMMON.DELETE),
 	);
 	await t.click(Selector('[data-testid="DeleteResource__submit-button"]'));
-	await t.expect(Selector('[data-testid="ProfileCard"]').count).eql(1);
+	await t.expect(Selector('[data-testid="Card"]').count).eql(1);
 });

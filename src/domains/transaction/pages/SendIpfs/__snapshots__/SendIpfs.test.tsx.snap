@@ -224,7 +224,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -237,7 +237,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -396,7 +396,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -532,7 +532,7 @@ exports[`SendIpfs should render form step 1`] = `
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -579,7 +579,7 @@ exports[`SendIpfs should render form step 1`] = `
                 class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
               />
               <div
-                class="inline-flex items-center"
+                class="inline-flex items-center no-ligatures"
               />
               <div
                 class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -596,7 +596,7 @@ exports[`SendIpfs should render form step 1`] = `
               </div>
             </button>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -624,7 +624,7 @@ exports[`SendIpfs should render form step 1`] = `
           class="InputGroup-sc-1obbdqe-3 bgPpWR"
         >
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
             data-testid="Input__hash"
             name="hash"
             placeholder=" "
@@ -658,7 +658,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="InputGroup-sc-1obbdqe-3 bgPpWR"
             >
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -763,7 +763,7 @@ exports[`SendIpfs should render review step 1`] = `
     </div>
     <div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 coAmnd"
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 coAmnd undefined no-ligatures"
         data-testid="TransactionDetail"
       >
         <div
@@ -798,7 +798,7 @@ exports[`SendIpfs should render review step 1`] = `
         </div>
       </div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
         data-testid="TransactionDetail"
       >
         <div
@@ -813,7 +813,7 @@ exports[`SendIpfs should render review step 1`] = `
             class="font-semibold"
           >
             <div
-              class="inline-flex items-center"
+              class="inline-flex items-center no-ligatures"
             >
               <span
                 class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -847,7 +847,7 @@ exports[`SendIpfs should render review step 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
             data-testid="Avatar"
           >
             <div
@@ -863,7 +863,7 @@ exports[`SendIpfs should render review step 1`] = `
         </div>
       </div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
         data-testid="TransactionDetail"
       >
         <div
@@ -1007,7 +1007,7 @@ exports[`SendIpfs should render summary step 1`] = `
     </p>
     <div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj"
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj undefined no-ligatures"
         data-testid="TransactionDetail"
       >
         <div
@@ -1265,7 +1265,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1278,7 +1278,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -1423,7 +1423,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                     </p>
                     <div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 coAmnd"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 coAmnd undefined no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1476,7 +1476,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1511,7 +1511,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1526,7 +1526,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                             class="font-semibold"
                           >
                             <div
-                              class="inline-flex items-center"
+                              class="inline-flex items-center no-ligatures"
                             >
                               <span
                                 class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1560,7 +1560,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                             data-testid="Avatar"
                           >
                             <div
@@ -1576,7 +1576,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj undefined no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1857,7 +1857,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1870,7 +1870,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -2077,7 +2077,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
@@ -2122,7 +2122,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               type="button"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD mx-4"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-4"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2136,7 +2136,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 </div>
                               </div>
                               <div
-                                class="inline-flex items-center"
+                                class="inline-flex items-center no-ligatures"
                               >
                                 <span
                                   class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -2160,7 +2160,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </button>
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -2189,7 +2189,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <input
                             aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
                             data-testid="Input__hash"
                             name="hash"
                             placeholder=" "
@@ -2228,7 +2228,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -2528,7 +2528,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
                     >
                       <img
                         alt="Profile Avatar"
@@ -2541,7 +2541,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "

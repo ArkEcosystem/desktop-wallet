@@ -45,15 +45,8 @@ exports[`Welcome should change route to create profile 1`] = `
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -73,78 +66,56 @@ exports[`Welcome should change route to create profile 1`] = `
               Choose from an existing Profile below or create a new Profile to get started.
             </p>
             <div
-              class="mt-8 space-y-3"
+              class="mt-8"
             >
               <div
-                data-testid="ProfileCard"
+                class="-my-2.5 flex flex-wrap justify-center"
               >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                          class="sc-bdfBwQ iwcOAK"
+                          height="18"
+                          width="13"
                         >
-                          <img
-                            alt="Jane Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="Jane Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JA
-                          </span>
+                          <svg>
+                            lock.svg
+                          </svg>
                         </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              Jane Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-secondary-700"
-                          >
-                            N/A
-                          </span>
-                        </div>
-                      </div>
+                        <span />
+                      </span>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      Jane Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -175,7 +146,7 @@ exports[`Welcome should change route to create profile 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
@@ -237,15 +208,8 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -265,79 +229,42 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
               Choose from an existing Profile below or create a new Profile to get started.
             </p>
             <div
-              class="mt-8 space-y-3"
+              class="mt-8"
             >
               <div
-                data-testid="ProfileCard"
+                class="-my-2.5 flex flex-wrap justify-center"
               >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
                       >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                        <img
+                          alt="John Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="John Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
                         >
-                          <img
-                            alt="John Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="John Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JO
-                          </span>
-                        </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              John Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--balance"
-                          >
-                            0 BTC
-                          </span>
-                        </div>
+                          JO
+                        </span>
                       </div>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      John Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -365,77 +292,51 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                          class="sc-bdfBwQ iwcOAK"
+                          height="18"
+                          width="13"
                         >
-                          <img
-                            alt="Jane Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="Jane Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JA
-                          </span>
+                          <svg>
+                            lock.svg
+                          </svg>
                         </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              Jane Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-secondary-700"
-                          >
-                            N/A
-                          </span>
-                        </div>
-                      </div>
+                        <span />
+                      </span>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      Jane Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -466,7 +367,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
@@ -528,15 +429,8 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -556,79 +450,42 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
               Choose from an existing Profile below or create a new Profile to get started.
             </p>
             <div
-              class="mt-8 space-y-3"
+              class="mt-8"
             >
               <div
-                data-testid="ProfileCard"
+                class="-my-2.5 flex flex-wrap justify-center"
               >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
                       >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                        <img
+                          alt="John Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="John Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
                         >
-                          <img
-                            alt="John Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="John Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JO
-                          </span>
-                        </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              John Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--balance"
-                          >
-                            0 BTC
-                          </span>
-                        </div>
+                          JO
+                        </span>
                       </div>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      John Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -656,77 +513,51 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                          class="sc-bdfBwQ iwcOAK"
+                          height="18"
+                          width="13"
                         >
-                          <img
-                            alt="Jane Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="Jane Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JA
-                          </span>
+                          <svg>
+                            lock.svg
+                          </svg>
                         </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              Jane Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-secondary-700"
-                          >
-                            N/A
-                          </span>
-                        </div>
-                      </div>
+                        <span />
+                      </span>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      Jane Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -757,7 +588,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
               </div>
             </div>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
@@ -819,15 +650,8 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -847,79 +671,42 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
               Choose from an existing Profile below or create a new Profile to get started.
             </p>
             <div
-              class="mt-8 space-y-3"
+              class="mt-8"
             >
               <div
-                data-testid="ProfileCard"
+                class="-my-2.5 flex flex-wrap justify-center"
               >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
                       >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                        <img
+                          alt="John Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="John Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
                         >
-                          <img
-                            alt="John Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="John Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JO
-                          </span>
-                        </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              John Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--balance"
-                          >
-                            0 BTC
-                          </span>
-                        </div>
+                          JO
+                        </span>
                       </div>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      John Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -947,77 +734,51 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                          class="sc-bdfBwQ iwcOAK"
+                          height="18"
+                          width="13"
                         >
-                          <img
-                            alt="Jane Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="Jane Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JA
-                          </span>
+                          <svg>
+                            lock.svg
+                          </svg>
                         </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              Jane Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-secondary-700"
-                          >
-                            N/A
-                          </span>
-                        </div>
-                      </div>
+                        <span />
+                      </span>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      Jane Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1048,7 +809,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
               </div>
             </div>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
@@ -1110,15 +871,8 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -1138,79 +892,42 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
               Choose from an existing Profile below or create a new Profile to get started.
             </p>
             <div
-              class="mt-8 space-y-3"
+              class="mt-8"
             >
               <div
-                data-testid="ProfileCard"
+                class="-my-2.5 flex flex-wrap justify-center"
               >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
                       >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                        <img
+                          alt="John Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="John Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
                         >
-                          <img
-                            alt="John Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="John Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JO
-                          </span>
-                        </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              John Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--balance"
-                          >
-                            0 BTC
-                          </span>
-                        </div>
+                          JO
+                        </span>
                       </div>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      John Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1238,77 +955,51 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                          class="sc-bdfBwQ iwcOAK"
+                          height="18"
+                          width="13"
                         >
-                          <img
-                            alt="Jane Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="Jane Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JA
-                          </span>
+                          <svg>
+                            lock.svg
+                          </svg>
                         </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              Jane Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-secondary-700"
-                          >
-                            N/A
-                          </span>
-                        </div>
-                      </div>
+                        <span />
+                      </span>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      Jane Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1339,7 +1030,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
               </div>
             </div>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
@@ -1401,15 +1092,8 @@ exports[`Welcome should render with profiles 1`] = `
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -1429,79 +1113,42 @@ exports[`Welcome should render with profiles 1`] = `
               Choose from an existing Profile below or create a new Profile to get started.
             </p>
             <div
-              class="mt-8 space-y-3"
+              class="mt-8"
             >
               <div
-                data-testid="ProfileCard"
+                class="-my-2.5 flex flex-wrap justify-center"
               >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
                       >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                        <img
+                          alt="John Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="John Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
                         >
-                          <img
-                            alt="John Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="John Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JO
-                          </span>
-                        </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              John Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--balance"
-                          >
-                            0 BTC
-                          </span>
-                        </div>
+                          JO
+                        </span>
                       </div>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      John Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1529,77 +1176,51 @@ exports[`Welcome should render with profiles 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                data-testid="ProfileCard"
-              >
                 <div
-                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                  class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
                   data-testid="Card"
                 >
                   <div
-                    class="relative p-2 sm:flex sm:items-center"
+                    class="flex flex-col justify-center items-center"
                   >
                     <div
-                      class="flex flex-row justify-between w-full"
+                      class="relative"
                     >
                       <div
-                        class="flex items-center"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                        data-testid="ProfileAvatar__svg"
+                      >
+                        <img
+                          alt="Jane Doe"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="Jane Doe"
+                        />
+                        <span
+                          class="absolute font-semibold text-white"
+                        >
+                          JA
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                          data-testid="profile-card__user--avatar"
+                          class="sc-bdfBwQ iwcOAK"
+                          height="18"
+                          width="13"
                         >
-                          <img
-                            alt="Jane Doe"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="Jane Doe"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            JA
-                          </span>
+                          <svg>
+                            lock.svg
+                          </svg>
                         </div>
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Name
-                          </p>
-                          <p
-                            class="font-semibold text-theme-text"
-                            data-testid="profile-card__user--name"
-                          >
-                            <span
-                              class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
-                            >
-                              Jane Doe
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
-                        >
-                          <p
-                            class="text-sm font-semibold text-theme-secondary-700"
-                          >
-                            Total balance
-                          </p>
-                          <span
-                            class="font-semibold text-theme-secondary-700"
-                          >
-                            N/A
-                          </span>
-                        </div>
-                      </div>
+                        <span />
+                      </span>
                     </div>
+                    <span
+                      class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                    >
+                      Jane Doe
+                    </span>
                   </div>
                   <div
                     class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1630,7 +1251,7 @@ exports[`Welcome should render with profiles 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
@@ -1692,15 +1313,8 @@ exports[`Welcome should render without profiles 1`] = `
         <div
           class="container py-16 px-14 mx-auto"
         >
-          <h1
-            class="mb-8 font-extrabold"
-          >
-            Welcome to the 
-            <br />
-             ARK Desktop Wallet
-          </h1>
           <div
-            class="mx-auto w-64 lg:w-96"
+            class="mx-auto w-72"
           >
             <svg>
               welcome-banner.svg
@@ -1720,7 +1334,7 @@ exports[`Welcome should render without profiles 1`] = `
               Create a new Profile to get started.
             </p>
             <div
-              class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
+              class="flex flex-col justify-center mt-8 md:flex-row"
             >
               <button
                 class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"

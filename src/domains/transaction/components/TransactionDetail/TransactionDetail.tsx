@@ -34,7 +34,7 @@ export const TransactionDetail = ({
 		border={border}
 		borderPosition={borderPosition}
 		paddingPosition={paddingPosition}
-		className={className}
+		className={`${className} no-ligatures`}
 	>
 		<div className="flex-1 space-y-2">
 			{label && (

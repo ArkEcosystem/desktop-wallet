@@ -121,6 +121,8 @@ describe("NavigationBar", () => {
 	it.each(["Contacts", "Votes", "Settings", "Support"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
+			const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
+
 			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
 
 			const toggle = getByTestId("navbar__useractions");
@@ -133,12 +135,12 @@ describe("NavigationBar", () => {
 			fireEvent.click(await findByText(label));
 
 			if (label === "Support") {
-				const externalLink = "https://ark.io/contact";
-				const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
-				expect(openExternalMock).toHaveBeenCalledWith(externalLink);
+				expect(ipcRendererMock).toHaveBeenCalledWith("open-external", "https://ark.io/contact");
 			} else {
 				expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
 			}
+
+			ipcRendererMock.mockRestore();
 		},
 	);
 

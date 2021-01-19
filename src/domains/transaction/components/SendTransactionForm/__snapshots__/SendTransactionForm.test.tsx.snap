@@ -52,7 +52,7 @@ exports[`SendTransactionForm should render 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -99,7 +99,7 @@ exports[`SendTransactionForm should render 1`] = `
               class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
             />
             <div
-              class="inline-flex items-center"
+              class="inline-flex items-center no-ligatures"
             />
             <div
               class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -116,7 +116,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -151,7 +151,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -293,7 +293,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -337,7 +337,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             type="button"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD mx-4"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-4"
               data-testid="Avatar"
             >
               <div
@@ -351,7 +351,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center"
+              class="inline-flex items-center no-ligatures"
             >
               <span
                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -375,7 +375,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -410,7 +410,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -540,7 +540,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -587,7 +587,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
             />
             <div
-              class="inline-flex items-center"
+              class="inline-flex items-center no-ligatures"
             />
             <div
               class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -604,7 +604,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -639,7 +639,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -781,7 +781,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -825,7 +825,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             type="button"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD mx-4"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-4"
               data-testid="Avatar"
             >
               <div
@@ -839,7 +839,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
               </div>
             </div>
             <div
-              class="inline-flex items-center"
+              class="inline-flex items-center no-ligatures"
             >
               <span
                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
@@ -863,7 +863,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -898,7 +898,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
               data-testid="InputCurrency"
               name="fee"
               type="text"

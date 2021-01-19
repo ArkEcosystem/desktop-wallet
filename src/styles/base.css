@@ -22,6 +22,10 @@ main {
 	z-index: 0 !important;
 }
 
+.no-ligatures {
+	font-feature-settings: "liga" 0;
+}
+
 @layer utilities {
 	.overflow-overlay {
 		overflow: overlay;

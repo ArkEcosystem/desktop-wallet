@@ -7,7 +7,7 @@ import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeletePr
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import React, { useEffect, useMemo, useState } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
@@ -81,13 +81,7 @@ export const Welcome = () => {
 		<>
 			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 				<Section className="flex flex-col flex-1 justify-center text-center">
-					<h1 className="mb-8 font-extrabold">
-						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
-							Welcome to the <br /> ARK Desktop Wallet
-						</Trans>
-					</h1>
-
-					<div className="mx-auto w-64 lg:w-96">
+					<div className="mx-auto w-72">
 						<Image name="WelcomeBanner" />
 					</div>
 
@@ -102,16 +96,18 @@ export const Welcome = () => {
 									{t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
 								</p>
 
-								<div className="mt-8 space-y-3">
-									{profiles.map((profile: any, index: number) => (
-										<ProfileCard
-											onClick={() => handleClick(profile)}
-											key={index}
-											profile={profile}
-											actions={profileCardActions}
-											onSelect={(action: any) => handleProfileAction(profile, action)}
-										/>
-									))}
+								<div className="mt-8">
+									<div className="-my-2.5 flex flex-wrap justify-center">
+										{profiles.map((profile: Profile, index: number) => (
+											<ProfileCard
+												onClick={() => handleClick(profile)}
+												key={index}
+												profile={profile}
+												actions={profileCardActions}
+												onSelect={(action: any) => handleProfileAction(profile, action)}
+											/>
+										))}
+									</div>
 								</div>
 							</>
 						) : (
@@ -120,7 +116,7 @@ export const Welcome = () => {
 							</p>
 						)}
 
-						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
+						<div className="flex flex-col justify-center mt-8 md:flex-row">
 							<Button
 								variant="secondary"
 								className="mt-2 md:mt-0"

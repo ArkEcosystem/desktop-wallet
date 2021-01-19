@@ -18,36 +18,22 @@ describe("ProfileCard", () => {
 	});
 
 	it("should render", () => {
-		const { container, asFragment, getByTestId } = render(<ProfileCard profile={profile} />);
+		const { container, asFragment, getByTestId, getByText } = render(<ProfileCard profile={profile} />);
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name());
-		expect(getByTestId("profile-card__user--balance")).toBeInTheDocument();
-		expect(getByTestId("profile-card__user--avatar")).toBeTruthy();
+		expect(getByText(profile.name())).toBeTruthy();
+		expect(getByTestId("ProfileAvatar__svg")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render the profile with avatar image", () => {
 		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
 
-		const { container, asFragment, getByTestId } = render(<ProfileCard profile={profile} />);
+		const { container, asFragment, getByTestId, getByText } = render(<ProfileCard profile={profile} />);
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name());
-		expect(getByTestId("profile-card__user--balance")).toBeInTheDocument();
-		expect(getByTestId("profile-card__user--avatarImage")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should hide the balance if the profile uses a password", () => {
-		profile.auth().setPassword("password");
-
-		const { container, asFragment, getByTestId } = render(<ProfileCard profile={profile} />);
-
-		expect(container).toBeTruthy();
-		expect(getByTestId("profile-card__user--name")).toHaveTextContent(profile.name());
-		expect(() => getByTestId("profile-card__user--balance")).toThrow(/Unable to find an element by/);
-		expect(getByTestId("profile-card__user--avatarImage")).toBeTruthy();
+		expect(getByText(profile.name())).toBeTruthy();
+		expect(getByTestId("ProfileAvatar__image")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
