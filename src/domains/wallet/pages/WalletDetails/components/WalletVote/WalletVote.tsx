@@ -35,7 +35,7 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 	const maxVotes = wallet.network().maximumVotesPerWallet();
 
 	const hasNoVotes = votes.length === 0;
-	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
+	const votesHelpLink = "https:////";
 
 	const renderVotes = () => {
 		if (hasNoVotes) {

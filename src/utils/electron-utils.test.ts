@@ -251,15 +251,15 @@ describe("Electron utils", () => {
 			ipcRendererMock.mockRestore();
 		});
 
-		it.each(["http://", "https://"])("should open links with a valid protocol (%s)", (link) => {
+		it.each(["http://foo.bar/", "https://foo.bar/"])("should open links with a valid protocol (%s)", (link) => {
 			openExternal(link);
 			expect(ipcRendererMock).toHaveBeenCalledWith("open-external", link);
 		});
 
-		it.each(["ftp://", "smb://", "file://", "\\\\\\\\"])(
+		it.each(["ftp://foo.bar/", "smb://foo.bar/", "file://foo/bar", "\\\\\\\\foo\\bar"])(
 			"should not open links with an invalid protocol (%s)",
 			(link) => {
-				openExternal(link);
+				expect(() => openExternal(link)).toThrow();
 				expect(ipcRendererMock).not.toHaveBeenCalled();
 			},
 		);

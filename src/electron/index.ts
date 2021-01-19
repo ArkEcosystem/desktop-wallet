@@ -65,7 +65,11 @@ ipcMain.on("exit-app", function (_event, args) {
 });
 
 ipcMain.on("open-external", function (_event, url) {
-	shell.openExternal(url);
+	try {
+		shell.openExternal(url);
+	} catch (error) {
+		console.log(error);
+	}
 });
 
 function createWindow() {
