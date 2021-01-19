@@ -5,22 +5,14 @@ import { createFixture } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-createFixture(`Welcome Screen routing`);
+createFixture("Welcome Screen routing");
 
 test("should load profiles welcome page", async (t) => {
-	const title = await Selector("h1").textContent;
-
-	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
-		await t.expect(title).contains(part);
-	}
+	await t.expect(Selector("span").withText(translations.COMMON.DESKTOP_WALLET).exists).ok();
 });
 
 test("should return to welcome page when application is idle", async (t) => {
-	const title = await Selector("h1").textContent;
-
-	for (const part of translations.PROFILE.PAGE_WELCOME.TITLE.split("<1/>")) {
-		await t.expect(title).contains(part);
-	}
+	await t.expect(Selector("span").withText(translations.COMMON.DESKTOP_WALLET).exists).ok();
 
 	await t.click(Selector("span").withText("John Doe"));
 

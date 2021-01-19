@@ -81,13 +81,7 @@ export const Welcome = () => {
 		<>
 			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 				<Section className="flex flex-col flex-1 justify-center text-center">
-					<h1 className="mb-8 font-extrabold">
-						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
-							Welcome to the <br /> ARK Desktop Wallet
-						</Trans>
-					</h1>
-
-					<div className="mx-auto w-72">
+					<div className="w-72 mx-auto">
 						<Image name="WelcomeBanner" />
 					</div>
 
