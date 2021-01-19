@@ -19,10 +19,10 @@ export const ProfileCard = ({ profile, actions, onClick, onSelect, showSettings 
 		actions={showSettings ? actions : undefined}
 		onSelect={onSelect}
 	>
-		<div className="flex flex-col items-center justify-center">
+		<div className="flex flex-col justify-center items-center">
 			<ProfileAvatar profile={profile} size="2xl" />
 
-			<span className="font-semibold text-theme-secondary-700 mt-3 max-w-32 truncate">{profile.name()}</span>
+			<span className="mt-3 font-semibold text-theme-secondary-700 max-w-32 truncate">{profile.name()}</span>
 		</div>
 	</Card>
 );
