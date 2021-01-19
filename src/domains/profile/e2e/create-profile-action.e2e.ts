@@ -53,5 +53,4 @@ test("should create a profile with password and navigate to welcome screen", asy
 	await t.expect(getLocation()).notContains("/profiles/create");
 	await t.expect(Selector("span").withText("John Doe").exists).ok();
 	await t.expect(Selector("span").withText("Joe Bloggs").exists).ok();
-	await t.expect(Selector("span").withText("N/A").exists).ok();
 });
