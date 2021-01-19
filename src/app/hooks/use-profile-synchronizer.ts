@@ -190,6 +190,9 @@ export const useProfileSynchronizer = () => {
 		shouldSync,
 		setStatus,
 		profileIsSyncing,
+		markAsRestored,
+		status,
+		stop,
 	]);
 
 	return { profile, profileIsSyncing };
