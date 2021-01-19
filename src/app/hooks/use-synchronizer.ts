@@ -20,9 +20,13 @@ export const useSynchronizer = (jobs: Job[]) => {
 		[persist],
 	);
 
-	const stop = useCallback(() => {
+	const stop = useCallback((props?: { clearTimers: boolean }) => {
 		for (const timer of timers.current) {
 			clearInterval(timer);
+		}
+
+		if (props?.clearTimers) {
+			timers.current = [];
 		}
 	}, []);
 

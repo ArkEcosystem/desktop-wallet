@@ -4200,35 +4200,13 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                 <div
                   class="flex justify-end mt-10 space-x-3"
                 >
-                  <div
-                    class="flex justify-end space-x-3"
+                  <button
+                    class="Button-mdtvtf-0 cyPweQ"
+                    data-testid="SendDelegateResignation__wallet-button"
+                    type="button"
                   >
-                    <button
-                      class="Button-mdtvtf-0 cyPweQ"
-                      data-testid="SendDelegateResignation__wallet-button"
-                      type="button"
-                    >
-                      Back to Wallet
-                    </button>
-                    <button
-                      class="Button-mdtvtf-0 cyPweQ space-x-2"
-                      data-testid="SendDelegateResignation__download-button"
-                      type="button"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          download.svg
-                        </svg>
-                      </div>
-                      <span>
-                        Download
-                      </span>
-                    </button>
-                  </div>
+                    Back to Wallet
+                  </button>
                 </div>
               </div>
             </div>
