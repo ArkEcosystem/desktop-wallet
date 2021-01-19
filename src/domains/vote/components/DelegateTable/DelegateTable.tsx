@@ -122,6 +122,8 @@ export const DelegateTable = ({
 		}
 	}, [hasVotes, maxVotes, selectedVotes]);
 
+	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage]);
+
 	const toggleUnvotesSelected = (address: string) => {
 		if (selectedUnvotes.find((delegateAddress) => delegateAddress === address)) {
 			setSelectedUnvotes(selectedUnvotes.filter((delegateAddress) => delegateAddress !== address));
@@ -164,7 +166,6 @@ export const DelegateTable = ({
 
 	const handleSelectPage = (page: number) => {
 		setCurrentPage(page);
-		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	const paginator = (items: ReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
