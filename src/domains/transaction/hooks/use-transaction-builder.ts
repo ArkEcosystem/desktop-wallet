@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
-import { formatLedgerDerivationPath } from "app/contexts";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 
@@ -17,23 +16,25 @@ const prepareMultiSignature = (
 });
 
 const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWriteWallet, signFn: SignFn) => {
-	const data = { ...input, sign: { senderPublicKey: wallet.publicKey() } };
-	const index = wallet.data().get<number>(WalletFlag.LedgerIndex);
-	const slip44 = wallet.coin().config().get<number>("network.crypto.slip44");
+	const path = wallet.data().get<string>(WalletFlag.LedgerIndex);
+	let senderPublicKey = wallet.publicKey();
+
+	if (!senderPublicKey) {
+		senderPublicKey = await wallet.coin().ledger().getPublicKey(path!);
+	}
+
+	const data = { ...input, sign: { senderPublicKey } };
 
 	const id = await signFn(data, { unsignedBytes: true, unsignedJson: false });
 	const unsignedTransaction = wallet.transaction().transaction(id);
-
-	const path = formatLedgerDerivationPath({ coinType: slip44, account: index });
 	const bytes = Buffer.from(unsignedTransaction.toString(), "hex");
-
-	const signature = await wallet.coin().ledger().signTransactionWithSchnorr(path, bytes);
+	const signature = await wallet.coin().ledger().signTransactionWithSchnorr(path!, bytes);
 
 	return {
 		...data,
 		nonce: wallet.nonce().plus(1).toFixed(),
 		sign: {
-			senderPublicKey: wallet.publicKey(),
+			senderPublicKey,
 			signature,
 		},
 	};
