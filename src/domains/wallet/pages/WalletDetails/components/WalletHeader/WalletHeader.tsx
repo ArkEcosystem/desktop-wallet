@@ -75,24 +75,16 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		],
 	};
 
+	const registrationOptions: DropdownOptionGroup = {
+		key: "registrations",
+		title: t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATION_OPTIONS"),
+		options: [],
+	};
+
 	if (!wallet.isLedger()) {
-		if (wallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)) {
-			primaryOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
-				value: "multi-signature",
-			});
-		}
-
 		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
-				primaryOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
-					value: "second-signature",
-				});
-			}
-
 			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
-				primaryOptions.options.push({
+				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 					value: "delegate-registration",
 				});
@@ -103,11 +95,25 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				wallet.isDelegate() &&
 				!wallet.isResignedDelegate()
 			) {
-				primaryOptions.options.push({
+				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
 					value: "delegate-resignation",
 				});
 			}
+
+			if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+				registrationOptions.options.push({
+					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+					value: "second-signature",
+				});
+			}
+		}
+
+		if (wallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+				value: "multi-signature",
+			});
 		}
 	}
 
@@ -339,7 +345,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 										</Button>
 									}
 									onSelect={handleSelect}
-									options={[primaryOptions, additionalOptions, secondaryOptions]}
+									options={[primaryOptions, registrationOptions, additionalOptions, secondaryOptions]}
 									dropdownClass="top-5 right-3 text-left"
 								/>
 							</div>
