@@ -7,7 +7,7 @@ import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
-import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
@@ -36,17 +36,16 @@ export const Transactions = memo(
 		const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [
 			profile,
 		]);
+		const abortRef = useRef<() => void>();
 
 		const fetchTransactions = useCallback(
 			async ({ flush, mode }: { flush: boolean; mode: string }) => {
-				let currentTransactions = [...transactions];
-				setIsLoading(true);
-
-				if (flush) {
-					profile.transactionAggregate().flush();
-					currentTransactions = [];
-					setTransactions([]);
+				if (abortRef.current) {
+					abortRef.current();
 				}
+
+				let aborted = false;
+				abortRef.current = () => (aborted = true);
 
 				const methodMap = {
 					all: "transactions",
@@ -55,16 +54,29 @@ export const Transactions = memo(
 				};
 				const method = methodMap[mode as keyof typeof methodMap];
 
+				let currentTransactions = [...transactions];
+				setIsLoading(true);
+
+				if (flush) {
+					profile.transactionAggregate().flush(method);
+					currentTransactions = [];
+					setTransactions([]);
+				}
+
 				const limit = { limit: 30 };
 				const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
 				// @ts-ignore
 				const response = await profile.transactionAggregate()[method](queryParams);
 				const transactionsAggregate = response.items();
 
-				setTransactions(currentTransactions.concat(transactionsAggregate));
+				if (aborted) {
+					return;
+				}
+
 				setIsLoading(false);
+				setTransactions(currentTransactions.concat(transactionsAggregate));
 			},
-			[transactions, profile, selectedTransactionType, setIsLoading, setTransactions, walletsCount], // eslint-disable-line react-hooks/exhaustive-deps
+			[transactions, profile, selectedTransactionType],
 		);
 
 		useEffect(() => {

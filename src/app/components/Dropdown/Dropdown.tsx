@@ -49,7 +49,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 		)}
 		<ul>
 			{title && (
-				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500">
+				<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500">
 					{title}
 				</li>
 			)}
