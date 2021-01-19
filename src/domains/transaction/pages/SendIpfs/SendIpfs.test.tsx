@@ -173,7 +173,7 @@ describe("SendIpfs", () => {
 		});
 	});
 
-	it("should copy transaction and go back to wallet page", async () => {
+	it("should send an IPFS transaction and go back to wallet page", async () => {
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
 
@@ -238,20 +238,6 @@ describe("SendIpfs", () => {
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a … db3d69131067");
-
-			// Copy Transaction
-			const copyMock = jest.fn();
-			const clipboardOriginal = navigator.clipboard;
-
-			// @ts-ignore
-			navigator.clipboard = { writeText: copyMock };
-
-			fireEvent.click(getByTestId(`SendIpfs__button--copy`));
-
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id));
-
-			// @ts-ignore
-			navigator.clipboard = clipboardOriginal;
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
@@ -517,17 +503,6 @@ describe("SendIpfs", () => {
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a … db3d69131067");
 
-			// Copy Transaction
-			const copyMock = jest.fn();
-			const clipboardOriginal = navigator.clipboard;
-
-			// @ts-ignore
-			navigator.clipboard = { writeText: copyMock };
-
-			fireEvent.click(getByTestId(`SendIpfs__button--copy`));
-
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(ipfsFixture.data.id));
-
 			expect(signMock).toHaveBeenCalledWith(
 				expect.objectContaining({
 					data: expect.anything(),
@@ -546,8 +521,6 @@ describe("SendIpfs", () => {
 				}),
 			);
 
-			// @ts-ignore
-			navigator.clipboard = clipboardOriginal;
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
