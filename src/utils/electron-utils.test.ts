@@ -243,8 +243,6 @@ describe("Electron utils", () => {
 	describe("openExternal", () => {
 		let ipcRendererMock: jest.SpyInstance;
 
-		const externalLink = "https://ark.io";
-
 		beforeEach(() => {
 			ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
 		});
@@ -253,10 +251,18 @@ describe("Electron utils", () => {
 			ipcRendererMock.mockRestore();
 		});
 
-		it("should open an external link", () => {
-			openExternal(externalLink);
-			expect(ipcRendererMock).toHaveBeenCalledWith("open-external", externalLink);
+		it.each(["http://", "https://"])("should open links with a valid protocol (%s)", (link) => {
+			openExternal(link);
+			expect(ipcRendererMock).toHaveBeenCalledWith("open-external", link);
 		});
+
+		it.each(["ftp://", "smb://", "file://", "\\\\\\\\"])(
+			"should not open links with an invalid protocol (%s)",
+			(link) => {
+				openExternal(link);
+				expect(ipcRendererMock).not.toHaveBeenCalled();
+			},
+		);
 	});
 
 	describe("isIdle", () => {

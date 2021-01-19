@@ -29,8 +29,9 @@ describe("Link", () => {
 	});
 
 	it("should open an external link", () => {
+		const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
+
 		const externalLink = "https://ark.io";
-		const openExternalMock = jest.spyOn(electron.shell, "openExternal");
 
 		const { asFragment, getByTestId } = renderWithRouter(<Link to={externalLink} isExternal />);
 
@@ -38,7 +39,7 @@ describe("Link", () => {
 			fireEvent.click(getByTestId("Link"));
 		});
 
-		expect(openExternalMock).toHaveBeenCalledWith(externalLink);
+		expect(ipcRendererMock).toHaveBeenCalledWith("open-external", externalLink);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
