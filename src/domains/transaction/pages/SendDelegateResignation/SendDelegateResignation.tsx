@@ -189,28 +189,17 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 										)}
 
 										{activeTab === 4 && (
-											<div className="flex justify-end space-x-3">
-												<Button
-													data-testid="SendDelegateResignation__wallet-button"
-													variant="secondary"
-													onClick={() => {
-														history.push(
-															`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-														);
-													}}
-												>
-													{t("COMMON.BACK_TO_WALLET")}
-												</Button>
-
-												<Button
-													data-testid="SendDelegateResignation__download-button"
-													variant="secondary"
-													className="space-x-2"
-												>
-													<Icon name="Download" />
-													<span>{t("COMMON.DOWNLOAD")}</span>
-												</Button>
-											</div>
+											<Button
+												data-testid="SendDelegateResignation__wallet-button"
+												variant="secondary"
+												onClick={() => {
+													history.push(
+														`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+													);
+												}}
+											>
+												{t("COMMON.BACK_TO_WALLET")}
+											</Button>
 										)}
 									</div>
 								</div>

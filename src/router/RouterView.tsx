@@ -23,10 +23,10 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const previousPath = useRef("");
 	useEffect(() => {
 		history.listen((route) => {
-			if (route.location?.pathname === previousPath.current) return;
-
-			previousPath.current = route.location?.pathname;
-			window.scrollTo(0, 0);
+			if (!previousPath.current || route.location?.pathname !== previousPath.current) {
+				previousPath.current = route.location?.pathname;
+				window.scrollTo(0, 0);
+			}
 		});
 	}, [history]);
 

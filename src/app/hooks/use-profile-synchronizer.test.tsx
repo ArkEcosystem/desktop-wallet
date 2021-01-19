@@ -7,7 +7,7 @@ import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testi
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
-import { useProfileSyncStatus } from "./use-profile-synchronizer.ts";
+import { useProfileSyncStatus } from "./use-profile-synchronizer";
 
 describe("useProfileSynchronizer", () => {
 	it("should sync profile", async () => {
@@ -24,6 +24,24 @@ describe("useProfileSynchronizer", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("ProfileSynced")).toBeInTheDocument(), { timeout: 4000 });
+	});
+
+	it("should clear last profile sync jobs", async () => {
+		history.push(dashboardURL);
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<div data-testid="ProfileSynced">test</div>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+				withProfileSynchronizer: true,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("ProfileSynced")).toBeInTheDocument(), { timeout: 4000 });
+		history.push("/");
+		await waitFor(() => expect(history.location.pathname).toEqual("/"));
 	});
 
 	it("should not sync if not in profile's url", async () => {
@@ -85,7 +103,6 @@ describe("useProfileSynchronizer", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		history.push(dashboardURL);
 
-		const profile = env.profiles().findById(getDefaultProfileId());
 		env.profiles().flush();
 
 		const { getByTestId } = renderWithRouter(
