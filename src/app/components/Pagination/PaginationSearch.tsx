@@ -2,7 +2,8 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import React, { useEffect,useState } from "react";
+import { clickOutsideHandler } from "app/hooks";
+import React, { useEffect, useRef,useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -46,6 +47,9 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 		}
 	};
 
+	const ref = useRef(null);
+	useEffect(() => clickOutsideHandler(ref, onClose), [ref]);
+
 	return (
 		<PaginationSearchWrapperStyled>
 			<Form
@@ -54,6 +58,7 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 				onSubmit={handleSelectPage}
 				name="searchForm"
 				className="search-form"
+				ref={ref}
 			>
 				<SearchInputStyled
 					ref={form.register}

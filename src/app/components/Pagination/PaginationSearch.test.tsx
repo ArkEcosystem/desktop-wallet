@@ -252,4 +252,35 @@ describe("PaginationSearch", () => {
 
 		await waitFor(() => expect(onSelect).toHaveBeenCalledWith(100000000));
 	});
+
+	it("shoucd close search input if clicked outside", async () => {
+		const onSelect = jest.fn();
+
+		const { asFragment, getByTestId } = render(
+			<div>
+				<div data-testid="somewhere-outside" className="p-4">
+					sample text
+				</div>
+				<PaginationSearch onSelectPage={onSelect}>
+					<span data-testid="PaginationSearchToggle">...</span>
+				</PaginationSearch>
+				,
+			</div>,
+		);
+
+		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(getByTestId("PaginationSearchToggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("PaginationSearchForm")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.mouseDown(getByTestId("somewhere-outside"));
+		});
+
+		await waitFor(() => expect(() => getByTestId("PaginationSearchForm")).toThrow());
+	});
 });
