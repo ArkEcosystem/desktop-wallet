@@ -1,11 +1,8 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
-import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -21,8 +18,11 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 	const { t } = useTranslation();
 
 	if (isLoading) {
-		return <section data-testid="WalletVote">{<WalletVoteSkeleton />}</section>;
+		return <WalletVoteSkeleton />;
 	}
+
+	const maxVotes = wallet.network().maximumVotesPerWallet();
+	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
 
 	let votes: ReadOnlyWallet[];
 
@@ -32,160 +32,126 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 		votes = [];
 	}
 
-	const maxVotes = wallet.network().maximumVotesPerWallet();
-
-	const hasNoVotes = votes.length === 0;
-	const votesHelpLink = "https:////";
+	// @TODO
+	const activeCount = 1;
 
 	const renderVotes = () => {
-		if (hasNoVotes) {
-			return (
-				<div data-testid="WalletVote__empty" className="flex items-center space-x-4">
-					<div className="flex items-center -space-x-2">
-						<Circle
-							size="lg"
-							className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
-						>
-							<Icon name="Vote" width={21} height={21} />
-						</Circle>
-
-						<div className="flex -space-x-3">
-							<span className="inline-block">
-								<Circle
-									size="lg"
-									className="border-theme-secondary-500 dark:border-theme-secondary-700"
-								/>
-							</span>
-							{maxVotes > 1 && (
-								<span className="inline-block">
-									<Circle
-										size="lg"
-										className="border-theme-secondary-500 dark:border-theme-secondary-700"
-									/>
-								</span>
-							)}
-						</div>
-					</div>
-
-					<div className="flex flex-1 justify-between">
-						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
-							<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
-
-							<div className="mt-1 mr-auto">
-								<Link to={votesHelpLink} isExternal>
-									{t("COMMON.LEARN_MORE")}
-								</Link>
-							</div>
-						</div>
-
-						<Button variant="secondary" onClick={() => onButtonClick()} data-testid="WalletVote__button">
-							{t("COMMON.VOTE")}
-						</Button>
-					</div>
-				</div>
-			);
-		}
-
-		if (votes.length === 1) {
-			const delegate = votes[0];
-			const rank = delegate.rank();
-
-			return (
-				<div className="flex items-center h-11">
-					<div className="flex items-center -space-x-2">
-						<Circle size="lg" className="border-theme-text text-theme-text">
-							<Icon name="Vote" width={21} height={21} />
-						</Circle>
-						<Avatar size="lg" address={delegate.address()} />
-					</div>
-
-					<div className="flex flex-col justify-between mr-8 ml-4 h-full">
-						<span className="text-sm font-semibold text-theme-secondary-500">{t("COMMON.DELEGATE")}</span>
-
-						<Address walletName={delegate.username()} />
-					</div>
-
-					<div className="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-secondary-300 dark:border-theme-secondary-800">
-						<span className="text-sm font-semibold text-theme-secondary-500">{t("COMMON.STATUS")}</span>
-
-						{rank ? (
-							<Tooltip content={`#${rank}`} placement="right">
-								<span>
-									<Icon name="StatusOk" className="text-theme-success-600" width={20} height={20} />
-								</span>
-							</Tooltip>
-						) : (
-							<Icon name="StatusPending" className="text-theme-warning-600" width={20} height={20} />
-						)}
-					</div>
-
-					<Button
-						variant="secondary"
-						className="ml-auto"
-						onClick={() => onButtonClick(delegate.address())}
-						data-testid="WalletVote__button"
-					>
-						{t("COMMON.UNVOTE")}
-					</Button>
-				</div>
-			);
-		}
-
-		const [first, second, ...rest] = votes;
-
-		const renderAvatar = (address: string, username?: string) => (
-			<Tooltip content={username}>
-				<span className="inline-block">
-					<Avatar size="lg" address={address} />
-				</span>
-			</Tooltip>
-		);
+		const delegate = votes[0];
 
 		return (
-			<div className="flex items-center h-11">
-				<div className="flex items-center -space-x-2">
-					<Circle size="lg" className="border-theme-text text-theme-text">
-						<Icon name="Vote" width={21} height={21} />
-					</Circle>
+			<>
+				<Circle
+					size="lg"
+					className="border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+				>
+					<Icon name="Vote" width={17} height={17} />
+				</Circle>
 
-					<div className="flex -space-x-3">
-						{renderAvatar(first.address(), first.username())}
-
-						{second && renderAvatar(second.address(), second.username())}
-
-						{rest?.length === 1 && renderAvatar(rest[0].address(), rest[0].username())}
-
-						{rest?.length > 1 && (
-							<Circle size="lg" className="relative border-theme-text text-theme-text">
-								<span className="font-semibold">+{rest.length}</span>
-							</Circle>
+				<div className="flex flex-1 ml-4">
+					<div className="flex flex-col justify-between font-semibold">
+						<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+							{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.VOTING_FOR")}
+						</span>
+						{votes.length === 1 ? (
+							<span>{delegate.username()}</span>
+						) : (
+							<span className="cursor-pointer" onClick={() => onButtonClick()}>
+								{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE")}
+							</span>
 						)}
+					</div>
+
+					{votes.length === 1 && (
+						<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
+							<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+								{t("COMMON.RANK")}
+							</span>
+							<span>{delegate.rank() ? `#${delegate.rank()}` : t("COMMON.NOT_AVAILABLE")}</span>
+						</div>
+					)}
+
+					<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
+						<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+							{t("COMMON.VOTES")}
+						</span>
+						<span>
+							{votes.length}
+							<span className="text-theme-secondary-500 dark:text-theme-secondary-700">/{maxVotes}</span>
+						</span>
 					</div>
 				</div>
 
-				<Button
-					variant="secondary"
-					className="ml-auto"
-					onClick={() => onButtonClick()}
-					data-testid="WalletVote__button"
-				>
-					{t("COMMON.SHOW_ALL")}
-				</Button>
-			</div>
+				<div className="flex font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6 space-x-4">
+					<div className="flex flex-col items-end justify-between">
+						<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+							{t("COMMON.STATUS")}
+						</span>
+						<span>
+							<span className={activeCount > 0 ? "text-theme-success-600" : "text-theme-danger-400"}>
+								Active {activeCount}
+							</span>
+							<span className="text-theme-secondary-500 dark:text-theme-secondary-700">
+								/{votes.length}
+							</span>
+						</span>
+					</div>
+
+					<Circle
+						size="lg"
+						className="border-theme-success-600 dark:border-theme-secondary-700 text-theme-success-600 dark:text-theme-secondary-700"
+					>
+						<Icon name="CheckmarkBig" width={16} height={15} />
+					</Circle>
+				</div>
+			</>
 		);
 	};
 
 	return (
-		<section data-testid="WalletVote">
-			<div className="flex mb-4">
-				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
-				<span className="ml-1 text-2xl font-bold text-theme-secondary-500 dark:text-theme-secondary-700">
-					({votes.length}/{maxVotes})
-				</span>
-			</div>
+		<div data-testid="WalletVote" className="w-full flex items-center">
+			{votes.length === 0 ? (
+				<>
+					<Circle
+						size="lg"
+						className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+					>
+						<Icon name="Vote" width={17} height={17} />
+					</Circle>
 
-			{renderVotes()}
-		</section>
+					<div className="flex flex-1 ml-4">
+						<div className="flex flex-col justify-between">
+							<span className="font-semibold">
+								{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}
+								<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
+									{votes.length}/{maxVotes}
+								</span>
+							</span>
+
+							<span className="leading-none">
+								<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 mr-1">
+									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}
+								</span>
+								<Link to={votesHelpLink} showExternalIcon={false} isExternal>
+									<span className="text-sm">{t("COMMON.LEARN_MORE")}</span>
+								</Link>
+							</span>
+						</div>
+					</div>
+				</>
+			) : (
+				renderVotes()
+			)}
+
+			<Button
+				data-testid="WalletVote__button"
+				variant="secondary"
+				className="space-x-2"
+				onClick={() => onButtonClick()}
+			>
+				<Icon name="Vote" width={17} height={17} />
+				<span>{t("COMMON.VOTE")}</span>
+			</Button>
+		</div>
 	);
 };
 

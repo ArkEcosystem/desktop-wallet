@@ -174,6 +174,8 @@ export const translations: { [key: string]: any } = {
 			TITLE: "My Vote",
 			TITLE_plural: "My Votes",
 			EMPTY_DESCRIPTION: "You have not yet voted for a Delegate",
+			VOTING_FOR: "Voting for",
+			MULTIVOTE: "Multivote",
 		},
 
 		OPTIONS: {
