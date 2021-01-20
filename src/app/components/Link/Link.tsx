@@ -3,7 +3,7 @@ import { toasts } from "app/services";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
-import tw, { css,styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 import { openExternal } from "utils/electron-utils";
 
 import { Icon } from "../Icon";
