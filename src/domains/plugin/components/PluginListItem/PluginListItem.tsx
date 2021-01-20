@@ -22,7 +22,13 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
-				<Image name="ChangeNowLogo" domain="exchange" className="w-15 h-15" />
+				<div className="flex items-center justify-center">
+					{plugin.logo ? (
+						<img data-testid="PluginListItem__logo" src={plugin.logo} alt="Logo" />
+					) : (
+						<Image name="PluginLogoPlaceholder" domain="plugin" className="w-14 h-14" />
+					)}
+				</div>
 			</TableCell>
 
 			<TableCell innerClassName="space-x-2">

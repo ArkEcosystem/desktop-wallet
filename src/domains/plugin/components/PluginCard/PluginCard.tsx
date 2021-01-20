@@ -1,5 +1,6 @@
 import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import tw, { css, styled } from "twin.macro";
@@ -57,7 +58,11 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 			>
 				<div className="my-auto font-semibold">
 					<PluginImageContainer>
-						<img src={plugin.logo} alt="Logo" />
+						{plugin.logo ? (
+							<img data-testid="PluginCard__logo" src={plugin.logo} alt="Logo" />
+						) : (
+							<Image name="PluginLogoPlaceholder" domain="plugin" />
+						)}
 					</PluginImageContainer>
 
 					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
