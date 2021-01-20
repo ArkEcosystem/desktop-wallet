@@ -22,7 +22,7 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
-				<div className="flex items-center justify-center">
+				<div className="flex justify-center items-center">
 					{plugin.logo ? (
 						<img data-testid="PluginListItem__logo" src={plugin.logo} alt="Logo" />
 					) : (
