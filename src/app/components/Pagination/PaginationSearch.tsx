@@ -48,7 +48,7 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 	};
 
 	const ref = useRef(null);
-	useEffect(() => clickOutsideHandler(ref, onClose), [ref]);
+	useEffect(() => clickOutsideHandler(ref, onClose), [ref, onClose]);
 
 	return (
 		<PaginationSearchWrapperStyled>
