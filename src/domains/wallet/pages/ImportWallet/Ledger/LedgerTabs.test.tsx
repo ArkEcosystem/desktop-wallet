@@ -158,7 +158,7 @@ describe("LedgerTabs", () => {
 
 		// Auto redirect to next step
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7), { timeout: 3000 });
 
 		getPublicKeySpy.mockReset();
 	});

@@ -9,6 +9,8 @@ import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } fro
 
 import { LedgerScanStep } from "./LedgerScanStep";
 
+jest.setTimeout(10000);
+
 describe("LedgerScanStep", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
@@ -93,7 +95,7 @@ describe("LedgerScanStep", () => {
 
 		const { container } = render(<Component />);
 
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7), { timeout: 3000 });
 		await waitFor(() => expect(screen.getByText("DJpFwW … DJ28jq")).toBeInTheDocument());
 
 		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(7));
