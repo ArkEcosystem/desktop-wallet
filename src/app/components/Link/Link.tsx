@@ -12,11 +12,22 @@ const AnchorStyled = styled.a<{ isExternal: boolean }>`
 	${({ isExternal }) =>
 		isExternal &&
 		`
-		&:active {
-			text-decoration-style: dotted;
-		}
-		&:hover:not(:active) {
+		&:hover, &:active {
 			text-decoration: none;
+
+			.underline-dotted {
+				position: relative;
+
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					bottom:0;
+					width: 100%;
+					border-bottom: 1px dotted;
+				}
+			}
+
 		}
 	`}
 `;
@@ -42,7 +53,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
 			}}
 			{...props}
 		>
-			{children}
+			<span className="underline-dotted">{children}</span>
 			{isExternal && showExternalIcon && (
 				<Icon
 					data-testid="Link__external"
