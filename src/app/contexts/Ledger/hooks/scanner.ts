@@ -71,6 +71,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 	const scanMore = useCallback(() => scan(createRange(page, limitPerPage)), [scan, page]);
 	const scanRetry = useCallback(async () => {
+		/* istanbul ignore next */
 		if (!failed.length) {
 			return;
 		}

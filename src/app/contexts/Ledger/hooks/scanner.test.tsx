@@ -141,6 +141,7 @@ describe("Use Ledger Scanner", () => {
 		await profile.wallets().importByAddress("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", "ARK", "ark.devnet");
 		await profile.wallets().importByAddress("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", "ARK", "ark.devnet");
 		await profile.wallets().importByAddress("DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", "ARK", "ark.devnet");
+		await profile.wallets().importByAddress("DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T", "ARK", "ark.devnet");
 
 		const Component = () => {
 			const { scanUntilNewOrFail, wallets } = useLedgerScanner(wallet.coinId(), wallet.networkId(), profile);
