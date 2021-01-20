@@ -10,12 +10,13 @@ import { useTranslation } from "react-i18next";
 type PluginListItemProps = {
 	onDelete: any;
 	onInstall: any;
+	onLaunch?: (plugin: any) => void;
 	onEnable?: (plugin: any) => void;
 	onDisable?: (plugin: any) => void;
 	plugin: any;
 };
 
-export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, plugin }: PluginListItemProps) => {
+export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLaunch, plugin }: PluginListItemProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -83,34 +84,45 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, plugi
 				)}
 
 				{plugin.isInstalled && (
-					<Dropdown
-						toggleContent={
-							<Button variant="secondary" size="icon" className="text-left">
-								<Icon name="Settings" width={20} height={20} />
+					<div className="flex items-center space-x-2">
+						{plugin.hasLaunch && (
+							<Button
+								variant="secondary"
+								onClick={() => onLaunch?.(plugin)}
+								data-testid="PluginListItem__launch"
+							>
+								{t("COMMON.LAUNCH")}
 							</Button>
-						}
-						options={[
-							{ label: t("COMMON.DELETE"), value: "delete" },
-							{
-								label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
-								value: plugin.isEnabled ? "disable" : "enable",
-							},
-						]}
-						onSelect={(option: any) => {
-							if (option.value === "delete") {
-								onDelete(plugin);
+						)}
+						<Dropdown
+							toggleContent={
+								<Button variant="secondary" size="icon" className="text-left">
+									<Icon name="Settings" width={20} height={20} />
+								</Button>
 							}
+							options={[
+								{ label: t("COMMON.DELETE"), value: "delete" },
+								{
+									label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
+									value: plugin.isEnabled ? "disable" : "enable",
+								},
+							]}
+							onSelect={(option: any) => {
+								if (option.value === "delete") {
+									onDelete(plugin);
+								}
 
-							if (option.value === "enable") {
-								return onEnable?.(plugin);
-							}
+								if (option.value === "enable") {
+									return onEnable?.(plugin);
+								}
 
-							if (option.value === "disable") {
-								return onDisable?.(plugin);
-							}
-						}}
-						dropdownClass="top-3 text-left"
-					/>
+								if (option.value === "disable") {
+									return onDisable?.(plugin);
+								}
+							}}
+							dropdownClass="top-3 text-left"
+						/>
+					</div>
 				)}
 			</TableCell>
 		</TableRow>

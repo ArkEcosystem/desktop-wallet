@@ -136,6 +136,34 @@ describe("PluginListItem", () => {
 		expect(onDisable).toHaveBeenCalledTimes(1);
 	});
 
+	it("should render launch button", () => {
+		const plugin = {
+			id: "ark-explorer",
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			isEnabled: true,
+			hasLaunch: true,
+		};
+
+		const onLaunch = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onLaunch={onLaunch} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("PluginListItem__launch"));
+
+		expect(onLaunch).toHaveBeenCalledTimes(1);
+	});
+
 	it("should render official icon", () => {
 		const plugin = {
 			id: "ark-explorer",

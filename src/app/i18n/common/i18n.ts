@@ -83,6 +83,7 @@ export const translations: { [key: string]: any } = {
 	INSTALL: "Install",
 	IS_MARKET_CHART_ENABLED: "Price chart on the dashboard",
 	LANGUAGE: "Application Language",
+	LAUNCH: "Launch",
 	LEARN_MORE: "Learn more",
 	LEDGER: "Ledger",
 	LEDGER_DISCONNECTED: "Ledger Disconnected",

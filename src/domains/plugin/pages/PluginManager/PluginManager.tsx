@@ -218,7 +218,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			category: item.config().categories()?.[0],
 			isInstalled: true,
 			isEnabled: item.isEnabled(activeProfile),
-			hasLaunch: false,
+			hasLaunch: item.hooks().hasCommand("service:launch.render"),
 			size: item.config().size(),
 		}));
 

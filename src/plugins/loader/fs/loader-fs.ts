@@ -1,5 +1,5 @@
 import resolve from "enhanced-resolve";
-import fs from "fs-extra";
+import fs from "fs";
 import { glob } from "glob";
 import path from "path";
 
@@ -18,13 +18,14 @@ export class PluginLoaderFileSystem {
 	}
 
 	remove(dir: string) {
+		const fsExtra = require("fs-extra");
 		const isValid = this.#roots.some((root) => new RegExp(root).test(dir));
 
 		if (!isValid) {
 			return Promise.reject(`The dir ${dir} cannot be removed.`);
 		}
 
-		return fs.remove(dir);
+		return fsExtra.remove(dir);
 	}
 
 	search(): PluginRawInstance[] {
