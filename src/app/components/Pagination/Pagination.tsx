@@ -2,9 +2,9 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import {styled } from "twin.macro";
+import { styled } from "twin.macro";
 
-import { PaginationProps,PaginationSearch } from "./";
+import { PaginationProps, PaginationSearch } from "./";
 import { CompactPagination } from "./components/CompactPagination";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 

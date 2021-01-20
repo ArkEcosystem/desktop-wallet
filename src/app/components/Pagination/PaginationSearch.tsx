@@ -3,13 +3,13 @@ import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "app/hooks";
-import React, { useEffect, useRef,useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationSearchFormProps,PaginationSearchProps } from "./";
-import { PaginationSearchToggleButton,PaginationSearchWrapper, SearchInput } from "./Pagination.styles";
+import { PaginationSearchFormProps, PaginationSearchProps } from "./";
+import { PaginationSearchToggleButton, PaginationSearchWrapper, SearchInput } from "./Pagination.styles";
 
 const PaginationSearchWrapperStyled = styled.span`
 	${PaginationSearchWrapper}
@@ -121,7 +121,7 @@ export const PaginationSearch = ({ children, onSelectPage, totalPages }: Paginat
 					totalPages={totalPages}
 					onClose={() => setIsFormVisible(false)}
 					onSelectPage={onSelectPage}
-				 />
+				/>
 			)}
 		</>
 	);
