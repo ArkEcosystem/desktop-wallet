@@ -89,7 +89,7 @@ export const Pagination = ({
 				</Button>
 			)}
 
-			<div className="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative">
+			<div className="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800">
 				{paginationButtons[0] !== 1 && (
 					<PaginationSearch onSelectPage={onSelectPage} totalPages={totalPages}>
 						<span>...</span>

@@ -38,7 +38,7 @@ exports[`Pagination should handle first page click properly 1`] = `
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
@@ -136,7 +136,7 @@ exports[`Pagination should handle last page click properly 1`] = `
     data-testid="Pagination"
   >
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
@@ -246,7 +246,7 @@ exports[`Pagination should handle next page click properly 1`] = `
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
@@ -291,7 +291,7 @@ exports[`Pagination should handle page selection properly 1`] = `
     data-testid="Pagination"
   >
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
@@ -367,7 +367,7 @@ exports[`Pagination should handle previous page click properly 1`] = `
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
@@ -446,7 +446,7 @@ exports[`Pagination should not render first button if pagination buttons include
     data-testid="Pagination"
   >
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
@@ -556,7 +556,7 @@ exports[`Pagination should not render first button if pagination buttons include
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
@@ -666,7 +666,7 @@ exports[`Pagination should not render first button if pagination buttons include
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
@@ -791,7 +791,7 @@ exports[`Pagination should not render first button if pagination buttons include
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
@@ -885,7 +885,7 @@ exports[`Pagination should not render first button if pagination buttons include
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
@@ -995,7 +995,7 @@ exports[`Pagination should not render first button if pagination buttons include
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
@@ -1105,7 +1105,7 @@ exports[`Pagination should not render next button on last page 1`] = `
       Previous
     </button>
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
@@ -1168,7 +1168,7 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
     data-testid="Pagination"
   >
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
@@ -1262,7 +1262,7 @@ exports[`Pagination should render 1`] = `
     data-testid="Pagination"
   >
     <div
-      class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800 relative"
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <div
         class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
