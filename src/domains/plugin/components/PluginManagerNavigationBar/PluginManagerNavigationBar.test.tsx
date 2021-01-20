@@ -51,4 +51,12 @@ describe("PluginManagerNavigationBar", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should show installed plugins count", () => {
+		const { asFragment, getByTestId } = render(
+			<PluginManagerNavigationBar selected="" installedPluginsCount={8} />,
+		);
+
+		expect(getByTestId("PluginManagerNavigationBar__my-plugins__count")).toHaveTextContent("8");
+	});
 });

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act } from "@testing-library/react-hooks";
+import { PluginProviders } from "app/PluginProviders";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -26,7 +27,9 @@ describe("PluginManager", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/plugins">
-					<PluginManager />
+					<PluginProviders>
+						<PluginManager />
+					</PluginProviders>
 				</Route>,
 				{
 					routes: [pluginsURL],

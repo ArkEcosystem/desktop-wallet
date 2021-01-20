@@ -11,6 +11,7 @@ import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
+import { usePluginManagerContext } from "plugins";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -165,6 +166,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [installPlugin, setInstallPlugin] = useState(false);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+	const { pluginManager } = usePluginManagerContext();
 
 	const [blacklist, setBlacklist] = useState<any>([]);
 
@@ -205,6 +207,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	}
 
 	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
+	const installedPluginsCount = pluginManager.plugins().all().length;
 
 	return (
 		<>
@@ -242,6 +245,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						selectedViewType={viewType}
 						onSelectGridView={() => setViewType("grid")}
 						onSelectListView={() => setViewType("list")}
+						installedPluginsCount={installedPluginsCount}
 					/>
 				</div>
 
