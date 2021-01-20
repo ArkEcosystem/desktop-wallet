@@ -69,7 +69,7 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 					</>
 				) : (
 					<Tooltip content="Not installed">
-						<div className="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500">
+						<div className="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500">
 							<Icon name="Dash" />
 						</div>
 					</Tooltip>
