@@ -23,6 +23,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 	const limitPerPage = 5;
 	const derivationModes = useMemo(
+		/* istanbul ignore next */
 		() => Object.keys(customDerivationModes[coin as keyof typeof customDerivationModes] || {}),
 		[coin],
 	);

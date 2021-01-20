@@ -14,7 +14,7 @@ type State = {
 };
 
 type Action =
-	| { type: "load"; payload: LedgerData[]; derivationModes?: string[] }
+	| { type: "load"; payload: LedgerData[]; derivationModes: string[] }
 	| { type: "next" }
 	| { type: "success"; payload: LedgerData[] }
 	| { type: "failed" }
@@ -29,7 +29,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 		case "load":
 			return {
 				...state,
-				derivationModes: action.derivationModes || [],
+				derivationModes: action.derivationModes,
 				loading: action.payload.map(pathMapper),
 				wallets: uniqBy([...state.wallets, ...action.payload], pathMapper),
 			};
