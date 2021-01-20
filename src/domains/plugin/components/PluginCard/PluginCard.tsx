@@ -57,7 +57,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 			>
 				<div className="my-auto font-semibold">
 					<PluginImageContainer>
-						<img src={plugin.logo} />
+						<img src={plugin.logo} alt="Logo" />
 					</PluginImageContainer>
 
 					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
