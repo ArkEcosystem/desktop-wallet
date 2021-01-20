@@ -234,7 +234,7 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getAllByTestId("dropdown__toggle")[0]);
-			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getByTestId("dropdown__option--1"));
+			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getByTestId("dropdown__option--0"));
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
@@ -250,7 +250,7 @@ describe("PluginManager", () => {
 			fireEvent.click(
 				within(getByTestId("PluginManager__container--game")).getAllByTestId("dropdown__toggle")[1],
 			);
-			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--1"));
+			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--0"));
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
@@ -260,7 +260,7 @@ describe("PluginManager", () => {
 			fireEvent.click(
 				within(getByTestId("PluginManager__container--game")).getAllByTestId("dropdown__toggle")[1],
 			);
-			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--1"));
+			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--0"));
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");

@@ -9,7 +9,6 @@ const basePlugin = {
 	name: "ARK Explorer",
 	author: "ARK.io",
 	category: "utility",
-	rating: 4.2,
 	version: "1.3.8",
 	size: "4.2 MB",
 };
@@ -27,7 +26,7 @@ describe("PluginCard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should trigger view", async () => {
+	it("should trigger view", () => {
 		const plugin = {
 			...basePlugin,
 			isInstalled: true,
@@ -35,10 +34,9 @@ describe("PluginCard", () => {
 
 		const onClick = jest.fn();
 
-		const { asFragment, findByText, getByTestId } = render(<PluginCard plugin={plugin} onClick={onClick} />);
+		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} onClick={onClick} />);
 
-		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(await findByText(commonTranslations.VIEW));
+		fireEvent.click(getByTestId("Card"));
 
 		expect(onClick).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
@@ -52,13 +50,45 @@ describe("PluginCard", () => {
 
 		const onDelete = jest.fn();
 
-		const { asFragment, findByText, getByTestId } = render(<PluginCard plugin={plugin} onDelete={onDelete} />);
+		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onDelete={onDelete} />);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
 		fireEvent.click(await findByText(commonTranslations.DELETE));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
-		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should trigger enable", async () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+		};
+
+		const onEnable = jest.fn();
+
+		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onEnable={onEnable} />);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(await findByText(commonTranslations.ENABLE));
+
+		expect(onEnable).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger disable", async () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			isEnabled: true,
+		};
+
+		const onDisable = jest.fn();
+
+		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onDisable={onDisable} />);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(await findByText(commonTranslations.DISABLE));
+
+		expect(onDisable).toHaveBeenCalledTimes(1);
 	});
 
 	it("should render official icon", () => {

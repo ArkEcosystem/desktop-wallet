@@ -50,11 +50,13 @@ export const translations: { [key: string]: any } = {
 	DELETE: "Delete",
 	DESKTOP_WALLET: "Desktop Wallet",
 	DISCLAIMER: "Disclaimer",
+	DISABLE: "Disable",
 	DONE: "Done",
 	DOWNLOAD: "Download",
 	DOWNLOADED: "Downloaded",
 	DOWNLOADING: "Downloading",
 	EDIT: "Edit",
+	ENABLE: "Enable",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
 	ERROR: "Error",
 	ERRORS: {

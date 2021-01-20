@@ -585,7 +585,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Rating
+                              Version
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -615,7 +615,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Version
+                              Size
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -638,36 +638,6 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top  "
-                          >
-                            <div>
-                              Size
-                            </div>
-                            <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--7"
-                          role="columnheader"
                         >
                           <div
                             class="flex flex-inline align-top justify-center "
@@ -680,7 +650,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--8"
+                          data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
@@ -756,43 +726,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -810,20 +745,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -904,43 +835,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -958,20 +854,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -1052,43 +944,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -1106,20 +963,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -1200,43 +1053,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -1254,20 +1072,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -1348,43 +1162,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -1402,20 +1181,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -1511,43 +1286,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -1565,20 +1305,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -1674,43 +1410,8 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -1728,20 +1429,16 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -2393,7 +2090,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Rating
+                              Version
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -2423,7 +2120,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Version
+                              Size
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -2446,36 +2143,6 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top  "
-                          >
-                            <div>
-                              Size
-                            </div>
-                            <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--7"
-                          role="columnheader"
                         >
                           <div
                             class="flex flex-inline align-top justify-center "
@@ -2488,7 +2155,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--8"
+                          data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
@@ -2564,43 +2231,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -2618,20 +2250,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -2712,43 +2340,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -2766,20 +2359,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -2860,43 +2449,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -2914,20 +2468,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -3008,43 +2558,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -3062,20 +2577,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -3156,43 +2667,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -3210,20 +2686,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -3319,43 +2791,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -3373,20 +2810,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -3482,43 +2915,8 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -3536,20 +2934,16 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -4088,9 +3482,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4114,38 +3506,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -4167,9 +3530,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4193,38 +3554,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -4246,9 +3578,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4272,38 +3602,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -4325,9 +3626,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4351,38 +3650,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -4404,9 +3674,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4430,38 +3698,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -4505,9 +3744,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4531,38 +3768,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -4606,9 +3814,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -4632,38 +3838,9 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -5293,7 +4470,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Rating
+                              Version
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -5323,7 +4500,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Version
+                              Size
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -5346,36 +4523,6 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top  "
-                          >
-                            <div>
-                              Size
-                            </div>
-                            <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--7"
-                          role="columnheader"
                         >
                           <div
                             class="flex flex-inline align-top justify-center "
@@ -5388,7 +4535,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--8"
+                          data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
@@ -5464,43 +4611,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -5518,20 +4630,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -5612,43 +4720,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -5666,20 +4739,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -5760,43 +4829,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -5814,20 +4848,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -5908,43 +4938,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -5962,20 +4957,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -6056,43 +5047,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -6110,20 +5066,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -6219,43 +5171,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -6273,20 +5190,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -6382,43 +5295,8 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -6436,20 +5314,16 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -7140,9 +6014,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7166,38 +6038,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -7219,9 +6062,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7245,38 +6086,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -7298,9 +6110,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7324,38 +6134,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -7377,9 +6158,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7403,38 +6182,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -7456,9 +6206,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7482,38 +6230,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -7557,9 +6276,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7583,38 +6300,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -7658,9 +6346,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -7684,38 +6370,9 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8384,9 +7041,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8410,38 +7065,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8463,9 +7089,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8489,38 +7113,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8542,9 +7137,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8568,38 +7161,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8621,9 +7185,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8647,38 +7209,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8700,9 +7233,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8726,38 +7257,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8801,9 +7303,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8827,38 +7327,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -8902,9 +7373,7 @@ exports[`PluginsCategory should render 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -8928,38 +7397,9 @@ exports[`PluginsCategory should render 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -9527,9 +7967,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -9553,38 +7991,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -9606,9 +8015,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -9632,38 +8039,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -9685,9 +8063,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -9711,38 +8087,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -9764,9 +8111,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -9790,38 +8135,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -9843,9 +8159,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -9869,38 +8183,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -9944,9 +8229,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -9970,38 +8253,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -10045,9 +8299,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -10071,38 +8323,9 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -10619,9 +8842,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -10645,38 +8866,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -10698,9 +8890,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -10724,38 +8914,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -10777,9 +8938,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -10803,38 +8962,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -10856,9 +8986,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -10882,38 +9010,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 80%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              4.2
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -10935,9 +9034,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -10961,38 +9058,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -11036,9 +9104,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -11062,38 +9128,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -11137,9 +9174,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         <div
                           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <img />
                         </div>
                         <div
                           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -11163,38 +9198,9 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             ARK.io
-                          </div>
-                          <div
-                            class="flex items-center"
-                            data-testid="ReviewRating"
-                          >
-                            <div
-                              class="relative"
-                            >
-                              <div
-                                class="overflow-hidden absolute"
-                                style="width: 70%;"
-                              >
-                                <svg
-                                  class="text-theme-warning-400 w-4"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <svg
-                                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="ml-1"
-                            >
-                              3.8
-                            </span>
                           </div>
                         </div>
                       </div>
@@ -11824,7 +9830,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Rating
+                              Version
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -11854,7 +9860,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="flex flex-inline align-top  "
                           >
                             <div>
-                              Version
+                              Size
                             </div>
                             <div
                               class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -11877,36 +9883,6 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top  "
-                          >
-                            <div>
-                              Size
-                            </div>
-                            <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--7"
-                          role="columnheader"
                         >
                           <div
                             class="flex flex-inline align-top justify-center "
@@ -11919,7 +9895,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--8"
+                          data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
@@ -11995,43 +9971,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12049,20 +9990,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -12143,43 +10080,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12197,20 +10099,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -12291,43 +10189,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12345,20 +10208,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -12439,43 +10298,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                4.2
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12493,20 +10317,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6"
+                              class="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500"
                             >
                               <div
-                                class="m-auto text-theme-secondary-500"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    dash.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  dash.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -12587,43 +10407,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12641,20 +10426,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -12750,43 +10531,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12804,20 +10550,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>
@@ -12913,43 +10655,8 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           <div
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
-                            <div
-                              class="flex items-center"
-                              data-testid="ReviewRating"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-3"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
-                                <svg
-                                  class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
-                                >
-                                  star.svg
-                                </svg>
-                              </div>
-                              <span
-                                class="ml-1"
-                              >
-                                3.8
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
-                          >
                             <span>
-                              v 1.3.8
+                              v1.3.8
                             </span>
                           </div>
                         </td>
@@ -12967,20 +10674,16 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                              class="mx-auto text-2xl text-theme-danger-400"
                             >
                               <div
-                                class="m-auto"
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-bdfBwQ dfWOLJ"
-                                  height="15"
-                                  width="15"
-                                >
-                                  <svg>
-                                    checkmark.svg
-                                  </svg>
-                                </div>
+                                <svg>
+                                  status-failed.svg
+                                </svg>
                               </div>
                             </div>
                           </div>

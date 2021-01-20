@@ -9,6 +9,8 @@ type PluginListProps = {
 	className?: string;
 	itemsPerPage?: number;
 	onDelete: any;
+	onEnable?: (plugin: any) => void;
+	onDisable?: (plugin: any) => void;
 	onInstall: any;
 	plugins: any[];
 	withPagination?: boolean;
@@ -17,6 +19,8 @@ type PluginListProps = {
 export const PluginList = ({
 	className,
 	itemsPerPage,
+	onEnable,
+	onDisable,
 	onDelete,
 	onInstall,
 	plugins,
@@ -45,10 +49,6 @@ export const PluginList = ({
 			accessor: "category",
 		},
 		{
-			Header: t("COMMON.RATING"),
-			accessor: "rating",
-		},
-		{
 			Header: t("COMMON.VERSION"),
 			accessor: "version",
 		},
@@ -74,7 +74,15 @@ export const PluginList = ({
 	return (
 		<div data-testid="PluginList" className={className}>
 			<Table columns={columns} data={pagePlugins}>
-				{(plugin: any) => <PluginListItem plugin={plugin} onInstall={onInstall} onDelete={onDelete} />}
+				{(plugin: any) => (
+					<PluginListItem
+						plugin={plugin}
+						onInstall={onInstall}
+						onDelete={onDelete}
+						onEnable={onEnable}
+						onDisable={onDisable}
+					/>
+				)}
 			</Table>
 
 			{withPagination && (

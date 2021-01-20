@@ -2,18 +2,20 @@ import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
-import { ReviewRating } from "app/components/ReviewRating";
 import { TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginListItemProps = {
 	onDelete: any;
 	onInstall: any;
+	onEnable?: (plugin: any) => void;
+	onDisable?: (plugin: any) => void;
 	plugin: any;
 };
 
-export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemProps) => {
+export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, plugin }: PluginListItemProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -40,11 +42,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 			</TableCell>
 
 			<TableCell>
-				<ReviewRating width={3} rating={plugin.rating} />
-			</TableCell>
-
-			<TableCell>
-				<span>v {plugin.version}</span>
+				<span>v{plugin.version}</span>
 			</TableCell>
 
 			<TableCell>
@@ -53,17 +51,27 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<TableCell>
 				{plugin.isInstalled ? (
-					<div className="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500">
-						<div className="m-auto">
-							<Icon name="Checkmark" width={15} height={15} />
-						</div>
-					</div>
+					<>
+						{plugin.isEnabled ? (
+							<Tooltip content="Enabled">
+								<div className="mx-auto text-2xl text-theme-success-500">
+									<Icon name="StatusOk" />
+								</div>
+							</Tooltip>
+						) : (
+							<Tooltip content="Disabled">
+								<div className="mx-auto text-2xl text-theme-danger-400">
+									<Icon name="StatusFailed" />
+								</div>
+							</Tooltip>
+						)}
+					</>
 				) : (
-					<div className="flex mx-auto w-6 h-6">
-						<div className="m-auto text-theme-secondary-500">
-							<Icon name="Dash" width={15} height={15} />
+					<Tooltip content="Not installed">
+						<div className="mx-auto flex items-center justify-center w-6 h-6 text-theme-secondary-500">
+							<Icon name="Dash" />
 						</div>
-					</div>
+					</Tooltip>
 				)}
 			</TableCell>
 
@@ -82,12 +90,23 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 							</Button>
 						}
 						options={[
-							{ label: t("COMMON.VIEW"), value: "view" },
 							{ label: t("COMMON.DELETE"), value: "delete" },
+							{
+								label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
+								value: plugin.isEnabled ? "disable" : "enable",
+							},
 						]}
 						onSelect={(option: any) => {
 							if (option.value === "delete") {
 								onDelete(plugin);
+							}
+
+							if (option.value === "enable") {
+								return onEnable?.(plugin);
+							}
+
+							if (option.value === "disable") {
+								return onDisable?.(plugin);
 							}
 						}}
 						dropdownClass="top-3 text-left"

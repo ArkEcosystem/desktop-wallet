@@ -15,9 +15,7 @@ exports[`PluginCard should render 1`] = `
         <div
           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
         >
-          <svg>
-            changenow-logo.svg
-          </svg>
+          <img />
         </div>
         <div
           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -31,38 +29,9 @@ exports[`PluginCard should render 1`] = `
           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           <div
-            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             ARK.io
-          </div>
-          <div
-            class="flex items-center"
-            data-testid="ReviewRating"
-          >
-            <div
-              class="relative"
-            >
-              <div
-                class="overflow-hidden absolute"
-                style="width: 80%;"
-              >
-                <svg
-                  class="text-theme-warning-400 w-4"
-                >
-                  star.svg
-                </svg>
-              </div>
-              <svg
-                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-              >
-                star.svg
-              </svg>
-            </div>
-            <span
-              class="ml-1"
-            >
-              4.2
-            </span>
           </div>
         </div>
       </div>
@@ -89,9 +58,7 @@ exports[`PluginCard should render grant icon 1`] = `
         <div
           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
         >
-          <svg>
-            changenow-logo.svg
-          </svg>
+          <img />
         </div>
         <div
           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -115,38 +82,9 @@ exports[`PluginCard should render grant icon 1`] = `
           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           <div
-            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             ARK.io
-          </div>
-          <div
-            class="flex items-center"
-            data-testid="ReviewRating"
-          >
-            <div
-              class="relative"
-            >
-              <div
-                class="overflow-hidden absolute"
-                style="width: 80%;"
-              >
-                <svg
-                  class="text-theme-warning-400 w-4"
-                >
-                  star.svg
-                </svg>
-              </div>
-              <svg
-                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-              >
-                star.svg
-              </svg>
-            </div>
-            <span
-              class="ml-1"
-            >
-              4.2
-            </span>
           </div>
         </div>
       </div>
@@ -173,9 +111,7 @@ exports[`PluginCard should render official icon 1`] = `
         <div
           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
         >
-          <svg>
-            changenow-logo.svg
-          </svg>
+          <img />
         </div>
         <div
           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -199,140 +135,15 @@ exports[`PluginCard should render official icon 1`] = `
           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           <div
-            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             ARK.io
-          </div>
-          <div
-            class="flex items-center"
-            data-testid="ReviewRating"
-          >
-            <div
-              class="relative"
-            >
-              <div
-                class="overflow-hidden absolute"
-                style="width: 80%;"
-              >
-                <svg
-                  class="text-theme-warning-400 w-4"
-                >
-                  star.svg
-                </svg>
-              </div>
-              <svg
-                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-              >
-                star.svg
-              </svg>
-            </div>
-            <span
-              class="ml-1"
-            >
-              4.2
-            </span>
           </div>
         </div>
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       />
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`PluginCard should trigger delete 1`] = `
-<DocumentFragment>
-  <div
-    data-testid="PluginCard--ark-explorer"
-  >
-    <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-      data-testid="Card"
-    >
-      <div
-        class="my-auto font-semibold"
-      >
-        <div
-          class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
-        >
-          <svg>
-            changenow-logo.svg
-          </svg>
-        </div>
-        <div
-          class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
-        >
-          <div>
-            ARK Explorer
-          </div>
-          <div />
-        </div>
-        <div
-          class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-        >
-          <div
-            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-          >
-            ARK.io
-          </div>
-          <div
-            class="flex items-center"
-            data-testid="ReviewRating"
-          >
-            <div
-              class="relative"
-            >
-              <div
-                class="overflow-hidden absolute"
-                style="width: 80%;"
-              >
-                <svg
-                  class="text-theme-warning-400 w-4"
-                >
-                  star.svg
-                </svg>
-              </div>
-              <svg
-                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-              >
-                star.svg
-              </svg>
-            </div>
-            <span
-              class="ml-1"
-            >
-              4.2
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
-        <div
-          class="relative"
-        >
-          <span
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="flex overflow-hidden justify-center w-4"
-            >
-              <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </span>
-        </div>
-      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -353,9 +164,7 @@ exports[`PluginCard should trigger view 1`] = `
         <div
           class="PluginCard__PluginImageContainer-ixmao2-0 cjrdBv"
         >
-          <svg>
-            changenow-logo.svg
-          </svg>
+          <img />
         </div>
         <div
           class="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600"
@@ -369,38 +178,9 @@ exports[`PluginCard should trigger view 1`] = `
           class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           <div
-            class="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             ARK.io
-          </div>
-          <div
-            class="flex items-center"
-            data-testid="ReviewRating"
-          >
-            <div
-              class="relative"
-            >
-              <div
-                class="overflow-hidden absolute"
-                style="width: 80%;"
-              >
-                <svg
-                  class="text-theme-warning-400 w-4"
-                >
-                  star.svg
-                </svg>
-              </div>
-              <svg
-                class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-              >
-                star.svg
-              </svg>
-            </div>
-            <span
-              class="ml-1"
-            >
-              4.2
-            </span>
           </div>
         </div>
       </div>
