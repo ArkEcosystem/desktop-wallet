@@ -3,7 +3,7 @@ import { toasts } from "app/services";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
-import { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 import { openExternal } from "utils/electron-utils";
 
 import { Icon } from "../Icon";
@@ -11,14 +11,21 @@ import { Icon } from "../Icon";
 const AnchorStyled = styled.a<{ isExternal: boolean }>`
 	${({ isExternal }) =>
 		isExternal &&
-		`
-		&:active {
-			text-decoration-style: dotted;
-		}
-		&:hover:not(:active) {
-			text-decoration: none;
-		}
-	`}
+		css`
+			&:hover,
+			&:active {
+				${tw`no-underline`}
+
+				.underline-dotted {
+					${tw`relative`}
+
+					&:after {
+						content: "";
+						${tw`block w-full border-b absolute bottom-0 border-dotted`}
+					}
+				}
+			}
+		`}
 `;
 
 type AnchorProps = {
@@ -42,7 +49,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
 			}}
 			{...props}
 		>
-			{children}
+			<span className="underline-dotted">{children}</span>
 			{isExternal && showExternalIcon && (
 				<Icon
 					data-testid="Link__external"
