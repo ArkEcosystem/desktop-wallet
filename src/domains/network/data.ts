@@ -9,7 +9,7 @@ import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { TRX } from "@arkecosystem/platform-sdk-trx";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
-import { XMR } from "@arkecosystem/platform-sdk-xmr";
+// import { XMR } from "@arkecosystem/platform-sdk-xmr";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
 export interface CoinNetworkExtended {
@@ -317,8 +317,8 @@ export const availableNetworksMock: Coins.Network[] = [
 	new Coins.Network(TRX.manifest.name, TRX.manifest.networks["trx.testnet"]),
 	// new Coins.Network(XLM.manifest.name, XLM.manifest.networks["xlm.mainnet"]),
 	// new Coins.Network(XLM.manifest.name, XLM.manifest.networks["xlm.testnet"]),
-	new Coins.Network(XMR.manifest.name, XMR.manifest.networks["xmr.mainnet"]),
-	new Coins.Network(XMR.manifest.name, XMR.manifest.networks["xmr.testnet"]),
+	// new Coins.Network(XMR.manifest.name, XMR.manifest.networks["xmr.mainnet"]),
+	// new Coins.Network(XMR.manifest.name, XMR.manifest.networks["xmr.testnet"]),
 	new Coins.Network(XRP.manifest.name, XRP.manifest.networks["xrp.mainnet"]),
 	new Coins.Network(XRP.manifest.name, XRP.manifest.networks["xrp.testnet"]),
 ];
