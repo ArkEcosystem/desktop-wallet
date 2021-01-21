@@ -131,6 +131,7 @@ export const useProfileSyncStatus = () => {
 };
 
 export const useProfileSynchronizer = () => {
+	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
@@ -166,9 +167,12 @@ export const useProfileSynchronizer = () => {
 			if (shouldRestore(profile)) {
 				setStatus("restoring");
 
-				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();
-				restoreProfileTestPassword(profile);
+
+				if (isDemo) {
+					restoreProfileTestPassword(profile);
+				}
+
 				await persist();
 
 				markAsRestored(profile.id());
