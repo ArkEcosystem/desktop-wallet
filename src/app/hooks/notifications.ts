@@ -66,8 +66,9 @@ const filterUnseenTransactions = (
 			isRecipient(profile, transaction) &&
 			!transactionNotificationExists(profile, transaction) &&
 			!addedTransactions.find((t) => t.id() === transaction.id())
-		)
+		) {
 			addedTransactions.push(transaction);
+		}
 		return addedTransactions;
 	}, []);
 
@@ -94,7 +95,9 @@ const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version
 	env.profiles()
 		.values()
 		.forEach((profile: Profile) => {
-			if (findNotificationByVersion(profile, version)) return;
+			if (findNotificationByVersion(profile, version)) {
+				return;
+			}
 
 			profile.notifications().push(
 				formatNotification({
@@ -113,7 +116,9 @@ const deleteNotificationsByVersion = (env: Environment) => ({ version }: { versi
 		.values()
 		.forEach((profile: Profile) => {
 			const notification = findNotificationByVersion(profile, version);
-			if (notification) profile.notifications().forget(notification.id);
+			if (notification) {
+				profile.notifications().forget(notification.id);
+			}
 		});
 };
 

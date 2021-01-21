@@ -19,7 +19,9 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 	});
 
 	const renderChildNode = (data: any, index: number) => {
-		if (typeof children === "function") return children(data, index);
+		if (typeof children === "function") {
+			return children(data, index);
+		}
 		return <div />;
 	};
 

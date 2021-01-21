@@ -29,7 +29,9 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 	const handleClick = (value: string, index: number) => {
 		handleChange(value);
 		controls.start((i) => {
-			if (i !== index) return {};
+			if (i !== index) {
+				return {};
+			}
 			return {
 				x: [-3, 3, 0],
 				transition: {

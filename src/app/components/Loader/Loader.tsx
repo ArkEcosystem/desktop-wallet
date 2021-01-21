@@ -9,7 +9,9 @@ type LoaderProps = {
 };
 
 export const Loader = ({ show }: LoaderProps) => {
-	if (!show) return <></>;
+	if (!show) {
+		return <></>;
+	}
 
 	return (
 		<LoaderWrapper>

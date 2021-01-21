@@ -164,7 +164,9 @@ export const SearchWallet = ({
 	}, [searchPlaceholder, showFiatValue, t]);
 
 	const filteredWallets = useMemo(() => {
-		if (!query.length) return wallets;
+		if (!query.length) {
+			return wallets;
+		}
 
 		return wallets.filter(
 			(wallet) =>

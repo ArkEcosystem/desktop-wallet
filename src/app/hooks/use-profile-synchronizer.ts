@@ -23,7 +23,9 @@ const useProfileWatcher = () => {
 	const allProfilesCount = env.profiles().count();
 
 	return useMemo(() => {
-		if (!profileId) return;
+		if (!profileId) {
+			return;
+		}
 		let response: Profile | undefined;
 
 		try {
@@ -42,7 +44,9 @@ const useProfileJobs = (profile?: Profile) => {
 
 	const walletsCount = profile?.wallets().count();
 	return useMemo(() => {
-		if (!profile) return [];
+		if (!profile) {
+			return [];
+		}
 
 		const syncDelegates = {
 			callback: () => env.delegates().syncAll(),
@@ -94,9 +98,19 @@ export const useProfileSyncStatus = () => {
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
 
-	const shouldRestore = (profileId: string) => {
-		if (!isDemo) return false;
-		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profileId);
+	const shouldRestore = (profile: Profile) => {
+		if (profile.wasCreated()) {
+			return false;
+		}
+
+		// TODO: Should be removed. Needs checking e2e tests before removing this.
+		if (!isDemo) {
+			return false;
+		}
+
+		return (
+			!isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profile.id())
+		);
 	};
 
 	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
@@ -149,7 +163,7 @@ export const useProfileSynchronizer = () => {
 				return clearProfileSyncStatus();
 			}
 
-			if (shouldRestore(profile.id())) {
+			if (shouldRestore(profile)) {
 				setStatus("restoring");
 
 				// Perform restore to make migrated wallets available in profile.wallets()

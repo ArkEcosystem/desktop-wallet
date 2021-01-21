@@ -32,7 +32,9 @@ export const WalletsList = memo(({ isVisible = true, wallets, hasMore, onRowClic
 		},
 	];
 
-	if (!isVisible) return <></>;
+	if (!isVisible) {
+		return <></>;
+	}
 
 	return (
 		<div data-testid="WalletsList">
