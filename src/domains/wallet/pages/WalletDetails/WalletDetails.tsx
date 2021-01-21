@@ -80,7 +80,15 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 		fetchAllData();
 	}, [fetchInit]);
 
-	const handleVoteButton = () => {
+	const handleVoteButton = (filter?: string) => {
+		/* istanbul ignore else */
+		if (filter) {
+			return history.push({
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
+				search: `?filter=${filter}`,
+			});
+		}
+
 		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
 	};
 

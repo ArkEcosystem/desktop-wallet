@@ -173,9 +173,19 @@ export const translations: { [key: string]: any } = {
 		VOTES: {
 			TITLE: "My Vote",
 			TITLE_plural: "My Votes",
-			EMPTY_DESCRIPTION: "You have not yet voted for a Delegate",
+			EMPTY_DESCRIPTION: "You have not yet voted for a delegate",
 			VOTING_FOR: "Voting for",
 			MULTIVOTE: "Multivote",
+			DELEGATE_STATUS: "Delegate Status",
+			ACTIVE: "Active",
+			ACTIVE_plural: "All Active",
+			ACTIVE_COUNT: "Active {{count}}",
+			STANDBY: "Standby",
+			STANDBY_plural: "All Standby",
+			STANDBY_COUNT: "Standby {{count}}",
+			NOT_FORGING: "Your delegate is currently not in a forging position",
+			NOT_FORGING_plural: "Your delegates are currently not in a forging position",
+			NOT_FORGING_COUNT: "{{count}} of your delegates are currently not in a forging position",
 		},
 
 		OPTIONS: {

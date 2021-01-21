@@ -54,6 +54,7 @@ import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as GridView } from "./grid-view.svg";
 import { ReactComponent as Id } from "./id.svg";
 import { ReactComponent as Import } from "./import.svg";
+import { ReactComponent as InformationCircle } from "./information-circle.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
 import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
@@ -163,6 +164,7 @@ export const SvgCollection: any = {
 	GridView,
 	Id,
 	Import,
+	InformationCircle,
 	Ipfs,
 	Key,
 	Ledger,

@@ -29,6 +29,7 @@ export const Votes = () => {
 	const queryParams = useQueryParams();
 	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
+	const filter = (queryParams.get("filter") || "all") as FilterOption;
 
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
@@ -46,9 +47,9 @@ export const Votes = () => {
 	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
-	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<ReadOnlyWallet[] | undefined>();
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
-	const [selectedFilter, setSelectedFilter] = useState<FilterOption>("all");
+	const [selectedFilter, setSelectedFilter] = useState<FilterOption>(filter);
 
 	const crumbs = [
 		{
@@ -112,7 +113,7 @@ export const Votes = () => {
 	}, [activeProfile, selectedNetworkIds]);
 
 	const currentVotes = useMemo(
-		() => votes.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
+		() => votes?.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
 		[votes, delegates],
 	);
 
@@ -206,7 +207,7 @@ export const Votes = () => {
 	};
 
 	useEffect(() => {
-		if (votes.length === 0) {
+		if (votes?.length === 0) {
 			setSelectedFilter("all");
 		}
 	}, [votes]);
@@ -235,7 +236,7 @@ export const Votes = () => {
 		}
 
 		/* istanbul ignore next */
-		return filteredDelegatesVotes.filter(
+		return filteredDelegatesVotes?.filter(
 			(delegate) =>
 				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
 				delegate.username()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
@@ -278,7 +279,7 @@ export const Votes = () => {
 								</div>
 							) : (
 								<VotesFilter
-									totalCurrentVotes={currentVotes.length}
+									totalCurrentVotes={currentVotes?.length || 0}
 									selectedOption={selectedFilter}
 									onChange={setSelectedFilter}
 								/>

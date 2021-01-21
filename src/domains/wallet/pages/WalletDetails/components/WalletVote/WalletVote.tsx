@@ -3,18 +3,32 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
 type WalletVoteProps = {
+	isLoading?: boolean;
 	wallet: ReadWriteWallet;
 	onButtonClick: (address?: string) => void;
-	isLoading?: boolean;
 };
 
-export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps) => {
+const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
+	<Tooltip content={tooltipContent} className="mb-1">
+		<span>
+			<Icon
+				name="InformationCircle"
+				width={20}
+				height={20}
+				className="text-theme-primary-300 dark:text-theme-secondary-600"
+			/>
+		</span>
+	</Tooltip>
+);
+
+export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
 	if (isLoading) {
@@ -22,6 +36,8 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 	}
 
 	const maxVotes = wallet.network().maximumVotesPerWallet();
+	const activeDelegates = wallet.network().delegateCount() || 51;
+
 	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
 
 	let votes: ReadOnlyWallet[];
@@ -32,8 +48,48 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 		votes = [];
 	}
 
-	// @TODO
-	const activeCount = 1;
+	const activeCount = votes.filter(
+		(delegate: ReadOnlyWallet) => delegate.rank() && delegate.rank()! <= activeDelegates,
+	).length;
+
+	const renderStatuses = () => {
+		if (activeCount === votes.length) {
+			return (
+				<span className="font-semibold text-theme-success-600">
+					{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.ACTIVE", { count: maxVotes })}
+				</span>
+			);
+		}
+
+		if (activeCount === 0) {
+			return (
+				<>
+					<HintIcon
+						tooltipContent={t("WALLETS.PAGE_WALLET_DETAILS.VOTES.NOT_FORGING", { count: votes.length })}
+					/>
+					<span className="font-semibold text-theme-warning-500">
+						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.STANDBY", { count: maxVotes })}
+					</span>
+				</>
+			);
+		}
+
+		const standbyCount = votes.length - activeCount;
+
+		return (
+			<>
+				<HintIcon
+					tooltipContent={t("WALLETS.PAGE_WALLET_DETAILS.VOTES.NOT_FORGING_COUNT", { count: standbyCount })}
+				/>
+				<span className="font-semibold">
+					{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.ACTIVE_COUNT", { count: activeCount })}
+					<span className="text-theme-secondary-500 dark:text-theme-secondary-700">
+						&nbsp;/&nbsp;{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.STANDBY_COUNT", { count: standbyCount })}
+					</span>
+				</span>
+			</>
+		);
+	};
 
 	const renderVotes = () => {
 		const delegate = votes[0];
@@ -55,13 +111,16 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 						{votes.length === 1 ? (
 							<span>{delegate.username()}</span>
 						) : (
-							<span className="cursor-pointer" onClick={() => onButtonClick()}>
+							<span
+								className="transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 active:text-theme-primary-500"
+								onClick={() => onButtonClick("current")}
+							>
 								{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE")}
 							</span>
 						)}
 					</div>
 
-					{votes.length === 1 && (
+					{maxVotes === 1 && (
 						<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
 							<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
 								{t("COMMON.RANK")}
@@ -70,38 +129,26 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 						</div>
 					)}
 
-					<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
-						<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
-							{t("COMMON.VOTES")}
-						</span>
-						<span>
-							{votes.length}
-							<span className="text-theme-secondary-500 dark:text-theme-secondary-700">/{maxVotes}</span>
-						</span>
-					</div>
+					{maxVotes > 1 && (
+						<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
+							<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+								{t("COMMON.VOTES")}
+							</span>
+							<span>
+								{votes.length}
+								<span className="text-theme-secondary-500 dark:text-theme-secondary-700">
+									/{maxVotes}
+								</span>
+							</span>
+						</div>
+					)}
 				</div>
 
-				<div className="flex font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6 space-x-4">
-					<div className="flex flex-col items-end justify-between">
-						<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
-							{t("COMMON.STATUS")}
-						</span>
-						<span>
-							<span className={activeCount > 0 ? "text-theme-success-600" : "text-theme-danger-400"}>
-								Active {activeCount}
-							</span>
-							<span className="text-theme-secondary-500 dark:text-theme-secondary-700">
-								/{votes.length}
-							</span>
-						</span>
-					</div>
-
-					<Circle
-						size="lg"
-						className="border-theme-success-600 dark:border-theme-secondary-700 text-theme-success-600 dark:text-theme-secondary-700"
-					>
-						<Icon name="CheckmarkBig" width={16} height={15} />
-					</Circle>
+				<div className="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6">
+					<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm ">
+						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.DELEGATE_STATUS")}
+					</span>
+					<div className="flex items-center justify-end space-x-2">{renderStatuses()}</div>
 				</div>
 			</>
 		);
@@ -157,5 +204,4 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 
 WalletVote.defaultProps = {
 	votes: [],
-	maxVotes: 1,
 };
