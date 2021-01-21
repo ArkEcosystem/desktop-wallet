@@ -5,10 +5,12 @@ import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
+import { usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
-import { pluginData, reviewData } from "../../data";
+import { reviewData } from "../../data";
 
 const commentsSortOptions = {
 	type: "Best",
@@ -16,15 +18,17 @@ const commentsSortOptions = {
 };
 
 type PluginDetailsProps = {
-	pluginData?: any;
 	reviewData?: any;
 	isInstalled?: boolean;
 };
 
-export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDetailsProps) => {
+export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) => {
 	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
+	const { pluginId } = useParams();
+	const { pluginManager } = usePluginManagerContext();
+	const pluginData = {} as any;
 
 	const { name, author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
@@ -87,6 +91,5 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 PluginDetails.defaultProps = {
 	isInstalled: false,
-	pluginData,
 	reviewData,
 };

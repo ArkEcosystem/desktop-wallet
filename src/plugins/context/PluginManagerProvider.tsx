@@ -1,15 +1,18 @@
+import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
 import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
-	const [state, setState] = useState<any>();
+	const [state, setState] = useState<any>({});
+	const [pluginRegistry] = useState(() => new PluginRegistry(new Request()));
 
 	const [pluginManager] = useState(() => {
 		manager.services().register(services);
@@ -38,7 +41,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		}
 	}, [pluginManager]);
 
-	const trigger = useCallback(() => setState({}), []);
+	const trigger = useCallback(() => setState((prev: any) => ({ ...prev })), []);
 
 	const reportPlugin = useCallback((plugin: PluginController) => {
 		const name = plugin.config().get("name");
@@ -70,7 +73,32 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginManager, trigger],
 	);
 
-	return { pluginManager, loadPlugins, trigger, state, reportPlugin, deletePlugin };
+	const fetchAvailablePlugins = useCallback(async () => {
+		const result = await pluginRegistry.all();
+		const sanitized = result.map((item) => ({
+			id: item.name(),
+			name: item.alias(),
+			author: item.author()?.name,
+			category: item.categories()?.[0],
+			version: item.version(),
+			size: item.installSize(),
+		}));
+		setState((prev: any) => ({ ...prev, available: sanitized }));
+	}, [pluginRegistry]);
+
+	const availablePlugins = useMemo(() => state.available || [], [state]);
+
+	return {
+		pluginRegistry,
+		fetchAvailablePlugins,
+		availablePlugins,
+		pluginManager,
+		loadPlugins,
+		trigger,
+		state,
+		reportPlugin,
+		deletePlugin,
+	};
 };
 
 export const PluginManagerProvider = ({
