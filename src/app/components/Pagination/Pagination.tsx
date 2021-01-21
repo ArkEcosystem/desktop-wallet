@@ -91,7 +91,7 @@ export const Pagination = ({
 		paginationButtons,
 	]);
 
-	if (variant === "condensed")
+	if (variant === "condensed") {
 		return (
 			<CompactPagination
 				totalCount={totalCount}
@@ -100,6 +100,7 @@ export const Pagination = ({
 				currentPage={currentPage}
 			/>
 		);
+	}
 
 	return (
 		<Wrapper data-testid="Pagination" className={className}>

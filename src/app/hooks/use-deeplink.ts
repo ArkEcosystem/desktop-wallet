@@ -15,9 +15,13 @@ const useDeepLinkHandler = () => {
 	const handler = useCallback(
 		(event: any, deeplink: string) => {
 			if (deeplink) {
-				if (window.location.pathname === "/") return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
+				if (window.location.pathname === "/") {
+					return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
+				}
 
-				if (window.location.pathname.includes("/dashboard")) return toasts.warning(t("COMMON.SELECT_A_WALLET"));
+				if (window.location.pathname.includes("/dashboard")) {
+					return toasts.warning(t("COMMON.SELECT_A_WALLET"));
+				}
 
 				const deeplinkSchema = uriService.deserialize(deeplink);
 				const urlParts = window.location.pathname.split("/");

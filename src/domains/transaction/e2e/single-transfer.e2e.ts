@@ -63,6 +63,7 @@ test("should send transfer successfully", async (t) => {
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type mnemonic
+	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").exists).ok({ timeout: 4000 });
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
 	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
 

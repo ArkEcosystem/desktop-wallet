@@ -8,7 +8,9 @@ import { ToggleAllOptionProps } from "./";
 export const ToggleAllOption = ({ onClick, isHidden = false, isSelected = false }: ToggleAllOptionProps) => {
 	const { t } = useTranslation();
 
-	if (isHidden) return <></>;
+	if (isHidden) {
+		return <></>;
+	}
 
 	return (
 		<Circle

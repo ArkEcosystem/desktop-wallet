@@ -47,7 +47,9 @@ export const WalletListItem = ({
 	const { t } = useTranslation();
 
 	const handleAction = (action: any) => {
-		if (typeof onAction === "function") onAction(action);
+		if (typeof onAction === "function") {
+			onAction(action);
+		}
 	};
 
 	/* istanbul ignore next */
