@@ -57,7 +57,7 @@ export const FilterWallets = ({
 						toggleIcon="ChevronDown"
 						options={walletDisplayOptions}
 						onSelect={({ value }: { value: string }) => onChange?.("walletsDisplayType", value)}
-						toggleContent={
+						toggleContent={(isOpen: boolean) => (
 							<div
 								data-testid="filter-wallets__wallets"
 								className="flex justify-end items-center cursor-pointer text-theme-secondary-text"
@@ -65,9 +65,14 @@ export const FilterWallets = ({
 								<span className="inline-block mr-2 font-semibold">
 									{walletDisplayOptions.find((option) => option.value === walletsDisplayType)?.label}
 								</span>
-								<Icon name="ChevronDown" width={8} height={5} />
+								<Icon
+									name="ChevronDown"
+									className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+									width={8}
+									height={5}
+								/>
 							</div>
-						}
+						)}
 					/>
 				</div>
 

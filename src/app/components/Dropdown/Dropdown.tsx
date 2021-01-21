@@ -35,7 +35,7 @@ type DropdownProps = {
 	toggleContent?: any;
 };
 
-export const Wrapper = styled.div<{ position?: string }>(getStyles);
+export const Wrapper = styled.div<{ position?: string; options?: any }>(getStyles);
 
 const isOptionGroup = (options: DropdownOption | DropdownOptionGroup) =>
 	(options as DropdownOptionGroup).key !== undefined;
@@ -59,10 +59,6 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 );
 
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
-	if (!options.length) {
-		return;
-	}
-
 	if (isOptionGroup(options[0])) {
 		return (
 			<div className="pt-5 pb-1">
@@ -170,9 +166,9 @@ export const Dropdown = ({
 			</span>
 
 			{isOpen && (
-				<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
+				<Wrapper position={position} options={options} className={`${defaultClasses} ${dropdownClass}`}>
 					<div data-testid="dropdown__content">
-						{renderOptions(options, select)}
+						{options?.length && renderOptions(options, select)}
 						{children && <div>{children}</div>}
 					</div>
 				</Wrapper>
@@ -182,7 +178,6 @@ export const Dropdown = ({
 };
 
 Dropdown.defaultProps = {
-	options: [],
 	toggleIcon: "Settings",
 	position: "right",
 };
