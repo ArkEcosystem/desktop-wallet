@@ -116,7 +116,7 @@ export const App = () => {
 	/* istanbul ignore next */
 	let storage: string | StubStorage = "indexeddb";
 
-	if ((!__STAGING__) && (__DEV__ || __DEMO__)) {
+	if (!__STAGING__ && (__DEV__ || __DEMO__)) {
 		storage = new StubStorage();
 	}
 
