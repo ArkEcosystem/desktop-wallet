@@ -46,7 +46,9 @@ export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdat
 	};
 
 	useEffect(() => {
-		if (downloadStatus === "completed") setActiveStep(3);
+		if (downloadStatus === "completed") {
+			setActiveStep(3);
+		}
 	}, [downloadStatus, setActiveStep]);
 
 	return (

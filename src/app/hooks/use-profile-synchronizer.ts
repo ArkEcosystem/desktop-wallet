@@ -23,7 +23,9 @@ const useProfileWatcher = () => {
 	const allProfilesCount = env.profiles().count();
 
 	return useMemo(() => {
-		if (!profileId) return;
+		if (!profileId) {
+			return;
+		}
 		let response: Profile | undefined;
 
 		try {
@@ -42,7 +44,9 @@ const useProfileJobs = (profile?: Profile) => {
 
 	const walletsCount = profile?.wallets().count();
 	return useMemo(() => {
-		if (!profile) return [];
+		if (!profile) {
+			return [];
+		}
 
 		const syncDelegates = {
 			callback: () => env.delegates().syncAll(),
@@ -95,7 +99,9 @@ export const useProfileSyncStatus = () => {
 	const isCompleted = () => current.status === "completed";
 
 	const shouldRestore = (profileId: string) => {
-		if (!isDemo) return false;
+		if (!isDemo) {
+			return false;
+		}
 		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profileId);
 	};
 

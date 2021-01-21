@@ -22,7 +22,7 @@ type SelectAddressProps = {
 } & React.InputHTMLAttributes<any>;
 
 const ProfileAvatar = ({ address }: any) => {
-	if (!address)
+	if (!address) {
 		return (
 			<Circle
 				className="mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
@@ -30,6 +30,7 @@ const ProfileAvatar = ({ address }: any) => {
 				noShadow
 			/>
 		);
+	}
 	return <Avatar address={address} size="sm" className="mx-4" noShadow />;
 };
 

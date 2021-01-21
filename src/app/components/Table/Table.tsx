@@ -32,7 +32,9 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 	);
 
 	const renderChildNode = (data: any, index: number) => {
-		if (typeof children === "function") return children(data, index);
+		if (typeof children === "function") {
+			return children(data, index);
+		}
 		return <tr />;
 	};
 

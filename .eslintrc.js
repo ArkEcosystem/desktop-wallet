@@ -72,6 +72,7 @@ module.exports = {
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
 		"unused-imports/no-unused-imports-ts": "error",
+		curly: "error",
 	},
 	settings: {
 		react: {

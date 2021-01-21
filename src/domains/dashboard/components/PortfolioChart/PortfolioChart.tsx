@@ -19,7 +19,9 @@ export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimat
 
 	// TODO: Set dashboard config showChartAnimation to false when unmount
 
-	if (!isVisible || !balances.length) return <></>;
+	if (!isVisible || !balances.length) {
+		return <></>;
+	}
 
 	return (
 		<Section>
