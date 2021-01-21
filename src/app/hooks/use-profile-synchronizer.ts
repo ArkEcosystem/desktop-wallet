@@ -86,7 +86,6 @@ type ProfileSyncState = {
 };
 
 export const useProfileSyncStatus = () => {
-	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
 		restored: [],
@@ -99,12 +98,14 @@ export const useProfileSyncStatus = () => {
 	const isCompleted = () => current.status === "completed";
 
 	const shouldRestore = (profile: Profile) => {
-		if (profile.wasCreated()) {
+		// For unit tests only. This flag prevents from running restore multiple times
+		// as the profiles are all restored before all (see jest.setup)
+		const isRestoredInTests = process.env.TEST_PROFILES_RESTORE_STATUS === "restored";
+		if (isRestoredInTests) {
 			return false;
 		}
 
-		// TODO: Should be removed. Needs checking e2e tests before removing this.
-		if (!isDemo) {
+		if (profile.wasCreated()) {
 			return false;
 		}
 
