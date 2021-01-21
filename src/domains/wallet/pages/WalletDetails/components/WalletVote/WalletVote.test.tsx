@@ -55,78 +55,169 @@ describe("WalletVote", () => {
 		maxVotesSpy.mockRestore();
 	});
 
-	it("should render a single vote", () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
-			new ReadOnlyWallet({
-				address: wallet.address(),
-				explorerLink: "",
-				publicKey: wallet.publicKey(),
-				username: "arkx",
-				rank: 1,
-			}),
-		]);
+	describe("single vote networks", () => {
+		it("should render a vote for an active delegate", () => {
+			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arkx",
+					rank: 10,
+				}),
+			]);
 
-		const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
 
-		const delegate = wallet.votes()[0];
+			const delegate = wallet.votes()[0];
 
-		expect(getByText(delegate.username())).toBeTruthy();
-		expect(getByText(delegate.rank())).toBeTruthy();
+			expect(getByText(delegate.username())).toBeTruthy();
+			expect(getByText(`#${delegate.rank()}`)).toBeTruthy();
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.ACTIVE)).toBeTruthy();
 
-		expect(getByText("checkmark-big.svg")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+			expect(asFragment()).toMatchSnapshot();
 
-		walletSpy.mockRestore();
+			walletSpy.mockRestore();
+		});
+
+		it("should render a vote for a standby delegate", () => {
+			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arkx",
+					rank: 52,
+				}),
+			]);
+
+			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+
+			const delegate = wallet.votes()[0];
+
+			expect(getByText(delegate.username())).toBeTruthy();
+			expect(getByText(`#${delegate.rank()}`)).toBeTruthy();
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY)).toBeTruthy();
+
+			expect(asFragment()).toMatchSnapshot();
+
+			walletSpy.mockRestore();
+		});
+
+		it("should render a vote for a delegate without rank", () => {
+			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arkx",
+				}),
+			]);
+
+			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+
+			const delegate = wallet.votes()[0];
+
+			expect(getByText(delegate.username())).toBeTruthy();
+			expect(getByText(commonTranslations.NOT_AVAILABLE)).toBeTruthy();
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY)).toBeTruthy();
+
+			expect(getByText("information-circle.svg")).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+
+			walletSpy.mockRestore();
+		});
 	});
 
-	it("should render a single vote without rank", () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
-			new ReadOnlyWallet({
-				address: wallet.address(),
-				explorerLink: "",
-				publicKey: wallet.publicKey(),
-				username: "arkx",
-				rank: undefined,
-			}),
-		]);
+	describe("multi vote networks", () => {
+		let maxVotesSpy: jest.SpyInstance;
 
-		const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+		beforeEach(() => (maxVotesSpy = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101)));
 
-		const delegate = wallet.votes()[0];
+		afterEach(() => maxVotesSpy.mockRestore());
 
-		expect(getByText(delegate.username())).toBeTruthy();
-		expect(getByText(commonTranslations.NOT_AVAILABLE)).toBeTruthy();
+		it("should render a vote for multiple active delegates", () => {
+			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arkx",
+					rank: 1,
+				}),
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arky",
+					rank: 2,
+				}),
+			]);
 
-		expect(getByText("checkmark-big.svg")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
 
-		walletSpy.mockRestore();
-	});
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.ACTIVE_plural)).toBeTruthy();
 
-	it("should render a multiple votes", () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
-			new ReadOnlyWallet({
-				address: wallet.address(),
-				explorerLink: "",
-				publicKey: wallet.publicKey(),
-				username: "arkx",
-				rank: 1,
-			}),
-			new ReadOnlyWallet({
-				address: wallet.address(),
-				explorerLink: "",
-				publicKey: wallet.publicKey(),
-				username: "arky",
-				rank: 2,
-			}),
-		]);
+			expect(asFragment()).toMatchSnapshot();
 
-		const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			walletSpy.mockRestore();
+		});
 
-		expect(getByText("Multivote")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		it("should render a vote for multiple active delegates", () => {
+			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arkx",
+				}),
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arky",
+				}),
+			]);
 
-		walletSpy.mockRestore();
+			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY_plural)).toBeTruthy();
+
+			expect(asFragment()).toMatchSnapshot();
+
+			walletSpy.mockRestore();
+		});
+
+		it("should render a vote for multiple active and standby delegates", () => {
+			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arkx",
+					rank: 1,
+				}),
+				new ReadOnlyWallet({
+					address: wallet.address(),
+					explorerLink: "",
+					publicKey: wallet.publicKey(),
+					username: "arky",
+				}),
+			]);
+
+			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+
+			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
+			expect(getByText("Active 1")).toBeTruthy();
+			expect(getByText("/ Standby 1")).toBeTruthy();
+
+			expect(getByText("information-circle.svg")).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+
+			walletSpy.mockRestore();
+		});
 	});
 
 	it("should emit action on multivote click", () => {

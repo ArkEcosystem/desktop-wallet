@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadOnlyWallet, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
 import nock from "nock";
@@ -157,6 +158,42 @@ describe("WalletDetails", () => {
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}/votes`);
 
 		walletSpy.mockRestore();
+		historySpy.mockRestore();
+	});
+
+	it('should navigate to votes with "current" filter param when clicking on Multivote', async () => {
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+			new ReadOnlyWallet({
+				address: wallet.address(),
+				explorerLink: "",
+				publicKey: wallet.publicKey(),
+				username: "arkx",
+				rank: 1,
+			}),
+			new ReadOnlyWallet({
+				address: wallet.address(),
+				explorerLink: "",
+				publicKey: wallet.publicKey(),
+				username: "arky",
+				rank: 2,
+			}),
+		]);
+		const maxVotesSpy = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101);
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByText, queryAllByTestId } = await renderPage();
+
+		act(() => {
+			fireEvent.click(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith({
+			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`,
+			search: "?filter=current",
+		});
+
+		walletSpy.mockRestore();
+		maxVotesSpy.mockRestore();
 		historySpy.mockRestore();
 	});
 
