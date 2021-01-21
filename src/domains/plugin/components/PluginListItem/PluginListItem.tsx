@@ -61,13 +61,19 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 					<>
 						{plugin.isEnabled ? (
 							<Tooltip content="Enabled">
-								<div className="mx-auto text-2xl text-theme-success-500">
+								<div
+									data-testid="PluginListItem__enabled"
+									className="mx-auto text-2xl text-theme-success-500"
+								>
 									<Icon name="StatusOk" />
 								</div>
 							</Tooltip>
 						) : (
 							<Tooltip content="Disabled">
-								<div className="mx-auto text-2xl text-theme-danger-400">
+								<div
+									data-testid="PluginListItem__disabled"
+									className="mx-auto text-2xl text-theme-danger-400"
+								>
 									<Icon name="StatusFailed" />
 								</div>
 							</Tooltip>
@@ -75,7 +81,10 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 					</>
 				) : (
 					<Tooltip content="Not installed">
-						<div className="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500">
+						<div
+							data-testid="PluginListItem__not-installed"
+							className="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+						>
 							<Icon name="Dash" />
 						</div>
 					</Tooltip>

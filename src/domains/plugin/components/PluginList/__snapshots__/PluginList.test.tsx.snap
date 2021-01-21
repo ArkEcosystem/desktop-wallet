@@ -299,6 +299,7 @@ exports[`PluginList should render 1`] = `
               >
                 <div
                   class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                  data-testid="PluginListItem__not-installed"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -412,6 +413,7 @@ exports[`PluginList should render 1`] = `
               >
                 <div
                   class="mx-auto text-2xl text-theme-danger-400"
+                  data-testid="PluginListItem__disabled"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -784,6 +786,7 @@ exports[`PluginList should render without pagination 1`] = `
               >
                 <div
                   class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                  data-testid="PluginListItem__not-installed"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -897,6 +900,7 @@ exports[`PluginList should render without pagination 1`] = `
               >
                 <div
                   class="mx-auto text-2xl text-theme-danger-400"
+                  data-testid="PluginListItem__disabled"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -1251,6 +1255,7 @@ exports[`PluginList should split by page 1`] = `
               >
                 <div
                   class="mx-auto text-2xl text-theme-danger-400"
+                  data-testid="PluginListItem__disabled"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -1644,6 +1649,7 @@ exports[`PluginList should trigger delete 1`] = `
               >
                 <div
                   class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                  data-testid="PluginListItem__not-installed"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -1757,6 +1763,7 @@ exports[`PluginList should trigger delete 1`] = `
               >
                 <div
                   class="mx-auto text-2xl text-theme-danger-400"
+                  data-testid="PluginListItem__disabled"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -2129,6 +2136,7 @@ exports[`PluginList should trigger install 1`] = `
               >
                 <div
                   class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                  data-testid="PluginListItem__not-installed"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"
@@ -2242,6 +2250,7 @@ exports[`PluginList should trigger install 1`] = `
               >
                 <div
                   class="mx-auto text-2xl text-theme-danger-400"
+                  data-testid="PluginListItem__disabled"
                 >
                   <div
                     class="sc-gsTCUz cXMmJt"

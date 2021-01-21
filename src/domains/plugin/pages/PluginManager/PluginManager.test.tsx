@@ -1,16 +1,20 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
-import { PluginProviders } from "app/PluginProviders";
+import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { createMemoryHistory } from "history";
+import { PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
 import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
+import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
 let consoleSpy: any;
 let rendered: RenderResult;
+let profile: Profile;
 const history = createMemoryHistory();
 
 const fixtureProfileId = getDefaultProfileId();
@@ -22,6 +26,7 @@ describe("PluginManager", () => {
 	});
 
 	beforeEach(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
 		history.push(pluginsURL);
 
 		await act(async () => {
@@ -266,5 +271,53 @@ describe("PluginManager", () => {
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
 		expect(consoleSpy).toHaveBeenCalledTimes(4);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should enable plugin on my-plugins", async () => {
+		const onEnabled = jest.fn();
+		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
+		pluginManager.plugins().push(plugin);
+
+		const { asFragment, getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument();
+
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
+
+		await waitFor(() => expect(getByTestId("PluginListItem__enabled")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+		expect(onEnabled).toHaveBeenCalled();
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should disable plugin on my-plugins", async () => {
+		const onEnabled = jest.fn();
+		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
+		pluginManager.plugins().push(plugin);
+		plugin.enable(profile);
+
+		const { asFragment, getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		expect(getByTestId("PluginListItem__enabled")).toBeInTheDocument();
+
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
+
+		await waitFor(() => expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 });
