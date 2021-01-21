@@ -105,7 +105,7 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 
 				<div className="flex flex-1 ml-4">
 					<div className="flex flex-col justify-between font-semibold">
-						<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+						<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 							{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.VOTING_FOR")}
 						</span>
 						{votes.length === 1 ? (
@@ -121,8 +121,8 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 					</div>
 
 					{maxVotes === 1 && (
-						<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
-							<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+						<div className="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800">
+							<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 								{t("COMMON.RANK")}
 							</span>
 							<span>{delegate.rank() ? `#${delegate.rank()}` : t("COMMON.NOT_AVAILABLE")}</span>
@@ -130,8 +130,8 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 					)}
 
 					{maxVotes > 1 && (
-						<div className="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6">
-							<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm">
+						<div className="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800">
+							<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 								{t("COMMON.VOTES")}
 							</span>
 							<span>
@@ -144,18 +144,18 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 					)}
 				</div>
 
-				<div className="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6">
-					<span className="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm ">
+				<div className="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800">
+					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 ">
 						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.DELEGATE_STATUS")}
 					</span>
-					<div className="flex items-center justify-end space-x-2">{renderStatuses()}</div>
+					<div className="flex justify-end items-center space-x-2">{renderStatuses()}</div>
 				</div>
 			</>
 		);
 	};
 
 	return (
-		<div data-testid="WalletVote" className="w-full flex items-center">
+		<div data-testid="WalletVote" className="flex items-center w-full">
 			{votes.length === 0 ? (
 				<>
 					<Circle
@@ -175,7 +175,7 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 							</span>
 
 							<span className="leading-none">
-								<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 mr-1">
+								<span className="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}
 								</span>
 								<Link to={votesHelpLink} showExternalIcon={false} isExternal>

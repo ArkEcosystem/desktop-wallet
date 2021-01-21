@@ -498,7 +498,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             class="flex"
           >
             <div
-              class="w-full flex items-center"
+              class="flex items-center w-full"
               data-testid="WalletVote"
             >
               <div
@@ -534,7 +534,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     class="leading-none"
                   >
                     <span
-                      class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 mr-1"
+                      class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
                       You have not yet voted for a delegate
                     </span>
@@ -1495,7 +1495,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             class="flex"
           >
             <div
-              class="w-full flex items-center"
+              class="flex items-center w-full"
               data-testid="WalletVote"
             >
               <div
@@ -1518,7 +1518,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   class="flex flex-col justify-between font-semibold"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Voting for
                   </span>
@@ -1527,10 +1527,10 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </span>
                 </div>
                 <div
-                  class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Rank
                   </span>
@@ -1540,15 +1540,15 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               >
                 <span
-                  class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
                 >
                   Delegate Status
                 </span>
                 <div
-                  class="flex items-center justify-end space-x-2"
+                  class="flex justify-end items-center space-x-2"
                 >
                   <span>
                     <div
@@ -2506,7 +2506,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             class="flex"
           >
             <div
-              class="w-full flex items-center"
+              class="flex items-center w-full"
               data-testid="WalletVote"
             >
               <div
@@ -2529,7 +2529,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="flex flex-col justify-between font-semibold"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Voting for
                   </span>
@@ -2538,10 +2538,10 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Rank
                   </span>
@@ -2551,15 +2551,15 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               >
                 <span
-                  class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
                 >
                   Delegate Status
                 </span>
                 <div
-                  class="flex items-center justify-end space-x-2"
+                  class="flex justify-end items-center space-x-2"
                 >
                   <span>
                     <div
@@ -3517,7 +3517,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             class="flex"
           >
             <div
-              class="w-full flex items-center"
+              class="flex items-center w-full"
               data-testid="WalletVote"
             >
               <div
@@ -3553,7 +3553,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     class="leading-none"
                   >
                     <span
-                      class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 mr-1"
+                      class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
                       You have not yet voted for a delegate
                     </span>
@@ -4514,7 +4514,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             class="flex"
           >
             <div
-              class="w-full flex items-center"
+              class="flex items-center w-full"
               data-testid="WalletVote"
             >
               <div
@@ -4537,7 +4537,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="flex flex-col justify-between font-semibold"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Voting for
                   </span>
@@ -4546,10 +4546,10 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </span>
                 </div>
                 <div
-                  class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Rank
                   </span>
@@ -4559,15 +4559,15 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               >
                 <span
-                  class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
                 >
                   Delegate Status
                 </span>
                 <div
-                  class="flex items-center justify-end space-x-2"
+                  class="flex justify-end items-center space-x-2"
                 >
                   <span>
                     <div
@@ -5531,7 +5531,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="flex"
           >
             <div
-              class="w-full flex items-center"
+              class="flex items-center w-full"
               data-testid="WalletVote"
             >
               <div
@@ -5554,7 +5554,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="flex flex-col justify-between font-semibold"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Voting for
                   </span>
@@ -5563,10 +5563,10 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                 >
                   <span
-                    class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     Rank
                   </span>
@@ -5576,15 +5576,15 @@ exports[`WalletDetails should update wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               >
                 <span
-                  class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
                 >
                   Delegate Status
                 </span>
                 <div
-                  class="flex items-center justify-end space-x-2"
+                  class="flex justify-end items-center space-x-2"
                 >
                   <span>
                     <div

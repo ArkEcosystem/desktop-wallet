@@ -3,7 +3,7 @@
 exports[`WalletVote multi vote networks should render a vote for multiple active and standby delegates 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -26,7 +26,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -37,10 +37,10 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Votes
         </span>
@@ -55,15 +55,15 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span>
           <div
@@ -113,7 +113,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
 exports[`WalletVote multi vote networks should render a vote for multiple active delegates 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -136,7 +136,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -147,10 +147,10 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Votes
         </span>
@@ -165,15 +165,15 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span
           class="font-semibold text-theme-success-600"
@@ -207,7 +207,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
 exports[`WalletVote multi vote networks should render a vote for multiple active delegates 2`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -230,7 +230,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -241,10 +241,10 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Votes
         </span>
@@ -259,15 +259,15 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span>
           <div
@@ -312,7 +312,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
 exports[`WalletVote should render 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -335,7 +335,7 @@ exports[`WalletVote should render 1`] = `
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -344,10 +344,10 @@ exports[`WalletVote should render 1`] = `
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Rank
         </span>
@@ -357,15 +357,15 @@ exports[`WalletVote should render 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span>
           <div
@@ -410,11 +410,11 @@ exports[`WalletVote should render 1`] = `
 exports[`WalletVote should render loading state 1`] = `
 <DocumentFragment>
   <div
-    class="flex w-full items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote__skeleton"
   >
     <div
-      class="Circle-uw7h4j-0 JkqUV border-transparent mr-4"
+      class="Circle-uw7h4j-0 JkqUV mr-4 border-transparent"
     >
       <span>
         <span
@@ -484,7 +484,7 @@ exports[`WalletVote should render loading state 1`] = `
 exports[`WalletVote should render the maximum votes 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -520,7 +520,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
           class="leading-none"
         >
           <span
-            class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 mr-1"
+            class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
           >
             You have not yet voted for a delegate
           </span>
@@ -568,7 +568,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
 exports[`WalletVote should render without votes 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -604,7 +604,7 @@ exports[`WalletVote should render without votes 1`] = `
           class="leading-none"
         >
           <span
-            class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 mr-1"
+            class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
           >
             You have not yet voted for a delegate
           </span>
@@ -652,7 +652,7 @@ exports[`WalletVote should render without votes 1`] = `
 exports[`WalletVote single vote networks should render a vote for a delegate without rank 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -675,7 +675,7 @@ exports[`WalletVote single vote networks should render a vote for a delegate wit
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -684,10 +684,10 @@ exports[`WalletVote single vote networks should render a vote for a delegate wit
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Rank
         </span>
@@ -697,15 +697,15 @@ exports[`WalletVote single vote networks should render a vote for a delegate wit
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span>
           <div
@@ -750,7 +750,7 @@ exports[`WalletVote single vote networks should render a vote for a delegate wit
 exports[`WalletVote single vote networks should render a vote for a standby delegate 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -773,7 +773,7 @@ exports[`WalletVote single vote networks should render a vote for a standby dele
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -782,10 +782,10 @@ exports[`WalletVote single vote networks should render a vote for a standby dele
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Rank
         </span>
@@ -795,15 +795,15 @@ exports[`WalletVote single vote networks should render a vote for a standby dele
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span>
           <div
@@ -848,7 +848,7 @@ exports[`WalletVote single vote networks should render a vote for a standby dele
 exports[`WalletVote single vote networks should render a vote for an active delegate 1`] = `
 <DocumentFragment>
   <div
-    class="w-full flex items-center"
+    class="flex items-center w-full"
     data-testid="WalletVote"
   >
     <div
@@ -871,7 +871,7 @@ exports[`WalletVote single vote networks should render a vote for an active dele
         class="flex flex-col justify-between font-semibold"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Voting for
         </span>
@@ -880,10 +880,10 @@ exports[`WalletVote single vote networks should render a vote for an active dele
         </span>
       </div>
       <div
-        class="flex flex-col justify-between font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800 ml-6 pl-6"
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <span
-          class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm"
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
         >
           Rank
         </span>
@@ -893,15 +893,15 @@ exports[`WalletVote single vote networks should render a vote for an active dele
       </div>
     </div>
     <div
-      class="flex flex-col justify-between items-end font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800 mr-6 pr-6"
+      class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <span
-        class="text-theme-secondary-500 dark:text-theme-secondary-700 text-sm "
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
       >
         Delegate Status
       </span>
       <div
-        class="flex items-center justify-end space-x-2"
+        class="flex justify-end items-center space-x-2"
       >
         <span
           class="font-semibold text-theme-success-600"

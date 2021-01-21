@@ -3,8 +3,8 @@ import { Skeleton } from "app/components/Skeleton";
 import React from "react";
 
 export const WalletVoteSkeleton = () => (
-	<div data-testid="WalletVote__skeleton" className="flex w-full items-center">
-		<Circle className="border-transparent mr-4" size="lg">
+	<div data-testid="WalletVote__skeleton" className="flex items-center w-full">
+		<Circle className="mr-4 border-transparent" size="lg">
 			<Skeleton circle height={44} width={44} />
 		</Circle>
 
