@@ -604,15 +604,19 @@ exports[`WalletVote should render the maximum votes 1`] = `
             You have not yet voted for a Delegate
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="text-sm"
+              class="underline-dotted"
             >
-              Learn more
+              <span
+                class="text-sm"
+              >
+                Learn more
+              </span>
             </span>
           </a>
         </span>
@@ -684,15 +688,19 @@ exports[`WalletVote should render without votes 1`] = `
             You have not yet voted for a Delegate
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="text-sm"
+              class="underline-dotted"
             >
-              Learn more
+              <span
+                class="text-sm"
+              >
+                Learn more
+              </span>
             </span>
           </a>
         </span>

@@ -539,15 +539,19 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       You have not yet voted for a Delegate
                     </span>
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                     >
                       <span
-                        class="text-sm"
+                        class="underline-dotted"
                       >
-                        Learn more
+                        <span
+                          class="text-sm"
+                        >
+                          Learn more
+                        </span>
                       </span>
                     </a>
                   </span>
@@ -824,20 +828,24 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <span
+                              class="underline-dotted"
                             >
-                              <svg>
-                                id.svg
-                              </svg>
-                            </div>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  id.svg
+                                </svg>
+                              </div>
+                            </span>
                           </a>
                         </div>
                       </td>
@@ -1857,20 +1865,24 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <span
+                              class="underline-dotted"
                             >
-                              <svg>
-                                id.svg
-                              </svg>
-                            </div>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  id.svg
+                                </svg>
+                              </div>
+                            </span>
                           </a>
                         </div>
                       </td>
@@ -2890,20 +2902,24 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <span
+                              class="underline-dotted"
                             >
-                              <svg>
-                                id.svg
-                              </svg>
-                            </div>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  id.svg
+                                </svg>
+                              </div>
+                            </span>
                           </a>
                         </div>
                       </td>
@@ -3594,15 +3610,19 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       You have not yet voted for a Delegate
                     </span>
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
                       to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                     >
                       <span
-                        class="text-sm"
+                        class="underline-dotted"
                       >
-                        Learn more
+                        <span
+                          class="text-sm"
+                        >
+                          Learn more
+                        </span>
                       </span>
                     </a>
                   </span>
@@ -3879,20 +3899,24 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <span
+                              class="underline-dotted"
                             >
-                              <svg>
-                                id.svg
-                              </svg>
-                            </div>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  id.svg
+                                </svg>
+                              </div>
+                            </span>
                           </a>
                         </div>
                       </td>
@@ -4912,20 +4936,24 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <span
+                              class="underline-dotted"
                             >
-                              <svg>
-                                id.svg
-                              </svg>
-                            </div>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  id.svg
+                                </svg>
+                              </div>
+                            </span>
                           </a>
                         </div>
                       </td>
@@ -5951,20 +5979,24 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <span
+                              class="underline-dotted"
                             >
-                              <svg>
-                                id.svg
-                              </svg>
-                            </div>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  id.svg
+                                </svg>
+                              </div>
+                            </span>
                           </a>
                         </div>
                       </td>

@@ -109,14 +109,19 @@ export const SelectNetwork = ({
 		}
 		// Selection is made but not me. Show me disabled
 		/* istanbul ignore next */
-		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName)
+		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName) {
 			return "text-theme-secondary-400";
+		}
 
 		// Initial state. Nothing entered, nothing selected
-		if (!inputValue) return undefined;
+		if (!inputValue) {
+			return undefined;
+		}
 
 		// Input entered, matching with input. Show normal colors
-		if (isMatch(inputValue, network)) return undefined;
+		if (isMatch(inputValue, network)) {
+			return undefined;
+		}
 
 		// Disabled otherwise
 		return "text-theme-secondary-400";
@@ -135,8 +140,11 @@ export const SelectNetwork = ({
 						placeholder,
 						onFocus: openMenu,
 						onBlur: () => {
-							if (inputValue && items.length > 0) selectItem(items[0]);
-							else reset();
+							if (inputValue && items.length > 0) {
+								selectItem(items[0]);
+							} else {
+								reset();
+							}
 						},
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {

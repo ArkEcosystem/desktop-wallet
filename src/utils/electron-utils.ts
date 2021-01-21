@@ -58,7 +58,9 @@ const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions)
 		filters,
 	});
 
-	if (!filePath) return;
+	if (!filePath) {
+		return;
+	}
 
 	if (options?.restrictToPath && !validatePath(options.restrictToPath, filePath)) {
 		throw new Error(`Writing to "${filePath}" is not allowed`);
@@ -79,7 +81,9 @@ const openFile = async (defaultPath?: string | null, options?: DialogOptions) =>
 		filters,
 	});
 
-	if (!filePaths || !filePaths.length) return;
+	if (!filePaths || !filePaths.length) {
+		return;
+	}
 
 	if (options?.restrictToPath && !validatePath(options.restrictToPath, filePaths[0])) {
 		throw new Error(`Reading from "${filePaths[0]}" is not allowed`);

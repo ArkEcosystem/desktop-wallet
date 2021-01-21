@@ -24,7 +24,9 @@ export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, o
 	const nameMaxLength = 42;
 
 	useEffect(() => {
-		if (isOpen) setValue("name", wallet.alias() as string);
+		if (isOpen) {
+			setValue("name", wallet.alias() as string);
+		}
 	}, [wallet, isOpen, setValue]);
 
 	const handleSubmit = ({ name }: any) => {
