@@ -29,7 +29,7 @@
 		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
 		"compile": "electron-webpack",
 		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron-webpack dev\"",
-		"stage": "cross-env REACT_APP_BUILD_MODE=staging concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron-webpack dev\"",
+		"staging": "cross-env REACT_APP_BUILD_MODE=staging concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron-webpack dev\"",
 		"eject": "react-app-rewired eject",
 		"electron-rebuild": "electron-builder install-app-deps",
 		"format": "yarn lint && yarn prettier",
