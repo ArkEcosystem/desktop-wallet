@@ -31,14 +31,18 @@ export const WalletsControls = memo(
 		const { t } = useTranslation();
 
 		const onClickGridView = () => {
-			if (walletsViewType === "grid") return;
+			if (walletsViewType === "grid") {
+				return;
+			}
 
 			setWalletsViewType("grid");
 			onSelectGridView?.();
 		};
 
 		const onClickListview = () => {
-			if (walletsViewType === "list") return;
+			if (walletsViewType === "list") {
+				return;
+			}
 
 			setWalletsViewType("list");
 			onSelectListView?.();

@@ -132,7 +132,9 @@ export const Modal = ({
 }: ModalProps) => {
 	useModal({ isOpen, onClose });
 
-	if (!isOpen) return <></>;
+	if (!isOpen) {
+		return <></>;
+	}
 
 	return (
 		<div className="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay">

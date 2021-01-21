@@ -59,7 +59,9 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 );
 
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
-	if (!options.length) return;
+	if (!options.length) {
+		return;
+	}
 
 	if (isOptionGroup(options[0])) {
 		return (
@@ -124,7 +126,9 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 	}
 
 	// Call children as a function and provide isOpen state
-	if (typeof children === "function") return children(isOpen);
+	if (typeof children === "function") {
+		return children(isOpen);
+	}
 
 	// Render children as provided
 	return children;
@@ -151,7 +155,9 @@ export const Dropdown = ({
 
 	const select = (option: DropdownOption) => {
 		setIsOpen(false);
-		if (typeof onSelect === "function") onSelect(option);
+		if (typeof onSelect === "function") {
+			onSelect(option);
+		}
 	};
 
 	const ref = useRef(null);

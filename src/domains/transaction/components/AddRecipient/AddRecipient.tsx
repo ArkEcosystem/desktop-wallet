@@ -87,7 +87,9 @@ export const AddRecipient = ({
 	const remainingBalance = useMemo(() => {
 		const senderBalance = profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO;
 
-		if (isSingle) return senderBalance;
+		if (isSingle) {
+			return senderBalance;
+		}
 
 		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
 	}, [addedRecipients, profile, senderAddress, isSingle]);
@@ -113,7 +115,9 @@ export const AddRecipient = ({
 	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
 
 	useEffect(() => {
-		if (!withDeeplink) return;
+		if (!withDeeplink) {
+			return;
+		}
 
 		setRecipientsAmount(
 			recipients
@@ -142,11 +146,15 @@ export const AddRecipient = ({
 
 		// Clear the recipient inputs when moving back to multiple tab with
 		// added recipients.
-		if (!isSingle && addedRecipients.length > 0) clearFields();
+		if (!isSingle && addedRecipients.length > 0) {
+			clearFields();
+		}
 	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
-		if (!isSingle) return;
+		if (!isSingle) {
+			return;
+		}
 
 		if (!recipientAddressValue || !BigNumber.make(amountValue).toNumber()) {
 			return onChange?.([]);
@@ -162,7 +170,9 @@ export const AddRecipient = ({
 
 	const handleAddRecipient = async (address: string, amount: number, displayAmount: string) => {
 		const isValid = await trigger(["recipientAddress", "amount"]);
-		if (!isValid) return;
+		if (!isValid) {
+			return;
+		}
 
 		const newRecipients = [
 			...addedRecipients,

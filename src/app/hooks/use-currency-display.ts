@@ -17,7 +17,9 @@ export const useCurrencyDisplay = () => {
 	}, []);
 
 	const converToCurrency = useCallback((value: CurrencyInput | any): CurrencyInput => {
-		if (!isNil(value.display)) return value;
+		if (!isNil(value.display)) {
+			return value;
+		}
 		return Currency.fromString(String(value));
 	}, []);
 

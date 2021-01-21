@@ -27,10 +27,14 @@ export const useFeeFormat = ({ defaultValue, value, avg }: any) => {
 	}, [fee]);
 
 	useEffect(() => {
-		if (!value && !defaultValue) setFee(feeFromValue(value));
+		if (!value && !defaultValue) {
+			setFee(feeFromValue(value));
+		}
 
 		const isFeeOutdated = !BigNumber.make(value).isEqualTo(updatedFee.current.value);
-		if (isFeeOutdated) setFee(feeFromValue(value));
+		if (isFeeOutdated) {
+			setFee(feeFromValue(value));
+		}
 	}, [value, defaultValue, updatedFee]);
 
 	return {

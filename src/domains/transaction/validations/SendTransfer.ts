@@ -31,12 +31,15 @@ export const sendTransfer = (t: any, env: Environment) => ({
 				const shouldRequire = !address && !recipients.length;
 				const hasAddedRecipients = !address && !isSingleRecipient && recipients.length > 0;
 
-				if (hasAddedRecipients) return true;
+				if (hasAddedRecipients) {
+					return true;
+				}
 
-				if (shouldRequire)
+				if (shouldRequire) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.RECIPIENT"),
 					});
+				}
 
 				const coin: Coins.Coin = await env.coin(network?.coin(), network?.id());
 				const isValidAddress: boolean = await coin.identity().address().validate(address);
@@ -56,10 +59,11 @@ export const sendTransfer = (t: any, env: Environment) => ({
 				const shouldRequire = amount.isZero() && (isSingleRecipient || !recipients.length);
 				const hasSufficientBalance = balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero();
 
-				if (shouldRequire)
+				if (shouldRequire) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.AMOUNT"),
 					});
+				}
 
 				return (
 					hasSufficientBalance ||

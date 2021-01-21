@@ -51,7 +51,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 	};
 
 	const renderFormContent = () => {
-		if (verifyAddress)
+		if (verifyAddress) {
 			return (
 				<div className="mt-8">
 					<Alert>
@@ -72,6 +72,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 					</div>
 				</div>
 			);
+		}
 
 		return (
 			<div data-testid="noverify-address__content">

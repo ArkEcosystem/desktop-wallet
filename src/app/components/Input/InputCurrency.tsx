@@ -15,7 +15,9 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 
 		useLayoutEffect(() => {
 			const evaluateValue = (value: any) => {
-				if (value?.display) return value;
+				if (value?.display) {
+					return value;
+				}
 
 				return convertValue(value?.toString() || "");
 			};

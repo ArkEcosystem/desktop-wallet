@@ -66,8 +66,9 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 	const updateCategories = (isChecked: boolean, categoryValue: any) => {
 		const values = selected.concat();
 
-		if (isChecked) values.push(categoryValue);
-		else {
+		if (isChecked) {
+			values.push(categoryValue);
+		} else {
 			const index = selected.findIndex((item: string) => item === categoryValue);
 			values.splice(index, 1);
 		}
