@@ -1,3 +1,5 @@
+import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
+import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
@@ -33,6 +35,12 @@ const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManagerHomeProps) => {
 	const activeProfile = useActiveProfile();
 	const [blacklist, setBlacklist] = useState<any>([]);
+
+	const [pluginRegistry] = useState(() => new PluginRegistry(new Request()));
+
+	useEffect(() => {
+		console.log(pluginRegistry.all());
+	}, [pluginRegistry]);
 
 	useEffect(() => {
 		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
