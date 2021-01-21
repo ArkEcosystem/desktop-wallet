@@ -212,6 +212,7 @@ export const useProfileSynchronizer = () => {
 		markAsRestored,
 		status,
 		stop,
+		isDemo,
 	]);
 
 	return { profile, profileIsSyncing };
