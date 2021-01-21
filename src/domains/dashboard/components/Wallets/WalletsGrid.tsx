@@ -5,7 +5,9 @@ import React, { memo } from "react";
 import { WalletGridProps } from "./";
 
 export const WalletsGrid = memo(({ isVisible, wallets, sliderOptions, onWalletAction }: WalletGridProps) => {
-	if (!isVisible) return <></>;
+	if (!isVisible) {
+		return <></>;
+	}
 
 	return (
 		<div data-testid="WalletsGrid" className="w-full">

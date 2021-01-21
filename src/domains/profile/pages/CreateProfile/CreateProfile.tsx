@@ -107,7 +107,9 @@ export const CreateProfile = () => {
 									<InputPassword
 										ref={register(createProfile.password())}
 										onChange={() => {
-											if (confirmPassword) trigger("confirmPassword");
+											if (confirmPassword) {
+												trigger("confirmPassword");
+											}
 										}}
 									/>
 									<FormHelperText />

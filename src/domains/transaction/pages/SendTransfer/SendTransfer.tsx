@@ -77,7 +77,9 @@ export const SendTransfer = () => {
 	}, [activeProfile, hasWalletId, senderAddress]);
 
 	useEffect(() => {
-		if (!wallet?.address?.()) return;
+		if (!wallet?.address?.()) {
+			return;
+		}
 
 		setValue("senderAddress", wallet.address(), { shouldValidate: true, shouldDirty: true });
 
@@ -91,7 +93,9 @@ export const SendTransfer = () => {
 	}, [wallet, networks, setValue]);
 
 	useEffect(() => {
-		if (state?.memo) setValue("smartbridge", state.memo);
+		if (state?.memo) {
+			setValue("smartbridge", state.memo);
+		}
 	}, [state, setValue]);
 
 	const submitForm = async () => {
