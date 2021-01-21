@@ -1,5 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
+import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -107,6 +109,22 @@ export const Welcome = () => {
 												onSelect={(action: any) => handleProfileAction(profile, action)}
 											/>
 										))}
+										<div className="rounded-lg overflow-hidden m-2.5">
+											<Button
+												variant="secondary"
+												className="w-40 h-40"
+												onClick={() => history.push("/profiles/create")}
+											>
+												<div className="flex flex-col justify-center items-center">
+													<Circle size="xl" noShadow>
+														<Icon name="Plus" width={12} height={12} />
+													</Circle>
+													<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">
+														{t("PROFILE.CREATE_PROFILE")}
+													</span>
+												</div>
+											</Button>
+										</div>
 									</div>
 								</div>
 							</>
@@ -115,16 +133,6 @@ export const Welcome = () => {
 								{t("PROFILE.PAGE_WELCOME.HAS_NO_PROFILES")}
 							</p>
 						)}
-
-						<div className="flex flex-col justify-center mt-8 md:flex-row">
-							<Button
-								variant="secondary"
-								className="mt-2 md:mt-0"
-								onClick={() => history.push("/profiles/create")}
-							>
-								{t("PROFILE.CREATE_PROFILE")}
-							</Button>
-						</div>
 					</div>
 				</Section>
 			</Page>
