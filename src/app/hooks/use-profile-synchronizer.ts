@@ -98,11 +98,19 @@ export const useProfileSyncStatus = () => {
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
 
-	const shouldRestore = (profileId: string) => {
+	const shouldRestore = (profile: Profile) => {
+		if (profile.wasCreated()) {
+			return false;
+		}
+
+		// TODO: Should be removed. Needs checking e2e tests before removing this.
 		if (!isDemo) {
 			return false;
 		}
-		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profileId);
+
+		return (
+			!isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profile.id())
+		);
 	};
 
 	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
@@ -155,7 +163,7 @@ export const useProfileSynchronizer = () => {
 				return clearProfileSyncStatus();
 			}
 
-			if (shouldRestore(profile.id())) {
+			if (shouldRestore(profile)) {
 				setStatus("restoring");
 
 				// Perform restore to make migrated wallets available in profile.wallets()
