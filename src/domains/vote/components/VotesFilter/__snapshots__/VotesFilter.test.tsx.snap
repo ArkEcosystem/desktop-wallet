@@ -58,7 +58,7 @@ exports[`VotesFilter should render default 1`] = `
       <div
         class="Dropdown__Wrapper-ocz1je-0 hArGtU opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl "
         data-testid="dropdown__content"
-        style="overflow-y: visible; opacity: 100;"
+        style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
         <div>
           <div
@@ -135,7 +135,7 @@ exports[`VotesFilter should render with current option selected 1`] = `
       <div
         class="Dropdown__Wrapper-ocz1je-0 hArGtU opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl "
         data-testid="dropdown__content"
-        style="overflow-y: visible; opacity: 100;"
+        style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
         <div>
           <div
@@ -212,7 +212,7 @@ exports[`VotesFilter should render with disabled current option 1`] = `
       <div
         class="Dropdown__Wrapper-ocz1je-0 hArGtU opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl "
         data-testid="dropdown__content"
-        style="overflow-y: visible; opacity: 100;"
+        style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
         <div>
           <div

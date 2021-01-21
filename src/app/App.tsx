@@ -9,7 +9,6 @@ import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
-import { resizeDropdownsHandler } from "app/hooks";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
@@ -83,14 +82,6 @@ const Main = () => {
 
 		boot();
 	}, [env, handleError, runAll, loadPlugins]);
-
-	useEffect(() => {
-		window.addEventListener("resize", resizeDropdownsHandler);
-
-		return () => {
-			window.removeEventListener("resize", resizeDropdownsHandler);
-		};
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const renderContent = () => {
 		if (showSplash) {

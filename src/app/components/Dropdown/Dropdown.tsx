@@ -1,6 +1,6 @@
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { clickOutsideHandler, resizeDropdownsHandler } from "app/hooks";
+import { clickOutsideHandler } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 import { Position, Size } from "types";
@@ -158,14 +158,80 @@ export const Dropdown = ({
 	const ref = useRef(null);
 
 	useEffect(() => {
-		clickOutsideHandler(ref, hide);
-	}, [ref]);
+		const handleResize = () => {
+			if (!ref.current) {
+				return;
+			}
+
+			const numberFromPixels = (value: string): number => (value ? parseInt(value.replace("px", "")) : 0);
+
+			const OFFSET = 30;
+
+			const parent = (ref.current as unknown) as HTMLElement;
+
+			const toggleElement: HTMLElement | null = parent.querySelector('[data-testid="dropdown__toggle"]');
+			const dropdownElement: HTMLElement | null = parent.querySelector('[data-testid="dropdown__content"]');
+
+			if (toggleElement && dropdownElement) {
+				const setStyles = (styles: Record<string, any>) => {
+					Object.assign(dropdownElement.style, styles);
+				};
+
+				const toggleHeight: number = toggleElement.parentElement!.offsetHeight;
+
+				const spaceBefore: number =
+					toggleElement.getBoundingClientRect().top + document.documentElement.scrollTop;
+				const spaceAfter: number = document.body.clientHeight - (spaceBefore + toggleHeight);
+
+				setStyles({ height: null, marginTop: null });
+
+				const styles = getComputedStyle(dropdownElement);
+
+				if (
+					spaceAfter < dropdownElement.offsetHeight + numberFromPixels(styles.marginTop) + OFFSET &&
+					spaceBefore > dropdownElement.offsetHeight + numberFromPixels(styles.marginTop) + OFFSET
+				) {
+					setStyles({
+						opacity: 100,
+						marginTop: `-${
+							dropdownElement.offsetHeight + toggleHeight + numberFromPixels(styles.marginTop)
+						}px`,
+					});
+				} else {
+					const newHeight = spaceAfter - numberFromPixels(styles.marginTop) - OFFSET;
+
+					const newStyles =
+						newHeight >=
+						dropdownElement.firstElementChild!.clientHeight +
+							numberFromPixels(styles.paddingTop) +
+							numberFromPixels(styles.paddingBottom)
+							? {
+									height: null,
+									overflowY: "visible",
+							  }
+							: {
+									height: `${newHeight}px`,
+									marginTop: null,
+									overflowY: "scroll",
+							  };
+
+					setStyles({ opacity: 100, ...newStyles });
+				}
+			}
+		};
+
+		if (isOpen) {
+			window.addEventListener("resize", handleResize);
+		}
+
+		handleResize();
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, [isOpen]);
 
 	useEffect(() => {
-		if (isOpen) {
-			resizeDropdownsHandler(ref);
-		}
-	}, [ref, isOpen]);
+		clickOutsideHandler(ref, hide);
+	}, [ref]);
 
 	return (
 		<div ref={ref} className="relative">
