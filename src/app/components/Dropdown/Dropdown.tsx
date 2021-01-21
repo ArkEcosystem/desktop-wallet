@@ -159,10 +159,6 @@ export const Dropdown = ({
 
 	useEffect(() => {
 		const handleResize = () => {
-			if (!ref.current) {
-				return;
-			}
-
 			const numberFromPixels = (value: string): number => (value ? parseInt(value.replace("px", "")) : 0);
 
 			const OFFSET = 30;
@@ -207,7 +203,7 @@ export const Dropdown = ({
 							numberFromPixels(styles.paddingBottom)
 							? {
 									height: null,
-									overflowY: "visible",
+									overflowY: null,
 							  }
 							: {
 									height: `${newHeight}px`,
