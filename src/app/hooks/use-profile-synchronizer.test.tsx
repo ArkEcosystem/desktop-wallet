@@ -9,6 +9,124 @@ const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 import { useProfileSyncStatus } from "./use-profile-synchronizer";
 
+describe("useProfileSyncStatus", () => {
+	it("should restore demo", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		expect(current.shouldRestore(profile)).toEqual(true);
+	});
+
+	it("should not restore if not demo", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		expect(current.shouldRestore(profile)).toEqual(false);
+	});
+
+	it("#idle", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		expect(current.isIdle()).toEqual(true);
+		expect(current.shouldRestore(profile)).toEqual(false);
+		expect(current.shouldSync()).toEqual(true);
+		expect(current.shouldMarkCompleted()).toEqual(false);
+	});
+
+	it("#restoring", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		current.setStatus("restoring");
+
+		expect(current.isIdle()).toEqual(false);
+		expect(current.shouldRestore(profile)).toEqual(false);
+		expect(current.shouldSync()).toEqual(false);
+		expect(current.shouldMarkCompleted()).toEqual(false);
+	});
+
+	it("#restored", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		current.setStatus("restored");
+
+		expect(current.isIdle()).toEqual(false);
+		expect(current.shouldRestore(profile)).toEqual(false);
+		expect(current.shouldSync()).toEqual(true);
+		expect(current.shouldMarkCompleted()).toEqual(false);
+	});
+
+	it("#syncing", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		current.setStatus("syncing");
+
+		expect(current.isIdle()).toEqual(false);
+		expect(current.shouldRestore(profile)).toEqual(false);
+		expect(current.shouldSync()).toEqual(false);
+		expect(current.shouldMarkCompleted()).toEqual(false);
+	});
+
+	it("#synced", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		current.setStatus("synced");
+
+		expect(current.isIdle()).toEqual(false);
+		expect(current.shouldRestore(profile)).toEqual(false);
+		expect(current.shouldSync()).toEqual(false);
+		expect(current.shouldMarkCompleted()).toEqual(true);
+	});
+
+	it("#completed", async () => {
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		current.setStatus("completed");
+
+		expect(current.isIdle()).toEqual(false);
+		expect(current.shouldRestore(profile)).toEqual(false);
+		expect(current.shouldSync()).toEqual(false);
+		expect(current.shouldMarkCompleted()).toEqual(false);
+	});
+});
+
 describe("useProfileSynchronizer", () => {
 	it("should sync profile", async () => {
 		history.push(dashboardURL);
@@ -117,115 +235,5 @@ describe("useProfileSynchronizer", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("RenderedContent")).toBeInTheDocument(), { timeout: 4000 });
-	});
-});
-
-describe("useProfileSyncStatus", () => {
-	it("should restore demo", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		expect(current.shouldRestore()).toEqual(true);
-	});
-
-	it("should not restore if not demo", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		expect(current.shouldRestore()).toEqual(false);
-	});
-
-	it("#idle", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		expect(current.isIdle()).toEqual(true);
-		expect(current.shouldRestore()).toEqual(false);
-		expect(current.shouldSync()).toEqual(true);
-		expect(current.shouldMarkCompleted()).toEqual(false);
-	});
-
-	it("#restoring", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		current.setStatus("restoring");
-
-		expect(current.isIdle()).toEqual(false);
-		expect(current.shouldRestore()).toEqual(false);
-		expect(current.shouldSync()).toEqual(false);
-		expect(current.shouldMarkCompleted()).toEqual(false);
-	});
-
-	it("#restored", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		current.setStatus("restored");
-
-		expect(current.isIdle()).toEqual(false);
-		expect(current.shouldRestore()).toEqual(false);
-		expect(current.shouldSync()).toEqual(true);
-		expect(current.shouldMarkCompleted()).toEqual(false);
-	});
-
-	it("#syncing", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		current.setStatus("syncing");
-
-		expect(current.isIdle()).toEqual(false);
-		expect(current.shouldRestore()).toEqual(false);
-		expect(current.shouldSync()).toEqual(false);
-		expect(current.shouldMarkCompleted()).toEqual(false);
-	});
-
-	it("#synced", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		current.setStatus("synced");
-
-		expect(current.isIdle()).toEqual(false);
-		expect(current.shouldRestore()).toEqual(false);
-		expect(current.shouldSync()).toEqual(false);
-		expect(current.shouldMarkCompleted()).toEqual(true);
-	});
-
-	it("#completed", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
-
-		current.setStatus("completed");
-
-		expect(current.isIdle()).toEqual(false);
-		expect(current.shouldRestore()).toEqual(false);
-		expect(current.shouldSync()).toEqual(false);
-		expect(current.shouldMarkCompleted()).toEqual(false);
 	});
 });
