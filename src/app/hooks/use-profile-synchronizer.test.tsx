@@ -32,6 +32,17 @@ describe("useProfileSyncStatus", () => {
 		expect(current.shouldRestore(profile)).toEqual(false);
 	});
 
+	it("should not restore if profile is created", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+		const profile = env.profiles().create("Test");
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileSyncStatus());
+
+		expect(current.shouldRestore(profile)).toEqual(false);
+	});
+
 	it("#idle", async () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
