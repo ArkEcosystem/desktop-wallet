@@ -63,7 +63,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coverI
 
 					<Divider />
 
-					<p className="whitespace-pre-line text-theme-secondary-text" data-testid="NewsCard__content">
+					<div className="whitespace-pre-line text-theme-secondary-text" data-testid="NewsCard__content">
 						<Linkify
 							componentDecorator={(pathname: string, text: string, key: number) => (
 								<Link to={pathname} key={key} isExternal>
@@ -73,7 +73,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coverI
 						>
 							{text}
 						</Linkify>
-					</p>
+					</div>
 
 					{coverImage && (
 						<div className="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-secondary-800">
