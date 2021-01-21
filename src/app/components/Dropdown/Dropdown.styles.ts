@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 
-export const defaultClasses = "mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl";
+export const defaultClasses = "mt-3 py-3 absolute z-10 bg-white dark:bg-theme-secondary-800 rounded-lg shadow-xl";
 
 const getPosition = (position: string): any => {
 	switch (position) {
