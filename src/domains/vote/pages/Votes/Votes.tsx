@@ -128,8 +128,12 @@ export const Votes = () => {
 		selectedNetworkIds,
 		walletsDisplayType,
 		onChange: (key: string, value: any) => {
-			if (key === "walletsDisplayType") setWalletsDisplayType(value);
-			if (key === "selectedNetworkIds") setSelectedNetworkIds(value);
+			if (key === "walletsDisplayType") {
+				setWalletsDisplayType(value);
+			}
+			if (key === "selectedNetworkIds") {
+				setSelectedNetworkIds(value);
+			}
 		},
 	};
 
@@ -202,11 +206,15 @@ export const Votes = () => {
 	};
 
 	useEffect(() => {
-		if (votes.length === 0) setSelectedFilter("all");
+		if (votes.length === 0) {
+			setSelectedFilter("all");
+		}
 	}, [votes]);
 
 	const filteredWalletsByCoin = useMemo(() => {
-		if (!searchQuery.length) return walletsByCoin;
+		if (!searchQuery.length) {
+			return walletsByCoin;
+		}
 
 		return Object.keys(walletsByCoin).reduce(
 			(coins, coin) => ({
@@ -222,7 +230,9 @@ export const Votes = () => {
 	}, [searchQuery, walletsByCoin]);
 
 	const filteredDelegates = useMemo(() => {
-		if (!searchQuery.length) return filteredDelegatesVotes;
+		if (!searchQuery.length) {
+			return filteredDelegatesVotes;
+		}
 
 		/* istanbul ignore next */
 		return filteredDelegatesVotes.filter(

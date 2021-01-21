@@ -25,9 +25,13 @@ export const useWalletDisplay = ({
 
 		const listWallets = wallets
 			.filter((wallet: any, index: number) => {
-				if (!viewMore && index > listPagerLimit) return false;
+				if (!viewMore && index > listPagerLimit) {
+					return false;
+				}
 
-				if (!selectedNetworkIds?.includes(wallet.network().id())) return false;
+				if (!selectedNetworkIds?.includes(wallet.network().id())) {
+					return false;
+				}
 
 				if (displayType === "favorites") {
 					return wallet.isStarred();
@@ -44,7 +48,9 @@ export const useWalletDisplay = ({
 		const loadGridWallets = () => {
 			const walletObjects = wallets
 				.filter((wallet: ReadWriteWallet) => {
-					if (!selectedNetworkIds?.includes(wallet.network().id())) return false;
+					if (!selectedNetworkIds?.includes(wallet.network().id())) {
+						return false;
+					}
 
 					if (displayType === "favorites") {
 						return wallet.isStarred();

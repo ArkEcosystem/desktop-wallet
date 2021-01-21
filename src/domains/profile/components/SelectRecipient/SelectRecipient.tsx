@@ -18,7 +18,7 @@ type SelectRecipientProps = {
 } & Omit<React.InputHTMLAttributes<any>, "onChange">;
 
 const ProfileAvatar = ({ address }: any) => {
-	if (!address)
+	if (!address) {
 		return (
 			<Circle
 				className="mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
@@ -26,6 +26,7 @@ const ProfileAvatar = ({ address }: any) => {
 				noShadow
 			/>
 		);
+	}
 	return <Avatar address={address} size="sm" className="mx-3" noShadow />;
 };
 
@@ -47,7 +48,9 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		};
 
 		const openRecipients = () => {
-			if (disabled) return;
+			if (disabled) {
+				return;
+			}
 			setIsRecipientSearchOpen(true);
 		};
 

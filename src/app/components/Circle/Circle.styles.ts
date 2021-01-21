@@ -26,7 +26,9 @@ const getSize = (size?: Size): any => {
 };
 
 const getAvatarCss = (avatarId: any): any => {
-	if (!avatarId) return [];
+	if (!avatarId) {
+		return [];
+	}
 
 	return [
 		tw`border-0`,

@@ -174,9 +174,13 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 	const profileWalletsCount = profile?.wallets().count();
 	const wallets = useMemo(() => {
-		if (!profile) return [];
+		if (!profile) {
+			return [];
+		}
 
-		if (profile?.settings().get(ProfileSetting.UseTestNetworks)) return profile?.wallets().values();
+		if (profile?.settings().get(ProfileSetting.UseTestNetworks)) {
+			return profile?.wallets().values();
+		}
 
 		return profile
 			?.wallets()
