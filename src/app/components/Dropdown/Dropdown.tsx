@@ -61,7 +61,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
 	if (isOptionGroup(options[0])) {
 		return (
-			<div className="pt-5 pb-1">
+			<div className="pb-1 pt-5">
 				{(options as DropdownOptionGroup[]).map((optionGroup: DropdownOptionGroup) =>
 					renderOptionGroup(optionGroup, onSelect),
 				)}
@@ -147,6 +147,7 @@ export const Dropdown = ({
 		e.preventDefault();
 		e.stopPropagation();
 	};
+
 	const hide = () => setIsOpen(false);
 
 	const select = (option: DropdownOption) => {
@@ -157,7 +158,78 @@ export const Dropdown = ({
 	};
 
 	const ref = useRef(null);
-	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
+
+	useEffect(() => {
+		const handleResize = () => {
+			const numberFromPixels = (value: string): number => (value ? parseInt(value.replace("px", "")) : 0);
+
+			const OFFSET = 30;
+
+			const parent = (ref.current as unknown) as HTMLElement;
+
+			const toggleElement: HTMLElement | null = parent.querySelector('[data-testid="dropdown__toggle"]');
+			const dropdownElement: HTMLElement | null = parent.querySelector('[data-testid="dropdown__content"]');
+
+			if (toggleElement && dropdownElement) {
+				const setStyles = (styles: Record<string, any>) => {
+					Object.assign(dropdownElement.style, styles);
+				};
+
+				const toggleHeight: number = toggleElement.parentElement!.offsetHeight;
+
+				const spaceBefore: number =
+					toggleElement.getBoundingClientRect().top + document.documentElement.scrollTop;
+				const spaceAfter: number = document.body.clientHeight - (spaceBefore + toggleHeight);
+
+				setStyles({ height: null, marginTop: null });
+
+				const styles = getComputedStyle(dropdownElement);
+
+				if (
+					spaceAfter < dropdownElement.offsetHeight + numberFromPixels(styles.marginTop) + OFFSET &&
+					spaceBefore > dropdownElement.offsetHeight + numberFromPixels(styles.marginTop) + OFFSET
+				) {
+					setStyles({
+						opacity: 100,
+						marginTop: `-${
+							dropdownElement.offsetHeight + toggleHeight + numberFromPixels(styles.marginTop)
+						}px`,
+					});
+				} else {
+					const newHeight = spaceAfter - numberFromPixels(styles.marginTop) - OFFSET;
+
+					const newStyles =
+						newHeight >=
+						dropdownElement.firstElementChild!.clientHeight +
+							numberFromPixels(styles.paddingTop) +
+							numberFromPixels(styles.paddingBottom)
+							? {
+									height: null,
+									overflowY: null,
+							  }
+							: {
+									height: `${newHeight}px`,
+									marginTop: null,
+									overflowY: "scroll",
+							  };
+
+					setStyles({ opacity: 100, ...newStyles });
+				}
+			}
+		};
+
+		if (isOpen) {
+			window.addEventListener("resize", handleResize);
+		}
+
+		handleResize();
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, [isOpen]);
+
+	useEffect(() => {
+		clickOutsideHandler(ref, hide);
+	}, [ref]);
 
 	return (
 		<div ref={ref} className="relative">
@@ -166,11 +238,14 @@ export const Dropdown = ({
 			</span>
 
 			{isOpen && (
-				<Wrapper position={position} options={options} className={`${defaultClasses} ${dropdownClass}`}>
-					<div data-testid="dropdown__content">
-						{options?.length && renderOptions(options, select)}
-						{children && <div>{children}</div>}
-					</div>
+				<Wrapper
+          data-testid="dropdown__content"
+          position={position}
+          options={options}
+          className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
+        >
+          {options?.length && renderOptions(options, select)}
+          {children && <div>{children}</div>}
 				</Wrapper>
 			)}
 		</div>

@@ -387,51 +387,49 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl undefined"
+                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      data-testid="dropdown__content"
+                      style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
-                      <div
-                        data-testid="dropdown__content"
-                      >
-                        <div>
-                          <div
-                            class="py-4 px-6 w-64"
+                      <div>
+                        <div
+                          class="py-4 px-6 w-64"
+                        >
+                          <label
+                            class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+                            data-testid="VotesFilter__option--all"
                           >
-                            <label
-                              class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
-                              data-testid="VotesFilter__option--all"
+                            <span>
+                              <input
+                                checked=""
+                                class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                                color="success"
+                                name="all"
+                                type="checkbox"
+                              />
+                            </span>
+                            <span>
+                              All
+                            </span>
+                          </label>
+                          <label
+                            class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+                            data-testid="VotesFilter__option--current"
+                          >
+                            <span>
+                              <input
+                                class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                                color="success"
+                                name="current"
+                                type="checkbox"
+                              />
+                            </span>
+                            <span
+                              class="pt-px"
                             >
-                              <span>
-                                <input
-                                  checked=""
-                                  class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
-                                  color="success"
-                                  name="all"
-                                  type="checkbox"
-                                />
-                              </span>
-                              <span>
-                                All
-                              </span>
-                            </label>
-                            <label
-                              class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
-                              data-testid="VotesFilter__option--current"
-                            >
-                              <span>
-                                <input
-                                  class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
-                                  color="success"
-                                  name="current"
-                                  type="checkbox"
-                                />
-                              </span>
-                              <span
-                                class="pt-px"
-                              >
-                                Current Votes
-                              </span>
-                            </label>
-                          </div>
+                              Current Votes
+                            </span>
+                          </label>
                         </div>
                       </div>
                     </div>
@@ -6127,106 +6125,115 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl undefined"
+                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      data-testid="dropdown__content"
+                      style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
-                      <div
-                        data-testid="dropdown__content"
-                      >
-                        <div>
+                      <div>
+                        <div
+                          class="py-7 px-10 w-128"
+                        >
                           <div
-                            class="py-7 px-10 w-128"
+                            class="flex flex-col text-left"
+                            data-testid="FilterWallets"
                           >
                             <div
-                              class="flex flex-col text-left"
-                              data-testid="FilterWallets"
+                              class="mb-8"
                             >
                               <div
-                                class="mb-8"
+                                class="font-semibold text-theme-secondary-text"
+                              >
+                                Filter Cryptoasset
+                              </div>
+                              <div
+                                class="mt-1 text-sm text-theme-secondary-500"
+                              >
+                                Select the types of cryptoassets
+                              </div>
+                            </div>
+                            <div
+                              class="space-y-6"
+                            >
+                              <div
+                                data-testid="FilterNetwork"
+                              >
+                                <div
+                                  class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                >
+                                  Development Network
+                                </div>
+                                <ul
+                                  class="inline-block"
+                                  data-testid="NetworkOptions"
+                                >
+                                  <li
+                                    class="inline-block mr-5 cursor-pointer"
+                                    data-testid="NetworkOption__ARK"
+                                  >
+                                    <div
+                                      class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                    >
+                                      <div
+                                        class="sc-bdfBwQ iyevwF"
+                                        height="20"
+                                        width="20"
+                                      >
+                                        <svg>
+                                          ark.svg
+                                        </svg>
+                                      </div>
+                                      <span
+                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ fdfkzt"
+                                          height="12"
+                                          width="12"
+                                        >
+                                          <svg>
+                                            checkmark.svg
+                                          </svg>
+                                        </div>
+                                        <span />
+                                      </span>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div
+                              class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+                            />
+                            <div
+                              class="flex flex-col"
+                            >
+                              <div
+                                class="flex justify-between items-center"
                               >
                                 <div
                                   class="font-semibold text-theme-secondary-text"
                                 >
-                                  Filter Cryptoasset
+                                  Your Wallets
                                 </div>
                                 <div
-                                  class="mt-1 text-sm text-theme-secondary-500"
+                                  class="relative"
                                 >
-                                  Select the types of cryptoassets
-                                </div>
-                              </div>
-                              <div
-                                class="space-y-6"
-                              >
-                                <div
-                                  data-testid="FilterNetwork"
-                                >
-                                  <div
-                                    class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                  <span
+                                    data-testid="dropdown__toggle"
                                   >
-                                    Development Network
-                                  </div>
-                                  <ul
-                                    class="inline-block"
-                                    data-testid="NetworkOptions"
-                                  >
-                                    <li
-                                      class="inline-block mr-5 cursor-pointer"
-                                      data-testid="NetworkOption__ARK"
+                                    <div
+                                      class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+                                      data-testid="filter-wallets__wallets"
                                     >
-                                      <div
-                                        class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                      <span
+                                        class="inline-block mr-2 font-semibold"
                                       >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            ark.svg
-                                          </svg>
-                                        </div>
-                                        <span
-                                          class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
-                                        >
-                                          <div
-                                            class="sc-bdfBwQ fdfkzt"
-                                            height="12"
-                                            width="12"
-                                          >
-                                            <svg>
-                                              checkmark.svg
-                                            </svg>
-                                          </div>
-                                          <span />
-                                        </span>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
-                              />
-                              <div
-                                class="flex flex-col"
-                              >
-                                <div
-                                  class="flex justify-between items-center"
-                                >
-                                  <div
-                                    class="font-semibold text-theme-secondary-text"
-                                  >
-                                    Your Wallets
-                                  </div>
-                                  <div
-                                    class="relative"
-                                  >
-                                    <span
-                                      data-testid="dropdown__toggle"
-                                    >
+                                        Favorites
+                                      </span>
                                       <div
-                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-                                        data-testid="filter-wallets__wallets"
+                                        class="sc-bdfBwQ kJrqvM"
+                                        height="5"
+                                        width="8"
                                       >
                                         <span
                                           class="inline-block mr-2 font-semibold"
@@ -6243,14 +6250,14 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                           </svg>
                                         </div>
                                       </div>
-                                    </span>
-                                  </div>
+                                    </div>
+                                  </span>
                                 </div>
-                                <div
-                                  class="pr-12 mt-1 text-sm text-theme-secondary-500"
-                                >
-                                  Select the display of your wallets
-                                </div>
+                              </div>
+                              <div
+                                class="pr-12 mt-1 text-sm text-theme-secondary-500"
+                              >
+                                Select the display of your wallets
                               </div>
                             </div>
                           </div>
@@ -6652,106 +6659,115 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl undefined"
+                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      data-testid="dropdown__content"
+                      style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
-                      <div
-                        data-testid="dropdown__content"
-                      >
-                        <div>
+                      <div>
+                        <div
+                          class="py-7 px-10 w-128"
+                        >
                           <div
-                            class="py-7 px-10 w-128"
+                            class="flex flex-col text-left"
+                            data-testid="FilterWallets"
                           >
                             <div
-                              class="flex flex-col text-left"
-                              data-testid="FilterWallets"
+                              class="mb-8"
                             >
                               <div
-                                class="mb-8"
+                                class="font-semibold text-theme-secondary-text"
+                              >
+                                Filter Cryptoasset
+                              </div>
+                              <div
+                                class="mt-1 text-sm text-theme-secondary-500"
+                              >
+                                Select the types of cryptoassets
+                              </div>
+                            </div>
+                            <div
+                              class="space-y-6"
+                            >
+                              <div
+                                data-testid="FilterNetwork"
+                              >
+                                <div
+                                  class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                >
+                                  Development Network
+                                </div>
+                                <ul
+                                  class="inline-block"
+                                  data-testid="NetworkOptions"
+                                >
+                                  <li
+                                    class="inline-block mr-5 cursor-pointer"
+                                    data-testid="NetworkOption__ARK"
+                                  >
+                                    <div
+                                      class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                    >
+                                      <div
+                                        class="sc-bdfBwQ iyevwF"
+                                        height="20"
+                                        width="20"
+                                      >
+                                        <svg>
+                                          ark.svg
+                                        </svg>
+                                      </div>
+                                      <span
+                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ fdfkzt"
+                                          height="12"
+                                          width="12"
+                                        >
+                                          <svg>
+                                            checkmark.svg
+                                          </svg>
+                                        </div>
+                                        <span />
+                                      </span>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div
+                              class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+                            />
+                            <div
+                              class="flex flex-col"
+                            >
+                              <div
+                                class="flex justify-between items-center"
                               >
                                 <div
                                   class="font-semibold text-theme-secondary-text"
                                 >
-                                  Filter Cryptoasset
+                                  Your Wallets
                                 </div>
                                 <div
-                                  class="mt-1 text-sm text-theme-secondary-500"
+                                  class="relative"
                                 >
-                                  Select the types of cryptoassets
-                                </div>
-                              </div>
-                              <div
-                                class="space-y-6"
-                              >
-                                <div
-                                  data-testid="FilterNetwork"
-                                >
-                                  <div
-                                    class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                  <span
+                                    data-testid="dropdown__toggle"
                                   >
-                                    Development Network
-                                  </div>
-                                  <ul
-                                    class="inline-block"
-                                    data-testid="NetworkOptions"
-                                  >
-                                    <li
-                                      class="inline-block mr-5 cursor-pointer"
-                                      data-testid="NetworkOption__ARK"
+                                    <div
+                                      class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+                                      data-testid="filter-wallets__wallets"
                                     >
-                                      <div
-                                        class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                      <span
+                                        class="inline-block mr-2 font-semibold"
                                       >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            ark.svg
-                                          </svg>
-                                        </div>
-                                        <span
-                                          class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
-                                        >
-                                          <div
-                                            class="sc-bdfBwQ fdfkzt"
-                                            height="12"
-                                            width="12"
-                                          >
-                                            <svg>
-                                              checkmark.svg
-                                            </svg>
-                                          </div>
-                                          <span />
-                                        </span>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
-                              />
-                              <div
-                                class="flex flex-col"
-                              >
-                                <div
-                                  class="flex justify-between items-center"
-                                >
-                                  <div
-                                    class="font-semibold text-theme-secondary-text"
-                                  >
-                                    Your Wallets
-                                  </div>
-                                  <div
-                                    class="relative"
-                                  >
-                                    <span
-                                      data-testid="dropdown__toggle"
-                                    >
+                                        Ledger
+                                      </span>
                                       <div
-                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-                                        data-testid="filter-wallets__wallets"
+                                        class="sc-bdfBwQ kJrqvM"
+                                        height="5"
+                                        width="8"
                                       >
                                         <span
                                           class="inline-block mr-2 font-semibold"
@@ -6768,14 +6784,14 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                           </svg>
                                         </div>
                                       </div>
-                                    </span>
-                                  </div>
+                                    </div>
+                                  </span>
                                 </div>
-                                <div
-                                  class="pr-12 mt-1 text-sm text-theme-secondary-500"
-                                >
-                                  Select the display of your wallets
-                                </div>
+                              </div>
+                              <div
+                                class="pr-12 mt-1 text-sm text-theme-secondary-500"
+                              >
+                                Select the display of your wallets
                               </div>
                             </div>
                           </div>
@@ -7177,106 +7193,115 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl undefined"
+                      class="Dropdown__Wrapper-ocz1je-0 mwMGt mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      data-testid="dropdown__content"
+                      style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
-                      <div
-                        data-testid="dropdown__content"
-                      >
-                        <div>
+                      <div>
+                        <div
+                          class="py-7 px-10 w-128"
+                        >
                           <div
-                            class="py-7 px-10 w-128"
+                            class="flex flex-col text-left"
+                            data-testid="FilterWallets"
                           >
                             <div
-                              class="flex flex-col text-left"
-                              data-testid="FilterWallets"
+                              class="mb-8"
                             >
                               <div
-                                class="mb-8"
+                                class="font-semibold text-theme-secondary-text"
+                              >
+                                Filter Cryptoasset
+                              </div>
+                              <div
+                                class="mt-1 text-sm text-theme-secondary-500"
+                              >
+                                Select the types of cryptoassets
+                              </div>
+                            </div>
+                            <div
+                              class="space-y-6"
+                            >
+                              <div
+                                data-testid="FilterNetwork"
+                              >
+                                <div
+                                  class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                >
+                                  Development Network
+                                </div>
+                                <ul
+                                  class="inline-block"
+                                  data-testid="NetworkOptions"
+                                >
+                                  <li
+                                    class="inline-block mr-5 cursor-pointer"
+                                    data-testid="NetworkOption__ARK"
+                                  >
+                                    <div
+                                      class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                    >
+                                      <div
+                                        class="sc-bdfBwQ iyevwF"
+                                        height="20"
+                                        width="20"
+                                      >
+                                        <svg>
+                                          ark.svg
+                                        </svg>
+                                      </div>
+                                      <span
+                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ fdfkzt"
+                                          height="12"
+                                          width="12"
+                                        >
+                                          <svg>
+                                            checkmark.svg
+                                          </svg>
+                                        </div>
+                                        <span />
+                                      </span>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div
+                              class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+                            />
+                            <div
+                              class="flex flex-col"
+                            >
+                              <div
+                                class="flex justify-between items-center"
                               >
                                 <div
                                   class="font-semibold text-theme-secondary-text"
                                 >
-                                  Filter Cryptoasset
+                                  Your Wallets
                                 </div>
                                 <div
-                                  class="mt-1 text-sm text-theme-secondary-500"
+                                  class="relative"
                                 >
-                                  Select the types of cryptoassets
-                                </div>
-                              </div>
-                              <div
-                                class="space-y-6"
-                              >
-                                <div
-                                  data-testid="FilterNetwork"
-                                >
-                                  <div
-                                    class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                  <span
+                                    data-testid="dropdown__toggle"
                                   >
-                                    Development Network
-                                  </div>
-                                  <ul
-                                    class="inline-block"
-                                    data-testid="NetworkOptions"
-                                  >
-                                    <li
-                                      class="inline-block mr-5 cursor-pointer"
-                                      data-testid="NetworkOption__ARK"
+                                    <div
+                                      class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+                                      data-testid="filter-wallets__wallets"
                                     >
-                                      <div
-                                        class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                      <span
+                                        class="inline-block mr-2 font-semibold"
                                       >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            ark.svg
-                                          </svg>
-                                        </div>
-                                        <span
-                                          class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
-                                        >
-                                          <div
-                                            class="sc-bdfBwQ fdfkzt"
-                                            height="12"
-                                            width="12"
-                                          >
-                                            <svg>
-                                              checkmark.svg
-                                            </svg>
-                                          </div>
-                                          <span />
-                                        </span>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div
-                                class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
-                              />
-                              <div
-                                class="flex flex-col"
-                              >
-                                <div
-                                  class="flex justify-between items-center"
-                                >
-                                  <div
-                                    class="font-semibold text-theme-secondary-text"
-                                  >
-                                    Your Wallets
-                                  </div>
-                                  <div
-                                    class="relative"
-                                  >
-                                    <span
-                                      data-testid="dropdown__toggle"
-                                    >
+                                        All
+                                      </span>
                                       <div
-                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-                                        data-testid="filter-wallets__wallets"
+                                        class="sc-bdfBwQ kJrqvM"
+                                        height="5"
+                                        width="8"
                                       >
                                         <span
                                           class="inline-block mr-2 font-semibold"
@@ -7293,14 +7318,14 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                           </svg>
                                         </div>
                                       </div>
-                                    </span>
-                                  </div>
+                                    </div>
+                                  </span>
                                 </div>
-                                <div
-                                  class="pr-12 mt-1 text-sm text-theme-secondary-500"
-                                >
-                                  Select the display of your wallets
-                                </div>
+                              </div>
+                              <div
+                                class="pr-12 mt-1 text-sm text-theme-secondary-500"
+                              >
+                                Select the display of your wallets
                               </div>
                             </div>
                           </div>

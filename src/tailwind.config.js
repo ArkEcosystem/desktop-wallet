@@ -197,6 +197,9 @@ module.exports = {
 			listStyleType: {
 				circle: "circle",
 			},
+			transitionProperty: {
+				background: "background-color",
+			},
 		},
 	},
 	variants: {
