@@ -239,13 +239,13 @@ export const Dropdown = ({
 
 			{isOpen && (
 				<Wrapper
-          data-testid="dropdown__content"
-          position={position}
-          options={options}
-          className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
-        >
-          {options?.length && renderOptions(options, select)}
-          {children && <div>{children}</div>}
+					data-testid="dropdown__content"
+					position={position}
+					options={options}
+					className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
+				>
+					{options?.length && renderOptions(options, select)}
+					{children && <div>{children}</div>}
 				</Wrapper>
 			)}
 		</div>
