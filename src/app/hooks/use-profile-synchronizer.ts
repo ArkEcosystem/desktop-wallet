@@ -220,20 +220,6 @@ export const useProfileSynchronizer = () => {
 				return clearProfileSyncStatus();
 			}
 
-			// if (shouldRestore(profile)) {
-			// 	setStatus("restoring");
-			//
-			// 	await profile.restore();
-			//
-			// 	if (isDemo) {
-			// 		restoreProfileTestPassword(profile);
-			// 	}
-			//
-			// 	await persist();
-			//
-			// 	markAsRestored(profile.id());
-			// }
-
 			if (shouldSync()) {
 				setStatus("syncing");
 
