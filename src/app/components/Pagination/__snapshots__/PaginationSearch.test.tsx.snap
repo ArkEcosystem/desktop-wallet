@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationSearch shoucd close search input if clicked outside 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="p-4"
+      data-testid="somewhere-outside"
+    >
+      sample text
+    </div>
+    <div
+      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      data-testid="PaginationSearchButton"
+    >
+      <span
+        data-testid="PaginationSearch__toggle"
+      >
+         
+        <span
+          data-testid="PaginationSearchToggle"
+        >
+          ...
+        </span>
+         
+      </span>
+    </div>
+    ,
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should not allow typing number greater than total pages 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should not emit onSelect if nothing is typed 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should not emit onSelect if zero is typed 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should not limit total page if not provided 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should render 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should show pagination search input 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should show search icon on hover 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should show search input and close 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PaginationSearch should type page and emit onSelectPage event 1`] = `
+<DocumentFragment>
+  <div
+    class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+    data-testid="PaginationSearchButton"
+  >
+    <span
+      data-testid="PaginationSearch__toggle"
+    >
+       
+      <span
+        data-testid="PaginationSearchToggle"
+      >
+        ...
+      </span>
+       
+    </span>
+  </div>
+</DocumentFragment>
+`;
