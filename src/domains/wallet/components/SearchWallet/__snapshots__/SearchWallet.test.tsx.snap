@@ -231,13 +231,21 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          33.75089801 DARK
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              33.75089801 DARK
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -316,13 +324,21 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          57.68 DARK
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              57.68 DARK
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -581,13 +597,21 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          33.75089801 DARK
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              33.75089801 DARK
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -666,13 +690,21 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          57.68 DARK
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              57.68 DARK
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -825,39 +857,9 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Fiat Value
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -961,24 +963,30 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          33.75089801 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-400 justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          0 BTC
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              33.75089801 DARK
+                            </span>
+                          </div>
+                          <div
+                            class="text-theme-secondary-400"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              0 BTC
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -1057,24 +1065,30 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          57.68 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-400 justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          0 BTC
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              57.68 DARK
+                            </span>
+                          </div>
+                          <div
+                            class="text-theme-secondary-400"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              0 BTC
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -1227,39 +1241,9 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Fiat Value
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
-                      data-testid="table__th--3"
+                      data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
@@ -1363,24 +1347,30 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          33.75089801 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-400 justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          0 BTC
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              33.75089801 DARK
+                            </span>
+                          </div>
+                          <div
+                            class="text-theme-secondary-400"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              0 BTC
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
@@ -1459,24 +1449,30 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
                       >
-                        <span
-                          data-testid="Amount"
+                        <div
+                          class="items-end text-right mt-1"
                         >
-                          57.68 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-400 justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          0 BTC
-                        </span>
+                          <div
+                            class="font-semibold"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              57.68 DARK
+                            </span>
+                          </div>
+                          <div
+                            class="text-theme-secondary-400"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              0 BTC
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     <td>
