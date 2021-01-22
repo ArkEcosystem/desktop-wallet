@@ -55,15 +55,19 @@ const SearchWalletListItem = ({
 				<Address walletName={name} address={address} maxChars={22} />
 			</TableCell>
 
-			<TableCell innerClassName="font-semibold justify-end">
-				<Amount value={balance} ticker={currency} />
-			</TableCell>
+			<TableCell innerClassName="justify-end">
+				<div className="items-end text-right mt-1">
+					<div className="font-semibold">
+						<Amount value={balance} ticker={currency} />
+					</div>
 
-			{showFiatValue && (
-				<TableCell innerClassName="text-theme-secondary-400 justify-end">
-					<Amount value={convertedBalance} ticker={exchangeCurrency} />
-				</TableCell>
-			)}
+					{showFiatValue && (
+						<div className="text-theme-secondary-400">
+							<Amount value={convertedBalance} ticker={exchangeCurrency} />
+						</div>
+					)}
+				</div>
+			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
@@ -123,11 +127,6 @@ export const SearchWallet = ({
 		if (showFiatValue) {
 			return [
 				...commonColumns,
-				{
-					Header: t("COMMON.FIAT_VALUE"),
-					accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
-					className: "justify-end",
-				},
 				{
 					Header: (
 						<HeaderSearchBar
