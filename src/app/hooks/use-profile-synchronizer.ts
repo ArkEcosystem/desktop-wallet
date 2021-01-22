@@ -106,7 +106,7 @@ export const useProfileSyncStatus = () => {
 			return false;
 		}
 
-		if (profile.wasCreated()) {
+		if (profile.wasRecentlyCreated()) {
 			return false;
 		}
 
@@ -155,7 +155,7 @@ export const useProfileRestore = () => {
 			return false;
 		}
 
-		if (profile.wasCreated()) {
+		if (profile.wasRecentlyCreated()) {
 			return false;
 		}
 
