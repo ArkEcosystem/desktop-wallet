@@ -1,5 +1,5 @@
 import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
-import { MemoryPassword,Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
