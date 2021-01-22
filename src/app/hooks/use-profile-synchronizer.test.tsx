@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { renderHook } from "@testing-library/react-hooks";
+import { act,renderHook } from "@testing-library/react-hooks";
+import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -7,16 +8,18 @@ import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testi
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
-import { useProfileSyncStatus } from "./use-profile-synchronizer";
+import { useProfileRestore,useProfileSyncStatus } from "./use-profile-synchronizer";
 
 describe("useProfileSyncStatus", () => {
 	it("should restore", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		expect(current.shouldRestore(profile)).toEqual(true);
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
@@ -27,9 +30,11 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 		const profile = env.profiles().create("Test");
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		expect(current.shouldRestore(profile)).toEqual(false);
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
@@ -39,9 +44,11 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		expect(current.isIdle()).toEqual(true);
 		expect(current.shouldRestore(profile)).toEqual(false);
@@ -53,11 +60,15 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
-		current.setStatus("restoring");
+		act(() => {
+			current.setStatus("restoring");
+		});
 
 		expect(current.isIdle()).toEqual(false);
 		expect(current.shouldRestore(profile)).toEqual(false);
@@ -69,11 +80,15 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
-		current.setStatus("restored");
+		act(() => {
+			current.markAsRestored(profile.id());
+		});
 
 		expect(current.isIdle()).toEqual(false);
 		expect(current.shouldRestore(profile)).toEqual(false);
@@ -85,9 +100,11 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		current.setStatus("syncing");
 
@@ -101,9 +118,11 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		current.setStatus("synced");
 
@@ -117,9 +136,11 @@ describe("useProfileSyncStatus", () => {
 		process.env.REACT_APP_BUILD_MODE = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
 		const {
 			result: { current },
-		} = renderHook(() => useProfileSyncStatus());
+		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		current.setStatus("completed");
 
@@ -244,6 +265,139 @@ describe("useProfileSynchronizer", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("ProfileRestored")).toBeInTheDocument(), { timeout: 4000 });
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+});
+
+describe("useProfileRestore", () => {
+	it("should not restore profile if already restored in tests", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		expect(current.restoreProfile(profile)).resolves.toEqual(false);
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+	});
+
+	it("should restore", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+		profile.wallets().flush();
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		let isRestored;
+
+		await act(async () => {
+			isRestored = await current.restoreProfile(profile);
+		});
+
+		expect(isRestored).toEqual(true);
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+
+	it("should restore in demo", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		const profile = env.profiles().findById(getDefaultProfileId());
+		profile.wallets().flush();
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		let isRestored;
+
+		await act(async () => {
+			isRestored = await current.restoreProfile(profile);
+		});
+
+		expect(isRestored).toEqual(true);
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+
+	it("should restore only once", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_BUILD_MODE = undefined;
+
+		const profile = env.profiles().findById(getDefaultProfileId());
+		profile.wallets().flush();
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider defaultConfiguration={{ restoredProfiles: [profile.id()] }}>
+					{children}
+				</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		let isRestored;
+
+		await act(async () => {
+			isRestored = await current.restoreProfile(profile);
+		});
+
+		expect(isRestored).toEqual(false);
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+
+	it("should not restore newly created profile", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_BUILD_MODE = undefined;
+
+		const profile = env.profiles().create("New Profile");
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		let isRestored;
+
+		await act(async () => {
+			isRestored = await current.restoreProfile(profile);
+		});
+
+		expect(isRestored).toEqual(false);
+
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 	});
 });
