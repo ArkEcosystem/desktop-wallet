@@ -14,7 +14,7 @@ type SignInProps = {
 	profile: Profile;
 	onCancel?: any;
 	onClose?: any;
-	onSuccess: any;
+	onSuccess: (password: string) => void;
 };
 
 const MAX_ATTEMPTS = 3;
@@ -69,7 +69,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 	const handleSubmit = ({ password }: any) => {
 		if (profile.auth().verifyPassword(password)) {
-			onSuccess();
+			onSuccess(password);
 		} else {
 			setCount(count + 1);
 
