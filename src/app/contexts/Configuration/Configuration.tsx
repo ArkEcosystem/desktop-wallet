@@ -7,16 +7,20 @@ type ConfigurationContextType = {
 
 type Props = {
 	children: React.ReactNode;
+	defaultConfiguration?: any;
 };
 
 const ConfigurationContext = React.createContext<any>(undefined);
 
-export const ConfigurationProvider = ({ children }: Props) => {
+export const ConfigurationProvider = ({ children, defaultConfiguration }: Props) => {
 	const [configuration, setConfig] = React.useState<any>({
 		// Domain specific configuration defaults
 		dashboard: null,
-		// Initial state of profile. Handled in profile synchronizer.
+		// Initial sync state of profile. Handled in profile synchronizer.
 		profileIsSyncing: true,
+		profileIsRestoring: false,
+		restoredProfiles: [],
+		...defaultConfiguration,
 	});
 
 	const setConfiguration = (config: any) => {
