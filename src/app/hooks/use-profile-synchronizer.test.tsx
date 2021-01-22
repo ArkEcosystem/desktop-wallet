@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act,renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -8,7 +8,7 @@ import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testi
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
-import { useProfileRestore,useProfileSyncStatus } from "./use-profile-synchronizer";
+import { useProfileRestore, useProfileSyncStatus } from "./use-profile-synchronizer";
 
 describe("useProfileSyncStatus", () => {
 	it("should restore", async () => {
