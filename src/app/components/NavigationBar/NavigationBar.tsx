@@ -1,5 +1,5 @@
 import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword,Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -269,6 +269,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									onUserAction={(action: any) => {
 										if (action?.isExternal) {
 											return openExternal(action.mountPath());
+										}
+
+										if (action.value === "sign-out" && profile) {
+											MemoryPassword.forget(profile);
 										}
 
 										return history.push(action.mountPath(profile?.id()));
