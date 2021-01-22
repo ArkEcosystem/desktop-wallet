@@ -61,7 +61,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
 	if (isOptionGroup(options[0])) {
 		return (
-			<div className="pb-1 pt-5">
+			<div className="pt-5 pb-1">
 				{(options as DropdownOptionGroup[]).map((optionGroup: DropdownOptionGroup) =>
 					renderOptionGroup(optionGroup, onSelect),
 				)}
