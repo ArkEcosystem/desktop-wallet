@@ -11,7 +11,7 @@ export const WalletCardSkeleton = () => {
 
 	return (
 		<Card className="bg-theme-background">
-			<div className="flex relative flex-col justify-between p-4 h-full">
+			<div className="flex relative flex-col justify-between p-4 h-full" data-testid="WalletCard__skeleton">
 				<div className="flex items-center">
 					<div className="flex items-center mr-4 -space-x-1">
 						<Circle className="border-transparent" size="lg">
