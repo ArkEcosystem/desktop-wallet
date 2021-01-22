@@ -13,6 +13,7 @@ type PluginManagerNavigationBar = {
 	menu: any[];
 	selected: any;
 	onChange?: any;
+	installedPluginsCount?: number;
 };
 
 const NavWrapper = styled.nav`
@@ -26,6 +27,7 @@ export const PluginManagerNavigationBar = ({
 	onSelectGridView,
 	onSelectListView,
 	selectedViewType,
+	installedPluginsCount,
 }: PluginManagerNavigationBar) => {
 	const { t } = useTranslation();
 	const { pluginPackages } = usePluginManagerContext();
@@ -81,7 +83,14 @@ export const PluginManagerNavigationBar = ({
 						}`}
 					>
 						<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
-						<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">8</span>
+						{installedPluginsCount ? (
+							<span
+								data-testid="PluginManagerNavigationBar__my-plugins__count"
+								className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+							>
+								{installedPluginsCount}
+							</span>
+						) : null}
 					</button>
 
 					<div className="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />

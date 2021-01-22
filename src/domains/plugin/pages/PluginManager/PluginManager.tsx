@@ -6,6 +6,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
@@ -164,6 +165,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+	const { pluginManager } = usePluginManagerContext();
+	const { persist } = useEnvironmentContext();
 
 	const [currentView, setCurrentView] = useState("home");
 	const [viewType, setViewType] = useState("grid");
@@ -173,13 +176,33 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		fetchPluginPackages();
 	}, [fetchPluginPackages]);
 
-	const handleSelectPlugin = (pluginId: string) =>
-		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
-
 	const allPackages = pluginPackages.map((config) => config.toObject());
 	const filteredPackages = pluginPackages
 		.filter((config) => config.hasCategory(currentView))
 		.map((config) => config.toObject());
+
+	const installedPlugins = pluginManager
+		.plugins()
+		.all()
+		.map((item) => ({
+			...item.config().toObject(),
+			isInstalled: true,
+			isEnabled: item.isEnabled(activeProfile),
+			hasLaunch: item.hooks().hasCommand("service:launch.render"),
+		}));
+
+	const handleSelectPlugin = (pluginId: string) =>
+		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
+
+	const handleEnablePlugin = (pluginData: any) => {
+		pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
+		persist();
+	};
+
+	const handleDisablePlugin = (pluginData: any) => {
+		pluginManager.plugins().findById(pluginData.id)?.disable(activeProfile);
+		persist();
+	};
 
 	return (
 		<>
@@ -217,6 +240,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						selectedViewType={viewType}
 						onSelectGridView={() => setViewType("grid")}
 						onSelectListView={() => setViewType("list")}
+						installedPluginsCount={installedPlugins.length}
 					/>
 				</div>
 
@@ -236,7 +260,39 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							</div>
 						)}
 
-						{currentView !== "home" && viewType === "grid" && (
+						{currentView === "my-plugins" && viewType === "grid" && (
+							<div>
+								<h2 className="font-bold">
+									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+								</h2>
+								<PluginGrid
+									plugins={installedPlugins}
+									onSelect={handleSelectPlugin}
+									onDelete={void 0}
+									onEnable={handleEnablePlugin}
+									onDisable={handleDisablePlugin}
+									className="mt-6"
+								/>
+							</div>
+						)}
+
+						{currentView === "my-plugins" && viewType === "list" && (
+							<div>
+								<h2 className="font-bold">
+									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+								</h2>
+								<PluginList
+									plugins={installedPlugins}
+									onInstall={void 0}
+									onDelete={void 0}
+									onEnable={handleEnablePlugin}
+									onDisable={handleDisablePlugin}
+									className="mt-6"
+								/>
+							</div>
+						)}
+
+						{!["home", "my-plugins"].includes(currentView) && viewType === "grid" && (
 							<div>
 								<h2 className="font-bold">
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
@@ -245,16 +301,20 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									plugins={filteredPackages}
 									onSelect={handleSelectPlugin}
 									onDelete={() => console.log("delete")}
+									onEnable={handleEnablePlugin}
+									onDisable={handleDisablePlugin}
 									className="mt-6"
 								/>
 							</div>
 						)}
 
-						{currentView !== "home" && viewType === "list" && (
+						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
 							<PluginList
 								plugins={filteredPackages}
 								onInstall={() => setInstallPlugin(true)}
 								onDelete={() => console.log("delete")}
+								onEnable={handleEnablePlugin}
+								onDisable={handleDisablePlugin}
 								className="mt-6"
 							/>
 						)}

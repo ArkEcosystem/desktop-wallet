@@ -50,11 +50,13 @@ export const translations: { [key: string]: any } = {
 	DELETE: "Delete",
 	DESKTOP_WALLET: "Desktop Wallet",
 	DISCLAIMER: "Disclaimer",
+	DISABLE: "Disable",
 	DONE: "Done",
 	DOWNLOAD: "Download",
 	DOWNLOADED: "Downloaded",
 	DOWNLOADING: "Downloading",
 	EDIT: "Edit",
+	ENABLE: "Enable",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
 	ERROR: "Error",
 	ERRORS: {
@@ -81,6 +83,7 @@ export const translations: { [key: string]: any } = {
 	INSTALL: "Install",
 	IS_MARKET_CHART_ENABLED: "Price chart on the dashboard",
 	LANGUAGE: "Application Language",
+	LAUNCH: "Launch",
 	LEARN_MORE: "Learn more",
 	LEDGER: "Ledger",
 	LEDGER_DISCONNECTED: "Ledger Disconnected",
@@ -291,5 +294,8 @@ export const translations: { [key: string]: any } = {
 		PLUGINS_TITLE: "Plugins",
 		TRANSACTIONS_TITLE: "Transactions",
 		EMPTY: "You have no notifications at this time",
+	},
+	PAGINATION: {
+		ENTER_NUMBER: "Enter the page number",
 	},
 };

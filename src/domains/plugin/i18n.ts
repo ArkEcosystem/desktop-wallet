@@ -68,7 +68,8 @@ export const translations: { [key: string]: any } = {
 		GAME: "Game",
 		MY_PLUGINS: "My Plugins",
 		OTHER: "Other",
-		THEMES: "Themes",
+		THEME: "Theme",
 		UTILITY: "Utility",
+		EXCHANGE: "Exchange",
 	},
 };

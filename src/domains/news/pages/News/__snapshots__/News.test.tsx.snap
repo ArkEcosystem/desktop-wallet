@@ -91,7 +91,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -126,7 +126,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -152,7 +152,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -507,14 +507,14 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 chOylR"
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
                     >
                       1
                     </div>
@@ -782,7 +782,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </div>
                     </div>
                     <button
-                      class="Button-mdtvtf-0 cyPweQ w-full"
+                      class="Button__StyledButton-mdtvtf-0 lmPdYN w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >
@@ -891,7 +891,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -926,7 +926,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -952,7 +952,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1320,57 +1320,64 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 chOylR"
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
                     >
                       1
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       2
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       3
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       4
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       5
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       6
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       7
                     </div>
                     <div
-                      class="Pagination__PaginationSearchButton-x7juhx-2 eSzMUq"
+                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+                      data-testid="PaginationSearchButton"
                     >
-                      <span>
-                        ...
+                      <span
+                        data-testid="PaginationSearch__toggle"
+                      >
+                         
+                        <span>
+                          ...
+                        </span>
+                         
                       </span>
                     </div>
                   </div>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="Pagination__next"
                     type="button"
                   >
@@ -1386,7 +1393,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </button>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="Pagination__last"
                     type="button"
                   >
@@ -1658,7 +1665,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                     <button
-                      class="Button-mdtvtf-0 cyPweQ w-full"
+                      class="Button__StyledButton-mdtvtf-0 lmPdYN w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >
