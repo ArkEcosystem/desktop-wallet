@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -69,6 +69,8 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 	const handleSubmit = ({ password }: any) => {
 		if (profile.auth().verifyPassword(password)) {
+			MemoryPassword.set(profile, password);
+
 			onSuccess();
 		} else {
 			setCount(count + 1);
