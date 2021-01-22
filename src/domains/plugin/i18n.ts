@@ -45,10 +45,10 @@ export const translations: { [key: string]: any } = {
 
 		VIEW: {
 			HOME: "Home",
-			GAME: "Game",
+			GAMES: "Games",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
-			THEMES: "Themes",
+			THEME: "Themes",
 			UTILITY: "Utility",
 		},
 	},

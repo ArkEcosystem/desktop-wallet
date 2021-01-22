@@ -27,10 +27,10 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 
 	const { t } = useTranslation();
 	const { pluginId } = useParams();
-	const { pluginManager } = usePluginManagerContext();
-	const pluginData = {} as any;
+	const { pluginPackages } = usePluginManagerContext();
+	const pluginData = pluginPackages.find((item) => item.id().toString() === pluginId)?.toObject() || ({} as any);
 
-	const { name, author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
+	const { name, author, about, permissions, images, category, url, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [
@@ -51,7 +51,6 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 					author={author}
 					category={category}
 					url={url}
-					rating={averageRating}
 					version={version}
 					size={size}
 					isInstalled={isInstalled}
@@ -59,7 +58,7 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 			</Section>
 
 			<Section>
-				<PluginInfo about={about} permissions={permissions} screenshots={screenshots} />
+				<PluginInfo about={about} permissions={permissions} screenshots={images} />
 			</Section>
 
 			<Section>
@@ -81,7 +80,7 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 						className="p-8 mb-auto ml-32 rounded-xl border-2 border-theme-secondary-300 dark:border-theme-secondary-800"
 						data-testid="plugin-details__review-box"
 					>
-						<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />
+						<ReviewBox averageScore={""} ratings={ratings} totalAvaliations={totalAvaliations} />
 					</div>
 				</div>
 			</Section>

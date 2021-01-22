@@ -160,7 +160,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchAvailablePlugins, availablePlugins } = usePluginManagerContext();
+	const { fetchPluginPackages, pluginPackages } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -170,11 +170,16 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [installPlugin, setInstallPlugin] = useState(false);
 
 	useEffect(() => {
-		fetchAvailablePlugins();
-	}, [fetchAvailablePlugins]);
+		fetchPluginPackages();
+	}, [fetchPluginPackages]);
 
 	const handleSelectPlugin = (pluginId: string) =>
 		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
+
+	const allPackages = pluginPackages.map((config) => config.toObject());
+	const filteredPackages = pluginPackages
+		.filter((config) => config.hasCategory(currentView))
+		.map((config) => config.toObject());
 
 	return (
 		<>
@@ -237,7 +242,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
 								<PluginGrid
-									plugins={availablePlugins}
+									plugins={filteredPackages}
 									onSelect={handleSelectPlugin}
 									onDelete={() => console.log("delete")}
 									className="mt-6"
@@ -247,7 +252,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 						{currentView !== "home" && viewType === "list" && (
 							<PluginList
-								plugins={availablePlugins}
+								plugins={filteredPackages}
 								onInstall={() => setInstallPlugin(true)}
 								onDelete={() => console.log("delete")}
 								className="mt-6"

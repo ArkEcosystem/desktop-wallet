@@ -11,13 +11,12 @@ type Props = {
 	author: string;
 	category: string;
 	url: string;
-	rating: string;
 	version: string;
 	size: string;
 	isInstalled?: boolean;
 };
 
-export const PluginHeader = ({ name, author, category, url, rating, version, size, isInstalled }: Props) => {
+export const PluginHeader = ({ name, author, category, url, version, size, isInstalled }: Props) => {
 	const { t } = useTranslation();
 
 	const getPluginButtons = () => {
@@ -62,14 +61,7 @@ export const PluginHeader = ({ name, author, category, url, rating, version, siz
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>
-					<PluginSpecs
-						author={author}
-						category={category}
-						url={url}
-						rating={rating}
-						version={version}
-						size={size}
-					/>
+					<PluginSpecs author={author} category={category} url={url} version={version} size={size} />
 				</div>
 			</div>
 		</div>

@@ -24,7 +24,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<TableCell innerClassName="space-x-2">
 				<a href="/" className="font-semibold link">
-					{plugin.name}
+					{plugin.title}
 				</a>
 
 				{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}

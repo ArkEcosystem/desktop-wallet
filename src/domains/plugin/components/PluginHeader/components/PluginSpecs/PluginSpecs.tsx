@@ -6,7 +6,6 @@ type Props = {
 	author: string;
 	category: string;
 	url: string;
-	rating: string;
 	version: string;
 	size: string;
 };
@@ -52,7 +51,7 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 	return <div className={mountClassName()}>{children}</div>;
 };
 
-export const PluginSpecs = ({ author, category, url, rating, version, size }: Props) => {
+export const PluginSpecs = ({ author, category, url, version, size }: Props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -76,18 +75,6 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 					<span className="font-bold text-theme-secondary-400">{t("COMMON.URL")}</span>
 					<span className="font-bold text-theme-primary-600">{url}</span>
 				</div>
-			</GridCol>
-			<GridCol colSpan={2} justify="between" padding="px-6 -ml-8">
-				<div className="flex flex-col">
-					<span className="font-bold text-theme-secondary-400">{t("COMMON.RATING")}</span>
-					<div className="flex items-center">
-						<div className="pr-1 text-theme-warning-400">
-							<Icon name="Star" />
-						</div>
-						<span className="font-bold text-theme-secondary-600">{rating}</span>
-					</div>
-				</div>
-				<GridItem label={t("COMMON.VERSION")} value={`v.${version}`} textDirection="right" />
 			</GridCol>
 			<GridCol padding="pl-6">
 				<GridItem label={t("COMMON.SIZE")} value={`${size} Mb`} textDirection="right" />

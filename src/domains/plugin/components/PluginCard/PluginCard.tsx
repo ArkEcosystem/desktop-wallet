@@ -51,7 +51,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 					</PluginImageContainer>
 
 					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
-						<div>{plugin.name}</div>
+						<div>{plugin.title}</div>
 
 						<div>
 							{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={16} height={16} />}

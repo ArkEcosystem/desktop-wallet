@@ -2,6 +2,7 @@ import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
+import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
 import React, { useCallback, useMemo, useState } from "react";
@@ -73,25 +74,20 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginManager, trigger],
 	);
 
-	const fetchAvailablePlugins = useCallback(async () => {
-		const result = await pluginRegistry.all();
-		const sanitized = result.map((item) => ({
-			id: item.name(),
-			name: item.alias(),
-			author: item.author()?.name,
-			category: item.categories()?.[0],
-			version: item.version(),
-			size: item.installSize(),
-		}));
-		setState((prev: any) => ({ ...prev, available: sanitized }));
-	}, [pluginRegistry]);
+	const fetchPluginPackages = useCallback(() => {
+		// const result = await pluginRegistry.all();
+		// const packages = result.map(item => item.getLatestVersion())
+		const packages = require("tests/fixtures/plugins/all-npm-plugins.json");
+		const configurations = packages.map((item: any) => PluginConfigurationData.make(item));
+		setState((prev: any) => ({ ...prev, packages: configurations }));
+	}, []);
 
-	const availablePlugins = useMemo(() => state.available || [], [state]);
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages || [], [state]);
 
 	return {
 		pluginRegistry,
-		fetchAvailablePlugins,
-		availablePlugins,
+		fetchPluginPackages,
+		pluginPackages,
 		pluginManager,
 		loadPlugins,
 		trigger,
