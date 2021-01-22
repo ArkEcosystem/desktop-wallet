@@ -10,7 +10,6 @@ describe("PluginListItem", () => {
 			name: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			rating: 4.2,
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: false,
@@ -34,7 +33,6 @@ describe("PluginListItem", () => {
 			name: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			rating: 4.2,
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: false,
@@ -62,7 +60,6 @@ describe("PluginListItem", () => {
 			name: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			rating: 4.2,
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: true,
@@ -70,7 +67,7 @@ describe("PluginListItem", () => {
 
 		const onDelete = jest.fn();
 
-		const { asFragment, getByTestId } = render(
+		const { getByTestId } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onDelete={onDelete} />
@@ -81,13 +78,116 @@ describe("PluginListItem", () => {
 		fireEvent.click(getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("dropdown__option--0"));
 
-		expect(onDelete).toHaveBeenCalledTimes(0);
+		expect(onDelete).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger enable", () => {
+		const plugin = {
+			id: "ark-explorer",
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+		};
+
+		const onEnable = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onEnable={onEnable} />
+				</tbody>
+			</table>,
+		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("dropdown__option--1"));
 
-		expect(onDelete).toHaveBeenCalledTimes(1);
-		expect(asFragment()).toMatchSnapshot();
+		expect(onEnable).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger disable", () => {
+		const plugin = {
+			id: "ark-explorer",
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			isEnabled: true,
+		};
+
+		const onDisable = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onDisable={onDisable} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(getByTestId("dropdown__option--1"));
+
+		expect(onDisable).toHaveBeenCalledTimes(1);
+	});
+
+	it("should render launch button", () => {
+		const plugin = {
+			id: "ark-explorer",
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			isEnabled: true,
+			hasLaunch: true,
+		};
+
+		const onLaunch = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onLaunch={onLaunch} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("PluginListItem__launch"));
+
+		expect(onLaunch).toHaveBeenCalledTimes(1);
+	});
+
+	it("should render custom logo", () => {
+		const plugin = {
+			id: "ark-explorer",
+			name: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			isEnabled: true,
+			logo: "https://ark.io/logo",
+		};
+
+		const onLaunch = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onLaunch={onLaunch} />
+				</tbody>
+			</table>,
+		);
+
+		expect(getByTestId("PluginListItem__logo")).toBeInTheDocument();
 	});
 
 	it("should render official icon", () => {
@@ -96,7 +196,6 @@ describe("PluginListItem", () => {
 			name: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			rating: 4.2,
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: false,
@@ -121,7 +220,6 @@ describe("PluginListItem", () => {
 			name: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			rating: 4.2,
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: false,

@@ -97,7 +97,7 @@ exports[`Dashboard should render 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -132,7 +132,7 @@ exports[`Dashboard should render 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -158,7 +158,7 @@ exports[`Dashboard should render 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -368,7 +368,7 @@ exports[`Dashboard should render 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="WalletControls__create-wallet"
                     type="button"
                   >
@@ -390,7 +390,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="WalletControls__import-wallet"
                     type="button"
                   >
@@ -412,7 +412,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="WalletControls__import-ledger"
                     type="button"
                   >
@@ -1568,7 +1568,7 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <button
-            class="Button-mdtvtf-0 cyPweQ mt-10 mb-5 w-full"
+            class="Button__StyledButton-mdtvtf-0 lmPdYN mt-10 mb-5 w-full"
             data-testid="transactions__fetch-more-button"
             type="button"
           >
