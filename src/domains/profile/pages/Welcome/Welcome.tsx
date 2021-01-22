@@ -69,12 +69,12 @@ export const Welcome = () => {
 
 		switch (action?.value) {
 			case "home":
-				navigateToProfile(profile);
 				restoreProfile(profile, password);
+				navigateToProfile(profile);
 				break;
 			case "setting":
-				navigateToProfile(profile, "settings");
 				restoreProfile(profile, password);
+				navigateToProfile(profile, "settings");
 				break;
 			case "delete":
 				setDeletingProfileId(profile.id());
