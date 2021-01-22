@@ -292,4 +292,7 @@ export const translations: { [key: string]: any } = {
 		TRANSACTIONS_TITLE: "Transactions",
 		EMPTY: "You have no notifications at this time",
 	},
+	PAGINATION: {
+		ENTER_NUMBER: "Enter the page number",
+	},
 };
