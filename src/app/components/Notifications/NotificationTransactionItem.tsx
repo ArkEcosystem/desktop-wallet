@@ -28,7 +28,9 @@ export const NotificationTransactionItem = ({
 		fetchTransaction();
 	}, [profile, notification]);
 
-	if (!transaction) return <NotificationTransactionItemSkeleton />;
+	if (!transaction) {
+		return <NotificationTransactionItemSkeleton />;
+	}
 
 	return (
 		<VisibilitySensor

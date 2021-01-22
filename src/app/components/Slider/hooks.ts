@@ -62,7 +62,9 @@ export const useSlider = ({ container, options, data, paginationPosition }: Prop
 
 	const slideStyles = useMemo(() => {
 		const slideStyles: any = { height: `${swiperOptions.slideHeight}px` };
-		if (swiperOptions.slidesPerColumn === 1) slideStyles.marginTop = "0";
+		if (swiperOptions.slidesPerColumn === 1) {
+			slideStyles.marginTop = "0";
+		}
 		return slideStyles;
 	}, [swiperOptions]);
 
@@ -77,7 +79,9 @@ export const useSlider = ({ container, options, data, paginationPosition }: Prop
 		resetWrapperStyles();
 		swiper.current = new Swiper(container, swiperOptions);
 		return () => {
-			if (swiper.current.$el) swiper.current.destroy(true, false);
+			if (swiper.current.$el) {
+				swiper.current.destroy(true, false);
+			}
 		};
 	}, [container, swiperOptions, data.length, resetWrapperStyles]);
 

@@ -9,7 +9,9 @@ import { Network } from "./";
 
 export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) => {
 	const networkExtendedData = coin && id ? getNetworkExtendedData({ coin, network: id }) : undefined;
-	if (!networkExtendedData) return <></>;
+	if (!networkExtendedData) {
+		return <></>;
+	}
 
 	const { iconName } = networkExtendedData;
 

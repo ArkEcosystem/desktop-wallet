@@ -86,7 +86,9 @@ export const Transactions = memo(
 			// eslint-disable-next-line
 		}, [activeTransactionModeTab, selectedTransactionType, walletsCount, isLoading]);
 
-		if (!isVisible) return <></>;
+		if (!isVisible) {
+			return <></>;
+		}
 
 		return (
 			<Section className="flex-1" data-testid="dashboard__transactions-view">

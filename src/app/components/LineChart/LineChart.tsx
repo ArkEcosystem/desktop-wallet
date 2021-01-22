@@ -147,7 +147,9 @@ export const ChartContent = ({
 };
 
 export const LineChart = (props: LineChartProps) => {
-	if (props.width) return <ChartContent {...props} />;
+	if (props.width) {
+		return <ChartContent {...props} />;
+	}
 	return (
 		<ResponsiveContainer height={props.height} className="mb-16">
 			<ChartContent {...props} />
