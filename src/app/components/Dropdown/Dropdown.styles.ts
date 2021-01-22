@@ -2,7 +2,7 @@ import tw from "twin.macro";
 
 export const defaultClasses = "mt-3 py-3 absolute z-10 rounded-lg shadow-xl";
 
-const getBackground = (variant: string): any => {
+const getVariant = (variant: string): any => {
 	if (variant === "options") {
 		return tw`bg-white dark:bg-theme-secondary-800`;
 	}
