@@ -86,7 +86,6 @@ type ProfileSyncState = {
 };
 
 export const useProfileSyncStatus = () => {
-	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
 		restored: [],
@@ -98,11 +97,21 @@ export const useProfileSyncStatus = () => {
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
 
-	const shouldRestore = (profileId: string) => {
-		if (!isDemo) {
+	const shouldRestore = (profile: Profile) => {
+		// For unit tests only. This flag prevents from running restore multiple times
+		// as the profiles are all restored before all (see jest.setup)
+		const isRestoredInTests = process.env.TEST_PROFILES_RESTORE_STATUS === "restored";
+		if (isRestoredInTests) {
 			return false;
 		}
-		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profileId);
+
+		if (profile.wasCreated()) {
+			return false;
+		}
+
+		return (
+			!isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profile.id())
+		);
 	};
 
 	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
@@ -123,6 +132,7 @@ export const useProfileSyncStatus = () => {
 };
 
 export const useProfileSynchronizer = () => {
+	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
@@ -155,12 +165,15 @@ export const useProfileSynchronizer = () => {
 				return clearProfileSyncStatus();
 			}
 
-			if (shouldRestore(profile.id())) {
+			if (shouldRestore(profile)) {
 				setStatus("restoring");
 
-				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();
-				restoreProfileTestPassword(profile);
+
+				if (isDemo) {
+					restoreProfileTestPassword(profile);
+				}
+
 				await persist();
 
 				markAsRestored(profile.id());
@@ -199,6 +212,7 @@ export const useProfileSynchronizer = () => {
 		markAsRestored,
 		status,
 		stop,
+		isDemo,
 	]);
 
 	return { profile, profileIsSyncing };
