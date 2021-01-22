@@ -35,7 +35,7 @@ type DropdownProps = {
 	toggleContent?: any;
 };
 
-export const Wrapper = styled.div<{ position?: string; options?: any }>(getStyles);
+export const Wrapper = styled.div<{ position?: string; variant: string }>(getStyles);
 
 const isOptionGroup = (options: DropdownOption | DropdownOptionGroup) =>
 	(options as DropdownOptionGroup).key !== undefined;
@@ -61,7 +61,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
 	if (isOptionGroup(options[0])) {
 		return (
-			<div className="pt-5 pb-1">
+			<div className="pb-1 pt-5">
 				{(options as DropdownOptionGroup[]).map((optionGroup: DropdownOptionGroup) =>
 					renderOptionGroup(optionGroup, onSelect),
 				)}
@@ -241,7 +241,7 @@ export const Dropdown = ({
 				<Wrapper
 					data-testid="dropdown__content"
 					position={position}
-					options={options}
+					variant={options ? "options" : "custom"}
 					className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
 				>
 					{options?.length && renderOptions(options, select)}
