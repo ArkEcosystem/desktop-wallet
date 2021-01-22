@@ -1,4 +1,4 @@
-import { MemoryPassword,Profile } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
