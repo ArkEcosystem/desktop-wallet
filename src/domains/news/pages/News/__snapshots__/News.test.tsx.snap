@@ -507,14 +507,14 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 chOylR"
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
                     >
                       1
                     </div>
@@ -1320,52 +1320,59 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 chOylR"
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
                     >
                       1
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       2
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       3
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       4
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       5
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       6
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       7
                     </div>
                     <div
-                      class="Pagination__PaginationSearchButton-x7juhx-2 eSzMUq"
+                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+                      data-testid="PaginationSearchButton"
                     >
-                      <span>
-                        ...
+                      <span
+                        data-testid="PaginationSearch__toggle"
+                      >
+                         
+                        <span>
+                          ...
+                        </span>
+                         
                       </span>
                     </div>
                   </div>
