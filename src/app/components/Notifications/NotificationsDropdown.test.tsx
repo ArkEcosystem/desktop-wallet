@@ -26,12 +26,12 @@ describe("Notifications", () => {
 	});
 
 	it("should render with transactions and plugins", async () => {
-		const { container, getAllByTestId, queryAllByTestId, getByTestId } = render(
+		const { container, getAllByRole, getAllByTestId, queryAllByTestId, getByTestId } = render(
 			<NotificationsDropdown profile={profile} />,
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
+			fireEvent.click(getAllByRole("button")[0]);
 		});
 
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
@@ -41,7 +41,7 @@ describe("Notifications", () => {
 	});
 
 	it("should open and close transaction details modal", async () => {
-		const { container, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
+		const { container, getAllByRole, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NotificationsDropdown profile={profile} />
 			</Route>,
@@ -51,9 +51,8 @@ describe("Notifications", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("dropdown__toggle")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
+			fireEvent.click(getAllByRole("button")[0]);
 		});
 
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
@@ -75,7 +74,7 @@ describe("Notifications", () => {
 	});
 
 	it("should open and close wallet update notification modal", async () => {
-		const { container, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
+		const { container, getAllByRole, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NotificationsDropdown profile={profile} />
 			</Route>,
@@ -85,9 +84,8 @@ describe("Notifications", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("dropdown__toggle")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
+			fireEvent.click(getAllByRole("button")[0]);
 		});
 
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
@@ -109,7 +107,7 @@ describe("Notifications", () => {
 	});
 
 	it("should open and cancel wallet update notification modal", async () => {
-		const { container, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
+		const { container, getAllByRole, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NotificationsDropdown profile={profile} />
 			</Route>,
@@ -119,9 +117,8 @@ describe("Notifications", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("dropdown__toggle")).toBeTruthy());
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
+			fireEvent.click(getAllByRole("button")[0]);
 		});
 
 		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
