@@ -18,7 +18,7 @@ import { Splash } from "domains/splash/pages";
 import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
-import React, { useEffect,useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { ToastContainer } from "react-toastify";
@@ -27,7 +27,7 @@ import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer,useNetworkStatus, useProfileSynchronizer } from "./hooks";
+import { useDeeplink, useEnvSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
 import { i18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
