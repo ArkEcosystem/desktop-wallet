@@ -1,6 +1,7 @@
 import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
+import { uniqBy } from "@arkecosystem/utils";
 import { toasts } from "app/services";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
@@ -79,8 +80,13 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		// const packages = result.map(item => item.getLatestVersion())
 		const packages = require("tests/fixtures/plugins/all-npm-plugins.json");
 		const configurations = packages.map((item: any) => PluginConfigurationData.make(item));
-		setState((prev: any) => ({ ...prev, packages: configurations }));
-	}, []);
+		const localConfigurations = pluginManager
+			.plugins()
+			.all()
+			.map((item) => item.config());
+		const merged = uniqBy([...configurations, ...localConfigurations], (item) => item.id());
+		setState((prev: any) => ({ ...prev, packages: merged }));
+	}, [pluginManager]);
 
 	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages || [], [state]);
 

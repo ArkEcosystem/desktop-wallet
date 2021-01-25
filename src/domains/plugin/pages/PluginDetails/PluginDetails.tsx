@@ -22,14 +22,15 @@ type PluginDetailsProps = {
 	isInstalled?: boolean;
 };
 
-export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) => {
+export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 	const { pluginId } = useParams();
-	const { pluginPackages } = usePluginManagerContext();
+	const { pluginPackages, pluginManager } = usePluginManagerContext();
 	const pluginData = pluginPackages.find((item) => item.id().toString() === pluginId)?.toObject() || ({} as any);
 	const { comments, ratings, totalAvaliations } = reviewData;
+	const isInstalled = !!pluginManager.plugins().findById(+pluginId);
 
 	const crumbs = [
 		{
@@ -44,7 +45,7 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} />
+				<PluginHeader {...pluginData} isInstalled={isInstalled} />
 			</Section>
 
 			<Section>
@@ -79,6 +80,5 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 };
 
 PluginDetails.defaultProps = {
-	isInstalled: false,
 	reviewData,
 };

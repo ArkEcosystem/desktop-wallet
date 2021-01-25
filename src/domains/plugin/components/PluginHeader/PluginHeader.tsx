@@ -28,9 +28,9 @@ export const PluginHeader = (props: Props) => {
 			return (
 				<>
 					<Button data-testid="PluginHeader__button--open">{t("COMMON.OPEN")}</Button>
-					<Button className="ml-3" data-testid="PluginHeader__button--update">
+					{/* <Button className="ml-3" data-testid="PluginHeader__button--update">
 						<Icon name="Update" />
-					</Button>
+					</Button> */}
 					<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
 						<Icon name="Report" width={20} height={20} />
 					</Button>
@@ -61,9 +61,9 @@ export const PluginHeader = (props: Props) => {
 						<Image name="PluginLogoPlaceholder" domain="plugin" />
 					)}
 				</div>
-				<div className="flex flex-col justify-between pl-8 w-full">
+				<div className="flex flex-col justify-between space-y-3 pl-8 w-full">
 					<div className="flex justify-between items-center">
-						<div className="flex flex-col">
+						<div className="flex flex-col mr-2">
 							<span className="text-2xl font-bold">{props.title}</span>
 							<span className="text-medium text-theme-secondary-500">{props.description}</span>
 						</div>
