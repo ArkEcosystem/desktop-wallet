@@ -7,6 +7,7 @@ export type GridWallet = {
 
 export type WalletGridProps = {
 	isVisible?: boolean;
+	isLoading?: boolean;
 	sliderOptions?: Record<string, any>;
 	wallets: GridWallet[];
 	onWalletAction?: any;

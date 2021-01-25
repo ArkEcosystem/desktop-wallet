@@ -1,3 +1,5 @@
+import { pluginManager } from "app/PluginProviders";
+import { withThemeDecorator } from "plugins";
 import React from "react";
 import { styled } from "twin.macro";
 import { ButtonVariant, Size } from "types";
@@ -9,9 +11,18 @@ type ButtonProps = {
 	size?: Size;
 } & React.ButtonHTMLAttributes<any>;
 
-export const Button = styled.button<ButtonProps>(getStyles);
+const StyledButton = styled.button<ButtonProps>(getStyles);
 
-Button.defaultProps = {
+export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => (
+	<StyledButton {...props} ref={ref} />
+));
+
+OriginalButton.defaultProps = {
 	type: "button",
 	variant: "primary",
 };
+
+OriginalButton.displayName = "Button";
+
+// Expose button to be overriden by plugins
+export const Button = withThemeDecorator("button", OriginalButton, pluginManager);

@@ -6,6 +6,7 @@ type SectionProps = {
 	hasBackground?: boolean;
 	marginTop?: boolean;
 	className?: string;
+	innerClassName?: string;
 };
 
 const SectionWrapper = styled.div(({ hasBackground, marginTop }: SectionProps) => [
@@ -19,9 +20,9 @@ const SectionWrapper = styled.div(({ hasBackground, marginTop }: SectionProps) =
 	marginTop && tw`mt-5`,
 ]);
 
-export const Section = ({ children, hasBackground, marginTop, className }: SectionProps) => (
+export const Section = ({ children, hasBackground, marginTop, className, innerClassName }: SectionProps) => (
 	<SectionWrapper hasBackground={hasBackground} marginTop={marginTop} className={className}>
-		<div className="container py-16 px-14 mx-auto">{children}</div>
+		<div className={`container py-16 px-14 mx-auto ${innerClassName || ""}`}>{children}</div>
 	</SectionWrapper>
 );
 

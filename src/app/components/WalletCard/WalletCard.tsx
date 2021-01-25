@@ -12,19 +12,25 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { Amount } from "../Amount";
+import { WalletCardSkeleton } from "./WalletCardSkeleton";
 
 type WalletCardProps = {
+	isLoading: boolean;
 	className?: string;
 	wallet?: ReadWriteWallet;
 	actions?: DropdownOption[];
 	onSelect?: any;
 };
 
-export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardProps) => {
+export const WalletCard = ({ isLoading, className, wallet, actions, onSelect }: WalletCardProps) => {
 	const activeProfile = useActiveProfile();
 
 	const history = useHistory();
 	const { t } = useTranslation();
+
+	if (isLoading) {
+		return <WalletCardSkeleton />;
+	}
 
 	if (wallet === undefined) {
 		return (

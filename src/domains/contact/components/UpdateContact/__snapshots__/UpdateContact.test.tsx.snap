@@ -19,12 +19,12 @@ exports[`UpdateContact should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
+            class="sc-gsTCUz jEpOBt"
             height="14"
             width="14"
           >
@@ -168,7 +168,7 @@ exports[`UpdateContact should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="sc-bdfBwQ iyevwF"
+                          class="sc-gsTCUz fHxsLl"
                           height="20"
                           width="20"
                         >
@@ -184,7 +184,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="Button-mdtvtf-0 kgwVKi w-full"
+                    class="Button__StyledButton-mdtvtf-0 iitCzz w-full"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
                     type="button"
@@ -220,7 +220,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
+                            class="sc-gsTCUz fHxsLl"
                             data-testid="NetworkIcon__icon"
                             height="20"
                             width="20"
@@ -261,12 +261,12 @@ exports[`UpdateContact should render a modal 1`] = `
                       </div>
                     </span>
                     <button
-                      class="Button-mdtvtf-0 gDMsOH flex items-center ml-auto"
+                      class="Button__StyledButton-mdtvtf-0 dvfbIm flex items-center ml-auto"
                       data-testid="contact-form__remove-address-btn"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-gsTCUz cXMmJt"
                         height="1em"
                         width="1em"
                       >
@@ -282,12 +282,12 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="flex w-full justify-between"
               >
                 <button
-                  class="Button-mdtvtf-0 jvQSDB"
+                  class="Button__StyledButton-mdtvtf-0 bsLEUc"
                   data-testid="contact-form__delete-btn"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
+                    class="sc-gsTCUz cXMmJt"
                     height="1em"
                     width="1em"
                   >
@@ -303,14 +303,14 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
-                    class="Button-mdtvtf-0 dqPArR"
+                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
                     data-testid="contact-form__save-btn"
                     type="submit"
                   >

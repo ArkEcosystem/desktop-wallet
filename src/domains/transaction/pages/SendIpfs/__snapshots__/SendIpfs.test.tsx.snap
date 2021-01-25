@@ -90,7 +90,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -125,7 +125,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -151,7 +151,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -325,7 +325,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -433,14 +433,14 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="SendIpfs__button--back"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 kgwVKi"
+                    class="Button__StyledButton-mdtvtf-0 iitCzz"
                     data-testid="SendIpfs__button--submit"
                     disabled=""
                     type="submit"
@@ -1131,7 +1131,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1166,7 +1166,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1192,7 +1192,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1366,7 +1366,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -1456,6 +1456,16 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                                     1e9b975eff66a … db3d69131067e
                                   </span>
                                 </span>
+                                <div
+                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                                  data-testid="Link__external"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    redirect.svg
+                                  </svg>
+                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1618,7 +1628,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="Button-mdtvtf-0 cyPweQ block"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN block"
                     data-testid="SendIpfs__button--back-to-wallet"
                     type="button"
                   >
@@ -1727,7 +1737,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1762,7 +1772,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1788,7 +1798,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1962,7 +1972,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -2282,7 +2292,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="Button-mdtvtf-0 kgwVKi"
+                    class="Button__StyledButton-mdtvtf-0 iitCzz"
                     data-testid="SendIpfs__button--back"
                     disabled=""
                     type="button"
@@ -2290,7 +2300,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 kgwVKi"
+                    class="Button__StyledButton-mdtvtf-0 iitCzz"
                     data-testid="SendIpfs__button--continue"
                     disabled=""
                     type="button"
@@ -2398,7 +2408,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2433,7 +2443,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -2459,7 +2469,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -2633,7 +2643,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -2688,14 +2698,14 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="Button-mdtvtf-0 cyPweQ"
+                        class="Button__StyledButton-mdtvtf-0 lmPdYN"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="Button-mdtvtf-0 dqPArR space-x-2"
+                        class="Button__StyledButton-mdtvtf-0 iSmMLw space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
