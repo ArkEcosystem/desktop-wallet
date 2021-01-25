@@ -31,9 +31,7 @@ export class PluginConfigurationData {
 
 		const plugin = new PluginConfigurationData(data, manifest);
 
-		if (dir) {
-			plugin.syncSize(dir);
-		}
+		plugin.syncSize(dir);
 
 		return plugin;
 	}
@@ -88,13 +86,13 @@ export class PluginConfigurationData {
 	}
 
 	categories() {
-		const validCategories = ["games", "theme", "language", "utility", "exchange", "other"];
+		const validCategories = ["gaming", "theme", "language", "utility", "exchange", "other"];
 		// @ts-ignore
 		const categories: string[] = this.manifest().get("categories", ["other"]);
 
 		const result = intersection(categories, validCategories);
 
-		return result;
+		return result.length ? result : ["other"];
 	}
 
 	hasCategory(categoryName: string) {

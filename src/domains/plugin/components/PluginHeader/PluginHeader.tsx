@@ -1,4 +1,5 @@
 import { Button } from "app/components/Button";
+import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import React from "react";
@@ -53,14 +54,14 @@ export const PluginHeader = (props: Props) => {
 	return (
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<div className="rounded-lg overflow-hidden w-48 h-48">
+				<div className="rounded-lg overflow-hidden w-40 h-full">
 					{props.logo ? (
 						<img data-testid="PluginCard__logo" src={props.logo} alt="Logo" className="rounded-lg w-full" />
 					) : (
 						<Image name="PluginLogoPlaceholder" domain="plugin" />
 					)}
 				</div>
-				<div className="flex flex-col justify-center pl-8 w-full">
+				<div className="flex flex-col justify-between pl-8 w-full">
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col">
 							<span className="text-2xl font-bold">{props.title}</span>
@@ -68,6 +69,7 @@ export const PluginHeader = (props: Props) => {
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>
+					<Divider dashed />
 					<PluginSpecs {...props} />
 				</div>
 			</div>

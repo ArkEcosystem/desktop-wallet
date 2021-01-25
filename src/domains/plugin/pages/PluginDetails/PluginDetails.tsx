@@ -29,7 +29,6 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 	const { pluginId } = useParams();
 	const { pluginPackages } = usePluginManagerContext();
 	const pluginData = pluginPackages.find((item) => item.id().toString() === pluginId)?.toObject() || ({} as any);
-
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [

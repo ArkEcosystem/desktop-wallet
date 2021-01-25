@@ -45,10 +45,10 @@ export const translations: { [key: string]: any } = {
 
 		VIEW: {
 			HOME: "Home",
-			GAMES: "Games",
+			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
-			THEME: "Themes",
+			THEME: "Theme",
 			UTILITY: "Utility",
 		},
 	},
@@ -65,7 +65,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	CATEGORIES: {
-		GAME: "Game",
+		GAMING: "Gaming",
+		LANGUAGE: "Language",
 		MY_PLUGINS: "My Plugins",
 		OTHER: "Other",
 		THEME: "Theme",

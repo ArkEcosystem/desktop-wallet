@@ -115,15 +115,15 @@ PluginManagerNavigationBar.defaultProps = {
 			name: "home",
 		},
 		{
-			title: "Game",
-			name: "games",
+			title: "Gaming",
+			name: "gaming",
 		},
 		{
 			title: "Utility",
 			name: "utility",
 		},
 		{
-			title: "Themes",
+			title: "Theme",
 			name: "theme",
 		},
 		{
