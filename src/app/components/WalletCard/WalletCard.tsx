@@ -72,10 +72,10 @@ export const WalletCard = ({ isLoading, className, wallet, actions, onSelect }: 
 		}
 	};
 
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
+	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-text");
 
-	const WalletIcon = ({ type }: { type: string }) => (
-		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+	const WalletIcon = ({ type, value }: { type: string; value?: string }) => (
+		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`, { value })}>
 			<div className={`inline-block p-1 ${getIconColor(type)}`}>
 				<Icon name={getIconName(type)} width={20} />
 			</div>
@@ -86,6 +86,7 @@ export const WalletCard = ({ isLoading, className, wallet, actions, onSelect }: 
 		<div className={`w-64 inline-block ${className}`} data-testid={`WalletCard__${wallet.address()}`}>
 			<Card
 				addonIcons={[
+					wallet.isKnown() && <WalletIcon key="Verified" type="Verified" value={wallet.knownName()} />,
 					wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
 					wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
 					wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (

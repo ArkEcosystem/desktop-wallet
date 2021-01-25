@@ -46,10 +46,10 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 		}
 	};
 
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
+	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-text");
 
-	const WalletIcon = ({ type }: { type: string }) => (
-		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+	const WalletIcon = ({ type, value }: { type: string; value?: string }) => (
+		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`, { value })}>
 			<div className={`inline-block p-1 ${getIconColor(type)}`}>
 				<Icon name={getIconName(type)} width={20} />
 			</div>
@@ -79,8 +79,9 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 			</TableCell>
 
 			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">
-				<div className="inline-flex items-center space-x-2">
+				<div className="inline-flex items-center space-x-1">
 					{[
+						wallet.isKnown() && <WalletIcon key="Verified" type="Verified" value={wallet.knownName()} />,
 						wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
 						wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
 						/* istanbul ignore next */

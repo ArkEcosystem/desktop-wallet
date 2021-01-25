@@ -76,7 +76,12 @@ const useProfileJobs = (profile?: Profile) => {
 			interval: Intervals.Short,
 		};
 
-		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications];
+		const syncKnownWallets = {
+			callback: () => env.knownWallets().syncAll(),
+			interval: Intervals.Long,
+		};
+
+		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications, syncKnownWallets];
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
