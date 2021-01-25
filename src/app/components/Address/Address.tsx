@@ -1,3 +1,4 @@
+import { TruncateEnd } from "app/components/TruncateEnd";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
 import React from "react";
 import { Size } from "types";
@@ -52,7 +53,7 @@ export const Address = ({
 						walletNameClass || "text-theme-text"
 					}`}
 				>
-					<TruncateMiddle text={walletName} maxChars={maxNameChars} data-testid="address__wallet-name" />
+					<TruncateEnd text={walletName} maxChars={maxNameChars} data-testid="address__wallet-name" />
 				</span>
 			)}
 			{address && (
