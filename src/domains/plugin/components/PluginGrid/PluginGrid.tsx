@@ -7,6 +7,8 @@ type PluginGridProps = {
 	className?: string;
 	itemsPerPage?: number;
 	onDelete: any;
+	onEnable?: (plugin: any) => void;
+	onDisable?: (plugin: any) => void;
 	onSelect: any;
 	plugins: any[];
 	withPagination?: boolean;
@@ -17,6 +19,8 @@ export const PluginGrid = ({
 	itemsPerPage,
 	onDelete,
 	onSelect,
+	onEnable,
+	onDisable,
 	plugins,
 	withPagination,
 }: PluginGridProps) => {
@@ -30,6 +34,8 @@ export const PluginGrid = ({
 				plugin={plugin}
 				onClick={() => onSelect(plugin.id)}
 				onDelete={() => onDelete(plugin)}
+				onEnable={() => onEnable?.(plugin)}
+				onDisable={() => onDisable?.(plugin)}
 			/>,
 		);
 	}

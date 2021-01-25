@@ -91,7 +91,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -126,7 +126,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -152,7 +152,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -388,7 +388,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
                         type="horizontal"
                       />
-                      <p
+                      <div
                         class="whitespace-pre-line text-theme-secondary-text"
                         data-testid="NewsCard__content"
                       >
@@ -405,8 +405,18 @@ exports[`News should filter results based on category query and asset 1`] = `
                           >
                             https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
                           </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -782,7 +792,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </div>
                     </div>
                     <button
-                      class="Button-mdtvtf-0 cyPweQ w-full"
+                      class="Button__StyledButton-mdtvtf-0 lmPdYN w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >
@@ -891,7 +901,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -926,7 +936,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -952,7 +962,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1202,7 +1212,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
                         type="horizontal"
                       />
-                      <p
+                      <div
                         class="whitespace-pre-line text-theme-secondary-text"
                         data-testid="NewsCard__content"
                       >
@@ -1218,8 +1228,18 @@ exports[`News should filter results based on category query and asset 2`] = `
                           >
                             https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
                           </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1377,7 +1397,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </div>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="Pagination__next"
                     type="button"
                   >
@@ -1393,7 +1413,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </button>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="Pagination__last"
                     type="button"
                   >
@@ -1665,7 +1685,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                     <button
-                      class="Button-mdtvtf-0 cyPweQ w-full"
+                      class="Button__StyledButton-mdtvtf-0 lmPdYN w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >

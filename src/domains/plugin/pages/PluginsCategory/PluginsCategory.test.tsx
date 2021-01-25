@@ -194,7 +194,7 @@ describe("PluginsCategory", () => {
 
 		act(() => {
 			fireEvent.click(within(pluginsContainer).getAllByTestId("dropdown__toggle")[0]);
-			fireEvent.click(within(pluginsContainer).getByTestId("dropdown__option--1"));
+			fireEvent.click(within(pluginsContainer).getByTestId("dropdown__option--0"));
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");

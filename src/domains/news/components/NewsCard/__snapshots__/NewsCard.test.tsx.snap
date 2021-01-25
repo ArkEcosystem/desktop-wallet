@@ -87,7 +87,7 @@ exports[`NewsCard should render 1`] = `
           class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
           type="horizontal"
         />
-        <p
+        <div
           class="whitespace-pre-line text-theme-secondary-text"
           data-testid="NewsCard__content"
         >
@@ -103,8 +103,18 @@ exports[`NewsCard should render 1`] = `
             >
               https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
             </span>
+            <div
+              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              data-testid="Link__external"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                redirect.svg
+              </svg>
+            </div>
           </a>
-        </p>
+        </div>
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -201,7 +211,7 @@ exports[`NewsCard should render with cover image 1`] = `
           class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
           type="horizontal"
         />
-        <p
+        <div
           class="whitespace-pre-line text-theme-secondary-text"
           data-testid="NewsCard__content"
         >
@@ -217,8 +227,18 @@ exports[`NewsCard should render with cover image 1`] = `
             >
               https://blog.ark.io/ark-monthly-update-june-2020-edition-279a3dd47a36
             </span>
+            <div
+              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              data-testid="Link__external"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                redirect.svg
+              </svg>
+            </div>
           </a>
-        </p>
+        </div>
         <div
           class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-secondary-800"
         >

@@ -5,6 +5,7 @@ import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
+import { useProfileRestore } from "app/hooks";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
@@ -15,6 +16,7 @@ import { setScreenshotProtection } from "utils/electron-utils";
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();
+	const { restoreProfile } = useProfileRestore();
 	const history = useHistory();
 
 	const { t } = useTranslation();
@@ -32,8 +34,8 @@ export const Welcome = () => {
 
 	useEffect(() => setScreenshotProtection(true));
 
-	const navigateToProfile = (profileId: string, subPath = "dashboard") => {
-		history.push(`/profiles/${profileId}/${subPath}`);
+	const navigateToProfile = (profile: Profile, subPath = "dashboard") => {
+		history.push(`/profiles/${profile.id()}/${subPath}`);
 	};
 
 	const closeDeleteProfileModal = () => {
@@ -50,7 +52,8 @@ export const Welcome = () => {
 			setSelectedProfile(profile);
 			setRequestedAction({ label: "Homepage", value: "home" });
 		} else {
-			navigateToProfile(profile.id());
+			restoreProfile(profile);
+			navigateToProfile(profile);
 		}
 	};
 
@@ -63,15 +66,17 @@ export const Welcome = () => {
 		}
 	};
 
-	const handleRequestedAction = (profile: Profile, action: any) => {
+	const handleRequestedAction = (profile: Profile, action: any, password?: string) => {
 		closeSignInModal();
 
 		switch (action?.value) {
 			case "home":
-				navigateToProfile(profile.id());
+				restoreProfile(profile, password);
+				navigateToProfile(profile);
 				break;
 			case "setting":
-				navigateToProfile(profile.id(), "settings");
+				restoreProfile(profile, password);
+				navigateToProfile(profile, "settings");
 				break;
 			case "delete":
 				setDeletingProfileId(profile.id());
@@ -151,7 +156,7 @@ export const Welcome = () => {
 					profile={selectedProfile}
 					onCancel={closeSignInModal}
 					onClose={closeSignInModal}
-					onSuccess={() => handleRequestedAction(selectedProfile, requestedAction)}
+					onSuccess={(password) => handleRequestedAction(selectedProfile, requestedAction, password)}
 				/>
 			)}
 		</>
