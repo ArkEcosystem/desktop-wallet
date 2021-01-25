@@ -2,6 +2,7 @@ import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -30,6 +31,8 @@ const transport: typeof Transport = createTransportReplayer(RecordStore.fromStri
 
 describe("Wallets", () => {
 	beforeAll(async () => {
+		jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+
 		nock("https://neoscan.io/api/main_net/v1/")
 			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
 			.reply(200, []);
@@ -49,10 +52,29 @@ describe("Wallets", () => {
 		await wallet.syncVotes();
 	});
 
+	afterAll(() => {
+		useRandomNumberHook.useRandomNumber.mockRestore();
+	});
+
 	it("should render grid", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getAllByTestId("WalletsGrid")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render grid in loading state", () => {
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets isLoading={true} />
 			</Route>,
 			{
 				routes: [dashboardURL],
