@@ -67,12 +67,14 @@ export const DelegateRow = ({
 	return (
 		<TableRow>
 			<TableCell
+				variant="start"
 				className="w-20"
 				innerClassName={`justify-start font-bold text-theme-secondary-text ${getColorSelected()}`}
 			>
 				<span>#{delegate.rank()}</span>
 			</TableCell>
-			<TableCell variant="start" innerClassName={`space-x-4 font-bold ${getColorSelected()}`}>
+
+			<TableCell innerClassName={`space-x-4 font-bold ${getColorSelected()}`}>
 				<Avatar size="lg" address={delegate.address()} noShadow />
 				<span>{delegate.username()}</span>
 			</TableCell>
