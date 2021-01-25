@@ -21,7 +21,7 @@ export const TransactionExplorerLink = ({ id, link, variant, ...props }: Transac
 	return (
 		<TransactionDetail label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")} {...props}>
 			<div className="flex items-center space-x-3">
-				<Link to={link} isExternal showExternalIcon={false}>
+				<Link to={link} isExternal>
 					<TruncateMiddle text={id} maxChars={30} className="text-theme-primary-700" />
 				</Link>
 

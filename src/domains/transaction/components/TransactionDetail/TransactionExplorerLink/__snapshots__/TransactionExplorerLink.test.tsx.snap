@@ -36,6 +36,16 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
                 test-id
               </span>
             </span>
+            <div
+              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              data-testid="Link__external"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                redirect.svg
+              </svg>
+            </div>
           </a>
           <span
             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -98,6 +108,16 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
                 test-id
               </span>
             </span>
+            <div
+              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              data-testid="Link__external"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                redirect.svg
+              </svg>
+            </div>
           </a>
           <span
             class="flex text-theme-primary-300 dark:text-theme-secondary-600"

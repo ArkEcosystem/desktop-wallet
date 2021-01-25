@@ -388,7 +388,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
                         type="horizontal"
                       />
-                      <p
+                      <div
                         class="whitespace-pre-line text-theme-secondary-text"
                         data-testid="NewsCard__content"
                       >
@@ -405,8 +405,18 @@ exports[`News should filter results based on category query and asset 1`] = `
                           >
                             https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
                           </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1202,7 +1212,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
                         type="horizontal"
                       />
-                      <p
+                      <div
                         class="whitespace-pre-line text-theme-secondary-text"
                         data-testid="NewsCard__content"
                       >
@@ -1218,8 +1228,18 @@ exports[`News should filter results based on category query and asset 2`] = `
                           >
                             https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
                           </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
