@@ -35,11 +35,6 @@ const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({ onDelete, onInstall, viewType, paths, plugins }: PluginManagerHomeProps) => {
 	const activeProfile = useActiveProfile();
-	const [blacklist, setBlacklist] = useState<any>([]);
-
-	useEffect(() => {
-		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
-	}, [activeProfile]);
 
 	const { t } = useTranslation();
 	const history = useHistory();

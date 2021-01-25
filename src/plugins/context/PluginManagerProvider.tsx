@@ -75,10 +75,23 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginManager, trigger],
 	);
 
-	const fetchPluginPackages = useCallback(() => {
-		// const result = await pluginRegistry.all();
-		// const packages = result.map(item => item.getLatestVersion())
-		const packages = require("tests/fixtures/plugins/all-npm-plugins.json");
+	const fetchPluginPackages = useCallback(async () => {
+		const isMockEnabled = process.env.REACT_APP_MOCK_NPM_PLUGINS;
+		let packages = [];
+
+		/* istanbul ignore next */
+		if (isMockEnabled) {
+			packages = require("tests/fixtures/plugins/all-npm-plugins.json");
+		} else {
+			try {
+				const result = await pluginRegistry.all();
+				// @ts-ignore
+				packages = result.map((item) => item.getLatestVersion());
+			} catch {
+				toasts.error(`Failed to fetch packages`);
+			}
+		}
+
 		const configurations = packages.map((item: any) => PluginConfigurationData.make(item));
 		const localConfigurations = pluginManager
 			.plugins()
@@ -86,7 +99,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			.map((item) => item.config());
 		const merged = uniqBy([...configurations, ...localConfigurations], (item) => item.id());
 		setState((prev: any) => ({ ...prev, packages: merged }));
-	}, [pluginManager]);
+	}, [pluginManager, pluginRegistry]);
 
 	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages || [], [state]);
 

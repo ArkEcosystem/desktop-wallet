@@ -84,7 +84,7 @@ export const PluginSpecs = ({ author, category, homepage, version, logo, isOffic
 						<div className="flex flex-col">
 							<div className="font-bold text-theme-secondary-400">{t("COMMON.URL")}</div>
 							<a
-								href="#"
+								href="/"
 								onClick={() => openExternal(homepage!)}
 								className="font-bold text-theme-primary-600"
 							>

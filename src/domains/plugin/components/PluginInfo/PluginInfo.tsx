@@ -55,6 +55,7 @@ export const PluginInfo = ({ description, permissions, images }: Props) => {
 									src={screenshot}
 									data-testid="plugin-info__screenshot"
 									className="object-contain rounded-lg bg-theme-secondary-200 overflow-hidden w-full max-h-44"
+									alt="Screenshot"
 								/>
 							)}
 						</Slider>

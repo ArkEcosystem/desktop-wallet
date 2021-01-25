@@ -37,7 +37,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();
-	const { loadPlugins, fetchPluginPackages } = usePluginManagerContext();
+	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
@@ -72,7 +72,6 @@ const Main = () => {
 				await env.boot();
 				runAll();
 				await loadPlugins();
-				fetchPluginPackages();
 			} catch (error) {
 				console.error(error);
 				handleError(error);
