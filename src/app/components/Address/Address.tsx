@@ -53,7 +53,7 @@ export const Address = ({
 						walletNameClass || "text-theme-text"
 					}`}
 				>
-					<TruncateEnd text={walletName} maxChars={maxNameChars} data-testid="address__wallet-name" />
+					<TruncateEnd text={walletName} maxChars={maxNameChars} />
 				</span>
 			)}
 			{address && (
