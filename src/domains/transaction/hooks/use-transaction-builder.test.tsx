@@ -85,6 +85,35 @@ describe("Use Transaction Builder Hook", () => {
 		jest.clearAllMocks();
 	});
 
+	it("should sign transfer with cold ledger wallet", async () => {
+		const { result } = renderHook(() => useTransactionBuilder(profile));
+
+		jest.spyOn(wallet, "publicKey").mockImplementation(() => undefined);
+		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
+			"0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb",
+		);
+		jest.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr").mockResolvedValue(
+			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
+		);
+
+		const input: TransferInput = {
+			from: wallet.address(),
+			fee: "1",
+			nonce: "1",
+			data: {
+				amount: "1",
+				to: wallet.address(),
+			},
+			sign: {},
+		};
+
+		const transaction = await result.current.build("transfer", input);
+		expect(transaction.id()).toBe("50f6046de032ea49b5d2894c5f027527564764c7d84633c146babada1707dd9f");
+
+		jest.clearAllMocks();
+	});
+
 	it("should abort build with ledger", async () => {
 		const abortCtrl = new AbortController();
 		const abortSignal = abortCtrl.signal;

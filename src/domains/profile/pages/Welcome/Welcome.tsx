@@ -97,47 +97,40 @@ export const Welcome = () => {
 							{t("COMMON.SELECT_OPTION", { option: t("COMMON.PROFILE") })}
 						</h2>
 
-						{profiles.length > 0 ? (
-							<>
-								<p className="text-sm text-theme-secondary-text md:text-base">
-									{t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
-								</p>
+						<p className="text-sm text-theme-secondary-text md:text-base">
+							{profiles.length > 0 && t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
+							{profiles.length === 0 && t("PROFILE.PAGE_WELCOME.HAS_NO_PROFILES")}
+						</p>
 
-								<div className="mt-8">
-									<div className="-my-2.5 flex flex-wrap justify-center">
-										{profiles.map((profile: Profile, index: number) => (
-											<ProfileCard
-												onClick={() => handleClick(profile)}
-												key={index}
-												profile={profile}
-												actions={profileCardActions}
-												onSelect={(action: any) => handleProfileAction(profile, action)}
-											/>
-										))}
-										<div className="rounded-lg overflow-hidden m-2.5">
-											<Button
-												variant="secondary"
-												className="w-40 h-40"
-												onClick={() => history.push("/profiles/create")}
-											>
-												<div className="flex flex-col justify-center items-center">
-													<Circle size="xl" noShadow>
-														<Icon name="Plus" width={12} height={12} />
-													</Circle>
-													<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">
-														{t("PROFILE.CREATE_PROFILE")}
-													</span>
-												</div>
-											</Button>
+						<div className="mt-8">
+							<div className="-my-2.5 flex flex-wrap justify-center">
+								{profiles.map((profile: Profile, index: number) => (
+									<ProfileCard
+										onClick={() => handleClick(profile)}
+										key={index}
+										profile={profile}
+										actions={profileCardActions}
+										onSelect={(action: any) => handleProfileAction(profile, action)}
+									/>
+								))}
+								<div className="rounded-lg overflow-hidden m-2.5">
+									<Button
+										variant="secondary"
+										className="w-40 h-40"
+										onClick={() => history.push("/profiles/create")}
+									>
+										<div className="flex flex-col justify-center items-center">
+											<Circle size="xl" noShadow>
+												<Icon name="Plus" width={12} height={12} />
+											</Circle>
+											<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">
+												{t("PROFILE.CREATE_PROFILE")}
+											</span>
 										</div>
-									</div>
+									</Button>
 								</div>
-							</>
-						) : (
-							<p className="text-sm text-theme-secondary-text md:text-base">
-								{t("PROFILE.PAGE_WELCOME.HAS_NO_PROFILES")}
-							</p>
-						)}
+							</div>
+						</div>
 					</div>
 				</Section>
 			</Page>
