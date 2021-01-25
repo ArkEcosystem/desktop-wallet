@@ -52,7 +52,9 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 	const handleSelectCategory = (name: string) => {
 		const selected = categories.filter((category: Option) => category.isSelected);
 
-		if (selected.length === 1 && selected[0].name === name) return;
+		if (selected.length === 1 && selected[0].name === name) {
+			return;
+		}
 
 		setCategories(
 			categories.map((category: Option) =>

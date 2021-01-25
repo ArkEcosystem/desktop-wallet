@@ -21,6 +21,7 @@ type WalletsProps = {
 	onWalletAction?: any;
 	listPagerLimit?: number;
 	walletsCount?: number;
+	isLoading?: boolean;
 };
 
 export const Wallets = ({
@@ -31,6 +32,7 @@ export const Wallets = ({
 	onWalletAction,
 	walletsCount,
 	listPagerLimit = 10,
+	isLoading,
 }: WalletsProps) => {
 	const [viewMore, setViewMore] = useState(false);
 	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
@@ -42,7 +44,9 @@ export const Wallets = ({
 	const { viewType, walletsDisplayType, selectedNetworkIds, showTransactions, update } = filterProperties;
 
 	const wallets = useMemo(() => {
-		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) return activeProfile.wallets().values();
+		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) {
+			return activeProfile.wallets().values();
+		}
 
 		return activeProfile
 			.wallets()
@@ -89,6 +93,7 @@ export const Wallets = ({
 			<div className="mt-1">
 				<WalletsGrid
 					isVisible={viewType === "grid"}
+					isLoading={isLoading}
 					wallets={gridWallets}
 					sliderOptions={sliderOptions}
 					onWalletAction={onWalletAction}

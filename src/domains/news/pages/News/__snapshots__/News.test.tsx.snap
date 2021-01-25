@@ -91,7 +91,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -126,7 +126,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -152,7 +152,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -266,7 +266,7 @@ exports[`News should filter results based on category query and asset 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <div
             class="flex justify-between items-end bg-theme-background"
@@ -306,7 +306,7 @@ exports[`News should filter results based on category query and asset 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 gdYKSB"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <div
             class="container flex space-x-8"
@@ -388,21 +388,35 @@ exports[`News should filter results based on category query and asset 1`] = `
                         class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
                         type="horizontal"
                       />
-                      <p
+                      <div
                         class="whitespace-pre-line text-theme-secondary-text"
                         data-testid="NewsCard__content"
                       >
                         Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
 
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
                         >
-                          https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
+                          <span
+                            class="underline-dotted"
+                          >
+                            https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
+                          </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -437,18 +451,22 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex flex-col space-y-5 text-white"
                     >
                       <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
                       >
-                        <svg
-                          class="-mx-8 text-white"
-                          height="47"
-                          width="238"
+                        <span
+                          class="underline-dotted"
                         >
-                          blockfolio.svg
-                        </svg>
+                          <svg
+                            class="-mx-8 text-white"
+                            height="47"
+                            width="238"
+                          >
+                            blockfolio.svg
+                          </svg>
+                        </span>
                       </a>
                       <p
                         class="w-3/4 text-lg font-medium"
@@ -460,28 +478,36 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
                       >
-                        <svg
-                          class="w-32 h-10 b-0"
+                        <span
+                          class="underline-dotted"
                         >
-                          download-app-store.svg
-                        </svg>
+                          <svg
+                            class="w-32 h-10 b-0"
+                          >
+                            download-app-store.svg
+                          </svg>
+                        </span>
                       </a>
                       <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
                       >
-                        <svg
-                          class="w-32 h-10"
+                        <span
+                          class="underline-dotted"
                         >
-                          download-google-play.svg
-                        </svg>
+                          <svg
+                            class="w-32 h-10"
+                          >
+                            download-google-play.svg
+                          </svg>
+                        </span>
                       </a>
                     </div>
                   </div>
@@ -491,14 +517,14 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 chOylR"
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
                     >
                       1
                     </div>
@@ -766,7 +792,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </div>
                     </div>
                     <button
-                      class="Button-mdtvtf-0 cyPweQ w-full"
+                      class="Button__StyledButton-mdtvtf-0 lmPdYN w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >
@@ -875,7 +901,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -910,7 +936,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -936,7 +962,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button__StyledButton-mdtvtf-0 IdcN"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1050,7 +1076,7 @@ exports[`News should filter results based on category query and asset 2`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <div
             class="flex justify-between items-end bg-theme-background"
@@ -1090,7 +1116,7 @@ exports[`News should filter results based on category query and asset 2`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 gdYKSB"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <div
             class="container flex space-x-8"
@@ -1186,20 +1212,34 @@ exports[`News should filter results based on category query and asset 2`] = `
                         class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
                         type="horizontal"
                       />
-                      <p
+                      <div
                         class="whitespace-pre-line text-theme-secondary-text"
                         data-testid="NewsCard__content"
                       >
                         Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
                         >
-                          https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
+                          <span
+                            class="underline-dotted"
+                          >
+                            https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
+                          </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
@@ -1234,18 +1274,22 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex flex-col space-y-5 text-white"
                     >
                       <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
                       >
-                        <svg
-                          class="-mx-8 text-white"
-                          height="47"
-                          width="238"
+                        <span
+                          class="underline-dotted"
                         >
-                          blockfolio.svg
-                        </svg>
+                          <svg
+                            class="-mx-8 text-white"
+                            height="47"
+                            width="238"
+                          >
+                            blockfolio.svg
+                          </svg>
+                        </span>
                       </a>
                       <p
                         class="w-3/4 text-lg font-medium"
@@ -1257,28 +1301,36 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
                       >
-                        <svg
-                          class="w-32 h-10 b-0"
+                        <span
+                          class="underline-dotted"
                         >
-                          download-app-store.svg
-                        </svg>
+                          <svg
+                            class="w-32 h-10 b-0"
+                          >
+                            download-app-store.svg
+                          </svg>
+                        </span>
                       </a>
                       <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
                       >
-                        <svg
-                          class="w-32 h-10"
+                        <span
+                          class="underline-dotted"
                         >
-                          download-google-play.svg
-                        </svg>
+                          <svg
+                            class="w-32 h-10"
+                          >
+                            download-google-play.svg
+                          </svg>
+                        </span>
                       </a>
                     </div>
                   </div>
@@ -1288,57 +1340,64 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 chOylR"
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
                     >
                       1
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       2
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       3
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       4
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       5
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       6
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
                     >
                       7
                     </div>
                     <div
-                      class="Pagination__PaginationSearchButton-x7juhx-2 eSzMUq"
+                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+                      data-testid="PaginationSearchButton"
                     >
-                      <span>
-                        ...
+                      <span
+                        data-testid="PaginationSearch__toggle"
+                      >
+                         
+                        <span>
+                          ...
+                        </span>
+                         
                       </span>
                     </div>
                   </div>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="Pagination__next"
                     type="button"
                   >
@@ -1354,7 +1413,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </button>
                   <button
-                    class="Button-mdtvtf-0 cyPweQ"
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
                     data-testid="Pagination__last"
                     type="button"
                   >
@@ -1626,7 +1685,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                     <button
-                      class="Button-mdtvtf-0 cyPweQ w-full"
+                      class="Button__StyledButton-mdtvtf-0 lmPdYN w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >

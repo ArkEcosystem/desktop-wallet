@@ -31,14 +31,18 @@ export const WalletsControls = memo(
 		const { t } = useTranslation();
 
 		const onClickGridView = () => {
-			if (walletsViewType === "grid") return;
+			if (walletsViewType === "grid") {
+				return;
+			}
 
 			setWalletsViewType("grid");
 			onSelectGridView?.();
 		};
 
 		const onClickListview = () => {
-			if (walletsViewType === "list") return;
+			if (walletsViewType === "list") {
+				return;
+			}
 
 			setWalletsViewType("list");
 			onSelectListView?.();
@@ -56,7 +60,7 @@ export const WalletsControls = memo(
 
 				<div className="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-secondary-300 dark:border-theme-secondary-800">
 					<Dropdown
-						dropdownClass="transform -translate-y-4"
+						dropdownClass="transform"
 						toggleContent={
 							<div className="group">
 								<ControlButton isActive={filterProperties.isFilterChanged}>

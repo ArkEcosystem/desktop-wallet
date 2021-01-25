@@ -39,7 +39,7 @@ export const TransactionRow = ({
 }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
-	if (isLoading)
+	if (isLoading) {
 		return (
 			<TransactionRowSkeleton
 				data-testid="TransactionRow__skeleton"
@@ -47,6 +47,7 @@ export const TransactionRow = ({
 				showSignColumn={showSignColumn || isSignaturePending}
 			/>
 		);
+	}
 
 	return (
 		<TableRow
@@ -63,7 +64,6 @@ export const TransactionRow = ({
 						data-testid="TransactionRow__ID"
 						to={transaction.explorerLink()}
 						tooltip={transaction.id()}
-						showExternalIcon={false}
 						isExternal
 					>
 						<Icon name="Id" />

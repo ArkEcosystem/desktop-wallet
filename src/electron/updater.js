@@ -3,7 +3,9 @@ const { version } = require("../../package.json");
 const logger = require("electron-log");
 
 const setupDev = (testVersion) => {
-	if (testVersion) autoUpdater.currentVersion = testVersion;
+	if (testVersion) {
+		autoUpdater.currentVersion = testVersion;
+	}
 
 	if (process.platform === "linux") {
 		process.env.APPIMAGE = `dist/target/ark-desktop-wallet-linux-x86_64-${testVersion || version}.AppImage`;
@@ -17,8 +19,12 @@ const setupConfig = ({ isDev, testVersion, isE2e }) => {
 	autoUpdater.autoDownload = false;
 	autoUpdater.currentVersion = testVersion || version;
 
-	if (isDev || isE2e) autoUpdater.updateConfigPath = "app-update.yml";
-	if (isDev) setupDev(testVersion);
+	if (isDev || isE2e) {
+		autoUpdater.updateConfigPath = "app-update.yml";
+	}
+	if (isDev) {
+		setupDev(testVersion);
+	}
 };
 
 const sendToWindow = (key, value, mainWindow) => {
@@ -74,7 +80,9 @@ const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
 	ipcMain.handle(CHECK_UPDATES, async () => {
 		const result = await autoUpdater.checkForUpdates();
 
-		if (result) autoUpdater.cancellationToken = result.cancellationToken;
+		if (result) {
+			autoUpdater.cancellationToken = result.cancellationToken;
+		}
 		return result;
 	});
 

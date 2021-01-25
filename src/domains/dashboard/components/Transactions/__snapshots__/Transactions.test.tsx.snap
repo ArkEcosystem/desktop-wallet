@@ -6,7 +6,7 @@ exports[`Transactions should fetch more transactions 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
   >
     <div
-      class="container py-16 px-14 mx-auto"
+      class="container py-16 px-14 mx-auto "
     >
       <div
         class="flex relative justify-between"
@@ -46,7 +46,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 iUXrER"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM"
+                    class="sc-gsTCUz fOJxeI"
                     height="5"
                     width="8"
                   >
@@ -138,7 +138,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="sc-gsTCUz fOJxeI transition-transform "
                         height="5"
                         role="img"
                         width="8"
@@ -210,7 +210,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                        class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
                         height="5"
                         role="img"
                         width="8"
@@ -250,18 +250,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -291,7 +305,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -349,7 +363,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -405,18 +419,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -446,7 +474,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -504,7 +532,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -560,18 +588,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -601,7 +643,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -659,7 +701,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -715,18 +757,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -756,7 +812,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -814,7 +870,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -870,18 +926,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -911,7 +981,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -969,7 +1039,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -1025,18 +1095,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -1066,7 +1150,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -1124,7 +1208,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -1180,18 +1264,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -1221,7 +1319,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -1279,7 +1377,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -1335,18 +1433,32 @@ exports[`Transactions should fetch more transactions 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -1376,7 +1488,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -1434,7 +1546,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -1486,7 +1598,7 @@ exports[`Transactions should fetch more transactions 1`] = `
         </div>
       </div>
       <button
-        class="Button-mdtvtf-0 cyPweQ mt-10 mb-5 w-full"
+        class="Button__StyledButton-mdtvtf-0 lmPdYN mt-10 mb-5 w-full"
         data-testid="transactions__fetch-more-button"
         type="button"
       >
@@ -1503,7 +1615,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
   >
     <div
-      class="container py-16 px-14 mx-auto"
+      class="container py-16 px-14 mx-auto "
     >
       <div
         class="flex relative justify-between"
@@ -1543,7 +1655,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 iUXrER"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM"
+                    class="sc-gsTCUz fOJxeI"
                     height="5"
                     width="8"
                   >
@@ -1635,7 +1747,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="sc-gsTCUz fOJxeI transition-transform "
                         height="5"
                         role="img"
                         width="8"
@@ -1707,7 +1819,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                        class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
                         height="5"
                         role="img"
                         width="8"
@@ -1747,18 +1859,32 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -1788,7 +1914,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -1846,7 +1972,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -1902,18 +2028,32 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -1943,7 +2083,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -2001,7 +2141,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -2057,18 +2197,32 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -2098,7 +2252,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -2156,7 +2310,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -2212,18 +2366,32 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -2253,7 +2421,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -2311,7 +2479,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -2363,7 +2531,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
         </div>
       </div>
       <button
-        class="Button-mdtvtf-0 cyPweQ mt-10 mb-5 w-full"
+        class="Button__StyledButton-mdtvtf-0 lmPdYN mt-10 mb-5 w-full"
         data-testid="transactions__fetch-more-button"
         type="button"
       >
@@ -2380,7 +2548,7 @@ exports[`Transactions should render 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
   >
     <div
-      class="container py-16 px-14 mx-auto"
+      class="container py-16 px-14 mx-auto "
     >
       <div
         class="flex relative justify-between"
@@ -2420,7 +2588,7 @@ exports[`Transactions should render 1`] = `
                   class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 iUXrER"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM"
+                    class="sc-gsTCUz fOJxeI"
                     height="5"
                     width="8"
                   >
@@ -2512,7 +2680,7 @@ exports[`Transactions should render 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="sc-gsTCUz fOJxeI transition-transform "
                         height="5"
                         role="img"
                         width="8"
@@ -2584,7 +2752,7 @@ exports[`Transactions should render 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                        class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
                         height="5"
                         role="img"
                         width="8"
@@ -2624,18 +2792,32 @@ exports[`Transactions should render 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -2665,7 +2847,7 @@ exports[`Transactions should render 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -2723,7 +2905,7 @@ exports[`Transactions should render 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -2779,18 +2961,32 @@ exports[`Transactions should render 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -2820,7 +3016,7 @@ exports[`Transactions should render 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -2878,7 +3074,7 @@ exports[`Transactions should render 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -2934,18 +3130,32 @@ exports[`Transactions should render 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -2975,7 +3185,7 @@ exports[`Transactions should render 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -3033,7 +3243,7 @@ exports[`Transactions should render 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -3089,18 +3299,32 @@ exports[`Transactions should render 1`] = `
                     class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                   >
                     <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                        data-testid="Link__external"
                         height="1em"
                         width="1em"
                       >
                         <svg>
-                          id.svg
+                          redirect.svg
                         </svg>
                       </div>
                     </a>
@@ -3130,7 +3354,7 @@ exports[`Transactions should render 1`] = `
                         class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
+                          class="sc-gsTCUz cXMmJt"
                           data-testid="TransactionRowMode__Received"
                           height="1em"
                           width="1em"
@@ -3188,7 +3412,7 @@ exports[`Transactions should render 1`] = `
                       data-testid="TransactionRowConfirmation"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        class="sc-gsTCUz gbSRoN text-theme-success-600"
                         data-testid="TransactionRowConfirmation__confirmed"
                         height="22"
                         width="22"
@@ -3240,7 +3464,7 @@ exports[`Transactions should render 1`] = `
         </div>
       </div>
       <button
-        class="Button-mdtvtf-0 cyPweQ mt-10 mb-5 w-full"
+        class="Button__StyledButton-mdtvtf-0 lmPdYN mt-10 mb-5 w-full"
         data-testid="transactions__fetch-more-button"
         type="button"
       >

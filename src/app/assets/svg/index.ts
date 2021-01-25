@@ -22,6 +22,7 @@ import { ReactComponent as CaretDown } from "./caret-down.svg";
 import { ReactComponent as CaretUp } from "./caret-up.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
+import { ReactComponent as CheckmarkBig } from "./checkmark-big.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as ChevronLeft } from "./chevron-left.svg";
 import { ReactComponent as ChevronLeftDouble } from "./chevron-left-double.svg";
@@ -53,6 +54,7 @@ import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as GridView } from "./grid-view.svg";
 import { ReactComponent as Id } from "./id.svg";
 import { ReactComponent as Import } from "./import.svg";
+import { ReactComponent as InformationCircle } from "./information-circle.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
 import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
@@ -94,6 +96,7 @@ import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
 import { ReactComponent as StarsOutline } from "./stars-outline.svg";
+import { ReactComponent as StatusFailed } from "./status-failed.svg";
 import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Timelock } from "./timelock.svg";
@@ -130,6 +133,7 @@ export const SvgCollection: any = {
 	CaretUp,
 	ChartActiveDot,
 	Checkmark,
+	CheckmarkBig,
 	ChevronDown,
 	ChevronLeft,
 	ChevronLeftDouble,
@@ -161,6 +165,7 @@ export const SvgCollection: any = {
 	GridView,
 	Id,
 	Import,
+	InformationCircle,
 	Ipfs,
 	Key,
 	Ledger,
@@ -204,6 +209,7 @@ export const SvgCollection: any = {
 	StarsOutline,
 	StatusOk,
 	StatusPending,
+	StatusFailed,
 	Timelock,
 	Trash,
 	Unvote,

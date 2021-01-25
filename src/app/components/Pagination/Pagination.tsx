@@ -2,53 +2,18 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import tw, { styled } from "twin.macro";
+import { styled } from "twin.macro";
 
+import { PaginationProps, PaginationSearch } from "./";
 import { CompactPagination } from "./components/CompactPagination";
+import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 
 const Wrapper = styled.div`
-	${tw`flex space-x-3 h-10`}
-
-	button:first-child,button:last-child {
-		${tw``}
-	}
-
-	button {
-		${tw`py-2 px-4`}
-	}
+	${PaginationWrapper}
 `;
 
-type PaginationProps = {
-	totalCount: number;
-	itemsPerPage: number;
-	onSelectPage: any;
-	currentPage: number;
-	className?: string;
-	variant?: "condensed";
-};
-
-const PaginationButton = styled.div`
-	${tw`text-theme-primary-500 dark:text-theme-secondary-200 cursor-pointer px-2 text-base inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear justify-center`}
-
-	&:not(:disabled):hover {
-		${tw`bg-theme-primary-600 text-white rounded`}
-		box-shadow: 2px 3px 10px 2px rgba(var(--theme-color-primary-rgb), 0.2);
-		transform: scale(1.1);
-	}
-
-	&.current-page {
-		${tw`bg-theme-primary-200 dark:bg-theme-secondary-600 text-theme-primary-500 dark:text-theme-secondary-200`}
-	}
-`;
-
-const PaginationSearchButton = styled.div`
-	${tw`relative text-theme-primary-500 p-3 cursor-pointer flex flex-nowrap items-center dark:text-theme-secondary-200`}
-
-	&:hover {
-		${tw`bg-theme-primary-600 text-white rounded`}
-		box-shadow: 2px 3px 10px 2px rgba(var(--theme-color-primary-rgb), 0.2);
-		transform: scale(1.1);
-	}
+const PaginationButtonStyled = styled.div`
+	${PaginationButton}
 `;
 
 export const Pagination = ({
@@ -91,7 +56,7 @@ export const Pagination = ({
 		paginationButtons,
 	]);
 
-	if (variant === "condensed")
+	if (variant === "condensed") {
 		return (
 			<CompactPagination
 				totalCount={totalCount}
@@ -100,6 +65,7 @@ export const Pagination = ({
 				currentPage={currentPage}
 			/>
 		);
+	}
 
 	return (
 		<Wrapper data-testid="Pagination" className={className}>
@@ -124,27 +90,27 @@ export const Pagination = ({
 				</Button>
 			)}
 
-			<div className="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800">
+			<div className="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800">
 				{paginationButtons[0] !== 1 && (
-					<PaginationSearchButton>
+					<PaginationSearch onSelectPage={onSelectPage} totalPages={totalPages}>
 						<span>...</span>
-					</PaginationSearchButton>
+					</PaginationSearch>
 				)}
 
 				{paginationButtons.map((page) => (
-					<PaginationButton
+					<PaginationButtonStyled
 						key={page}
 						className={currentPage === page ? "current-page" : ""}
 						onClick={() => onSelectPage(page)}
 					>
 						{page}
-					</PaginationButton>
+					</PaginationButtonStyled>
 				))}
 
 				{paginationButtons[paginationButtons.length - 1] !== totalPages && (
-					<PaginationSearchButton>
+					<PaginationSearch onSelectPage={onSelectPage} totalPages={totalPages}>
 						<span>...</span>
-					</PaginationSearchButton>
+					</PaginationSearch>
 				)}
 			</div>
 

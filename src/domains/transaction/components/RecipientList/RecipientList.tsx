@@ -125,7 +125,9 @@ export const RecipientList = ({
 	onRemove,
 }: RecipientListProps) => {
 	const onRemoveRecipient = (address: string) => {
-		if (typeof onRemove === "function") return onRemove(address);
+		if (typeof onRemove === "function") {
+			return onRemove(address);
+		}
 	};
 
 	const columns = [
@@ -133,8 +135,12 @@ export const RecipientList = ({
 		{ Header: "Address", className: "hidden" },
 	];
 
-	if (showAmount) columns.push({ Header: "Amount", className: "hidden" });
-	if (isEditable) columns.push({ Header: "Action", className: "hidden" });
+	if (showAmount) {
+		columns.push({ Header: "Amount", className: "hidden" });
+	}
+	if (isEditable) {
+		columns.push({ Header: "Action", className: "hidden" });
+	}
 
 	return (
 		<RecipientListWrapper>

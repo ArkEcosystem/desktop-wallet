@@ -15,17 +15,17 @@ type ProfileCardProps = {
 
 export const ProfileCard = ({ profile, actions, onClick, onSelect, showSettings }: ProfileCardProps) => (
 	<Card
-		className="w-40 h-40 m-2.5"
+		className="w-40 h-40 leading-tight m-2.5"
 		onClick={onClick}
 		actions={showSettings ? actions : undefined}
 		onSelect={onSelect}
 	>
-		<div className="flex flex-col justify-center items-center">
+		<div className="flex flex-col justify-center items-center mx-auto h-full">
 			<div className="relative">
-				<ProfileAvatar profile={profile} size="2xl" />
+				<ProfileAvatar profile={profile} size="xl" />
 				{profile.usesPassword() && (
 					<Badge
-						className="bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
+						className="mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
 						icon="Lock"
 						iconWidth={13}
 						iconHeight={18}

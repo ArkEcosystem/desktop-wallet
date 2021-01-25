@@ -36,9 +36,15 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 	const mountClassName = () => {
 		let styles = "flex";
 
-		if (colSpan) styles = `${styles} col-span-${colSpan}`;
-		if (justify) styles = `${styles} justify-${justify}`;
-		if (padding) styles = `${styles} ${padding}`;
+		if (colSpan) {
+			styles = `${styles} col-span-${colSpan}`;
+		}
+		if (justify) {
+			styles = `${styles} justify-${justify}`;
+		}
+		if (padding) {
+			styles = `${styles} ${padding}`;
+		}
 
 		return styles;
 	};

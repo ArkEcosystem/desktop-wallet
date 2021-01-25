@@ -4,13 +4,20 @@ import React, { memo } from "react";
 
 import { WalletGridProps } from "./";
 
-export const WalletsGrid = memo(({ isVisible, wallets, sliderOptions, onWalletAction }: WalletGridProps) => {
-	if (!isVisible) return <></>;
+export const WalletsGrid = memo(({ isVisible, isLoading, wallets, sliderOptions, onWalletAction }: WalletGridProps) => {
+	if (!isVisible) {
+		return <></>;
+	}
+
+	const skeletonSlides = new Array(3).fill({});
+	const data = isLoading ? skeletonSlides : wallets;
 
 	return (
 		<div data-testid="WalletsGrid" className="w-full">
-			<Slider data={wallets} options={sliderOptions}>
-				{(walletData: any) => <WalletCard {...walletData} onSelect={onWalletAction} className="w-full" />}
+			<Slider data={data} options={sliderOptions}>
+				{(walletData: any) => (
+					<WalletCard {...walletData} isLoading={isLoading} onSelect={onWalletAction} className="w-full" />
+				)}
 			</Slider>
 		</div>
 	);

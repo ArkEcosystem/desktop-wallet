@@ -1,6 +1,5 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
-import { DropdownOption } from "app/components/Dropdown";
 import { useMemo } from "react";
 
 import { GridWallet, UseWalletDisplayProps } from "./";
@@ -21,13 +20,15 @@ export const useWalletDisplay = ({
 	};
 
 	const { listWallets, gridWallets, listHasMore } = useMemo(() => {
-		const walletCardActions: DropdownOption[] = [];
-
 		const listWallets = wallets
 			.filter((wallet: any, index: number) => {
-				if (!viewMore && index > listPagerLimit) return false;
+				if (!viewMore && index > listPagerLimit) {
+					return false;
+				}
 
-				if (!selectedNetworkIds?.includes(wallet.network().id())) return false;
+				if (!selectedNetworkIds?.includes(wallet.network().id())) {
+					return false;
+				}
 
 				if (displayType === "favorites") {
 					return wallet.isStarred();
@@ -44,7 +45,9 @@ export const useWalletDisplay = ({
 		const loadGridWallets = () => {
 			const walletObjects = wallets
 				.filter((wallet: ReadWriteWallet) => {
-					if (!selectedNetworkIds?.includes(wallet.network().id())) return false;
+					if (!selectedNetworkIds?.includes(wallet.network().id())) {
+						return false;
+					}
 
 					if (displayType === "favorites") {
 						return wallet.isStarred();
@@ -56,7 +59,7 @@ export const useWalletDisplay = ({
 
 					return wallet;
 				})
-				.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
+				.map((wallet: ReadWriteWallet) => ({ wallet }));
 
 			if (walletObjects.length <= sliderOptions.slidesPerView) {
 				return walletObjects.concat(
