@@ -18,7 +18,7 @@ import { Splash } from "domains/splash/pages";
 import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { ToastContainer } from "react-toastify";
@@ -27,7 +27,7 @@ import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
+import { useDeeplink, useNetworkStatus, useProfileSynchronizer } from "./hooks";
 import { i18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
@@ -39,16 +39,16 @@ const Main = () => {
 	const { env } = useEnvironmentContext();
 	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
-	const { start, runAll } = useEnvSynchronizer();
+	// const { start } = useEnvSynchronizer();
 
 	useProfileSynchronizer();
 	useDeeplink();
 
-	useEffect(() => {
-		if (!showSplash) {
-			start();
-		}
-	}, [showSplash, start]);
+	// useEffect(() => {
+	// 	if (!showSplash) {
+	// 		start();
+	// 	}
+	// }, [showSplash, start]);
 
 	useLayoutEffect(() => {
 		setThemeSource("system");
@@ -70,7 +70,7 @@ const Main = () => {
 
 				await env.verify();
 				await env.boot();
-				runAll();
+				// runAll();
 				await loadPlugins();
 			} catch (error) {
 				console.error(error);
@@ -81,7 +81,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, runAll, loadPlugins]);
+	}, [env, handleError, loadPlugins]);
 
 	const renderContent = () => {
 		if (showSplash) {
