@@ -45,7 +45,7 @@ describe("Migrations", () => {
 		await env.boot();
 
 		const subject = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		expect(subject.usesPassword()).toBe(true);
+		expect(subject.usesPassword()).toBe(false);
 		restoreProfileTestPassword(subject);
 		expect(subject.usesPassword()).toBe(true);
 

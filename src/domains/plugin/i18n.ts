@@ -70,5 +70,6 @@ export const translations: { [key: string]: any } = {
 		OTHER: "Other",
 		THEMES: "Themes",
 		UTILITY: "Utility",
+		EXCHANGE: "Exchange",
 	},
 };

@@ -1,4 +1,4 @@
-import { Button } from "app/components/Button";
+import { OriginalButton } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { useThemeName } from "app/hooks";
@@ -24,13 +24,13 @@ export const ApplicationError = ({ resetErrorBoundary }: Partial<FallbackProps>)
 						<p className="text-theme-secondary-text">{t("ERROR.APPLICATION.DESCRIPTION")}</p>
 					</div>
 
-					<Button
+					<OriginalButton
 						data-testid="ApplicationError__button--reload"
 						onClick={resetErrorBoundary}
 						className="mt-8"
 					>
 						{t("ERROR.APPLICATION.RELOAD")}
-					</Button>
+					</OriginalButton>
 				</Section>
 			</Page>
 		</main>

@@ -1,4 +1,3 @@
-import fs from "fs-extra";
 import path from "path";
 
 import { PluginLoaderFileSystem } from "./loader-fs";
@@ -21,13 +20,15 @@ describe("PluginLoaderFileSystem", () => {
 	});
 
 	it("should remove a valid folder", () => {
-		const removeMock = jest.spyOn(fs, "remove").mockImplementation();
+		const fsExtra = require("fs-extra");
+		const removeMock = jest.spyOn(fsExtra, "remove").mockImplementation();
 		subject.remove(path.resolve("src/tests/fixtures/plugins/plugin-test-custom-buttom"));
 		expect(removeMock).toHaveBeenCalled();
 	});
 
 	it("should not remove an invalid folder", async () => {
-		const removeMock = jest.spyOn(fs, "remove").mockImplementation();
+		const fsExtra = require("fs-extra");
+		const removeMock = jest.spyOn(fsExtra, "remove").mockImplementation();
 		await expect(subject.remove(path.resolve("/etc/plugins/plugin-test-custom-buttom"))).rejects.toMatch(
 			"The dir /etc/plugins/plugin-test-custom-buttom cannot be removed.",
 		);

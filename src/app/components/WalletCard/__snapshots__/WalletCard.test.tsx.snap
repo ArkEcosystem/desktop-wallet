@@ -158,6 +158,126 @@ exports[`Wallet Card should render blank 1`] = `
 </div>
 `;
 
+exports[`Wallet Card should render loading state 1`] = `
+<div>
+  <div
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
+    data-testid="Card"
+  >
+    <div
+      class="flex relative flex-col justify-between p-4 h-full"
+      data-testid="WalletCard__skeleton"
+    >
+      <div
+        class="flex items-center"
+      >
+        <div
+          class="flex items-center mr-4 -space-x-1"
+        >
+          <div
+            class="Circle-uw7h4j-0 JkqUV border-transparent"
+          >
+            <span>
+              <span
+                class="flex items-center leading-none"
+              >
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 44px; height: 44px; border-radius: 50%;"
+                >
+                  ‌
+                </span>
+                ‌
+              </span>
+            </span>
+          </div>
+          <div
+            class="Circle-uw7h4j-0 JkqUV border-transparent"
+          >
+            <span>
+              <span
+                class="flex items-center leading-none"
+              >
+                <span
+                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 44px; height: 44px; border-radius: 50%;"
+                >
+                  ‌
+                </span>
+                ‌
+              </span>
+            </span>
+          </div>
+        </div>
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 1px; height: 16px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+      </div>
+      <div
+        class="flex items-center mt-4 space-x-1 h-7"
+      >
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 1px; height: 18px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 35px; height: 18px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+      </div>
+      <span
+        class="flex items-center mt-1 h-4"
+      >
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 1px; height: 12px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+      </span>
+    </div>
+    <div
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+    />
+  </div>
+</div>
+`;
+
 exports[`Wallet Card should render with actions 1`] = `
 <div>
   <div

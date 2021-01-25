@@ -8,6 +8,10 @@ export class PluginHooks extends EventEmitter {
 	#filters: Map<string, HandlerFn[]> = new Map();
 	#commands: Map<string, HandlerFn> = new Map();
 
+	hasCommand(commandName: string) {
+		return this.#commands.has(commandName);
+	}
+
 	registerCommand(commandName: string, handler: HandlerFn) {
 		if (this.#commands.has(commandName)) {
 			throw new Error(`Command ${commandName} already registered.`);

@@ -86,13 +86,14 @@ type ProfileSyncState = {
 };
 
 export const useProfileSyncStatus = () => {
+	const { profileIsRestoring, restoredProfiles, setConfiguration } = useConfiguration();
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
 		restored: [],
 	});
 
 	const isIdle = () => current.status === "idle";
-	const isRestoring = () => current.status === "restoring";
+	const isRestoring = () => profileIsRestoring || current.status === "restoring";
 	const isSyncing = () => current.status === "syncing";
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
@@ -105,7 +106,7 @@ export const useProfileSyncStatus = () => {
 			return false;
 		}
 
-		if (profile.wasCreated()) {
+		if (profile.wasRecentlyCreated()) {
 			return false;
 		}
 
@@ -123,11 +124,65 @@ export const useProfileSyncStatus = () => {
 		status: () => current.status,
 		shouldRestore,
 		shouldMarkCompleted,
-		setStatus: (status: string) => (current.status = status),
+		setStatus: (status: string) => {
+			current.status = status;
+			if (status === "restoring") {
+				setConfiguration({ profileIsRestoring: true });
+			}
+		},
 		markAsRestored: (profileId: string) => {
 			current.status = "restored";
 			current.restored.push(profileId);
+			setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profileId] });
 		},
+	};
+};
+
+export const useProfileRestore = () => {
+	const { restoredProfiles, setConfiguration } = useConfiguration();
+	const { persist } = useEnvironmentContext();
+
+	const restoreProfile = async (profile: Profile, password?: string) => {
+		// For unit tests only. This flag prevents from running restore multiple times
+		// as the profiles are all restored before all tests (see jest.setup)
+		const isRestoredInTests = process.env.TEST_PROFILES_RESTORE_STATUS === "restored";
+		if (isRestoredInTests) {
+			return false;
+		}
+
+		const alreadyRestored = restoredProfiles.includes(profile.id());
+		if (alreadyRestored) {
+			return false;
+		}
+
+		if (profile.wasRecentlyCreated()) {
+			return false;
+		}
+
+		setConfiguration({ profileIsRestoring: true });
+
+		// When in demo mode, profiles are migrated passwordless and
+		// password needs to be set again. The restore should happen
+		// without password and then reset the password.
+		const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
+		if (isDemo) {
+			await profile.restore();
+			restoreProfileTestPassword(profile);
+			await persist();
+			setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });
+			return true;
+		}
+
+		// Reset profile normally (passworless or not)
+		await profile.restore(password);
+		await persist();
+		setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });
+		return true;
+	};
+
+	return {
+		restoreProfile,
+		restoredProfiles,
 	};
 };
 
@@ -163,20 +218,6 @@ export const useProfileSynchronizer = () => {
 		const syncProfile = async (profile?: Profile) => {
 			if (!profile) {
 				return clearProfileSyncStatus();
-			}
-
-			if (shouldRestore(profile)) {
-				setStatus("restoring");
-
-				await profile.restore();
-
-				if (isDemo) {
-					restoreProfileTestPassword(profile);
-				}
-
-				await persist();
-
-				markAsRestored(profile.id());
 			}
 
 			if (shouldSync()) {

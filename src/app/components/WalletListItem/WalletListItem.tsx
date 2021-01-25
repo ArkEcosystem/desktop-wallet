@@ -10,27 +10,15 @@ import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
-import { Dropdown } from "../Dropdown";
-
 export type WalletListItemProps = {
 	wallet: ReadWriteWallet;
 	activeWalletId?: string;
-	actions?: string | any[];
 	variant?: "condensed";
-	onAction?: any;
 	onClick?: (walletId: string) => void;
 };
 
-export const WalletListItem = ({
-	wallet,
-	activeWalletId,
-	actions,
-	variant,
-	onAction,
-	onClick,
-}: WalletListItemProps) => {
+export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: WalletListItemProps) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
-	const hasActions = useMemo(() => actions && actions.length > 0, [actions]);
 
 	const defaultShadowColor = useMemo(
 		() =>
@@ -45,12 +33,6 @@ export const WalletListItem = ({
 	const [shadowColor, setShadowColor] = React.useState<string>(defaultShadowColor);
 
 	const { t } = useTranslation();
-
-	const handleAction = (action: any) => {
-		if (typeof onAction === "function") {
-			onAction(action);
-		}
-	};
 
 	/* istanbul ignore next */
 	const getIconName = (type: string) => {
@@ -113,17 +95,9 @@ export const WalletListItem = ({
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
-			<TableCell variant={hasActions ? "middle" : "end"} innerClassName="justify-end text-theme-secondary-400">
+			<TableCell variant="end" innerClassName="justify-end text-theme-secondary-400">
 				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</TableCell>
-
-			{hasActions && (
-				<TableCell variant="end">
-					<div className="text-theme-secondary-400 hover:text-theme-secondary-500">
-						<Dropdown options={actions} onSelect={handleAction} />
-					</div>
-				</TableCell>
-			)}
 		</TableRow>
 	);
 };
