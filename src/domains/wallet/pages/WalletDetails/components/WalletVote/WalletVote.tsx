@@ -1,6 +1,4 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -12,17 +10,35 @@ import { useTranslation } from "react-i18next";
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
 type WalletVoteProps = {
+	isLoading?: boolean;
 	wallet: ReadWriteWallet;
 	onButtonClick: (address?: string) => void;
-	isLoading?: boolean;
 };
 
-export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps) => {
+const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
+	<Tooltip content={tooltipContent} className="mb-1">
+		<span>
+			<Icon
+				name="InformationCircle"
+				width={20}
+				height={20}
+				className="text-theme-primary-300 dark:text-theme-secondary-600"
+			/>
+		</span>
+	</Tooltip>
+);
+
+export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
 	if (isLoading) {
-		return <section data-testid="WalletVote">{<WalletVoteSkeleton />}</section>;
+		return <WalletVoteSkeleton />;
 	}
+
+	const maxVotes = wallet.network().maximumVotesPerWallet();
+	const activeDelegates = wallet.network().delegateCount();
+
+	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
 
 	let votes: ReadOnlyWallet[];
 
@@ -32,164 +48,160 @@ export const WalletVote = ({ wallet, onButtonClick, isLoading }: WalletVoteProps
 		votes = [];
 	}
 
-	const maxVotes = wallet.network().maximumVotesPerWallet();
+	const activeCount = votes.filter(
+		(delegate: ReadOnlyWallet) => delegate.rank() && delegate.rank()! <= activeDelegates,
+	).length;
 
-	const hasNoVotes = votes.length === 0;
-	const votesHelpLink = "https:////";
-
-	const renderVotes = () => {
-		if (hasNoVotes) {
+	const renderStatuses = () => {
+		if (activeCount === votes.length) {
 			return (
-				<div data-testid="WalletVote__empty" className="flex items-center space-x-4">
-					<div className="flex items-center -space-x-2">
-						<Circle
-							size="lg"
-							className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
-						>
-							<Icon name="Vote" width={21} height={21} />
-						</Circle>
-
-						<div className="flex -space-x-3">
-							<span className="inline-block">
-								<Circle
-									size="lg"
-									className="border-theme-secondary-500 dark:border-theme-secondary-700"
-								/>
-							</span>
-							{maxVotes > 1 && (
-								<span className="inline-block">
-									<Circle
-										size="lg"
-										className="border-theme-secondary-500 dark:border-theme-secondary-700"
-									/>
-								</span>
-							)}
-						</div>
-					</div>
-
-					<div className="flex flex-1 justify-between">
-						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
-							<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
-
-							<div className="mt-1 mr-auto">
-								<Link to={votesHelpLink} isExternal>
-									{t("COMMON.LEARN_MORE")}
-								</Link>
-							</div>
-						</div>
-
-						<Button variant="secondary" onClick={() => onButtonClick()} data-testid="WalletVote__button">
-							{t("COMMON.VOTE")}
-						</Button>
-					</div>
-				</div>
-			);
-		}
-
-		if (votes.length === 1) {
-			const delegate = votes[0];
-			const rank = delegate.rank();
-
-			return (
-				<div className="flex items-center h-11">
-					<div className="flex items-center -space-x-2">
-						<Circle size="lg" className="border-theme-text text-theme-text">
-							<Icon name="Vote" width={21} height={21} />
-						</Circle>
-						<Avatar size="lg" address={delegate.address()} />
-					</div>
-
-					<div className="flex flex-col justify-between mr-8 ml-4 h-full">
-						<span className="text-sm font-semibold text-theme-secondary-500">{t("COMMON.DELEGATE")}</span>
-
-						<Address walletName={delegate.username()} />
-					</div>
-
-					<div className="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-secondary-300 dark:border-theme-secondary-800">
-						<span className="text-sm font-semibold text-theme-secondary-500">{t("COMMON.STATUS")}</span>
-
-						{rank ? (
-							<Tooltip content={`#${rank}`} placement="right">
-								<span>
-									<Icon name="StatusOk" className="text-theme-success-600" width={20} height={20} />
-								</span>
-							</Tooltip>
-						) : (
-							<Icon name="StatusPending" className="text-theme-warning-600" width={20} height={20} />
-						)}
-					</div>
-
-					<Button
-						variant="secondary"
-						className="ml-auto"
-						onClick={() => onButtonClick(delegate.address())}
-						data-testid="WalletVote__button"
-					>
-						{t("COMMON.UNVOTE")}
-					</Button>
-				</div>
-			);
-		}
-
-		const [first, second, ...rest] = votes;
-
-		const renderAvatar = (address: string, username?: string) => (
-			<Tooltip content={username}>
-				<span className="inline-block">
-					<Avatar size="lg" address={address} />
+				<span className="font-semibold text-theme-success-600">
+					{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.ACTIVE", { count: maxVotes })}
 				</span>
-			</Tooltip>
-		);
+			);
+		}
+
+		if (activeCount === 0) {
+			return (
+				<>
+					<HintIcon
+						tooltipContent={t("WALLETS.PAGE_WALLET_DETAILS.VOTES.NOT_FORGING", { count: votes.length })}
+					/>
+					<span className="font-semibold text-theme-warning-500">
+						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.STANDBY", { count: maxVotes })}
+					</span>
+				</>
+			);
+		}
+
+		const standbyCount = votes.length - activeCount;
 
 		return (
-			<div className="flex items-center h-11">
-				<div className="flex items-center -space-x-2">
-					<Circle size="lg" className="border-theme-text text-theme-text">
-						<Icon name="Vote" width={21} height={21} />
-					</Circle>
+			<>
+				<HintIcon
+					tooltipContent={t("WALLETS.PAGE_WALLET_DETAILS.VOTES.NOT_FORGING_COUNT", { count: standbyCount })}
+				/>
+				<span className="font-semibold">
+					{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.ACTIVE_COUNT", { count: activeCount })}
+					<span className="text-theme-secondary-500 dark:text-theme-secondary-700">
+						&nbsp;/&nbsp;{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.STANDBY_COUNT", { count: standbyCount })}
+					</span>
+				</span>
+			</>
+		);
+	};
 
-					<div className="flex -space-x-3">
-						{renderAvatar(first.address(), first.username())}
+	const renderVotes = () => {
+		const delegate = votes[0];
 
-						{second && renderAvatar(second.address(), second.username())}
+		return (
+			<>
+				<Circle
+					size="lg"
+					className="border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+				>
+					<Icon name="Vote" width={17} height={17} />
+				</Circle>
 
-						{rest?.length === 1 && renderAvatar(rest[0].address(), rest[0].username())}
-
-						{rest?.length > 1 && (
-							<Circle size="lg" className="relative border-theme-text text-theme-text">
-								<span className="font-semibold">+{rest.length}</span>
-							</Circle>
+				<div className="flex flex-1 ml-4">
+					<div className="flex flex-col justify-between font-semibold">
+						<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+							{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.VOTING_FOR")}
+						</span>
+						{votes.length === 1 ? (
+							<span>{delegate.username()}</span>
+						) : (
+							<span
+								className="transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 active:text-theme-primary-500"
+								onClick={() => onButtonClick("current")}
+							>
+								{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE")}
+							</span>
 						)}
 					</div>
+
+					{maxVotes === 1 && (
+						<div className="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800">
+							<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+								{t("COMMON.RANK")}
+							</span>
+							<span>{delegate.rank() ? `#${delegate.rank()}` : t("COMMON.NOT_AVAILABLE")}</span>
+						</div>
+					)}
+
+					{maxVotes > 1 && (
+						<div className="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800">
+							<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+								{t("COMMON.VOTES")}
+							</span>
+							<span>
+								{votes.length}
+								<span className="text-theme-secondary-500 dark:text-theme-secondary-700">
+									/{maxVotes}
+								</span>
+							</span>
+						</div>
+					)}
 				</div>
 
-				<Button
-					variant="secondary"
-					className="ml-auto"
-					onClick={() => onButtonClick()}
-					data-testid="WalletVote__button"
-				>
-					{t("COMMON.SHOW_ALL")}
-				</Button>
-			</div>
+				<div className="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800">
+					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 ">
+						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.DELEGATE_STATUS")}
+					</span>
+					<div className="flex justify-end items-center space-x-2">{renderStatuses()}</div>
+				</div>
+			</>
 		);
 	};
 
 	return (
-		<section data-testid="WalletVote">
-			<div className="flex mb-4">
-				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
-				<span className="ml-1 text-2xl font-bold text-theme-secondary-500 dark:text-theme-secondary-700">
-					({votes.length}/{maxVotes})
-				</span>
-			</div>
+		<div data-testid="WalletVote" className="flex items-center w-full">
+			{votes.length === 0 ? (
+				<>
+					<Circle
+						size="lg"
+						className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+					>
+						<Icon name="Vote" width={17} height={17} />
+					</Circle>
 
-			{renderVotes()}
-		</section>
+					<div className="flex flex-1 ml-4">
+						<div className="flex flex-col justify-between">
+							<span className="font-semibold">
+								{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}
+								<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
+									{votes.length}/{maxVotes}
+								</span>
+							</span>
+
+							<span className="leading-none">
+								<span className="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}
+								</span>
+								<Link to={votesHelpLink} showExternalIcon={false} isExternal>
+									<span className="text-sm">{t("COMMON.LEARN_MORE")}</span>
+								</Link>
+							</span>
+						</div>
+					</div>
+				</>
+			) : (
+				renderVotes()
+			)}
+
+			<Button
+				data-testid="WalletVote__button"
+				variant="secondary"
+				className="space-x-2"
+				onClick={() => onButtonClick()}
+			>
+				<Icon name="Vote" width={17} height={17} />
+				<span>{t("COMMON.VOTE")}</span>
+			</Button>
+		</div>
 	);
 };
 
 WalletVote.defaultProps = {
 	votes: [],
-	maxVotes: 1,
 };

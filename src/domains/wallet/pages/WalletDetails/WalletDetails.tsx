@@ -18,7 +18,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { WalletHeader, WalletRegistrations, WalletVote } from "./components";
+import { WalletHeader, WalletVote } from "./components";
 import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 type WalletDetailsProps = {
@@ -55,18 +55,9 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	});
 
 	const [showWalletVote, setShowWalletVote] = useState(false);
-	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
 
 	useLayoutEffect(() => {
 		setShowWalletVote(activeWallet.network().can(Coins.FeatureFlag.TransactionVote));
-		setShowWalletRegistrations(
-			!activeWallet.isLedger() &&
-				activeWallet.canAny([
-					Coins.FeatureFlag.TransactionDelegateRegistration,
-					Coins.FeatureFlag.TransactionMultiSignature,
-					Coins.FeatureFlag.TransactionSecondSignature,
-				]),
-		);
 	}, [activeWallet]);
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
@@ -89,12 +80,12 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 		fetchAllData();
 	}, [fetchInit]);
 
-	const handleVoteButton = (address?: string) => {
+	const handleVoteButton = (filter?: string) => {
 		/* istanbul ignore else */
-		if (address) {
+		if (filter) {
 			return history.push({
-				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-vote`,
-				search: `?unvotes=${address}`,
+				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
+				search: `?filter=${filter}`,
 			});
 		}
 
@@ -113,29 +104,21 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 					}
 				/>
 
-				{(showWalletVote || showWalletRegistrations) && (
-					<Section marginTop={false}>
+				{showWalletVote && (
+					<Section innerClassName="-my-10">
 						<div className="flex">
 							{showWalletVote && (
-								<div className="flex-1 pr-12 last:pr-0">
-									<WalletVote
-										wallet={activeWallet}
-										onButtonClick={handleVoteButton}
-										isLoading={isLoading}
-									/>
-								</div>
-							)}
-
-							{showWalletRegistrations && (
-								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-secondary-300 dark:border-theme-secondary-800">
-									<WalletRegistrations wallet={activeWallet} isLoading={isLoading} />
-								</div>
+								<WalletVote
+									wallet={activeWallet}
+									onButtonClick={handleVoteButton}
+									isLoading={isLoading}
+								/>
 							)}
 						</div>
 					</Section>
 				)}
 
-				<Section className="flex-1" marginTop={showWalletVote || showWalletRegistrations}>
+				<Section className="flex-1">
 					{pendingMultiSignatureTransactions.length > 0 && (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>

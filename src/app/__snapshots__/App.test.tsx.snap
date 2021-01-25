@@ -50,7 +50,7 @@ exports[`App should close splash screen if not demo 1`] = `
             class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
           >
             <div
-              class="container py-16 px-14 mx-auto"
+              class="container py-16 px-14 mx-auto "
             >
               <div
                 class="mx-auto w-72"
@@ -72,16 +72,6 @@ exports[`App should close splash screen if not demo 1`] = `
                 >
                   Create a new Profile to get started.
                 </p>
-                <div
-                  class="flex flex-col justify-center mt-8 md:flex-row"
-                >
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN mt-2 md:mt-0"
-                    type="button"
-                  >
-                    Create Profile
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -134,7 +124,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
           class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
         >
           <div
-            class="container py-16 px-14 mx-auto"
+            class="container py-16 px-14 mx-auto "
           >
             <div
               class="mx-auto w-64 lg:w-128"
@@ -223,7 +213,7 @@ exports[`App should render mock 1`] = `
             class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
           >
             <div
-              class="container py-16 px-14 mx-auto"
+              class="container py-16 px-14 mx-auto "
             >
               <div
                 class="mx-auto w-72"
@@ -252,17 +242,17 @@ exports[`App should render mock 1`] = `
                     class="-my-2.5 flex flex-wrap justify-center"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight m-2.5"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-center items-center"
+                        class="flex flex-col justify-center items-center mx-auto h-full"
                       >
                         <div
                           class="relative"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
                             data-testid="ProfileAvatar__svg"
                           >
                             <img
@@ -310,17 +300,17 @@ exports[`App should render mock 1`] = `
                       </div>
                     </div>
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight m-2.5"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-center items-center"
+                        class="flex flex-col justify-center items-center mx-auto h-full"
                       >
                         <div
                           class="relative"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
                             data-testid="ProfileAvatar__svg"
                           >
                             <img
@@ -335,7 +325,7 @@ exports[`App should render mock 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-gsTCUz bZxUHq"
@@ -381,17 +371,38 @@ exports[`App should render mock 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="rounded-lg overflow-hidden m-2.5"
+                    >
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                        type="button"
+                      >
+                        <div
+                          class="flex flex-col justify-center items-center"
+                        >
+                          <div
+                            class="Circle-uw7h4j-0 cnQsQi"
+                          >
+                            <div
+                              class="sc-gsTCUz cmyhNZ"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                plus.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <span
+                            class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                          >
+                            Create Profile
+                          </span>
+                        </div>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="flex flex-col justify-center mt-8 md:flex-row"
-                >
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN mt-2 md:mt-0"
-                    type="button"
-                  >
-                    Create Profile
-                  </button>
                 </div>
               </div>
             </div>
@@ -453,7 +464,7 @@ exports[`App should render splash screen 1`] = `
             class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
           >
             <div
-              class="container py-16 px-14 mx-auto"
+              class="container py-16 px-14 mx-auto "
             >
               <div
                 class="mx-auto w-72"
@@ -482,17 +493,17 @@ exports[`App should render splash screen 1`] = `
                     class="-my-2.5 flex flex-wrap justify-center"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight m-2.5"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-center items-center"
+                        class="flex flex-col justify-center items-center mx-auto h-full"
                       >
                         <div
                           class="relative"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
                             data-testid="ProfileAvatar__svg"
                           >
                             <img
@@ -540,17 +551,17 @@ exports[`App should render splash screen 1`] = `
                       </div>
                     </div>
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight m-2.5"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-center items-center"
+                        class="flex flex-col justify-center items-center mx-auto h-full"
                       >
                         <div
                           class="relative"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
                             data-testid="ProfileAvatar__svg"
                           >
                             <img
@@ -565,7 +576,7 @@ exports[`App should render splash screen 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-gsTCUz bZxUHq"
@@ -611,17 +622,38 @@ exports[`App should render splash screen 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="rounded-lg overflow-hidden m-2.5"
+                    >
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                        type="button"
+                      >
+                        <div
+                          class="flex flex-col justify-center items-center"
+                        >
+                          <div
+                            class="Circle-uw7h4j-0 cnQsQi"
+                          >
+                            <div
+                              class="sc-gsTCUz cmyhNZ"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                plus.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <span
+                            class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                          >
+                            Create Profile
+                          </span>
+                        </div>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="flex flex-col justify-center mt-8 md:flex-row"
-                >
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN mt-2 md:mt-0"
-                    type="button"
-                  >
-                    Create Profile
-                  </button>
                 </div>
               </div>
             </div>
@@ -678,7 +710,7 @@ exports[`App should render the offline screen if there is no internet connection
             class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
           >
             <div
-              class="container py-16 px-14 mx-auto"
+              class="container py-16 px-14 mx-auto "
             >
               <div
                 class="sm:mx-auto sm:w-full sm:max-w-md"
@@ -761,7 +793,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
             class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
           >
             <div
-              class="container py-16 px-14 mx-auto"
+              class="container py-16 px-14 mx-auto "
             >
               <div
                 class="mx-auto w-72"
@@ -790,17 +822,17 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     class="-my-2.5 flex flex-wrap justify-center"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight m-2.5"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-center items-center"
+                        class="flex flex-col justify-center items-center mx-auto h-full"
                       >
                         <div
                           class="relative"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
                             data-testid="ProfileAvatar__svg"
                           >
                             <img
@@ -848,17 +880,17 @@ exports[`App should render welcome screen after splash screen 1`] = `
                       </div>
                     </div>
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 m-2.5"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight m-2.5"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-center items-center"
+                        class="flex flex-col justify-center items-center mx-auto h-full"
                       >
                         <div
                           class="relative"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jZZmzj"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
                             data-testid="ProfileAvatar__svg"
                           >
                             <img
@@ -873,7 +905,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 hatFyX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600 mr-2.5 mb-2.5"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-gsTCUz bZxUHq"
@@ -919,17 +951,38 @@ exports[`App should render welcome screen after splash screen 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="rounded-lg overflow-hidden m-2.5"
+                    >
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                        type="button"
+                      >
+                        <div
+                          class="flex flex-col justify-center items-center"
+                        >
+                          <div
+                            class="Circle-uw7h4j-0 cnQsQi"
+                          >
+                            <div
+                              class="sc-gsTCUz cmyhNZ"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                plus.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <span
+                            class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                          >
+                            Create Profile
+                          </span>
+                        </div>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="flex flex-col justify-center mt-8 md:flex-row"
-                >
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN mt-2 md:mt-0"
-                    type="button"
-                  >
-                    Create Profile
-                  </button>
                 </div>
               </div>
             </div>

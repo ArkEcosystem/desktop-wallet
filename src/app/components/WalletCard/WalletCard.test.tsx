@@ -1,4 +1,5 @@
 import { Profile, ReadWriteWallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -14,6 +15,8 @@ let wallet: ReadWriteWallet;
 
 describe("Wallet Card", () => {
 	beforeAll(() => {
+		jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+
 		history.push(dashboardURL);
 	});
 
@@ -24,6 +27,10 @@ describe("Wallet Card", () => {
 		wallet.data().set(WalletFlag.LedgerIndex, 0);
 
 		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
+	});
+
+	afterAll(() => {
+		useRandomNumberHook.useRandomNumber.mockRestore();
 	});
 
 	it("should render", () => {
@@ -37,6 +44,21 @@ describe("Wallet Card", () => {
 			},
 		);
 
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render loading state", () => {
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletCard isLoading={true} wallet={wallet} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("WalletCard__skeleton")).toBeTruthy();
 		expect(container).toMatchSnapshot();
 	});
 

@@ -40,7 +40,7 @@ const getPosition = (position?: Position): any => {
 const getSize = (size?: Size) => {
 	switch (size) {
 		case "lg":
-			return tw`w-8 h-8`;
+			return tw`w-6 h-6`;
 		default:
 			return tw`w-5 h-5`;
 	}

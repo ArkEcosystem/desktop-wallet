@@ -306,7 +306,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -1163,7 +1163,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -2950,6 +2950,16 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
                     8f913b6b719e7 … f1b89abb49877
                   </span>
                 </span>
+                <div
+                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                  data-testid="Link__external"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    redirect.svg
+                  </svg>
+                </div>
               </a>
               <span
                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3496,7 +3506,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -4325,7 +4335,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -5119,7 +5129,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -5975,7 +5985,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -6832,7 +6842,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
@@ -6922,6 +6932,16 @@ exports[`SendTransfer should send a single transfer 1`] = `
                                     8f913b6b719e7 … f1b89abb49877
                                   </span>
                                 </span>
+                                <div
+                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                                  data-testid="Link__external"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    redirect.svg
+                                  </svg>
+                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7489,7 +7509,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto"
+          class="container py-16 px-14 mx-auto "
         >
           <form
             class="mx-auto max-w-xl"
