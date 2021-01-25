@@ -56,7 +56,7 @@ export const translations: { [key: string]: any } = {
 	PLUGIN_INFO: {
 		ABOUT: "About the plugin",
 		PERMISSIONS: "Permissions",
-		SCREENSHOTS: "Screemshots",
+		SCREENSHOTS: "Screenshots",
 	},
 
 	REVIEW_BOX: {

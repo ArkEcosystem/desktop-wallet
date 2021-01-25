@@ -30,7 +30,6 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 	const { pluginPackages } = usePluginManagerContext();
 	const pluginData = pluginPackages.find((item) => item.id().toString() === pluginId)?.toObject() || ({} as any);
 
-	const { name, author, about, permissions, images, category, url, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [
@@ -39,26 +38,18 @@ export const PluginDetails = ({ reviewData, isInstalled }: PluginDetailsProps) =
 			route: `/profiles/${activeProfile.id()}/plugins`,
 		},
 		{
-			label: name,
+			label: pluginData.title,
 		},
 	];
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader
-					name={name}
-					author={author}
-					category={category}
-					url={url}
-					version={version}
-					size={size}
-					isInstalled={isInstalled}
-				/>
+				<PluginHeader {...pluginData} />
 			</Section>
 
 			<Section>
-				<PluginInfo about={about} permissions={permissions} screenshots={images} />
+				<PluginInfo {...pluginData} />
 			</Section>
 
 			<Section>

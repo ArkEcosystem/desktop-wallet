@@ -101,6 +101,14 @@ export class PluginConfigurationData {
 		return this.categories().includes(categoryName);
 	}
 
+	description() {
+		return this.get("description");
+	}
+
+	homepage() {
+		return this.get("homepage");
+	}
+
 	images() {
 		return this.manifest().get<string[]>("images", []);
 	}
@@ -186,6 +194,8 @@ export class PluginConfigurationData {
 			images: this.images(),
 			logo: this.logo(),
 			size: this.size(),
+			homepage: this.homepage(),
+			description: this.description(),
 			isOfficial: this.isOfficial(),
 		};
 	}

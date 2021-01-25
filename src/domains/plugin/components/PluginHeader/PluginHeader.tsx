@@ -1,26 +1,29 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import Placeholder from "domains/plugin/images/placeholder.png";
+import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { PluginSpecs } from "./components/PluginSpecs";
 
 type Props = {
-	name: string;
-	author: string;
+	title: string;
+	description?: string;
+	logo?: string;
+	author?: string;
 	category: string;
-	url: string;
+	homepage?: string;
 	version: string;
 	size: string;
 	isInstalled?: boolean;
+	isOfficial?: boolean;
 };
 
-export const PluginHeader = ({ name, author, category, url, version, size, isInstalled }: Props) => {
+export const PluginHeader = (props: Props) => {
 	const { t } = useTranslation();
 
 	const getPluginButtons = () => {
-		if (isInstalled) {
+		if (props.isInstalled) {
 			return (
 				<>
 					<Button data-testid="PluginHeader__button--open">{t("COMMON.OPEN")}</Button>
@@ -50,18 +53,22 @@ export const PluginHeader = ({ name, author, category, url, version, size, isIns
 	return (
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<img className="w-44 h-44 rounded-lg" alt="Plugin" src={Placeholder} />
+				<div className="rounded-lg overflow-hidden w-48 h-48">
+					{props.logo ? (
+						<img data-testid="PluginCard__logo" src={props.logo} alt="Logo" className="rounded-lg w-full" />
+					) : (
+						<Image name="PluginLogoPlaceholder" domain="plugin" />
+					)}
+				</div>
 				<div className="flex flex-col justify-center pl-8 w-full">
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col">
-							<span className="text-2xl font-bold">{name}</span>
-							<span className="text-medium text-theme-secondary-500">
-								Use the ARK Mainnet explorer directly within the wallet
-							</span>
+							<span className="text-2xl font-bold">{props.title}</span>
+							<span className="text-medium text-theme-secondary-500">{props.description}</span>
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>
-					<PluginSpecs author={author} category={category} url={url} version={version} size={size} />
+					<PluginSpecs {...props} />
 				</div>
 			</div>
 		</div>

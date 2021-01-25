@@ -3,11 +3,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	author: string;
-	category: string;
-	url: string;
-	version: string;
-	size: string;
+	author?: string;
+	category?: string;
+	homepage?: string;
+	version?: string;
+	size?: string;
+	logo?: string;
+	isOfficial?: boolean;
 };
 
 type GridColProps = {
@@ -51,7 +53,7 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 	return <div className={mountClassName()}>{children}</div>;
 };
 
-export const PluginSpecs = ({ author, category, url, version, size }: Props) => {
+export const PluginSpecs = ({ author, category, homepage, version, logo, isOfficial, size }: Props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -61,19 +63,21 @@ export const PluginSpecs = ({ author, category, url, version, size }: Props) => 
 					<span className="font-bold text-theme-secondary-400">{t("COMMON.AUTHOR")}</span>
 					<div className="flex items-center">
 						<span className="font-bold text-theme-secondary-600">{author}</span>
-						<div className="ml-3">
-							<Icon name="OfficialArkPlugin" />
-						</div>
+						{isOfficial && (
+							<div className="ml-2">
+								<Icon name="OfficialArkPlugin" />
+							</div>
+						)}
 					</div>
 				</div>
 			</GridCol>
 			<GridCol padding="px-6">
-				<GridItem label={t("COMMON.CATEGORY")} value={t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)} />
+				<GridItem label={t("COMMON.CATEGORY")} value={t(`PLUGINS.CATEGORIES.${category?.toUpperCase()}`)} />
 			</GridCol>
 			<GridCol padding="px-6 -ml-5">
 				<div className="flex flex-col">
 					<span className="font-bold text-theme-secondary-400">{t("COMMON.URL")}</span>
-					<span className="font-bold text-theme-primary-600">{url}</span>
+					<span className="font-bold text-theme-primary-600">{homepage}</span>
 				</div>
 			</GridCol>
 			<GridCol padding="pl-6">

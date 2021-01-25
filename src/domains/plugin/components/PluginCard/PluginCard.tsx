@@ -15,7 +15,7 @@ type PluginCardProps = {
 };
 
 const PluginImageContainer = styled.div`
-	${tw`mb-4 mr-4`}
+	${tw`mb-4 mr-4 rounded overflow-hidden`}
 	${css`
 		& {
 			width: 4.75rem;
@@ -44,6 +44,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 			<Card
 				onClick={onClick}
 				actions={plugin.isInstalled ? actions : undefined}
+				className="h-52"
 				onSelect={(action: any) => {
 					if (action.value === "delete") {
 						onDelete?.();
@@ -56,7 +57,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 					}
 				}}
 			>
-				<div className="my-auto font-semibold">
+				<div className="flex flex-col items-between h-full">
 					<PluginImageContainer>
 						{plugin.logo ? (
 							<img data-testid="PluginCard__logo" src={plugin.logo} alt="Logo" />
@@ -65,18 +66,20 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 						)}
 					</PluginImageContainer>
 
-					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
-						<div>{plugin.title}</div>
+					<div>
+						<div className="font-semibold flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
+							<div className="truncate">{plugin.title}</div>
 
-						<div>
-							{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={16} height={16} />}
-							{plugin.isGrant && <Icon name="Grant" width={20} height={20} />}
+							<div>
+								{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={16} height={16} />}
+								{plugin.isGrant && <Icon name="Grant" width={20} height={20} />}
+							</div>
 						</div>
-					</div>
 
-					<div className="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
-						<div className="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800">
-							{plugin.author}
+						<div className="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+							<div className="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800">
+								{plugin.author}
+							</div>
 						</div>
 					</div>
 				</div>

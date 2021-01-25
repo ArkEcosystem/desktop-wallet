@@ -4,12 +4,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	about: string;
+	description?: string;
 	permissions: any;
-	screenshots: any;
+	images?: any;
 };
 
-export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
+export const PluginInfo = ({ description, permissions, images }: Props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -17,7 +17,7 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
 			<div>
 				<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.ABOUT")}</p>
 				<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__about">
-					{about}
+					{description}
 				</p>
 			</div>
 
@@ -28,36 +28,41 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
 				</p>
 			</div>
 
-			<div className="relative mt-8">
-				<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.SCREENSHOTS")}</p>
-				<div
-					className="flex absolute top-0 right-0 pr-4 space-x-3 screenshots-pagination"
-					data-testid="plugin-info__screenshots--pagination"
-				/>
-				<div className="pb-8">
-					<Slider
-						data={[screenshots, screenshots, screenshots]}
-						options={{
-							pagination: {
-								el: ".screenshots-pagination",
-								clickable: true,
-							},
-						}}
-					>
-						{(screenshotGroup: any) => (
-							<div className="flex pb-10 mt-3 mr-3 space-x-4">
-								{screenshotGroup.map((screenshot: any, idx: number) => (
-									<div
-										data-testid="plugin-info__screenshot"
-										key={idx}
-										className="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-									/>
-								))}
-							</div>
-						)}
-					</Slider>
+			{images.length ? (
+				<div className="relative mt-8">
+					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.SCREENSHOTS")}</p>
+					<div
+						className="flex absolute top-0 right-0 pr-4 space-x-3 screenshots-pagination"
+						data-testid="plugin-info__screenshots--pagination"
+					/>
+					<div className="mt-4">
+						<Slider
+							data={images}
+							options={{
+								pagination: {
+									el: ".screenshots-pagination",
+									clickable: true,
+								},
+								slideHeight: 150,
+								slidesPerView: 3,
+								slidesPerColumn: 1,
+								slidesPerGroup: 3,
+								spaceBetween: 20,
+							}}
+						>
+							{(screenshot: any) => (
+								<img
+									src={screenshot}
+									data-testid="plugin-info__screenshot"
+									className="rounded-lg bg-theme-secondary-500 overflow-hidden w-full max-h-44"
+								/>
+							)}
+						</Slider>
+					</div>
 				</div>
+			) : null}
 
+			<div className="mt-8">
 				<Alert variant="warning" title={t("COMMON.DISCLAIMER")}>
 					The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK
 					SCIC is directly involved in the development or affiliated with the developer providing this plugin.
@@ -66,4 +71,8 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
 			</div>
 		</>
 	);
+};
+
+PluginInfo.defaultProps = {
+	images: [],
 };
