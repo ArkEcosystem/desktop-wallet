@@ -56,7 +56,7 @@ const SearchWalletListItem = ({
 			</TableCell>
 
 			<TableCell innerClassName="justify-end">
-				<div className="items-end text-right mt-1">
+				<div className="items-end mt-1 text-right">
 					<div className="font-semibold">
 						<Amount value={balance} ticker={currency} />
 					</div>
