@@ -1459,6 +1459,45 @@ exports[`Welcome should render without profiles 1`] = `
             >
               Create a new Profile to get started.
             </p>
+            <div
+              class="mt-8"
+            >
+              <div
+                class="-my-2.5 flex flex-wrap justify-center"
+              >
+                <div
+                  class="rounded-lg overflow-hidden m-2.5"
+                >
+                  <button
+                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    type="button"
+                  >
+                    <div
+                      class="flex flex-col justify-center items-center"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 cnQsQi"
+                      >
+                        <div
+                          class="sc-gsTCUz cmyhNZ"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            plus.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <span
+                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                      >
+                        Create Profile
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
