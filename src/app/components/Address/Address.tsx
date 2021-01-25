@@ -7,12 +7,22 @@ type Props = {
 	addressClass?: string;
 	address?: string | undefined;
 	maxChars?: number;
+	maxNameChars?: number;
 	walletNameClass?: string;
 	size?: Size;
 	fontWeight?: "normal";
 };
 
-export const Address = ({ address, addressClass, walletNameClass, fontWeight, walletName, maxChars, size }: Props) => {
+export const Address = ({
+	address,
+	addressClass,
+	walletNameClass,
+	fontWeight,
+	walletName,
+	maxChars,
+	maxNameChars,
+	size,
+}: Props) => {
 	const getFontSize = (size?: Size) => {
 		switch (size) {
 			case "sm":
@@ -42,7 +52,7 @@ export const Address = ({ address, addressClass, walletNameClass, fontWeight, wa
 						walletNameClass || "text-theme-text"
 					}`}
 				>
-					{walletName}
+					<TruncateMiddle text={walletName} maxChars={maxNameChars} data-testid="address__wallet-name" />
 				</span>
 			)}
 			{address && (
