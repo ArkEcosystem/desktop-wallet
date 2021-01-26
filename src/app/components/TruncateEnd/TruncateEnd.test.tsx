@@ -6,12 +6,12 @@ import { TruncateEnd } from "./TruncateEnd";
 describe("TruncateEnd", () => {
 	it("should truncate with default maxChars", () => {
 		const { container } = render(<TruncateEnd text="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" />);
-		expect(container).toHaveTextContent("ASuusXSW9kfWnicS …");
+		expect(container).toHaveTextContent("ASuusXSW9kfWnicS…");
 	});
 
 	it("should truncate with custom maxChars", () => {
 		const { container } = render(<TruncateEnd text="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" maxChars={28} />);
-		expect(container).toHaveTextContent("ASuusXSW9kfWnicScSgUTjttP6T9 …");
+		expect(container).toHaveTextContent("ASuusXSW9kfWnicScSgUTjttP6T9…");
 	});
 
 	it("should not truncate if string is less than maxChars", () => {
