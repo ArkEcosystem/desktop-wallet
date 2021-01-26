@@ -1,8 +1,7 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useEffect, useMemo, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import { matchPath } from "react-router-dom";
+import { useCallback, useEffect, useMemo, useRef } from "react";
+import { matchPath, useLocation } from "react-router-dom";
 
 import { useNotifications } from "./notifications";
 import { useSynchronizer } from "./use-synchronizer";
@@ -13,28 +12,50 @@ enum Intervals {
 	Long = 120000,
 }
 
+export const useProfileUtils = (env: Environment) => {
+	const getProfileById = useCallback(
+		(id: string) => {
+			if (!id) {
+				return;
+			}
+
+			let response: Profile | undefined;
+
+			try {
+				response = env.profiles().findById(id);
+			} catch (e) {
+				// Not a valid profile id. Ignore.
+			}
+
+			return response;
+		},
+		[env],
+	);
+
+	const getProfileFromUrl = useCallback(
+		(url: string) => {
+			const urlMatch = matchPath(url, { path: "/profiles/:profileId" });
+			const urlProfileId = (urlMatch?.params as any)?.profileId;
+			return getProfileById(urlProfileId);
+		},
+		[getProfileById],
+	);
+
+	return useMemo(() => ({ getProfileById, getProfileFromUrl }), [getProfileFromUrl, getProfileById]);
+};
+
 const useProfileWatcher = () => {
-	const { env } = useEnvironmentContext();
 	const location = useLocation();
+
+	const { env } = useEnvironmentContext();
+	const { getProfileById } = useProfileUtils(env);
+
 	const pathname = (location as any).location?.pathname || location.pathname;
 	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
 	const profileId = (match?.params as any)?.profileId;
 	const allProfilesCount = env.profiles().count();
 
-	return useMemo(() => {
-		if (!profileId) {
-			return;
-		}
-		let response: Profile | undefined;
-
-		try {
-			response = env.profiles().findById(profileId);
-		} catch (e) {
-			// Not a valid profile id. Ignore.
-		}
-
-		return response;
-	}, [profileId, env, allProfilesCount]); // eslint-disable-line react-hooks/exhaustive-deps
+	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 const useProfileJobs = (profile?: Profile) => {

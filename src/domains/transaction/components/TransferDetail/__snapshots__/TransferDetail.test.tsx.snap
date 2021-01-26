@@ -67,13 +67,18 @@ exports[`TransferDetail should render a modal 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    <span
+                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                      data-testid="TruncateEnd"
+                    >
+                      Test Wallet
+                    </span>
                   </span>
                   <span
                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B … s6YUYD
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -342,7 +347,7 @@ exports[`TransferDetail should render a modal 1`] = `
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                         data-testid="TruncateMiddle"
                       >
-                        ee4175091d9f4 … 9d09bcf3ecefe
+                        ee4175091d9f4…9d09bcf3ecefe
                       </span>
                     </span>
                     <div
@@ -517,13 +522,18 @@ exports[`TransferDetail should render as confirmed 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    <span
+                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                      data-testid="TruncateEnd"
+                    >
+                      Test Wallet
+                    </span>
                   </span>
                   <span
                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B … s6YUYD
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -794,7 +804,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                         data-testid="TruncateMiddle"
                       >
-                        ee4175091d9f4 … 9d09bcf3ecefe
+                        ee4175091d9f4…9d09bcf3ecefe
                       </span>
                     </span>
                     <div
@@ -969,13 +979,18 @@ exports[`TransferDetail should render as not is sent 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    <span
+                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                      data-testid="TruncateEnd"
+                    >
+                      Test Wallet
+                    </span>
                   </span>
                   <span
                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B … s6YUYD
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -1244,7 +1259,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                         data-testid="TruncateMiddle"
                       >
-                        ee4175091d9f4 … 9d09bcf3ecefe
+                        ee4175091d9f4…9d09bcf3ecefe
                       </span>
                     </span>
                     <div
@@ -1419,13 +1434,18 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                     data-testid="address__wallet-name"
                   >
-                    Test Wallet
+                    <span
+                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                      data-testid="TruncateEnd"
+                    >
+                      Test Wallet
+                    </span>
                   </span>
                   <span
                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B … s6YUYD
+                    D8rr7B…s6YUYD
                   </span>
                 </div>
               </div>
@@ -1694,7 +1714,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                         data-testid="TruncateMiddle"
                       >
-                        ee4175091d9f4 … 9d09bcf3ecefe
+                        ee4175091d9f4…9d09bcf3ecefe
                       </span>
                     </span>
                     <div
