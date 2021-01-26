@@ -157,7 +157,7 @@ export const useProfileRestore = () => {
 		// without password and then reset the password.
 		const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 		if (isDemo) {
-			await profile.restore();
+			await profile.restore(password);
 
 			await persist();
 
