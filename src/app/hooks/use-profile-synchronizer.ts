@@ -35,7 +35,7 @@ export const useProfileUtils = (env: Environment) => {
 		return getProfileById(urlProfileId);
 	};
 
-	return { getProfileById, getProfileFromUrl };
+	return useMemo(() => ({ getProfileById, getProfileFromUrl }), []); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 const useProfileWatcher = () => {
@@ -200,7 +200,7 @@ export const useProfileRestore = () => {
 
 export const useProfileSynchronizer = () => {
 	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
-	const { persist, env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
 

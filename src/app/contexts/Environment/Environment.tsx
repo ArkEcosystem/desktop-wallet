@@ -33,7 +33,7 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 
 		// Force update
 		setState({});
-	}, [env, isDemo]);
+	}, [env, isDemo, getProfileFromUrl, history]);
 
 	return (
 		<EnvironmentContext.Provider value={{ env, state, persist } as Context}>{children}</EnvironmentContext.Provider>
