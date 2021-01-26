@@ -20,16 +20,19 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 	const { getProfileFromUrl } = useProfileUtils(env);
 
 	const persist = React.useCallback(async () => {
+		if (isDemo) {
+			// prevent from persisting in demo. e2e tests hang.
+			setState({});
+			return;
+		}
+
 		const activeProfile = getProfileFromUrl(history?.location?.pathname);
 
 		if (activeProfile) {
 			activeProfile.save();
 		}
 
-		// e2e ci tests hang when persist is called
-		if (!isDemo) {
-			await env.persist();
-		}
+		await env.persist();
 
 		// Force update
 		setState({});
