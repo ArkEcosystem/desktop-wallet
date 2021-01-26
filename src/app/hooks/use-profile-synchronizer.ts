@@ -1,6 +1,6 @@
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useEffect, useMemo, useRef } from "react";
+import { useCallback,useEffect, useMemo, useRef } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 
 import { useNotifications } from "./notifications";
@@ -13,29 +13,35 @@ enum Intervals {
 }
 
 export const useProfileUtils = (env: Environment) => {
-	const getProfileById = (id: string) => {
-		if (!id) {
-			return;
-		}
+	const getProfileById = useCallback(
+		(id: string) => {
+			if (!id) {
+				return;
+			}
 
-		let response: Profile | undefined;
+			let response: Profile | undefined;
 
-		try {
-			response = env.profiles().findById(id);
-		} catch (e) {
-			// Not a valid profile id. Ignore.
-		}
+			try {
+				response = env.profiles().findById(id);
+			} catch (e) {
+				// Not a valid profile id. Ignore.
+			}
 
-		return response;
-	};
+			return response;
+		},
+		[env],
+	);
 
-	const getProfileFromUrl = (url: string) => {
-		const urlMatch = matchPath(url, { path: "/profiles/:profileId" });
-		const urlProfileId = (urlMatch?.params as any)?.profileId;
-		return getProfileById(urlProfileId);
-	};
+	const getProfileFromUrl = useCallback(
+		(url: string) => {
+			const urlMatch = matchPath(url, { path: "/profiles/:profileId" });
+			const urlProfileId = (urlMatch?.params as any)?.profileId;
+			return getProfileById(urlProfileId);
+		},
+		[getProfileById],
+	);
 
-	return useMemo(() => ({ getProfileById, getProfileFromUrl }), []); // eslint-disable-line react-hooks/exhaustive-deps
+	return useMemo(() => ({ getProfileById, getProfileFromUrl }), [getProfileFromUrl, getProfileById]);
 };
 
 const useProfileWatcher = () => {
