@@ -102,6 +102,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			.plugins()
 			.all()
 			.map((item) => item.config());
+
 		const merged = uniqBy([...configurations, ...localConfigurations], (item) => item.id());
 		setState((prev: any) => ({ ...prev, packages: merged }));
 	}, [pluginManager, pluginRegistry]);

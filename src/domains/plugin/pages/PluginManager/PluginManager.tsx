@@ -232,7 +232,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									viewType={viewType}
 									plugins={allPackages}
 									onInstall={() => setInstallPlugin(true)}
-									onDelete={() => console.log("delete")}
+									onDelete={handleDeletePlugin}
 								/>
 							</div>
 						)}

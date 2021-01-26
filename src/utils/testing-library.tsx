@@ -134,16 +134,6 @@ export const defaultNetMocks = () => {
 		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
 		.persist();
 
-	nock("https://registry.npmjs.com")
-		.get("/-/v1/search")
-		.query((params) => params.from === "0")
-		.once()
-		.reply(200, require("tests/fixtures/plugins/registry-response.json"))
-		.get("/-/v1/search")
-		.query((params) => params.from === "250")
-		.once()
-		.reply(200, {});
-
 	for (const pluginName of pluginNames) {
 		nock("https://registry.npmjs.com")
 			.get(`/${pluginName}`)
@@ -151,7 +141,7 @@ export const defaultNetMocks = () => {
 			.persist();
 
 		nock("https://api.npmjs.org")
-			.get(`/downloads/range/2005-01-01:${new Date().getFullYear() + 1}-01-01/${pluginName}`)
+			.get(new RegExp(`/downloads/range/.*${pluginName}`))
 			.reply(200, require(`tests/fixtures/plugins/downloads/${pluginName}`))
 			.persist();
 	}
