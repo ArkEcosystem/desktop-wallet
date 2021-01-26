@@ -99,10 +99,10 @@ describe("Environment Context", () => {
 		};
 
 		const App = () => (
-				<EnvironmentProvider env={env}>
-					<ProfilePage />
-				</EnvironmentProvider>
-			);
+			<EnvironmentProvider env={env}>
+				<ProfilePage />
+			</EnvironmentProvider>
+		);
 
 		const { getByRole } = renderWithRouter(<App />, { history });
 
