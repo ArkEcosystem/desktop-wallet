@@ -28,7 +28,7 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 							data-testid="PluginListItem__logo"
 							src={plugin.logo}
 							alt="Logo"
-							className="w-14 h-14 rounded overflow-hidden"
+							className="overflow-hidden w-14 h-14 rounded"
 						/>
 					) : (
 						<Image name="PluginLogoPlaceholder" domain="plugin" className="w-14 h-14" />

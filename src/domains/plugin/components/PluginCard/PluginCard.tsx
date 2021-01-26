@@ -57,7 +57,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 					}
 				}}
 			>
-				<div className="flex flex-col items-between h-full">
+				<div className="flex flex-col h-full items-between">
 					<PluginImageContainer>
 						{plugin.logo ? (
 							<img data-testid="PluginCard__logo" src={plugin.logo} alt="Logo" />
@@ -67,7 +67,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 					</PluginImageContainer>
 
 					<div>
-						<div className="font-semibold flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
+						<div className="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600">
 							<div className="truncate">{plugin.title}</div>
 
 							<div>
