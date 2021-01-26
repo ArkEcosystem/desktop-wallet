@@ -1,7 +1,7 @@
-import { Environment, MemoryPassword,Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useEffect, useMemo, useRef } from "react";
-import { matchPath,useLocation } from "react-router-dom";
+import { matchPath, useLocation } from "react-router-dom";
 
 import { useNotifications } from "./notifications";
 import { useSynchronizer } from "./use-synchronizer";
@@ -35,18 +35,7 @@ export const useProfileUtils = (env: Environment) => {
 		return getProfileById(urlProfileId);
 	};
 
-	const getProfilePassword = (profile: Profile) => {
-		let password: string | undefined;
-
-		try {
-			password = MemoryPassword.get(profile);
-		} catch (e) {
-			// Failed to find a password for profile. Ignore
-		}
-		return password;
-	};
-
-	return { getProfileById, getProfileFromUrl, getProfilePassword };
+	return { getProfileById, getProfileFromUrl };
 };
 
 const useProfileWatcher = () => {
