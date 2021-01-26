@@ -31,9 +31,7 @@ export class PluginConfigurationData {
 
 		const plugin = new PluginConfigurationData(data, manifest);
 
-		if (dir) {
-			plugin.syncSize(dir);
-		}
+		plugin.syncSize(dir);
 
 		return plugin;
 	}
@@ -88,13 +86,29 @@ export class PluginConfigurationData {
 	}
 
 	categories() {
-		const validCategories = ["game", "theme", "language", "utility", "exchange", "other"];
+		const validCategories = ["gaming", "theme", "language", "utility", "exchange", "other"];
 		// @ts-ignore
 		const categories: string[] = this.manifest().get("categories", ["other"]);
 
 		const result = intersection(categories, validCategories);
 
-		return result;
+		return result.length ? result : ["other"];
+	}
+
+	hasCategory(categoryName: string) {
+		return this.categories().includes(categoryName);
+	}
+
+	description() {
+		return this.get("description");
+	}
+
+	homepage() {
+		return this.get("homepage");
+	}
+
+	images() {
+		return this.manifest().get<string[]>("images", []);
 	}
 
 	permissions() {
@@ -163,5 +177,24 @@ export class PluginConfigurationData {
 		}
 
 		this.#size = size;
+	}
+
+	toObject() {
+		return {
+			id: this.id(),
+			name: this.name(),
+			title: this.title(),
+			version: this.version(),
+			author: this.author(),
+			categories: this.categories(),
+			category: this.categories()?.[0],
+			permissions: this.permissions(),
+			images: this.images(),
+			logo: this.logo(),
+			size: this.size(),
+			homepage: this.homepage(),
+			description: this.description(),
+			isOfficial: this.isOfficial(),
+		};
 	}
 }

@@ -76,6 +76,8 @@ export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
 export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.profiles)[0].wallets)[0];
 export const getDefaultWalletMnemonic = () => "master dizzy era math peanut crew run manage better flame tree prevent";
 
+const pluginNames: string[] = ["@dated/transaction-export-plugin"];
+
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();
 
@@ -130,6 +132,33 @@ export const defaultNetMocks = () => {
 	nock("https://min-api.cryptocompare.com")
 		.get("/data/dayAvg?fsym=DARK&tsym=BTC&toTs=1593561600")
 		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
+		.persist();
+
+	nock("https://registry.npmjs.com")
+		.get("/-/v1/search")
+		.query((params) => params.from === "0")
+		.once()
+		.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+		.get("/-/v1/search")
+		.query((params) => params.from === "250")
+		.once()
+		.reply(200, {});
+
+	for (const pluginName of pluginNames) {
+		nock("https://registry.npmjs.com")
+			.get(`/${pluginName}`)
+			.reply(200, require(`tests/fixtures/plugins/registry/${pluginName}.json`))
+			.persist();
+
+		nock("https://api.npmjs.org")
+			.get(`/downloads/range/2005-01-01:${new Date().getFullYear() + 1}-01-01/${pluginName}`)
+			.reply(200, require(`tests/fixtures/plugins/downloads/${pluginName}`))
+			.persist();
+	}
+
+	nock("https://raw.githubusercontent.com/dated/transaction-export-plugin/master")
+		.get("/logo.png")
+		.reply(404)
 		.persist();
 };
 

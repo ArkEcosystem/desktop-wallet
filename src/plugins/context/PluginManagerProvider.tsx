@@ -1,15 +1,25 @@
+import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { toasts } from "app/services";
+import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
+import { uniqBy } from "@arkecosystem/utils";
+import { httpClient, toasts } from "app/services";
+import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
 import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
-	const [state, setState] = useState<any>();
+	const [state, setState] = useState<any>({});
+
+	// Use the default adapter (browser) for E2E as it cannot mock node-fetch requisitions
+	/* istanbul ignore next */
+	const adapter =
+		process.env.REACT_APP_BUILD_MODE && process.env.NODE_ENV === "production" ? httpClient : new Request();
+	const [pluginRegistry] = useState(() => new PluginRegistry(adapter));
 
 	const [pluginManager] = useState(() => {
 		manager.services().register(services);
@@ -38,7 +48,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		}
 	}, [pluginManager]);
 
-	const trigger = useCallback(() => setState({}), []);
+	const trigger = useCallback(() => setState((prev: any) => ({ ...prev })), []);
 
 	const reportPlugin = useCallback((plugin: PluginController) => {
 		const name = plugin.config().get("name");
@@ -70,7 +80,45 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginManager, trigger],
 	);
 
-	return { pluginManager, loadPlugins, trigger, state, reportPlugin, deletePlugin };
+	const fetchPluginPackages = useCallback(async () => {
+		const isMockEnabled = process.env.REACT_APP_MOCK_NPM_PLUGINS;
+		let packages = [];
+
+		/* istanbul ignore next */
+		if (isMockEnabled) {
+			packages = require("tests/fixtures/plugins/all-npm-plugins.json");
+		} else {
+			try {
+				const result = await pluginRegistry.all();
+				// @ts-ignore
+				packages = result.map((item) => item.getLatestVersion());
+			} catch {
+				toasts.error(`Failed to fetch packages`);
+			}
+		}
+
+		const configurations = packages.map((item: any) => PluginConfigurationData.make(item));
+		const localConfigurations = pluginManager
+			.plugins()
+			.all()
+			.map((item) => item.config());
+		const merged = uniqBy([...configurations, ...localConfigurations], (item) => item.id());
+		setState((prev: any) => ({ ...prev, packages: merged }));
+	}, [pluginManager, pluginRegistry]);
+
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages || [], [state]);
+
+	return {
+		pluginRegistry,
+		fetchPluginPackages,
+		pluginPackages,
+		pluginManager,
+		loadPlugins,
+		trigger,
+		state,
+		reportPlugin,
+		deletePlugin,
+	};
 };
 
 export const PluginManagerProvider = ({

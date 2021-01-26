@@ -22,6 +22,7 @@ const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
 	beforeAll(() => {
+		process.env.REACT_APP_MOCK_NPM_PLUGINS = "1";
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 	});
 
@@ -48,6 +49,7 @@ describe("PluginManager", () => {
 
 	afterAll(() => {
 		consoleSpy.mockRestore();
+		process.env.REACT_APP_MOCK_NPM_PLUGINS = "";
 	});
 
 	it("should render", () => {
@@ -82,22 +84,22 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
+			fireEvent.click(getByTestId("PluginManagerNavigationBar__gaming"));
 		});
 
-		expect(within(getByTestId("PluginManager__container--game")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginGrid")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__container--game")).getByTestId("PluginList")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginList")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__container--game")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginGrid")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -140,11 +142,11 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should download & install plugin on game", () => {
+	it("should download & install plugin on utility", () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
+			fireEvent.click(getByTestId("PluginManagerNavigationBar__utility"));
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
@@ -216,60 +218,23 @@ describe("PluginManager", () => {
 		const { getByTestId, getAllByText } = rendered;
 
 		act(() => {
-			fireEvent.click(within(getByTestId("PluginManager__home__top-rated")).getAllByText("ARK Explorer")[0]);
+			fireEvent.click(
+				within(getByTestId("PluginManager__home__top-rated")).getAllByText("Transaction Export")[0],
+			);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/0`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/1791804499`);
 	});
 
-	it("should select plugin on game grid", () => {
+	it("should select plugin on utility grid", () => {
 		const { asFragment, getAllByText, getByTestId } = rendered;
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
-			fireEvent.click(getAllByText("ARK Explorer")[0]);
+			fireEvent.click(getByTestId("PluginManagerNavigationBar__utility"));
+			fireEvent.click(getAllByText("Transaction Export")[0]);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/0`);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should delete plugin on home", () => {
-		const { asFragment, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getAllByTestId("dropdown__toggle")[0]);
-			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getByTestId("dropdown__option--0"));
-		});
-
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
-		expect(consoleSpy).toHaveBeenCalledTimes(1);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should delete plugin on game", () => {
-		const { asFragment, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
-			fireEvent.click(
-				within(getByTestId("PluginManager__container--game")).getAllByTestId("dropdown__toggle")[1],
-			);
-			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--0"));
-		});
-
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
-
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-			fireEvent.click(
-				within(getByTestId("PluginManager__container--game")).getAllByTestId("dropdown__toggle")[1],
-			);
-			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--0"));
-		});
-
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
-		expect(consoleSpy).toHaveBeenCalledTimes(4);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/1791804499`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -318,6 +283,26 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should delete plugin on my-plugins", async () => {
+		const onEnabled = jest.fn();
+		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
+		pluginManager.plugins().push(plugin);
+
+		const { getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+
+		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
+
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 });

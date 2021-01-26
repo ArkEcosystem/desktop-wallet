@@ -24,6 +24,7 @@ type PluginManagerHomeProps = {
 	onInstall: any;
 	viewType: string;
 	paths?: any;
+	plugins: any[];
 };
 
 type PluginManagerProps = {
@@ -32,50 +33,14 @@ type PluginManagerProps = {
 
 const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
-const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManagerHomeProps) => {
+const PluginManagerHome = ({ onDelete, onInstall, viewType, paths, plugins }: PluginManagerHomeProps) => {
 	const activeProfile = useActiveProfile();
-	const [blacklist, setBlacklist] = useState<any>([]);
-
-	useEffect(() => {
-		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
-	}, [activeProfile]);
 
 	const { t } = useTranslation();
 	const history = useHistory();
 
 	const handleSelectPlugin = (pluginId: string) =>
 		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
-
-	const plugins = [];
-	for (let i = 0; i < 4; i++) {
-		plugins.push({
-			id: i,
-			name: "ARK Explorer",
-			author: "ARK.io",
-			category: "utility",
-			rating: 4.2,
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: false,
-			isOfficial: true,
-		});
-	}
-
-	for (let i = 5; i < 8; i++) {
-		plugins.push({
-			id: i,
-			name: "ARK Avatars",
-			author: "ARK.io",
-			category: "other",
-			rating: 3.8,
-			version: "1.3.8",
-			size: "163 KB",
-			isInstalled: true,
-			isGrant: true,
-		});
-	}
-
-	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
 
 	return (
 		<div>
@@ -95,14 +60,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={pluginList}
+						plugins={plugins}
 						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
 				)}
 			</div>
 
@@ -120,14 +85,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				</div>
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={pluginList}
+						plugins={plugins}
 						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
 				)}
 			</div>
 
@@ -145,14 +110,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				</div>
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={pluginList}
+						plugins={plugins}
 						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
 				)}
 			</div>
 		</div>
@@ -161,65 +126,43 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
+	const { fetchPluginPackages, pluginPackages } = usePluginManagerContext();
 
-	const [currentView, setCurrentView] = useState("home");
-	const [viewType, setViewType] = useState("grid");
-	const [installPlugin, setInstallPlugin] = useState(false);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 	const { pluginManager } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
 
-	const [blacklist, setBlacklist] = useState<any>([]);
+	const [currentView, setCurrentView] = useState("home");
+	const [viewType, setViewType] = useState("grid");
+	const [installPlugin, setInstallPlugin] = useState(false);
 
 	useEffect(() => {
-		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
-	}, [activeProfile]);
+		fetchPluginPackages();
+	}, [fetchPluginPackages]);
 
-	const plugins = [];
-	for (let i = 0; i < 4; i++) {
-		plugins.push({
-			id: i,
-			name: "ARK Explorer",
-			author: "ARK.io",
-			category: "utility",
-			rating: 4.2,
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: false,
-			isOfficial: true,
+	const allPackages = pluginPackages.map((config) => config.toObject());
+
+	const filteredPackages = pluginPackages
+		.filter((config) => config.hasCategory(currentView))
+		.map((item) => {
+			const localPlugin = pluginManager.plugins().findById(item.id());
+			return {
+				...item.toObject(),
+				isInstalled: !!localPlugin,
+				isEnabled: !!localPlugin?.isEnabled(activeProfile),
+				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
+			};
 		});
-	}
 
-	for (let i = 5; i < 8; i++) {
-		plugins.push({
-			id: i,
-			name: "ARK Avatars",
-			author: "ARK.io",
-			category: "other",
-			rating: 3.8,
-			version: "1.3.8",
-			size: "163 KB",
-			isInstalled: true,
-			isGrant: true,
-		});
-	}
-
-	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
 	const installedPlugins = pluginManager
 		.plugins()
 		.all()
 		.map((item) => ({
-			id: item.config().id(),
-			name: item.config().title(),
-			author: item.config().author(),
-			isOfficial: item.config().isOfficial(),
-			version: item.config().version(),
-			category: item.config().categories()?.[0],
+			...item.config().toObject(),
 			isInstalled: true,
 			isEnabled: item.isEnabled(activeProfile),
 			hasLaunch: item.hooks().hasCommand("service:launch.render"),
-			size: item.config().size(),
 		}));
 
 	const handleSelectPlugin = (pluginId: string) =>
@@ -234,6 +177,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		pluginManager.plugins().findById(pluginData.id)?.disable(activeProfile);
 		persist();
 	};
+
+	const handleDeletePlugin = () => console.log("delete");
 
 	return (
 		<>
@@ -285,6 +230,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								<PluginManagerHome
 									paths={paths}
 									viewType={viewType}
+									plugins={allPackages}
 									onInstall={() => setInstallPlugin(true)}
 									onDelete={() => console.log("delete")}
 								/>
@@ -299,7 +245,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								<PluginGrid
 									plugins={installedPlugins}
 									onSelect={handleSelectPlugin}
-									onDelete={void 0}
+									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
@@ -315,7 +261,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								<PluginList
 									plugins={installedPlugins}
 									onInstall={void 0}
-									onDelete={void 0}
+									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
@@ -329,9 +275,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
 								<PluginGrid
-									plugins={pluginList}
+									plugins={filteredPackages}
 									onSelect={handleSelectPlugin}
-									onDelete={() => console.log("delete")}
+									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
@@ -341,9 +287,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
 							<PluginList
-								plugins={pluginList}
-								onDelete={() => console.log("delete")}
+								plugins={filteredPackages}
 								onInstall={() => setInstallPlugin(true)}
+								onDelete={handleDeletePlugin}
 								onEnable={handleEnablePlugin}
 								onDisable={handleDisablePlugin}
 								className="mt-6"
