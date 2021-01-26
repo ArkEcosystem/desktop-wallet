@@ -178,7 +178,7 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 								<span className="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 									{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}
 								</span>
-								<Link to={votesHelpLink} showExternalIcon={false} isExternal>
+								<Link to={votesHelpLink} isExternal>
 									<span className="text-sm">{t("COMMON.LEARN_MORE")}</span>
 								</Link>
 							</span>
