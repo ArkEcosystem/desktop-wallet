@@ -19,7 +19,7 @@ export const TruncateEnd = ({ text, maxChars, showTooltip, ...props }: Props) =>
 
 		const start = text.substr(0, maxChars);
 
-		return `${start} …`;
+		return `${start}…`;
 	}, [maxChars, text]);
 
 	return (
