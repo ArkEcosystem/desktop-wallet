@@ -316,6 +316,32 @@ describe("useProfileRestore", () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 	});
 
+	it("should restore a profile that uses password", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_BUILD_MODE = undefined;
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		let isRestored;
+
+		await act(async () => {
+			isRestored = await current.restoreProfile(profile);
+		});
+
+		expect(isRestored).toEqual(true);
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+
 	it("should restore in demo", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 		process.env.REACT_APP_BUILD_MODE = "demo";
