@@ -1,8 +1,7 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, MemoryPassword,Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useEffect, useMemo, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import { matchPath } from "react-router-dom";
+import { matchPath,useLocation } from "react-router-dom";
 
 import { useNotifications } from "./notifications";
 import { useSynchronizer } from "./use-synchronizer";
@@ -13,28 +12,55 @@ enum Intervals {
 	Long = 120000,
 }
 
-const useProfileWatcher = () => {
-	const { env } = useEnvironmentContext();
-	const location = useLocation();
-	const pathname = (location as any).location?.pathname || location.pathname;
-	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
-	const profileId = (match?.params as any)?.profileId;
-	const allProfilesCount = env.profiles().count();
-
-	return useMemo(() => {
-		if (!profileId) {
+export const useProfileUtils = (env: Environment) => {
+	const getProfileById = (id: string) => {
+		if (!id) {
 			return;
 		}
+
 		let response: Profile | undefined;
 
 		try {
-			response = env.profiles().findById(profileId);
+			response = env.profiles().findById(id);
 		} catch (e) {
 			// Not a valid profile id. Ignore.
 		}
 
 		return response;
-	}, [profileId, env, allProfilesCount]); // eslint-disable-line react-hooks/exhaustive-deps
+	};
+
+	const getProfileFromUrl = (url: string) => {
+		const urlMatch = matchPath(url, { path: "/profiles/:profileId" });
+		const urlProfileId = (urlMatch?.params as any)?.profileId;
+		return getProfileById(urlProfileId);
+	};
+
+	const getProfilePassword = (profile: Profile) => {
+		let password: string | undefined;
+
+		try {
+			password = MemoryPassword.get(profile);
+		} catch (e) {
+			// Failed to find a password for profile. Ignore
+		}
+		return password;
+	};
+
+	return { getProfileById, getProfileFromUrl, getProfilePassword };
+};
+
+const useProfileWatcher = () => {
+	const location = useLocation();
+
+	const { env } = useEnvironmentContext();
+	const { getProfileById } = useProfileUtils(env);
+
+	const pathname = (location as any).location?.pathname || location.pathname;
+	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
+	const profileId = (match?.params as any)?.profileId;
+	const allProfilesCount = env.profiles().count();
+
+	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 const useProfileJobs = (profile?: Profile) => {
@@ -185,7 +211,7 @@ export const useProfileRestore = () => {
 
 export const useProfileSynchronizer = () => {
 	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
-	const { persist } = useEnvironmentContext();
+	const { persist, env } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
 
