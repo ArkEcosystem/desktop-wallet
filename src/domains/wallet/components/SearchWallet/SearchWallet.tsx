@@ -52,7 +52,7 @@ const SearchWalletListItem = ({
 					{showNetwork && <NetworkIcon size="lg" coin={coinName} network={coinId} />}
 					<Avatar size="lg" address={address} />
 				</div>
-				<Address walletName={name} address={address} maxChars={22} maxNameChars={22} />
+				<Address walletName={name} address={address} maxChars={16} maxNameChars={16} />
 			</TableCell>
 
 			<TableCell innerClassName="font-semibold justify-end">
