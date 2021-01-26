@@ -1,6 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { restoreProfileTestPassword } from "migrations";
 import { useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
@@ -106,10 +105,6 @@ export const useProfileSyncStatus = () => {
 			return false;
 		}
 
-		if (profile.wasRecentlyCreated()) {
-			return false;
-		}
-
 		return (
 			!isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profile.id())
 		);
@@ -155,10 +150,6 @@ export const useProfileRestore = () => {
 			return false;
 		}
 
-		if (profile.wasRecentlyCreated()) {
-			return false;
-		}
-
 		setConfiguration({ profileIsRestoring: true });
 
 		// When in demo mode, profiles are migrated passwordless and
@@ -167,19 +158,19 @@ export const useProfileRestore = () => {
 		const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 		if (isDemo) {
 			await profile.restore();
-			restoreProfileTestPassword(profile);
+
 			await persist();
+
 			setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });
+
 			return true;
 		}
 
 		// Reset profile normally (passwordless or not)
 		await profile.restore(password);
 
-		// Make sure the latest profile state is encrypted before persisting
-		if (profile.usesPassword()) {
-			profile.encrypt(password);
-		}
+		// Make sure the latest profile state is encoded (and optionally encrypted) before persisting
+		profile.save(password);
 
 		await persist();
 		setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });

@@ -232,6 +232,8 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
+		activeProfile.save();
+
 		await env.persist();
 
 		onSuccess();
@@ -247,7 +249,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 					<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
-					<div className="flex justify-between mt-8 w-full">
+					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
@@ -371,7 +373,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 					<ListDivided items={otherItems} />
 				</div>
 
-				<div className="flex justify-between pt-2 w-full">
+				<div className="flex justify-between w-full pt-2">
 					<Button onClick={() => setIsResetProfileOpen(true)} variant="danger">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>

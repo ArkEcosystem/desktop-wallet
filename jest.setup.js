@@ -1,6 +1,7 @@
 import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
 import { migrateProfileFixtures, restoreProfileTestPassword } from "migrations";
+import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
@@ -56,7 +57,7 @@ beforeAll(async () => {
 
 	for (const profile of env.profiles().values()) {
 		try {
-			await profile.restore();
+			await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
 			restoreProfileTestPassword(profile);
 		} catch (error) {
 			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
