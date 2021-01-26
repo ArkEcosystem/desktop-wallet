@@ -1,3 +1,4 @@
+import { TruncateEnd } from "app/components/TruncateEnd";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
 import React from "react";
 import { Size } from "types";
@@ -7,12 +8,22 @@ type Props = {
 	addressClass?: string;
 	address?: string | undefined;
 	maxChars?: number;
+	maxNameChars?: number;
 	walletNameClass?: string;
 	size?: Size;
 	fontWeight?: "normal";
 };
 
-export const Address = ({ address, addressClass, walletNameClass, fontWeight, walletName, maxChars, size }: Props) => {
+export const Address = ({
+	address,
+	addressClass,
+	walletNameClass,
+	fontWeight,
+	walletName,
+	maxChars,
+	maxNameChars,
+	size,
+}: Props) => {
 	const getFontSize = (size?: Size) => {
 		switch (size) {
 			case "sm":
@@ -42,7 +53,7 @@ export const Address = ({ address, addressClass, walletNameClass, fontWeight, wa
 						walletNameClass || "text-theme-text"
 					}`}
 				>
-					{walletName}
+					<TruncateEnd text={walletName} maxChars={maxNameChars} />
 				</span>
 			)}
 			{address && (
