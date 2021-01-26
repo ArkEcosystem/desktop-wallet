@@ -173,8 +173,14 @@ export const useProfileRestore = () => {
 			return true;
 		}
 
-		// Reset profile normally (passworless or not)
+		// Reset profile normally (passwordless or not)
 		await profile.restore(password);
+
+		// Make sure the latest profile state is encrypted before persisting
+		if (profile.usesPassword()) {
+			profile.encrypt(password);
+		}
+
 		await persist();
 		setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });
 		return true;
