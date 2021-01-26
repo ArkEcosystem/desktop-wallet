@@ -232,6 +232,8 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
+		activeProfile.save();
+
 		await env.persist();
 
 		onSuccess();
