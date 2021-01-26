@@ -1,6 +1,6 @@
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useCallback,useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 
 import { useNotifications } from "./notifications";
