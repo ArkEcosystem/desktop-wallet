@@ -17,14 +17,13 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 	const [state, setState] = React.useState<any>(undefined);
 
 	const history = useHistory();
-	const { getProfileFromUrl, getProfilePassword } = useProfileUtils(env);
+	const { getProfileFromUrl } = useProfileUtils(env);
 
 	const persist = React.useCallback(async () => {
 		const activeProfile = getProfileFromUrl(history.location.pathname);
 
 		if (activeProfile) {
-			const password = getProfilePassword(activeProfile);
-			activeProfile.save(password);
+			activeProfile.save();
 		}
 
 		// e2e ci tests hang when persist is called
