@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import tw, { styled } from "twin.macro";
 
 import { useFormField } from "../Form/useFormField";
 
-type InputProps = { as?: React.ElementType; isInvalid?: boolean } & React.HTMLProps<any>;
+type InputProps = { as?: React.ElementType; isInvalid?: boolean; isFocused?: boolean } & React.HTMLProps<any>;
 
 const InputStyled = styled.input`
 	&:focus {
@@ -30,8 +30,16 @@ const InputStyled = styled.input`
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
-	({ isInvalid, className, ...props }: InputProps, ref) => {
+	({ isInvalid, className, isFocused, ...props }: InputProps, ref: any) => {
 		const fieldContext = useFormField();
+
+		const focusRef = useRef<InputElement>(ref);
+
+		useEffect(() => {
+			if (isFocused && focusRef.current) {
+				focusRef.current.focus();
+			}
+		}, [focusRef, isFocused]);
 
 		return (
 			<InputStyled
@@ -41,7 +49,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 				}`}
 				name={fieldContext?.name}
 				aria-invalid={fieldContext?.isInvalid || isInvalid}
-				ref={ref}
+				ref={focusRef}
 				{...props}
 			/>
 		);
