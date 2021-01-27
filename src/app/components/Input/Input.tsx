@@ -30,11 +30,11 @@ const InputStyled = styled.input`
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
-	({ isInvalid, className, isFocused, ...props }: InputProps, ref: any) => {
+	({ isInvalid, className, isFocused, ...props }: InputProps, ref) => {
 		const fieldContext = useFormField();
 
-		const focusRef = useRef<InputElement>(ref);
-
+		const focusRef = useRef<InputElement>(null);
+		const inputRef = isFocused ? focusRef : ref;
 		useEffect(() => {
 			if (isFocused && focusRef.current) {
 				focusRef.current.focus();
@@ -49,7 +49,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 				}`}
 				name={fieldContext?.name}
 				aria-invalid={fieldContext?.isInvalid || isInvalid}
-				ref={focusRef}
+				ref={inputRef}
 				{...props}
 			/>
 		);
