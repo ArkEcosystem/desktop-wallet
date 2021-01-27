@@ -19,7 +19,16 @@ export class PluginConfigurationData {
 
 	static make(config: Record<string, any>, dir?: string) {
 		const data = new DataRepository();
-		data.fill(config);
+		data.fill({
+			id: config.id(),
+			name: config.name(),
+			alias: config.alias(),
+			date: config.date(),
+			version: config.version(),
+			description: config.description(),
+			author: config.author(),
+			logo: config.logo(),
+		});
 
 		const manifest = new DataRepository();
 		const values = data.get<Record<string, any>>("desktop-wallet");

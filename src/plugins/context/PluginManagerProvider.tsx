@@ -1,8 +1,7 @@
-import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
-import { httpClient, toasts } from "app/services";
+import { toasts } from "app/services";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
@@ -88,7 +87,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			try {
 				const result = await pluginRegistry.all();
 				// @ts-ignore
-				packages = result.map((item) => item.getLatestVersion());
+				packages = result;
 			} catch (e) {
 				console.log(e)
 				toasts.error(`Failed to fetch packages`);

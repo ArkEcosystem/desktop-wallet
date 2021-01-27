@@ -14,8 +14,8 @@ export class HttpClient extends Http.Request {
 		this.cache = new Cache(ttl);
 
 		this.withHeaders({
-			Accept: "application/json",
-			"Content-Type": "application/json",
+			Accept: "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
+			// "Content-Type": "application/json",
 		});
 	}
 
@@ -41,8 +41,6 @@ export class HttpClient extends Http.Request {
 		url = url.replace('@', '%40')
 		url = url.replace('%3A', ':')
 
-		console.log(url)
-
 		let response;
 
 		if (method === "GET") {
@@ -60,6 +58,7 @@ export class HttpClient extends Http.Request {
 		if (!response) {
 			throw new Error("Received no response. This looks like a bug.");
 		}
+		console.log({ url, status: response.status })
 
 		return new Http.Response({
 			body: await response.text(),
