@@ -388,25 +388,21 @@ exports[`Dashboard should render 1`] = `
                       class="flex items-center space-x-2 relative"
                     >
                       <div
-                        class="sc-bdfBwQ bfBhNR"
-                        height="14"
-                        width="14"
+                        class="flex items-center space-x-2"
                       >
-                        <svg>
-                          plus.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="invisible"
-                      >
+                        <div
+                          class="sc-bdfBwQ bfBhNR"
+                          height="14"
+                          width="14"
+                        >
+                          <svg>
+                            plus.svg
+                          </svg>
+                        </div>
                         <span>
                           Create
                         </span>
-                      </span>
-                      <div
-                        class="Spinner-sc-1tybciv-0 jGCkgb absolute right-0 top-0 bottom-0"
-                        color="primary"
-                      />
+                      </div>
                     </div>
                   </button>
                   <button
