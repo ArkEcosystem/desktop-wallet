@@ -94,7 +94,6 @@ function createWindow() {
 		webPreferences: {
 			nodeIntegration: true,
 			webviewTag: true,
-			webSecurity: false,
 		},
 	});
 

@@ -1,6 +1,7 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import fetch from "cross-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
+import hash from "string-hash";
 import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
@@ -14,8 +15,8 @@ export class HttpClient extends Http.Request {
 		this.cache = new Cache(ttl);
 
 		this.withHeaders({
-			Accept: "application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*",
-			// "Content-Type": "application/json",
+			Accept: "application/json",
+			"Content-Type": "application/json",
 		});
 	}
 
@@ -38,32 +39,33 @@ export class HttpClient extends Http.Request {
 			url = `${url}?${new URLSearchParams(data.query as any)}`;
 		}
 
-		url = url.replace('@', '%40')
-		url = url.replace('%3A', ':')
+		const cacheKey: string = hash(`${method}.${url}.${JSON.stringify(data)}`).toString();
 
-		let response;
+		return this.cache.remember(cacheKey, async () => {
+			let response;
 
-		if (method === "GET") {
-			response = await fetch(url, this._options);
-		}
+			if (method === "GET") {
+				response = await fetch(url, this._options);
+			}
 
-		if (method === "POST") {
-			response = await fetch(url, {
-				...this._options,
-				method: "POST",
-				body: JSON.stringify(data?.data),
+			if (method === "POST") {
+				response = await fetch(url, {
+					...this._options,
+					method: "POST",
+					body: JSON.stringify(data?.data),
+				});
+			}
+
+			if (!response) {
+				throw new Error("Received no response. This looks like a bug.");
+			}
+			//console.log({ url, status: response.status })
+
+			return new Http.Response({
+				body: await response.text(),
+				headers: (response.headers as unknown) as Record<string, Primitive>,
+				statusCode: response.status,
 			});
-		}
-
-		if (!response) {
-			throw new Error("Received no response. This looks like a bug.");
-		}
-		console.log({ url, status: response.status })
-
-		return new Http.Response({
-			body: await response.text(),
-			headers: (response.headers as unknown) as Record<string, Primitive>,
-			statusCode: response.status,
 		});
 	}
 
