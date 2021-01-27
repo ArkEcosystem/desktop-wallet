@@ -58,9 +58,9 @@ test("Should fail verification", async (t) => {
 	);
 
 	const mockFailingMessage = {
-		signatory: "03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc",
+		signatory: "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
 		signature:
-			"3044022027fdda09a4bc3e2215b56d7f0cedda8bfdc4fb97507bef3b7e74505f2e988e3102205e4aa5afa72d2011ac0c3e05bbcb72dccb17ad63f0c77a097b0046066c8030ff",
+			"2521d2ebe067546920bec3becc581d4d8186d4d2431980b34834ad3d3945be6ed32d10b6499307ba499b72448c971516a9e2be96c79cbf2ad5948b06c1ab242a",
 		message: "Wrong message",
 	};
 
@@ -87,9 +87,9 @@ test("Should successfully verify message", async (t) => {
 	);
 
 	const mockSuccessMessage = {
-		signatory: "03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc",
+		signatory: "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
 		signature:
-			"3044022027fdda09a4bc3e2215b56d7f0cedda8bfdc4fb97507bef3b7e74505f2e988e3102205e4aa5afa72d2011ac0c3e05bbcb72dccb17ad63f0c77a097b0046066c8030ff",
+			"2521d2ebe067546920bec3becc581d4d8186d4d2431980b34834ad3d3945be6ed32d10b6499307ba499b72448c971516a9e2be96c79cbf2ad5948b06c1ab242a",
 		message: "Hello world",
 	};
 
