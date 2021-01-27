@@ -7,7 +7,7 @@ exports[`Button should render 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -20,7 +20,7 @@ exports[`Button should render a large one 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -33,7 +33,7 @@ exports[`Button should render a small one 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -46,7 +46,7 @@ exports[`Button should render an icon 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -59,7 +59,7 @@ exports[`Button should render as danger button 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -72,7 +72,7 @@ exports[`Button should render as primary button 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -85,7 +85,7 @@ exports[`Button should render as secondary button 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -98,7 +98,7 @@ exports[`Button should render as transparent button 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     />
   </button>
 </div>
@@ -113,7 +113,7 @@ exports[`Button should render if disabled 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     >
       Click
     </div>
@@ -128,7 +128,7 @@ exports[`Button should render with icon 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     >
       <div
         class="sc-bdfBwQ bfBhNR"
@@ -152,7 +152,7 @@ exports[`Button should render with icon and custom icon width and height 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     >
       <div
         class="sc-bdfBwQ iyevwF"
@@ -176,7 +176,7 @@ exports[`Button should render with loading state enabled 1`] = `
     type="button"
   >
     <div
-      class="flex items-center space-x-2 relative"
+      class="flex relative items-center space-x-2"
     >
       <span
         class="invisible"

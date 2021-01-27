@@ -22,7 +22,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           type="button"
         >
           <div
-            class="flex items-center space-x-2 relative"
+            class="flex relative items-center space-x-2"
           >
             <div
               class="sc-bdfBwQ bfBhNR"
@@ -140,7 +140,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
               type="button"
             >
               <div
-                class="flex items-center space-x-2 relative"
+                class="flex relative items-center space-x-2"
               >
                 Specify amount
               </div>
@@ -178,7 +178,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           type="button"
         >
           <div
-            class="flex items-center space-x-2 relative"
+            class="flex relative items-center space-x-2"
           >
             <div
               class="sc-bdfBwQ bfBhNR"
@@ -326,7 +326,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               type="button"
             >
               <div
-                class="flex items-center space-x-2 relative"
+                class="flex relative items-center space-x-2"
               >
                 Specify amount
               </div>
@@ -371,7 +371,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           type="button"
         >
           <div
-            class="flex items-center space-x-2 relative"
+            class="flex relative items-center space-x-2"
           >
             <div
               class="sc-bdfBwQ bfBhNR"
@@ -496,7 +496,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
               type="button"
             >
               <div
-                class="flex items-center space-x-2 relative"
+                class="flex relative items-center space-x-2"
               >
                 Specify amount
               </div>

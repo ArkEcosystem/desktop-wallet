@@ -22,7 +22,7 @@ const StyledButton = styled.button<ButtonProps>(getStyles);
 export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	({ children, icon, isLoading, iconWidth = 14, iconHeight = 14, ...props }: ButtonProps, ref) => (
 		<StyledButton {...props} ref={ref}>
-			<div className="flex items-center space-x-2 relative">
+			<div className="flex relative items-center space-x-2">
 				{icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
 
 				{!isLoading && <>{children}</>}
