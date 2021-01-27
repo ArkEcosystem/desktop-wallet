@@ -921,4 +921,54 @@ describe("SendTransfer", () => {
 			transactionMock.mockRestore();
 		});
 	});
+
+	it("should require amount if not set", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
+			await waitFor(() =>
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(
+					profile.contacts().values()[0].addresses().values()[0].address(),
+				),
+			);
+
+			// Amount
+			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
+
+			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: " " } });
+			await waitFor(() => expect(rendered.getByTestId("AddRecipient__amount")).toHaveAttribute("aria-invalid"));
+		});
+	});
 });
