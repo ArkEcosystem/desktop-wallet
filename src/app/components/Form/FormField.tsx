@@ -9,7 +9,7 @@ type FormFieldProps = {
 	name: string;
 } & React.FieldsetHTMLAttributes<any>;
 
-export const FormFieldStyled = styled.q<{ isInvalid: boolean }>`
+export const FormFieldStyled = styled.fieldset<{ isInvalid: boolean }>`
 	&:hover .FormLabel {
 		${({ isInvalid }) => !isInvalid && tw`text-theme-primary-600`};
 	}
