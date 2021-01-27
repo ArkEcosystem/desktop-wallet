@@ -89,7 +89,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				// @ts-ignore
 				packages = result;
 			} catch (e) {
-				console.log(e)
+				console.log(e);
 				toasts.error(`Failed to fetch packages`);
 			}
 		}
