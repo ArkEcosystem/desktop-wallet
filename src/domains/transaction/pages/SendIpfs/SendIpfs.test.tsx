@@ -533,7 +533,7 @@ describe("SendIpfs", () => {
 	it("should send a ipfs transfer with a ledger wallet", async () => {
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
 		const signTransactionSpy = jest
-			.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr")
+			.spyOn(wallet.coin().ledger(), "signTransaction")
 			.mockImplementation(
 				() =>
 					new Promise((resolve) =>
