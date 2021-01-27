@@ -1,10 +1,13 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
-import fetch from "isomorphic-fetch";
+import nodeFetch from "node-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
 import hash from "string-hash";
 import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
+
+/* istanbul ignore next */
+const fetch = process.env.REACT_APP_IS_E2E ? window.fetch : nodeFetch;
 
 export class HttpClient extends Http.Request {
 	private readonly cache: Cache;

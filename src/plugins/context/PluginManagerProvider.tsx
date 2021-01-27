@@ -1,8 +1,7 @@
-import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
-import { httpClient, toasts } from "app/services";
+import { toasts } from "app/services";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
@@ -14,12 +13,7 @@ const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<any>({});
-
-	// Use the default adapter (browser) for E2E as it cannot mock node-fetch requisitions
-	/* istanbul ignore next */
-	const adapter =
-		process.env.REACT_APP_BUILD_MODE && process.env.NODE_ENV === "production" ? httpClient : new Request();
-	const [pluginRegistry] = useState(() => new PluginRegistry(adapter));
+	const [pluginRegistry] = useState(() => new PluginRegistry());
 
 	const [pluginManager] = useState(() => {
 		manager.services().register(services);

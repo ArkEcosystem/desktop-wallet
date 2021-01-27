@@ -17,7 +17,7 @@ describe("VerifyMessage", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
-		signedMessageText = "Hello world";
+		signedMessageText = "Hello World";
 		signedMessageMnemonic = "top secret";
 
 		signedMessage = await wallet.message().sign({

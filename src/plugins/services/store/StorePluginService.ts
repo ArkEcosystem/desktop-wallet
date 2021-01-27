@@ -5,7 +5,7 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 
 export class StorePluginService implements PluginService {
 	#profile: Profile | undefined;
-	#stores: Map<number, DataRepository> = new Map();
+	#stores: Map<string, DataRepository> = new Map();
 
 	config() {
 		return {
@@ -32,7 +32,7 @@ export class StorePluginService implements PluginService {
 		};
 	}
 
-	private create(pluginId: number) {
+	private create(pluginId: string) {
 		const data = new DataRepository();
 		const stored = this.restore(pluginId);
 
@@ -43,11 +43,11 @@ export class StorePluginService implements PluginService {
 		this.#stores.set(pluginId, data);
 	}
 
-	private restore(pluginId: number) {
+	private restore(pluginId: string) {
 		return this.#profile?.data().get(`plugins.${pluginId}.store`, {});
 	}
 
-	private persist(pluginId: number, data: DataRepository) {
+	private persist(pluginId: string, data: DataRepository) {
 		return this.#profile?.data().set(`plugins.${pluginId}.store`, data.all());
 	}
 }
