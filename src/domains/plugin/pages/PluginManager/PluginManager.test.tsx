@@ -223,7 +223,9 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/1791804499`);
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/plugins/@dated/transaction-export-plugin`,
+		);
 	});
 
 	it("should select plugin on utility grid", () => {
@@ -234,7 +236,9 @@ describe("PluginManager", () => {
 			fireEvent.click(getAllByText("Transaction Export")[0]);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/1791804499`);
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/plugins/@dated/transaction-export-plugin`,
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
