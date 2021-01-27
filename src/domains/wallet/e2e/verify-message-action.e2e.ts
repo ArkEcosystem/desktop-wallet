@@ -60,7 +60,7 @@ test("Should fail verification", async (t) => {
 	const mockFailingMessage = {
 		signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		signature:
-			"7915d8c22ec9dab41bd93d9e003970b2f6aaa5d9a5e837d4d17847308f6e880f31e2c1ad141d9b080d9a151baa31dcd36dd05faa51e5db95586d630b66485e1e",
+			"2f8a569a753be5d7a66ea7ce34ff8e8e59e328241d99b05257c30bffef18206950b642bba15ccb52272eaeb35e142d24d7076a6f5864a01df615f6c6c9c0a414",
 		message: "Wrong message",
 	};
 
@@ -89,7 +89,7 @@ test("Should successfully verify message", async (t) => {
 	const mockSuccessMessage = {
 		signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		signature:
-			"7915d8c22ec9dab41bd93d9e003970b2f6aaa5d9a5e837d4d17847308f6e880f31e2c1ad141d9b080d9a151baa31dcd36dd05faa51e5db95586d630b66485e1e",
+			"2f8a569a753be5d7a66ea7ce34ff8e8e59e328241d99b05257c30bffef18206950b642bba15ccb52272eaeb35e142d24d7076a6f5864a01df615f6c6c9c0a414",
 		message: "Hello world",
 	};
 
