@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { PartialRegistryPlugin, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { toasts } from "app/services";
@@ -77,24 +77,30 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const fetchPluginPackages = useCallback(async () => {
-		const isMockEnabled = process.env.REACT_APP_MOCK_NPM_PLUGINS;
-		let packages = [];
-
-		/* istanbul ignore next */
-		if (isMockEnabled) {
-			packages = require("tests/fixtures/plugins/all-npm-plugins.json");
-		} else {
-			try {
-				const result = await pluginRegistry.all();
-				// @ts-ignore
-				packages = result;
-			} catch (e) {
-				console.log(e);
-				toasts.error(`Failed to fetch packages`);
-			}
+		let packages: PartialRegistryPlugin[] = [];
+		try {
+			const result = await pluginRegistry.all();
+			// @ts-ignore
+			packages = result;
+		} catch (e) {
+			/* istanbul ignore next */
+			console.log(e);
+			toasts.error(`Failed to fetch packages`);
 		}
 
-		const configurations = packages.map((item: any) => PluginConfigurationData.make(item));
+		const configurations = packages.map((config) =>
+			PluginConfigurationData.make({
+				id: config.id(),
+				name: config.name(),
+				alias: config.alias(),
+				date: config.date(),
+				version: config.version(),
+				description: config.description(),
+				author: config.author(),
+				logo: config.logo(),
+			}),
+		);
+
 		const localConfigurations = pluginManager
 			.plugins()
 			.all()

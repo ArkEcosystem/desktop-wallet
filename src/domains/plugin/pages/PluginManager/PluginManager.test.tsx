@@ -3,6 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import { PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -22,11 +23,20 @@ const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
 	beforeAll(() => {
-		process.env.REACT_APP_MOCK_NPM_PLUGINS = "1";
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 	});
 
 	beforeEach(async () => {
+		nock("https://registry.npmjs.com")
+			.get("/-/v1/search")
+			.query((params) => params.from === "0")
+			.once()
+			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+			.get("/-/v1/search")
+			.query((params) => params.from === "250")
+			.once()
+			.reply(200, {});
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		history.push(pluginsURL);
 
@@ -49,7 +59,6 @@ describe("PluginManager", () => {
 
 	afterAll(() => {
 		consoleSpy.mockRestore();
-		process.env.REACT_APP_MOCK_NPM_PLUGINS = "";
 	});
 
 	it("should render", () => {
@@ -103,13 +112,13 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should download & install plugin on home", () => {
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
+	it("should download & install plugin on home", async () => {
+		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
-		});
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		await waitFor(() => expect(queryAllByTestId("PluginListItem__install").length).toBeGreaterThan(0));
+
+		fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
@@ -128,27 +137,6 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManager_header--install"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
-
-		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should download & install plugin on utility", () => {
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__utility"));
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
