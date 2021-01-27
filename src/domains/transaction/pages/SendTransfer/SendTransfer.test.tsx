@@ -622,8 +622,6 @@ describe("SendTransfer", () => {
 			// Auto broadcast
 			await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("4dd30069ec37a…00596efda322c");
 		});
 
 		broadcastMock.mockRestore();
