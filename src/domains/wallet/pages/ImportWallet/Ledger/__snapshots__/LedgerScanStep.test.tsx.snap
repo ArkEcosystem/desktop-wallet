@@ -570,9 +570,13 @@ exports[`LedgerScanStep should render 1`] = `
         data-testid="LedgerScanStep__view-more"
         type="button"
       >
-        <span>
-          View More
-        </span>
+        <div
+          class="flex items-center space-x-2 relative"
+        >
+          <span>
+            View More
+          </span>
+        </div>
       </button>
     </div>
   </section>

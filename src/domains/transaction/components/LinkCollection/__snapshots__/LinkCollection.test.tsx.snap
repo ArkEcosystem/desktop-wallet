@@ -168,7 +168,11 @@ exports[`LinkCollection should add links 1`] = `
             disabled=""
             type="button"
           >
-            Add Link
+            <div
+              class="flex items-center space-x-2 relative"
+            >
+              Add Link
+            </div>
           </button>
         </div>
       </div>
@@ -308,13 +312,17 @@ exports[`LinkCollection should add links 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
+                      class="flex items-center space-x-2 relative"
                     >
-                      <svg>
-                        trash.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          trash.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -476,7 +484,11 @@ exports[`LinkCollection should remove links 1`] = `
             disabled=""
             type="button"
           >
-            Add Link
+            <div
+              class="flex items-center space-x-2 relative"
+            >
+              Add Link
+            </div>
           </button>
         </div>
       </div>
@@ -669,7 +681,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
             disabled=""
             type="button"
           >
-            Add Link
+            <div
+              class="flex items-center space-x-2 relative"
+            >
+              Add Link
+            </div>
           </button>
         </div>
       </div>
@@ -853,13 +869,17 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
+                      class="flex items-center space-x-2 relative"
                     >
-                      <svg>
-                        trash.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          trash.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -916,13 +936,17 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
+                      class="flex items-center space-x-2 relative"
                     >
-                      <svg>
-                        trash.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          trash.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>

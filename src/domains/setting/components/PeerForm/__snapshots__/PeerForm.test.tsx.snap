@@ -150,7 +150,11 @@ exports[`PeerForm should render 1`] = `
         disabled=""
         type="submit"
       >
-        Add Peer
+        <div
+          class="flex items-center space-x-2 relative"
+        >
+          Add Peer
+        </div>
       </button>
     </div>
   </form>
@@ -324,7 +328,11 @@ exports[`PeerForm should render the peer on the form 1`] = `
         data-testid="PeerForm__submit-button"
         type="submit"
       >
-        Edit Peer
+        <div
+          class="flex items-center space-x-2 relative"
+        >
+          Edit Peer
+        </div>
       </button>
     </div>
   </form>

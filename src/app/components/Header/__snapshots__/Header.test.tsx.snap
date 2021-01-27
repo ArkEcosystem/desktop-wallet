@@ -68,14 +68,22 @@ exports[`Header should render an header with extra 1`] = `
           data-testid="header__extra"
           type="button"
         >
-          Extra 1
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Extra 1
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iSmMLw"
           data-testid="header__extra"
           type="button"
         >
-          Extra 2
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Extra 2
+          </div>
         </button>
       </div>
     </div>

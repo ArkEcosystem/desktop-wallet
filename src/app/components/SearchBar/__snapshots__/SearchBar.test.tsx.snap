@@ -32,11 +32,15 @@ exports[`SearchBar should render 1`] = `
         data-testid="SearchBar__button"
         type="button"
       >
-        <span
-          class="px-2 text-md"
+        <div
+          class="flex items-center space-x-2 relative"
         >
-          Find it
-        </span>
+          <span
+            class="px-2 text-md"
+          >
+            Find it
+          </span>
+        </div>
       </button>
     </div>
   </div>

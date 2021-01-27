@@ -22,13 +22,17 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -135,7 +139,11 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
-              Specify amount
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Specify amount
+              </div>
             </button>
           </div>
           <div
@@ -170,13 +178,17 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -313,7 +325,11 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
-              Specify amount
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Specify amount
+              </div>
             </button>
           </div>
           <div
@@ -355,13 +371,17 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -475,7 +495,11 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
-              Specify amount
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Specify amount
+              </div>
             </button>
           </div>
           <div

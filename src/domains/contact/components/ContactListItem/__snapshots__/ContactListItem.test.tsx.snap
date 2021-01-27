@@ -127,13 +127,17 @@ exports[`ContactListItem should render 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz fHxsLl"
-                    height="20"
-                    width="20"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </span>
@@ -273,13 +277,17 @@ exports[`ContactListItem should render as delegate 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz fHxsLl"
-                    height="20"
-                    width="20"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </span>
@@ -398,13 +406,17 @@ exports[`ContactListItem should render using variant 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz fHxsLl"
-                    height="20"
-                    width="20"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </span>
@@ -544,13 +556,17 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz fHxsLl"
-                    height="20"
-                    width="20"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </span>
@@ -860,13 +876,17 @@ exports[`ContactListItem should render with multiple options 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz fHxsLl"
-                    height="20"
-                    width="20"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </span>
@@ -1170,7 +1190,11 @@ exports[`ContactListItem should render with one option 1`] = `
               data-testid="ContactListItem__one-option-button-0"
               type="button"
             >
-              Option 1
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Option 1
+              </div>
             </button>
           </div>
         </td>

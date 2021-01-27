@@ -2611,17 +2611,21 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      edit.svg
-                    </svg>
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        edit.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Sign
+                    </span>
                   </div>
-                  <span>
-                    Sign
-                  </span>
                 </button>
               </div>
             </td>

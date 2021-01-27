@@ -71,7 +71,11 @@ exports[`ApplicationError should render 1`] = `
               data-testid="ApplicationError__button--reload"
               type="button"
             >
-              Reload
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Reload
+              </div>
             </button>
           </div>
         </div>

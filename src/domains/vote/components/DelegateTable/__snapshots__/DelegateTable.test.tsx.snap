@@ -224,7 +224,11 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Unselected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Unselected
+                  </div>
                 </button>
               </div>
             </td>
@@ -297,7 +301,11 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -370,7 +378,11 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -555,7 +567,11 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -779,7 +795,11 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Selected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Selected
+                  </div>
                 </button>
               </div>
             </td>
@@ -852,7 +872,11 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -925,7 +949,11 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -1110,7 +1138,11 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -1334,7 +1366,11 @@ exports[`DelegateTable should render 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -1407,7 +1443,11 @@ exports[`DelegateTable should render 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -1480,7 +1520,11 @@ exports[`DelegateTable should render 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -1666,7 +1710,11 @@ exports[`DelegateTable should render 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -3027,7 +3075,11 @@ exports[`DelegateTable should render loading state 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -3251,7 +3303,11 @@ exports[`DelegateTable should render pagination 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -3290,15 +3346,19 @@ exports[`DelegateTable should render pagination 1`] = `
           data-testid="Pagination__next"
           type="button"
         >
-          Next
           <div
-            class="sc-gsTCUz cmyhNZ ml-2"
-            height="12"
-            width="12"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              forward.svg
-            </svg>
+            Next
+            <div
+              class="sc-gsTCUz cmyhNZ ml-2"
+              height="12"
+              width="12"
+            >
+              <svg>
+                forward.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -3478,7 +3538,11 @@ exports[`DelegateTable should render pagination 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -3702,7 +3766,11 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -3775,7 +3843,11 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -3848,7 +3920,11 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -4033,7 +4109,11 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -4267,7 +4347,11 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Unselected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Unselected
+                  </div>
                 </button>
               </div>
             </td>
@@ -4340,7 +4424,11 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Selected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Selected
+                  </div>
                 </button>
               </div>
             </td>
@@ -4415,7 +4503,11 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                     disabled=""
                     type="button"
                   >
-                    Select
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Select
+                    </div>
                   </button>
                 </span>
               </div>
@@ -4601,7 +4693,11 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -4825,7 +4921,11 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Selected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Selected
+                  </div>
                 </button>
               </div>
             </td>
@@ -4898,7 +4998,11 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -4971,7 +5075,11 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -5156,7 +5264,11 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -5419,7 +5531,11 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Current
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Current
+                  </div>
                 </button>
               </div>
             </td>
@@ -5492,7 +5608,11 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -5565,7 +5685,11 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -5751,7 +5875,11 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -5985,7 +6113,11 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Unselected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Unselected
+                  </div>
                 </button>
               </div>
             </td>
@@ -6058,7 +6190,11 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Selected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Selected
+                  </div>
                 </button>
               </div>
             </td>
@@ -6133,7 +6269,11 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                     disabled=""
                     type="button"
                   >
-                    Select
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Select
+                    </div>
                   </button>
                 </span>
               </div>
@@ -6319,7 +6459,11 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -6543,7 +6687,11 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -6616,7 +6764,11 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -6689,7 +6841,11 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -6875,7 +7031,11 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -7109,7 +7269,11 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Unselected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Unselected
+                  </div>
                 </button>
               </div>
             </td>
@@ -7182,7 +7346,11 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Selected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Selected
+                  </div>
                 </button>
               </div>
             </td>
@@ -7255,7 +7423,11 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Selected
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Selected
+                  </div>
                 </button>
               </div>
             </td>
@@ -7440,7 +7612,11 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               data-testid="DelegateTable__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -7674,7 +7850,11 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Current
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Current
+                  </div>
                 </button>
               </div>
             </td>
@@ -7747,7 +7927,11 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -7820,7 +8004,11 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -8006,7 +8194,11 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>
@@ -8240,7 +8432,11 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-0"
                   type="button"
                 >
-                  Current
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Current
+                  </div>
                 </button>
               </div>
             </td>
@@ -8313,7 +8509,11 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-1"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -8386,7 +8586,11 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   data-testid="DelegateRow__toggle-2"
                   type="button"
                 >
-                  Select
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Select
+                  </div>
                 </button>
               </div>
             </td>
@@ -8572,7 +8776,11 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               disabled=""
               type="button"
             >
-              Continue
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Continue
+              </div>
             </button>
           </span>
         </div>

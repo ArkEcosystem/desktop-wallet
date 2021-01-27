@@ -70,20 +70,24 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      class="flex items-center space-x-2 relative"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -105,13 +109,17 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iNulIV p-1"
-                  height="18"
-                  width="18"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iNulIV p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -131,13 +139,17 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iSzUah p-1"
-                  height="22"
-                  width="22"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iSzUah p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -324,20 +336,24 @@ exports[`NavigationBar should render 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      class="flex items-center space-x-2 relative"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -359,13 +375,17 @@ exports[`NavigationBar should render 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iNulIV p-1"
-                  height="18"
-                  width="18"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iNulIV p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -385,13 +405,17 @@ exports[`NavigationBar should render 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iSzUah p-1"
-                  height="22"
-                  width="22"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iSzUah p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -560,20 +584,24 @@ exports[`NavigationBar should render with custom menu 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      class="flex items-center space-x-2 relative"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -595,13 +623,17 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iNulIV p-1"
-                  height="18"
-                  width="18"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iNulIV p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -621,13 +653,17 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iSzUah p-1"
-                  height="22"
-                  width="22"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iSzUah p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -823,20 +859,24 @@ exports[`NavigationBar should render with title 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      class="flex items-center space-x-2 relative"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -858,13 +898,17 @@ exports[`NavigationBar should render with title 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iNulIV p-1"
-                  height="18"
-                  width="18"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iNulIV p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>
@@ -884,13 +928,17 @@ exports[`NavigationBar should render with title 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ iSzUah p-1"
-                  height="22"
-                  width="22"
+                  class="flex items-center space-x-2 relative"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ iSzUah p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
                 </div>
               </button>
             </div>

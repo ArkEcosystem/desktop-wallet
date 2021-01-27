@@ -24,13 +24,17 @@ exports[`DeleteContact should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -63,7 +67,11 @@ exports[`DeleteContact should render a modal 1`] = `
               data-testid="DeleteResource__cancel-button"
               type="button"
             >
-              Cancel
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Cancel
+              </div>
             </button>
             <button
               class="Button__StyledButton-mdtvtf-0 iSmMLw"
@@ -71,17 +79,21 @@ exports[`DeleteContact should render a modal 1`] = `
               type="submit"
             >
               <div
-                class="sc-gsTCUz cXMmJt"
-                height="1em"
-                width="1em"
+                class="flex items-center space-x-2 relative"
               >
-                <svg>
-                  trash.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz cXMmJt"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    trash.svg
+                  </svg>
+                </div>
+                <span>
+                  Delete
+                </span>
               </div>
-              <span>
-                Delete
-              </span>
             </button>
           </div>
         </div>

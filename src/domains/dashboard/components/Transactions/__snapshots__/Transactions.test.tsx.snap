@@ -1522,7 +1522,11 @@ exports[`Transactions should fetch more transactions 1`] = `
         data-testid="transactions__fetch-more-button"
         type="button"
       >
-        View More
+        <div
+          class="flex items-center space-x-2 relative"
+        >
+          View More
+        </div>
       </button>
     </div>
   </div>
@@ -2415,7 +2419,11 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
         data-testid="transactions__fetch-more-button"
         type="button"
       >
-        View More
+        <div
+          class="flex items-center space-x-2 relative"
+        >
+          View More
+        </div>
       </button>
     </div>
   </div>
@@ -3308,7 +3316,11 @@ exports[`Transactions should render 1`] = `
         data-testid="transactions__fetch-more-button"
         type="button"
       >
-        View More
+        <div
+          class="flex items-center space-x-2 relative"
+        >
+          View More
+        </div>
       </button>
     </div>
   </div>

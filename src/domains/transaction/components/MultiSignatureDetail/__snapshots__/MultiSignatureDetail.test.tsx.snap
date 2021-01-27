@@ -22,13 +22,17 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -411,7 +415,11 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                   data-testid="MultiSignatureDetail__broadcast"
                   type="submit"
                 >
-                  Send
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Send
+                  </div>
                 </button>
               </div>
             </div>
@@ -445,13 +453,17 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -857,13 +869,17 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -1216,13 +1232,17 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -1785,13 +1805,17 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -2114,13 +2138,17 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -2526,13 +2554,17 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -2952,13 +2984,17 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -3378,13 +3414,17 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -3767,14 +3807,22 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                   data-testid="Paginator__cancel"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 iSmMLw"
                   data-testid="Paginator__sign"
                   type="button"
                 >
-                  Sign
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Sign
+                  </div>
                 </button>
               </div>
             </div>
@@ -3808,13 +3856,17 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -4197,7 +4249,11 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                   data-testid="MultiSignatureDetail__broadcast"
                   type="submit"
                 >
-                  Send
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Send
+                  </div>
                 </button>
               </div>
             </div>
@@ -4231,13 +4287,17 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>

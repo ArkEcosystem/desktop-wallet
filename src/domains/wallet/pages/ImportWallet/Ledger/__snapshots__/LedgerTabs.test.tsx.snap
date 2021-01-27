@@ -123,7 +123,11 @@ exports[`LedgerTabs should render connection step 1`] = `
           disabled=""
           type="button"
         >
-          Back
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Back
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -131,7 +135,11 @@ exports[`LedgerTabs should render connection step 1`] = `
           disabled=""
           type="button"
         >
-          Continue
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Continue
+          </div>
         </button>
       </div>
     </div>
@@ -518,9 +526,13 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
               disabled=""
               type="button"
             >
-              <span>
-                View More
-              </span>
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                <span>
+                  View More
+                </span>
+              </div>
             </button>
           </div>
         </section>
@@ -536,17 +548,21 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz cXMmJt"
-            height="1em"
-            width="1em"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              reset.svg
-            </svg>
+            <div
+              class="sc-gsTCUz cXMmJt"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                reset.svg
+              </svg>
+            </div>
+            <span>
+              Retry
+            </span>
           </div>
-          <span>
-            Retry
-          </span>
         </button>
       </div>
       <div
@@ -557,7 +573,11 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           data-testid="Paginator__back-button"
           type="button"
         >
-          Back
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Back
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -565,7 +585,11 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           disabled=""
           type="button"
         >
-          Continue
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Continue
+          </div>
         </button>
       </div>
     </div>

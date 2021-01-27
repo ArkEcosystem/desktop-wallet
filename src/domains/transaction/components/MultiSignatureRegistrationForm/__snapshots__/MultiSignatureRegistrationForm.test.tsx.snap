@@ -94,7 +94,11 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   disabled=""
                   type="button"
                 >
-                  Add Participant
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Add Participant
+                  </div>
                 </button>
               </div>
               <div
@@ -219,16 +223,20 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                               type="button"
                             >
                               <div
-                                class="py-1"
+                                class="flex items-center space-x-2 relative"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah"
-                                  height="1em"
-                                  width="1em"
+                                  class="py-1"
                                 >
-                                  <svg>
-                                    trash.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      trash.svg
+                                    </svg>
+                                  </div>
                                 </div>
                               </div>
                             </button>

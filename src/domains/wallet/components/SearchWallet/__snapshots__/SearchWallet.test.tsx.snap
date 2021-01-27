@@ -22,13 +22,17 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -254,7 +258,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -344,7 +352,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -382,13 +394,17 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -614,7 +630,11 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -704,7 +724,11 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -742,13 +766,17 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -1015,7 +1043,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1116,7 +1148,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1154,13 +1190,17 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -1427,7 +1467,11 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1528,7 +1572,11 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex items-center space-x-2 relative"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>

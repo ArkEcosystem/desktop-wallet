@@ -72,7 +72,11 @@ exports[`DelegateRow should emit action on select button 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Select
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Select
+              </div>
             </button>
           </div>
         </td>
@@ -154,7 +158,11 @@ exports[`DelegateRow should render 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Select
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Select
+              </div>
             </button>
           </div>
         </td>
@@ -236,7 +244,11 @@ exports[`DelegateRow should render the selected delegate 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Selected
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Selected
+              </div>
             </button>
           </div>
         </td>
@@ -328,7 +340,11 @@ exports[`DelegateRow should render the selected vote 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Current
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Current
+              </div>
             </button>
           </div>
         </td>
@@ -401,7 +417,11 @@ exports[`DelegateRow should render the selected vote 1`] = `
               data-testid="DelegateRow__toggle-1"
               type="button"
             >
-              Select
+              <div
+                class="flex items-center space-x-2 relative"
+              >
+                Select
+              </div>
             </button>
           </div>
         </td>
@@ -476,7 +496,11 @@ exports[`DelegateRow should render the selected vote 1`] = `
                 disabled=""
                 type="button"
               >
-                Select
+                <div
+                  class="flex items-center space-x-2 relative"
+                >
+                  Select
+                </div>
               </button>
             </span>
           </div>

@@ -22,13 +22,17 @@ exports[`SignMessage should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -182,14 +186,22 @@ exports[`SignMessage should render 1`] = `
                   data-testid="SignMessage__cancel"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 iSmMLw"
                   data-testid="SignMessage__submit-button"
                   type="submit"
                 >
-                  Sign
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Sign
+                  </div>
                 </button>
               </div>
             </form>
@@ -223,13 +235,17 @@ exports[`SignMessage should sign message 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -383,14 +399,22 @@ exports[`SignMessage should sign message 1`] = `
                   data-testid="SignMessage__cancel"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 iSmMLw"
                   data-testid="SignMessage__submit-button"
                   type="submit"
                 >
-                  Sign
+                  <div
+                    class="flex items-center space-x-2 relative"
+                  >
+                    Sign
+                  </div>
                 </button>
               </div>
             </form>

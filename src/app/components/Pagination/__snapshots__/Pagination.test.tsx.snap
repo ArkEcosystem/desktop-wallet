@@ -12,13 +12,17 @@ exports[`Pagination should handle first page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -27,15 +31,19 @@ exports[`Pagination should handle first page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -99,15 +107,19 @@ exports[`Pagination should handle first page click properly 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -116,13 +128,17 @@ exports[`Pagination should handle first page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -193,15 +209,19 @@ exports[`Pagination should handle last page click properly 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -210,13 +230,17 @@ exports[`Pagination should handle last page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -235,15 +259,19 @@ exports[`Pagination should handle next page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -269,15 +297,19 @@ exports[`Pagination should handle next page click properly 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -314,15 +346,19 @@ exports[`Pagination should handle page selection properly 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -341,13 +377,17 @@ exports[`Pagination should handle previous page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -356,15 +396,19 @@ exports[`Pagination should handle previous page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -424,15 +468,19 @@ exports[`Pagination should handle previous page click properly 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -503,15 +551,19 @@ exports[`Pagination should not render first button if pagination buttons include
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -520,13 +572,17 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -545,15 +601,19 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -613,15 +673,19 @@ exports[`Pagination should not render first button if pagination buttons include
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -630,13 +694,17 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -655,15 +723,19 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -723,15 +795,19 @@ exports[`Pagination should not render first button if pagination buttons include
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -740,13 +816,17 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -765,13 +845,17 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -780,15 +864,19 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -859,13 +947,17 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -874,15 +966,19 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -942,15 +1038,19 @@ exports[`Pagination should not render first button if pagination buttons include
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -969,13 +1069,17 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -984,15 +1088,19 @@ exports[`Pagination should not render first button if pagination buttons include
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -1052,15 +1160,19 @@ exports[`Pagination should not render first button if pagination buttons include
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -1079,13 +1191,17 @@ exports[`Pagination should not render next button on last page 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -1094,15 +1210,19 @@ exports[`Pagination should not render next button on last page 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF mr-2"
-        height="10"
-        width="10"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
       </div>
-      Previous
     </button>
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -1225,15 +1345,19 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -1242,13 +1366,17 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -1285,15 +1413,19 @@ exports[`Pagination should render 1`] = `
       data-testid="Pagination__next"
       type="button"
     >
-      Next
       <div
-        class="sc-gsTCUz cmyhNZ ml-2"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -1317,13 +1449,17 @@ exports[`Pagination should render condensed 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          forward.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -1332,13 +1468,17 @@ exports[`Pagination should render condensed 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex items-center space-x-2 relative"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>

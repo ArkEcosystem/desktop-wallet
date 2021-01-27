@@ -24,13 +24,17 @@ exports[`ProfileCreated should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2 relative"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -74,13 +78,21 @@ exports[`ProfileCreated should render a modal 1`] = `
                 class="Button__StyledButton-mdtvtf-0 iSmMLw"
                 type="button"
               >
-                Start Tutorial
+                <div
+                  class="flex items-center space-x-2 relative"
+                >
+                  Start Tutorial
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 lmPdYN mt-2 sm:mt-0"
                 type="button"
               >
-                Skip Tutorial
+                <div
+                  class="flex items-center space-x-2 relative"
+                >
+                  Skip Tutorial
+                </div>
               </button>
             </div>
           </div>

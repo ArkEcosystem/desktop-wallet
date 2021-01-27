@@ -95,20 +95,24 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex items-center space-x-2 relative"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -130,13 +134,17 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -156,13 +164,17 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -437,7 +449,11 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     data-testid="SendIpfs__button--back"
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -445,7 +461,11 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     disabled=""
                     type="submit"
                   >
-                    Sign & Continue
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Sign & Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -1141,20 +1161,24 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex items-center space-x-2 relative"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1176,13 +1200,17 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1202,13 +1230,17 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1642,7 +1674,11 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                     data-testid="SendIpfs__button--back-to-wallet"
                     type="button"
                   >
-                    Back to Wallet
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Back to Wallet
+                    </div>
                   </button>
                 </div>
               </div>
@@ -1752,20 +1788,24 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex items-center space-x-2 relative"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1787,13 +1827,17 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1813,13 +1857,17 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2307,7 +2355,11 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -2315,7 +2367,11 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     disabled=""
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex items-center space-x-2 relative"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -2423,20 +2479,24 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex items-center space-x-2 relative"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -2458,13 +2518,17 @@ exports[`SendIpfs should show error step and go back 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2484,13 +2548,17 @@ exports[`SendIpfs should show error step and go back 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex items-center space-x-2 relative"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2712,14 +2780,22 @@ exports[`SendIpfs should show error step and go back 1`] = `
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
-                        Back to Wallet
+                        <div
+                          class="flex items-center space-x-2 relative"
+                        >
+                          Back to Wallet
+                        </div>
                       </button>
                       <button
                         class="Button__StyledButton-mdtvtf-0 iSmMLw space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
-                        Retry
+                        <div
+                          class="flex items-center space-x-2 relative"
+                        >
+                          Retry
+                        </div>
                       </button>
                     </div>
                   </div>

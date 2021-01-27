@@ -252,7 +252,11 @@ exports[`NewsOptions should render 1`] = `
           disabled=""
           type="button"
         >
-          Update Filter
+          <div
+            class="flex items-center space-x-2 relative"
+          >
+            Update Filter
+          </div>
         </button>
       </div>
     </div>
