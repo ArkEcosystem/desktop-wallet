@@ -89,7 +89,7 @@ describe("SendIpfs", () => {
 
 		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
-		expect(container).toHaveTextContent("D8rr7B … s6YUYD");
+		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
 		expect(container).toHaveTextContent("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		expect(asFragment()).toMatchSnapshot();
@@ -237,7 +237,7 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a … db3d69131067");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
 
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
@@ -501,7 +501,7 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a … db3d69131067");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
 
 			expect(signMock).toHaveBeenCalledWith(
 				expect.objectContaining({
@@ -600,7 +600,7 @@ describe("SendIpfs", () => {
 			await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("81cb2fb05740c … 8e896e9daff35");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("81cb2fb05740c…8e896e9daff35");
 		});
 
 		broadcastMock.mockRestore();

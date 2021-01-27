@@ -836,7 +836,7 @@ describe("SendVote", () => {
 			});
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
 
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3 … 7ecc8339e430");
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3…7ecc8339e430");
 		});
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();

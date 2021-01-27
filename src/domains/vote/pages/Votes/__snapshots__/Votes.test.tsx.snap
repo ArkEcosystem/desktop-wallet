@@ -731,7 +731,7 @@ exports[`Votes should filter current delegates 1`] = `
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D8rr7B1d6T … 1VBMs6YUYD
+                                D8rr7B1d6T…1VBMs6YUYD
                               </span>
                             </div>
                           </div>
@@ -1828,7 +1828,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D8rr7B1d6T … 1VBMs6YUYD
+                                D8rr7B1d6T…1VBMs6YUYD
                               </span>
                             </div>
                           </div>
@@ -2941,7 +2941,7 @@ exports[`Votes should render 1`] = `
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D8rr7B1d6T … 1VBMs6YUYD
+                                D8rr7B1d6T…1VBMs6YUYD
                               </span>
                             </div>
                           </div>
@@ -4505,7 +4505,7 @@ exports[`Votes should select a delegate 1`] = `
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D8rr7B1d6T … 1VBMs6YUYD
+                                D8rr7B1d6T…1VBMs6YUYD
                               </span>
                             </div>
                           </div>
@@ -5605,7 +5605,7 @@ exports[`Votes should select an address without vote 1`] = `
                                 class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                DTLomV8hpJ … CfDZJnG23z
+                                DTLomV8hpJ…CfDZJnG23z
                               </span>
                             </div>
                           </div>
@@ -7526,13 +7526,18 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
-                            Sample Wallet
+                            <span
+                              class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                              data-testid="TruncateEnd"
+                            >
+                              Sample Wallet
+                            </span>
                           </span>
                           <span
                             class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr7B … s6YUYD
+                            D8rr7B…s6YUYD
                           </span>
                         </div>
                       </div>
@@ -7648,13 +7653,18 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
-                            ARK Wallet 2
+                            <span
+                              class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                              data-testid="TruncateEnd"
+                            >
+                              ARK Wallet 2
+                            </span>
                           </span>
                           <span
                             class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D5sRKW … cvJtwb
+                            D5sRKW…cvJtwb
                           </span>
                         </div>
                       </div>
@@ -7746,7 +7756,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            DTLomV … JnG23z
+                            DTLomV…JnG23z
                           </span>
                         </div>
                       </div>

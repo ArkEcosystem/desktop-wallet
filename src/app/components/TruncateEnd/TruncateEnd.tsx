@@ -11,29 +11,27 @@ type Props = {
 
 const Wrapper = styled.span``;
 
-export const TruncateMiddle = ({ text, maxChars, showTooltip, ...props }: Props) => {
+export const TruncateEnd = ({ text, maxChars, showTooltip, ...props }: Props) => {
 	const result = React.useMemo(() => {
 		if (!maxChars || text.length <= maxChars) {
 			return text;
 		}
 
-		const midPos = Math.floor(maxChars / 2) - 2;
-		const start = text.substr(0, midPos);
-		const end = text.substr(text.length - midPos, text.length);
+		const start = text.substr(0, maxChars);
 
-		return `${start}…${end}`;
+		return `${start}…`;
 	}, [maxChars, text]);
 
 	return (
 		<Tooltip content={text} disabled={!showTooltip}>
-			<Wrapper data-testid="TruncateMiddle" {...props}>
+			<Wrapper data-testid="TruncateEnd" {...props}>
 				{result}
 			</Wrapper>
 		</Tooltip>
 	);
 };
 
-TruncateMiddle.defaultProps = {
+TruncateEnd.defaultProps = {
 	maxChars: 16,
 	showTooltip: true,
 };
