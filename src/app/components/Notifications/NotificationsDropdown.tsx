@@ -31,7 +31,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 			<Dropdown
 				dropdownClass="mt-8"
 				toggleContent={
-					<div className="overflow-hidden rounded-lg">
+					<div className="rounded-lg">
 						<Button
 							variant="transparent"
 							size="icon"
