@@ -2,7 +2,6 @@ import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -238,8 +237,9 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 										data-testid="Registration__send-button"
 										disabled={!formState.isValid}
 										className="space-x-2"
+										icon="Send"
+										isLoading={formState.isSubmitting}
 									>
-										<Icon name="Send" width={20} height={20} />
 										<span>{t("COMMON.SEND")}</span>
 									</Button>
 								)}
