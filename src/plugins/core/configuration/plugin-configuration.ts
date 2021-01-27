@@ -4,7 +4,6 @@ import { githubImageProvider } from "domains/transaction/entity/providers";
 import du from "du";
 import parseAuthor from "parse-author";
 import semver from "semver";
-import stringHash from "string-hash";
 
 import { schema } from "./schema";
 
@@ -50,12 +49,12 @@ export class PluginConfigurationData {
 		return this.#manifest;
 	}
 
-	name() {
-		return this.get("name");
+	name(): string {
+		return this.get("name")!;
 	}
 
-	id(): number {
-		return stringHash(this.get("name")!);
+	id(): string {
+		return this.name();
 	}
 
 	author() {

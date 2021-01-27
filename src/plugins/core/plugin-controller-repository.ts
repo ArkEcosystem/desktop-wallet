@@ -22,7 +22,7 @@ export class PluginControllerRepository {
 			.map((item) => this.findById(item.id));
 	}
 
-	removeById(id: number, profile: Profile) {
+	removeById(id: string, profile: Profile) {
 		const plugin = this.findById(id);
 
 		if (plugin) {
@@ -31,7 +31,7 @@ export class PluginControllerRepository {
 		}
 	}
 
-	findById(id: number) {
+	findById(id: string) {
 		return this.#plugins.find((item) => item.config().id() === id);
 	}
 
