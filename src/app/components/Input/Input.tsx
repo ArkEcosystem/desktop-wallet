@@ -34,7 +34,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		const fieldContext = useFormField();
 
 		const focusRef = useRef<InputElement>(null);
-		const inputRef = isFocused ? focusRef : ref;
+		ref = isFocused ? focusRef : ref;
 		useEffect(() => {
 			if (isFocused && focusRef.current) {
 				focusRef.current.focus();
