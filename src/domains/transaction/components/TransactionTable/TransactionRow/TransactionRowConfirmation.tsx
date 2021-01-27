@@ -10,7 +10,6 @@ type Props = {
 	transaction: ExtendedTransactionData;
 };
 
-// TODO: Replace by sdk
 const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): TransactionStatus => {
 	if (isSignaturePending) {
 		return "actionRequired";
