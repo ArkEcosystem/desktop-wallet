@@ -249,7 +249,7 @@ export const AddRecipient = ({
 									type="button"
 									data-testid="AddRecipient__send-all"
 									onClick={() => {
-										const remaining = remainingBalance.isGreaterThanOrEqualTo(fee)
+										const remaining = remainingBalance.isGreaterThan(fee)
 											? remainingBalance.minus(fee)
 											: remainingBalance;
 
