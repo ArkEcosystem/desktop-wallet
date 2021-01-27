@@ -64,7 +64,7 @@ describe("Use Transaction Builder Hook", () => {
 		const { result } = renderHook(() => useTransactionBuilder(profile));
 
 		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
-		jest.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr").mockResolvedValue(
+		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockResolvedValue(
 			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
 		);
 
@@ -93,7 +93,7 @@ describe("Use Transaction Builder Hook", () => {
 		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
 			"0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb",
 		);
-		jest.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr").mockResolvedValue(
+		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockResolvedValue(
 			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
 		);
 
@@ -121,7 +121,7 @@ describe("Use Transaction Builder Hook", () => {
 		const { result } = renderHook(() => useTransactionBuilder(profile));
 
 		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
-		jest.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr").mockImplementation(
+		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockImplementation(
 			() =>
 				new Promise((resolve) =>
 					setTimeout(
