@@ -200,6 +200,49 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should install a plugin from other category", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
+
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManagerNavigationBar__other"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		await waitFor(() => expect(getByTestId("PluginManager__container--other")).toBeTruthy());
+		await waitFor(() => expect(getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		});
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__install-button"));
+		});
+
+		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should close install plugin modal", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 

@@ -108,6 +108,14 @@ describe("Plugin Configuration", () => {
 		expect(subject.categories()).toEqual(["exchange"]);
 	});
 
+	it("should return other categories if categories is empty", () => {
+		const subject = PluginConfigurationData.make({
+			name: "plugin-test",
+			"desktop-wallet": { categories: [] },
+		});
+		expect(subject.categories()).toEqual(["other"]);
+	});
+
 	it("should return plugin size from fs", async () => {
 		const subject = PluginConfigurationData.make(
 			{ name: "plugin-test" },
