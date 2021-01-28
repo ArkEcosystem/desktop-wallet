@@ -3,6 +3,8 @@ import { Pagination } from "app/components/Pagination";
 import { PluginCard } from "domains/plugin/components/PluginCard";
 import React from "react";
 
+import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
+
 type PluginGridProps = {
 	className?: string;
 	itemsPerPage?: number;
@@ -11,6 +13,8 @@ type PluginGridProps = {
 	onDisable?: (plugin: any) => void;
 	onSelect: any;
 	plugins: any[];
+	isLoading?: boolean;
+	skeletonsLimit?: number;
 	withPagination?: boolean;
 };
 
@@ -23,9 +27,16 @@ export const PluginGrid = ({
 	onDisable,
 	plugins,
 	withPagination,
+	isLoading,
+	skeletonsLimit = 8,
 }: PluginGridProps) => {
 	const [currentPage, setCurrentPage] = React.useState(1);
 	const entries = [];
+	let skeletons = [];
+
+	if (isLoading) {
+		skeletons = new Array(skeletonsLimit).fill(<PluginCardSkeleton />);
+	}
 
 	for (const plugin of plugins) {
 		entries.push(
@@ -44,6 +55,7 @@ export const PluginGrid = ({
 
 	return (
 		<div data-testid="PluginGrid">
+			<div className={`grid grid-cols-4 gap-5 ${className}`}>{skeletons}</div>
 			<div className={`grid grid-cols-4 gap-5 ${className}`}>{pageEntries}</div>
 
 			<div className="flex justify-center mt-4">
