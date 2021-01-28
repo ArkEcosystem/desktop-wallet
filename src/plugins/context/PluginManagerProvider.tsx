@@ -1,4 +1,4 @@
-import { PartialRegistryPlugin, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile,RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { toasts } from "app/services";
@@ -77,14 +77,11 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const fetchPluginPackages = useCallback(async () => {
-		let packages: PartialRegistryPlugin[] = [];
+		let packages: RegistryPlugin[] = [];
 		try {
-			const result = await pluginRegistry.all();
-			// @ts-ignore
-			packages = result;
-		} catch (e) {
+			packages = await pluginRegistry.all();
+		} catch {
 			/* istanbul ignore next */
-			console.log(e);
 			toasts.error(`Failed to fetch packages`);
 		}
 
