@@ -25,6 +25,7 @@ type PluginManagerHomeProps = {
 	onInstall: any;
 	viewType: string;
 	paths?: any;
+	isLoading?: boolean;
 	plugins: any[];
 };
 
@@ -34,7 +35,15 @@ type PluginManagerProps = {
 
 const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
-const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plugins }: PluginManagerHomeProps) => {
+const PluginManagerHome = ({
+	onDelete,
+	onSelect,
+	onInstall,
+	viewType,
+	paths,
+	plugins,
+	isLoading,
+}: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -54,7 +63,13 @@ const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plu
 				</div>
 
 				{viewType === "grid" && (
-					<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} withPagination={false} />
+					<PluginGrid
+						plugins={plugins}
+						onSelect={onSelect}
+						onDelete={onDelete}
+						withPagination={false}
+						isLoading={isLoading}
+					/>
 				)}
 				{viewType === "list" && (
 					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
@@ -74,7 +89,13 @@ const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plu
 					</a>
 				</div>
 				{viewType === "grid" && (
-					<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} withPagination={false} />
+					<PluginGrid
+						plugins={plugins}
+						onSelect={onSelect}
+						onDelete={onDelete}
+						withPagination={false}
+						isLoading={isLoading}
+					/>
 				)}
 				{viewType === "list" && (
 					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
@@ -94,7 +115,13 @@ const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plu
 					</a>
 				</div>
 				{viewType === "grid" && (
-					<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} withPagination={false} />
+					<PluginGrid
+						plugins={plugins}
+						onSelect={onSelect}
+						onDelete={onDelete}
+						withPagination={false}
+						isLoading={isLoading}
+					/>
 				)}
 				{viewType === "list" && (
 					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
@@ -106,7 +133,7 @@ const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plu
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, pluginPackages } = usePluginManagerContext();
+	const { fetchPluginPackages, pluginPackages, isFetchingPackages } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -209,6 +236,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							<div>
 								<PluginManagerHomeBanner className="mb-8 w-full" height="auto" />
 								<PluginManagerHome
+									isLoading={isFetchingPackages}
 									paths={paths}
 									viewType={viewType}
 									plugins={allPackages}
@@ -231,6 +259,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
+									isLoading={isFetchingPackages}
 								/>
 							</div>
 						)}
@@ -263,6 +292,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
+									isLoading={isFetchingPackages}
 								/>
 							</div>
 						)}
