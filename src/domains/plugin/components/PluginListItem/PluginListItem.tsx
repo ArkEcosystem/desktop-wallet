@@ -24,7 +24,12 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 			<TableCell variant="start" className="w-20">
 				<div className="flex justify-center items-center">
 					{plugin.logo ? (
-						<img data-testid="PluginListItem__logo" src={plugin.logo} alt="Logo" />
+						<img
+							data-testid="PluginListItem__logo"
+							src={plugin.logo}
+							alt="Logo"
+							className="overflow-hidden w-14 h-14 rounded"
+						/>
 					) : (
 						<Image name="PluginLogoPlaceholder" domain="plugin" className="w-14 h-14" />
 					)}
@@ -33,7 +38,7 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 
 			<TableCell innerClassName="space-x-2">
 				<a href="/" className="font-semibold link">
-					{plugin.name}
+					{plugin.title}
 				</a>
 
 				{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}

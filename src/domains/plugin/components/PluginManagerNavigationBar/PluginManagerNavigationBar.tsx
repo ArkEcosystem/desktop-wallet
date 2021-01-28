@@ -1,4 +1,5 @@
 import { LayoutControls } from "app/components/LayoutControls";
+import { usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -29,6 +30,11 @@ export const PluginManagerNavigationBar = ({
 	installedPluginsCount,
 }: PluginManagerNavigationBar) => {
 	const { t } = useTranslation();
+	const { pluginPackages } = usePluginManagerContext();
+	const countsByCategory = menu.reduce(
+		(acc, curr) => ({ ...acc, [curr.name]: pluginPackages.filter((pkg) => pkg.hasCategory(curr.name)).length }),
+		{},
+	);
 
 	return (
 		<NavWrapper
@@ -50,11 +56,13 @@ export const PluginManagerNavigationBar = ({
 										}`}
 									>
 										<span>{menuItem.title}</span>
-										{menuItem.count && (
+										{
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
-												{menuItem.count}
+												{menuItem.name === "home"
+													? pluginPackages.length
+													: countsByCategory[menuItem.name]}
 											</span>
-										)}
+										}
 									</button>
 
 									{index < menu.length - 1 && (
@@ -107,24 +115,20 @@ PluginManagerNavigationBar.defaultProps = {
 			name: "home",
 		},
 		{
-			title: "Game",
-			name: "game",
-			count: 48,
+			title: "Gaming",
+			name: "gaming",
 		},
 		{
 			title: "Utility",
 			name: "utility",
-			count: 264,
 		},
 		{
-			title: "Themes",
-			name: "themes",
-			count: 96,
+			title: "Theme",
+			name: "theme",
 		},
 		{
 			title: "Other",
 			name: "other",
-			count: 27,
 		},
 	],
 	selectedViewType: "grid",

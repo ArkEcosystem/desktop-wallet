@@ -45,10 +45,10 @@ export const translations: { [key: string]: any } = {
 
 		VIEW: {
 			HOME: "Home",
-			GAME: "Game",
+			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
-			THEMES: "Themes",
+			THEME: "Theme",
 			UTILITY: "Utility",
 		},
 	},
@@ -56,7 +56,7 @@ export const translations: { [key: string]: any } = {
 	PLUGIN_INFO: {
 		ABOUT: "About the plugin",
 		PERMISSIONS: "Permissions",
-		SCREENSHOTS: "Screemshots",
+		SCREENSHOTS: "Screenshots",
 	},
 
 	REVIEW_BOX: {
@@ -65,10 +65,12 @@ export const translations: { [key: string]: any } = {
 	},
 
 	CATEGORIES: {
+		GAMING: "Gaming",
 		GAME: "Game",
+		LANGUAGE: "Language",
 		MY_PLUGINS: "My Plugins",
 		OTHER: "Other",
-		THEMES: "Themes",
+		THEME: "Theme",
 		UTILITY: "Utility",
 		EXCHANGE: "Exchange",
 	},

@@ -1,10 +1,13 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
-import fetch from "isomorphic-fetch";
+import crossFetch from "cross-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
 import hash from "string-hash";
 import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
+
+/* istanbul ignore next */
+const fetch = process.env.REACT_APP_IS_E2E ? window.fetch : crossFetch;
 
 export class HttpClient extends Http.Request {
 	private readonly cache: Cache;
@@ -59,6 +62,7 @@ export class HttpClient extends Http.Request {
 			if (!response) {
 				throw new Error("Received no response. This looks like a bug.");
 			}
+			//console.log({ url, status: response.status })
 
 			return new Http.Response({
 				body: await response.text(),
