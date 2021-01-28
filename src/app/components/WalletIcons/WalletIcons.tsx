@@ -23,7 +23,7 @@ const WalletIcon = ({ type, value }: { type: string; value?: string }) => {
 	return (
 		<Tooltip content={t(`COMMON.${type.toUpperCase()}`, { value })}>
 			<div data-testid={`WalletIcon__${getIconName(type)}`} className={`inline-block p-1 ${getIconColor(type)}`}>
-				<Icon name={getIconName(type)} width={20} />
+				<Icon name={getIconName(type)} height={16} />
 			</div>
 		</Tooltip>
 	);
