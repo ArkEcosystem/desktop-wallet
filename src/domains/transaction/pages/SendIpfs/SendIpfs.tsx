@@ -218,7 +218,7 @@ export const SendIpfs = () => {
 													isLoading={formState.isSubmitting}
 													icon="Send"
 												>
-													{t("TRANSACTION.SIGN_CONTINUE")}
+													<span>{t("COMMON.SEND")}</span>
 												</Button>
 											</>
 										)}
