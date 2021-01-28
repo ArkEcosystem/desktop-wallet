@@ -2,12 +2,10 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
-import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
-import { Tooltip } from "app/components/Tooltip";
+import { WalletIcons } from "app/components/WalletIcons";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
 export type WalletListItemProps = {
@@ -32,30 +30,6 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 
 	const [shadowColor, setShadowColor] = React.useState<string>(defaultShadowColor);
 
-	const { t } = useTranslation();
-
-	/* istanbul ignore next */
-	const getIconName = (type: string) => {
-		switch (type) {
-			case "Starred":
-				return "Star";
-			case "MultiSignature":
-				return "Multisig";
-			default:
-				return type;
-		}
-	};
-
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
-
-	const WalletIcon = ({ type }: { type: string }) => (
-		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-			<div className={`inline-block p-1 ${getIconColor(type)}`}>
-				<Icon name={getIconName(type)} width={20} />
-			</div>
-		</Tooltip>
-	);
-
 	return (
 		<TableRow
 			isSelected={isSelected}
@@ -79,15 +53,8 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 			</TableCell>
 
 			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">
-				<div className="inline-flex items-center space-x-2">
-					{[
-						wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
-						wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
-						/* istanbul ignore next */
-						wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
-							<WalletIcon key="MultiSignature" type="MultiSignature" />
-						),
-					]}
+				<div className="inline-flex items-center space-x-1">
+					<WalletIcons wallet={wallet} />
 				</div>
 			</TableCell>
 

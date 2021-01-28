@@ -74,15 +74,16 @@ exports[`WalletListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
           >
             <div
-              class="inline-flex items-center space-x-2"
+              class="inline-flex items-center space-x-1"
             >
               <div
-                class="inline-block p-1 text-theme-secondary-600"
+                class="inline-block p-1 text-theme-text"
+                data-testid="WalletIcon__Ledger"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     ledger.svg
@@ -91,11 +92,12 @@ exports[`WalletListItem should render 1`] = `
               </div>
               <div
                 class="inline-block p-1 text-theme-warning-400"
+                data-testid="WalletIcon__Star"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     star.svg
@@ -207,15 +209,16 @@ exports[`WalletListItem should render with default BTC as default exchangeCurren
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
           >
             <div
-              class="inline-flex items-center space-x-2"
+              class="inline-flex items-center space-x-1"
             >
               <div
-                class="inline-block p-1 text-theme-secondary-600"
+                class="inline-block p-1 text-theme-text"
+                data-testid="WalletIcon__Ledger"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     ledger.svg
@@ -224,11 +227,12 @@ exports[`WalletListItem should render with default BTC as default exchangeCurren
               </div>
               <div
                 class="inline-block p-1 text-theme-warning-400"
+                data-testid="WalletIcon__Star"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     star.svg
@@ -340,15 +344,16 @@ exports[`WalletListItem should set dark shadow color on mouse events 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
           >
             <div
-              class="inline-flex items-center space-x-2"
+              class="inline-flex items-center space-x-1"
             >
               <div
-                class="inline-block p-1 text-theme-secondary-600"
+                class="inline-block p-1 text-theme-text"
+                data-testid="WalletIcon__Ledger"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     ledger.svg
@@ -357,11 +362,12 @@ exports[`WalletListItem should set dark shadow color on mouse events 1`] = `
               </div>
               <div
                 class="inline-block p-1 text-theme-warning-400"
+                data-testid="WalletIcon__Star"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     star.svg
@@ -473,15 +479,16 @@ exports[`WalletListItem should set dark shadow color on mouse events for selecte
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
           >
             <div
-              class="inline-flex items-center space-x-2"
+              class="inline-flex items-center space-x-1"
             >
               <div
-                class="inline-block p-1 text-theme-secondary-600"
+                class="inline-block p-1 text-theme-text"
+                data-testid="WalletIcon__Ledger"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     ledger.svg
@@ -490,11 +497,12 @@ exports[`WalletListItem should set dark shadow color on mouse events for selecte
               </div>
               <div
                 class="inline-block p-1 text-theme-warning-400"
+                data-testid="WalletIcon__Star"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     star.svg
@@ -606,15 +614,16 @@ exports[`WalletListItem should set light shadow color on mouse events 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
           >
             <div
-              class="inline-flex items-center space-x-2"
+              class="inline-flex items-center space-x-1"
             >
               <div
-                class="inline-block p-1 text-theme-secondary-600"
+                class="inline-block p-1 text-theme-text"
+                data-testid="WalletIcon__Ledger"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     ledger.svg
@@ -623,11 +632,12 @@ exports[`WalletListItem should set light shadow color on mouse events 1`] = `
               </div>
               <div
                 class="inline-block p-1 text-theme-warning-400"
+                data-testid="WalletIcon__Star"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     star.svg
@@ -739,15 +749,16 @@ exports[`WalletListItem should set light shadow color on mouse events for select
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
           >
             <div
-              class="inline-flex items-center space-x-2"
+              class="inline-flex items-center space-x-1"
             >
               <div
-                class="inline-block p-1 text-theme-secondary-600"
+                class="inline-block p-1 text-theme-text"
+                data-testid="WalletIcon__Ledger"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     ledger.svg
@@ -756,11 +767,12 @@ exports[`WalletListItem should set light shadow color on mouse events for select
               </div>
               <div
                 class="inline-block p-1 text-theme-warning-400"
+                data-testid="WalletIcon__Star"
               >
                 <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
+                  class="sc-bdfBwQ dHWxPT"
+                  height="16"
+                  width="1em"
                 >
                   <svg>
                     star.svg

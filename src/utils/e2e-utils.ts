@@ -16,6 +16,8 @@ export const BASEURL = "https://dwallets.ark.io/api/";
 
 const pluginNames: string[] = ["@dated/transaction-export-plugin"];
 
+const knownWallets: any[] = [];
+
 const walletMocks = () => {
 	const addresses = [
 		"D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
@@ -188,6 +190,12 @@ export const requestMocks = {
 			),
 		),
 	],
+	other: [
+		mockRequest(
+			"https://raw.githubusercontent.com/ArkEcosystem/common/master/devnet/known-wallets-extended.json",
+			knownWallets,
+		),
+	],
 };
 
 export const createFixture = (name: string, preHooks: RequestMock[] = [], postHooks: RequestMock[] = []) =>
@@ -201,6 +209,7 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...requestMocks.transactions,
 			...requestMocks.wallets,
 			...requestMocks.plugins,
+			...requestMocks.other,
 			...postHooks,
 			mockRequest(/^https?:\/\//, (request: any) => {
 				console.log(request.url);
