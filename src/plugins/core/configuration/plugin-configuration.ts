@@ -124,7 +124,7 @@ export class PluginConfigurationData {
 	}
 
 	logo() {
-		const logo: string | undefined = this.#config.get<Record<string, string>>("desktop-wallet")?.logo;
+		const logo: string | undefined = this.#config.get<string>("logo");
 
 		if (logo && githubImageProvider.validate(logo)) {
 			return logo;

@@ -131,11 +131,9 @@ describe("Plugin Configuration", () => {
 	it("should return logo", () => {
 		const subject = PluginConfigurationData.make({
 			name: "plugin-test",
-			"desktop-wallet": {
-				logo:
-					"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
-			},
+			logo: "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
 		});
+
 		expect(subject.logo()).toBe(
 			"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
 		);
