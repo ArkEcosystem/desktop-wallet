@@ -1,4 +1,3 @@
-import { Label } from "app/components/Label";
 import React from "react";
 import { styled } from "twin.macro";
 
@@ -6,9 +5,7 @@ import { getStyles } from "./TransactionDetail.styles";
 
 export type TransactionDetailProps = {
 	children?: React.ReactNode;
-	label?: any;
-	labelExtra?: string;
-	labelExtraColor?: "primary" | "success" | "danger" | "warning";
+	label?: string;
 	extra?: React.ReactNode;
 	border?: boolean;
 	borderPosition?: "top" | "bottom" | "both";
@@ -25,8 +22,6 @@ export const TransactionDetail = ({
 	className,
 	extra,
 	label,
-	labelExtra,
-	labelExtraColor,
 	paddingPosition,
 }: TransactionDetailProps) => (
 	<TransactionDetailStyled
@@ -36,21 +31,8 @@ export const TransactionDetail = ({
 		paddingPosition={paddingPosition}
 		className={`${className} no-ligatures`}
 	>
-		<div className="flex-1 space-y-2">
-			{label && (
-				<div className="text-sm font-semibold text-theme-secondary-700">
-					{labelExtra ? (
-						<>
-							<span className="mr-1">{label}</span>
-							<Label color={labelExtraColor || "warning"} variant="solid">
-								<span className="text-sm">{labelExtra}</span>
-							</Label>
-						</>
-					) : (
-						label
-					)}
-				</div>
-			)}
+		<div className="space-y-2 flex-1">
+			{label && <div className="text-sm font-semibold text-theme-secondary-700">{label}</div>}
 
 			<div className="font-semibold">{children}</div>
 		</div>
