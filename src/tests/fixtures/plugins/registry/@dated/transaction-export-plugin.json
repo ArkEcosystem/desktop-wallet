@@ -1,0 +1,252 @@
+{
+	"_id": "@dated/transaction-export-plugin",
+	"_rev": "5-e27e2e6114a02d9131e51d0e0707efc7",
+	"time": {
+		"1.0.0": "2020-03-26T20:01:57.329Z",
+		"created": "2020-03-26T20:07:27.399Z",
+		"1.0.1": "2020-03-26T20:07:27.789Z",
+		"modified": "2020-11-26T21:18:47.528Z",
+		"1.0.2": "2020-03-26T20:48:24.434Z",
+		"1.0.3": "2020-11-26T21:18:44.681Z"
+	},
+	"name": "@dated/transaction-export-plugin",
+	"dist-tags": {
+		"latest": "1.0.3"
+	},
+	"versions": {
+		"1.0.1": {
+			"name": "@dated/transaction-export-plugin",
+			"version": "1.0.1",
+			"description": "Export your transactions for all your tax needs",
+			"main": "src/index.js",
+			"author": {
+				"name": "Edgar Goetzendorff",
+				"email": "hello@dated.fun"
+			},
+			"license": "MIT",
+			"desktop-wallet": {
+				"title": "Transaction Export",
+				"logo": "https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png",
+				"images": [
+					"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-1.png",
+					"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-2.png",
+					"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-3.png"
+				],
+				"categories": ["utility"],
+				"permissions": [
+					"COMPONENTS",
+					"ROUTES",
+					"MENU_ITEMS",
+					"UI_COMPONENTS",
+					"PROFILE_CURRENT",
+					"PEER_ALL",
+					"HTTP",
+					"UTILS",
+					"STORAGE",
+					"ALERTS",
+					"DIALOGS"
+				],
+				"urls": ["^"],
+				"minimumVersion": "2.9.1"
+			},
+			"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+			"bugs": {
+				"url": "https://github.com/dated/transaction-export-plugin/issues"
+			},
+			"homepage": "https://github.com/dated/transaction-export-plugin",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/dated/transaction-export-plugin.git"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2019 Edgar Goetzendorff\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE. \n",
+			"_id": "@dated/transaction-export-plugin@1.0.1",
+			"dist": {
+				"shasum": "8795629d94f9b2c25ab5b5aff515aec040fde00b",
+				"integrity": "sha512-ebOXE0TZhQBA2iGjqVS5L0SECCb5UeDFuSSiNI4igMITMZE/7lcV72kUfdbajDMrqrhYIkrgEwwjsv3qmN1zmw==",
+				"tarball": "https://registry.npmjs.org/@dated/transaction-export-plugin/-/transaction-export-plugin-1.0.1.tgz",
+				"fileCount": 30,
+				"unpackedSize": 304118,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefQuACRA9TVsSAnZWagAAyk8P/3ibj9wmhqajBg1m7PCr\nucyUon4cckb+/sibtwcnouYl6rAzZrQYbKbl6UnFs4L/tX63zQ36VoH/m4lx\nBeA1P6ak/UPijIR66Sw2DNZdoas9LLZ0XYopPy68w4VBkslbgpVudc1+Q4Mr\nuh1hjlSkgjBdYjYJT32tM3mFE5VL5svIWpdAdLVJe+8y13Xd+e2ah4pBuB//\nxuXNoO2mirSs35nP7AGiB0KH9dtMkpGxqrXKh4tVRfbeeLtk3Qw08aRJO1qg\nUtmSJhAHaVZBqHt1a9yP3tFNen6blKuhwFZ02bYJk0rtO6+kii4ZFZHVWfmP\nD2ahrRiFDXpjG/F7zu8B+ILZKiYUorbK7mCaLz7jvs2+CdO9NzfNvRzvBqaa\ntlvichGhZj08brHmoHMECsv05r0oOfd2y+crvjUMxYx4nnIZTagQO4o1MPOU\nLPsC6Kxa2oIrtBvHX1yXdbZ2J2aPlhxf4erN1ApZux/ZHHDfW08QNqnFSMQV\nBKtGNo6mOh3m+XRLbbLj90kC906eeSbkVMOwqZc039G6yHiL+JlTnW3ok9nX\nd1Lhrw+UB0cM3UegX4l/cTAzX8ZKSHg79EKqXCU3JuRp3G3NpRJQwaMfEh3k\n8cxKOr2+ZqfcGHsQGVUZVe0P38pRmYd0k3s37f5DyRRgqCtCgq4CN7xFK0rk\nKT0O\r\n=bZQB\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "dated",
+					"email": "hello@dated.fun"
+				}
+			],
+			"_npmUser": {
+				"name": "dated",
+				"email": "hello@dated.fun"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/transaction-export-plugin_1.0.1_1585253247630_0.33451896614791576"
+			},
+			"_hasShrinkwrap": false
+		},
+		"1.0.2": {
+			"name": "@dated/transaction-export-plugin",
+			"version": "1.0.2",
+			"description": "Export your wallet transaction history",
+			"main": "src/index.js",
+			"author": {
+				"name": "Edgar Goetzendorff",
+				"email": "hello@dated.fun"
+			},
+			"license": "MIT",
+			"desktop-wallet": {
+				"title": "Transaction Export",
+				"logo": "https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png",
+				"images": [
+					"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-1.png",
+					"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-2.png",
+					"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-3.png"
+				],
+				"categories": ["utility"],
+				"permissions": [
+					"COMPONENTS",
+					"ROUTES",
+					"MENU_ITEMS",
+					"UI_COMPONENTS",
+					"PROFILE_CURRENT",
+					"PEER_ALL",
+					"HTTP",
+					"UTILS",
+					"STORAGE",
+					"ALERTS",
+					"DIALOGS"
+				],
+				"urls": ["^"],
+				"minimumVersion": "2.9.1"
+			},
+			"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+			"bugs": {
+				"url": "https://github.com/dated/transaction-export-plugin/issues"
+			},
+			"homepage": "https://github.com/dated/transaction-export-plugin",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/dated/transaction-export-plugin.git"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2019 Edgar Goetzendorff\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE. \n",
+			"_id": "@dated/transaction-export-plugin@1.0.2",
+			"dist": {
+				"shasum": "6a356ce38c08df3ca31bd861e456d6fb73d03798",
+				"integrity": "sha512-wjmLE6QcE9ygRFNR8L66/Ww+KDI7d0blLqFijyuH1HI89oK1Cb9+93bfJwUYIq5NvdRnDuZyorhK/+jeuuHLUw==",
+				"tarball": "https://registry.npmjs.org/@dated/transaction-export-plugin/-/transaction-export-plugin-1.0.2.tgz",
+				"fileCount": 30,
+				"unpackedSize": 304174,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefRUYCRA9TVsSAnZWagAAze8P/RJoU8Bv7ewAfKthEFrV\nx/vKO5FWMg0K708JgKFIGi6JnqgNOiW0HJZBLXXOocGx8XcU26aZdGeB1Gbk\n0zRoHWirA8Ct2A/+4c0pd1LTNM5iKLfjcR/5v3h8wyw014l7462HGMPmivf9\n+qniwtyCifdvxZQsXC/Uhp7Uh/VRHttC2T6T5AX34cChU/46U7ZBVGQvkN8K\ns5SBuBdRqCemFJ9Du3tEz/vZFZ+LtVwpBD0QvC5J/jSruIYV926SwjAogu1E\nMC66SNxmpYswdXB85m1mK7aao9ZHkcEr4zoOhCpmAOO1+F9NPUYtISREyBdv\n0CacOCvse3DS4wHjk8dfWRrH3Z2Ln/9dzeScSKfgGwnQFvtk6f6sUiHJn8f2\nUUM+GvZGA6k75GU4RjyI0x6c2hnyydX3p0M3f2/Hx+IzrT5RTN2zKPXJWYaR\nBjJkENdR4oQSKR98Q0sreNq7B1eSSaW0XVKtm6vZbf9iA3y0f8jh5jm9R2W1\nmwRCiMkfbsKZTG/CUK0ru+gqTVq+WmnRlt1aO1egOdH/pttA8addewB7Jz8+\n+LHPPe/1uLU68CBUX2doDbMfOsf11NKgRc825vfp589DdCfg5M/43e3kXvbM\niggU/1hAtHj/VLuQRGA18018MWkLUdQ9i2BskoF3A82FfXcVXEiAKWG6IQkM\nRLJF\r\n=kAR3\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "dated",
+					"email": "hello@dated.fun"
+				}
+			],
+			"_npmUser": {
+				"name": "dated",
+				"email": "hello@dated.fun"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/transaction-export-plugin_1.0.2_1585255704152_0.42151139568139007"
+			},
+			"_hasShrinkwrap": false
+		},
+		"1.0.3": {
+			"name": "@dated/transaction-export-plugin",
+			"version": "1.0.3",
+			"description": "Export your wallet transaction history",
+			"main": "src/index.js",
+			"author": {
+				"name": "Edgar Goetzendorff",
+				"email": "hello@dated.fun"
+			},
+			"license": "MIT",
+			"desktop-wallet": {
+				"title": "Transaction Export",
+				"logo": "https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png",
+				"images": [],
+				"categories": ["utility"],
+				"permissions": [
+					"COMPONENTS",
+					"ROUTES",
+					"MENU_ITEMS",
+					"UI_COMPONENTS",
+					"PROFILE_CURRENT",
+					"PEER_ALL",
+					"HTTP",
+					"UTILS",
+					"STORAGE",
+					"ALERTS",
+					"DIALOGS"
+				],
+				"urls": ["^"],
+				"minimumVersion": "2.9.1"
+			},
+			"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+			"bugs": {
+				"url": "https://github.com/dated/transaction-export-plugin/issues"
+			},
+			"homepage": "https://github.com/dated/transaction-export-plugin",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/dated/transaction-export-plugin.git"
+			},
+			"gitHead": "55f050be0a784e49ec3bf2a3f8cc50f31b4bef30",
+			"_id": "@dated/transaction-export-plugin@1.0.3",
+			"_nodeVersion": "12.18.1",
+			"_npmVersion": "6.14.5",
+			"dist": {
+				"integrity": "sha512-Dv4u8RJSJpeXbD4PEShKZOEqIAMOhGLHIZ19Q21KKGON2tp5+mDyG2RxJndFJsup4rDHURT9txkzrf1VuRnGzA==",
+				"shasum": "c7c8b910cffe54e3f1f311628c287399c87cbdb1",
+				"tarball": "https://registry.npmjs.org/@dated/transaction-export-plugin/-/transaction-export-plugin-1.0.3.tgz",
+				"fileCount": 23,
+				"unpackedSize": 304275,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfwBu1CRA9TVsSAnZWagAAItcP/2Xa1Bqw0MBWGQSCRQDq\nocu11ihUa5fWxbY9ziZx2AIdqffmRbWBXE1oME0yfjsK37RPFhog2ceYyE2+\nuqfumuwKR2cgJznUFL8+Z5goJ5/YQ2Ln/BsqtAouD+HSFgnSR5eX8sE6XbAH\nffYq0Y1vIFoCwWRUjKGtLeO+kFUpK4YC7sOvnAJ2f+x2+At8nwXXNe/VCUfE\nug/KxiIkCSNaKe8WpmqMq39w0mAfWooWjWxcHwvNeY+rH85WAaUndFUYEeyx\nNhRtdHYiHNHBdHCZMY6e/1J5j/lP1illunfjnLsvaXo0gW42OZq/9HL9YF92\nubwIFNSTQwMBFDsnJcNNcJ6+lQDw92Iq2IIxhNlrwzh5nxYUCs0mV83fmE9s\nJ9MZCQKO5MXksFHCYRKJHI9f0wwH0upP4oqM1c8AOw8Z0OukPlb2eyosZjgv\n94xl1WpzZRRtzZIUm146meZk4REOFxDFibgWXqhadO+jrTNEj6J6tIqM9Fxu\nB5B9KvkN0s4VrbSY8RjNKNWjg1vLymbqOtRvj6c3Ex32+i3XyfcTAgzb6t+6\nMS+Ei3gVNhItbY+g5eZ4mA6t5gfA4fgNE4sHprasgjVXJfLh/Ty33xJDgxuu\neuzlvQXIGG1C88mIh112PACAQYIYjG+bf7W5nHhnQ1Yn1fidDRf2+1ToTKp+\nH93G\r\n=RUaz\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"_npmUser": {
+				"name": "dated",
+				"email": "hello@dated.fun"
+			},
+			"directories": {},
+			"maintainers": [
+				{
+					"name": "dated",
+					"email": "hello@dated.fun"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/transaction-export-plugin_1.0.3_1606425524549_0.6222308179434641"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"maintainers": [
+		{
+			"name": "dated",
+			"email": "hello@dated.fun"
+		}
+	],
+	"description": "Export your wallet transaction history",
+	"homepage": "https://github.com/dated/transaction-export-plugin",
+	"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dated/transaction-export-plugin.git"
+	},
+	"author": {
+		"name": "Edgar Goetzendorff",
+		"email": "hello@dated.fun"
+	},
+	"bugs": {
+		"url": "https://github.com/dated/transaction-export-plugin/issues"
+	},
+	"license": "MIT",
+	"readme": "# Transaction Export Plugin\n\n![Transaction Export Plugin](./banner.png)\n\n> Export your wallet transaction history. The information presented by this plugin has been prepared for informational purposes only, and is not intended to provide, and should not be relied on for, tax, legal or accounting advice.\n\n## Installation\n\nInstall this plugin directly through the Plugins Manager of the Desktop Wallet. Alternatively you can clone or [download](https://github.com/dated/transaction-export-plugin/archive/master.zip) this repository and unzip it into `~/.ark-desktop/plugins/`.\n\n## Credits\n\n- [Edgar Goetzendorff](https://github.com/dated)\n- [All Contributors](../../contributors)\n\n## License\n\n[MIT](LICENSE) © [Edgar Goetzendorff](https://github.com/dated)\n",
+	"readmeFilename": "README.md"
+}

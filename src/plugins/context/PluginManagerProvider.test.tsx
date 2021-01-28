@@ -1,6 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import electron from "electron";
+import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
@@ -88,5 +89,50 @@ describe("PluginManagerProvider", () => {
 		expect(invokeMock).toHaveBeenLastCalledWith("plugin:loader-fs.remove", "/plugins/example");
 
 		await waitFor(() => expect(screen.getByRole("button")).toBeTruthy());
+	});
+
+	it("should fetch packages", async () => {
+		nock("https://registry.npmjs.com")
+			.get("/-/v1/search")
+			.query((params) => params.from === "0")
+			.once()
+			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+			.get("/-/v1/search")
+			.query((params) => params.from === "250")
+			.once()
+			.reply(200, {});
+
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.persist();
+
+		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, pluginPackages } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					<ul>
+						{pluginPackages.map((pkg) => (
+							<li key={pkg.name()}>{pkg.name()}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByRole("button"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 	});
 });

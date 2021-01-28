@@ -36,7 +36,7 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 	for (let i = 0; i < 4; i++) {
 		plugins.push({
 			id: i,
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			rating: 4.2,
@@ -50,7 +50,7 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 	for (let i = 5; i < 8; i++) {
 		plugins.push({
 			id: i,
-			name: "ARK Avatars",
+			title: "ARK Avatars",
 			author: "ARK.io",
 			category: "other",
 			rating: 3.8,

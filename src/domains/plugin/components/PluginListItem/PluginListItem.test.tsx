@@ -7,7 +7,7 @@ describe("PluginListItem", () => {
 	it("should render", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -30,7 +30,7 @@ describe("PluginListItem", () => {
 	it("should trigger install", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -57,7 +57,7 @@ describe("PluginListItem", () => {
 	it("should trigger delete", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -84,7 +84,7 @@ describe("PluginListItem", () => {
 	it("should trigger enable", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -111,7 +111,7 @@ describe("PluginListItem", () => {
 	it("should trigger disable", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -139,7 +139,7 @@ describe("PluginListItem", () => {
 	it("should render launch button", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -168,7 +168,7 @@ describe("PluginListItem", () => {
 		const plugin = {
 			id: "ark-explorer",
 			name: "ARK Explorer",
-			author: "ARK.io",
+			title: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
 			size: "4.2 MB",
@@ -193,7 +193,7 @@ describe("PluginListItem", () => {
 	it("should render official icon", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
@@ -217,7 +217,7 @@ describe("PluginListItem", () => {
 	it("should render grant icon", () => {
 		const plugin = {
 			id: "ark-explorer",
-			name: "ARK Explorer",
+			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
 			version: "1.3.8",
