@@ -37,6 +37,7 @@ const formatTransactionNotification = (transaction: TransactionDataType) => ({
 	action: "",
 	type: "transaction",
 	meta: {
+		timestamp: transaction.timestamp()?.toUNIX(),
 		transactionId: transaction.id(),
 		walletAddress: transaction.recipient(),
 	},
@@ -122,6 +123,15 @@ const deleteNotificationsByVersion = (env: Environment) => ({ version }: { versi
 		});
 };
 
+const sortTransactionNotificationsDesc = (notifications: any[]) => {
+	const sorted = notifications.sort((firstNotification, secondNotification) => {
+		const index = -(firstNotification?.meta?.timestamp - secondNotification?.meta?.timestamp);
+		return !Number.isNaN(index) ? index : -1;
+	});
+
+	return sorted;
+};
+
 export const useNotifications = () => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
@@ -143,6 +153,7 @@ export const useNotifications = () => {
 				notifyReceivedTransactions,
 				syncReceivedTransactions,
 				formatNotification,
+				sortTransactionNotificationsDesc,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),
 				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
 			},
