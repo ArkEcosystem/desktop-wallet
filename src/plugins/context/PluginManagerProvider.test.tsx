@@ -102,6 +102,11 @@ describe("PluginManagerProvider", () => {
 			.once()
 			.reply(200, {});
 
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.persist();
+
 		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
 		manager.plugins().push(plugin);
 
