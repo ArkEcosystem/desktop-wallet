@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { ipcMain } from "electron";
 import os from "os";
 import path from "path";
@@ -11,12 +13,10 @@ export const injectHandler = () => {
 
 	const envDir = process.env.PLUGINS_DIR;
 
-	/* istanbul ignore next */
 	if (envDir) {
 		paths.push(envDir);
 	}
 
-	/* istanbul ignore next */
 	if (isDev || isE2E) {
 		paths.push(path.resolve("src/tests/fixtures/plugins"));
 	}
@@ -25,8 +25,7 @@ export const injectHandler = () => {
 
 	const finder = new PluginLoaderFileSystem(paths);
 
-	/* istanbul ignore next */
 	ipcMain.handle("plugin:loader-fs.search", () => finder.search());
-	/* istanbul ignore next */
 	ipcMain.handle("plugin:loader-fs.remove", (_, dir: string) => finder.remove(dir));
+	ipcMain.handle("plugin:loader-fs.find", (_, dir: string) => finder.find(dir));
 };

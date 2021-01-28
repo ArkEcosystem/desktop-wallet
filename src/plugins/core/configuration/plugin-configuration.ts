@@ -61,7 +61,7 @@ export class PluginConfigurationData {
 		}
 
 		const author = this.get<string | { name: string }>("author");
-		const contributors = this.get<{ name: string }[]>("contributors");
+		const contributors = this.get<{ name: string }[] | string[]>("contributors");
 
 		if (author) {
 			if (typeof author === "string") {
@@ -71,7 +71,8 @@ export class PluginConfigurationData {
 		}
 
 		if (contributors?.length) {
-			return parseAuthor(contributors?.[0]?.name).name;
+			// @ts-ignore
+			return parseAuthor(contributors?.[0]?.name || contributors?.[0]).name;
 		}
 
 		return `Unknown`;
