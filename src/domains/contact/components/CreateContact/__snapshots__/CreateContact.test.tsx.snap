@@ -24,13 +24,17 @@ exports[`CreateContact should render create contact modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -173,7 +177,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz fHxsLl"
+                          class="sc-bdfBwQ iyevwF"
                           height="20"
                           width="20"
                         >
@@ -194,7 +198,11 @@ exports[`CreateContact should render create contact modal 1`] = `
                     disabled=""
                     type="button"
                   >
-                    Add Address
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Add Address
+                    </div>
                   </button>
                 </div>
               </div>
@@ -209,7 +217,11 @@ exports[`CreateContact should render create contact modal 1`] = `
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
-                    Cancel
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Cancel
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -217,7 +229,11 @@ exports[`CreateContact should render create contact modal 1`] = `
                     disabled=""
                     type="submit"
                   >
-                    Save
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Save
+                    </div>
                   </button>
                 </div>
               </div>

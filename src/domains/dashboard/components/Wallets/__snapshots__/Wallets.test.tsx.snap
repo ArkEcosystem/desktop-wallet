@@ -105,20 +105,24 @@ exports[`Wallets should load more wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -127,20 +131,24 @@ exports[`Wallets should load more wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -149,20 +157,24 @@ exports[`Wallets should load more wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -696,20 +708,24 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -718,20 +734,24 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -740,20 +760,24 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -1197,13 +1221,17 @@ exports[`Wallets should open and close ledger import modal 1`] = `
               type="button"
             >
               <div
-                class="sc-bdfBwQ bfBhNR"
-                height="14"
-                width="14"
+                class="flex relative items-center space-x-2"
               >
-                <svg>
-                  cross-slim.svg
-                </svg>
+                <div
+                  class="sc-bdfBwQ bfBhNR"
+                  height="14"
+                  width="14"
+                >
+                  <svg>
+                    cross-slim.svg
+                  </svg>
+                </div>
               </div>
             </button>
           </div>
@@ -1361,20 +1389,24 @@ exports[`Wallets should render empty profile wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -1383,20 +1415,24 @@ exports[`Wallets should render empty profile wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -1405,20 +1441,24 @@ exports[`Wallets should render empty profile wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -1551,20 +1591,24 @@ exports[`Wallets should render grid 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -1573,20 +1617,24 @@ exports[`Wallets should render grid 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -1595,20 +1643,24 @@ exports[`Wallets should render grid 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -1974,20 +2026,24 @@ exports[`Wallets should render grid in loading state 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -1996,20 +2052,24 @@ exports[`Wallets should render grid in loading state 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -2018,20 +2078,24 @@ exports[`Wallets should render grid in loading state 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -2531,20 +2595,24 @@ exports[`Wallets should render list 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -2553,20 +2621,24 @@ exports[`Wallets should render list 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -2575,20 +2647,24 @@ exports[`Wallets should render list 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -3122,20 +3198,24 @@ exports[`Wallets should render without testnet wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -3144,20 +3224,24 @@ exports[`Wallets should render without testnet wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -3166,20 +3250,24 @@ exports[`Wallets should render without testnet wallets 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>
@@ -3477,20 +3565,24 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ bfBhNR"
-                    height="14"
-                    width="14"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      plus.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ bfBhNR"
+                      height="14"
+                      width="14"
+                    >
+                      <svg>
+                        plus.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Create
+                    </span>
                   </div>
-                  <span>
-                    Create
-                  </span>
                 </div>
               </button>
               <button
@@ -3499,20 +3591,24 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      import.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        import.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import
+                    </span>
                   </div>
-                  <span>
-                    Import
-                  </span>
                 </div>
               </button>
               <button
@@ -3521,20 +3617,24 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                 type="button"
               >
                 <div
-                  class="flex items-center space-x-2"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex items-center space-x-2"
                   >
-                    <svg>
-                      ledger.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        ledger.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Import Ledger
+                    </span>
                   </div>
-                  <span>
-                    Import Ledger
-                  </span>
                 </div>
               </button>
             </div>

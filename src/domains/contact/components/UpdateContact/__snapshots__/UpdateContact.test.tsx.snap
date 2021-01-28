@@ -24,13 +24,17 @@ exports[`UpdateContact should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -168,7 +172,7 @@ exports[`UpdateContact should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz fHxsLl"
+                          class="sc-bdfBwQ iyevwF"
                           height="20"
                           width="20"
                         >
@@ -189,7 +193,11 @@ exports[`UpdateContact should render a modal 1`] = `
                     disabled=""
                     type="button"
                   >
-                    Add Address
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Add Address
+                    </div>
                   </button>
                 </div>
               </div>
@@ -220,7 +228,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-gsTCUz fHxsLl"
+                            class="sc-bdfBwQ iyevwF"
                             data-testid="NetworkIcon__icon"
                             height="20"
                             width="20"
@@ -266,13 +274,17 @@ exports[`UpdateContact should render a modal 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz cXMmJt"
-                        height="1em"
-                        width="1em"
+                        class="flex relative items-center space-x-2"
                       >
-                        <svg>
-                          trash.svg
-                        </svg>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            trash.svg
+                          </svg>
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -287,17 +299,21 @@ exports[`UpdateContact should render a modal 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt"
-                    height="1em"
-                    width="1em"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      trash.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Delete Contact
+                    </span>
                   </div>
-                  <span>
-                    Delete Contact
-                  </span>
                 </button>
                 <div
                   class="space-x-3"
@@ -307,14 +323,22 @@ exports[`UpdateContact should render a modal 1`] = `
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
-                    Cancel
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Cancel
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 iSmMLw"
                     data-testid="contact-form__save-btn"
                     type="submit"
                   >
-                    Save
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Save
+                    </div>
                   </button>
                 </div>
               </div>

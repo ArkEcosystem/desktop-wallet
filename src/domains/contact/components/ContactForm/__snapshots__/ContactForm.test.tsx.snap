@@ -122,7 +122,7 @@ exports[`ContactForm should select 1`] = `
               type="button"
             >
               <div
-                class="sc-gsTCUz fHxsLl"
+                class="sc-bdfBwQ iyevwF"
                 height="20"
                 width="20"
               >
@@ -143,7 +143,11 @@ exports[`ContactForm should select 1`] = `
           disabled=""
           type="button"
         >
-          Add Address
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Add Address
+          </div>
         </button>
       </div>
     </div>
@@ -158,7 +162,11 @@ exports[`ContactForm should select 1`] = `
           data-testid="contact-form__cancel-btn"
           type="button"
         >
-          Cancel
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Cancel
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -166,7 +174,11 @@ exports[`ContactForm should select 1`] = `
           disabled=""
           type="submit"
         >
-          Save
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Save
+          </div>
         </button>
       </div>
     </div>
@@ -302,7 +314,7 @@ exports[`ContactForm should select with errors 1`] = `
               type="button"
             >
               <div
-                class="sc-gsTCUz fHxsLl"
+                class="sc-bdfBwQ iyevwF"
                 height="20"
                 width="20"
               >
@@ -323,7 +335,11 @@ exports[`ContactForm should select with errors 1`] = `
           disabled=""
           type="button"
         >
-          Add Address
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Add Address
+          </div>
         </button>
       </div>
     </div>
@@ -338,7 +354,11 @@ exports[`ContactForm should select with errors 1`] = `
           data-testid="contact-form__cancel-btn"
           type="button"
         >
-          Cancel
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Cancel
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -346,7 +366,11 @@ exports[`ContactForm should select with errors 1`] = `
           disabled=""
           type="submit"
         >
-          Save
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Save
+          </div>
         </button>
       </div>
     </div>
@@ -476,7 +500,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
               type="button"
             >
               <div
-                class="sc-gsTCUz fHxsLl"
+                class="sc-bdfBwQ iyevwF"
                 height="20"
                 width="20"
               >
@@ -497,7 +521,11 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           disabled=""
           type="button"
         >
-          Add Address
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Add Address
+          </div>
         </button>
       </div>
     </div>
@@ -512,7 +540,11 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           data-testid="contact-form__cancel-btn"
           type="button"
         >
-          Cancel
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Cancel
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -520,7 +552,11 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           disabled=""
           type="submit"
         >
-          Save
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Save
+          </div>
         </button>
       </div>
     </div>
@@ -650,7 +686,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               type="button"
             >
               <div
-                class="sc-gsTCUz fHxsLl"
+                class="sc-bdfBwQ iyevwF"
                 height="20"
                 width="20"
               >
@@ -671,7 +707,11 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           disabled=""
           type="button"
         >
-          Add Address
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Add Address
+          </div>
         </button>
       </div>
     </div>
@@ -702,7 +742,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
-                  class="sc-gsTCUz fHxsLl"
+                  class="sc-bdfBwQ iyevwF"
                   data-testid="NetworkIcon__icon"
                   height="20"
                   width="20"
@@ -748,13 +788,17 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             type="button"
           >
             <div
-              class="sc-gsTCUz cXMmJt"
-              height="1em"
-              width="1em"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                trash.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  trash.svg
+                </svg>
+              </div>
             </div>
           </button>
         </div>
@@ -769,17 +813,21 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         type="button"
       >
         <div
-          class="sc-gsTCUz cXMmJt"
-          height="1em"
-          width="1em"
+          class="flex relative items-center space-x-2"
         >
-          <svg>
-            trash.svg
-          </svg>
+          <div
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              trash.svg
+            </svg>
+          </div>
+          <span>
+            Delete Contact
+          </span>
         </div>
-        <span>
-          Delete Contact
-        </span>
       </button>
       <div
         class="space-x-3"
@@ -789,7 +837,11 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           data-testid="contact-form__cancel-btn"
           type="button"
         >
-          Cancel
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Cancel
+          </div>
         </button>
         <button
           class="Button__StyledButton-mdtvtf-0 iitCzz"
@@ -797,7 +849,11 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           disabled=""
           type="submit"
         >
-          Save
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Save
+          </div>
         </button>
       </div>
     </div>

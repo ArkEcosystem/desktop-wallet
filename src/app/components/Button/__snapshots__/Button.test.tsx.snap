@@ -5,7 +5,11 @@ exports[`Button should render 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 iSmMLw"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -14,7 +18,11 @@ exports[`Button should render a large one 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 kCtJaw"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -23,7 +31,11 @@ exports[`Button should render a small one 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 ejsUFX"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -32,7 +44,11 @@ exports[`Button should render an icon 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 ubItf"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -41,7 +57,11 @@ exports[`Button should render as danger button 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 bsLEUc"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -50,7 +70,11 @@ exports[`Button should render as primary button 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 iSmMLw"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -59,7 +83,11 @@ exports[`Button should render as secondary button 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 lmPdYN"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -68,7 +96,11 @@ exports[`Button should render as transparent button 1`] = `
   <button
     class="Button__StyledButton-mdtvtf-0 esSerq"
     type="button"
-  />
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
 </div>
 `;
 
@@ -76,10 +108,90 @@ exports[`Button should render if disabled 1`] = `
 <DocumentFragment>
   <button
     class="Button__StyledButton-mdtvtf-0 iitCzz"
+    data-testid="Button"
     disabled=""
     type="button"
   >
-    Click
+    <div
+      class="flex relative items-center space-x-2"
+    >
+      Click
+    </div>
   </button>
 </DocumentFragment>
+`;
+
+exports[`Button should render with icon 1`] = `
+<div>
+  <button
+    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+    type="button"
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    >
+      <div
+        class="sc-bdfBwQ bfBhNR"
+        height="14"
+        width="14"
+      >
+        <svg>
+          plus.svg
+        </svg>
+      </div>
+      Click Me
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button should render with icon and custom icon width and height 1`] = `
+<div>
+  <button
+    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+    type="button"
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    >
+      <div
+        class="sc-bdfBwQ iyevwF"
+        height="20"
+        width="20"
+      >
+        <svg>
+          plus.svg
+        </svg>
+      </div>
+      Click Me
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button should render with loading state enabled 1`] = `
+<div>
+  <button
+    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+    type="button"
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    >
+      <span
+        class="invisible"
+      >
+        Click Me
+      </span>
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0"
+      >
+        <div
+          class="Spinner-sc-1tybciv-0 jGCkgb m-auto"
+          color="primary"
+        />
+      </div>
+    </div>
+  </button>
+</div>
 `;

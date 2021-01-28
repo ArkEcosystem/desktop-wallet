@@ -18,20 +18,24 @@ exports[`Notifications should open and cancel wallet update notification modal 1
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>
@@ -326,13 +330,17 @@ exports[`Notifications should open and cancel wallet update notification modal 1
             type="button"
           >
             <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                cross-slim.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
           </button>
         </div>
@@ -378,14 +386,22 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                   data-testid="WalletUpdate__cancel-button"
                   type="button"
                 >
-                  Update Later
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Update Later
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 iSmMLw"
                   data-testid="WalletUpdate__update-button"
                   type="button"
                 >
-                  Update Now
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Update Now
+                  </div>
                 </button>
               </div>
             </div>
@@ -415,20 +431,24 @@ exports[`Notifications should open and cancel wallet update notification modal 2
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>
@@ -725,20 +745,24 @@ exports[`Notifications should open and close transaction details modal 1`] = `
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>
@@ -1033,13 +1057,17 @@ exports[`Notifications should open and close transaction details modal 1`] = `
             type="button"
           >
             <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                cross-slim.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
           </button>
         </div>
@@ -1438,20 +1466,24 @@ exports[`Notifications should open and close transaction details modal 2`] = `
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>
@@ -1748,20 +1780,24 @@ exports[`Notifications should open and close wallet update notification modal 1`
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>
@@ -2056,13 +2092,17 @@ exports[`Notifications should open and close wallet update notification modal 1`
             type="button"
           >
             <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                cross-slim.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
           </button>
         </div>
@@ -2108,14 +2148,22 @@ exports[`Notifications should open and close wallet update notification modal 1`
                   data-testid="WalletUpdate__cancel-button"
                   type="button"
                 >
-                  Update Later
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Update Later
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 iSmMLw"
                   data-testid="WalletUpdate__update-button"
                   type="button"
                 >
-                  Update Now
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Update Now
+                  </div>
                 </button>
               </div>
             </div>
@@ -2145,20 +2193,24 @@ exports[`Notifications should open and close wallet update notification modal 2`
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>
@@ -2455,20 +2507,24 @@ exports[`Notifications should render with transactions and plugins 1`] = `
             type="button"
           >
             <div
-              class="sc-bdfBwQ liSwOQ p-1"
-              height="18"
-              width="15"
-            >
-              <svg>
-                notification.svg
-              </svg>
-            </div>
-            <div
-              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="w-2 h-2 rounded-full bg-theme-danger-500"
-              />
+                class="sc-bdfBwQ liSwOQ p-1"
+                height="18"
+                width="15"
+              >
+                <svg>
+                  notification.svg
+                </svg>
+              </div>
+              <div
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-theme-danger-500"
+                />
+              </div>
             </div>
           </button>
         </div>

@@ -24,13 +24,17 @@ exports[`UpdatePeer should render update peer modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -88,7 +92,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                         data-testid="SelectNetworkInput__network"
                       >
                         <div
-                          class="sc-gsTCUz fHxsLl"
+                          class="sc-bdfBwQ iyevwF"
                           data-testid="NetworkIcon__icon"
                           height="20"
                           width="20"
@@ -210,7 +214,11 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 data-testid="PeerForm__submit-button"
                 type="submit"
               >
-                Edit Peer
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Edit Peer
+                </div>
               </button>
             </div>
           </form>

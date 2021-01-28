@@ -96,20 +96,24 @@ exports[`PluginDetails should render properly 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz eMnCVw p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -131,13 +135,17 @@ exports[`PluginDetails should render properly 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz byDVwN p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -157,13 +165,17 @@ exports[`PluginDetails should render properly 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz gbSRoN p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -210,7 +222,7 @@ exports[`PluginDetails should render properly 1`] = `
                       class="text-theme-secondary-text dark:text-theme-secondary-800"
                     >
                       <div
-                        class="sc-gsTCUz cXMmJt"
+                        class="sc-bdfBwQ fPrsah"
                         height="1em"
                         width="1em"
                       >
@@ -241,7 +253,7 @@ exports[`PluginDetails should render properly 1`] = `
                       class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-gsTCUz fOJxeI transition-transform "
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
                         width="8"
                       >
@@ -264,7 +276,7 @@ exports[`PluginDetails should render properly 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ text-theme-secondary-500"
+        class="sc-bdfBwQ imIpud text-theme-secondary-500"
         height="24"
         width="13"
       >
@@ -350,7 +362,11 @@ exports[`PluginDetails should render properly 1`] = `
                       data-testid="PluginHeader__button--install"
                       type="button"
                     >
-                      Install
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        Install
+                      </div>
                     </button>
                     <button
                       class="Button__StyledButton-mdtvtf-0 lmPdYN ml-3"
@@ -358,13 +374,17 @@ exports[`PluginDetails should render properly 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
+                        class="flex relative items-center space-x-2"
                       >
-                        <svg>
-                          report.svg
-                        </svg>
+                        <div
+                          class="sc-bdfBwQ iyevwF"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            report.svg
+                          </svg>
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -395,7 +415,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="ml-3"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -461,7 +481,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="pr-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -653,7 +673,7 @@ exports[`PluginDetails should render properly 1`] = `
                 class="flex items-center justify-center text-theme-warning-600"
               >
                 <div
-                  class="sc-gsTCUz cUuJwN"
+                  class="sc-bdfBwQ daKoZl"
                   height="1.75em"
                   width="1.75em"
                 >
@@ -709,7 +729,11 @@ exports[`PluginDetails should render properly 1`] = `
                   data-testid="ReviewBox__button--comment"
                   type="button"
                 >
-                  Leave a comment
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Leave a comment
+                  </div>
                 </button>
               </div>
               <div
@@ -740,7 +764,7 @@ exports[`PluginDetails should render properly 1`] = `
                             Best
                           </span>
                           <div
-                            class="sc-gsTCUz fOJxeI"
+                            class="sc-bdfBwQ kJrqvM"
                             height="5"
                             width="8"
                           >
@@ -785,7 +809,7 @@ exports[`PluginDetails should render properly 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -818,7 +842,7 @@ exports[`PluginDetails should render properly 1`] = `
                             0
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -827,7 +851,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -865,7 +889,7 @@ exports[`PluginDetails should render properly 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -898,7 +922,7 @@ exports[`PluginDetails should render properly 1`] = `
                             +28
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -907,7 +931,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -935,7 +959,7 @@ exports[`PluginDetails should render properly 1`] = `
                               class="flex items-center w-10"
                             >
                               <div
-                                class="sc-gsTCUz eMnCVw mx-auto -mt-2"
+                                class="sc-bdfBwQ liSwOQ mx-auto -mt-2"
                                 height="18"
                                 width="15"
                               >
@@ -994,7 +1018,7 @@ exports[`PluginDetails should render properly 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -1027,7 +1051,7 @@ exports[`PluginDetails should render properly 1`] = `
                             0
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -1036,7 +1060,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -1074,7 +1098,7 @@ exports[`PluginDetails should render properly 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -1107,7 +1131,7 @@ exports[`PluginDetails should render properly 1`] = `
                             -5
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -1116,7 +1140,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -1168,15 +1192,19 @@ exports[`PluginDetails should render properly 1`] = `
                         data-testid="Pagination__next"
                         type="button"
                       >
-                        Next
                         <div
-                          class="sc-gsTCUz cmyhNZ ml-2"
-                          height="12"
-                          width="12"
+                          class="flex relative items-center space-x-2"
                         >
-                          <svg>
-                            forward.svg
-                          </svg>
+                          Next
+                          <div
+                            class="sc-bdfBwQ fdfkzt ml-2"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              forward.svg
+                            </svg>
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -1198,7 +1226,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex items-center text-2xl whitespace-nowrap"
                   >
                     <div
-                      class="sc-gsTCUz jSFRIO mr-1 -mt-1"
+                      class="sc-bdfBwQ eZPcdm mr-1 -mt-1"
                       height="19"
                       width="34"
                     >
@@ -1236,7 +1264,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1245,7 +1273,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1254,7 +1282,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1263,7 +1291,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1272,7 +1300,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1308,7 +1336,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1317,7 +1345,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1326,7 +1354,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1335,7 +1363,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1371,7 +1399,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1380,7 +1408,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1389,7 +1417,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1425,7 +1453,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1434,7 +1462,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1470,7 +1498,7 @@ exports[`PluginDetails should render properly 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -1603,20 +1631,24 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz eMnCVw p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1638,13 +1670,17 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz byDVwN p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1664,13 +1700,17 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-gsTCUz gbSRoN p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1717,7 +1757,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       class="text-theme-secondary-text dark:text-theme-secondary-800"
                     >
                       <div
-                        class="sc-gsTCUz cXMmJt"
+                        class="sc-bdfBwQ fPrsah"
                         height="1em"
                         width="1em"
                       >
@@ -1748,7 +1788,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-gsTCUz fOJxeI transition-transform "
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
                         width="8"
                       >
@@ -1771,7 +1811,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ text-theme-secondary-500"
+        class="sc-bdfBwQ imIpud text-theme-secondary-500"
         height="24"
         width="13"
       >
@@ -1857,7 +1897,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       data-testid="PluginHeader__button--open"
                       type="button"
                     >
-                      Open
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        Open
+                      </div>
                     </button>
                     <button
                       class="Button__StyledButton-mdtvtf-0 iSmMLw ml-3"
@@ -1865,13 +1909,17 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz cXMmJt"
-                        height="1em"
-                        width="1em"
+                        class="flex relative items-center space-x-2"
                       >
-                        <svg>
-                          update.svg
-                        </svg>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            update.svg
+                          </svg>
+                        </div>
                       </div>
                     </button>
                     <button
@@ -1880,13 +1928,17 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
+                        class="flex relative items-center space-x-2"
                       >
-                        <svg>
-                          report.svg
-                        </svg>
+                        <div
+                          class="sc-bdfBwQ iyevwF"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            report.svg
+                          </svg>
+                        </div>
                       </div>
                     </button>
                     <button
@@ -1895,13 +1947,17 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-gsTCUz cXMmJt"
-                        height="1em"
-                        width="1em"
+                        class="flex relative items-center space-x-2"
                       >
-                        <svg>
-                          trash.svg
-                        </svg>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            trash.svg
+                          </svg>
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1932,7 +1988,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="ml-3"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -1998,7 +2054,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="pr-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -2190,7 +2246,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 class="flex items-center justify-center text-theme-warning-600"
               >
                 <div
-                  class="sc-gsTCUz cUuJwN"
+                  class="sc-bdfBwQ daKoZl"
                   height="1.75em"
                   width="1.75em"
                 >
@@ -2246,7 +2302,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   data-testid="ReviewBox__button--comment"
                   type="button"
                 >
-                  Leave a comment
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Leave a comment
+                  </div>
                 </button>
               </div>
               <div
@@ -2277,7 +2337,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             Best
                           </span>
                           <div
-                            class="sc-gsTCUz fOJxeI"
+                            class="sc-bdfBwQ kJrqvM"
                             height="5"
                             width="8"
                           >
@@ -2322,7 +2382,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -2355,7 +2415,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             0
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2364,7 +2424,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2402,7 +2462,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -2435,7 +2495,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             +28
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2444,7 +2504,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2472,7 +2532,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                               class="flex items-center w-10"
                             >
                               <div
-                                class="sc-gsTCUz eMnCVw mx-auto -mt-2"
+                                class="sc-bdfBwQ liSwOQ mx-auto -mt-2"
                                 height="18"
                                 width="15"
                               >
@@ -2531,7 +2591,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -2564,7 +2624,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             0
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2573,7 +2633,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2611,7 +2671,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                           >
                             <div
-                              class="sc-gsTCUz jsttWF"
+                              class="sc-bdfBwQ TENjd"
                               height="10"
                               width="10"
                             >
@@ -2644,7 +2704,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             -5
                           </span>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2653,7 +2713,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz ppMap text-theme-primary-200"
+                            class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
                             height="15"
                             width="15"
                           >
@@ -2705,15 +2765,19 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         data-testid="Pagination__next"
                         type="button"
                       >
-                        Next
                         <div
-                          class="sc-gsTCUz cmyhNZ ml-2"
-                          height="12"
-                          width="12"
+                          class="flex relative items-center space-x-2"
                         >
-                          <svg>
-                            forward.svg
-                          </svg>
+                          Next
+                          <div
+                            class="sc-bdfBwQ fdfkzt ml-2"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              forward.svg
+                            </svg>
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -2735,7 +2799,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex items-center text-2xl whitespace-nowrap"
                   >
                     <div
-                      class="sc-gsTCUz jSFRIO mr-1 -mt-1"
+                      class="sc-bdfBwQ eZPcdm mr-1 -mt-1"
                       height="19"
                       width="34"
                     >
@@ -2773,7 +2837,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2782,7 +2846,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2791,7 +2855,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2800,7 +2864,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2809,7 +2873,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2845,7 +2909,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2854,7 +2918,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2863,7 +2927,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2872,7 +2936,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2908,7 +2972,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2917,7 +2981,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2926,7 +2990,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2962,7 +3026,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -2971,7 +3035,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </svg>
                           </div>
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >
@@ -3007,7 +3071,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                           class="flex items-center space-x-1 text-theme-warning-400"
                         >
                           <div
-                            class="sc-gsTCUz caGmQN"
+                            class="sc-bdfBwQ eRnpCh"
                             height="13"
                             width="13"
                           >

@@ -12,13 +12,17 @@ exports[`CompactPagination should handle first page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -27,13 +31,17 @@ exports[`CompactPagination should handle first page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF"
-        height="10"
-        width="10"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ TENjd"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
       </div>
     </button>
     <div
@@ -62,13 +70,17 @@ exports[`CompactPagination should handle last page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          forward.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -77,13 +89,17 @@ exports[`CompactPagination should handle last page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -102,13 +118,17 @@ exports[`CompactPagination should handle next page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF"
-        height="10"
-        width="10"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ TENjd"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
       </div>
     </button>
     <div
@@ -122,13 +142,17 @@ exports[`CompactPagination should handle next page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          forward.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -137,13 +161,17 @@ exports[`CompactPagination should handle next page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -162,13 +190,17 @@ exports[`CompactPagination should handle previous page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF"
-        height="10"
-        width="10"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ TENjd"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
       </div>
     </button>
     <div
@@ -182,13 +214,17 @@ exports[`CompactPagination should handle previous page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          forward.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -197,13 +233,17 @@ exports[`CompactPagination should handle previous page click properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -227,13 +267,17 @@ exports[`CompactPagination should not render first and previous buttons on first
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          forward.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -242,13 +286,17 @@ exports[`CompactPagination should not render first and previous buttons on first
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>
@@ -267,13 +315,17 @@ exports[`CompactPagination should not render next and last buttons on last page 
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-first.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -282,13 +334,17 @@ exports[`CompactPagination should not render next and last buttons on last page 
       type="button"
     >
       <div
-        class="sc-gsTCUz jsttWF"
-        height="10"
-        width="10"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          back.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ TENjd"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
       </div>
     </button>
     <div
@@ -317,13 +373,17 @@ exports[`CompactPagination should render properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          forward.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
       </div>
     </button>
     <button
@@ -332,13 +392,17 @@ exports[`CompactPagination should render properly 1`] = `
       type="button"
     >
       <div
-        class="sc-gsTCUz cmyhNZ"
-        height="12"
-        width="12"
+        class="flex relative items-center space-x-2"
       >
-        <svg>
-          pagination-last.svg
-        </svg>
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
       </div>
     </button>
   </div>

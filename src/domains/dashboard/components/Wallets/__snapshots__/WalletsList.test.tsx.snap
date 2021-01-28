@@ -683,7 +683,11 @@ exports[`WalletsList should render with view more button 1`] = `
         data-testid="WalletsList__ViewMore"
         type="button"
       >
-        View More
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          View More
+        </div>
       </button>
     </div>
   </div>

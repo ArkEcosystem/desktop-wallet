@@ -22,13 +22,17 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -82,7 +86,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -112,7 +116,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -150,7 +154,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                                   Search
                                 </span>
                                 <div
-                                  class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-secondary-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -186,7 +190,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -254,7 +258,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -276,7 +284,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -344,7 +352,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -382,13 +394,17 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -442,7 +458,7 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -472,7 +488,7 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -510,7 +526,7 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                                   Search
                                 </span>
                                 <div
-                                  class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-secondary-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -546,7 +562,7 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -614,7 +630,11 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -636,7 +656,7 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -704,7 +724,11 @@ exports[`SearchWallet uses fiat value = false should render with BTC as the defa
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -742,13 +766,17 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -802,7 +830,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -832,7 +860,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -862,7 +890,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -900,7 +928,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                                   Search
                                 </span>
                                 <div
-                                  class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-secondary-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -936,7 +964,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -1015,7 +1043,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1037,7 +1069,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -1116,7 +1148,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1154,13 +1190,17 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -1214,7 +1254,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -1244,7 +1284,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -1274,7 +1314,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -1312,7 +1352,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                                   Search
                                 </span>
                                 <div
-                                  class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-secondary-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -1348,7 +1388,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -1427,7 +1467,11 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1449,7 +1493,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-gsTCUz fHxsLl"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -1528,7 +1572,11 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>

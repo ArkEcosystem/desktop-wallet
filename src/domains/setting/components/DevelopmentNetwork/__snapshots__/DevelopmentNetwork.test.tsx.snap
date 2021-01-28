@@ -24,13 +24,17 @@ exports[`DevelopmentNetwork should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -58,14 +62,22 @@ exports[`DevelopmentNetwork should render a modal 1`] = `
               data-testid="DevelopmentNetwork__cancel-button"
               type="button"
             >
-              Cancel
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Cancel
+              </div>
             </button>
             <button
               class="Button__StyledButton-mdtvtf-0 iSmMLw"
               data-testid="DevelopmentNetwork__continue-button"
               type="button"
             >
-              Continue
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Continue
+              </div>
             </button>
           </div>
         </div>

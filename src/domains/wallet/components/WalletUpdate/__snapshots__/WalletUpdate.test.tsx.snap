@@ -24,13 +24,17 @@ exports[`WalletUpdate should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -76,14 +80,22 @@ exports[`WalletUpdate should render 1`] = `
                 data-testid="WalletUpdate__cancel-button"
                 type="button"
               >
-                Update Later
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Update Later
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 iSmMLw"
                 data-testid="WalletUpdate__update-button"
                 type="button"
               >
-                Update Now
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Update Now
+                </div>
               </button>
             </div>
           </div>

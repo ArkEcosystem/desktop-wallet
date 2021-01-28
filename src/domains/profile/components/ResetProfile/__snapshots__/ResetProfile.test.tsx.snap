@@ -22,13 +22,17 @@ exports[`ResetProfile should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -61,7 +65,11 @@ exports[`ResetProfile should render 1`] = `
               data-testid="ResetProfile__cancel-button"
               type="button"
             >
-              Cancel
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Cancel
+              </div>
             </button>
             <button
               class="Button__StyledButton-mdtvtf-0 iSmMLw"
@@ -69,17 +77,21 @@ exports[`ResetProfile should render 1`] = `
               type="submit"
             >
               <div
-                class="sc-gsTCUz cXMmJt"
-                height="1em"
-                width="1em"
+                class="flex relative items-center space-x-2"
               >
-                <svg>
-                  reset.svg
-                </svg>
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    reset.svg
+                  </svg>
+                </div>
+                <span>
+                  Reset Data
+                </span>
               </div>
-              <span>
-                Reset Data
-              </span>
             </button>
           </div>
         </div>

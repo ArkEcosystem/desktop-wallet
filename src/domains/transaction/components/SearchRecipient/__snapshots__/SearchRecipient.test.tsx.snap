@@ -24,13 +24,17 @@ exports[`SearchRecipient should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -84,7 +88,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -114,7 +118,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -144,7 +148,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -182,7 +186,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                                   Search
                                 </span>
                                 <div
-                                  class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-secondary-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -266,7 +270,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -336,7 +344,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -406,7 +418,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -476,7 +492,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -546,7 +566,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -616,7 +640,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -654,13 +682,17 @@ exports[`SearchRecipient should render a modal with custom title and description
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -714,7 +746,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -744,7 +776,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -774,7 +806,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                         >
                           <div
-                            class="sc-gsTCUz fOJxeI transition-transform transform rotate-180"
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                             height="5"
                             role="img"
                             width="8"
@@ -812,7 +844,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                                   Search
                                 </span>
                                 <div
-                                  class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-secondary-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -896,7 +928,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -966,7 +1002,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1036,7 +1076,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1106,7 +1150,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1176,7 +1224,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
@@ -1246,7 +1298,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
-                          Select
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            Select
+                          </div>
                         </button>
                       </div>
                     </td>
