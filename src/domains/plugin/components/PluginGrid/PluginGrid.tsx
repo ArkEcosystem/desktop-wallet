@@ -35,27 +35,34 @@ export const PluginGrid = ({
 	let skeletons = [];
 
 	if (isLoading) {
-		skeletons = new Array(skeletonsLimit).fill(<PluginCardSkeleton />);
+		skeletons = new Array(skeletonsLimit).fill({});
 	}
 
-	for (const plugin of plugins) {
-		entries.push(
-			<PluginCard
-				key={plugin.id}
-				plugin={plugin}
-				onClick={() => onSelect(plugin.id)}
-				onDelete={() => onDelete(plugin)}
-				onEnable={() => onEnable?.(plugin)}
-				onDisable={() => onDisable?.(plugin)}
-			/>,
-		);
+	if (!isLoading) {
+		for (const plugin of plugins) {
+			entries.push(
+				<PluginCard
+					key={plugin.id}
+					plugin={plugin}
+					onClick={() => onSelect(plugin.id)}
+					onDelete={() => onDelete(plugin)}
+					onEnable={() => onEnable?.(plugin)}
+					onDisable={() => onDisable?.(plugin)}
+				/>,
+			);
+		}
 	}
 
 	const pageEntries = chunk(entries, itemsPerPage!)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginGrid">
-			<div className={`grid grid-cols-4 gap-5 ${className}`}>{skeletons}</div>
+			<div className={`grid grid-cols-4 gap-5 ${className}`}>
+				{skeletons.map((_, index) => (
+					<PluginCardSkeleton key={index} />
+				))}
+			</div>
+
 			<div className={`grid grid-cols-4 gap-5 ${className}`}>{pageEntries}</div>
 
 			<div className="flex justify-center mt-4">
