@@ -3,6 +3,8 @@ import { Pagination } from "app/components/Pagination";
 import { PluginCard } from "domains/plugin/components/PluginCard";
 import React from "react";
 
+import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
+
 type PluginGridProps = {
 	className?: string;
 	itemsPerPage?: number;
@@ -11,6 +13,8 @@ type PluginGridProps = {
 	onDisable?: (plugin: any) => void;
 	onSelect: any;
 	plugins: any[];
+	isLoading?: boolean;
+	skeletonsLimit?: number;
 	withPagination?: boolean;
 };
 
@@ -23,27 +27,42 @@ export const PluginGrid = ({
 	onDisable,
 	plugins,
 	withPagination,
+	isLoading,
+	skeletonsLimit = 8,
 }: PluginGridProps) => {
 	const [currentPage, setCurrentPage] = React.useState(1);
 	const entries = [];
+	let skeletons = [];
 
-	for (const plugin of plugins) {
-		entries.push(
-			<PluginCard
-				key={plugin.id}
-				plugin={plugin}
-				onClick={() => onSelect(plugin.id)}
-				onDelete={() => onDelete(plugin)}
-				onEnable={() => onEnable?.(plugin)}
-				onDisable={() => onDisable?.(plugin)}
-			/>,
-		);
+	if (isLoading) {
+		skeletons = new Array(skeletonsLimit).fill({});
+	}
+
+	if (!isLoading) {
+		for (const plugin of plugins) {
+			entries.push(
+				<PluginCard
+					key={plugin.id}
+					plugin={plugin}
+					onClick={() => onSelect(plugin.id)}
+					onDelete={() => onDelete(plugin)}
+					onEnable={() => onEnable?.(plugin)}
+					onDisable={() => onDisable?.(plugin)}
+				/>,
+			);
+		}
 	}
 
 	const pageEntries = chunk(entries, itemsPerPage!)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginGrid">
+			<div className={`grid grid-cols-4 gap-5 ${className}`}>
+				{skeletons.map((_, index) => (
+					<PluginCardSkeleton key={index} />
+				))}
+			</div>
+
 			<div className={`grid grid-cols-4 gap-5 ${className}`}>{pageEntries}</div>
 
 			<div className="flex justify-center mt-4">

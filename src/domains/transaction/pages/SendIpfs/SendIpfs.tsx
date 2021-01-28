@@ -215,12 +215,10 @@ export const SendIpfs = () => {
 													type="submit"
 													data-testid="SendIpfs__button--submit"
 													disabled={!formState.isValid || formState.isSubmitting}
+													isLoading={formState.isSubmitting}
+													icon="Send"
 												>
-													{formState.isSubmitting ? (
-														<Spinner size="sm" />
-													) : (
-														t("TRANSACTION.SIGN_CONTINUE")
-													)}
+													<span>{t("COMMON.SEND")}</span>
 												</Button>
 											</>
 										)}
