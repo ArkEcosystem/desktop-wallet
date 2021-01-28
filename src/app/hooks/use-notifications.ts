@@ -123,14 +123,10 @@ const deleteNotificationsByVersion = (env: Environment) => ({ version }: { versi
 		});
 };
 
-const sortTransactionNotificationsDesc = (notifications: any[]) => {
-	const sorted = notifications.sort((firstNotification, secondNotification) => {
+const sortTransactionNotificationsDesc = (notifications: any[]) => notifications.sort((firstNotification, secondNotification) => {
 		const index = -(firstNotification?.meta?.timestamp - secondNotification?.meta?.timestamp);
 		return !Number.isNaN(index) ? index : -1;
 	});
-
-	return sorted;
-};
 
 export const useNotifications = () => {
 	const { t } = useTranslation();

@@ -224,7 +224,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -295,7 +295,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
@@ -637,7 +637,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -708,7 +708,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
@@ -951,7 +951,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -1022,7 +1022,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
@@ -1115,7 +1115,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      DK1f5f…Uzhpmy
+                      DBoKkz…RqMuK2
                     </span>
                   </div>
                 </div>
@@ -1131,9 +1131,9 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
+                      alt="DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="DBoKkzKAT6YdXhyv1mvcKEg97JxiRqMuK2"
                     />
                   </div>
                 </div>
@@ -1203,7 +1203,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     <span
                       data-testid="Amount"
                     >
-                      + 20 DARK
+                      + 0.0000001 DARK
                     </span>
                   </div>
                   <span
@@ -1246,8 +1246,44 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    0.03499657 DARK
+                    0.1 DARK
                   </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-secondary-700"
+                >
+                  Smartbridge
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <p
+                    class="break-all"
+                  >
+                    Java ? ? ? ?
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex justify-center w-11 text-theme-secondary-900 dark:text-theme-secondary-600"
+              >
+                <div
+                  class="sc-bdfBwQ bVENOE"
+                  height="22"
+                  width="18"
+                >
+                  <svg>
+                    smartbridge.svg
+                  </svg>
                 </div>
               </div>
             </div>
@@ -1266,7 +1302,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 <div
                   class="font-semibold"
                 >
-                  26.04.2020 15:56:56
+                  19.03.2020 09:02:40
                 </div>
               </div>
             </div>
@@ -1328,7 +1364,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/transaction/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b"
+                      to="https://dexplorer.ark.io/transaction/1a767ebc0cc53246b9105a9f09b6c2ffa7baedcc7e632c8c1bac58f8f17389f6"
                     >
                       <span
                         class="underline-dotted"
@@ -1337,7 +1373,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ea63bf9a4b3ea…1868681b5c79b
+                          1a767ebc0cc53…c58f8f17389f6
                         </span>
                       </span>
                       <div
@@ -1395,7 +1431,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="Link"
                       rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/block/4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4"
+                      to="https://dexplorer.ark.io/block/da8cfe8a271c5759ae5648ca3ede759ee8c906884b25f1f6d7a2e9b852236c20"
                     >
                       <span
                         class="underline-dotted"
@@ -1404,7 +1440,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          4fbdbedc9d147…cdd16290920a4
+                          da8cfe8a271c5…2e9b852236c20
                         </span>
                       </span>
                       <div
@@ -1672,7 +1708,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -1743,7 +1779,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
@@ -1986,7 +2022,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -2057,7 +2093,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
@@ -2399,7 +2435,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -2470,7 +2506,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
@@ -2713,7 +2749,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                + 20 DARK
+                                + 0.0000001 DARK
                               </span>
                             </div>
                           </div>
@@ -2784,7 +2820,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                + 0.0000001 DARK
+                                + 20 DARK
                               </span>
                             </div>
                           </div>
