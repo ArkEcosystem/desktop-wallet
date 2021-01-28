@@ -35,10 +35,7 @@ type PluginManagerProps = {
 const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plugins }: PluginManagerHomeProps) => {
-	const activeProfile = useActiveProfile();
-
 	const { t } = useTranslation();
-	const history = useHistory();
 
 	return (
 		<div>
