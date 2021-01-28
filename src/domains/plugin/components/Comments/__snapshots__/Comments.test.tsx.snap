@@ -450,19 +450,23 @@ exports[`Comments should render properly 1`] = `
           </div>
         </div>
         <button
-          class="Button__StyledButton-mdtvtf-0 lmPdYN"
+          class="Button__StyledButton-mdtvtf-0 iUSBMV"
           data-testid="Pagination__next"
           type="button"
         >
-          Next
           <div
-            class="sc-bdfBwQ fdfkzt ml-2"
-            height="12"
-            width="12"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              forward.svg
-            </svg>
+            Next
+            <div
+              class="sc-bdfBwQ fdfkzt ml-2"
+              height="12"
+              width="12"
+            >
+              <svg>
+                forward.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>

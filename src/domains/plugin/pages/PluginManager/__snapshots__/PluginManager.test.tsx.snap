@@ -89,28 +89,32 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -127,18 +131,22 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -153,18 +161,22 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -319,25 +331,29 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -790,11 +806,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -873,11 +890,15 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -1133,11 +1154,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -1216,11 +1238,15 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -1475,11 +1501,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -1558,11 +1585,15 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -1672,28 +1703,32 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -1710,18 +1745,22 @@ exports[`PluginManager should close install plugin modal 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -1736,18 +1775,22 @@ exports[`PluginManager should close install plugin modal 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -1902,25 +1945,29 @@ exports[`PluginManager should close install plugin modal 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -2373,11 +2420,12 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -2456,11 +2504,15 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -2716,11 +2768,12 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -2799,11 +2852,15 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -3058,11 +3115,12 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -3141,11 +3199,15 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -3255,28 +3317,32 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -3293,18 +3359,22 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -3319,18 +3389,22 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -3485,25 +3559,29 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -4033,17 +4111,21 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                                     data-testid="dropdown__toggle"
                                   >
                                     <button
-                                      class="Button__StyledButton-mdtvtf-0 dvfbIm text-left"
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
                                       type="button"
                                     >
                                       <div
-                                        class="sc-gsTCUz fHxsLl"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-gsTCUz fHxsLl"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
                                     </button>
                                   </span>
@@ -4173,28 +4255,32 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -4211,18 +4297,22 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -4237,18 +4327,22 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -4403,25 +4497,29 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -4874,11 +4972,12 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -4957,11 +5056,15 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -5217,11 +5320,12 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -5300,11 +5404,15 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -5559,11 +5667,12 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   <div
                                     class="flex justify-center items-center"
                                   >
-                                    <svg
-                                      class="w-14 h-14"
-                                    >
-                                      plugin-logo-placeholder.svg
-                                    </svg>
+                                    <img
+                                      alt="Logo"
+                                      class="overflow-hidden w-14 h-14 rounded"
+                                      data-testid="PluginListItem__logo"
+                                      src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                    />
                                   </div>
                                 </div>
                               </td>
@@ -5642,11 +5751,15 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                                 >
                                   <button
-                                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                                     data-testid="PluginListItem__install"
                                     type="button"
                                   >
-                                    Install
+                                    <div
+                                      class="flex relative items-center space-x-2"
+                                    >
+                                      Install
+                                    </div>
                                   </button>
                                 </div>
                               </td>
@@ -5678,18 +5791,22 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
           <button
-            class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
+            class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
             <div
-              class="sc-gsTCUz jEpOBt"
-              height="14"
-              width="14"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                cross-slim.svg
-              </svg>
+              <div
+                class="sc-gsTCUz jEpOBt"
+                height="14"
+                width="14"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
           </button>
         </div>
@@ -5796,18 +5913,26 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 class="flex justify-end mt-8 space-x-3"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
                   data-testid="InstallPlugin__cancel-button"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
-                  class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                  class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                   data-testid="InstallPlugin__install-button"
                   type="button"
                 >
-                  Install
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Install
+                  </div>
                 </button>
               </div>
             </div>
@@ -5908,28 +6033,32 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -5946,18 +6075,22 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -5972,18 +6105,22 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -6138,25 +6275,29 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -6686,17 +6827,21 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                                     data-testid="dropdown__toggle"
                                   >
                                     <button
-                                      class="Button__StyledButton-mdtvtf-0 dvfbIm text-left"
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
                                       type="button"
                                     >
                                       <div
-                                        class="sc-gsTCUz fHxsLl"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-gsTCUz fHxsLl"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
                                     </button>
                                   </span>
@@ -6826,28 +6971,32 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -6864,18 +7013,22 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -6890,18 +7043,22 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -7056,25 +7213,29 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -7320,9 +7481,11 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -7396,9 +7559,11 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -7471,9 +7636,11 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -7530,18 +7697,22 @@ exports[`PluginManager should install plugin from header install button 1`] = `
           class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
           <button
-            class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
+            class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
             <div
-              class="sc-gsTCUz jEpOBt"
-              height="14"
-              width="14"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                cross-slim.svg
-              </svg>
+              <div
+                class="sc-gsTCUz jEpOBt"
+                height="14"
+                width="14"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
           </button>
         </div>
@@ -7648,18 +7819,26 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                 class="flex justify-end mt-8 space-x-3"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
                   data-testid="InstallPlugin__cancel-button"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
-                  class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                  class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                   data-testid="InstallPlugin__install-button"
                   type="button"
                 >
-                  Install
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Install
+                  </div>
                 </button>
               </div>
             </div>
@@ -7760,28 +7939,32 @@ exports[`PluginManager should render 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -7798,18 +7981,22 @@ exports[`PluginManager should render 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -7824,18 +8011,22 @@ exports[`PluginManager should render 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -7990,25 +8181,29 @@ exports[`PluginManager should render 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -8407,28 +8602,32 @@ exports[`PluginManager should search for plugin 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -8445,18 +8644,22 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -8471,18 +8674,22 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -8690,25 +8897,29 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -8954,9 +9165,11 @@ exports[`PluginManager should search for plugin 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -9030,9 +9243,11 @@ exports[`PluginManager should search for plugin 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -9105,9 +9320,11 @@ exports[`PluginManager should search for plugin 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -9242,28 +9459,32 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -9280,18 +9501,22 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -9306,18 +9531,22 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -9472,25 +9701,29 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -9709,18 +9942,22 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                       data-testid="Pagination"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
                         data-testid="Pagination__first"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="flex relative items-center space-x-2"
                         >
-                          <svg>
-                            pagination-first.svg
-                          </svg>
+                          <div
+                            class="sc-gsTCUz cmyhNZ"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              pagination-first.svg
+                            </svg>
+                          </div>
                         </div>
                       </button>
                       <div
@@ -9756,18 +9993,22 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                         </div>
                       </div>
                       <button
-                        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
                         data-testid="Pagination__last"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="flex relative items-center space-x-2"
                         >
-                          <svg>
-                            pagination-last.svg
-                          </svg>
+                          <div
+                            class="sc-gsTCUz cmyhNZ"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              pagination-last.svg
+                            </svg>
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -9872,28 +10113,32 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="overflow-hidden rounded-lg"
+                      class="rounded-lg"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
                         <div
-                          class="sc-gsTCUz eMnCVw p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
+                            class="sc-gsTCUz eMnCVw p-1"
+                            height="18"
+                            width="15"
+                          >
+                            <svg>
+                              notification.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -9910,18 +10155,22 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz byDVwN p-1"
-                      height="18"
-                      width="18"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        sent.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz byDVwN p-1"
+                        height="18"
+                        width="18"
+                      >
+                        <svg>
+                          sent.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -9936,18 +10185,22 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 IdcN"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz gbSRoN p-1"
-                      height="22"
-                      width="22"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        qr-code.svg
-                      </svg>
+                      <div
+                        class="sc-gsTCUz gbSRoN p-1"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          qr-code.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -10102,25 +10355,29 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     class="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                   />
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="PluginManager_header--install"
                     type="button"
                   >
                     <div
-                      class="flex items-center space-x-2 whitespace-nowrap"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-gsTCUz ppMap"
-                        height="15"
-                        width="15"
+                        class="flex items-center space-x-2 whitespace-nowrap"
                       >
-                        <svg>
-                          file.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz ppMap"
+                          height="15"
+                          width="15"
+                        >
+                          <svg>
+                            file.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Install File
+                        </span>
                       </div>
-                      <span>
-                        Install File
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -10366,9 +10623,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -10442,9 +10701,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div
@@ -10517,9 +10778,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                               <div
                                 class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
                               >
-                                <svg>
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <img
+                                  alt="Logo"
+                                  data-testid="PluginCard__logo"
+                                  src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
+                                />
                               </div>
                               <div>
                                 <div

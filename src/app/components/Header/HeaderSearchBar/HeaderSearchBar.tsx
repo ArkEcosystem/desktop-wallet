@@ -101,6 +101,7 @@ export const HeaderSearchBar = ({
 							className="pl-3 border-none shadow-none HeaderSearchBar__input"
 							placeholder={placeholder}
 							value={query}
+							isFocused
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
 						/>
 					</div>

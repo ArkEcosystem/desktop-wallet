@@ -97,22 +97,26 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               data-testid="clipboard__wrapper"
             >
               <button
-                class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                class="Button__StyledButton-mdtvtf-0 iUSBMV"
                 data-testid="SecondSignature__copy"
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah"
-                  height="1em"
-                  width="1em"
+                  class="flex relative items-center space-x-2"
                 >
-                  <svg>
-                    copy.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                  <span>
+                    Copy
+                  </span>
                 </div>
-                <span>
-                  Copy
-                </span>
               </button>
             </div>
           </div>
@@ -151,22 +155,26 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             class="flex justify-end w-full"
           >
             <button
-              class="Button__StyledButton-mdtvtf-0 lmPdYN flex items-center space-x-2"
+              class="Button__StyledButton-mdtvtf-0 iUSBMV flex items-center space-x-2"
               data-testid="SecondSignature__download"
               type="button"
             >
               <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
+                class="flex relative items-center space-x-2"
               >
-                <svg>
-                  download.svg
-                </svg>
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    download.svg
+                  </svg>
+                </div>
+                <span>
+                  Download
+                </span>
               </div>
-              <span>
-                Download
-              </span>
             </button>
           </div>
           <div

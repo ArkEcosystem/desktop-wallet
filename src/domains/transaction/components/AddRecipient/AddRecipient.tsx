@@ -249,12 +249,18 @@ export const AddRecipient = ({
 									type="button"
 									data-testid="AddRecipient__send-all"
 									onClick={() => {
-										setValue("displayAmount", remainingBalance.minus(fee).toHuman());
-										setValue("amount", remainingBalance.minus(fee).toString(), {
+										const remaining = remainingBalance.isGreaterThan(fee)
+											? remainingBalance.minus(fee)
+											: remainingBalance;
+
+										setValue("displayAmount", remaining.toHuman());
+
+										setValue("amount", remaining.toString(), {
 											shouldValidate: true,
 											shouldDirty: true,
 										});
-										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
+
+										singleRecipientOnChange(remaining.toString(), recipientAddress);
 									}}
 									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
 								>

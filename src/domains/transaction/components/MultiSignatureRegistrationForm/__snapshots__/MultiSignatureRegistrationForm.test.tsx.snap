@@ -90,11 +90,15 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </div>
                 </fieldset>
                 <button
-                  class="Button__StyledButton-mdtvtf-0 iitCzz my-4 w-full"
+                  class="Button__StyledButton-mdtvtf-0 kwcZQn my-4 w-full"
                   disabled=""
                   type="button"
                 >
-                  Add Participant
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Add Participant
+                  </div>
                 </button>
               </div>
               <div
@@ -214,21 +218,25 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             class="py-6 w-20 text-right"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
                               data-testid="recipient-list__remove-recipient"
                               type="button"
                             >
                               <div
-                                class="py-1"
+                                class="flex relative items-center space-x-2"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah"
-                                  height="1em"
-                                  width="1em"
+                                  class="py-1"
                                 >
-                                  <svg>
-                                    trash.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      trash.svg
+                                    </svg>
+                                  </div>
                                 </div>
                               </div>
                             </button>

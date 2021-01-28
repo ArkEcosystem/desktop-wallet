@@ -4431,22 +4431,26 @@ exports[`TransactionTable should render with sign 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
                   data-testid="TransactionRow__sign"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      edit.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        edit.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Sign
+                    </span>
                   </div>
-                  <span>
-                    Sign
-                  </span>
                 </button>
               </div>
             </td>
@@ -4626,22 +4630,26 @@ exports[`TransactionTable should render with sign 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
                   data-testid="TransactionRow__sign"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      edit.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        edit.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Sign
+                    </span>
                   </div>
-                  <span>
-                    Sign
-                  </span>
                 </button>
               </div>
             </td>
