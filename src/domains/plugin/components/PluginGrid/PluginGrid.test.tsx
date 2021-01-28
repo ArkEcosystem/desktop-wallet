@@ -49,6 +49,20 @@ describe("PluginGrid", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render skeletons", () => {
+		const { asFragment, findByText, getAllByTestId } = render(<PluginGrid isLoading plugins={[]} />);
+
+		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(8);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render custom number of skeletons", () => {
+		const { asFragment, getAllByTestId } = render(<PluginGrid isLoading skeletonsLimit={10} plugins={[]} />);
+
+		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(10);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render without pagination", async () => {
 		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} withPagination={false} />);
 
