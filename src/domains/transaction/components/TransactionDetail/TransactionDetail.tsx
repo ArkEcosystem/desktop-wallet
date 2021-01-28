@@ -31,7 +31,7 @@ export const TransactionDetail = ({
 		paddingPosition={paddingPosition}
 		className={`${className} no-ligatures`}
 	>
-		<div className="space-y-2 flex-1">
+		<div className="flex-1 space-y-2">
 			{label && <div className="text-sm font-semibold text-theme-secondary-700">{label}</div>}
 
 			<div className="font-semibold">{children}</div>
