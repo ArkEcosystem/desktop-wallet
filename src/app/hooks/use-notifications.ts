@@ -123,7 +123,8 @@ const deleteNotificationsByVersion = (env: Environment) => ({ version }: { versi
 		});
 };
 
-const sortTransactionNotificationsDesc = (notifications: any[]) => notifications.sort((firstNotification, secondNotification) => {
+const sortTransactionNotificationsDesc = (notifications: any[]) =>
+	notifications.sort((firstNotification, secondNotification) => {
 		const index = -(firstNotification?.meta?.timestamp - secondNotification?.meta?.timestamp);
 		return !Number.isNaN(index) ? index : -1;
 	});
