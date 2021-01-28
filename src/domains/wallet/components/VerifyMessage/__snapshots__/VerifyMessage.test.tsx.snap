@@ -22,13 +22,17 @@ exports[`VerifyMessage should render 1`] = `
           type="button"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -164,14 +168,22 @@ exports[`VerifyMessage should render 1`] = `
                   data-testid="VerifyMessage__cancel"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                   data-testid="VerifyMessage__submit"
                   type="submit"
                 >
-                  Verify
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Verify
+                  </div>
                 </button>
               </div>
             </form>
@@ -205,13 +217,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
           type="button"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -355,14 +371,22 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   data-testid="VerifyMessage__cancel"
                   type="button"
                 >
-                  Cancel
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Cancel
+                  </div>
                 </button>
                 <button
                   class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                   data-testid="VerifyMessage__submit"
                   type="submit"
                 >
-                  Verify
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Verify
+                  </div>
                 </button>
               </div>
             </form>

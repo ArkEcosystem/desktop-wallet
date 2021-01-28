@@ -24,13 +24,17 @@ exports[`CreatePeer should render create peer modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -193,7 +197,11 @@ exports[`CreatePeer should render create peer modal 1`] = `
                 disabled=""
                 type="submit"
               >
-                Add Peer
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Add Peer
+                </div>
               </button>
             </div>
           </form>

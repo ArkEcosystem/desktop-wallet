@@ -24,13 +24,17 @@ exports[`InstallPlugin should render 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -84,14 +88,22 @@ exports[`InstallPlugin should render 1`] = `
                 data-testid="InstallPlugin__cancel-button"
                 type="button"
               >
-                Cancel
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Cancel
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                 data-testid="InstallPlugin__download-button"
                 type="button"
               >
-                Download
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Download
+                </div>
               </button>
             </div>
           </div>
@@ -303,7 +315,7 @@ exports[`InstallPlugin should render 3st step 1`] = `
                   class="text-theme-success-600"
                 >
                   <div
-                    class="sc-gsTCUz jddDKp"
+                    class="sc-bdfBwQ fcykxB"
                     height="28"
                     width="28"
                   >

@@ -24,13 +24,17 @@ exports[`AdvancedMode should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -58,14 +62,22 @@ exports[`AdvancedMode should render a modal 1`] = `
               data-testid="AdvancedMode__decline-button"
               type="button"
             >
-              I Decline
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                I Decline
+              </div>
             </button>
             <button
               class="Button__StyledButton-mdtvtf-0 ePkfgQ"
               data-testid="AdvancedMode__accept-button"
               type="button"
             >
-              I Accept
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                I Accept
+              </div>
             </button>
           </div>
         </div>

@@ -309,7 +309,11 @@ exports[`AddressTable should render 1`] = `
                   data-testid="AddressRow__select-0"
                   type="button"
                 >
-                  Vote
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Vote
+                  </div>
                 </button>
               </div>
             </td>
@@ -618,7 +622,11 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                   data-testid="AddressRow__select-0"
                   type="button"
                 >
-                  Vote
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Vote
+                  </div>
                 </button>
               </div>
             </td>

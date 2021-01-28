@@ -102,17 +102,21 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
                 type="button"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah"
-                  height="1em"
-                  width="1em"
+                  class="flex relative items-center space-x-2"
                 >
-                  <svg>
-                    copy.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                  <span>
+                    Copy
+                  </span>
                 </div>
-                <span>
-                  Copy
-                </span>
               </button>
             </div>
           </div>
@@ -156,17 +160,21 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               type="button"
             >
               <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
+                class="flex relative items-center space-x-2"
               >
-                <svg>
-                  download.svg
-                </svg>
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    download.svg
+                  </svg>
+                </div>
+                <span>
+                  Download
+                </span>
               </div>
-              <span>
-                Download
-              </span>
             </button>
           </div>
           <div

@@ -178,6 +178,22 @@ describe("AddRecipient", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should show zero amount if wallet has zero or insufficient balance", async () => {
+		const emptyProfile = env.profiles().create("Empty");
+		emptyProfile.wallets().importByMnemonic("test test", "ARK", "ark.devnet");
+		const { getByTestId, container, form } = await renderWithFormProvider(
+			<AddRecipient profile={emptyProfile} assetSymbol="ARK" maxAvailableAmount={BigNumber.ZERO} />,
+		);
+
+		const sendAll = getByTestId("AddRecipient__send-all");
+		await act(async () => {
+			fireEvent.click(sendAll);
+		});
+
+		await waitFor(() => expect(form.current.getValues("amount")).toEqual("0"));
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should toggle between single and multiple recipients", async () => {
 		const { getByTestId, queryByText } = await renderWithFormProvider(
 			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,

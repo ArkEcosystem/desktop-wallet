@@ -4436,17 +4436,21 @@ exports[`TransactionTable should render with sign 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      edit.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        edit.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Sign
+                    </span>
                   </div>
-                  <span>
-                    Sign
-                  </span>
                 </button>
               </div>
             </td>
@@ -4631,17 +4635,21 @@ exports[`TransactionTable should render with sign 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      edit.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        edit.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Sign
+                    </span>
                   </div>
-                  <span>
-                    Sign
-                  </span>
                 </button>
               </div>
             </td>

@@ -24,13 +24,17 @@ exports[`SignIn should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-gsTCUz jEpOBt"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -131,7 +135,7 @@ exports[`SignIn should render a modal 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz cXMmJt"
+                      class="sc-bdfBwQ fPrsah"
                       height="1em"
                       width="1em"
                     >
@@ -151,7 +155,11 @@ exports[`SignIn should render a modal 1`] = `
                 data-testid="SignIn__cancel-button"
                 type="button"
               >
-                Cancel
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Cancel
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
@@ -159,7 +167,11 @@ exports[`SignIn should render a modal 1`] = `
                 disabled=""
                 type="submit"
               >
-                Sign In
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Sign In
+                </div>
               </button>
             </div>
           </form>

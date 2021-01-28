@@ -95,20 +95,24 @@ exports[`SendTransfer should display disabled address selection input if selecte
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -130,13 +134,17 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -156,13 +164,17 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -566,14 +578,22 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
-                                Single
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Single
+                                </div>
                               </button>
                               <button
                                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
-                                Multiple
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Multiple
+                                </div>
                               </button>
                             </div>
                           </div>
@@ -817,7 +837,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 kwcZQn"
@@ -825,7 +849,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     disabled=""
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -933,20 +961,24 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -968,13 +1000,17 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -994,13 +1030,17 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1275,7 +1315,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     data-testid="SendTransfer__button--back"
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 kwcZQn space-x-2"
@@ -1284,17 +1328,21 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     type="submit"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF"
-                      height="20"
-                      width="20"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        send.svg
-                      </svg>
+                      <div
+                        class="sc-bdfBwQ iyevwF"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          send.svg
+                        </svg>
+                      </div>
+                      <span>
+                        Send
+                      </span>
                     </div>
-                    <span>
-                      Send
-                    </span>
                   </button>
                 </div>
               </div>
@@ -1496,14 +1544,22 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 data-testid="AddRecipient__single"
                 type="button"
               >
-                Single
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Single
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
-                Multiple
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Multiple
+                </div>
               </button>
             </div>
           </div>
@@ -1929,14 +1985,22 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                 data-testid="AddRecipient__single"
                 type="button"
               >
-                Single
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Single
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
-                Multiple
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Multiple
+                </div>
               </button>
             </div>
           </div>
@@ -2362,14 +2426,22 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 data-testid="AddRecipient__single"
                 type="button"
               >
-                Single
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Single
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
-                Multiple
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Multiple
+                </div>
               </button>
             </div>
           </div>
@@ -3286,20 +3358,24 @@ exports[`SendTransfer should render form and use location state 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -3321,13 +3397,17 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -3347,13 +3427,17 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -3769,14 +3853,22 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
-                                Single
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Single
+                                </div>
                               </button>
                               <button
                                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
-                                Multiple
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Multiple
+                                </div>
                               </button>
                             </div>
                           </div>
@@ -4018,7 +4110,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 kwcZQn"
@@ -4026,7 +4122,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     disabled=""
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -4134,20 +4234,24 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -4169,13 +4273,17 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -4195,13 +4303,17 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -4561,14 +4673,22 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
-                                Single
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Single
+                                </div>
                               </button>
                               <button
                                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
-                                Multiple
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Multiple
+                                </div>
                               </button>
                             </div>
                           </div>
@@ -4812,7 +4932,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 kwcZQn"
@@ -4820,7 +4944,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                     disabled=""
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -4928,20 +5056,24 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -4963,13 +5095,17 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -4989,13 +5125,17 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -5417,14 +5557,22 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
-                                Single
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Single
+                                </div>
                               </button>
                               <button
                                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
-                                Multiple
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Multiple
+                                </div>
                               </button>
                             </div>
                           </div>
@@ -5668,7 +5816,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 kwcZQn"
@@ -5676,7 +5828,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     disabled=""
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -5784,20 +5940,24 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -5819,13 +5979,17 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -5845,13 +6009,17 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -6255,14 +6423,22 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
-                                Single
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Single
+                                </div>
                               </button>
                               <button
                                 class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
-                                Multiple
+                                <div
+                                  class="flex relative items-center space-x-2"
+                                >
+                                  Multiple
+                                </div>
                               </button>
                             </div>
                           </div>
@@ -6506,7 +6682,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
                     class="Button__StyledButton-mdtvtf-0 kwcZQn"
@@ -6514,7 +6694,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     disabled=""
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -6622,20 +6806,24 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -6657,13 +6845,17 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -6683,13 +6875,17 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -7184,7 +7380,11 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
-                    Back to Wallet
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back to Wallet
+                    </div>
                   </button>
                 </div>
               </div>
@@ -7294,20 +7494,24 @@ exports[`SendTransfer should show error step and go back 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -7329,13 +7533,17 @@ exports[`SendTransfer should show error step and go back 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -7355,13 +7563,17 @@ exports[`SendTransfer should show error step and go back 1`] = `
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -7583,14 +7795,22 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
-                        Back to Wallet
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Back to Wallet
+                        </div>
                       </button>
                       <button
                         class="Button__StyledButton-mdtvtf-0 ePkfgQ space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
-                        Retry
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Retry
+                        </div>
                       </button>
                     </div>
                   </div>

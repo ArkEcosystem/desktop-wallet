@@ -72,7 +72,11 @@ exports[`DelegateRow should emit action on select button 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Select
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Select
+              </div>
             </button>
           </div>
         </td>
@@ -154,7 +158,11 @@ exports[`DelegateRow should render 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Select
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Select
+              </div>
             </button>
           </div>
         </td>
@@ -236,7 +244,11 @@ exports[`DelegateRow should render the selected delegate 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Selected
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Selected
+              </div>
             </button>
           </div>
         </td>
@@ -295,7 +307,7 @@ exports[`DelegateRow should render the selected vote 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
           >
             <div
-              class="sc-gsTCUz gbSRoN text-xs text-theme-primary-600"
+              class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
               height="22"
               width="22"
             >
@@ -328,7 +340,11 @@ exports[`DelegateRow should render the selected vote 1`] = `
               data-testid="DelegateRow__toggle-0"
               type="button"
             >
-              Current
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Current
+              </div>
             </button>
           </div>
         </td>
@@ -401,7 +417,11 @@ exports[`DelegateRow should render the selected vote 1`] = `
               data-testid="DelegateRow__toggle-1"
               type="button"
             >
-              Select
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Select
+              </div>
             </button>
           </div>
         </td>
@@ -476,7 +496,11 @@ exports[`DelegateRow should render the selected vote 1`] = `
                 disabled=""
                 type="button"
               >
-                Select
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Select
+                </div>
               </button>
             </span>
           </div>

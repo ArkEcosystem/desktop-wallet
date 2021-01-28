@@ -24,13 +24,17 @@ exports[`AddAssets should render a modal 1`] = `
           type="button"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
@@ -751,13 +755,21 @@ exports[`AddAssets should render a modal 1`] = `
                 class="Button__StyledButton-mdtvtf-0 iUSBMV"
                 type="button"
               >
-                Cancel
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Cancel
+                </div>
               </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                 type="submit"
               >
-                Update
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Update
+                </div>
               </button>
             </div>
           </form>

@@ -56,8 +56,15 @@ export const sendTransfer = (t: any, env: Environment) => ({
 		validate: {
 			valid: (amountValue: any = BigNumber.ZERO) => {
 				const amount = BigNumber.make(amountValue);
-				const shouldRequire = amount.isZero() && (isSingleRecipient || !recipients.length);
 				const hasSufficientBalance = balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero();
+				const shouldRequire = amount.isZero() && (isSingleRecipient || !recipients.length);
+
+				if (!hasSufficientBalance) {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+						balance: balance?.toHuman(),
+						coinId: network?.coin(),
+					});
+				}
 
 				if (shouldRequire) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -65,13 +72,7 @@ export const sendTransfer = (t: any, env: Environment) => ({
 					});
 				}
 
-				return (
-					hasSufficientBalance ||
-					t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
-						coinId: network?.coin(),
-					})
-				);
+				return true;
 			},
 		},
 	}),
