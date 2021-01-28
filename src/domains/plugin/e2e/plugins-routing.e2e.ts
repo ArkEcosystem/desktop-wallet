@@ -10,16 +10,16 @@ createFixture(`Plugins routing`).beforeEach(async (t) => await goToPlugins(t));
 
 test("should navigate and apply filters", async (t) => {
 	// Filtering by game
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAMING));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAMING).exists).ok();
 
 	// Filtering by utility
 	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY).exists).ok();
 
 	// Filtering by themes
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEME));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEME).exists).ok();
 
 	// Filtering by other
 	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER));
@@ -31,15 +31,15 @@ test("should navigate and apply filters", async (t) => {
 });
 
 test("should navigate to plugin details and back", async (t) => {
-	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("ARK Explorer"));
+	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("Transaction Export"));
 	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
 
-	await t.expect(getLocation()).contains("/plugins/0");
+	await t.expect(getLocation()).contains("/plugins/@dated/transaction-export-plugin");
 
 	await scrollToTop();
 
 	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE));
 
 	await t.expect(getLocation()).contains("/plugins");
-	await t.expect(getLocation()).notContains("/plugins/0");
+	await t.expect(getLocation()).notContains("/plugins/@dated/transaction-export-plugin");
 });

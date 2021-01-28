@@ -6,7 +6,7 @@ import { PluginList } from "./PluginList";
 const plugins = [
 	{
 		id: "ark-explorer",
-		name: "ARK Explorer",
+		title: "ARK Explorer",
 		author: "ARK.io",
 		category: "utility",
 		rating: 4.2,
@@ -17,7 +17,7 @@ const plugins = [
 	},
 	{
 		id: "ark-avatars",
-		name: "ARK Avatars",
+		title: "ARK Avatars",
 		author: "ARK.io",
 		category: "other",
 		rating: 3.8,

@@ -6,7 +6,7 @@ import { PluginCard } from "./PluginCard";
 
 const basePlugin = {
 	id: "ark-explorer",
-	name: "ARK Explorer",
+	title: "ARK Explorer",
 	author: "ARK.io",
 	category: "utility",
 	version: "1.3.8",
@@ -22,7 +22,7 @@ describe("PluginCard", () => {
 
 		const { asFragment, findByText } = render(<PluginCard plugin={plugin} />);
 
-		expect(await findByText(plugin.name)).toBeTruthy();
+		expect(await findByText(plugin.title)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
