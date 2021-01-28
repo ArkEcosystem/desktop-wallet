@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { act } from "@testing-library/react-hooks";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import { PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
-import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
@@ -37,6 +36,11 @@ describe("PluginManager", () => {
 			.once()
 			.reply(200, {});
 
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.persist();
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		history.push(pluginsURL);
 
@@ -61,11 +65,17 @@ describe("PluginManager", () => {
 		consoleSpy.mockRestore();
 	});
 
-	it("should render", () => {
-		const { asFragment, getByTestId } = rendered;
+	it("should render", async () => {
+		const { asFragment, getByTestId, getAllByText } = rendered;
 
 		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -74,7 +84,10 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 
-		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+		console.log("----finished test-----");
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -95,6 +108,9 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__gaming"));
@@ -119,25 +135,45 @@ describe("PluginManager", () => {
 	it("should download & install plugin on home", async () => {
 		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
 
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		await waitFor(() => expect(queryAllByTestId("PluginListItem__install").length).toBeGreaterThan(0));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
-		fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		act(() => {
+			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
 		act(() => {
 			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
+		act(() => {
 			fireEvent.click(getByTestId("InstallPlugin__install-button"));
 		});
 
-		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
+		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should install plugin from header install button", () => {
+	it("should install plugin from header install button", async () => {
 		const { asFragment, getByTestId } = rendered;
+
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManager_header--install"));
@@ -147,37 +183,62 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
+		act(() => {
 			fireEvent.click(getByTestId("InstallPlugin__install-button"));
 		});
 
-		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
+		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should close install plugin modal", () => {
+	it("should close install plugin modal", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
+
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+		await waitFor(() => expect(getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should cancel install plugin", () => {
+	it("should cancel install plugin", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
+
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
@@ -194,9 +255,20 @@ describe("PluginManager", () => {
 	it("should search for plugin", async () => {
 		const { asFragment, getByTestId } = rendered;
 
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
-			fireEvent.change(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+		});
+
+		await waitFor(() => expect(within(getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy());
+
+		consoleSpy.mockReset();
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
 				target: { value: "test" },
 			});
 		});
