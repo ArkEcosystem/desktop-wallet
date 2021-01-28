@@ -6,7 +6,7 @@ export const PluginCardSkeleton = () => (
 	<div data-testid="PluginCardSkeleton">
 		<Card className="h-52">
 			<div className="flex flex-col h-full items-between">
-				<div className="mb-4 mr-4">
+				<div className="mr-4 mb-4">
 					<Skeleton width={76} height={76} />
 				</div>
 
@@ -15,7 +15,7 @@ export const PluginCardSkeleton = () => (
 						<Skeleton height={16} width={150} />
 					</div>
 
-					<div className="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700 space-x-4">
+					<div className="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 						<Skeleton height={12} width={30} />
 						<Skeleton height={12} width={89} />
 					</div>
