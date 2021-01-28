@@ -679,11 +679,15 @@ exports[`WalletsList should render with view more button 1`] = `
         </table>
       </div>
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN mt-10 mb-5 w-full"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV mt-10 mb-5 w-full"
         data-testid="WalletsList__ViewMore"
         type="button"
       >
-        View More
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          View More
+        </div>
       </button>
     </div>
   </div>

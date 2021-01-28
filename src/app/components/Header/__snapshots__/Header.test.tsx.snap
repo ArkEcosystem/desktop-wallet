@@ -64,18 +64,26 @@ exports[`Header should render an header with extra 1`] = `
         class="flex justify-end space-x-3"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 iSmMLw"
+          class="Button__StyledButton-mdtvtf-0 ePkfgQ"
           data-testid="header__extra"
           type="button"
         >
-          Extra 1
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Extra 1
+          </div>
         </button>
         <button
-          class="Button__StyledButton-mdtvtf-0 iSmMLw"
+          class="Button__StyledButton-mdtvtf-0 ePkfgQ"
           data-testid="header__extra"
           type="button"
         >
-          Extra 2
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            Extra 2
+          </div>
         </button>
       </div>
     </div>

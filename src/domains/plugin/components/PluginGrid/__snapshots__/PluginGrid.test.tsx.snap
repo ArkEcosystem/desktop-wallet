@@ -33,7 +33,7 @@ exports[`PluginGrid should render 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz cyuCsN"
+                  class="sc-bdfBwQ fpbFeh"
                   height="16"
                   width="16"
                 >
@@ -83,7 +83,7 @@ exports[`PluginGrid should render 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz fHxsLl"
+                  class="sc-bdfBwQ iyevwF"
                   height="20"
                   width="20"
                 >
@@ -116,7 +116,7 @@ exports[`PluginGrid should render 1`] = `
                   class="flex overflow-hidden justify-center w-4"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                     height="1em"
                     width="1em"
                   >
@@ -155,7 +155,7 @@ exports[`PluginGrid should render 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz fHxsLl"
+                  class="sc-bdfBwQ iyevwF"
                   height="20"
                   width="20"
                 >
@@ -188,7 +188,7 @@ exports[`PluginGrid should render 1`] = `
                   class="flex overflow-hidden justify-center w-4"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                     height="1em"
                     width="1em"
                   >
@@ -258,7 +258,7 @@ exports[`PluginGrid should render without pagination 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz cyuCsN"
+                  class="sc-bdfBwQ fpbFeh"
                   height="16"
                   width="16"
                 >
@@ -308,7 +308,7 @@ exports[`PluginGrid should render without pagination 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz fHxsLl"
+                  class="sc-bdfBwQ iyevwF"
                   height="20"
                   width="20"
                 >
@@ -341,7 +341,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                   class="flex overflow-hidden justify-center w-4"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                     height="1em"
                     width="1em"
                   >
@@ -380,7 +380,7 @@ exports[`PluginGrid should render without pagination 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz fHxsLl"
+                  class="sc-bdfBwQ iyevwF"
                   height="20"
                   width="20"
                 >
@@ -413,7 +413,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                   class="flex overflow-hidden justify-center w-4"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                     height="1em"
                     width="1em"
                   >
@@ -468,7 +468,7 @@ exports[`PluginGrid should split by page 1`] = `
               </div>
               <div>
                 <div
-                  class="sc-gsTCUz fHxsLl"
+                  class="sc-bdfBwQ iyevwF"
                   height="20"
                   width="20"
                 >
@@ -501,7 +501,7 @@ exports[`PluginGrid should split by page 1`] = `
                   class="flex overflow-hidden justify-center w-4"
                 >
                   <div
-                    class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                     height="1em"
                     width="1em"
                   >
@@ -524,20 +524,24 @@ exports[`PluginGrid should split by page 1`] = `
         data-testid="Pagination"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 lmPdYN"
+          class="Button__StyledButton-mdtvtf-0 iUSBMV"
           data-testid="Pagination__previous"
           type="button"
         >
           <div
-            class="sc-gsTCUz jsttWF mr-2"
-            height="10"
-            width="10"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              back.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ TENjd mr-2"
+              height="10"
+              width="10"
+            >
+              <svg>
+                back.svg
+              </svg>
+            </div>
+            Previous
           </div>
-          Previous
         </button>
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
@@ -559,19 +563,23 @@ exports[`PluginGrid should split by page 1`] = `
           </div>
         </div>
         <button
-          class="Button__StyledButton-mdtvtf-0 lmPdYN"
+          class="Button__StyledButton-mdtvtf-0 iUSBMV"
           data-testid="Pagination__next"
           type="button"
         >
-          Next
           <div
-            class="sc-gsTCUz cmyhNZ ml-2"
-            height="12"
-            width="12"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              forward.svg
-            </svg>
+            Next
+            <div
+              class="sc-bdfBwQ fdfkzt ml-2"
+              height="12"
+              width="12"
+            >
+              <svg>
+                forward.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>

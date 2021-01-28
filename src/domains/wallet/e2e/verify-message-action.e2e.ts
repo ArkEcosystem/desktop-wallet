@@ -58,9 +58,9 @@ test("Should fail verification", async (t) => {
 	);
 
 	const mockFailingMessage = {
-		signatory: "03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc",
+		signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		signature:
-			"3044022027fdda09a4bc3e2215b56d7f0cedda8bfdc4fb97507bef3b7e74505f2e988e3102205e4aa5afa72d2011ac0c3e05bbcb72dccb17ad63f0c77a097b0046066c8030ff",
+			"7915d8c22ec9dab41bd93d9e003970b2f6aaa5d9a5e837d4d17847308f6e880f31e2c1ad141d9b080d9a151baa31dcd36dd05faa51e5db95586d630b66485e1e",
 		message: "Wrong message",
 	};
 
@@ -87,10 +87,10 @@ test("Should successfully verify message", async (t) => {
 	);
 
 	const mockSuccessMessage = {
-		signatory: "03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc",
+		signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		signature:
-			"3044022027fdda09a4bc3e2215b56d7f0cedda8bfdc4fb97507bef3b7e74505f2e988e3102205e4aa5afa72d2011ac0c3e05bbcb72dccb17ad63f0c77a097b0046066c8030ff",
-		message: "Hello world",
+			"7915d8c22ec9dab41bd93d9e003970b2f6aaa5d9a5e837d4d17847308f6e880f31e2c1ad141d9b080d9a151baa31dcd36dd05faa51e5db95586d630b66485e1e",
+		message: "Hello World",
 	};
 
 	await t.typeText(Selector("[data-testid=VerifyMessage_message-content]"), JSON.stringify(mockSuccessMessage));

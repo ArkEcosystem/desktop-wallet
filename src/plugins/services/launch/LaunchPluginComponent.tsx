@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 type Props = {
-	pluginId: number;
+	pluginId: string;
 	fallback?: React.ReactNode;
 };
 

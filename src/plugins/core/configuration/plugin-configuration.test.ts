@@ -30,10 +30,10 @@ describe("Plugin Configuration", () => {
 
 	it("should format id", () => {
 		const subject1 = PluginConfigurationData.make({ name: "@arkecosystem/plugin-test" });
-		expect(subject1.id()).toBe(2969335244);
+		expect(subject1.id()).toBe("@arkecosystem/plugin-test");
 
 		const subject2 = PluginConfigurationData.make({ name: "@arkecosystem/plugin-explorer" });
-		expect(subject2.id()).toBe(3073367889);
+		expect(subject2.id()).toBe("@arkecosystem/plugin-explorer");
 	});
 
 	it("should return author if official scope", () => {
