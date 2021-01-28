@@ -105,6 +105,7 @@ import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
 import { ReactComponent as Upload } from "./upload.svg";
 import { ReactComponent as User } from "./user.svg";
+import { ReactComponent as Verified } from "./verified.svg";
 import { ReactComponent as Vote } from "./vote.svg";
 import { ReactComponent as VoteCombination } from "./vote-combination.svg";
 import { ReactComponent as Voted } from "./voted.svg";
@@ -216,6 +217,7 @@ export const SvgCollection: any = {
 	Update,
 	Upload,
 	User,
+	Verified,
 	Vote,
 	VoteCombination,
 	Voted,
