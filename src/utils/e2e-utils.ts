@@ -168,6 +168,10 @@ export const requestMocks = {
 		...walletMocks(),
 	],
 	plugins: [
+		mockRequest(
+			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
+			"plugins/registry/@dated/transaction-export-plugin",
+		),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
 		mockRequest(
