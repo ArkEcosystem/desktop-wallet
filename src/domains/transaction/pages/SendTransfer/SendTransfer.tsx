@@ -3,7 +3,6 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -275,14 +274,10 @@ export const SendTransfer = () => {
 													type="submit"
 													data-testid="SendTransfer__button--submit"
 													disabled={!isValid || isSubmitting}
-													className="space-x-2"
+													icon="Send"
+													isLoading={isSubmitting}
 												>
-													<Icon name="Send" width={20} height={20} />
-													{isSubmitting ? (
-														<Spinner size="sm" />
-													) : (
-														<span>{t("COMMON.SEND")}</span>
-													)}
+													<span>{t("COMMON.SEND")}</span>
 												</Button>
 											</>
 										)}

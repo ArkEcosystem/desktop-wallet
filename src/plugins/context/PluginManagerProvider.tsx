@@ -14,6 +14,7 @@ const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<any>({});
+	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 
 	/* istanbul ignore next */
 	const [pluginRegistry] = useState(() => new PluginRegistry());
@@ -88,6 +89,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const fetchPluginPackages = useCallback(async () => {
 		let packages: RegistryPlugin[] = [];
 		try {
+			setIsFetchingPackages(true);
 			packages = await pluginRegistry.all();
 		} catch {
 			/* istanbul ignore next */
@@ -117,6 +119,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 		const merged = uniqBy([...localConfigurations, ...configurations], (item) => item.id());
 
+		setIsFetchingPackages(false);
 		setState((prev: any) => ({ ...prev, packages: merged }));
 	}, [pluginManager, pluginRegistry]);
 
@@ -146,6 +149,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		pluginRegistry,
 		fetchPluginPackages,
 		installPlugin,
+		isFetchingPackages,
 		pluginPackages,
 		pluginManager,
 		loadPlugins,

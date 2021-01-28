@@ -29,6 +29,7 @@ type PluginManagerHomeProps = {
 	onInstall: any;
 	viewType: string;
 	paths?: any;
+	isLoading?: boolean;
 	plugins: any[];
 };
 
@@ -47,6 +48,7 @@ const PluginManagerHome = ({
 	plugins,
 	onEnable,
 	onDisable,
+	isLoading,
 }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
 
@@ -74,6 +76,7 @@ const PluginManagerHome = ({
 						onDisable={onDisable}
 						onDelete={onDelete}
 						withPagination={false}
+						isLoading={isLoading}
 					/>
 				)}
 				{viewType === "list" && (
@@ -108,6 +111,7 @@ const PluginManagerHome = ({
 						onDisable={onDisable}
 						onDelete={onDelete}
 						withPagination={false}
+						isLoading={isLoading}
 					/>
 				)}
 				{viewType === "list" && (
@@ -142,6 +146,7 @@ const PluginManagerHome = ({
 						onDisable={onDisable}
 						onDelete={onDelete}
 						withPagination={false}
+						isLoading={isLoading}
 					/>
 				)}
 				{viewType === "list" && (
@@ -161,7 +166,7 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, pluginPackages, installPlugin } = usePluginManagerContext();
+	const { fetchPluginPackages, pluginPackages, isFetchingPackages, installPlugin } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -270,6 +275,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							<div>
 								<PluginManagerHomeBanner className="mb-8 w-full" height="auto" />
 								<PluginManagerHome
+									isLoading={isFetchingPackages}
 									paths={paths}
 									viewType={viewType}
 									plugins={homePackages}
@@ -294,6 +300,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
+									isLoading={isFetchingPackages}
 								/>
 							</div>
 						)}
@@ -326,6 +333,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									className="mt-6"
+									isLoading={isFetchingPackages}
 								/>
 							</div>
 						)}
