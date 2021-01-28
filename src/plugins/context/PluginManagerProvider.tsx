@@ -1,4 +1,4 @@
-import { Profile,RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { toasts } from "app/services";
