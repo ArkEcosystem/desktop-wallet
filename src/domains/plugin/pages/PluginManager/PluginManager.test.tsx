@@ -69,8 +69,10 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle between list and grid on home", () => {
-		const { asFragment, getByTestId } = rendered;
+	it("should toggle between list and grid on home", async () => {
+		const { asFragment, getByTestId, getAllByText } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 
 		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
 
@@ -89,8 +91,10 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle between list and grid on game", () => {
-		const { asFragment, getByTestId } = rendered;
+	it("should toggle between list and grid on game", async () => {
+		const { asFragment, getByTestId, getAllByText } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__gaming"));
@@ -202,28 +206,20 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select plugin on home grids", () => {
+	it("should select plugin on home grids", async () => {
 		const { getByTestId, getAllByText } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 
 		act(() => {
 			fireEvent.click(
-				within(getByTestId("PluginManager__home__top-rated")).getAllByText("Transaction Export")[0],
+				within(getByTestId("PluginManager__home__top-rated")).getAllByText("Transaction Export Plugin")[0],
 			);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/1791804499`);
-	});
-
-	it("should select plugin on utility grid", () => {
-		const { asFragment, getAllByText, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__utility"));
-			fireEvent.click(getAllByText("Transaction Export")[0]);
-		});
-
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/1791804499`);
-		expect(asFragment()).toMatchSnapshot();
+		expect(history.location.pathname).toEqual(
+			`/profiles/${fixtureProfileId}/plugins/@dated/transaction-export-plugin`,
+		);
 	});
 
 	it("should enable plugin on my-plugins", async () => {

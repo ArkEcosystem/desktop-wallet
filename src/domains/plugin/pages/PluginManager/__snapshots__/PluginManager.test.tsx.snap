@@ -9153,8 +9153,6 @@ exports[`PluginManager should search for plugin 1`] = `
 </DocumentFragment>
 `;
 
-exports[`PluginManager should select plugin on utility grid 1`] = `<DocumentFragment />`;
-
 exports[`PluginManager should toggle between list and grid on game 1`] = `
 <DocumentFragment>
   <div>
@@ -9528,7 +9526,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                       <span
                         class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                       >
-                        0
+                        1
                       </span>
                     </button>
                     <div
@@ -9612,7 +9610,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                       <span
                         class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                       >
-                        0
+                        1
                       </span>
                     </button>
                   </li>
@@ -10158,7 +10156,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                       <span
                         class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                       >
-                        0
+                        1
                       </span>
                     </button>
                     <div
@@ -10242,7 +10240,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                       <span
                         class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                       >
-                        0
+                        1
                       </span>
                     </button>
                   </li>
@@ -10354,7 +10352,52 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     >
                       <div
                         class="grid grid-cols-4 gap-5 undefined"
-                      />
+                      >
+                        <div
+                          data-testid="PluginCard--@dated/transaction-export-plugin"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                              >
+                                <svg>
+                                  plugin-logo-placeholder.svg
+                                </svg>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <div
+                                    class="truncate"
+                                  >
+                                    Transaction Export Plugin
+                                  </div>
+                                  <div />
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <div
+                                    class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                  >
+                                    Edgar Goetzendorff
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
                       <div
                         class="flex justify-center mt-4"
                       />
@@ -10385,7 +10428,52 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     >
                       <div
                         class="grid grid-cols-4 gap-5 undefined"
-                      />
+                      >
+                        <div
+                          data-testid="PluginCard--@dated/transaction-export-plugin"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                              >
+                                <svg>
+                                  plugin-logo-placeholder.svg
+                                </svg>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <div
+                                    class="truncate"
+                                  >
+                                    Transaction Export Plugin
+                                  </div>
+                                  <div />
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <div
+                                    class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                  >
+                                    Edgar Goetzendorff
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
                       <div
                         class="flex justify-center mt-4"
                       />
@@ -10415,7 +10503,52 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     >
                       <div
                         class="grid grid-cols-4 gap-5 undefined"
-                      />
+                      >
+                        <div
+                          data-testid="PluginCard--@dated/transaction-export-plugin"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                              >
+                                <svg>
+                                  plugin-logo-placeholder.svg
+                                </svg>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <div
+                                    class="truncate"
+                                  >
+                                    Transaction Export Plugin
+                                  </div>
+                                  <div />
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <div
+                                    class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                  >
+                                    Edgar Goetzendorff
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
                       <div
                         class="flex justify-center mt-4"
                       />

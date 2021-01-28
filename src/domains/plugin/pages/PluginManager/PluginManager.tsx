@@ -21,6 +21,7 @@ import { paths } from "../../data";
 
 type PluginManagerHomeProps = {
 	onDelete: any;
+	onSelect: (pluginId: string) => void;
 	onInstall: any;
 	viewType: string;
 	paths?: any;
@@ -33,14 +34,11 @@ type PluginManagerProps = {
 
 const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
-const PluginManagerHome = ({ onDelete, onInstall, viewType, paths, plugins }: PluginManagerHomeProps) => {
+const PluginManagerHome = ({ onDelete, onSelect, onInstall, viewType, paths, plugins }: PluginManagerHomeProps) => {
 	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 	const history = useHistory();
-
-	const handleSelectPlugin = (pluginId: string) =>
-		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
 
 	return (
 		<div>
@@ -59,12 +57,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths, plugins }: Pl
 				</div>
 
 				{viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={handleSelectPlugin}
-						onDelete={onDelete}
-						withPagination={false}
-					/>
+					<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} withPagination={false} />
 				)}
 				{viewType === "list" && (
 					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
@@ -84,12 +77,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths, plugins }: Pl
 					</a>
 				</div>
 				{viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={handleSelectPlugin}
-						onDelete={onDelete}
-						withPagination={false}
-					/>
+					<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} withPagination={false} />
 				)}
 				{viewType === "list" && (
 					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
@@ -109,12 +97,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths, plugins }: Pl
 					</a>
 				</div>
 				{viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={handleSelectPlugin}
-						onDelete={onDelete}
-						withPagination={false}
-					/>
+					<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} withPagination={false} />
 				)}
 				{viewType === "list" && (
 					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
@@ -143,6 +126,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const allPackages = pluginPackages.map((config) => config.toObject());
 
+	/* istanbul ignore next */
 	const filteredPackages = pluginPackages
 		.filter((config) => config.hasCategory(currentView))
 		.map((item) => {
@@ -233,6 +217,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									plugins={allPackages}
 									onInstall={() => setInstallPlugin(true)}
 									onDelete={handleDeletePlugin}
+									onSelect={handleSelectPlugin}
 								/>
 							</div>
 						)}
