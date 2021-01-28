@@ -42,7 +42,7 @@ exports[`PeerListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
           >
             <div
-              class="sc-gsTCUz fHxsLl"
+              class="sc-bdfBwQ iyevwF"
               height="20"
               width="20"
             >
@@ -66,17 +66,21 @@ exports[`PeerListItem should render 1`] = `
                   class="float-right"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 dvfbIm"
+                    class="Button__StyledButton-mdtvtf-0 OTOjy"
                     type="button"
                   >
                     <div
-                      class="sc-gsTCUz fHxsLl"
-                      height="20"
-                      width="20"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        settings.svg
-                      </svg>
+                      <div
+                        class="sc-bdfBwQ iyevwF"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          settings.svg
+                        </svg>
+                      </div>
                     </div>
                   </button>
                 </div>

@@ -53,9 +53,13 @@ describe("Button", () => {
 	});
 
 	it("should render if disabled", () => {
-		const { asFragment, getByText } = render(<Button disabled>Click</Button>);
+		const { asFragment, getByTestId } = render(
+			<Button disabled data-testid="Button">
+				Click
+			</Button>,
+		);
 
-		expect(getByText("Click")).toBeDisabled();
+		expect(getByTestId("Button")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -65,5 +69,25 @@ describe("Button", () => {
 
 		fireEvent.click(getByText("Click Me"));
 		expect(onClick).toHaveBeenCalled();
+	});
+
+	it("should render with icon", () => {
+		const { container } = render(<Button icon="Plus">Click Me</Button>);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with icon and custom icon width and height", () => {
+		const { container } = render(
+			<Button icon="Plus" iconWidth={20} iconHeight={20}>
+				Click Me
+			</Button>,
+		);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with loading state enabled", () => {
+		const { container } = render(<Button isLoading>Click Me</Button>);
+
+		expect(container).toMatchSnapshot();
 	});
 });

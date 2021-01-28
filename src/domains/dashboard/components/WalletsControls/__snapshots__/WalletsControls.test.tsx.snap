@@ -85,69 +85,81 @@ exports[`WalletsControls should render 1`] = `
       class="flex space-x-3"
     >
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
         data-testid="WalletControls__create-wallet"
         type="button"
       >
         <div
-          class="flex items-center space-x-2"
+          class="flex relative items-center space-x-2"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              plus.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                plus.svg
+              </svg>
+            </div>
+            <span>
+              Create
+            </span>
           </div>
-          <span>
-            Create
-          </span>
         </div>
       </button>
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
         data-testid="WalletControls__import-wallet"
         type="button"
       >
         <div
-          class="flex items-center space-x-2"
+          class="flex relative items-center space-x-2"
         >
           <div
-            class="sc-bdfBwQ fpbFeh"
-            height="16"
-            width="16"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              import.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ fpbFeh"
+              height="16"
+              width="16"
+            >
+              <svg>
+                import.svg
+              </svg>
+            </div>
+            <span>
+              Import
+            </span>
           </div>
-          <span>
-            Import
-          </span>
         </div>
       </button>
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
         data-testid="WalletControls__import-ledger"
         type="button"
       >
         <div
-          class="flex items-center space-x-2"
+          class="flex relative items-center space-x-2"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
-            height="1em"
-            width="1em"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
+            <span>
+              Import Ledger
+            </span>
           </div>
-          <span>
-            Import Ledger
-          </span>
         </div>
       </button>
     </div>
@@ -240,69 +252,81 @@ exports[`WalletsControls should render with networks selection 1`] = `
       class="flex space-x-3"
     >
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
         data-testid="WalletControls__create-wallet"
         type="button"
       >
         <div
-          class="flex items-center space-x-2"
+          class="flex relative items-center space-x-2"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              plus.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                plus.svg
+              </svg>
+            </div>
+            <span>
+              Create
+            </span>
           </div>
-          <span>
-            Create
-          </span>
         </div>
       </button>
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
         data-testid="WalletControls__import-wallet"
         type="button"
       >
         <div
-          class="flex items-center space-x-2"
+          class="flex relative items-center space-x-2"
         >
           <div
-            class="sc-bdfBwQ fpbFeh"
-            height="16"
-            width="16"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              import.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ fpbFeh"
+              height="16"
+              width="16"
+            >
+              <svg>
+                import.svg
+              </svg>
+            </div>
+            <span>
+              Import
+            </span>
           </div>
-          <span>
-            Import
-          </span>
         </div>
       </button>
       <button
-        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
         data-testid="WalletControls__import-ledger"
         type="button"
       >
         <div
-          class="flex items-center space-x-2"
+          class="flex relative items-center space-x-2"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
-            height="1em"
-            width="1em"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
+            <span>
+              Import Ledger
+            </span>
           </div>
-          <span>
-            Import Ledger
-          </span>
         </div>
       </button>
     </div>

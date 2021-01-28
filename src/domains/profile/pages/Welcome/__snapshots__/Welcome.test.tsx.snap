@@ -100,7 +100,7 @@ exports[`Welcome should change route to create profile 1`] = `
                         class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                       >
                         <div
-                          class="sc-gsTCUz bZxUHq"
+                          class="sc-bdfBwQ iwcOAK"
                           height="18"
                           width="13"
                         >
@@ -130,7 +130,7 @@ exports[`Welcome should change route to create profile 1`] = `
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -147,30 +147,34 @@ exports[`Welcome should change route to create profile 1`] = `
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -300,7 +304,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -342,7 +346,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                         class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                       >
                         <div
-                          class="sc-gsTCUz bZxUHq"
+                          class="sc-bdfBwQ iwcOAK"
                           height="18"
                           width="13"
                         >
@@ -372,7 +376,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -389,30 +393,34 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -542,7 +550,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -584,7 +592,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                         class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                       >
                         <div
-                          class="sc-gsTCUz bZxUHq"
+                          class="sc-bdfBwQ iwcOAK"
                           height="18"
                           width="13"
                         >
@@ -614,7 +622,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -631,30 +639,34 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -784,7 +796,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -826,7 +838,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                         class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                       >
                         <div
-                          class="sc-gsTCUz bZxUHq"
+                          class="sc-bdfBwQ iwcOAK"
                           height="18"
                           width="13"
                         >
@@ -856,7 +868,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -873,30 +885,34 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -1026,7 +1042,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -1068,7 +1084,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                         class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                       >
                         <div
-                          class="sc-gsTCUz bZxUHq"
+                          class="sc-bdfBwQ iwcOAK"
                           height="18"
                           width="13"
                         >
@@ -1098,7 +1114,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -1115,30 +1131,34 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -1268,7 +1288,7 @@ exports[`Welcome should render with profiles 1`] = `
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -1310,7 +1330,7 @@ exports[`Welcome should render with profiles 1`] = `
                         class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                       >
                         <div
-                          class="sc-gsTCUz bZxUHq"
+                          class="sc-bdfBwQ iwcOAK"
                           height="18"
                           width="13"
                         >
@@ -1340,7 +1360,7 @@ exports[`Welcome should render with profiles 1`] = `
                           class="flex overflow-hidden justify-center w-4"
                         >
                           <div
-                            class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                            class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                             height="1em"
                             width="1em"
                           >
@@ -1357,30 +1377,34 @@ exports[`Welcome should render with profiles 1`] = `
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -1469,30 +1493,34 @@ exports[`Welcome should render without profiles 1`] = `
                   class="rounded-lg overflow-hidden m-2.5"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN w-40 h-40"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV w-40 h-40"
                     type="button"
                   >
                     <div
-                      class="flex flex-col justify-center items-center"
+                      class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="Circle-uw7h4j-0 cnQsQi"
+                        class="flex flex-col justify-center items-center"
                       >
                         <div
-                          class="sc-gsTCUz cmyhNZ"
-                          height="12"
-                          width="12"
+                          class="Circle-uw7h4j-0 cnQsQi"
                         >
-                          <svg>
-                            plus.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              plus.svg
+                            </svg>
+                          </div>
                         </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Create Profile
+                        </span>
                       </div>
-                      <span
-                        class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
-                      >
-                        Create Profile
-                      </span>
                     </div>
                   </button>
                 </div>

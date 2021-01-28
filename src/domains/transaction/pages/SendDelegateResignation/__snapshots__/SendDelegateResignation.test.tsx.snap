@@ -87,28 +87,32 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -125,18 +129,22 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -151,18 +159,22 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -561,19 +573,27 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iitCzz"
+                    class="Button__StyledButton-mdtvtf-0 kwcZQn"
                     data-testid="SendDelegateResignation__back-button"
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="SendDelegateResignation__continue-button"
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -673,28 +693,32 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -711,18 +735,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -737,18 +765,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1147,19 +1179,27 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iitCzz"
+                    class="Button__StyledButton-mdtvtf-0 kwcZQn"
                     data-testid="SendDelegateResignation__back-button"
                     disabled=""
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="SendDelegateResignation__continue-button"
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -1259,28 +1299,32 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1297,18 +1341,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1323,18 +1371,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1745,18 +1797,26 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                     data-testid="SendDelegateResignation__back-button"
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iSmMLw"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                     data-testid="SendDelegateResignation__continue-button"
                     type="button"
                   >
-                    Continue
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Continue
+                    </div>
                   </button>
                 </div>
               </div>
@@ -1856,28 +1916,32 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1894,18 +1958,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -1920,18 +1988,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2241,30 +2313,38 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                     data-testid="SendDelegateResignation__back-button"
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iitCzz space-x-2"
+                    class="Button__StyledButton-mdtvtf-0 kwcZQn space-x-2"
                     data-testid="SendDelegateResignation__send-button"
                     disabled=""
                     type="submit"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF"
-                      height="20"
-                      width="20"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        send.svg
-                      </svg>
+                      <div
+                        class="sc-bdfBwQ iyevwF"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          send.svg
+                        </svg>
+                      </div>
+                      <span>
+                        Send
+                      </span>
                     </div>
-                    <span>
-                      Send
-                    </span>
                   </button>
                 </div>
               </div>
@@ -2364,28 +2444,32 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -2402,18 +2486,22 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2428,18 +2516,22 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2657,18 +2749,26 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
-                        Back to Wallet
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Back to Wallet
+                        </div>
                       </button>
                       <button
-                        class="Button__StyledButton-mdtvtf-0 iSmMLw space-x-2"
+                        class="Button__StyledButton-mdtvtf-0 ePkfgQ space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
-                        Retry
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Retry
+                        </div>
                       </button>
                     </div>
                   </div>
@@ -2773,28 +2873,32 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -2811,18 +2915,22 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -2837,18 +2945,22 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -3066,18 +3178,26 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
-                        Back to Wallet
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Back to Wallet
+                        </div>
                       </button>
                       <button
-                        class="Button__StyledButton-mdtvtf-0 iSmMLw space-x-2"
+                        class="Button__StyledButton-mdtvtf-0 ePkfgQ space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
-                        Retry
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Retry
+                        </div>
                       </button>
                     </div>
                   </div>
@@ -3182,28 +3302,32 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -3220,18 +3344,22 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -3246,18 +3374,22 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -3573,30 +3705,38 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                     data-testid="SendDelegateResignation__back-button"
                     type="button"
                   >
-                    Back
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back
+                    </div>
                   </button>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 iitCzz space-x-2"
+                    class="Button__StyledButton-mdtvtf-0 kwcZQn space-x-2"
                     data-testid="SendDelegateResignation__send-button"
                     disabled=""
                     type="submit"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF"
-                      height="20"
-                      width="20"
+                      class="flex relative items-center space-x-2"
                     >
-                      <svg>
-                        send.svg
-                      </svg>
+                      <div
+                        class="sc-bdfBwQ iyevwF"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          send.svg
+                        </svg>
+                      </div>
+                      <span>
+                        Send
+                      </span>
                     </div>
-                    <span>
-                      Send
-                    </span>
                   </button>
                 </div>
               </div>
@@ -3696,28 +3836,32 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 IdcN w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -3734,18 +3878,22 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -3760,18 +3908,22 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 IdcN"
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
+                    class="flex relative items-center space-x-2"
                   >
-                    <svg>
-                      qr-code.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -4235,11 +4387,15 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 lmPdYN"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                     data-testid="SendDelegateResignation__wallet-button"
                     type="button"
                   >
-                    Back to Wallet
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Back to Wallet
+                    </div>
                   </button>
                 </div>
               </div>
