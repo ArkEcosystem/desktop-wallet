@@ -3,7 +3,7 @@ import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 
-import { useNotifications } from "./notifications";
+import { useNotifications } from "./use-notifications";
 import { useSynchronizer } from "./use-synchronizer";
 
 enum Intervals {
