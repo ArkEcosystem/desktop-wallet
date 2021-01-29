@@ -251,12 +251,13 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<div className="text-xs font-semibold text-theme-secondary-700">
 										{t("COMMON.YOUR_BALANCE")}
 									</div>
-									<div className="text-sm font-bold text-theme-secondary-text dark:text-theme-text">
+									<div className="font-bold text-theme-secondary-text dark:text-theme-text text-sm">
 										<Amount
 											value={profile?.convertedBalance() || BigNumber.ZERO}
 											ticker={
 												profile?.settings().get<string>(ProfileSetting.ExchangeCurrency) || ""
 											}
+											normalize={false}
 										/>
 									</div>
 								</div>
