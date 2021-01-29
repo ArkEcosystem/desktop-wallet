@@ -186,7 +186,7 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							unvotes: [unvotes[0].publicKey()],
+							unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
 						},
 					},
 					{ abortSignal },
@@ -203,7 +203,7 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							votes: [votes[0].publicKey()],
+							votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
 						},
 					},
 					{ abortSignal },
@@ -225,7 +225,8 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+							votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
 						},
 					},
 					{ abortSignal },
