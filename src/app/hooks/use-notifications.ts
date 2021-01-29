@@ -1,5 +1,6 @@
 import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { sortByDesc } from "@arkecosystem/utils";
 import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -124,10 +125,7 @@ const deleteNotificationsByVersion = (env: Environment) => ({ version }: { versi
 };
 
 const sortTransactionNotificationsDesc = (notifications: any[]) =>
-	notifications.sort((firstNotification, secondNotification) => {
-		const index = -(firstNotification?.meta?.timestamp - secondNotification?.meta?.timestamp);
-		return !Number.isNaN(index) ? index : -1;
-	});
+	sortByDesc(notifications, (notification) => notification?.meta?.timestamp);
 
 export const useNotifications = () => {
 	const { t } = useTranslation();

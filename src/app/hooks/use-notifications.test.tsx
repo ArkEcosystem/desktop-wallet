@@ -47,6 +47,13 @@ describe("Notifications Hook", () => {
 			{
 				icon: "",
 				body: "",
+				name: "withoutMeta",
+				action: "",
+				type: "transaction",
+			},
+			{
+				icon: "",
+				body: "",
 				name: "",
 				action: "",
 				type: "transaction",
@@ -84,7 +91,8 @@ describe("Notifications Hook", () => {
 		const sorted = result.current.notifications.sortTransactionNotificationsDesc(unsortedTransactionNotifications);
 		expect(sorted[0].meta.transactionId).toEqual("2");
 		expect(sorted[1].meta.transactionId).toEqual("1");
-		expect(sorted[2].meta.transactionId).toEqual("0");
+		expect(sorted[2].name).toEqual("withoutMeta");
+		expect(sorted[3].meta.transactionId).toEqual("0");
 	});
 
 	it("should push wallet update notification for all profiles", () => {
