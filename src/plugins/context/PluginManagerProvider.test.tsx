@@ -1,6 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import electron from "electron";
+import electron, { ipcRenderer } from "electron";
 import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
 import React from "react";
@@ -11,6 +11,24 @@ import { PluginManagerProvider, usePluginManagerContext } from "./PluginManagerP
 describe("PluginManagerProvider", () => {
 	let manager: PluginManager;
 	let profile: Profile;
+
+	beforeAll(() => {
+		nock("https://registry.npmjs.com")
+			.get("/-/v1/search")
+			.query((params) => params.from === "0")
+			.once()
+			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+			.get("/-/v1/search")
+			.query((params) => params.from === "250")
+			.once()
+			.reply(200, {})
+			.persist();
+
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.persist();
+	});
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -92,21 +110,6 @@ describe("PluginManagerProvider", () => {
 	});
 
 	it("should fetch packages", async () => {
-		nock("https://registry.npmjs.com")
-			.get("/-/v1/search")
-			.query((params) => params.from === "0")
-			.once()
-			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
-			.get("/-/v1/search")
-			.query((params) => params.from === "250")
-			.once()
-			.reply(200, {});
-
-		nock("https://raw.github.com")
-			.get("/dated/transaction-export-plugin/master/package.json")
-			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
-			.persist();
-
 		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
 		manager.plugins().push(plugin);
 
@@ -134,5 +137,65 @@ describe("PluginManagerProvider", () => {
 		fireEvent.click(screen.getByRole("button"));
 
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should install plugin from provider", async () => {
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:loader-fs.find") {
+				return {
+					config: { name: "test-plugin", version: "0.0.1" },
+					source: () => void 0,
+					sourcePath: "/plugins/test-plugin/index.js",
+					dir: "/plugins/test-plugin",
+				};
+			}
+
+			if (channel === "plugin:download") {
+				return "/plugins/test-plugin";
+			}
+		});
+
+		const Component = () => {
+			const { fetchPluginPackages, pluginPackages, installPlugin } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Fetch</button>
+					<ul>
+						{pluginPackages.map((pkg) => (
+							<li key={pkg.name()}>
+								<span>{pkg.name()}</span>
+								<button onClick={() => installPlugin(pkg.name())}>Install</button>
+							</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		fireEvent.click(screen.getByText("Install"));
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
+				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
+			}),
+		);
+
+		await waitFor(() => expect(manager.plugins().findById("test-plugin")).toBeTruthy());
+
+		ipcRendererSpy.mockRestore();
 	});
 });
