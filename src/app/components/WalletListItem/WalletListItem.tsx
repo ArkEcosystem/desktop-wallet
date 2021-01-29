@@ -63,7 +63,11 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end text-theme-secondary-400">
-				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} normalize={false} />
+				<Amount
+					value={wallet.convertedBalance()}
+					ticker={wallet.exchangeCurrency() || "BTC"}
+					normalize={false}
+				/>
 			</TableCell>
 		</TableRow>
 	);
