@@ -191,7 +191,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </div>
                     </div>
                     <p
-                      class="text-sm text-theme-danger-500"
+                      class="text-sm text-theme-danger-500 font-normal"
                     >
                       'Password' should have at least 6 characters
                     </p>
@@ -242,7 +242,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </div>
                     </div>
                     <p
-                      class="text-sm text-theme-danger-500"
+                      class="text-sm text-theme-danger-500 font-normal"
                     >
                       Passwords do not match
                     </p>
@@ -269,7 +269,6 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div
@@ -763,7 +762,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           name="name"
                         />
                         <p
-                          class="text-sm text-theme-danger-500"
+                          class="text-sm text-theme-danger-500 font-normal"
                         >
                           A profile with this name already exists
                         </p>
@@ -930,7 +929,6 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div
@@ -1424,7 +1422,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           name="name"
                         />
                         <p
-                          class="text-sm text-theme-danger-500"
+                          class="text-sm text-theme-danger-500 font-normal"
                         >
                           'Name' should have at most 42 characters
                         </p>
@@ -1591,7 +1589,6 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div
@@ -2246,7 +2243,6 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div
@@ -2895,7 +2891,6 @@ exports[`CreateProfile should render 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value=""
                       />
                       <div
@@ -3322,7 +3317,6 @@ exports[`CreateProfile should store profile 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div
@@ -3974,7 +3968,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div
@@ -4628,7 +4621,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
-                        type="text"
                         value="BTC"
                       />
                       <div

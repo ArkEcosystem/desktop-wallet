@@ -48,7 +48,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Transaction Type
       </div>
@@ -80,7 +80,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Unvotes (1)
       </div>
@@ -94,7 +94,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
             class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
-              class="py-4 space-x-4"
+              class="flex items-center py-4 space-x-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 keFjxD"
@@ -150,7 +150,7 @@ exports[`TransactionVotes should render with votes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Transaction Type
       </div>
@@ -182,7 +182,7 @@ exports[`TransactionVotes should render with votes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Votes (1)
       </div>
@@ -196,7 +196,7 @@ exports[`TransactionVotes should render with votes 1`] = `
             class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
-              class="py-4 space-x-4"
+              class="flex items-center py-4 space-x-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 keFjxD"
@@ -252,7 +252,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Transaction Type
       </div>
@@ -284,7 +284,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Votes (1)
       </div>
@@ -298,7 +298,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
             class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
-              class="py-4 space-x-4"
+              class="flex items-center py-4 space-x-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 keFjxD"
@@ -349,7 +349,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Unvotes (1)
       </div>
@@ -363,7 +363,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
             class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
-              class="py-4 space-x-4"
+              class="flex items-center py-4 space-x-4"
             >
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 keFjxD"

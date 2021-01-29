@@ -48,7 +48,6 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
-              type="text"
               value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
             />
             <div
@@ -68,7 +67,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
           </div>
         </div>
         <p
-          class="text-sm text-theme-danger-500"
+          class="text-sm text-theme-danger-500 font-normal"
         >
           The address could not be found
         </p>
@@ -282,7 +281,6 @@ exports[`Add Participant should fail to find 1`] = `
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
-              type="text"
               value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
             />
             <div
@@ -302,7 +300,7 @@ exports[`Add Participant should fail to find 1`] = `
           </div>
         </div>
         <p
-          class="text-sm text-theme-danger-500"
+          class="text-sm text-theme-danger-500 font-normal"
         >
           The address could not be found
         </p>
@@ -516,7 +514,6 @@ exports[`Add Participant should fail with cold wallet 1`] = `
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
-              type="text"
               value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
             />
             <div
@@ -536,7 +533,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
           </div>
         </div>
         <p
-          class="text-sm text-theme-danger-500"
+          class="text-sm text-theme-danger-500 font-normal"
         >
           The public key could not be found
         </p>
@@ -738,7 +735,6 @@ exports[`Add Participant should render custom participants 1`] = `
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
-              type="text"
               value=""
             />
             <div
@@ -967,7 +963,6 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
-              type="text"
               value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
             />
             <div
@@ -1271,7 +1266,6 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
-              type="text"
               value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
             />
             <div
