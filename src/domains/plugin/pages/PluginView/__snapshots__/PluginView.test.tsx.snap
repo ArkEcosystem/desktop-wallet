@@ -196,7 +196,7 @@ exports[`Plugin View should render plugin content 1`] = `
                 Your balance
               </div>
               <div
-                class="font-bold text-theme-secondary-text dark:text-theme-text text-sm"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
               >
                 <span
                   data-testid="Amount"
@@ -323,7 +323,7 @@ exports[`Plugin View should render plugin content 1`] = `
           class="container py-16 px-14 mx-auto "
         >
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           >
             <div
               class="flex items-center space-x-3"
@@ -337,7 +337,7 @@ exports[`Plugin View should render plugin content 1`] = `
                 class="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700"
               >
                 <dl
-                  class="first:pl-0 pl-6"
+                  class="pl-6 first:pl-0"
                 >
                   <dt
                     class="text-sm font-bold text-theme-secondary-500"
@@ -351,7 +351,7 @@ exports[`Plugin View should render plugin content 1`] = `
                   </dd>
                 </dl>
                 <dl
-                  class="first:pl-0 pl-6"
+                  class="pl-6 first:pl-0"
                 >
                   <dt
                     class="text-sm font-bold text-theme-secondary-500"
@@ -359,13 +359,13 @@ exports[`Plugin View should render plugin content 1`] = `
                     Category
                   </dt>
                   <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text capitalize"
+                    class="font-bold capitalize text-theme-secondary-text dark:text-theme-text"
                   >
                     other
                   </dd>
                 </dl>
                 <dl
-                  class="first:pl-0 pl-6"
+                  class="pl-6 first:pl-0"
                 >
                   <dt
                     class="text-sm font-bold text-theme-secondary-500"
@@ -380,7 +380,7 @@ exports[`Plugin View should render plugin content 1`] = `
                   </dd>
                 </dl>
                 <dl
-                  class="first:pl-0 pl-6"
+                  class="pl-6 first:pl-0"
                 >
                   <dt
                     class="text-sm font-bold text-theme-secondary-500"
@@ -439,7 +439,7 @@ exports[`Plugin View should render plugin content 1`] = `
         </div>
       </div>
       <div
-        class="flex-1 h-full w-full flex relative"
+        class="flex relative flex-1 w-full h-full"
       >
         <h1>
           My Plugin View

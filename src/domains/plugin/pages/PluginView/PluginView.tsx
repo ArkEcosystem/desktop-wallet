@@ -31,7 +31,7 @@ export const PluginView = () => {
 	return (
 		<Page profile={profile} crumbs={crumbs}>
 			<Section>
-				<div className="flex items-center justify-between">
+				<div className="flex justify-between items-center">
 					<div className="flex items-center space-x-3">
 						{plugin?.config().logo() ? (
 							<img
@@ -45,28 +45,28 @@ export const PluginView = () => {
 						)}
 
 						<div className="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700">
-							<dl className="first:pl-0 pl-6">
+							<dl className="pl-6 first:pl-0">
 								<dt className="text-sm font-bold text-theme-secondary-500">{t("COMMON.PLUGIN")}</dt>
 								<dd className="font-bold text-theme-secondary-text dark:text-theme-text">
 									{plugin?.config().title()}
 								</dd>
 							</dl>
 
-							<dl className="first:pl-0 pl-6">
+							<dl className="pl-6 first:pl-0">
 								<dt className="text-sm font-bold text-theme-secondary-500">{t("COMMON.CATEGORY")}</dt>
-								<dd className="font-bold text-theme-secondary-text dark:text-theme-text capitalize">
+								<dd className="font-bold capitalize text-theme-secondary-text dark:text-theme-text">
 									{plugin?.config().categories()?.[0]}
 								</dd>
 							</dl>
 
-							<dl className="first:pl-0 pl-6">
+							<dl className="pl-6 first:pl-0">
 								<dt className="text-sm font-bold text-theme-secondary-500">{t("COMMON.VERSION")}</dt>
 								<dd className="font-bold text-theme-secondary-text dark:text-theme-text">
 									v{plugin?.config().version()}
 								</dd>
 							</dl>
 
-							<dl className="first:pl-0 pl-6">
+							<dl className="pl-6 first:pl-0">
 								<dt className="text-sm font-bold text-theme-secondary-500">{t("COMMON.SIZE")}</dt>
 								<dd className="font-bold text-theme-secondary-text dark:text-theme-text">
 									{plugin?.config().size()}
@@ -91,7 +91,7 @@ export const PluginView = () => {
 				</div>
 			</Section>
 
-			<div className="flex-1 h-full w-full flex relative">
+			<div className="flex relative flex-1 w-full h-full">
 				<LaunchRender
 					manager={pluginManager}
 					pluginId={pluginId}
