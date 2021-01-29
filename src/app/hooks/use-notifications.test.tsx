@@ -3,7 +3,7 @@ import nock from "nock";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
-import { useNotifications } from "./notifications";
+import { useNotifications } from "./use-notifications";
 
 const NotificationsTransactionsFixture = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 const TransactionsFixture = require("tests/fixtures/coins/ark/devnet/transactions.json");
@@ -37,6 +37,62 @@ describe("Notifications Hook", () => {
 			.notifications()
 			.get(transactionNotifications[0].id);
 		expect(savedNotification).toBeTruthy();
+	});
+
+	it("should sort transaction notifications in descending order", () => {
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
+		const { result } = renderHook(() => useNotifications(), { wrapper });
+
+		const unsortedTransactionNotifications = [
+			{
+				icon: "",
+				body: "",
+				name: "withoutMeta",
+				action: "",
+				type: "transaction",
+			},
+			{
+				icon: "",
+				body: "",
+				name: "",
+				action: "",
+				type: "transaction",
+				meta: {
+					timestamp: undefined,
+					transactionId: "0",
+					walletAddress: "0",
+				},
+			},
+			{
+				icon: "",
+				body: "",
+				name: "",
+				action: "",
+				type: "transaction",
+				meta: {
+					timestamp: 1,
+					transactionId: "1",
+					walletAddress: "1",
+				},
+			},
+			{
+				icon: "",
+				body: "",
+				name: "",
+				action: "",
+				type: "transaction",
+				meta: {
+					timestamp: 2,
+					transactionId: "2",
+					walletAddress: "2",
+				},
+			},
+		];
+		const sorted = result.current.notifications.sortTransactionNotificationsDesc(unsortedTransactionNotifications);
+		expect(sorted[0].meta.transactionId).toEqual("2");
+		expect(sorted[1].meta.transactionId).toEqual("1");
+		expect(sorted[2].name).toEqual("withoutMeta");
+		expect(sorted[3].meta.transactionId).toEqual("0");
 	});
 
 	it("should push wallet update notification for all profiles", () => {
