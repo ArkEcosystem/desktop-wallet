@@ -23,31 +23,29 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="SecondSignature__review-step" className="space-y-8">
+		<section data-testid="SecondSignature__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.REVIEW_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-				<TransactionSender address={wallet.address()} alias={wallet.alias()} />
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-				<TransactionDetail
-					label={t("TRANSACTION.TRANSACTION_TYPE")}
-					extra={
-						<Circle className="border-theme-text" size="lg">
-							<Icon name="Key" width={20} height={20} />
-						</Circle>
-					}
-				>
-					{t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
-				</TransactionDetail>
+			<TransactionDetail
+				label={t("TRANSACTION.TRANSACTION_TYPE")}
+				extra={
+					<Circle className="border-theme-text" size="lg">
+						<Icon name="Key" width={20} height={20} />
+					</Circle>
+				}
+			>
+				{t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
+			</TransactionDetail>
 
-				<div className="mt-2">
-					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
-				</div>
+			<div className="mt-2">
+				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);
