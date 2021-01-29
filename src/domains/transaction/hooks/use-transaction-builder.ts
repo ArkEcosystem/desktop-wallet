@@ -57,8 +57,6 @@ export const useTransactionBuilder = (profile: Profile) => {
 			abortSignal?: AbortSignal;
 		},
 	): Promise<Contracts.SignedTransactionData> => {
-		// TODO: Proper handle errors
-
 		const wallet = profile.wallets().findByAddress(input.from)!;
 		const service = wallet.transaction();
 
@@ -79,8 +77,6 @@ export const useTransactionBuilder = (profile: Profile) => {
 	};
 
 	const broadcast = (id: string, input: Contracts.TransactionInputs) => {
-		// TODO: Proper handle errors
-
 		const wallet = profile.wallets().findByAddress(input.from)!;
 		return wallet.transaction().broadcast(id);
 	};

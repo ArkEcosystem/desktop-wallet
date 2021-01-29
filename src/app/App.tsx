@@ -1,4 +1,6 @@
 // import { ADA } from "@arkecosystem/platform-sdk-ada";
+import "focus-visible";
+
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
 // import { BTC } from "@arkecosystem/platform-sdk-btc";
