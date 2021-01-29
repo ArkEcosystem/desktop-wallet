@@ -23,6 +23,7 @@ type PluginManagerHomeProps = {
 	onDelete: any;
 	onSelect: (pluginId: string) => void;
 	onInstall: any;
+	onLaunch: (plugin: any) => void;
 	viewType: string;
 	paths?: any;
 	isLoading?: boolean;
@@ -39,6 +40,7 @@ const PluginManagerHome = ({
 	onDelete,
 	onSelect,
 	onInstall,
+	onLaunch,
 	viewType,
 	paths,
 	plugins,
@@ -124,7 +126,13 @@ const PluginManagerHome = ({
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList
+						plugins={plugins}
+						onLaunch={onLaunch}
+						onInstall={onInstall}
+						onDelete={onDelete}
+						withPagination={false}
+					/>
 				)}
 			</div>
 		</div>
@@ -188,6 +196,10 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const handleDeletePlugin = () => console.log("delete");
 
+	const handleLaunchPlugin = (pluginData: any) => {
+		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginData.id}/view`);
+	};
+
 	return (
 		<>
 			<Page profile={activeProfile}>
@@ -243,6 +255,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onInstall={() => setInstallPlugin(true)}
 									onDelete={handleDeletePlugin}
 									onSelect={handleSelectPlugin}
+									onLaunch={handleLaunchPlugin}
 								/>
 							</div>
 						)}
@@ -275,6 +288,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
+									onLaunch={handleLaunchPlugin}
 									className="mt-6"
 								/>
 							</div>
@@ -304,6 +318,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								onDelete={handleDeletePlugin}
 								onEnable={handleEnablePlugin}
 								onDisable={handleDisablePlugin}
+								onLaunch={handleLaunchPlugin}
 								className="mt-6"
 							/>
 						)}

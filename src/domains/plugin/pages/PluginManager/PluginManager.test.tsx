@@ -3,7 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { createMemoryHistory } from "history";
 import nock from "nock";
-import { PluginController } from "plugins";
+import { LaunchPluginService, PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
@@ -403,5 +403,26 @@ describe("PluginManager", () => {
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
 
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should open the plugin view page", () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
+			(api) => api.launch().render(<h1>My Plugin View</h1>),
+		);
+
+		pluginManager.services().register([new LaunchPluginService()]);
+		pluginManager.plugins().push(plugin);
+
+		plugin.enable(profile, { autoRun: true });
+
+		const { getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		fireEvent.click(getByTestId("PluginListItem__launch"));
+
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/${plugin.config().id()}/view`);
 	});
 });
