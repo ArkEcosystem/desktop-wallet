@@ -1,5 +1,5 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { isEqual, pick, uniqBy } from "@arkecosystem/utils";
+import { uniqBy } from "@arkecosystem/utils";
 import { useDashboardConfig } from "domains/dashboard/pages/Dashboard/hooks";
 import { useMemo } from "react";
 
@@ -30,20 +30,25 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		return uniqBy(networks, (network) => network.id);
 	}, [profile, selectedNetworkIds]);
 
-	const defaultWalletFilters = useMemo(
-		() => pick(defaultConfiguration, ["walletsDisplayType", "selectedNetworkIds", "showTransactions"]),
-		[defaultConfiguration],
-	);
+	const isFilterChanged = useMemo(() => {
+		if (showTransactions !== defaultConfiguration.showTransactions) {
+			return true;
+		}
 
-	const isFilterChanged = useMemo(
-		() =>
-			!isEqual(defaultWalletFilters, {
-				walletsDisplayType,
-				selectedNetworkIds,
-				showTransactions,
-			}),
-		[walletsDisplayType, selectedNetworkIds, showTransactions, defaultWalletFilters],
-	);
+		if (walletsDisplayType !== defaultConfiguration.walletsDisplayType) {
+			return true;
+		}
+
+		if (viewType !== defaultConfiguration.viewType) {
+			return true;
+		}
+
+		if (selectedNetworkIds.length < defaultConfiguration.selectedNetworkIds.length) {
+			return true;
+		}
+
+		return false;
+	}, [walletsDisplayType, selectedNetworkIds, showTransactions, viewType, defaultConfiguration]);
 
 	return useMemo<FilterWalletsHookProps & { update: (key: string, value: any) => void }>(
 		() => ({

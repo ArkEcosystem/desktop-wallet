@@ -1,7 +1,7 @@
 import { ipcRenderer } from "electron";
 import { useCallback, useEffect, useState } from "react";
 
-import { useNotifications } from "./notifications";
+import { useNotifications } from "./use-notifications";
 
 export type DownloadProgress = {
 	total: number;
