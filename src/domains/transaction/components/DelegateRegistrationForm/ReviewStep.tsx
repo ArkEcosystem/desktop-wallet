@@ -22,22 +22,20 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="DelegateRegistrationForm__review-step" className="space-y-8">
+		<section data-testid="DelegateRegistrationForm__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-				<TransactionSender address={wallet.address()} alias={wallet.alias()} />
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{username}</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{username}</TransactionDetail>
 
-				<div className="mt-2">
-					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
-				</div>
+			<div className="mt-2">
+				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);
