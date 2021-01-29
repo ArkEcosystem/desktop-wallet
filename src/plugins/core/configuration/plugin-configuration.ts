@@ -124,7 +124,13 @@ export class PluginConfigurationData {
 	}
 
 	logo() {
-		const logo: string | undefined = this.#manifest.get<string>("logo");
+		let logo: string | undefined;
+
+		if (this.#config.has("logo")) {
+			logo = this.#config.get("logo");
+		} else {
+			logo = this.#manifest.get("logo");
+		}
 
 		if (logo && githubImageProvider.validate(logo)) {
 			return logo;
