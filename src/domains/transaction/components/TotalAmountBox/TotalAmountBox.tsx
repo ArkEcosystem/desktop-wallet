@@ -48,12 +48,12 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-300 dark:bg-theme-secondary-800">
+			<div className="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800">
 				<AmountLabel>{t("TRANSACTION.TOTAL_AMOUNT")}</AmountLabel>
 				<Amount
 					ticker={ticker}
 					value={amount.plus(fee)}
-					className="text-2xl font-bold"
+					className="font-bold text-2xl"
 					data-testid="total-amount-box__total"
 				/>
 			</div>
