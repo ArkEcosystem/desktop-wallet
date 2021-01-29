@@ -186,7 +186,7 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							vote: `-${unvotes[0].publicKey()}`,
+							unvotes: [unvotes[0].publicKey()],
 						},
 					},
 					{ abortSignal },
@@ -203,7 +203,7 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							vote: `+${votes[0].publicKey()}`,
+							votes: [votes[0].publicKey()],
 						},
 					},
 					{ abortSignal },
@@ -254,7 +254,7 @@ export const SendVote = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
