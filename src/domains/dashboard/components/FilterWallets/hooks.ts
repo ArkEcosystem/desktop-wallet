@@ -48,7 +48,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		}
 
 		return false;
-	}, [walletsDisplayType, selectedNetworkIds, showTransactions, viewType]);
+	}, [walletsDisplayType, selectedNetworkIds, showTransactions, viewType, defaultConfiguration]);
 
 	return useMemo<FilterWalletsHookProps & { update: (key: string, value: any) => void }>(
 		() => ({
