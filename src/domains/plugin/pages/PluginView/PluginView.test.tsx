@@ -51,7 +51,13 @@ describe("Plugin View", () => {
 
 	it("should render plugin content with logo", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { logo: "https://ark.io/logo.png", permissions: ["LAUNCH"] } },
+			{
+				name: "new-plugin",
+				"desktop-wallet": {
+					logo: "https://raw.githubusercontent.com/new-plugin/master/logo.png",
+					permissions: ["LAUNCH"],
+				},
+			},
 			(api) => api.launch().render(<h1>My Plugin View</h1>),
 		);
 
@@ -71,5 +77,7 @@ describe("Plugin View", () => {
 		);
 
 		await waitFor(() => expect(screen.queryByTestId("PluginView__logo")).toBeInTheDocument());
+
+		expect(container).toMatchSnapshot();
 	});
 });
