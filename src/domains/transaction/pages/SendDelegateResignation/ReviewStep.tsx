@@ -14,22 +14,25 @@ export const ReviewStep = ({ fees, senderWallet }: StepProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="SendDelegateResignation__review-step" className="space-y-8">
+		<section data-testid="SendDelegateResignation__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={senderWallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork
+				network={senderWallet.network()}
+				border={false}
+				paddingPosition="bottom"
+				className="mt-8"
+			/>
 
-				<TransactionSender address={senderWallet.address()} alias={senderWallet.alias()} />
+			<TransactionSender address={senderWallet.address()} alias={senderWallet.alias()} />
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
-				<div className="mt-2">
-					<TotalAmountBox fee={BigNumber.make(fees.static)} ticker={senderWallet.currency()} />
-				</div>
+			<div className="mt-2">
+				<TotalAmountBox fee={BigNumber.make(fees.static)} ticker={senderWallet.currency()} />
 			</div>
 		</section>
 	);

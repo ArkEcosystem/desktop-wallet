@@ -35,22 +35,20 @@ export const FormStep = ({ fees, senderWallet }: StepProps) => {
 				</TransactionDetail>
 			</div>
 
-			<div className="space-y-8">
-				<FormField name="fee">
-					<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-					<InputFee
-						value={fee}
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
-						step={0.01}
-						onChange={(currency) =>
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-						}
-					/>
-					<FormHelperText />
-				</FormField>
-			</div>
+			<FormField name="fee">
+				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+				<InputFee
+					value={fee}
+					min={fees.min}
+					avg={fees.avg}
+					max={fees.max}
+					step={0.01}
+					onChange={(currency) =>
+						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+					}
+				/>
+				<FormHelperText />
+			</FormField>
 		</section>
 	);
 };

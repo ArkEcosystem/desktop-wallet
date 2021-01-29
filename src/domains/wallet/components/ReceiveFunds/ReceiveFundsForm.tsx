@@ -39,8 +39,6 @@ export const ReceiveFundsForm = () => {
 					<InputCounter
 						ref={register(receiveFunds.smartbridge())}
 						data-testid="ReceiveFundsForm__smartbridge"
-						type="text"
-						placeholder=" "
 						className="pr-24"
 						defaultValue={smartbridge}
 						maxLengthLabel={maxLength.toString()}

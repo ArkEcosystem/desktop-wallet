@@ -79,7 +79,6 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			<FormField name="message">
 				<FormLabel label={t("COMMON.MESSAGE")} />
 				<Input
-					type="text"
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("COMMON.MESSAGE"),
