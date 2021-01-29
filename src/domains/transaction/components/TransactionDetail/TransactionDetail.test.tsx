@@ -36,16 +36,6 @@ describe("TransactionDetail", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with extra label", () => {
-		const { container } = render(
-			<TransactionDetail label="Test" padding={false} labelExtra="Label extra">
-				test
-			</TransactionDetail>,
-		);
-
-		expect(container).toMatchSnapshot();
-	});
-
 	it("should render with extra children", () => {
 		const { container, getByTestId } = render(
 			<TransactionDetail label="Test" padding={false} extra={<div data-testid="TEST_CHILD" />}>

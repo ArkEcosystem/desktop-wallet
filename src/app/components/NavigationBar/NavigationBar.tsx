@@ -257,6 +257,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											ticker={
 												profile?.settings().get<string>(ProfileSetting.ExchangeCurrency) || ""
 											}
+											normalize={false}
 										/>
 									</div>
 								</div>
