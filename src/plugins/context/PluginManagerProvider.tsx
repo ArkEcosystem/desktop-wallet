@@ -16,7 +16,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<any>({});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 
-	/* istanbul ignore next */
 	const [pluginRegistry] = useState(() => new PluginRegistry());
 
 	const [pluginManager] = useState(() => {
@@ -132,6 +131,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			const source = config!.get<{ url: string }>("sourceProvider");
 
 			if (!source?.url) {
+				/* istanbul ignore next */
 				throw new Error(`The repository of the plugin "${name}" could not be found.`);
 			}
 
