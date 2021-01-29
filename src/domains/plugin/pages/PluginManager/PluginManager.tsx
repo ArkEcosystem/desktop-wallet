@@ -197,7 +197,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const handleDeletePlugin = () => console.log("delete");
 
 	const handleLaunchPlugin = (pluginData: any) => {
-		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginData.id}/view`);
+		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginData.id}`);
 	};
 
 	return (

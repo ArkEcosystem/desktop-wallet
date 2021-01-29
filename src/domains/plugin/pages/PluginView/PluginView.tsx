@@ -3,19 +3,19 @@ import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Tooltip } from "app/components/Tooltip";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useQueryParams } from "app/hooks";
 import { LaunchRender, usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
 
 export const PluginView = () => {
-	const { pluginId } = useParams();
+	const queryParams = useQueryParams();
 	const { t } = useTranslation();
 
 	const profile = useActiveProfile();
 	const { pluginManager } = usePluginManagerContext();
 
+	const pluginId = queryParams.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
 
 	const crumbs = [
@@ -35,7 +35,7 @@ export const PluginView = () => {
 					<div className="flex items-center space-x-3">
 						{plugin?.config().logo() ? (
 							<img
-								data-testid="PluginListItem__logo"
+								data-testid="PluginView__logo"
 								src={plugin.config().logo()}
 								alt="Logo"
 								className="overflow-hidden w-12 h-12 rounded"

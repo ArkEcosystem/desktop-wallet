@@ -7,7 +7,7 @@ export const PluginRoutes = [
 		component: PluginsCategory,
 	},
 	{
-		path: "/profiles/:profileId/plugins/:pluginId/view",
+		path: "/profiles/:profileId/plugins/view",
 		exact: true,
 		component: PluginView,
 	},

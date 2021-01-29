@@ -423,6 +423,7 @@ describe("PluginManager", () => {
 
 		fireEvent.click(getByTestId("PluginListItem__launch"));
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/${plugin.config().id()}/view`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/view`);
+		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
 	});
 });

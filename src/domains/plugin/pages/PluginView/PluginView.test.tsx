@@ -14,6 +14,7 @@ describe("Plugin View", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		manager = new PluginManager();
+		manager.services().register([new LaunchPluginService()]);
 	});
 
 	afterAll(() => {
@@ -26,24 +27,49 @@ describe("Plugin View", () => {
 			(api) => api.launch().render(<h1>My Plugin View</h1>),
 		);
 
-		manager.services().register([new LaunchPluginService()]);
 		manager.plugins().push(plugin);
 
 		plugin.enable(profile, { autoRun: true });
 
 		const { container } = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins/:pluginId/view">
+			<Route path="/profiles/:profileId/plugins/view">
 				<PluginManagerProvider manager={manager} services={[]}>
 					<PluginView />
 				</PluginManagerProvider>
 			</Route>,
 			{
-				routes: [`/profiles/${profile.id()}/plugins/${plugin.config().id()}/view`],
+				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
 			},
 		);
 
 		await waitFor(() => expect(screen.queryByText("My Plugin View")).toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should render plugin content with logo", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { logo: "https://ark.io/logo.png", permissions: ["LAUNCH"] } },
+			(api) => api.launch().render(<h1>My Plugin View</h1>),
+		);
+
+		manager.plugins().push(plugin);
+
+		plugin.enable(profile, { autoRun: true });
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/view">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<PluginView />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		await waitFor(() => expect(screen.queryByTestId("PluginView__logo")).toBeInTheDocument());
 	});
 });
