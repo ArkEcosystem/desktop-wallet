@@ -53,7 +53,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 				<Amount
 					ticker={ticker}
 					value={amount.plus(fee)}
-					className="font-bold text-2xl"
+					className="text-2xl font-bold"
 					data-testid="total-amount-box__total"
 				/>
 			</div>
