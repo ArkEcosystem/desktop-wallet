@@ -7,7 +7,7 @@ exports[`ContactForm should select 1`] = `
     data-testid="contact-form"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -21,7 +21,7 @@ exports[`ContactForm should select 1`] = `
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -31,7 +31,7 @@ exports[`ContactForm should select 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -61,7 +61,7 @@ exports[`ContactForm should select 1`] = `
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="px-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -73,7 +73,7 @@ exports[`ContactForm should select 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -90,7 +90,7 @@ exports[`ContactForm should select 1`] = `
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         data-testid="ContactForm__address"
       >
         <label
@@ -108,13 +108,13 @@ exports[`ContactForm should select 1`] = `
           class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
         >
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+            class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+            class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
           >
             <button
               class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -138,7 +138,7 @@ exports[`ContactForm should select 1`] = `
         class="mt-4"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 kwcZQn w-full"
+          class="w-full Button__StyledButton-mdtvtf-0 kwcZQn"
           data-testid="contact-form__add-address-btn"
           disabled=""
           type="button"
@@ -152,7 +152,7 @@ exports[`ContactForm should select 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex justify-end w-full"
     >
       <div
         class="space-x-3"
@@ -193,7 +193,7 @@ exports[`ContactForm should select with errors 1`] = `
     data-testid="contact-form"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -208,7 +208,7 @@ exports[`ContactForm should select with errors 1`] = `
       </label>
       <input
         aria-invalid="true"
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -223,7 +223,7 @@ exports[`ContactForm should select with errors 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -253,7 +253,7 @@ exports[`ContactForm should select with errors 1`] = `
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="px-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -265,7 +265,7 @@ exports[`ContactForm should select with errors 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -282,7 +282,7 @@ exports[`ContactForm should select with errors 1`] = `
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         data-testid="ContactForm__address"
       >
         <label
@@ -300,13 +300,13 @@ exports[`ContactForm should select with errors 1`] = `
           class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
         >
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+            class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+            class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
           >
             <button
               class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -330,7 +330,7 @@ exports[`ContactForm should select with errors 1`] = `
         class="mt-4"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 kwcZQn w-full"
+          class="w-full Button__StyledButton-mdtvtf-0 kwcZQn"
           data-testid="contact-form__add-address-btn"
           disabled=""
           type="button"
@@ -344,7 +344,7 @@ exports[`ContactForm should select with errors 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex justify-end w-full"
     >
       <div
         class="space-x-3"
@@ -385,7 +385,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
     data-testid="contact-form"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -399,7 +399,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -409,7 +409,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -439,7 +439,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="px-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -451,7 +451,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -468,7 +468,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         data-testid="ContactForm__address"
       >
         <label
@@ -486,13 +486,13 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
         >
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+            class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+            class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
           >
             <button
               class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -516,7 +516,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="mt-4"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 kwcZQn w-full"
+          class="w-full Button__StyledButton-mdtvtf-0 kwcZQn"
           data-testid="contact-form__add-address-btn"
           disabled=""
           type="button"
@@ -530,7 +530,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex justify-end w-full"
     >
       <div
         class="space-x-3"
@@ -571,7 +571,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
     data-testid="contact-form"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -585,7 +585,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="contact-form__name-input"
         name="name"
         value="Brian"
@@ -595,7 +595,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -625,7 +625,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="px-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -637,7 +637,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 aria-controls="ContactForm__network-menu"
                 aria-labelledby="ContactForm__network-label"
                 autocomplete="off"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="ContactForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -654,7 +654,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         data-testid="ContactForm__address"
       >
         <label
@@ -672,13 +672,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
         >
           <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+            class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
             data-testid="contact-form__address-input"
             name="address"
             type="text"
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+            class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
           >
             <button
               class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -702,7 +702,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="mt-4"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 kwcZQn w-full"
+          class="w-full Button__StyledButton-mdtvtf-0 kwcZQn"
           data-testid="contact-form__add-address-btn"
           disabled=""
           type="button"
@@ -775,7 +775,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-flex items-center no-ligatures"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                 data-testid="address__wallet-address"
               >
                 D61mfSggzb…oHaqJ3Dyib
@@ -783,7 +783,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             </div>
           </span>
           <button
-            class="Button__StyledButton-mdtvtf-0 OTOjy flex items-center ml-auto"
+            class="flex items-center ml-auto Button__StyledButton-mdtvtf-0 OTOjy"
             data-testid="contact-form__remove-address-btn"
             type="button"
           >
@@ -805,7 +805,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       </div>
     </div>
     <div
-      class="flex w-full justify-between"
+      class="flex justify-between w-full"
     >
       <button
         class="Button__StyledButton-mdtvtf-0 jhEaCc"

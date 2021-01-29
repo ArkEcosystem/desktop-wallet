@@ -90,7 +90,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -98,7 +98,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -137,7 +137,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -167,7 +167,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -249,10 +249,10 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -271,7 +271,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -372,7 +372,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   class="pl-8 my-auto ml-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
                 />
                 <button
-                  class="Button__StyledButton-mdtvtf-0 ePkfgQ whitespace-nowrap"
+                  class="whitespace-nowrap Button__StyledButton-mdtvtf-0 ePkfgQ"
                   data-testid="contacts__add-contact-btn"
                   type="button"
                 >
@@ -388,7 +388,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -398,7 +398,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
             data-testid="ContactList"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -411,7 +411,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -419,16 +419,16 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -441,13 +441,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                      class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Cryptoasset
@@ -455,13 +455,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Address
@@ -469,13 +469,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  w-1"
+                      class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top whitespace-nowrap justify-center no-border "
+                        class="flex justify-center align-top whitespace-nowrap flex-inline no-border "
                       >
                         <div>
                           Account Type
@@ -483,13 +483,13 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top hidden "
+                        class="flex hidden align-top flex-inline "
                       >
                         <div>
                           Actions
@@ -507,7 +507,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -534,7 +534,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -558,7 +558,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -578,7 +578,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D61mfS…J3Dyib
@@ -590,10 +590,10 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
+                        class="justify-center space-x-2 text-sm font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="Circle-uw7h4j-0 cLIJTV border-black"
+                          class="border-black Circle-uw7h4j-0 cLIJTV"
                         >
                           <div
                             class="sc-bdfBwQ catSEV"
@@ -611,7 +611,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <div
                           class="relative"
@@ -648,7 +648,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -675,7 +675,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -699,7 +699,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -719,7 +719,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             DFJ5Z5…LZkc6T
@@ -731,14 +731,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
+                        class="justify-center space-x-2 text-sm font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       />
                     </td>
                     <td
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <div
                           class="relative"
@@ -775,12 +775,12 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -804,7 +804,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -824,7 +824,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D9YiyR…gJLM7f
@@ -836,14 +836,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
+                        class="justify-center space-x-2 text-sm font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       />
                     </td>
                     <td
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       />
                     </td>
                   </tr>
@@ -853,12 +853,12 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -882,7 +882,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -902,7 +902,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             DKrACQ…jfXYqu
@@ -914,14 +914,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
+                        class="justify-center space-x-2 text-sm font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       />
                     </td>
                     <td
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       />
                     </td>
                   </tr>
@@ -931,7 +931,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -958,7 +958,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -982,7 +982,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -1002,7 +1002,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B…s6YUYD
@@ -1014,14 +1014,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
+                        class="justify-center space-x-2 text-sm font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       />
                     </td>
                     <td
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <div
                           class="relative"
@@ -1153,7 +1153,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1161,7 +1161,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -1200,7 +1200,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -1230,7 +1230,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -1312,10 +1312,10 @@ exports[`Contacts without contacts should render empty 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -1334,7 +1334,7 @@ exports[`Contacts without contacts should render empty 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1405,7 +1405,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                 class="flex justify-end items-top"
               >
                 <button
-                  class="Button__StyledButton-mdtvtf-0 ePkfgQ whitespace-nowrap"
+                  class="whitespace-nowrap Button__StyledButton-mdtvtf-0 ePkfgQ"
                   data-testid="contacts__add-contact-btn"
                   type="button"
                 >
@@ -1421,7 +1421,7 @@ exports[`Contacts without contacts should render empty 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
