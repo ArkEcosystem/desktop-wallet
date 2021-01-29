@@ -14,6 +14,10 @@ export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: docume
 
 export const BASEURL = "https://dwallets.ark.io/api/";
 
+const pluginNames: string[] = ["@dated/transaction-export-plugin"];
+
+const knownWallets: any[] = [];
+
 const walletMocks = () => {
 	const addresses = [
 		"D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
@@ -165,6 +169,33 @@ export const requestMocks = {
 
 		...walletMocks(),
 	],
+	plugins: [
+		mockRequest(
+			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
+			"plugins/registry/@dated/transaction-export-plugin",
+		),
+		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
+		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
+		mockRequest(
+			"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png",
+			() => "/assets/background.png",
+		),
+		...pluginNames.map((pluginName) =>
+			mockRequest(`https://registry.npmjs.com/${pluginName}`, `plugins/registry/${pluginName}`),
+		),
+		...pluginNames.map((pluginName) =>
+			mockRequest(
+				new RegExp(`https://api.npmjs.org/downloads.*/${pluginNames}`),
+				`plugins/downloads/${pluginName}`,
+			),
+		),
+	],
+	other: [
+		mockRequest(
+			"https://raw.githubusercontent.com/ArkEcosystem/common/master/devnet/known-wallets-extended.json",
+			knownWallets,
+		),
+	],
 };
 
 export const createFixture = (name: string, preHooks: RequestMock[] = [], postHooks: RequestMock[] = []) =>
@@ -177,8 +208,11 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...requestMocks.multisignature,
 			...requestMocks.transactions,
 			...requestMocks.wallets,
+			...requestMocks.plugins,
+			...requestMocks.other,
 			...postHooks,
 			mockRequest(/^https?:\/\//, (request: any) => {
+				console.log(request.url);
 				const mock: { url: string; method: string; body?: string } = {
 					url: request.url,
 					method: request.method,

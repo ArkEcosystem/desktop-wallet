@@ -1,5 +1,6 @@
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
+import { useNotifications } from "app/hooks";
 import React, { useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -16,6 +17,9 @@ import {
 export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProps) => {
 	const { t } = useTranslation();
 	const env = useEnvironmentContext();
+	const {
+		notifications: { sortTransactionNotificationsDesc },
+	} = useNotifications();
 
 	const byType = useCallback(
 		(types: string[]) =>
@@ -28,7 +32,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 
 	const wrapperRef = useRef();
 	const notifications = byType(["plugin", "wallet"]);
-	const transactions = byType(["transaction"]);
+	const transactions = sortTransactionNotificationsDesc(byType(["transaction"]));
 
 	if (!transactions.length && !notifications.length) {
 		return <NotificationsSkeleton title={t("COMMON.NOTIFICATIONS.EMPTY")} />;

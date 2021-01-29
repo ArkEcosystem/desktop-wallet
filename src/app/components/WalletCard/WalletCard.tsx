@@ -3,8 +3,7 @@ import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { DropdownOption } from "app/components/Dropdown";
-import { Icon } from "app/components/Icon";
-import { Tooltip } from "app/components/Tooltip";
+import { WalletIcons } from "app/components/WalletIcons";
 import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
@@ -61,37 +60,10 @@ export const WalletCard = ({ isLoading, className, wallet, actions, onSelect }: 
 		);
 	}
 
-	const getIconName = (type: string) => {
-		switch (type) {
-			case "Starred":
-				return "Star";
-			case "MultiSignature":
-				return "Multisig";
-			default:
-				return type;
-		}
-	};
-
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
-
-	const WalletIcon = ({ type }: { type: string }) => (
-		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-			<div className={`inline-block p-1 ${getIconColor(type)}`}>
-				<Icon name={getIconName(type)} width={20} />
-			</div>
-		</Tooltip>
-	);
-
 	return (
 		<div className={`w-64 inline-block ${className}`} data-testid={`WalletCard__${wallet.address()}`}>
 			<Card
-				addonIcons={[
-					wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
-					wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
-					wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
-						<WalletIcon key="MultiSignature" type="MultiSignature" />
-					),
-				]}
+				addonIcons={<WalletIcons wallet={wallet} />}
 				className="h-48"
 				actions={actions}
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}

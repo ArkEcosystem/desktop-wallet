@@ -2,7 +2,6 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -187,7 +186,7 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							vote: `-${unvotes[0].publicKey()}`,
+							unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
 						},
 					},
 					{ abortSignal },
@@ -204,7 +203,7 @@ export const SendVote = () => {
 					{
 						...voteTransactionInput,
 						data: {
-							vote: `+${votes[0].publicKey()}`,
+							votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
 						},
 					},
 					{ abortSignal },
@@ -225,9 +224,13 @@ export const SendVote = () => {
 					"vote",
 					{
 						...voteTransactionInput,
-						data: {
-							vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
-						},
+						data: isUnvote
+							? {
+									unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							  }
+							: {
+									votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							  },
 					},
 					{ abortSignal },
 				);
@@ -349,14 +352,10 @@ export const SendVote = () => {
 													type="submit"
 													data-testid="SendVote__button--submit"
 													disabled={!formState.isValid || formState.isSubmitting}
-													className="space-x-2"
+													isLoading={formState.isSubmitting}
+													icon="Send"
 												>
-													<Icon name="Send" width={20} height={20} />
-													{formState.isSubmitting ? (
-														<Spinner size="sm" />
-													) : (
-														<span>{t("COMMON.SEND")}</span>
-													)}
+													<span>{t("COMMON.SEND")}</span>
 												</Button>
 											</>
 										)}

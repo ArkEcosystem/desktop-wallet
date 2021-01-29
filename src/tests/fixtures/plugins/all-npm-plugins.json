@@ -1,0 +1,1629 @@
+[
+	{
+		"name": "@dated/transaction-export-plugin",
+		"version": "1.0.3",
+		"description": "Export your wallet transaction history",
+		"main": "src/index.js",
+		"author": { "name": "Edgar Goetzendorff", "email": "hello@dated.fun" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Transaction Export",
+			"logo": "https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-1.png",
+				"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-2.png",
+				"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-3.png"
+			],
+			"categories": ["utility"],
+			"permissions": [
+				"COMPONENTS",
+				"ROUTES",
+				"MENU_ITEMS",
+				"UI_COMPONENTS",
+				"PROFILE_CURRENT",
+				"PEER_ALL",
+				"HTTP",
+				"UTILS",
+				"STORAGE",
+				"ALERTS",
+				"DIALOGS"
+			],
+			"urls": ["^"],
+			"minimumVersion": "2.9.1"
+		},
+		"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+		"bugs": { "url": "https://github.com/dated/transaction-export-plugin/issues" },
+		"homepage": "https://github.com/dated/transaction-export-plugin",
+		"repository": { "type": "git", "url": "git+https://github.com/dated/transaction-export-plugin.git" },
+		"gitHead": "55f050be0a784e49ec3bf2a3f8cc50f31b4bef30",
+		"_id": "@dated/transaction-export-plugin@1.0.3",
+		"_nodeVersion": "12.18.1",
+		"_npmVersion": "6.14.5",
+		"dist": {
+			"integrity": "sha512-Dv4u8RJSJpeXbD4PEShKZOEqIAMOhGLHIZ19Q21KKGON2tp5+mDyG2RxJndFJsup4rDHURT9txkzrf1VuRnGzA==",
+			"shasum": "c7c8b910cffe54e3f1f311628c287399c87cbdb1",
+			"tarball": "https://registry.npmjs.org/@dated/transaction-export-plugin/-/transaction-export-plugin-1.0.3.tgz",
+			"fileCount": 23,
+			"unpackedSize": 304275,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfwBu1CRA9TVsSAnZWagAAItcP/2Xa1Bqw0MBWGQSCRQDq\nocu11ihUa5fWxbY9ziZx2AIdqffmRbWBXE1oME0yfjsK37RPFhog2ceYyE2+\nuqfumuwKR2cgJznUFL8+Z5goJ5/YQ2Ln/BsqtAouD+HSFgnSR5eX8sE6XbAH\nffYq0Y1vIFoCwWRUjKGtLeO+kFUpK4YC7sOvnAJ2f+x2+At8nwXXNe/VCUfE\nug/KxiIkCSNaKe8WpmqMq39w0mAfWooWjWxcHwvNeY+rH85WAaUndFUYEeyx\nNhRtdHYiHNHBdHCZMY6e/1J5j/lP1illunfjnLsvaXo0gW42OZq/9HL9YF92\nubwIFNSTQwMBFDsnJcNNcJ6+lQDw92Iq2IIxhNlrwzh5nxYUCs0mV83fmE9s\nJ9MZCQKO5MXksFHCYRKJHI9f0wwH0upP4oqM1c8AOw8Z0OukPlb2eyosZjgv\n94xl1WpzZRRtzZIUm146meZk4REOFxDFibgWXqhadO+jrTNEj6J6tIqM9Fxu\nB5B9KvkN0s4VrbSY8RjNKNWjg1vLymbqOtRvj6c3Ex32+i3XyfcTAgzb6t+6\nMS+Ei3gVNhItbY+g5eZ4mA6t5gfA4fgNE4sHprasgjVXJfLh/Ty33xJDgxuu\neuzlvQXIGG1C88mIh112PACAQYIYjG+bf7W5nHhnQ1Yn1fidDRf2+1ToTKp+\nH93G\r\n=RUaz\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"_npmUser": { "name": "dated", "email": "hello@dated.fun" },
+		"directories": {},
+		"maintainers": [{ "name": "dated", "email": "hello@dated.fun" }],
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/transaction-export-plugin_1.0.3_1606425524549_0.6222308179434641"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@elevenyellow.com/ark-switchain-plugin",
+		"version": "1.2.0",
+		"title": "Switchain Exchange",
+		"description": "Switchain plugin on Ark Desktop Wallet",
+		"logo": "https://raw.githubusercontent.com/elevenyellow/ark-switchain-plugin/master/logo.png",
+		"main": "src/index.js",
+		"author": { "name": "Switchain" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Switchain Exchange",
+			"logo": "https://raw.githubusercontent.com/elevenyellow/ark-switchain-plugin/master/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/elevenyellow/ark-switchain-plugin/master/src/img/preview-1.png",
+				"https://raw.githubusercontent.com/elevenyellow/ark-switchain-plugin/master/src/img/preview-2.png",
+				"https://raw.githubusercontent.com/elevenyellow/ark-switchain-plugin/master/src/img/preview-3.png"
+			],
+			"categories": [],
+			"permissions": [
+				"COMPONENTS",
+				"HTTP",
+				"MENU_ITEMS",
+				"MESSAGING",
+				"PROFILE_CURRENT",
+				"ROUTES",
+				"STORAGE",
+				"WEBFRAME",
+				"TIMERS",
+				"STORAGE",
+				"EVENTS",
+				"ALERTS",
+				"UI_COMPONENTS"
+			],
+			"urls": [
+				"https://api.switchain.com/rest/v1/",
+				"https://raw.githubusercontent.com/elevenyellow/ark-switchain-plugin/master/logo.png"
+			],
+			"minVersion": "2.6"
+		},
+		"keywords": ["@arkecosystem", "desktop-wallet", "plugin", "switchain", "exchange", "swap"],
+		"bugs": { "url": "https://github.com/elevenyellow/ark-switchain-plugin/issues" },
+		"homepage": "http://URL",
+		"repository": { "type": "git", "url": "git+https://github.com/elevenyellow/ark-switchain-plugin.git" },
+		"gitHead": "9a610d2d3afaabbd078ec1bffdd0580ba45ce637",
+		"_id": "@elevenyellow.com/ark-switchain-plugin@1.2.0",
+		"_nodeVersion": "12.13.0",
+		"_npmVersion": "6.12.0",
+		"dist": {
+			"integrity": "sha512-oce4bJ5rm2/j65c8iM3PA/oVndjpx4Pt6VhyTmyWgV2y/5SpJ7xzKHNq5cgC3xgW7rMVlngM0GilOdryGwM1xg==",
+			"shasum": "c9b06aaff42b53447966b60351a2a90813611f75",
+			"tarball": "https://registry.npmjs.org/@elevenyellow.com/ark-switchain-plugin/-/ark-switchain-plugin-1.2.0.tgz",
+			"fileCount": 23,
+			"unpackedSize": 605882,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJecInnCRA9TVsSAnZWagAAMq8P/i+QR+3SxeRKWngqRI2e\nZ1sfqJzW8RPFKuKoWF7iEcfpq6npWvLxxHp+nIUo2QYAHzmg6wgL/AGNn1If\nzogcXFIUM8FR+qarVFRByu475U323Fv/X5C0JPDSnRPVXABF/pZYTrsaxpe6\nRySfvFSPFfiAnDUxRyOr9FZMQczOT1GzjdwJginTGyQ7wJPISDnHPwzdvgpL\n4k5PvjQxcP/kL0EKGxhGatwF4esIN9wzatk+5B3ozThqscrjhQzgS97cl5jy\n3lnCZBHZ0bjWyX1rzil5zl9hLhbkw7JTGPvet0Q/aZ/UaXZbLepxV1/ZP2mG\nQ38uYThqmxNXAwS5SuF5kIwRmBowfww1kiidlwn0y8RBAkCMKMmFPcBOWV3Y\n5Z0qJzuIM1lLx1ckJabSGMOQ+8NA01WrCLKvD6LwdZZvLv6ezaD0AEW34+NH\nx1iDAn4jPdxfntGyZPxEFFJBnTYDFuSw1WXblI9i7JegG2F+UOjYNhvDOXQe\nEDARIuH+Yerwyq2JkDI4zHD+eWJJgaZm6w6+szU8Dpm6wBUH8PT68J1zspVK\nv71OFYVPkx7G0xf2IM1HTa01zqfJYNnsZVtFcRSutUeRSROBYAkozAW17nvG\nqsE+DePY2a5E1PXxqV7dCRUlhHi6qq6HZ1nxz1FIum7fncIngl+FS0CaJWOS\ngPF5\r\n=ZJna\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [
+			{ "name": "ajamardo", "email": "agus@elevenyellow.com" },
+			{ "name": "chemuto", "email": "chemuto@elevenyellow.com" },
+			{ "name": "cook1e-monster", "email": "carlossil01@gmail.com" },
+			{ "name": "dcusan", "email": "daniel.cusan@gmail.com" },
+			{ "name": "elevenyellow", "email": "all@elevenyellow.com" },
+			{ "name": "enzo", "email": "enzo@josema.es" },
+			{ "name": "garbolino", "email": "roly@elevenyellow.com" }
+		],
+		"_npmUser": { "name": "garbolino", "email": "roly@elevenyellow.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/ark-switchain-plugin_1.2.0_1584433639290_0.015186313890126035"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@dated/delegate-calculator-plugin",
+		"version": "1.0.4",
+		"description": "Compare delegate payouts and get an overview of your potential staking rewards directly in the ARK Desktop Wallet",
+		"main": "src/index.js",
+		"author": { "name": "Edgar Goetzendorff", "email": "hello@dated.fun" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "ARK Delegate Calculator",
+			"logo": "https://raw.githubusercontent.com/dated/delegate-calculator-plugin/master/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/dated/delegate-calculator-plugin/master/images/preview-1.png",
+				"https://raw.githubusercontent.com/dated/delegate-calculator-plugin/master/images/preview-2.png"
+			],
+			"categories": ["utility"],
+			"permissions": [
+				"COMPONENTS",
+				"ROUTES",
+				"MENU_ITEMS",
+				"UI_COMPONENTS",
+				"PROFILE_CURRENT",
+				"PEER_CURRENT",
+				"HTTP",
+				"ALERTS",
+				"STORAGE"
+			],
+			"urls": ["^"],
+			"minimumVersion": "2.9.1"
+		},
+		"keywords": ["utility", "rewards", "staking", "delegates", "@arkecosystem", "desktop-wallet", "plugin"],
+		"bugs": { "url": "https://github.com/dated/delegate-calculator-plugin/issues" },
+		"homepage": "https://github.com/dated/delegate-calculator-plugin",
+		"repository": { "type": "git", "url": "git+https://github.com/dated/delegate-calculator-plugin.git" },
+		"licenseText": "MIT License\n\nCopyright (c) 2019 Edgar Goetzendorff\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE. \n",
+		"_id": "@dated/delegate-calculator-plugin@1.0.4",
+		"dist": {
+			"shasum": "8457297bf1083bc753de08104f1ed1c64ac3ef7f",
+			"integrity": "sha512-l1LgYR1FjLgkrE9pcKLLfHZRI8dE74hCSh+mPUxm9GhKw374VaR1m8gm5dpyyvU9hKUrvEQCO+1fmIl98V7XPw==",
+			"tarball": "https://registry.npmjs.org/@dated/delegate-calculator-plugin/-/delegate-calculator-plugin-1.0.4.tgz",
+			"fileCount": 23,
+			"unpackedSize": 122571,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefN9oCRA9TVsSAnZWagAA8mAP/RmUZbK3eE4P8b80rLd+\nWvaVk0Dl9vdO6uNW/0ptu/69UhOETwGFPozLGOgowZVWw9rBEwmUkv4esMxh\nM2g7Ps7oHJ9HvlRQfYZQ087x3s+sReJtRuPNADRTMg7zHcXQXMmtJ2rNuONL\nAtW7SaqDR54g+Deo7fwnRWU0Nm1LmWU1fbGgm8DrHRwD66hb9oOWDbtz3Q99\nrWsi6ZRXdPNmo0h/zcQTrtzUE9kbXLyUCAEenZgl+Z/t7ShVlYQo8zQLd0HO\nuLAgtS0uhaD0itN10cHt646/11vEJrFd5HhdxsDHLJY3pu82zJt93p7jTDLG\nOxK249lylzuSePGmX/ThDLSyjZTXbzdEMiIAehsw37YDYOb3r2fx00SZV0D5\n0o5RoLnVs2L8JNzYyWPDGGGdqccF8AvM1i5zgU+tDHS51Qeb5nIxXmtPnIOY\nsrso9AE4cjA0U5O7AZXBxIbbNY7Rosxx257+XqFZ10WG/zf8pNv+ChMqkndO\nEQG9L5fO4LQWzOmIAdpr+qlEEh65/2NzTozovNR6OZBlrRia4VCWhO9JnTIf\nObgF4dFVbcggO9x/sXjWwve384SHGAU+9J3EGeSQSbY1dtIrGuCayAP4JetU\nlwfSbWvKo9uTvmE2GH35m4AEYbpQY9/ZPXXol1IcVTux9cJyeWd67S2iydvq\nQLzf\r\n=aEwu\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "dated", "email": "hello@dated.fun" }],
+		"_npmUser": { "name": "dated", "email": "hello@dated.fun" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/delegate-calculator-plugin_1.0.4_1585241959498_0.8325634094692469"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "cn-ark-plugin",
+		"author": { "name": "ChangeNOW" },
+		"version": "1.1.0",
+		"title": "ChangeNOW Plugin",
+		"description": "ChangeNOW plugin on Ark Desktop Wallet",
+		"main": "src/index.js",
+		"license": "MIT",
+		"keywords": ["@arkecosystem", "desktop-wallet", "plugin", "changenow", "exchange", "swap"],
+		"logo": "https://raw.githubusercontent.com/ChangeNow-io/ARKPlugin/master/logo.png",
+		"repository": { "type": "git", "url": "git+https://github.com/ChangeNow-io/ARKPlugin.git" },
+		"homepage": "https://github.com/ChangeNow-io/ARKPlugin",
+		"permissions": [
+			"COMPONENTS",
+			"HTTP",
+			"MENU_ITEMS",
+			"MESSAGING",
+			"PROFILE_CURRENT",
+			"ROUTES",
+			"STORAGE",
+			"WEBFRAME",
+			"TIMERS",
+			"STORAGE",
+			"EVENTS",
+			"ALERTS",
+			"UI_COMPONENTS"
+		],
+		"urls": ["https://changenow.io/api/v1"],
+		"gitHead": "ddb95f865f3eac57386b9806caae5f76f0b9cfdf",
+		"bugs": { "url": "https://github.com/ChangeNow-io/ARKPlugin/issues" },
+		"_id": "cn-ark-plugin@1.1.0",
+		"_nodeVersion": "13.2.0",
+		"_npmVersion": "6.13.7",
+		"dist": {
+			"integrity": "sha512-KLZd2Dv7wIU4RWGZVmblBMaFMQsYD6LPuBjX1UwFacc8dCrcZNbjEAi3Mite4WeP2+lxGeo1cI6N/inlP5Fahw==",
+			"shasum": "106ff2bd948ffdf6e1a8e1278ddb10ba640753cd",
+			"tarball": "https://registry.npmjs.org/cn-ark-plugin/-/cn-ark-plugin-1.1.0.tgz",
+			"fileCount": 19,
+			"unpackedSize": 162868,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeQ9E/CRA9TVsSAnZWagAAICsP/jt+td2nVvqnuGoYy3Jh\n6ytafHQNkMgysgXqKJ6oe3xT7WSuUjtYfuFOvuUao2hvVHAwLu3z0ZLs7RHx\ngRGDGZVQXf38ZRiYJnR41jf8OKA+pExcGw+0xpZz6aG/Soq5wD7mcMjwBgRp\nDmqBsiuLaqlpgUWysijUKN+y5Yd24JB6p1nszZwuy8/2fViLLu1dmgyb07+W\n1sIH2c+GY7QwnbvI93rDbUgVbNBjaXaVpf51Q5A4Jpn/jv8thliG+cP4K8z5\nwS8tlHtT7pxXS7PRd0XDNiB04ioYiF5nsl3mLBYKs7yb5uE/il4sTfD0GYpM\nD/jLkM/4MolLtW/8d49mQLW5JK3LmU2lEVqSvhbptmEGTmcZ4JXWtrTCdD6N\n+1fZ53a7O3OplyhfRjEZPZ56Y43JTI1OlRBcnPWujYuiPoA9ktBzWVNsdXYX\nH6ERg1chLR731gWYR16DkNQxzEPTFPFg/Ki80MZqUgE+Mg59A/VrxznAcRkZ\nMefJ9ghWHB3SEbSlrL8kXSzyNd8pn5RVHNbefJxDp01OUun+8UmdiMIY8RKX\npHAC5PKLqNlCsdSIkPfU28hYUxbgM/FT+OLguOB3E1zWyOl7fpX+EvwD+QXI\nURcsYclORl8LzDp7uPXFrV+NsJs+rronCrpeChzpXoD7cZ0uDWtg/DcJu3cv\n0gq2\r\n=rNGf\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "changenow", "email": "api@changenow.io" }],
+		"_npmUser": { "name": "changenow", "email": "api@changenow.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/cn-ark-plugin_1.1.0_1581502782826_0.0867608714749799"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@giliam/ark-pro",
+		"version": "1.0.6",
+		"description": "A modern dark theme for the ARK desktop wallet.",
+		"main": "src/index.js",
+		"author": { "name": "Giliam Verheide" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Pro Theme",
+			"logo": "https://raw.githubusercontent.com/giliamverheide/ark-pro/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "dark", "pro", "ark", "@arkecosystem", "@giliam", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Giliam Verheide" }],
+		"bugs": { "url": "https://github.com/giliamverheide/ARK-Pro/issues" },
+		"homepage": "https://github.com/giliamverheide/ARK-Pro#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/giliamverheide/ARK-Pro.git" },
+		"gitHead": "2e5c96c503b659797d77e4ecc00145bdab9d916d",
+		"_id": "@giliam/ark-pro@1.0.6",
+		"_nodeVersion": "12.14.0",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-ldHXz9QV8v5YySFyN28KzRKbdErI2HatB6Hq3JbMOWP0po5oNsRHGkA3bCJgj5eeSQoM7AskDwZJh16WEjqwkQ==",
+			"shasum": "2e0152723d3c4a9a1d31424294b40dfefe7ad4a2",
+			"tarball": "https://registry.npmjs.org/@giliam/ark-pro/-/ark-pro-1.0.6.tgz",
+			"fileCount": 7,
+			"unpackedSize": 58644,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMuCkCRA9TVsSAnZWagAAhZ0P/AxD/Gchv0V0m+3LOrWf\nrP8iyyAJXmQkOfbG8cBsBYFlFB31Ur/Rc2svZzjE7sBuU70qSXDm0ZPT/LSF\na3Q2IJAQfBtrQFXIX4DPTfzsB8lTzDUTjBqQeUusrBAE1k+L84Or1IqF6yj9\nDnZshfWU6LLQXSvr/KX6bYontnHCoxtTvXoxCsG07JT2y0aYjrKvjg2CESmX\nPZDOQ26C17gc4aj8/OjFiCo+aC6VNls/5BaFGpWp3BvmNUuEz/OtzXsVyrcY\nmyurl6pNX0yIddgEz9ls/ebZcda5byjBYicZihDYHWbczgXTBsi3/W9UPfU1\nBcN2iMqGA0XkQM8qEoN5zqMGJFd696S4FoAoZ7AUWb0eb8Ff61fYQX/NodPE\nz8mDR8lNe93N0ihF3pqRQapuGT3DtrpuQogG6kZjBcS+0cIsTc0Qge4BPQbE\nyWti6ZbHo4/JC7mxQ/e/RnRN/HFw+Od9ZGMeQeOn2LgScNCWI8B3Zind0/WX\nu/8ug5FgX63MWN7TzWsWn+/f/EGqJNYHD34j9MNmx2wXpNLGpfyWjyJjKCcb\n5dFn99tSjtYLmop8BEo410gR4Hpdv0EcQoL9twg82PiI0fJg3QF7rLTT8GpL\nCNyEFnU4r2C3Z9e6dNYZTTN9kt7viTweUW+PJeKH/5w12r1PjazKFllxLFly\nwu3p\r\n=8vQE\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "giliam", "email": "giliam@verheide.nl" }],
+		"_npmUser": { "name": "giliam", "email": "giliam@verheide.nl" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/ark-pro_1.0.6_1580392612234_0.15497217959909637"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@giliam/ark-breeze",
+		"version": "1.0.5",
+		"description": "A modern light theme for the ARK desktop wallet.",
+		"main": "src/index.js",
+		"author": { "name": "Giliam Verheide" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Breeze Theme",
+			"logo": "https://raw.githubusercontent.com/giliamverheide/ark-breeze/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "light", "breeze", "ark", "@arkecosystem", "@giliam", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Giliam Verheide" }],
+		"bugs": { "url": "https://github.com/giliamverheide/ARK-Breeze/issues" },
+		"homepage": "https://github.com/giliamverheide/ARK-Breeze#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/giliamverheide/ARK-Breeze.git" },
+		"gitHead": "427a1e4cbe8bfdea836dc0347da874e0a9ba1015",
+		"_id": "@giliam/ark-breeze@1.0.5",
+		"scripts": {},
+		"_shasum": "883a5b83abdbc36811d4a43c17c7b9510be0bb70",
+		"_from": ".",
+		"_npmVersion": "3.8.6",
+		"_nodeVersion": "5.11.1",
+		"_npmUser": { "name": "giliam", "email": "giliam@verheide.nl" },
+		"dist": {
+			"shasum": "883a5b83abdbc36811d4a43c17c7b9510be0bb70",
+			"tarball": "https://registry.npmjs.org/@giliam/ark-breeze/-/ark-breeze-1.0.5.tgz",
+			"integrity": "sha512-PRhHspbQHIIZtBr+/k2I3hNKEhSS912VHGheqehlbE1f7QcRqBspA2aYx8wWp+9cfRy71t4UDJmu9PLq9VwIXg==",
+			"fileCount": 7,
+			"unpackedSize": 59964,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMuBbCRA9TVsSAnZWagAAERgP/2DdB6FdhzZYZo5eCYpi\nOGfKPCz/yB5XY3R+ye6voNJPfFKAOrAZARMXvqtZy2vuTJxye0bm37rP7Akj\nG4gRFNmEvA1h8UYbwVFXwnR9Lfvwyb0YBEwrVCAPxUtAh7QWl/fWr72h4xLq\n0sGW9hBaMAIuEr6UFxR3JJw9UqOY20LWbpY9ag2+UJ1/IKNXZIti9PtqsaCG\neL/84tAeWXnDY3QhJCT+EBSmksZ8HyXF0o07Wg+DSbaOqu+/zSqhKowRRr8/\nZseUgv5zNWZBjDxIbxpEuvrA+0UL8otwu+AfymSPO5V1+AN7LdYfMZDXiNF8\nwWIT4RNw1xpgt34xCzteNWkjLb+XBSXs71TfatuYqRYwPvz9VJLaNFk8zbJv\nQubp2tSB2tBBNQTfKQgIVOv4eVm7wmPbG7FBEBVwPjncFwUFxvUJzeJ3O+3Z\nVXIjx1KlzEezqCmccWm5rY9rVk17b6PMTQW+MFGw+LGLLhMxwvicCZmSSn+V\n3xaJmlX9qcA0QnjvpYlzEyYklQp/XNTnie1YfKoGTjUToYx6AnAFtfHi8adb\nQa4zFZ0uZSqzSUydYPMrXfzTMkn1BFIo6FKGBJxbnnunuPc7hYoD3StJydvz\n3g2edctlWaLAK8MdIZrTjArdpI2d2at0+wz8xASASQim/BdW2B7kayunRiDZ\nlv/x\r\n=Zxtc\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "giliam", "email": "giliam@verheide.nl" }],
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/ark-breeze_1.0.5_1580392539270_0.7328521014590397"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@dated/italian-language-plugin",
+		"version": "1.0.1",
+		"description": "Italian Language Pack for the ARK Desktop Wallet",
+		"main": "src/index.js",
+		"author": { "name": "Edgar Goetzendorff", "email": "hello@dated.fun" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Italian Language Pack",
+			"logo": "https://raw.githubusercontent.com/dated/italian-language-plugin/master/logo.png",
+			"categories": ["language"],
+			"permissions": ["LANGUAGES"],
+			"minimumVersion": "2.9.1"
+		},
+		"keywords": ["italian", "language", "translations", "@arkecosystem", "desktop-wallet", "plugin"],
+		"bugs": { "url": "https://github.com/dated/italian-language-plugin/issues" },
+		"homepage": "https://github.com/dated/italian-language-plugin#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/dated/italian-language-plugin.git" },
+		"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+		"_id": "@dated/italian-language-plugin@1.0.1",
+		"dist": {
+			"shasum": "78907ca503ccb23df0782c35b3351b0485a7e949",
+			"integrity": "sha512-srPA4IGVK2LVcIq23iRWFKHRsWnA2TGacbO+Hp75w1GmNz0Aq2Z4wfvNwE38fdm5syaRfg3nZ1NT/WSs6t6JYg==",
+			"tarball": "https://registry.npmjs.org/@dated/italian-language-plugin/-/italian-language-plugin-1.0.1.tgz",
+			"fileCount": 10,
+			"unpackedSize": 69234,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeeiODCRA9TVsSAnZWagAAwDAP/0zxtndsujN+WwFVFDBb\nw8qzpY9wzhRjdMmVOt4pk37B5dATXKF7QnzSyaKWLHlHrV7LbPExuzypB+I6\ncWyytMbcdf/5At/+NBMCUkHexxbUkCyLmQIs5X6SaxpkzFqNTex7ythJeFhf\nv6eSVYlJDS5lmVEG/I8q89un+hXjNzmB240/OG2eHBDvaK4Nvz2hJDStO7SP\nRcwqmhv1BW1eRfYsn0xaLFlX0YxGF6VCV5zhcamSkuYxhKLXdXBdqq4RYvAK\nkn5x3pfPYEIYlLpfSWhmVSNKQ4D3PgH6kaK7ceigS+bUbBboW63MWYQhL3cn\nOEWdrURAgr2oe0RFcHRHMaJBVqyEdBmtYO5xAw00gq1bmtGrazQMV1IytDcT\nmcbXG21fMUAMHsaSF+/EXZ3x3LNucKUAbCLHzcCjkJSVbwf/pr06H9xsczh+\nMGQi+wYeSMFhsNELFqZ7Gz5GtzekOjE29F07IULsbOuEkB/DLq8FQt18KCch\nMWFNpq30Y+LfWMy3ivpn1W3HkiyvYCmqXGZVua9Y8xlxj0DuM+tACfyHr0ul\nHx9Jf5wuAeb/h0wjrnpGKH/9HlSavah0iSgj8fbwkxMWgbB8JCT0+k2jbS/q\nvbZ7g5NR2tsZPovh6Kgi/hyXZpuYCmj/JnD1eOSb7M75Qqcm5vwT51LK1Sqx\nsSnn\r\n=k4xR\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "dated", "email": "hello@dated.fun" }],
+		"_npmUser": { "name": "dated", "email": "hello@dated.fun" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/italian-language-plugin_1.0.1_1585062786902_0.44498699369433026"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@breno.polanski/brazilian-portuguese-language-plugin",
+		"version": "1.0.1",
+		"description": "Brazilian Portuguese Language Pack",
+		"main": "src/index.js",
+		"repository": {
+			"type": "git",
+			"url": "git+https://github.com/brenopolanski/brazilian-portuguese-language-plugin.git"
+		},
+		"desktop-wallet": {
+			"title": "Brazilian Portuguese Language Pack",
+			"logo": "https://raw.githubusercontent.com/brenopolanski/brazilian-portuguese-language-plugin/master/logo.png",
+			"categories": ["language"],
+			"permissions": ["LANGUAGES"],
+			"minimumVersion": "2.9.1"
+		},
+		"keywords": ["language", "@arkecosystem", "desktop-wallet", "plugin"],
+		"author": { "name": "Breno Polanski", "email": "breno.polanski@gmail.com", "url": "http://brenopolanski.com" },
+		"license": "MIT",
+		"bugs": { "url": "https://github.com/brenopolanski/brazilian-portuguese-language-plugin/issues" },
+		"homepage": "https://github.com/brenopolanski/brazilian-portuguese-language-plugin#readme",
+		"gitHead": "5bb913344fe42b55180fbc009df0fbadefc99d04",
+		"_id": "@breno.polanski/brazilian-portuguese-language-plugin@1.0.1",
+		"_nodeVersion": "12.16.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-uaBD8dIpdHvF6uG4j0kMYdhIndm0ZpJrGbMai8+9e4+U0LT80U4+KBpm3EicaV4IaVdju6QdOgbdV12bz1Kv7A==",
+			"shasum": "9cd4a3395415175b5d009df623c708581f894c6f",
+			"tarball": "https://registry.npmjs.org/@breno.polanski/brazilian-portuguese-language-plugin/-/brazilian-portuguese-language-plugin-1.0.1.tgz",
+			"fileCount": 6,
+			"unpackedSize": 50124,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefKf3CRA9TVsSAnZWagAAswkP/iC68SF47KOmRbCbg7p7\nS1tye5Ms0g9IjM9s82AV6caCp7GSHpu6NehqHJhE23SyXplf3V1VELkHwC9V\n4uKOLpN0yyWUaOJzhmufh80PUpHxYWtBZMcXyBTXrSFPRFPms0fC6H2svOQO\n6NjVYd7NqGwQq3K/n4ISdy9YLLc+WNSp92mbN/JAOgYJPaKYpo8TeB/gNNke\nB5lou7nuxTqhSUZDq4OpYt8Yfan25h8exgPv5ilZDheS0seKHegRCnvsfS3m\n2sOt7B7rjbxDKjduWuZFAz8rJHg03RGAWsZRUKVDLvu3T8QlyGfb3PK7CdtV\n9PVO9m4Mrfs/MQ4jJXIiiucH2LSDVKWsS79sLdv2vWnFt8feReY6nP6jbT7O\n+aZJ63F2WpWg4UnAeWpsGmZSsDBnyq8/gWYD6UIRV4TW6e4pB4UGJeCGF5Y3\nrOOPn37JUETdg4n4sROjxgbMnOdFjVlam1hbv2ThhSE47CA4z8CbqA4enyr1\nCMGmek77zMXMTl9DBkpgzMsV2VZCYo8kBKS2RsoJwYg6vzvaGyp11eAWzoSC\n+kh+JINfrX13Cdvaxn06qdFhVA9IsrjiBsQlGMec8Kbta4EzbheDLQsX0FyE\nokU2gmSpz7T76S4c4mNMBF+qQVFKh9dFDBaWvGpNtKPeEjmadUPvxeVcxH4X\n0ab7\r\n=uu4z\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "breno.polanski", "email": "breno.polanski@gmail.com" }],
+		"_npmUser": { "name": "breno.polanski", "email": "breno.polanski@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/brazilian-portuguese-language-plugin_1.0.1_1585227767489_0.32190491951091227"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@daniel.barta/lively-wallet-template",
+		"version": "1.0.0",
+		"description": "Lively ARK Dekstop Wallet Theme",
+		"main": "src/index.js",
+		"author": { "name": "Daniel Barta" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Lively Theme",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Daniel Barta" }],
+		"bugs": { "url": "https://github.com/bartadaniel/lively-theme/issues" },
+		"homepage": "https://github.com/bartadaniel/lively-theme",
+		"repository": { "type": "git", "url": "git+https://github.com/bartadaniel/lively-theme.git" },
+		"gitHead": "cd171cc05480361462115475185ac48877e68144",
+		"_id": "@daniel.barta/lively-wallet-template@1.0.0",
+		"_nodeVersion": "12.13.1",
+		"_npmVersion": "6.11.3",
+		"dist": {
+			"integrity": "sha512-2nJlWf4EywD6ago+rlzgtr4BK3U7NJ7UdJaqf16r5QVh0eLO7Jjo+FrjKoolDENTtcB9RoFmwuVpkVypamQUGA==",
+			"shasum": "428cea00ed6425c43303f964cb28e5b856598dfc",
+			"tarball": "https://registry.npmjs.org/@daniel.barta/lively-wallet-template/-/lively-wallet-template-1.0.0.tgz",
+			"fileCount": 5,
+			"unpackedSize": 6454,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeManyCRA9TVsSAnZWagAA5a0QAISlNt1gTth6WnaBruSP\nCm3zckgpJTieTWJEGN7JpzPOf5P1CmKV3DJV0fPknvSzetquYLNeZ3SHruYq\nEJtgclulfTAL3JdJv/RVrlNnVKutON9Z6lM4TGHN1pJxHpnlaE+zYJg0SML+\nBORg7gpCUo6bdPxAklA5acEFltgoyx4eLy6qsdTwtgZs2IoawK+ADj6mBJ1N\nmkMfcZb4p+vMCs8vnlsMravTpA+HAAVQYgPierCvM/6V0cS3Ycp8YlAVPBvC\nOd3L5B+kGBIxa1lT+NLHZHu55Eb3WXb8uaWUL8J2e0DrrYDD3Qu+LOXCD201\nVg5D/tyDcWpNR1ZcI0WZ1FrEKShfZC26Qx+xAeeFMRlkiYfYcLzfeI83pE+I\ncCBdKNulAxUd+DHlvdKmAOdwYmvPWcDms96WbCw2hcR3A5lTz+rp4LefJNRS\nHRCr5Ti80j+FJ/Zn+4t6kDhRpC0koqX+o2ooNzIDNpWDosF04MiHNH397OyY\nvYbFcYz/iS/WnCQT/cxX3QZpdtcU/txIZs1YxC8qYUhzR3zEzAC3CZEVPnQh\njDmA0GRwQzAE8nEkieCBz4lK0znh/uAoi5yXmhHiM8GEJjMVlvXzfUMmJdfN\nQfBhO3HcC2VUB86bczjQNda/ULYzSG1ld8x1GZGN/D5snS2iW81eKpows9rD\nD7EQ\r\n=1McG\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "daniel.barta", "email": "barta.daniel@gmail.com" }],
+		"_npmUser": { "name": "daniel.barta", "email": "barta.daniel@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/lively-wallet-template_1.0.0_1580313073958_0.8180792323225838"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@jarunik/german-language-plugin",
+		"version": "1.0.0",
+		"description": "German Language Option for Profile",
+		"main": "src/index.js",
+		"author": { "name": "Jarunik", "email": "jarunik@arkcoin.net" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "German Language Pack",
+			"logo": "https://raw.githubusercontent.com/jarunik/german-language-plugin/master/logo.png",
+			"categories": ["language"],
+			"permissions": ["LANGUAGES"],
+			"minimumVersion": "2.9.1"
+		},
+		"keywords": ["german", "language", "translations", "@arkecosystem", "desktop-wallet", "plugin"],
+		"bugs": { "url": "https://github.com/jarunik/german-language-plugin/issues" },
+		"homepage": "https://github.com/jarunik/german-language-plugin#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/jarunik/german-language-plugin.git" },
+		"gitHead": "68586653b3a7b9d32224b57f53ca9e323450d01b",
+		"_id": "@jarunik/german-language-plugin@1.0.0",
+		"_npmVersion": "5.6.0",
+		"_nodeVersion": "8.11.1",
+		"_npmUser": { "name": "jarunik", "email": "jens@hviid.ch" },
+		"dist": {
+			"integrity": "sha512-6dckZ4dmwwUfXgfjglR5Z4AmA4dIMTyI/NyTF/YXwAKyEOSNJ84RVeaBPnIZZ5cQUGlp/mgjIY1BwimKnrBLTA==",
+			"shasum": "7f6ccafb252f903faa68431709f8d269c26e9db9",
+			"tarball": "https://registry.npmjs.org/@jarunik/german-language-plugin/-/german-language-plugin-1.0.0.tgz",
+			"fileCount": 7,
+			"unpackedSize": 72892,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefxVuCRA9TVsSAnZWagAAqbcP/34WrZpxqEyTd0WGQyHW\nmXa4jm9w88JIbScaDUHfelt8RIjKUsjxzNhXa3wiTyYkLWrq9E9hWBFxwnk9\n7B81Gj3Dtyj3ofGmo7+Maj4JVLjepI2CzFScr8v7iK0Uz4XUJQSggfbnlrAW\ndkSijR2UuU003Xg2IXammvM06Qq6B76FnAb0wzCkqaE/EMDOjjD2O3JlBX+i\nPtDhK49QH/3hfVMEG6mNtiy7t4sdAqj/wDQR/5fl8htIOqKOBr5jHCWcf/nJ\nrt7qvPMLfLLaBF8fwOCnEIoGzgWaSq9Fy2kVPkvh/rEZ9Kx+AIkdFW0XXKl1\n3bFyoT9vhezRRO0EHqEg8dqkeqsTaXvW4dQho2chaLaPWIfRRmNEpxtLlDHT\nlNeoe9+Zkd8vLfaG+0U5z8zT4xHtktQCCwF6tJD3mlvd4qHyDGQ5hLldgA0F\ndaBYfBUEuep+DAb4xnYZ2Fjq9lNyRVxoomcBRzuJ9qU2U1s/fqqb0xbx7tl7\ncMet7hkryKKRi4iDTHN9tlFK5s/UOAXJxzOVM6PlF1kQKL0KiIV72bp5wErg\naLp6mrnbYyxYtUD/uJ9kyB482YwCoBkNELq+jiGSFManNTS/ahFKNsj2mErZ\npg9GtoR7UT2MN+Ugwc+6i6TD3NE/SPDTosGnXvb9Bum6oxquCU1X+ptmW8Zz\niwpY\r\n=7hFg\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "jarunik", "email": "jens@hviid.ch" }],
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/german-language-plugin_1.0.0_1585386861581_0.8248130451206208"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@borismar/ark-desktop-wallet-theme-one",
+		"version": "0.9.6",
+		"description": "ARK Desktop Wallet almost gray theme",
+		"main": "src/index.js",
+		"author": { "name": "Boris Martirosov" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "ARK Theme One",
+			"logo": "https://raw.githubusercontent.com/bobobobob/ark-theme-one/master/src/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.7"
+		},
+		"keywords": ["theme", "@borismar", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Boris Martirosov" }],
+		"bugs": { "url": "https://github.com/bobobobob/ark-theme-one/issues" },
+		"homepage": "https://github.com/bobobobob/ark-theme-one#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/bobobobob/ark-theme-one.git" },
+		"gitHead": "0d72d3dbc8cdce022ad1bc374f8e791a69517c5b",
+		"_id": "@borismar/ark-desktop-wallet-theme-one@0.9.6",
+		"_nodeVersion": "12.14.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-3/wrSOqV59LsdjswFABU3gjm/BvxYPvlQR1Y+e6KOmc1dfQyHuiG7ION2aQNY49J+OXsK2GxvNVkd533BWnSNw==",
+			"shasum": "894dd37e7aad879f3561c16a64c5a89645141045",
+			"tarball": "https://registry.npmjs.org/@borismar/ark-desktop-wallet-theme-one/-/ark-desktop-wallet-theme-one-0.9.6.tgz",
+			"fileCount": 6,
+			"unpackedSize": 18580,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeJeGECRA9TVsSAnZWagAA8hgP/A29pE32Cf1gW/k8Srom\n/e8ukuMDcv+kWaJGIwCnyrjEkBb5nJu2TZ6ImCTShHXLdHjS9AbJKmZ2XjPe\nymxiKy+DEhRa7fwsMmxcANNGulMPVYKqjrRcXbEGd1UF1w4+5Y1BtAJysqC4\nS1cq1y0ioJZQAkRQGN9tizuhV4rdZ2YPpCogbbtTScXfcw1v/BCPMLKwuqrC\nF6lAQmFqfp5+4xPn/z3nW6kamOCg5BYANiAT+nNZH1YWgdQ0oS1g5kxuS1lX\nOyi4bdRRB8YlxUUGuaA+u8s/rzWqq0MgM72jwo6qA2EOdBNrUVryS0vhj2rz\nZk0//2l0qAAJpwHJOOJM45K8juWZQAq0/J9mZLS4hfDNiu4vYVmmaYoJzUcE\nVwii4Lw2/hQblEBhWjsqbJyNJ0xV1vpy96NFDXG9t0XM+C6DRTbWQ0Ss8bf2\noibIETgM+b1C7NNjSYv0hCxDmVxqNzNj7iXwySLEeidMF3PpAonOxJxidV+d\n1eTGpIxRJgD/7y/jwSTX/ciqvfplIWioPkX1Y+F+6k5so/KiTaYjTe+JJx7j\nUhO5iJdXzn/2FQRbF6FMOXUx4VWcqiONWzXWTueFqXiPnEjGptIy+fknoCjZ\ngZnL1Sf09QlXFMA2TZeq6y9oN32B8pj0mnByljyOLK1854ypSkXhwSeF2+in\ngDqd\r\n=BrND\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "borismar", "email": "boris.martirosov@gmail.com" }],
+		"_npmUser": { "name": "borismar", "email": "boris.martirosov@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/ark-desktop-wallet-theme-one_0.9.6_1579540867949_0.19667390967403175"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@arkecosystem/desktop-wallet-explorer",
+		"version": "0.1.13",
+		"description": "Use the ARK Mainnet explorer directly within the wallet",
+		"main": "index.js",
+		"repository": { "type": "git", "url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git" },
+		"desktop-wallet": {
+			"title": "ARK Explorer",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/preview-1.png",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/preview-2.png"
+			],
+			"categories": ["utility"],
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "UI_COMPONENTS", "PROFILE_CURRENT", "WEBFRAME"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [
+			{ "name": "Alex Barnsley", "email": "alex@ark.io" },
+			{ "name": "Juan A. Martín", "email": "juan@ark.io" }
+		],
+		"license": "MIT",
+		"bugs": { "url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues" },
+		"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+		"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+		"_id": "@arkecosystem/desktop-wallet-explorer@0.1.13",
+		"dist": {
+			"shasum": "205638147281c202d84393c8423dba3ba25acb0b",
+			"integrity": "sha512-OnysLyzwYSp6HQi7+492KhOe7P4mqOi3n5oprEVdCV/kjI8YhgYmviAb3IYi53Sz51KAqdEVdVIBYJrvA9dRfA==",
+			"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.13.tgz",
+			"fileCount": 13,
+			"unpackedSize": 91314,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeXpiyCRA9TVsSAnZWagAAfoQP/0uqaVbh5e6c53aSdvoM\nw0z+39FDi7yzpZacfgsLJeTuBkkRKGYc7cXYTJRC0xWeZ9eqXj96VCMLl87O\nBaQ8Q/BpP649AY/C1xReoCp8z0TEbh4VCsaanJu7bZTFjf8lHorycrnLEesS\nAXrND2lm4XOP/byOk2k071jucNvApj1A5rBlRBVH4NymzS3jfeVGSayxjt0f\n0vhFPm7nZbyrAPxu/yTEovdlsNjq4/l+YNP9JDHBLtFBSFWV0ZfQ6vyTT6gi\nkvCYLxzyp91a0UwaRXRD7X8wDoCgoXB421RuT8vzxVSV77ndvxFBXJblMHek\nQapK2DFJ9L+60UXoNbrb2E4RUn1q8tWI/clgEMOe7PT9WqW9aLGjP2hhY1Hc\nrnHbccpZaXR2sx+CiLxLtYoWiC+Rj4tdWiUsn7zG5oTibrd0c/7PSxiEqZKu\n2+CCVWb3b0JzO1XNKKe6IxNYqd+27wwwcSm9RYJeJfA8yybEAX99ac5ug14/\n8AWdh4E0/WWMEd4dFsvzWoQ6Y6F6+ghtHcA4UX+V52WQoVe+4BcC2SuzJn+G\nClDFjYo99A0bX6AiXKswAGhkRglX/ERFlzKXNRZhtHpkDLzSWFnAZRjQBsSe\nm+m4qhjVDBwVJceqVsBeUpUwJQ6i8I0psbmQNNEG/+uJ/75LzwT577je4x67\nNdWL\r\n=zfmM\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [
+			{ "email": "alex@ark.io", "name": "alexbarnsley" },
+			{ "email": "fx.thoorens@ark.io", "name": "arkio" },
+			{ "email": "hello@basecode.sh", "name": "faustbrian" },
+			{ "email": "kristjan@ark.io", "name": "kristjankosic" },
+			{ "email": "luciorubeens@gmail.com", "name": "luciorubeens" },
+			{ "email": "joshua@ark.io", "name": "supaiku" }
+		],
+		"_npmUser": { "name": "alexbarnsley", "email": "alex@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/desktop-wallet-explorer_0.1.13_1583257777827_0.8064868349168051"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@giliam/ark-pure",
+		"version": "1.0.0",
+		"description": "A modern theme with an expanded sidebar for the ARK desktop wallet.",
+		"main": "src/index.js",
+		"author": { "name": "Giliam Verheide" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Pure Theme",
+			"logo": "https://raw.githubusercontent.com/giliamverheide/ark-pure/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "light", "pure", "ark", "@arkecosystem", "@giliam", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Giliam Verheide" }],
+		"bugs": { "url": "https://github.com/giliamverheide/ARK-Pure/issues" },
+		"homepage": "https://github.com/giliamverheide/ARK-Pure#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/giliamverheide/ARK-Pure.git" },
+		"gitHead": "e250df8574a66a3cb9b04a769930f6a2a0f1850d",
+		"_id": "@giliam/ark-pure@1.0.0",
+		"_nodeVersion": "12.14.0",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-qfsf6OD8PY37Yf/latE3W6ZtpYpuWNacHTG9T9OtvU3iWUimGWwFuUktJrDnUPLtT2iOgILxlDxl3U//vc66dA==",
+			"shasum": "76b0f8099df67d9b38dee5f3e950f47faa872b6c",
+			"tarball": "https://registry.npmjs.org/@giliam/ark-pure/-/ark-pure-1.0.0.tgz",
+			"fileCount": 7,
+			"unpackedSize": 64527,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMycBCRA9TVsSAnZWagAAZPsQAIAAxqpnZh2/9AnbQl/4\nhviaUha/ZhtWzriRJy4o24L+bR0uLwJq+Jz1qlvXWsRKjSqgdB3uQfem3WYM\nvnpiivqGJo9uVzTSNAwJTvTYsUai2fZJigjOAg9f47IQmZ8Ovf8yeQJHO739\nX69fkcM/+q1KXbHpNmr35I7kzzrkC38v20ijiCaLJDfNdavA74jRRrCaIHKf\nZpt/VFktmyv83DZQqrK66UB06BshdQKxw8woPw+tDMye/xVPtyMK1QGjUNT1\nxmYnxdR832k1LmqONT6kx7rrRXU67pZ+tqjV5c9J989tjytkn5nu/ukNnh7C\n/U4FzcXAzZZ8DvW1W4U44HTY0uFm6ktt+Gq5ZMPw3PkmkmkqlugJ+7GjumuT\nzY+6v0T6bLdHagtuwbGNjUUK4FD+pssUHxrUwANDYhroTPkAJLr+5it583jO\nLk8gvKXG7Qq2b9cq0Z8mZyza67pKmJ/H5YdNOP0ohLnww2Yv8GK2mJrBLpzf\nA6qY5jyX9dOUFxPmtDZYwQtff66nijUgO5/mNxsCUI0TVEx3c5krHTzRDXKL\nKEG9HqzYaGfiOjCuLNFtkRlbLI+rnw3Lnxu/qYYECfjtKHlohsbaatTZZjU+\nklQl4aiRZMnAoNVKHvXUZZQ4jvjzEQG2QUsV4dnARMeGEdxDZjM+jOFa+zvS\nP2E/\r\n=CnP4\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "giliam", "email": "giliam@verheide.nl" }],
+		"_npmUser": { "name": "giliam", "email": "giliam@verheide.nl" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/ark-pure_1.0.0_1580410624941_0.8021256217163164"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@breno.polanski/animal-avatars-ark-wallet",
+		"version": "0.1.2",
+		"description": "A collection of custom animal avatars to show in the wallet.",
+		"main": "src/index.js",
+		"repository": { "type": "git", "url": "git+https://github.com/brenopolanski/animal-avatars-ark-wallet.git" },
+		"desktop-wallet": {
+			"title": "Animal Avatars",
+			"logo": "https://raw.githubusercontent.com/brenopolanski/animal-avatars-ark-wallet/master/images/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/brenopolanski/animal-avatars-ark-wallet/master/images/preview-1.jpg",
+				"https://raw.githubusercontent.com/brenopolanski/animal-avatars-ark-wallet/master/images/preview-2.jpg",
+				"https://raw.githubusercontent.com/brenopolanski/animal-avatars-ark-wallet/master/images/preview-3.jpg"
+			],
+			"categories": ["utility", "avatar"],
+			"permissions": ["COMPONENTS", "AVATARS"],
+			"urls": [],
+			"minVersion": "2.6"
+		},
+		"keywords": ["avatar", "@arkecosystem", "desktop-wallet", "plugin", "animal-avatars"],
+		"author": { "name": "Breno Polanski", "email": "breno.polanski@gmail.com", "url": "http://brenopolanski.com" },
+		"license": "MIT",
+		"bugs": { "url": "https://github.com/brenopolanski/animal-avatars-ark-wallet/issues" },
+		"homepage": "https://github.com/brenopolanski/animal-avatars-ark-wallet#readme",
+		"gitHead": "f089b3b2317d10ee3679f7bec6c1408051d42205",
+		"_id": "@breno.polanski/animal-avatars-ark-wallet@0.1.2",
+		"_nodeVersion": "12.16.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-UVZGxg/y3TKmkuNZ3HR+EiFf3TfcJ5UqjON8YLybSytljc61IEdMV2C1GxBeFWDOdPliORU7S8N6BeVoKu7+WA==",
+			"shasum": "037e4c45d17b7cb63023fa62b327aee902cb9e5e",
+			"tarball": "https://registry.npmjs.org/@breno.polanski/animal-avatars-ark-wallet/-/animal-avatars-ark-wallet-0.1.2.tgz",
+			"fileCount": 14,
+			"unpackedSize": 184586,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaNx/CRA9TVsSAnZWagAAofUP/i43y2l23XWKgQoblnbQ\nuLiZoOonqy88Xdp+7WsshBsVO/n8uFVVbQ7tzJfbuZhl5k6+GMDudQN+JF/N\n5Oim5ThigkCRVO7ZvRA3iFVWSvkWXPWYTOS+OCbNzE5UM2QEqBkKUNJrAh4X\nttvxgZYmfHmRrTFKUAlUoCQWWqtx3zOX4FKME2TyOtlLBR/Hd3C6Sst9Ph+V\nr3ZHYeR54+c8l9wccEN9g/tXpWekfJvOW0SOOqrppcRr5qYz4SNXMbSAStZM\n46+CbpnhwrWivn8yVQomd6OklEJyI5iCnT4ulFjOGTZz/q6d40wmhH6kN7jB\nXOIzpfpiqjhjdSSnEj+HqgMx8Zf7nrGZim5vX3gvkV1wsT1GuuHa7R8Ey/55\nlKwrjH02DSySSYiYK1PZoEX1Q0TjplCLtaveoyGqdJMuoYlxybQPALETpdMP\nqXvEIKyZMNGR27USNFrVcO/MP7LRz4J33QKX5fYY4yDRXAftqLP+x+uYV2B6\neyo0VyFeXsXErDN1QWkawPzYacrYUUt0DRzzl0i9FMbpISG6Otpg5zScNsC/\nd9IeZqBO7bgUF6BeZ86h1HW3wJ1FyPyiTSTuLdUctEw3tstpbcJUj3n0FAi8\nUHMGz7pnmtTsQuGfLNr4Lq1InbL/EDBDt52tqQt1Qqz1cAPEfsMKof2bdKZt\nvpEa\r\n=RjhS\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "breno.polanski", "email": "breno.polanski@gmail.com" }],
+		"_npmUser": { "name": "breno.polanski", "email": "breno.polanski@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/animal-avatars-ark-wallet_0.1.2_1583930494552_0.5745474687814154"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@cambot1088/cyj-theme_2",
+		"version": "0.0.3",
+		"description": "The Cam's Yellow Jacket Wallet Template",
+		"main": "src/index.js",
+		"author": { "name": "cam", "url": "cams_yellow_jacket" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Cam's Yellow Jacket Theme Template",
+			"logo": "https://raw.githubusercontent.com/cambo/cyj-theme_2/master/mini-cyj-logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Author Name" }],
+		"bugs": { "url": "https://github.com/cambo/CYJ-Theme/blob/master/issues" },
+		"homepage": "https://github.com/cambo/cyj-theme_2",
+		"repository": { "type": "git", "url": "git+https://github.com/cambo/cyj-theme_2.git" },
+		"gitHead": "5a7490622dff717dc4e4288e0801bb749cb5307f",
+		"_id": "@cambot1088/cyj-theme_2@0.0.3",
+		"_nodeVersion": "12.14.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-r/g5b1ZK911yvkA9sfl8gSktYWvN7E2ZkaKZOSuMdvzbbozEWB6odXaCBB1gDsk6DbCZOFj/NJg71Eg8zOme3w==",
+			"shasum": "a99aafd885d3c31c58424cb1af8a8934589116c2",
+			"tarball": "https://registry.npmjs.org/@cambot1088/cyj-theme_2/-/cyj-theme_2-0.0.3.tgz",
+			"fileCount": 6,
+			"unpackedSize": 13519,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeJj1wCRA9TVsSAnZWagAAIpoP/i72xjUE3LWQAZQbUQ7Z\nzJohWuBlMWGr6FgmmGleVuFQELltfDDQuk2gRtbs/+QPsCobULZk+GfneTzg\n9MfU+z6eVGIm5wA+332EzqNk2hcnwMu+JMctWwt+cZNPbkYRMt9VrHjOU35H\nMLGIfZvOGqUZu3+Iwbi2asURJAn8iSaDlIOe89XIAFPZw2BXz+A4HVVjWDFi\n9NMul/3nm+BbgU1FdakNww/UxwF5bmdEhvcKQVCA0E62ncfcp+vYCsLA5zCa\nOYnUGBdO8taqXPdMwF8ahQaFG+nB5iGiFqTANyPn6KIimI9WJHSd3RSmL1qt\nPZjkVFriM/fiaXLI8+56kW4nuu9JSk3FgwcTLVDHYbL0PweBgGpw/+KJw1tn\nBeOT2rQEmMpgjWUtEeo8En1rTEzAzKh7A2HejE1ZuMZGlFNsrCUojsS+XQuD\nODZbaqKQoY2qQJ29bNlpg1y7znshEBD4scQW1vI8pZgtQvlRIgjWsVS7cLjY\njfiXHN3Akvo8oBumt75mDTmt0xaAECkeFNfCJNRCtlBpHMW5/4rgmtp3WJCS\nvNEdlQe8BmCzGDVFHbZ9P2gd5ncscczRB5Vzb6wFeEK3lK6xcXRr4yxMUE9i\nW2lBmT4NlFYkSCfHf4di0kwToJ131K1E5ZGD7jdplz7jXrezz92f+XU42dUp\neTN3\r\n=PDqf\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "cambot1088", "email": "cam.ark.eco@gmail.com" }],
+		"_npmUser": { "name": "cambot1088", "email": "cam.ark.eco@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/cyj-theme_2_0.0.3_1579564400292_0.4081020534323021"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@azure-infinity/cyberpunk-theme",
+		"version": "0.0.5",
+		"description": "Live in the future with this theme.",
+		"main": "src/index.js",
+		"author": { "name": "Azure-Infinity" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Cyberpunk theme",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Author Name" }],
+		"bugs": { "url": "https://github.com/azure-infinity/cyberpunk-theme/issues" },
+		"homepage": "https://github.com/azure-infinity/cyberpunk-theme",
+		"repository": { "type": "git", "url": "git+https://github.com/azure-infinity/cyberpunk-theme.git" },
+		"gitHead": "551dee305907223d3222f177eb22768dd257b5dd",
+		"_id": "@azure-infinity/cyberpunk-theme@0.0.5",
+		"_nodeVersion": "12.14.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-NRPH4DEIFJUmcx3xPMg6qI4633Ih5+IQhkK64cddOzkmZ783GsbBEk4DNd2BS1BRm/SxK/TVmdmQ1f5DzO/0+Q==",
+			"shasum": "0c5b3db07df29eef7f24c56c7dcda80a2fb65b5a",
+			"tarball": "https://registry.npmjs.org/@azure-infinity/cyberpunk-theme/-/cyberpunk-theme-0.0.5.tgz",
+			"fileCount": 5,
+			"unpackedSize": 10693,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeLFSUCRA9TVsSAnZWagAAvHIP/2WLjjDILgpJBOBryNnl\n9AuzU6mbP+qjYhhpylOc13OU0lGrIV2ogd04voa1oDTMoFmIPNP03kB2irrM\n0CIu/rUxI2HXtRYnwU6bObYpqTaRlCrrgMilgnouItSRbGlAly6oYlJhwxe1\nbwBBvmoImP2e/Upq3TmpydAxTjy6r98H5g7i4VIpAH2KbR9kSyHRxr+yVo5K\nQbucxxmQk8Zt59r6DbDWiaA6Fbwoa7HXPK3/wm623fst+D7IpKwK/ry8Z17e\n/dBm/GEYcsCGJoshLgIxa04+GnDeeSLyHUpa1YksHwPyB5Ht9yjZkkBYiaBP\nKuj5aMmvXP55qXd0Tf4YaHzXAhCFopoqjG7etuugZsukYFzgoUvrEP5GITQt\n+gwmOt7uyiMQqXa8wsIwSC50uyxVNKC/BJwuP3NGTW5e6E5wtH4BDKZmElTA\nEQ2KZ+Ym8Ki4egzx1eGiWXNFOn0dYunxsA8WKKLHJDufBV20L+cmhFTkNs9W\n4BNiHbcKn0rqQB3liYaW3fZnbYOleDl1duczC8nObbAnDqpkVnsy48tHhSaP\nDdKhPgvJ0uT8Yo3RY/PorfDvuPPiaBbJnfJjf3JuwTentv3ZhbEF4btmE3A+\nD8sihenuXEzE5b+B0zY5+KU5v727jg1/L6fJiv2KDB6UHbBlcxehd9K/nLL7\nhH1M\r\n=WyIW\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "azure-infinity", "email": "azzurrii.infinity@gmail.com" }],
+		"_npmUser": { "name": "azure-infinity", "email": "azzurrii.infinity@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/cyberpunk-theme_0.0.5_1579963540187_0.8540887991795787"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@azure-infinity/beyond-infinity",
+		"version": "0.1.1",
+		"description": "This theme will take ARK to infinity and beyond.",
+		"main": "src/index.js",
+		"author": { "name": "Azure-Infinity" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Beyond-Infinity",
+			"logo": "https://github.com/Azure-Infinity/beyond-infinity/raw/master/src/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Author Name" }],
+		"bugs": { "url": "https://github.com/azure-infinity/beyond-infinity/issues" },
+		"homepage": "https://github.com/azure-infinity/beyond-infinity",
+		"repository": { "type": "git", "url": "git+https://github.com/azure-infinity/theme-template.git" },
+		"gitHead": "8bd31056065ffda3b4453837d78a66bb25b8f745",
+		"_id": "@azure-infinity/beyond-infinity@0.1.1",
+		"_nodeVersion": "12.14.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-tKdgra+g2lHvDh8mckigxkoeaaIEXD0mvcZ0ilbyfVWBktsuG+eE1VLymgjLK4DXDpfqy8pinjwbv0K0Rtcd9A==",
+			"shasum": "58e738993f6981bce9164d8bee475662078ce46c",
+			"tarball": "https://registry.npmjs.org/@azure-infinity/beyond-infinity/-/beyond-infinity-0.1.1.tgz",
+			"fileCount": 6,
+			"unpackedSize": 88984,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeKwwaCRA9TVsSAnZWagAAMN4QAJ2ePA5C/nXAvYaUR9iS\n7TDIHlxQuGJrKSYXQrxkZyedAb+wQIv1gq0RvI5VcBqzHeAhevuUGgC1CYpf\nidDi6Kiyohaidw+bL3s53hAKqjvl4qQwucb7gmVb+WWgwCAcTnIFpylRUhgr\nk2XpY9Q8FvxnAfMtHmFSTOBCLJPNsKuNEHL2X/C7IsVgZKCdwtIOUUJcXfCW\n4+eSQZFfxGDDVdi46bZ3bjAWDrP9MvNHsgdLMlx2IeuM7a2iPgcaUtULb9hY\nYlcZL2sxnv/ZrhCLSSIBuJFvb7tPCqCSCTREEn0vE7+rWZMANMeXjEmKJQPT\n/JGSJkWUvYu8B4yfAbVhmzhSD8C7BUcUM619TpIeokO5WUxS2liswD8w8DFd\nMd/CACj4ca7CG8tSAsCCtTyJBmbFIBPboax/nNwAusDo616HuQr4Rr9PuhHb\n278uyO2GAks2N7Yy0recxPj17++BtPwBbHf7mu904AjHD8RU74l7tO3XoxRN\nl+XQWYGda0VVLllurW23Z3TBoxDKMqgt1oy8h3Ydz0KsKfvl0UFtb+tekTQR\n9yl1Gonv9bdprFg9cI8Qc1TpBn433nT4yjworCKtd/nC3kT+uOGbMxc1q7lN\nZDQXyNX2jMGHagev63enZLXUYpk1wobHOk2nfuvsXQ4elfb2q5YzOvuSyI5z\nUp5H\r\n=9enI\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "azure-infinity", "email": "azzurrii.infinity@gmail.com" }],
+		"_npmUser": { "name": "azure-infinity", "email": "azzurrii.infinity@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/beyond-infinity_0.1.1_1579879450191_0.026607121139617718"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@breno.polanski/dracula-theme-ark-wallet",
+		"version": "0.1.1",
+		"description": "A dark theme for ARK Desktop Wallet.",
+		"main": "src/index.js",
+		"repository": { "type": "git", "url": "git+https://github.com/brenopolanski/dracula-theme-ark-wallet.git" },
+		"desktop-wallet": {
+			"title": "Dracula Theme",
+			"logo": "https://raw.githubusercontent.com/brenopolanski/dracula-theme-ark-wallet/master/images/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/brenopolanski/dracula-theme-ark-wallet/master/images/preview-1.jpg",
+				"https://raw.githubusercontent.com/brenopolanski/dracula-theme-ark-wallet/master/images/preview-2.jpg",
+				"https://raw.githubusercontent.com/brenopolanski/dracula-theme-ark-wallet/master/images/preview-3.jpg",
+				"https://raw.githubusercontent.com/brenopolanski/dracula-theme-ark-wallet/master/images/preview-4.jpg"
+			],
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "dark", "dracula", "dracula-theme", "@arkecosystem", "desktop-wallet", "plugin"],
+		"author": { "name": "Breno Polanski", "email": "breno.polanski@gmail.com", "url": "http://brenopolanski.com" },
+		"license": "MIT",
+		"bugs": { "url": "https://github.com/brenopolanski/dracula-theme-ark-wallet/issues" },
+		"homepage": "https://github.com/brenopolanski/dracula-theme-ark-wallet#readme",
+		"gitHead": "56d40c97b28fabacaf389ad3c49f65310bf6ff1e",
+		"_id": "@breno.polanski/dracula-theme-ark-wallet@0.1.1",
+		"_nodeVersion": "12.16.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-eovdOahj5Orl3IxMBhnppBerSSuXVCUXFD/jhw6GpHVszrJCx2spAMWbZ1EcvAzNFsuMneI+HAxNlRWaXwpLJQ==",
+			"shasum": "0406be8ceb251e687625b2720540b445dad3342b",
+			"tarball": "https://registry.npmjs.org/@breno.polanski/dracula-theme-ark-wallet/-/dracula-theme-ark-wallet-0.1.1.tgz",
+			"fileCount": 11,
+			"unpackedSize": 250042,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaNyKCRA9TVsSAnZWagAAw48QAKFfMQqrDhvdgq5wvw2X\nf8zSuuHQAbAHlDp1dc8Qg4eSA81l9NjVh2TfTk9cPVjMtyklUehOXIKXd58J\nsaKYKMDVAg2luFxPve1plrXR3UrbnaVYSBQQlVpLDmrBVWB6Lx4oK6xOAJRC\nFvjZrwMeBOj2p8Wou1GJ+/Y+T8bMemDAY2i04IXyeHwBj4HvRYJP4RceLV2U\nXT+ibM6v92Nev2nEroyyrxRhLstYDZNd6yXDe5Z+4sbzmrwiiZqWF1AkUb+x\nOQKMvNhlZFhGdnA1WqQjlN38iH2v3tyKsDaysOMGuUB8TacjqluY/ceDR9yE\n6/nV2hblLBfbnJghRzGHnPTSfVcFRez8QpI8k/ZcMSzh02k6rLxWtfBSR4Ke\nyol8642Rk1GMdZcoOrnpkjm6ELcSxv+FMoVtrHLllS5JnGd1nFtwK5J8Yhbh\nepADIoP1LNrXtvaRLgK7QUTJjYkp3wiNgkJluSQyqnLQAY8Hzg0oyknVMU5n\nxSw8HCplhtbdM81vYhRlz4ArL/y3cMS4kzHz0BdymA6DOztOl13nteLw6JOg\n2BmjMofFHTHHAuPAZN6tRQvg7i1u2JLSMGLx54XeAY6DhkvuO+Goi6g8DB0h\nnJgPAGtB9ByLzIGtHZt+a6EX/8KVF/NZEqYX6BE3ptUMrQ/xHt7kbFtRUDDT\nT8yn\r\n=cZo9\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "breno.polanski", "email": "breno.polanski@gmail.com" }],
+		"_npmUser": { "name": "breno.polanski", "email": "breno.polanski@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/dracula-theme-ark-wallet_0.1.1_1583930506241_0.1897939699172959"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@dancingleprechaun/troll-plugin",
+		"version": "0.0.2",
+		"description": "practice plugin msq",
+		"main": "src/index.js",
+		"author": { "name": "me" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "troll plugin",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/preview-1.png",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/preview-2.png",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/preview-3.png",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/preview-4.png",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/preview-5.png"
+			],
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minimumVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Author Name" }],
+		"bugs": { "url": "https://github.com/elaine-egan/ankh-morpork.git" },
+		"homepage": "https://github.com/elaine-egan/ankh-morpork.git#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/elaine-egan/ankh-morpork.git" },
+		"gitHead": "b6a097fca694cd593fa6b8b043d31924b3a29a2c",
+		"_id": "@dancingleprechaun/troll-plugin@0.0.2",
+		"_nodeVersion": "13.10.1",
+		"_npmVersion": "6.13.7",
+		"dist": {
+			"integrity": "sha512-tL7LGU+9rBs07nMB9BlWtgyEC0hOpH75iZrCt4jjyCQQD/QAGo2BLjda97q7CGcDueYHgUzi+nrz9CAsBwg0HA==",
+			"shasum": "fdf7921bdabaa2b26189008b30290a2b0c5e9bd4",
+			"tarball": "https://registry.npmjs.org/@dancingleprechaun/troll-plugin/-/troll-plugin-0.0.2.tgz",
+			"fileCount": 6,
+			"unpackedSize": 7322,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe37piCRA9TVsSAnZWagAAhSEP/2aGLyXFuw0aOAqZ5qLG\nZ8+WMDIae2n62xIzt2bJ7hqSn21WzYZKUbzygnW2SYBhBb0y+tyBG3j87Q8E\nRch16grzGd9BErlv8pbgdpQAPrfAIjHby+SB+VtkIqoFkDeeWxu/XQyvfjqk\njD/hY47QPfbhrPiLrpdhisDMM8q9zig/Dk6HMQLDBAgsmFCFx+tUvy81eoK7\n0BIXZZUXB6Twn5CrR7OfUjDp6tnj8yMigWTc5kfubfCwQhAph+ZiPCT8Y9Op\nzWsGxhkb59n1jsLA6rUKCMsWCAjU/CY2en7OJRer9hEIHFf4ZuE7gqpufUQ1\nZMkaAYAEpJahyLVOhuquzrewDM8et7C1mROGrPzaKw8CYoRzU1zSUNqh7TsR\nhenBfrKRmrwYRFazsqMx1kLFamT6jmAK+ToEzkVViQ1XHtbD0xuQv68eZMXF\np9ybe/cwYbrVa0D1CqKwvxliaG3uDspziKWaR4GTiIu+yRn3/7F4NWey9SK+\n16IBV6hpIHwOUKoxRsGyJ4/UnHmg7n3pi15Sd1w0233c4tV7xRvjdeOiFHe8\n2VZOYcCn017qaT8i513KQOvSnLz1/zGznTDocae8Tew4XjI57fA4hN1/tWGk\n+EwAEYFAlq0VviQzvIIxq83lnkviyIDDTy59t9ktiwXr/FGYGuJZo3ka6YT5\nXaFz\r\n=SPUT\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "dancingleprechaun", "email": "elaine@ark.io" }],
+		"_npmUser": { "name": "dancingleprechaun", "email": "elaine@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/troll-plugin_0.0.2_1591720546032_0.8394788919459861"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@arkecosystem/desktop-wallet-theme-dark-contrast",
+		"version": "0.1.6",
+		"description": "Dark contrast theme",
+		"main": "index.js",
+		"repository": {
+			"type": "git",
+			"url": "git+https://github.com/ark-ecosystem-desktop-plugins/dark-contrast-theme.git"
+		},
+		"desktop-wallet": {
+			"title": "Dark Contrast Theme",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/dark-contrast-theme/master/images/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/dark-contrast-theme/master/images/preview-1.jpg",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/dark-contrast-theme/master/images/preview-2.jpg",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/dark-contrast-theme/master/images/preview-3.jpg",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/dark-contrast-theme/master/images/preview-4.jpg"
+			],
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "dark", "contrast", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Juan A. Martín", "email": "juan@ark.io" }],
+		"license": "MIT",
+		"bugs": { "url": "https://github.com/ark-ecosystem-desktop-plugins/dark-contrast-theme/issues" },
+		"homepage": "https://github.com/ark-ecosystem-desktop-plugins/dark-contrast-theme#readme",
+		"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+		"_id": "@arkecosystem/desktop-wallet-theme-dark-contrast@0.1.6",
+		"dist": {
+			"shasum": "82fb5c04bc1fd2a345a00050ef983f62fb127da7",
+			"integrity": "sha512-UjhQ89AWSxN4OnQ1CPObNjBSytHQmLGt33H3w7IVDoGwBSwj8etA88zpUSi/pI52S4AOYBQHO7thNhuPjBm52g==",
+			"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-theme-dark-contrast/-/desktop-wallet-theme-dark-contrast-0.1.6.tgz",
+			"fileCount": 14,
+			"unpackedSize": 216002,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeahd0CRA9TVsSAnZWagAAY9wP/R1t6rJqhjj+U0pluyJ3\nD5AiGjP0PAwZI3GgdbxxGxzI1r+n5ebaktNxQuAMs5nckpu28+Iy0TbYFlnl\nE83jFrivMgr8TA+YWTVT9Zm/nzPMbZWfVn0kEbBBswL2piZ1FraELisuebGy\nQVbwpAyoEYwtQU34+qNYhbaBEIsYgEgBdOhUrTiEDV4iKRCFiMMG6/9Cr/B8\nTrMAmhbSUy/EZBw9AupxONbZ9DEVzrSP8RoWe5ziDWthohisRueD6wSoJKNY\nFca1kIUJGWCWIlq2iu/19oD/X0eNxmMfH+33yQ4GP/RqX603W54tJlYjy1OK\nKaKovV6oC4Fwk12zdwUgBtJIEuVrcbXvmmMi0j6+GPd1Pk0fKIAw1F4AYhJs\n2Zl5yurqZJrW3AdKM5QtASZ8Us6850z9xuZ7IbQni0cdYl+FdkjW6NIGvV7i\n8W+BF/jfBShPEQ9taWX0KV98AwjDVkKjoV7vymIDcs+m1cFe1RQrAJTfCMrA\n0CaEBEfmKRcw78wCratyxWO4hHpbk9mWeHE4Cv+Xcdykan9QKW63aslPD7nV\nttN22WErpCJ5I+/x/dNakwE3fgBOD6l3V+BXHTWCLh/1JEXvtswfOotNV3VE\nllb+Q05GG2gvGcht/HwO+FBXF+mRTcj1lNGFuNqLrlNrGfI7vxEnsy0jMqj4\n8/Wb\r\n=4HHh\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [
+			{ "email": "alex@ark.io", "name": "alexbarnsley" },
+			{ "email": "fx.thoorens@ark.io", "name": "arkio" },
+			{ "email": "hello@basecode.sh", "name": "faustbrian" },
+			{ "email": "kristjan@ark.io", "name": "kristjankosic" },
+			{ "email": "luciorubeens@gmail.com", "name": "luciorubeens" },
+			{ "email": "joshua@ark.io", "name": "supaiku" }
+		],
+		"_npmUser": { "name": "alexbarnsley", "email": "alex@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/desktop-wallet-theme-dark-contrast_0.1.6_1584011123501_0.18387116831313866"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@marcow/desktop-wallet-theme",
+		"version": "0.0.1",
+		"description": "Spacial Ark Wallet Template",
+		"main": "src/index.js",
+		"author": { "name": "Rastrow" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Spacial Noa Template",
+			"logo": "https://thinker.digital/wp-content/uploads/2020/01/140xpng.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Rastrow" }],
+		"bugs": { "url": "https://github.com/rastrow/theme-template/issues" },
+		"homepage": "https://github.com/rastrow/theme-template",
+		"repository": { "type": "git", "url": "git+https://github.com/rastrow/theme-template.git" },
+		"gitHead": "61885f27c50ffb3f537b5d82864ad14984d368f5",
+		"_id": "@marcow/desktop-wallet-theme@0.0.1",
+		"_nodeVersion": "12.14.0",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-Lvp995MVFKf73CaumoN0RpOsV0pucxCdSOuPEWBGEAVmYElTw1HAhFY9hKL9oW+qH+qQb5kd5pr738EQmOhHsQ==",
+			"shasum": "14fc511aa0e9932a7a71194ec2f5796b1a9fde71",
+			"tarball": "https://registry.npmjs.org/@marcow/desktop-wallet-theme/-/desktop-wallet-theme-0.0.1.tgz",
+			"fileCount": 5,
+			"unpackedSize": 6944,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHwlUCRA9TVsSAnZWagAAZ5wQAJvFZThYRfeygC2SgYzZ\nxwff6XtWeRlP/GcnGDhNfJGg8DukjLsdsug6d7l8n80WfOoWMeME0Ijk0sA5\njl+BBQLg+KP71xZkur+nyBd7NQsNaUzrZ46rgbUnmi9DxKa7Vc0BEZePe14z\nOPk5vAdVealOsVycdQs8v/K9An25xpGmoHEyVPQfJVIHL2KK9Y3T9XCqBqOz\n4Az4MEfh8q9zz8m5cvjNIUNnUY7RizxRTZqi14R2hsO6zqY+X5GfMph1n/wC\nCVNu5SwDmhtbGaQYbPYy3cFuRVjWdYa1EF4ys8wJcT+NrKuNCi58Q6DtOiP5\nnouIqQu8XaNBjpbbzXupzZxOMMP1TVq8n9RTb3ZV0KbaZoM67XkduIZEHrku\nZHGLXxxcMRX6CLWWkXkLKhVCHJQdUV5j736eg9HyjW/iROXA+/4swH2W7XT4\nSFgv0EFmwSQExAUA/RndMM2mARt4UXEObb5Qs7yQQnbTJ1gjnFSt3QysWZag\nukIsI4VRyHRtmkEWsRjdjrhS7G79eDHa0twnbMBa8b1YQHkp1Kkj//h5tZzW\nugeiuSxF19lZSdxd+SU0hV+EoB4LAXU7p5zyLjrjwbYxu42CEtJqwLd+CD0d\n2ol1JkhUvkGkOUiCtUvPgVLQJ6l75SU7v+dRP2/kvIru4VZMa7Gq1/Or9kwo\nbxr6\r\n=vMAY\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "marcow", "email": "rafaelpuva@gmail.com" }],
+		"_npmUser": { "name": "marcow", "email": "rafaelpuva@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/desktop-wallet-theme_0.0.1_1579092308553_0.35889455302935436"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@dancingleprechaun/green-wallet-template",
+		"version": "0.0.1",
+		"description": "Greenish Desktop Wallet Theme",
+		"main": "src/index.js",
+		"author": { "name": "Arthur Daly" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Greeny Template",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minimumVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{}],
+		"bugs": { "url": "https://github.com/elaine-egan-/theme-template/issues" },
+		"homepage": "https://github.com/elaine-egan/theme-template",
+		"repository": { "type": "git", "url": "git+https://github.com/elaine-egan/theme-template.git" },
+		"gitHead": "b3b1ad83570463c59836e8abfe4001a424538a23",
+		"_id": "@dancingleprechaun/green-wallet-template@0.0.1",
+		"_nodeVersion": "13.10.1",
+		"_npmVersion": "6.13.7",
+		"dist": {
+			"integrity": "sha512-m5wn066WR7vOnXKnS3Qn9y+HIB5wopCy3rixm3WknwqF2ARTKRpz8yTx0osqzy3C2u6P+KTHBfG0XHahVpzypA==",
+			"shasum": "da05bfdce72ce86d99f29ce2ebdb7b4d4990ffda",
+			"tarball": "https://registry.npmjs.org/@dancingleprechaun/green-wallet-template/-/green-wallet-template-0.0.1.tgz",
+			"fileCount": 5,
+			"unpackedSize": 6619,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeqqDRCRA9TVsSAnZWagAAin8P/21PwYENX6D9BnNjMJwV\ncJCxV5SBRN9afsxXvVoyKimszyg++uEYFUnKI5fQOltYPy+nD59UwxCgh5E0\nHAtBkldJE8PamQbKazvU787Z1yFHqGZGbR7rHqBzM//RS8t5Vu6LVz8wJVhD\nzC9WQDl12SVDtQUlsjitrAP1XhM1731SimxLJ7R23oejsBdbrP5pLpAoZDfL\n3snlsPx1Me/VGIW4pGk4zYdThuIaZlg6rGwu4mfJ+Nq04BSA30zRn0Y7p7w1\nLY6HbXCbHCNmYGHyL14+Nfo9f8iYqDQh3Tr7dIzbL8ZL3K6WLNO0NXpXO1yb\nGDV38mDEzpwXab2CCUtieDGuxJ6DdJSXuaIn7Vm6ke7Wd0eDu6UhHRKOX+Gi\nV/Yq8hZzYUnodc0NmER9NGqI2nEHDyQq9/EVIU/b3DvlOczliNF87ZWKvW1l\nFJeWx8bLs4Bjmx/egZ3t4vaudWBy2b7hEjOqEXamaTWwKDulePuNakgVYhIR\nuVANyJh+7N7Xv3R8l8bIwxt91pMtzMyRR/JSHzysbSwocMpd6eiUxWCKkE8Q\nlogbi+m003CnB9nCxhTikh4yAf39VHCTogLrvYu7Wr3AmTXeLLPqQ/yL4AsE\nC59mT/j/TF5Ipaj4CDJobsvNzeQj0/WyJCDUhlQP2jKt0HYHDMxZ8NKpU06V\njIVv\r\n=W3h8\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "dancingleprechaun", "email": "elaine@ark.io" }],
+		"_npmUser": { "name": "dancingleprechaun", "email": "elaine@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/green-wallet-template_0.0.1_1588240593222_0.5505807566031968"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@ross121/red-snow-theme",
+		"version": "0.0.2",
+		"description": "The ARK wallet theme with a bit more red.",
+		"main": "src/index.js",
+		"author": { "name": "ross121" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Red Snow Theme",
+			"logo": "https://raw.githubusercontent.com/ross121/red-snow-theme/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "ross121" }],
+		"bugs": { "url": "https://github.com/ross121/red-snow-theme/issues" },
+		"homepage": "https://github.com/ross121/red-snow-theme",
+		"repository": { "type": "git", "url": "git+https://github.com/ross121/red-snow-theme.git" },
+		"_id": "@ross121/red-snow-theme@0.0.2",
+		"_npmVersion": "6.4.1",
+		"_nodeVersion": "10.12.0",
+		"_npmUser": { "name": "ross121", "email": "ross121@pm.me" },
+		"dist": {
+			"integrity": "sha512-xIoVnuOxm0ggy0qZn5H4+8NMud3a+Vfla4oMWCr/KNc9oyVut/fkQRVAXhcFZzozF0vTmycj7HyKaIw3gVy2MQ==",
+			"shasum": "77419956eddc20a4145cc91eff410841c52e5282",
+			"tarball": "https://registry.npmjs.org/@ross121/red-snow-theme/-/red-snow-theme-0.0.2.tgz",
+			"fileCount": 6,
+			"unpackedSize": 17609,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMs9BCRA9TVsSAnZWagAAHx4P/1o8SqNRQvaJi4RWVO7E\ncIHRYMvWeLkRZu3wMpuzBb2O4UtBytDvEaqna/ITcZk0fy8P48yNrPRhp997\n3dIN73GytiDlme/3JejdBr0gvluoM5F/BUwvYjguUgi3j0cZpZIl2ptaKVFX\nAlgrpp7tBWRsCoWSh04xjzO8AMiDtAexCn8iMBm4LxyckPkrgKYAmdMlEDDz\nzMjqjWVUDUJRx1xEIwifZNGi5HI2V/vhmvD40aCuJhNHZpeOflp2/98jmPcx\nReEiLEvtqxeL3WrKt+UVC17bmTBJlEg9izUshCCWKn012VvLCVJLSpyXZig2\n+KRX5KxU/gh32JbQvLX8rTprlCI9ZvRwBUp56EKrCN/kpRGARbj26AOl1spx\nLx5S1w974NDjOmUz0Iy7mybysph3Zj+FhRAeEY5GU6MdBmVtr3g5FxMOHYJs\nuUiYacvVgruWsF6xWpbs6YyF7E234GbUk8W6BOF5/xc7Dv7tiL/0l+JkGz2I\n3ESmSWwLs7WsJJK/fqmwacKrtUrPUQCMIR9S4557F+EYQziHNcEG9iLs9uw4\n08nNzGwG5rga4OY8Md2vkG/ZYrEyP9qgSc/SDpWizhiclyYD60uqdGbbpQiL\nWOFw+mPS9T30A8UoBrjgKWL1G7nlmnHa1fStlWW1yFYgTjbYiSDIEgh+Tf2H\ngkFJ\r\n=GXDG\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "ross121", "email": "ross121@pm.me" }],
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/red-snow-theme_0.0.2_1580388161209_0.9823024248578522"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@dvnc/dvnc-wallet-theme-template",
+		"version": "0.0.1",
+		"description": "dvnc style Wallet Theme Template",
+		"main": "src/index.js",
+		"author": { "name": "dvnc" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "dvnc Template",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Author Name" }],
+		"bugs": { "url": "https://github.com/DVNCL/dvnc-theme/issues" },
+		"homepage": "https://github.com/DVNCL/dvnc-theme",
+		"repository": { "type": "git", "url": "git+https://github.com/DVNCL/dvnc-theme.git" },
+		"gitHead": "ca0a87445162a05f670e663c851ca0c0141e6621",
+		"_id": "@dvnc/dvnc-wallet-theme-template@0.0.1",
+		"_nodeVersion": "12.14.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-wBTrrtr7T0vLhfGN6NlqZdUE07gsI3IHiwxtEtAhuk9j0PaHlVHu87k7LjXj4gEEe2Lnshh4i4FwUEhwrwzcNA==",
+			"shasum": "d9d1bb2c8047ff0fbb92cf60644d8938ccba3ff9",
+			"tarball": "https://registry.npmjs.org/@dvnc/dvnc-wallet-theme-template/-/dvnc-wallet-theme-template-0.0.1.tgz",
+			"fileCount": 5,
+			"unpackedSize": 6671,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMOsaCRA9TVsSAnZWagAA6tIP/3M2P07x6slfSX5EEqvY\nMtid1+rbKuIt1rJ7PDzfR/aThIxdAL0qE9XwZ3UFf6AxhEcN6ey9c1XPqkr+\nsxXsgteqnBcU2gfOyFLvcLUkMkoD/tX252DdQx2taSMWr4HOR7wwCOneEVMa\nA1PogP+5MuCR9KAKjbF+2JII0INRo8Q6hRqXVqN4h3WgR1O0rsSFTYR3lL2p\nTBVP4rxpnVEGXDMfSKk91WMn+0DAHe0N4wY6n1trWUweq9Emko1tfMKip2Db\nwCYp5iLeHhFXNwtdMr963QqV4D98eHM+Hr2vK73V1DVbfwUJg/FtPlkiWg4f\nBFORoYWjHYr/xFPnuG6EwObmZh1dHQmGDwS787/gbudjjKIdd3qmUtNY1Bzc\n+E1HeBFh+NvjM0dReOOV+OCwojltCl7tVlBZBqp3CzLfzoR4+IsQNAk/DS9h\nmsWidqU+u3TQJhktPSxsVrlwumz2Y4KwuVcHxH/ZpP2zITTKNBAWVh2EcAHF\nVYsw57N18NvV6RbnWsQ1k12b+2GO3Uc3J/zKQiUq7vRLIOuJg6nxM9eiia/h\ntU1jHZZKykUnBJvUYEpy+7PAgJUTsLuL6TZXl5H51hdClddpfQKfYY/rnhhX\nDoUcbiC+ZOP6sQRHV7rGyR1TMK4xc4ZHQ4IFeY94ZG39SoIltXKlNgldlv9h\nfoBo\r\n=Cvlb\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "dvnc", "email": "dlynch76.dl@gmail.com" }],
+		"_npmUser": { "name": "dvnc", "email": "dlynch76.dl@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/dvnc-wallet-theme-template_0.0.1_1580264217936_0.14185423145526666"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@pieface/avfc-theme",
+		"version": "0.0.3",
+		"description": "Aston Villa theme for the ARK Desktop Wallet",
+		"main": "src/index.js",
+		"author": { "name": "PieFacE" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Aston Villa Theme",
+			"logo": "https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/logo.jpg",
+			"images": [
+				"https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/timage.jpg",
+				"https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/timage2.jpg",
+				"https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/timage3.jpg",
+				"https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/image4.jpg",
+				"https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/image5.png",
+				"https://raw.githubusercontent.com/avfcpieface/avfc-theme/master/image6.png"
+			],
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "PieFacE" }],
+		"bugs": { "url": "https://github.com/avfcpieface/avfc-theme/issues" },
+		"homepage": "https://github.com/avfcpieface/avfc-theme#readme",
+		"repository": { "type": "git", "url": "git+https://github.com/avfcpieface/avfc-theme.git" },
+		"gitHead": "3e7b4f62ee88f074f16a3757577690e4da251535",
+		"_id": "@pieface/avfc-theme@0.0.3",
+		"_nodeVersion": "12.13.1",
+		"_npmVersion": "6.12.1",
+		"dist": {
+			"integrity": "sha512-voewAXaVcQVCXU0HRlwHcg6Tqg4nceJLQphumjVsE9Zk5VErWmg6tTFwr6pcEIUtO6uRlu3Lank999RIxV2Txw==",
+			"shasum": "52d2fd63463520eae472e972cd240f8716b1dcc1",
+			"tarball": "https://registry.npmjs.org/@pieface/avfc-theme/-/avfc-theme-0.0.3.tgz",
+			"fileCount": 18,
+			"unpackedSize": 4522398,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJelYFzCRA9TVsSAnZWagAAlGAQAKRSXhPz9cdEGqo5VEq0\nWYZUoJOl3rpLC7lQ9xN//SWix86G2erusNN/wf9UwCDRvFmvLP4+945ba97Q\nKUSPKSeg4wDTPDAbJbDBsB+vF/K21dErRBcpbIOhezVyK9iaY2ikUVTGvp/B\ngy4WVwWGcG+DIssBQOnv0HhjkFsc4yUFEfv/9ivkNcEibglZgz9yrNZaq+Fs\nP7GA8yaDEtQVJyIwZ6DgG7mJszSNjpOiRYDnJ4l8BpucSPuBGiIIeMix8AJw\ncFz9saMPJX7R6kTDZNFWqRqPCQZanK0+v/wEOmiit1vhf7EykK4k/YqZxw+k\nN+JI7VedBcCY6t46iw3/igkQGrxOKq41vru4Rt1ynmZ0rgL9eSuXH5xH012d\nJgkqYtozsf+ZHfUlVBUfZIP5nidlFH8X+mAfa3ERx0VzzQwttv0eLl7+jWYl\ntWidHTx9lHxVbMyA+eAi9aZWh4AF0ics7wyumLeJSY8a3gwQwExPR1VCQHwg\nSnnOkc1nlUzCy0MBvONCeHC0I0no4ClrcV4MXaBSOIUpkY64Wm1XmSP4jEp6\ncSJdQACMzaBjSA1Iw8wjOunDfu+DHqHqDQejCfHzqYOC0Nz8zAfmsfW1jju1\nL74QR21hjB8SJOPWB/q8jEEhAn440cOm9lIfxy3NR3q0H40sT/Z8SjBgGT1P\nSPka\r\n=6Vet\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "pieface", "email": "samharperpittam@gmail.com" }],
+		"_npmUser": { "name": "pieface", "email": "samharperpittam@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/avfc-theme_0.0.3_1586856307089_0.7748518959588742"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@arkecosystem/desktop-wallet-sound-notifications",
+		"version": "0.1.6",
+		"description": "Play a notification sound when you receive new transactions",
+		"main": "src/index.js",
+		"author": { "name": "Lucio Rubens", "email": "lucio@ark.io" },
+		"desktop-wallet": {
+			"title": "Sound Notifications",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
+			"categories": ["other"],
+			"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Lucio Rubens", "email": "lucio@ark.io" }],
+		"devDependencies": { "audio-loader": "^1.0.3", "glob": "^7.1.3" },
+		"license": "MIT",
+		"repository": { "type": "git", "url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications" },
+		"bugs": { "url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues" },
+		"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+		"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+		"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.6",
+		"dist": {
+			"shasum": "af3307f942a47a17c0d17ffbb00166567698a4c7",
+			"integrity": "sha512-e5BWPHN0g55hhdEn1bm7bl+4dvQwzeXF7gIlmIB4KJRGmP5ODhMFRXMQxn49uTKmDenBu21xi0aj4butjfXv7g==",
+			"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.6.tgz",
+			"fileCount": 13,
+			"unpackedSize": 393673,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7sKgCRA9TVsSAnZWagAAj1IP/RsYp+kbN3Qg7q0660PX\nW1bwx9MyPyfu5XP6vCf4VHukNZXbP01vFf2pUZtkf6CWhKq64DChOaYyLTK8\n7Gg/zk6BV+m6Wj0NPCUXwQiSCa9ei4X1SOZFjHfqsVVj60rELkr0tc3b0ttE\nFtZa6BXml8e3GRhmckQClFHUm5er5Xsnsru4UZ+1o3P7vfh5QOccuS9JzDA4\n6j9kWTrM8XJiRtqXpZ8yeewmj9YswCTTW6rMCEB9931BKi3LF0lcUbU2tiiY\n5ZNJzZPlXdH6x9t87snILdBcRK6X1RrlZTYWweQqzFg/EBaC6vHkwvJ5VQDy\nQfG/OSj8bNt4sUK1YaaAUMbGA1PyeIAuv2l+XYNAO5p0PqTylFxmbBV2ORZO\nARtfbacS0sTwU+kEPrq1l80GlDtsAKljtWxdq09aIEOmKtKJk1J/t24CEDdu\ncLqcVBjFxaYndhltMHUWZoKbXN/CmZ9bTojNzoMLVg4Q8f+93QsKaDPuEjJx\nDf5mVKLkhE2qOZlgLwIi499EAQitD/N58gK3hyDquFydo+DItB89agUt0rxj\nbo56ry9C6r82pG2VR3KmCWHDI3AGMGRj9w1y4fb3r0eNfp3zPku5ECZXaoDR\niE8lkXy6dH2l8/ip8lPrm8keg+uG/wfY7v5cLgxBxBVK0jxnMZpZlssdQHnz\nb6Bo\r\n=R0Eg\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [
+			{ "email": "alex@ark.io", "name": "alexbarnsley" },
+			{ "email": "fx.thoorens@ark.io", "name": "arkio" },
+			{ "email": "hello@basecode.sh", "name": "faustbrian" },
+			{ "email": "kristjan@ark.io", "name": "kristjankosic" },
+			{ "email": "luciorubeens@gmail.com", "name": "luciorubeens" },
+			{ "email": "joshua@ark.io", "name": "supaiku" }
+		],
+		"_npmUser": { "name": "alexbarnsley", "email": "alex@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/desktop-wallet-sound-notifications_0.1.6_1575928480429_0.21838936627842198"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@khlilo58/captivating-theme-template",
+		"version": "0.0.1",
+		"description": "Plugin for Ark Wallet",
+		"main": "src/index.js",
+		"author": { "name": "Khlilo58" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Captivating Theme",
+			"logo": "https://raw.githubusercontent.com/Khlilo58/captivating-theme-template/master/Ark%20logo%20custom.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Khlilo58" }],
+		"bugs": { "url": "https://github.com/Khlilo58/captivating-theme-template/issues" },
+		"homepage": "https://github.com/Khlilo58/captivating-theme-template",
+		"repository": { "type": "git", "url": "git+https://github.com/Khlilo58/captivating-theme-template.git" },
+		"gitHead": "0b3b7844cf5ca238f0b57beec1c97ff0e6e393fa",
+		"_id": "@khlilo58/captivating-theme-template@0.0.1",
+		"_nodeVersion": "12.13.0",
+		"_npmVersion": "6.12.0",
+		"dist": {
+			"integrity": "sha512-ww1ztQhw5BpdkDDgGB6WcJwMwXdOO2Tebahnwy4ix9QjeNMRfU9bV98sbpbAHsbatNjjWvOk5x5cJbBvefU9lw==",
+			"shasum": "5932df0191cd24bd5d7cf1760dcb96ed9ed872b0",
+			"tarball": "https://registry.npmjs.org/@khlilo58/captivating-theme-template/-/captivating-theme-template-0.0.1.tgz",
+			"fileCount": 8,
+			"unpackedSize": 42613,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeK2SLCRA9TVsSAnZWagAApUQP/09T6yEZ6ggPBeYwTnGV\nlhKavlOXEXgWwB0sdMUFCkg9XYmkehD74WM8xpux0b+OtzNEoa+L/gImgRFQ\nJBhQqonS7lqUPHDuD6ClWcS47RdbSXPB0QPAVfA7HvmmAj7oikB9tgneie+f\nhKUPaeXng2YYoNUEVoFP1bMKYTyR29MQs0vUtMfnJMExR44Tte8b2G1DSNvy\nGjuZAuMd8rutLw1cEbnFqSsaF2nS1EoIGP3kz+JGyPmNioCM+8qC9SNpdjFf\nD3ztmG4OeqAdXXKBNlQ+V1HV0HAwdaPlgnKtqijOIDi1HZ1GKEGvlpRkCZvL\nyGIiAGIUZWpxIPbSFNJGudkWeRRjm0x6yVD+izRMhNYg4E+4SeV8yj+AwYL6\ne9/DiwySANlSXPPZ/X6cAYXXFvmkqkbOoZTfDVQZLRQTHXowPCcDWM40HxE8\nT1MIQxyfagA5O+zluYtaRPGwhtX6VzSOLWss3aop0h+3XFPBU0VKgfCFCtgi\n1bSNcsox3OiavnXkyQ2nNW2wumw7CZmpew2Tl9d9OCWlyYQp1oN+QNeKCWGM\nXDpcPlZcvkw9zVftD/v/dBSXCJyzMmyaT4wDj6yUQlkSSljbORAV+yhncOnV\nS4QV8zoIZgEX238/UQszeplmW9MAK0Uzu3NQHumm4fkm6At5yeg48rQkCXVv\n+xhk\r\n=ECAa\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "khlilo58", "email": "jelassikhalil55@gmail.com" }],
+		"_npmUser": { "name": "khlilo58", "email": "jelassikhalil55@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/captivating-theme-template_0.0.1_1579902091191_0.3459819506273858"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@doubled1c3/youtube-demo-theme",
+		"version": "0.0.1",
+		"description": "Demo theme for YouTube video on creating and publishing themes using NPM",
+		"main": "src/index.js",
+		"author": { "name": "Justin Renken" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "YouTube Demo Theme",
+			"logo": "https://github.com/doubled1c3/youtube-demo-theme/blob/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Sam Harper-Pittam" }],
+		"bugs": { "url": "https://github.com/doubled1c3/youtube-demo-theme/issues" },
+		"homepage": "https://github.com/doubled1c3/youtube-demo-theme",
+		"repository": {
+			"type": "git",
+			"url": "git+https://github.com/ark-ecosystem-desktop-plugins/theme-template.git"
+		},
+		"gitHead": "a146ff08b7f49b51e3847919869aa84e75e4e4fd",
+		"_id": "@doubled1c3/youtube-demo-theme@0.0.1",
+		"_nodeVersion": "12.13.1",
+		"_npmVersion": "6.12.1",
+		"dist": {
+			"integrity": "sha512-L3Vhx1ZeJQ2GFGwGqSeWJvWWRh4GMSY/ucfcF7bMGPIy2A8aOo8REX/81N5qrfKMJu83tmBjt9Q+WqtxC3fjIA==",
+			"shasum": "f190a5dfd6ea928f7f7122a12b16f1e6f029f4f6",
+			"tarball": "https://registry.npmjs.org/@doubled1c3/youtube-demo-theme/-/youtube-demo-theme-0.0.1.tgz",
+			"fileCount": 6,
+			"unpackedSize": 38969,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeH53qCRA9TVsSAnZWagAAEt4P/2CLySjGrx+oP/Zq1g6U\nr/7Yp2AgzpBQ36PmcUXd6y5So7Sxq6/QKemoyBe2SINyqEQg9dkil0rwSb6B\nUgGsV+rlaxlkgvRgcu6SJrbr6Fn9H5z2WhhLYDwViRGllFeSN9DmpZzW3uv0\nPeDwuDtMyWCxgJ+dpdVZV6s3kSEvXpis91Wnnnedye8zdC7s7hmZ24jRA3Hm\nZKnBvvZM2mkPyxylPkEa7Fd2SyGezeIrvoQpxc8catmhHELA7sQe2yHFnUGX\nZ/ESJJ4rvJjpaeug/+qSyhGlTqm4ENzNb/NbOg9NuA8LEsufXiDudg8ePlw6\nFaGBhCaf2D96dthuCtqAEY62Bn4nxoKk9drjPSd7yeWNcn04nnDUlbNxutqE\npv9CiauF2yT4Zz9BrHR1UX5kA3jxj6qmw0vkmBWcJFAJxl7YFgoicatA+cuV\ndkpNCtD0T4kOFYiaKBuq4m91Jj2E/Utm8kZ5qSzqKlXdZKwCOyRXkATDQ/Vl\nf2iuju2nFaC4PSAAmMsqiC8M8kUN9MvXV7mXOq8+c8bsdkawRF5v2zj9Qqae\ndh5c/C2kMSPhqMYxPaWHy3RV47f7Ol5TOr41RjAZKRzB/0CK7GDdimogPK5m\nAaAAl2sE8b1ZSJQPqKvFwKQcpmiheD2YUWU6JQjEe64SBrtRrvNcC4r54S06\nen/G\r\n=Ci+M\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "doubled1c3", "email": "justin@ark.io" }],
+		"_npmUser": { "name": "doubled1c3", "email": "justin@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/youtube-demo-theme_0.0.1_1579130345764_0.17074349777825004"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@azure-infinity/infinite-universe",
+		"version": "0.0.1",
+		"description": "This theme brings light to darkness.",
+		"main": "src/index.js",
+		"author": { "name": "Azure-Infinity" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Infinite Universe",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/theme-template/master/logo.png",
+			"categories": ["theme"],
+			"permissions": ["THEMES"],
+			"minVersion": "2.6"
+		},
+		"keywords": ["theme", "template", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Author Name" }],
+		"bugs": { "url": "https://github.com/azure-infinity/infinite-universe/issues" },
+		"homepage": "https://github.com/azure-infinity/infinite-universe",
+		"repository": { "type": "git", "url": "git+https://github.com/azure-infinity/infinite-universe.git" },
+		"gitHead": "07e66e1249c7863152f446abb3602107c906926a",
+		"_id": "@azure-infinity/infinite-universe@0.0.1",
+		"_nodeVersion": "12.14.1",
+		"_npmVersion": "6.13.4",
+		"dist": {
+			"integrity": "sha512-Miym3dx28N09M869e9nk00/LdlsQsQbUl2T/ldzTZ+5YPs7X7TKp+Y8sB1pCr/GKIRtnCb6u8YIK2oMkYNCb7g==",
+			"shasum": "667ea73694c4f5abf35a28aed810d783d68b8ba9",
+			"tarball": "https://registry.npmjs.org/@azure-infinity/infinite-universe/-/infinite-universe-0.0.1.tgz",
+			"fileCount": 5,
+			"unpackedSize": 7651,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeK0CvCRA9TVsSAnZWagAALX8P/3zMO7pX//meZICihY0M\nHzIcDeVq3wDmW8OjfB8VWd3qfrQvBTzHLByO7QEMA8bx4L/jkpIjAwbwgU7O\nu1UCU48OUwdwmDp5oYaD1yAi4kAkQJCqFO7P6yMMk7Ua66DJbLlva0QMWfPe\nk467kufb5RWnzOr0RmC5yNN/bDDD2T59ACATfLecCxeqEtFGwmDx1+pJGN1Y\nmMsZ56BqwVJ2X2tvdMvrxd0wWNeRuUsr/C9R6tD9BojmzfZHy3/Bac7gxuAc\nZ8TG+aEahsxVxRh9FqLkfvoyGcZOwGOfWFwQuugm03MJqTla7PNdwlwqYvb9\nTkFUhVBQ7025urxLgXYTzPEisEgym5TcahxL8+AYSl68gjnwk+aJCDLKRtqD\nnAwZgoiwly31iPaaBBMDcwrTxrZ5nXQyWOrWw75Lj9iWq7h7y1fYr0twUDop\nMNNUUuV8rmXzSo6wreq2qcwxFCHjWXXmOe9QBvqLlCKwBAa6YhnuP7rgUHP6\nNNzV4YK5gULMzq7LdzcaAk5TzYx9bqc+tgNpOqqRGYau6k47wYC14hWbqxqH\noagBKTXBu8Kgt1uxfwwiKcWLPQTSsSQ/X9s3PC/jH1wd955B6bIhar+ekBJV\ngiy4Y1ZUeyqIHCzH7qMc1NIHLL5qM8Vdvlk79nmOAf2x7fO41q9p5VsszhES\n1aAW\r\n=y0zP\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "azure-infinity", "email": "azzurrii.infinity@gmail.com" }],
+		"_npmUser": { "name": "azure-infinity", "email": "azzurrii.infinity@gmail.com" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/infinite-universe_0.0.1_1579892911448_0.7408040784062986"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@arkecosystem/additional-avatars",
+		"version": "0.0.8",
+		"description": "A collection of custom avatars to show in the wallet.",
+		"main": "src/index.js",
+		"author": { "name": "Alex Barnsley", "email": "alex@ark.io" },
+		"license": "MIT",
+		"desktop-wallet": {
+			"title": "Additional Avatars",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/additional-avatars/master/images/logo.png",
+			"images": [
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/additional-avatars/master/images/preview-1.jpg",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/additional-avatars/master/images/preview-2.jpg",
+				"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/additional-avatars/master/images/preview-3.jpg"
+			],
+			"categories": ["utility", "avatar"],
+			"permissions": ["COMPONENTS", "AVATARS"],
+			"urls": [],
+			"minVersion": "2.6"
+		},
+		"keywords": ["avatar", "@arkecosystem", "desktop-wallet", "plugin"],
+		"contributors": [{ "name": "Alex Barnsley", "email": "alex@ark.io" }],
+		"bugs": { "url": "URL" },
+		"homepage": "http://URL",
+		"repository": {
+			"type": "git",
+			"url": "git+https://github.com/ark-ecosystem-desktop-plugins/additional-avatars.git"
+		},
+		"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+		"_id": "@arkecosystem/additional-avatars@0.0.8",
+		"dist": {
+			"shasum": "b77dd4df36c790245e36157fe7efc4452c76bb45",
+			"integrity": "sha512-rLwuRbMViqp4oGkJjV1dC4gMouX/S0t65fEgX4UiwPH4ImgnThsVpjvoZv1zRATiCkfqw1w6VeVIVtlKm3JCzg==",
+			"tarball": "https://registry.npmjs.org/@arkecosystem/additional-avatars/-/additional-avatars-0.0.8.tgz",
+			"fileCount": 19,
+			"unpackedSize": 181047,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaheBCRA9TVsSAnZWagAAROkQAJpc5hCB6DtZaQl7ZOnB\nFiLiprsdBC8OO3s94WRx0cMMZh5+6mWyQOq6xGDrIJsFLIsRSbC+J68cdvZY\nkG+g7AqzYjFiNh7aATnbp7lD9yzzr8arj1AFlhMp/xM00kj7nimmm55+ca33\nmvkF18sah59EhIFnDfT33uvUAyJfokumzSg/T37WqKkfg4mTFM3r8aBFGkrj\n3V5N8Bl2bDcAOouxuQx5/60WMSk8YRBuYeEJEjVhddUJf/gWL13LTJz2dNDH\nkN7FE7g/7DQftEQcAfQuQdb+GXPNyOkVyI3tn+4OKmrMRJvGigC9gSWXyf2y\nhA8wvq66XqErQ1op/Hb6zdwMcuauKVv5sQtx8Zq9lf/eXMpzDPyyowvkh3T8\nvay+5yVpIICWP3Hr3Fx9cYN3FlnEfuUq60XTqIwjOTOp3RDLaHc9xI+cPVVj\n2mYKpQZVJ9z9Gea3LnGSQV9STRa5fF6n661amMEk84YdZHGyZDRx9h5nMEEX\nFxx6innZYHd4CKNvxwgp8R4WErceIueTJyJwqh+n6jiMa0utEjd8k1dnS55Q\nlAUpQjn/Hpff75OmlMw6Pj6AzdqTh1ee1YDuISMAA6CI2op8fUku1CLrSbub\nLT7sGppZq2OwiCiUgEPjMqrdQkGgLznaYzz9yiDkz6WG0Kh1mYgjQnfgvNP6\n6kf4\r\n=Fq3n\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [
+			{ "name": "alexbarnsley", "email": "alex@ark.io" },
+			{ "name": "arkio", "email": "fx.thoorens@ark.io" },
+			{ "name": "faustbrian", "email": "hello@basecode.sh" },
+			{ "name": "kristjankosic", "email": "kristjan@ark.io" },
+			{ "name": "luciorubeens", "email": "luciorubeens@gmail.com" },
+			{ "name": "supaiku", "email": "joshua@ark.io" }
+		],
+		"_npmUser": { "name": "alexbarnsley", "email": "alex@ark.io" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/additional-avatars_0.0.8_1584011136986_0.9822801682274525"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@alessiodf/universal-delegate-monitor",
+		"version": "0.9.0",
+		"title": "Universal Delegate Monitor",
+		"description": "Check the health of the active delegates on various ARK-powered networks along with their estimated forging times. You can also monitor specific delegates of your choice to check their statuses and forging times at a glance.",
+		"logo": "https://raw.githubusercontent.com/alessiodf/universal-delegate-monitor/master/logo.png",
+		"main": "index.js",
+		"author": { "name": "Alessio" },
+		"license": "GPLv3",
+		"permissions": [
+			"ALERTS",
+			"COMPONENTS",
+			"HTTP",
+			"MENU_ITEMS",
+			"PROFILE_CURRENT",
+			"ROUTES",
+			"STORAGE",
+			"TIMERS",
+			"UI_COMPONENTS",
+			"WEBSOCKET"
+		],
+		"repository": { "type": "git", "url": "git+https://github.com/alessiodf/universal-delegate-monitor.git" },
+		"desktop-wallet": { "categories": ["utility"], "minVersion": "2.6" },
+		"keywords": [
+			"utility",
+			"universal",
+			"delegate",
+			"monitor",
+			"network",
+			"health",
+			"forging",
+			"@arkecosystem",
+			"desktop-wallet",
+			"plugin"
+		],
+		"homepage": "https://github.com/alessiodf/universal-delegate-monitor/",
+		"urls": ["^"],
+		"manifest": "https://raw.githubusercontent.com/alessiodf/universal-delegate-monitor/master/manifest.json",
+		"gitHead": "687b6a9541013b3dde93626cc3b3a0ba8833c01b",
+		"bugs": { "url": "https://github.com/alessiodf/universal-delegate-monitor/issues" },
+		"_id": "@alessiodf/universal-delegate-monitor@0.9.0",
+		"_nodeVersion": "10.16.2",
+		"_npmVersion": "6.9.0",
+		"dist": {
+			"integrity": "sha512-E9t25fc8PpIutPqGdSODCszgRLCtYHArtRzNj1Kzh+nwg+STmsw+sPPNLZjJUIxL6OH0q+HGc/kUSA8A67Wc6g==",
+			"shasum": "451e4fc3c8738b6aa2ab3a8ae5862aa5021d9be1",
+			"tarball": "https://registry.npmjs.org/@alessiodf/universal-delegate-monitor/-/universal-delegate-monitor-0.9.0.tgz",
+			"fileCount": 12,
+			"unpackedSize": 195711,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8VBkCRA9TVsSAnZWagAAF9gQAJTkTn/SrzDIWpvK8ahu\n54EnZ6TD7dHrSgBE5DPa3QvEQLaHjUi8FAWDICvb5cdh9AdWexo+Y6DQ//sy\nEUfiRO9yCZNRDYDX+ACfNMMEfHe6lRhJqTqCDMeFh1Qe2xF3TG3zxwro7uzg\nc0gvD0MYS7lBUbaIxORjf6zW5BjuZHUfMHvINoMrN8N/l7Uv6cOVIvFE4+Jm\nI9KB0dHPjooiRlPeRCpIcJz4QIOXyybky3Y2f4rPvdE17h9+F5lYriZSUwPT\nOlNKuSDXUaOL/AC4/Tu7OAI/B5uGvjmN0TCqt6bW9uD/lZ/uro9zO8h7uy4O\nJQY/zL7aGLdC0dSQgTRk6L9q7+vHmLtSLlXjI8/IfBPiu6L/Eco7aAfVQFOK\nxFY9dmJt6JHTDfG34XrK1LauvrA7CTevoI/LJZNkKwGntXYT6+WTQEwAkj9W\nbZa2f76yXTgUWry1Xca73j3tCAqFO4skkd9J3ZuCuDwHFmf8nk8mt7l0d2b9\n7HuhsS/lLQbI+Xwq0eO1fYqqnp+dPTP6A8dRvsS4k9dI0aL+pokmQQmzZ1jC\nvUORk6SXVZFnlAHzwX9FBaLaPqBJnkq8F1gZ6MXNMI6iYSLttU7L4lZan/7D\nys8BQhF4y0dt4cFgmLjfRzCCNuCd0v1iWJATpfHxa48vhDQbxOCivxeDtW/T\n35Om\r\n=0jlv\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "alessiodf", "email": "alessiodf@pm.me" }],
+		"_npmUser": { "name": "alessiodf", "email": "alessiodf@pm.me" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/universal-delegate-monitor_0.9.0_1576095843977_0.35663584315697006"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@alessiodf/connect-4",
+		"version": "1.0.0",
+		"title": "Connect 4: Turts vs Toots",
+		"description": "Be the first to form a horizontal, vertical or diagonal line of four of your discs to win. Play against a real life opponent to win tokens on any supported ARK-powered network.",
+		"logo": "https://raw.githubusercontent.com/alessiodf/delegate-fun-icons/connect-4/logo.png",
+		"main": "index.js",
+		"author": { "name": "Delegate Fun" },
+		"permissions": ["COMPONENTS", "MENU_ITEMS", "PROFILE_CURRENT", "ROUTES", "WEBFRAME"],
+		"desktop-wallet": { "categories": ["gaming"], "minVersion": "2.6" },
+		"keywords": [
+			"@arkecosystem",
+			"desktop-wallet",
+			"plugin",
+			"game",
+			"games",
+			"gaming",
+			"delegate fun",
+			"fun",
+			"connect 4",
+			"turts vs toots",
+			"turt",
+			"toot"
+		],
+		"homepage": "https://www.arkfun.io/connect-4/",
+		"_id": "@alessiodf/connect-4@1.0.0",
+		"_nodeVersion": "10.16.2",
+		"_npmVersion": "6.9.0",
+		"dist": {
+			"integrity": "sha512-5qZHfnyPzX9LAIs8olW1C2ZYTrHAywX/ScQxQ7RvQHhWchdiGGI2IjygYPfpjHOm3OsNUfBm6T35F+vGAHizcw==",
+			"shasum": "5ddd2b8347f6fab140b3e2e81112a6b35eb6ad1b",
+			"tarball": "https://registry.npmjs.org/@alessiodf/connect-4/-/connect-4-1.0.0.tgz",
+			"fileCount": 3,
+			"unpackedSize": 1873,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeU918CRA9TVsSAnZWagAAx4oP/RYZcaV4VV/33PANaQND\nyWG3H/yYXVFxuVKEXjUFIBdCuWgiARyXGpTAJ/66zFMX0relTMW2Dk9qCy3j\nAkj1zq6t0BSs43p3sNOAxIb3+IbfrtIQh+cZ9PPQbcD3NkDJEtyPV+aV+OmK\ng4voH98GGS9UdczpNFUCbcZlipLhq3DHoIFNBTcsNhFh6R1HQ6T4bCZiNWPR\n05yevZifd8O8n9/TtmjbvZ9Jbw9/33iuJTweatIK/dsyGtAJsNQDa88SEvTu\n0Hvf+BY7Q9mWErM4BXQlWhartLVoiHNr+cSukKFmUibcr5j1f4s9pHOMVGzX\nRw6clOHJIyKCSkxRajjfSJ6oRLOs+RP7UVv8T6qDxqYCKLUgPabk8NB4vhaf\nKm0E+cSTNwbuTVjMFlBB4HmkWcsNKXobjclEBIUaDk6eccfk2O2pt3/wBBNz\n0/NnV2PDuvvEJBYTeu0lM3ai1xeSysIZXhdEI46qpl/g8nte2S8f4ofaX28/\nhWGSmOvCM5vYckdO+rPCPYS0fij9InBdE5oh+b7aPuOMTYAaZsIpKm6BG6uS\nKYpuGWKbpRxBPd82Mf0OsVrzGtRcztZ74cVyZdDRTc8c9hWWEFtr1ph4H8Ih\ngZl+K+PnOt9acx6j37KJRoLANu+rstyJDmQiFcnnqCybcbqYAunQB7yYsCVf\nou94\r\n=ahLr\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "alessiodf", "email": "alessiodf@pm.me" }],
+		"_npmUser": { "name": "alessiodf", "email": "alessiodf@pm.me" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/connect-4_1.0.0_1582554492149_0.6298426971526867"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@alessiodf/minesweeper-flags",
+		"version": "1.0.6",
+		"title": "Minesweeper Flags",
+		"description": "Minesweeper Flags is a two-player variant of Minesweeper, where the objective is to discover 26 out of 51 mines before your opponent. Play against a real life opponent to win tokens on any supported ARK-powered network.",
+		"logo": "https://raw.githubusercontent.com/alessiodf/delegate-fun-icons/minesweeper-flags/logo.png",
+		"main": "index.js",
+		"author": { "name": "Delegate Fun" },
+		"permissions": ["COMPONENTS", "MENU_ITEMS", "PROFILE_CURRENT", "ROUTES", "WEBFRAME"],
+		"desktop-wallet": { "categories": ["gaming"], "minVersion": "2.6" },
+		"keywords": [
+			"@arkecosystem",
+			"desktop-wallet",
+			"plugin",
+			"game",
+			"games",
+			"gaming",
+			"delegate fun",
+			"fun",
+			"minesweeper flags",
+			"minesweeper"
+		],
+		"homepage": "https://www.arkfun.io/minesweeper-flags/",
+		"_id": "@alessiodf/minesweeper-flags@1.0.6",
+		"_nodeVersion": "10.16.2",
+		"_npmVersion": "6.9.0",
+		"dist": {
+			"integrity": "sha512-9MFQ/NCB8D+sb6UhYeben8bTaa26jopOpC8kkIuMsWuiU3hG/+rjZemkXKApvP9CbfGYTsGeMNVbN7Jnnb00wg==",
+			"shasum": "87da94cb31adcebe03caf9e2760016195b6b608e",
+			"tarball": "https://registry.npmjs.org/@alessiodf/minesweeper-flags/-/minesweeper-flags-1.0.6.tgz",
+			"fileCount": 3,
+			"unpackedSize": 1953,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeFxwHCRA9TVsSAnZWagAArq4P/itP048a1fHnJjZ5fGZ+\nbFpEYwFjzasc9s/wPiMZN2uMmod7pwypFLuktOEwKBZtiW09yGI2B00fyLtF\nDXBFF8je4sqGpa31knQPE8pONfqR3keJ0RH7TU2NobuzDH7ZpIFtA1D71NqD\nq49JCecenxigGPzXkRPvrhpd4Frc7TdMX4h7Jydxk50l82ARSeGbyLoHkBnH\nbvCMP8qopMg6ri4tVaQMakr0Z6v+9GlktQB6R9tTdxLMsLdSnKdXmzEzzut6\nCT728uAAoOqQe37H5gOgivRlWKfVujFxLQPaiNjXHjqbh+h8U4KZsInZKACQ\nbldvWpbHBgr0lgoYPxcBP5vnLsw26tQBppStBBR7MwmB244L0FQq3nUnwphh\nW6/WR9gB3UrmdFUPZDVFARKiAYT4lSye56rMZ4luchlEgTvao9XgyHmyE5VG\ntec7iVNqvgsJABVjuisrjih62nkj0rx6AfLx5tINHuI0a0t9tKyBvaNwk8Lx\nEkDRB3WFkvlwxfyEeoBVI2zdZlpwtXaGYz5U76VTdj+rk3SLCX9TEOua7PE1\nd61OazChZIe47qSWhVF4cm8BkjTmCaZYqDawAF6Oplm0Bbpkj02CVePwPbuc\nu3hAOzf6xqmw4tGY4dpqO8itVwcb0M1y4S/HmbIe4s3kT+2iYoP/mSqw5Nth\n+uei\r\n=dDNR\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "email": "alessiodf@pm.me", "name": "alessiodf" }],
+		"_npmUser": { "name": "alessiodf", "email": "alessiodf@pm.me" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/minesweeper-flags_1.0.6_1578572806662_0.586397053902038"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@alessiodf/t-grexx",
+		"version": "1.0.1",
+		"title": "T-Grexx",
+		"description": "Forget Survival Evolved, here is ARK's own dinosaur game! Jump over the obstacles and avoid the pesky pterodactyls to score points as the game gets progressively faster. The highest scorer receives free ARK straight into their wallet.",
+		"logo": "https://raw.githubusercontent.com/alessiodf/delegate-fun-icons/dino/logo.png",
+		"main": "index.js",
+		"author": { "name": "Delegate Fun" },
+		"permissions": ["COMPONENTS", "MENU_ITEMS", "PROFILE_CURRENT", "ROUTES", "WEBFRAME"],
+		"desktop-wallet": { "categories": ["gaming"], "minVersion": "2.6" },
+		"keywords": [
+			"@arkecosystem",
+			"desktop-wallet",
+			"plugin",
+			"game",
+			"games",
+			"gaming",
+			"delegate fun",
+			"fun",
+			"t-grexx",
+			"dinosaur",
+			"dino",
+			"infinite runner",
+			"runner",
+			"platform"
+		],
+		"homepage": "https://www.arkfun.io/dino/",
+		"_id": "@alessiodf/t-grexx@1.0.1",
+		"_nodeVersion": "10.16.2",
+		"_npmVersion": "6.9.0",
+		"dist": {
+			"integrity": "sha512-2Qxe3yTQ3cDcWWVxjbzy6jko1JgCpUr51YkzvL50vVlf+AB+g9c85EEK4AslJE9gBwrZreVtWdULh1JDFKnrzQ==",
+			"shasum": "10f093f81dade77ac713f5bdfc72d4ac74857ab5",
+			"tarball": "https://registry.npmjs.org/@alessiodf/t-grexx/-/t-grexx-1.0.1.tgz",
+			"fileCount": 3,
+			"unpackedSize": 1901,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeFxv3CRA9TVsSAnZWagAAvBEQAI+G2gnT6pAbXlb786Q7\n2n63VxV3f2poQAk0KsKcidIQ7fRtY/eJjrpauKvcxSklEYmpcI1g0WEnK7tw\nQyyjfdiEHVpDicLJRXmPTNPSkX3u0AQ0oIWhHyNxiHJ7GRntuzGxwbJuNU8Q\nZPPDdGmzX2ieDAXArZmq5NjRUBeNLjQddGMrgfGXQ4+i1pejNJQiMcSAFZXB\nFMCqsYIDmaXoko6lqaMREiPcZWEf3DpakRQCvL55gOp7y6E0PPu2nCMc0FYd\nqs4EAM9ZoVpOk696q9iQpXjOzs66TeSe/vWSxWlpXsQl8OWQmJDrBufW85kF\nCh+82mfoTb78ryLE2Ve5Y8nXUfIbXoNtPAWHxJ1Oi7+ZddFonhBb/yXuX3a8\nbC0W1ciU2KgGhrnkIxMIlnoGIhaVSXFIBeQcswpzYUZIN7hSdaNB2k8+9TrI\nqXjAQ3JTo3lmd1OsVZk23PaFV+AE3UH3zbOaQ2jGqt6fiGm18CsCr9N2fZ/8\n5ITbIeUrL59eE5QrBNIu18F23GG9/NoeOZwxuQYkyPfC9ZQ6n7yIJhdFLXq8\ni1s2+XaVcKqiNwvp9RCtJrjAu79E2gF1UblXJaLTNzC2zyMn22Txi5ZBKkce\nVHwhgEeJPeNS40bLy/qZ6T3XcKfnrBXaiarvqboFZ9MwnZGLygDIrQX5wcBD\njAFk\r\n=r5pw\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "alessiodf", "email": "alessiodf@pm.me" }],
+		"_npmUser": { "name": "alessiodf", "email": "alessiodf@pm.me" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/t-grexx_1.0.1_1578572790558_0.2558627788706691"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@alessiodf/match-3",
+		"version": "1.0.1",
+		"title": "Match 3",
+		"description": "Save the animals from the flood by swapping adjacent tiles to build chains of 3 or more to bring them to safety inside your Ark. Two other modes with different tile sets are also playable. The highest scorer receives free ARK straight into their wallet.",
+		"logo": "https://raw.githubusercontent.com/alessiodf/delegate-fun-icons/match3/logo.png",
+		"main": "index.js",
+		"author": { "name": "Delegate Fun" },
+		"permissions": ["COMPONENTS", "MENU_ITEMS", "PROFILE_CURRENT", "ROUTES", "WEBFRAME"],
+		"desktop-wallet": { "categories": ["gaming"], "minVersion": "2.6" },
+		"keywords": [
+			"@arkecosystem",
+			"desktop-wallet",
+			"plugin",
+			"game",
+			"games",
+			"gaming",
+			"delegate fun",
+			"fun",
+			"match 3",
+			"bejeweled",
+			"stay deluded",
+			"puzzle"
+		],
+		"homepage": "https://www.arkfun.io/match3/",
+		"_id": "@alessiodf/match-3@1.0.1",
+		"_nodeVersion": "10.16.2",
+		"_npmVersion": "6.9.0",
+		"dist": {
+			"integrity": "sha512-9lIRaMDXYYRiGe0QO2BEiBbDoei1Q5IZAM4DnQlDZh2pC3r9EUdW/kC5z8VH/NbS8rJipQbR5yRKK0CLADi6FQ==",
+			"shasum": "c0a48edcf8252c3a72e680a17aac7df558368ea8",
+			"tarball": "https://registry.npmjs.org/@alessiodf/match-3/-/match-3-1.0.1.tgz",
+			"fileCount": 3,
+			"unpackedSize": 1896,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeFxv+CRA9TVsSAnZWagAApGoP/A4dEkA39jxDy3nWVi3i\nWOrLmPgu0Ovv7lb70gAOZuNgeDrwkWbPRw+wpoIKhK6djlSHwOFRQhEcCPJl\noxp0zF1WIJC+c6egCC8Fxxc8CUYIZhw38ia0BtkxRKRRy6rin4RoDX9eyz81\nqv51MBZmU41e+MwPMfllAf+zz89atFeNAcgFFjIgBYEicu8gYesLKfTo6qe/\nmwaSthlfEuZ/C1Ti3uFA4SZPqfQX0BTkhamBP4tFQmgbyVwJRSFNWO0LwA0e\nVM3tEvmqQ9AawZ/QbCOMkoy+Kn6NVhYE3W3Qqba3VCNd7zwUbHkX7Dny2K9q\nwOC4EayJyLO09qltSFabqewLx9NDZ32W6VwZPReokIn1Hp1a+f62s9dWD9yI\no7E5eLNdihlJ8TAMGnUsfWaISBj4WEf1Eov7j1LPfe4F0b3ZstfEaJGihn2F\nC0n6GAwHYL+6uhvQ7Oki+OZYUwaajT4S8I3fccN6c/Y6yA1lFuZe4/Xovauv\nhq7xgJ8NPZMLDjOnr5tqHfrzrrxHDVeNZHaTZq+Vy6wUywcoV5LMmd7qvnEE\nj57V9+OH75CGLwnzLW2A8iukcSYLNpWsor+mRiM2PpBmY/ayBTF+wWiWOwKx\nJmDjYx8YP8UiiFaUuEZ3D1stSdYt/fRfuDrTOKt+9hAOMAHH2ZYj7WWsZKyg\nPL7Q\r\n=glTR\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "alessiodf", "email": "alessiodf@pm.me" }],
+		"_npmUser": { "name": "alessiodf", "email": "alessiodf@pm.me" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/match-3_1.0.1_1578572797684_0.718042569818349"
+		},
+		"_hasShrinkwrap": false
+	},
+	{
+		"name": "@alessiodf/bold-ninja",
+		"version": "1.0.1",
+		"title": "Bold Ninja",
+		"description": "Control your ninja and help him jump across platforms to collect cryptocurrencies along the way to earn points. Earn two seconds of game time and varying points for every item you collect. The highest scorer receives free ARK straight into their wallet.",
+		"logo": "https://raw.githubusercontent.com/alessiodf/delegate-fun-icons/ninja/logo.png",
+		"main": "index.js",
+		"author": { "name": "Delegate Fun" },
+		"permissions": ["COMPONENTS", "MENU_ITEMS", "PROFILE_CURRENT", "ROUTES", "WEBFRAME"],
+		"desktop-wallet": { "categories": ["gaming"], "minVersion": "2.6" },
+		"keywords": [
+			"@arkecosystem",
+			"desktop-wallet",
+			"plugin",
+			"game",
+			"games",
+			"gaming",
+			"delegate fun",
+			"fun",
+			"bold ninja",
+			"boldninja",
+			"ninja",
+			"infinite runner",
+			"runner",
+			"platform"
+		],
+		"homepage": "https://www.arkfun.io/ninja/",
+		"_id": "@alessiodf/bold-ninja@1.0.1",
+		"_nodeVersion": "10.16.2",
+		"_npmVersion": "6.9.0",
+		"dist": {
+			"integrity": "sha512-3XgqdQ4m54vDtfeCEY2tPSc58KsBf7LPR7d6pOv/JgNJiofTlZEnCo8EJTbLkhrq3FoowECta69XXgIlMInckA==",
+			"shasum": "cc7756bba9e34935c9ef8f32c0910961e3e26798",
+			"tarball": "https://registry.npmjs.org/@alessiodf/bold-ninja/-/bold-ninja-1.0.1.tgz",
+			"fileCount": 3,
+			"unpackedSize": 1952,
+			"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeFxvuCRA9TVsSAnZWagAAoGIP/1A/YUWIm62gO7MwgvtB\nQfYPVxV9YlANIndpjdQYO6t4PBD9xfX8SO1tIv3MCK5tK0ulfJwX4q/Rt6li\nBAVQJ2t/+2qjRwtkVjUNuOj9nerObotcdt3WT6nMSjZYBTt+WwPUYdwjxT4R\n7OzFn8Ta+NHDB0XeOWfvaEsz9SlGGG9mf+WNiqY1v2v9jHQGglkuNVcO7qF5\nAb+QXtE7bJmbsExmtzOPGCEQb13eucmoFbpI/7aFQ6UvSPcZX8yC90DHnWkI\nsWiw3RZhbdbu/YF9Bja+L5VCGDypxTleNVseQJsi90ZGvpDYAiiNrIfoQv6R\nn8FTbU0T+CoVw2upQ2KOMfR4T+yNrTbH6U8+vG9vj126/cTH44U5tdKXREWr\nrye8kQRlYp5W3mC1PMAzL6BABBDIHd5mTNGkXrAqNP689n86r/w1rqpKdwa7\nRU23pRUrgk6G0J/fonmk/Eq45DknqK8e6FiuEAq6UtEtwOevPXlcRp0xhV2i\nCFT3ceFhvyrqshnYj7Ylv87G3opYs/rm2sJaj6HL7njKd1pytzB6yHM1sL6A\n6vsQW/JhM3HYJsDRu6MlOg73xGn6PxSP9sn67xGFPFR6S7YXU0+4K/ogGsBn\ngny2Wbqe5f0I+Lz7qJsR1ftoIi5i2N8rkRCvJlRAlBRx4ek+sZzmSYXrCiNl\nQg8B\r\n=VwqF\r\n-----END PGP SIGNATURE-----\r\n"
+		},
+		"maintainers": [{ "name": "alessiodf", "email": "alessiodf@pm.me" }],
+		"_npmUser": { "name": "alessiodf", "email": "alessiodf@pm.me" },
+		"directories": {},
+		"_npmOperationalInternal": {
+			"host": "s3://npm-registry-packages",
+			"tmp": "tmp/bold-ninja_1.0.1_1578572782467_0.21271614378822634"
+		},
+		"_hasShrinkwrap": false
+	}
+]

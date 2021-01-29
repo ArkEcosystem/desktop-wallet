@@ -2,7 +2,6 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -182,8 +181,9 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 												data-testid="SendDelegateResignation__send-button"
 												disabled={!isValid}
 												className="space-x-2"
+												isLoading={isSubmitting}
+												icon="Send"
 											>
-												<Icon name="Send" width={20} height={20} />
 												<span>{t("COMMON.SEND")}</span>
 											</Button>
 										)}

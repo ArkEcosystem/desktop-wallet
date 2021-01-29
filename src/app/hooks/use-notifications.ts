@@ -1,5 +1,6 @@
 import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { sortByDesc } from "@arkecosystem/utils";
 import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -37,6 +38,7 @@ const formatTransactionNotification = (transaction: TransactionDataType) => ({
 	action: "",
 	type: "transaction",
 	meta: {
+		timestamp: transaction.timestamp()?.toUNIX(),
 		transactionId: transaction.id(),
 		walletAddress: transaction.recipient(),
 	},
@@ -122,6 +124,9 @@ const deleteNotificationsByVersion = (env: Environment) => ({ version }: { versi
 		});
 };
 
+const sortTransactionNotificationsDesc = (notifications: any[]) =>
+	sortByDesc(notifications, (notification) => notification?.meta?.timestamp);
+
 export const useNotifications = () => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
@@ -143,6 +148,7 @@ export const useNotifications = () => {
 				notifyReceivedTransactions,
 				syncReceivedTransactions,
 				formatNotification,
+				sortTransactionNotificationsDesc,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),
 				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
 			},

@@ -3,7 +3,7 @@ import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { matchPath, useLocation } from "react-router-dom";
 
-import { useNotifications } from "./notifications";
+import { useNotifications } from "./use-notifications";
 import { useSynchronizer } from "./use-synchronizer";
 
 enum Intervals {
@@ -96,7 +96,12 @@ const useProfileJobs = (profile?: Profile) => {
 			interval: Intervals.Short,
 		};
 
-		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications];
+		const syncKnownWallets = {
+			callback: () => env.knownWallets().syncAll(),
+			interval: Intervals.Long,
+		};
+
+		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications, syncKnownWallets];
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
