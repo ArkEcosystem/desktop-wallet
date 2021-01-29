@@ -39,16 +39,12 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			return true;
 		}
 
-		if (viewType !== defaultConfiguration.viewType) {
-			return true;
-		}
-
 		if (selectedNetworkIds.length < defaultConfiguration.selectedNetworkIds.length) {
 			return true;
 		}
 
 		return false;
-	}, [walletsDisplayType, selectedNetworkIds, showTransactions, viewType, defaultConfiguration]);
+	}, [walletsDisplayType, selectedNetworkIds, showTransactions, defaultConfiguration]);
 
 	return useMemo<FilterWalletsHookProps & { update: (key: string, value: any) => void }>(
 		() => ({
