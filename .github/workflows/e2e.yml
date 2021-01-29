@@ -21,12 +21,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -65,12 +70,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -116,12 +126,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -167,12 +182,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -218,12 +238,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -269,12 +294,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -320,12 +350,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -371,12 +406,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -422,12 +462,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -473,12 +518,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -524,12 +574,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -575,12 +630,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -626,12 +686,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -677,12 +742,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -728,12 +798,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -779,12 +854,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -830,12 +910,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -881,12 +966,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -932,12 +1022,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -983,12 +1078,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1034,12 +1134,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1085,12 +1190,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1136,12 +1246,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1187,12 +1302,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1238,12 +1358,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1289,12 +1414,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1340,12 +1470,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1391,12 +1526,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1442,12 +1582,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1493,12 +1638,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1544,12 +1694,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1595,12 +1750,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1646,12 +1806,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1697,12 +1862,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1748,12 +1918,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1799,12 +1974,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1850,12 +2030,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1901,12 +2086,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
@@ -1952,12 +2142,17 @@ jobs:
               with:
                   ref: ${{ github.head_ref }}
 
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
             - name: Cache node modules
               uses: actions/cache@v2
+              id: yarn-cache
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
 
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
