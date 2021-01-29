@@ -73,6 +73,10 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	}, [setValue, activeWallet, findByType]);
 
 	const handleBack = () => {
+		if (activeTab === 1) {
+			history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -156,7 +160,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 									<div className="flex justify-end mt-10 space-x-3">
 										{activeTab < 4 && (
 											<Button
-												disabled={activeTab === 1}
+												disabled={isSubmitting}
 												data-testid="SendDelegateResignation__back-button"
 												variant="secondary"
 												onClick={handleBack}

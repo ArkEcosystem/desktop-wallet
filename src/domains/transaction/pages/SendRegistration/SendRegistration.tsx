@@ -43,6 +43,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { formState, getValues, register, setValue, setError } = form;
+	const { isSubmitting, isValid } = formState;
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
 
@@ -113,6 +114,10 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	};
 
 	const handleBack = () => {
+		if (activeTab === 1) {
+			history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -181,7 +186,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 									onBack={() =>
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
-									isRepeatDisabled={formState.isSubmitting}
+									isRepeatDisabled={isSubmitting}
 									onRepeat={form.handleSubmit(handleSubmit)}
 								/>
 							</TabPanel>
@@ -212,7 +217,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < stepCount && (
 									<Button
-										disabled={activeTab === 1}
+										disabled={isSubmitting}
 										data-testid="Registration__back-button"
 										variant="secondary"
 										onClick={handleBack}
@@ -224,7 +229,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 								{activeTab < stepCount - 1 && (
 									<Button
 										data-testid="Registration__continue-button"
-										disabled={!formState.isValid}
+										disabled={!isValid}
 										onClick={handleNext}
 									>
 										{t("COMMON.CONTINUE")}
@@ -235,10 +240,10 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 									<Button
 										type="submit"
 										data-testid="Registration__send-button"
-										disabled={!formState.isValid}
+										disabled={!isValid}
 										className="space-x-2"
 										icon="Send"
-										isLoading={formState.isSubmitting}
+										isLoading={isSubmitting}
 									>
 										<span>{t("COMMON.SEND")}</span>
 									</Button>
