@@ -55,28 +55,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/contact --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/contact --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-dashboard:
         runs-on: ubuntu-latest
@@ -124,28 +109,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/dashboard --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/dashboard --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-error:
         runs-on: ubuntu-latest
@@ -193,28 +163,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/error --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/error --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-exchange:
         runs-on: ubuntu-latest
@@ -262,28 +217,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/exchange --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/exchange --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-network:
         runs-on: ubuntu-latest
@@ -331,28 +271,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/network --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/network --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-news:
         runs-on: ubuntu-latest
@@ -400,28 +325,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/news --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/news --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-plugin:
         runs-on: ubuntu-latest
@@ -469,28 +379,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/plugin --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/plugin --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-profile:
         runs-on: ubuntu-latest
@@ -538,28 +433,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/profile --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/profile --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-setting:
         runs-on: ubuntu-latest
@@ -607,28 +487,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/setting --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/setting --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-splash:
         runs-on: ubuntu-latest
@@ -676,28 +541,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/splash --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/splash --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-transaction:
         runs-on: ubuntu-latest
@@ -745,28 +595,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/transaction --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/transaction --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-vote:
         runs-on: ubuntu-latest
@@ -814,28 +649,13 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/vote --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/vote --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
 
     domains-wallet:
         runs-on: ubuntu-latest
@@ -883,25 +703,10 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
-            - name: Check Changes
-              id: changes
-              run: |
-                  git restore '*.test.tsx.snap'
-                  if [[ -z "$(git status --porcelain)" ]];
-                  then
-                    echo "::set-output name=changes::0"
-                  else
-                    echo "::set-output name=changes::1"
-                  fi
-
-            - name: Update Snapshots
-              if: steps.changes.outputs.changes == 1
-              run: yarn test --maxWorkers=4 --update-snapshot
+            - name: Test
+              run: yarn test src/domains/wallet --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit -u
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
                   commit_message: "style: resolve style guide violations"
                   branch: ${{ github.head_ref }}
-
-            - name: Test
-              run: yarn test:coverage src/domains/wallet --forceExit --maxWorkers=4 --coverageDirectory .coverage/unit
