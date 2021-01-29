@@ -224,11 +224,13 @@ export const SendVote = () => {
 					"vote",
 					{
 						...voteTransactionInput,
-						data: isUnvote ? {
-							unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
-						} : {
-							votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
-						},
+						data: isUnvote
+							? {
+									unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							  }
+							: {
+									votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							  },
 					},
 					{ abortSignal },
 				);
