@@ -58,7 +58,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+        class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
         data-testid="dropdown__content"
         style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
@@ -71,7 +71,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
             >
               <span>
                 <input
-                  class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                  class="rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                   color="success"
                   data-testid="SearchBarPluginFilters-claimed"
                   name="claim"
@@ -126,7 +126,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-5"
                     name="test"
@@ -140,7 +140,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -153,7 +153,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -166,7 +166,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -179,7 +179,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -192,7 +192,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -215,7 +215,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -229,7 +229,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -242,7 +242,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -255,7 +255,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -268,7 +268,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -281,7 +281,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -304,7 +304,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -318,7 +318,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -331,7 +331,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -344,7 +344,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -357,7 +357,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -370,7 +370,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -393,7 +393,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -407,7 +407,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -420,7 +420,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -433,7 +433,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -446,7 +446,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -459,7 +459,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -482,7 +482,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -496,7 +496,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -509,7 +509,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -522,7 +522,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -535,7 +535,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -548,7 +548,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -624,7 +624,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+        class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
         data-testid="dropdown__content"
         style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
@@ -637,7 +637,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
             >
               <span>
                 <input
-                  class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                  class="rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                   color="success"
                   data-testid="SearchBarPluginFilters-claimed"
                   name="claim"
@@ -746,7 +746,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-5"
                     name="test"
@@ -760,7 +760,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -773,7 +773,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -786,7 +786,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -799,7 +799,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -812,7 +812,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -835,7 +835,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -849,7 +849,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -862,7 +862,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -875,7 +875,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -888,7 +888,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -901,7 +901,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -924,7 +924,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -938,7 +938,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -951,7 +951,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -964,7 +964,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -977,7 +977,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -990,7 +990,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1013,7 +1013,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -1027,7 +1027,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1040,7 +1040,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1053,7 +1053,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1066,7 +1066,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1079,7 +1079,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1102,7 +1102,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -1116,7 +1116,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1129,7 +1129,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1142,7 +1142,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1155,7 +1155,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1168,7 +1168,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1244,7 +1244,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+        class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
         data-testid="dropdown__content"
       >
         <div>
@@ -1257,7 +1257,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               <span>
                 <input
                   checked=""
-                  class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                  class="rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                   color="success"
                   data-testid="SearchBarPluginFilters-claimed"
                   name="claim"
@@ -1330,7 +1330,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -1344,7 +1344,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1357,7 +1357,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1370,7 +1370,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1383,7 +1383,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1396,7 +1396,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1419,7 +1419,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -1433,7 +1433,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1446,7 +1446,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1459,7 +1459,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1472,7 +1472,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1485,7 +1485,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1508,7 +1508,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -1522,7 +1522,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1535,7 +1535,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1548,7 +1548,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1561,7 +1561,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1574,7 +1574,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1597,7 +1597,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -1611,7 +1611,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1624,7 +1624,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1637,7 +1637,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1650,7 +1650,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1663,7 +1663,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1739,7 +1739,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+        class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
         data-testid="dropdown__content"
         style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
@@ -1753,7 +1753,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               <span>
                 <input
                   checked=""
-                  class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                  class="rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                   color="success"
                   data-testid="SearchBarPluginFilters-claimed"
                   name="claim"
@@ -1809,7 +1809,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -1823,7 +1823,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1836,7 +1836,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1849,7 +1849,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1862,7 +1862,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1875,7 +1875,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1898,7 +1898,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -1912,7 +1912,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1925,7 +1925,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1938,7 +1938,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1951,7 +1951,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1964,7 +1964,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1987,7 +1987,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -2001,7 +2001,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2014,7 +2014,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2027,7 +2027,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2040,7 +2040,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2053,7 +2053,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2077,7 +2077,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                 <span>
                   <input
                     checked=""
-                    class="Checkbox-sc-17gwqiq-0 iGvDni mt-px rounded-lg"
+                    class="mt-px rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -2091,7 +2091,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                     class="flex text-theme-secondary-400"
                   >
                     <span
-                      class="text-theme-warning-300 mr-1"
+                      class="mr-1 text-theme-warning-300"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2104,7 +2104,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2117,7 +2117,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2130,7 +2130,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -2143,7 +2143,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                       </div>
                     </span>
                     <span
-                      class=" mr-1"
+                      class="mr-1 "
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"

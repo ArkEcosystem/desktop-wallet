@@ -65,7 +65,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   class="rounded-lg"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -73,7 +73,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="p-1 sc-bdfBwQ liSwOQ"
                         height="18"
                         width="15"
                       >
@@ -112,7 +112,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="p-1 sc-bdfBwQ iNulIV"
                     height="18"
                     width="18"
                   >
@@ -142,7 +142,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="p-1 sc-bdfBwQ iSzUah"
                     height="22"
                     width="22"
                   >
@@ -220,10 +220,10 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                     />
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
-                      class="sc-bdfBwQ kJrqvM transition-transform "
+                      class="transition-transform sc-bdfBwQ kJrqvM "
                       height="5"
                       width="8"
                     >
@@ -331,7 +331,7 @@ exports[`NavigationBar should render 1`] = `
                   class="rounded-lg"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -339,7 +339,7 @@ exports[`NavigationBar should render 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="p-1 sc-bdfBwQ liSwOQ"
                         height="18"
                         width="15"
                       >
@@ -378,7 +378,7 @@ exports[`NavigationBar should render 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="p-1 sc-bdfBwQ iNulIV"
                     height="18"
                     width="18"
                   >
@@ -408,7 +408,7 @@ exports[`NavigationBar should render 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="p-1 sc-bdfBwQ iSzUah"
                     height="22"
                     width="22"
                   >
@@ -490,10 +490,10 @@ exports[`NavigationBar should render 1`] = `
                     </span>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
-                      class="sc-bdfBwQ kJrqvM transition-transform "
+                      class="transition-transform sc-bdfBwQ kJrqvM "
                       height="5"
                       width="8"
                     >
@@ -579,7 +579,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   class="rounded-lg"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -587,7 +587,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="p-1 sc-bdfBwQ liSwOQ"
                         height="18"
                         width="15"
                       >
@@ -626,7 +626,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="p-1 sc-bdfBwQ iNulIV"
                     height="18"
                     width="18"
                   >
@@ -656,7 +656,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="p-1 sc-bdfBwQ iSzUah"
                     height="22"
                     width="22"
                   >
@@ -738,10 +738,10 @@ exports[`NavigationBar should render with custom menu 1`] = `
                     </span>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
-                      class="sc-bdfBwQ kJrqvM transition-transform "
+                      class="transition-transform sc-bdfBwQ kJrqvM "
                       height="5"
                       width="8"
                     >
@@ -854,7 +854,7 @@ exports[`NavigationBar should render with title 1`] = `
                   class="rounded-lg"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -862,7 +862,7 @@ exports[`NavigationBar should render with title 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="p-1 sc-bdfBwQ liSwOQ"
                         height="18"
                         width="15"
                       >
@@ -901,7 +901,7 @@ exports[`NavigationBar should render with title 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="p-1 sc-bdfBwQ iNulIV"
                     height="18"
                     width="18"
                   >
@@ -931,7 +931,7 @@ exports[`NavigationBar should render with title 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="p-1 sc-bdfBwQ iSzUah"
                     height="22"
                     width="22"
                   >
@@ -1013,10 +1013,10 @@ exports[`NavigationBar should render with title 1`] = `
                     </span>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
-                      class="sc-bdfBwQ kJrqvM transition-transform "
+                      class="transition-transform sc-bdfBwQ kJrqvM "
                       height="5"
                       width="8"
                     >

@@ -7,7 +7,7 @@ exports[`Signed Transaction Table should render 1`] = `
     data-testid="SignedTransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -20,13 +20,13 @@ exports[`Signed Transaction Table should render 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   ID
@@ -34,7 +34,7 @@ exports[`Signed Transaction Table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -42,16 +42,16 @@ exports[`Signed Transaction Table should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform "
+                    class="transition-transform sc-bdfBwQ kJrqvM "
                     height="5"
                     role="img"
                     width="8"
@@ -64,13 +64,13 @@ exports[`Signed Transaction Table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Recipient
@@ -78,13 +78,13 @@ exports[`Signed Transaction Table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Info
@@ -92,13 +92,13 @@ exports[`Signed Transaction Table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Status
@@ -106,7 +106,7 @@ exports[`Signed Transaction Table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -114,16 +114,16 @@ exports[`Signed Transaction Table should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -136,13 +136,13 @@ exports[`Signed Transaction Table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Sign
@@ -190,7 +190,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -229,7 +229,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -239,7 +239,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -266,7 +266,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -285,10 +285,10 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -302,7 +302,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -342,7 +342,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -387,7 +387,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -414,7 +414,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -433,10 +433,10 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -450,7 +450,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -490,7 +490,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -535,7 +535,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -562,7 +562,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -581,10 +581,10 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -598,7 +598,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -638,7 +638,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -683,7 +683,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -710,7 +710,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -729,10 +729,10 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -746,7 +746,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -786,7 +786,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -831,7 +831,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -858,7 +858,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -877,10 +877,10 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -894,7 +894,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -934,7 +934,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -979,7 +979,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -1006,7 +1006,7 @@ exports[`Signed Transaction Table should render 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -1025,10 +1025,10 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -1042,7 +1042,7 @@ exports[`Signed Transaction Table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -1060,7 +1060,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
     data-testid="SignedTransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1073,13 +1073,13 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   ID
@@ -1087,7 +1087,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1095,16 +1095,16 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform "
+                    class="transition-transform sc-bdfBwQ kJrqvM "
                     height="5"
                     role="img"
                     width="8"
@@ -1117,13 +1117,13 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Recipient
@@ -1131,13 +1131,13 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Info
@@ -1145,13 +1145,13 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Status
@@ -1159,7 +1159,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1167,16 +1167,16 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1189,13 +1189,13 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Sign
@@ -1243,7 +1243,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -1282,7 +1282,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1292,7 +1292,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -1319,7 +1319,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-warning-300"
@@ -1338,10 +1338,10 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -1355,7 +1355,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -1373,7 +1373,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
     data-testid="SignedTransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1386,13 +1386,13 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   ID
@@ -1400,7 +1400,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1408,16 +1408,16 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform "
+                    class="transition-transform sc-bdfBwQ kJrqvM "
                     height="5"
                     role="img"
                     width="8"
@@ -1430,13 +1430,13 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Recipient
@@ -1444,13 +1444,13 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Info
@@ -1458,13 +1458,13 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Status
@@ -1472,7 +1472,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1480,16 +1480,16 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1502,13 +1502,13 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Sign
@@ -1556,7 +1556,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -1595,7 +1595,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1605,7 +1605,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -1632,7 +1632,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-warning-300"
@@ -1651,10 +1651,10 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -1668,7 +1668,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -1686,7 +1686,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
     data-testid="SignedTransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1699,13 +1699,13 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   ID
@@ -1713,7 +1713,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1721,16 +1721,16 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform "
+                    class="transition-transform sc-bdfBwQ kJrqvM "
                     height="5"
                     role="img"
                     width="8"
@@ -1743,13 +1743,13 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Recipient
@@ -1757,13 +1757,13 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Info
@@ -1771,13 +1771,13 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Status
@@ -1785,7 +1785,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1793,16 +1793,16 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1815,13 +1815,13 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Sign
@@ -1869,7 +1869,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -1908,7 +1908,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1918,7 +1918,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -1945,7 +1945,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-danger-400"
@@ -1964,10 +1964,10 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -1981,7 +1981,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -1999,7 +1999,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
     data-testid="SignedTransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -2012,13 +2012,13 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   ID
@@ -2026,7 +2026,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2034,16 +2034,16 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform "
+                    class="transition-transform sc-bdfBwQ kJrqvM "
                     height="5"
                     role="img"
                     width="8"
@@ -2056,13 +2056,13 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Recipient
@@ -2070,13 +2070,13 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Info
@@ -2084,13 +2084,13 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Status
@@ -2098,7 +2098,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -2106,16 +2106,16 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2128,13 +2128,13 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Sign
@@ -2182,7 +2182,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -2221,7 +2221,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -2231,7 +2231,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -2258,7 +2258,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -2277,10 +2277,10 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -2294,7 +2294,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               />
             </td>
           </tr>
@@ -2312,7 +2312,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
     data-testid="SignedTransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -2325,13 +2325,13 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   ID
@@ -2339,7 +2339,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2347,16 +2347,16 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform "
+                    class="transition-transform sc-bdfBwQ kJrqvM "
                     height="5"
                     role="img"
                     width="8"
@@ -2369,13 +2369,13 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  "
+                class="flex align-top flex-inline "
               >
                 <div>
                   Recipient
@@ -2383,13 +2383,13 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Info
@@ -2397,13 +2397,13 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center "
+                class="flex justify-center align-top flex-inline "
               >
                 <div>
                   Status
@@ -2411,7 +2411,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -2419,16 +2419,16 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2441,13 +2441,13 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Sign
@@ -2495,7 +2495,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -2540,7 +2540,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -2567,7 +2567,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center truncate"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm truncate"
               >
                 <span
                   class="p-1 text-theme-success-500"
@@ -2586,10 +2586,10 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -2603,7 +2603,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 iUSBMV"

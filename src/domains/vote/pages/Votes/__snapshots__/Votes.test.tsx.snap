@@ -94,7 +94,7 @@ exports[`Votes should filter current delegates 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -102,7 +102,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -141,7 +141,7 @@ exports[`Votes should filter current delegates 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -171,7 +171,7 @@ exports[`Votes should filter current delegates 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -253,10 +253,10 @@ exports[`Votes should filter current delegates 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -275,7 +275,7 @@ exports[`Votes should filter current delegates 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -399,7 +399,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -414,7 +414,7 @@ exports[`Votes should filter current delegates 1`] = `
                             <span>
                               <input
                                 checked=""
-                                class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                                class="rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                                 color="success"
                                 name="all"
                                 type="checkbox"
@@ -425,12 +425,12 @@ exports[`Votes should filter current delegates 1`] = `
                             </span>
                           </label>
                           <label
-                            class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+                            class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                             data-testid="VotesFilter__option--current"
                           >
                             <span>
                               <input
-                                class="Checkbox-sc-17gwqiq-0 iGvDni rounded-lg"
+                                class="rounded-lg Checkbox-sc-17gwqiq-0 iGvDni"
                                 color="success"
                                 name="current"
                                 type="checkbox"
@@ -453,7 +453,7 @@ exports[`Votes should filter current delegates 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -467,7 +467,7 @@ exports[`Votes should filter current delegates 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -480,7 +480,7 @@ exports[`Votes should filter current delegates 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -488,16 +488,16 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-start "
+                        class="flex justify-start align-top flex-inline "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -510,7 +510,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -518,16 +518,16 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -540,13 +540,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Status
@@ -554,13 +554,13 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Votes
@@ -568,7 +568,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -576,16 +576,16 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -610,7 +610,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           #
@@ -619,7 +619,7 @@ exports[`Votes should filter current delegates 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -644,10 +644,10 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
+                          class="text-xs sc-bdfBwQ iSzUah text-theme-primary-600"
                           height="22"
                           width="22"
                         >
@@ -661,7 +661,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -672,7 +672,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -715,7 +715,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
+                          class="mr-2 Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -744,7 +744,7 @@ exports[`Votes should filter current delegates 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B1d6T…1VBMs6YUYD
@@ -761,10 +761,10 @@ exports[`Votes should filter current delegates 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -797,10 +797,10 @@ exports[`Votes should filter current delegates 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -833,10 +833,10 @@ exports[`Votes should filter current delegates 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-text text-theme-text"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -978,7 +978,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -986,7 +986,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -1025,7 +1025,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -1055,7 +1055,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -1125,10 +1125,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       />
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -1147,7 +1147,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1278,7 +1278,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1292,7 +1292,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               Select a Delegate
             </h2>
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -1305,7 +1305,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -1313,16 +1313,16 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-start "
+                        class="flex justify-start align-top flex-inline "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -1335,7 +1335,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -1343,16 +1343,16 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -1365,13 +1365,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Status
@@ -1379,13 +1379,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Votes
@@ -1393,7 +1393,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -1401,16 +1401,16 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -1435,7 +1435,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           #
@@ -1444,7 +1444,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -1469,10 +1469,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
+                          class="text-xs sc-bdfBwQ iSzUah text-theme-primary-600"
                           height="22"
                           width="22"
                         >
@@ -1486,7 +1486,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -1497,7 +1497,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -1522,7 +1522,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -1531,7 +1531,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -1556,14 +1556,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -1574,7 +1574,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -1599,7 +1599,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -1608,7 +1608,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -1633,14 +1633,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -1651,7 +1651,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -1676,7 +1676,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -1685,7 +1685,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -1710,14 +1710,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -1728,7 +1728,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -1753,7 +1753,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -1762,7 +1762,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -1787,14 +1787,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -1805,7 +1805,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -1848,7 +1848,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
+                          class="mr-2 Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -1877,7 +1877,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B1d6T…1VBMs6YUYD
@@ -1894,10 +1894,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -1930,10 +1930,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -1966,10 +1966,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-text text-theme-text"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -2115,7 +2115,7 @@ exports[`Votes should render 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2123,7 +2123,7 @@ exports[`Votes should render 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -2162,7 +2162,7 @@ exports[`Votes should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -2192,7 +2192,7 @@ exports[`Votes should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -2274,10 +2274,10 @@ exports[`Votes should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -2296,7 +2296,7 @@ exports[`Votes should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2427,7 +2427,7 @@ exports[`Votes should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2441,7 +2441,7 @@ exports[`Votes should render 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -2454,7 +2454,7 @@ exports[`Votes should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -2462,16 +2462,16 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-start "
+                        class="flex justify-start align-top flex-inline "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -2484,7 +2484,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -2492,16 +2492,16 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -2514,13 +2514,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Status
@@ -2528,13 +2528,13 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Votes
@@ -2542,7 +2542,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -2550,16 +2550,16 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -2584,7 +2584,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           #
@@ -2593,7 +2593,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -2618,10 +2618,10 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
+                          class="text-xs sc-bdfBwQ iSzUah text-theme-primary-600"
                           height="22"
                           width="22"
                         >
@@ -2635,7 +2635,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -2646,7 +2646,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -2671,7 +2671,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -2680,7 +2680,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -2705,14 +2705,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -2723,7 +2723,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -2748,7 +2748,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -2757,7 +2757,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -2782,14 +2782,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -2800,7 +2800,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -2825,7 +2825,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -2834,7 +2834,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -2859,14 +2859,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -2877,7 +2877,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -2902,7 +2902,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -2911,7 +2911,7 @@ exports[`Votes should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -2936,14 +2936,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -2954,7 +2954,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -2997,7 +2997,7 @@ exports[`Votes should render 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
+                          class="mr-2 Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -3026,7 +3026,7 @@ exports[`Votes should render 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B1d6T…1VBMs6YUYD
@@ -3043,10 +3043,10 @@ exports[`Votes should render 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3079,10 +3079,10 @@ exports[`Votes should render 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3115,10 +3115,10 @@ exports[`Votes should render 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-text text-theme-text"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3260,7 +3260,7 @@ exports[`Votes should render with no wallets 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3268,7 +3268,7 @@ exports[`Votes should render with no wallets 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -3301,7 +3301,7 @@ exports[`Votes should render with no wallets 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -3332,7 +3332,7 @@ exports[`Votes should render with no wallets 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -3414,10 +3414,10 @@ exports[`Votes should render with no wallets 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -3436,7 +3436,7 @@ exports[`Votes should render with no wallets 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3567,13 +3567,13 @@ exports[`Votes should render with no wallets 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
         >
           <div
-            class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 p-6 rounded-lg text-theme-secondary-text undefined"
+            class="p-6 rounded-lg border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-text undefined"
             data-testid="EmptyBlock"
           >
             <div>
@@ -3735,7 +3735,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3743,7 +3743,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -3782,7 +3782,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -3812,7 +3812,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -3894,10 +3894,10 @@ exports[`Votes should select a delegate 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -3916,7 +3916,7 @@ exports[`Votes should select a delegate 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4047,7 +4047,7 @@ exports[`Votes should select a delegate 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -4061,7 +4061,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -4074,7 +4074,7 @@ exports[`Votes should select a delegate 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -4082,16 +4082,16 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-start "
+                        class="flex justify-start align-top flex-inline "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -4104,7 +4104,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -4112,16 +4112,16 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -4134,13 +4134,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Status
@@ -4148,13 +4148,13 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Votes
@@ -4162,7 +4162,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -4170,16 +4170,16 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -4204,7 +4204,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           #
@@ -4213,7 +4213,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -4238,10 +4238,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
+                          class="text-xs sc-bdfBwQ iSzUah text-theme-danger-500"
                           height="22"
                           width="22"
                         >
@@ -4255,7 +4255,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           %
@@ -4266,7 +4266,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -4291,7 +4291,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -4300,7 +4300,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -4325,14 +4325,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -4343,7 +4343,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -4368,7 +4368,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -4377,7 +4377,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -4402,14 +4402,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -4420,7 +4420,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -4445,7 +4445,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -4454,7 +4454,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -4479,14 +4479,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -4497,7 +4497,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -4522,7 +4522,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -4531,7 +4531,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -4556,14 +4556,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -4574,7 +4574,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -4617,7 +4617,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
+                          class="mr-2 Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -4646,7 +4646,7 @@ exports[`Votes should select a delegate 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B1d6T…1VBMs6YUYD
@@ -4663,10 +4663,10 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -4699,10 +4699,10 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-text text-theme-text"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -4735,10 +4735,10 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-text text-theme-text"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -4881,7 +4881,7 @@ exports[`Votes should select an address without vote 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4889,7 +4889,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -4928,7 +4928,7 @@ exports[`Votes should select an address without vote 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -4958,7 +4958,7 @@ exports[`Votes should select an address without vote 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -5040,10 +5040,10 @@ exports[`Votes should select an address without vote 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -5062,7 +5062,7 @@ exports[`Votes should select an address without vote 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5193,7 +5193,7 @@ exports[`Votes should select an address without vote 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -5207,7 +5207,7 @@ exports[`Votes should select an address without vote 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -5220,7 +5220,7 @@ exports[`Votes should select an address without vote 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -5228,16 +5228,16 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-start "
+                        class="flex justify-start align-top flex-inline "
                       >
                         <div>
                           Rank
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -5250,7 +5250,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -5258,16 +5258,16 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Delegate Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -5280,13 +5280,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Status
@@ -5294,13 +5294,13 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Votes
@@ -5308,7 +5308,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -5316,16 +5316,16 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Vote
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -5350,7 +5350,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -5359,7 +5359,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -5384,14 +5384,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5402,7 +5402,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -5427,7 +5427,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -5436,7 +5436,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -5461,14 +5461,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5479,7 +5479,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -5504,7 +5504,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -5513,7 +5513,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -5538,14 +5538,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5556,7 +5556,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -5581,7 +5581,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -5590,7 +5590,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -5615,14 +5615,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5633,7 +5633,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -5658,7 +5658,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims justify-start font-bold text-theme-secondary-text "
+                        class="justify-start font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -5667,7 +5667,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold "
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -5692,14 +5692,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center "
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text "
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5710,7 +5710,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end "
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM "
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -5753,7 +5753,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc mr-2"
+                          class="mr-2 Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
                           data-testid="Avatar"
                         >
                           <div
@@ -5782,7 +5782,7 @@ exports[`Votes should select an address without vote 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                 data-testid="address__wallet-address"
                               >
                                 DTLomV8hpJ…CfDZJnG23z
@@ -5799,10 +5799,10 @@ exports[`Votes should select an address without vote 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -5835,10 +5835,10 @@ exports[`Votes should select an address without vote 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-secondary-500 text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -5871,10 +5871,10 @@ exports[`Votes should select an address without vote 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV mr-2 bg-theme-background border-theme-text text-theme-text"
+                          class="mr-2 Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-text text-theme-text"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah text-xl"
+                            class="text-xl sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -6016,7 +6016,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6024,7 +6024,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -6063,7 +6063,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -6093,7 +6093,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -6175,10 +6175,10 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -6197,7 +6197,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6321,7 +6321,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -6367,7 +6367,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
-                                      class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                      class="relative Circle-uw7h4j-0 JkqUV border-theme-success-500 text-theme-success-500"
                                     >
                                       <div
                                         class="sc-bdfBwQ iyevwF"
@@ -6379,7 +6379,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                         </svg>
                                       </div>
                                       <span
-                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                        class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-500 text-theme-success-100"
                                       >
                                         <div
                                           class="sc-bdfBwQ fdfkzt"
@@ -6427,7 +6427,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                         Favorites
                                       </span>
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform "
+                                        class="transition-transform sc-bdfBwQ kJrqvM "
                                         height="5"
                                         width="8"
                                       >
@@ -6551,7 +6551,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6559,7 +6559,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -6598,7 +6598,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -6628,7 +6628,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -6710,10 +6710,10 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -6732,7 +6732,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6856,7 +6856,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -6902,7 +6902,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
-                                      class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                      class="relative Circle-uw7h4j-0 JkqUV border-theme-success-500 text-theme-success-500"
                                     >
                                       <div
                                         class="sc-bdfBwQ iyevwF"
@@ -6914,7 +6914,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                         </svg>
                                       </div>
                                       <span
-                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                        class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-500 text-theme-success-100"
                                       >
                                         <div
                                           class="sc-bdfBwQ fdfkzt"
@@ -6962,7 +6962,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                         Ledger
                                       </span>
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform "
+                                        class="transition-transform sc-bdfBwQ kJrqvM "
                                         height="5"
                                         width="8"
                                       >
@@ -7086,7 +7086,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7094,7 +7094,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -7133,7 +7133,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -7163,7 +7163,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -7245,10 +7245,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -7267,7 +7267,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -7391,7 +7391,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 fjgGxm opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+                      class="absolute z-10 py-3 mt-3 rounded-lg shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 fjgGxm "
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -7437,7 +7437,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
-                                      class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                                      class="relative Circle-uw7h4j-0 JkqUV border-theme-success-500 text-theme-success-500"
                                     >
                                       <div
                                         class="sc-bdfBwQ iyevwF"
@@ -7449,7 +7449,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                         </svg>
                                       </div>
                                       <span
-                                        class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                                        class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-500 text-theme-success-100"
                                       >
                                         <div
                                           class="sc-bdfBwQ fdfkzt"
@@ -7497,7 +7497,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                         All
                                       </span>
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform "
+                                        class="transition-transform sc-bdfBwQ kJrqvM "
                                         height="5"
                                         width="8"
                                       >
@@ -7527,7 +7527,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -7570,7 +7570,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               </div>
             </div>
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -7583,7 +7583,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -7591,16 +7591,16 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           My Address
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -7613,13 +7613,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Wallet Type
@@ -7627,7 +7627,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -7635,16 +7635,16 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Balance
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -7657,13 +7657,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top ml-15 "
+                        class="flex align-top flex-inline ml-15 "
                       >
                         <div>
                           Delegate
@@ -7671,13 +7671,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Rank
@@ -7685,13 +7685,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center no-border "
+                        class="flex justify-center align-top flex-inline no-border "
                       >
                         <div>
                           Status
@@ -7699,13 +7699,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                            
@@ -7723,7 +7723,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -7743,7 +7743,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -7754,7 +7754,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B…s6YUYD
@@ -7764,7 +7764,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-2"
@@ -7773,7 +7773,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text whitespace-nowrap"
+                        class="justify-end font-bold whitespace-nowrap TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text"
                       >
                         <span
                           data-testid="Amount"
@@ -7784,7 +7784,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -7807,7 +7807,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text"
                       >
                         <span>
                           #
@@ -7816,7 +7816,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="sc-bdfBwQ iSzUah text-theme-success-600"
@@ -7832,7 +7832,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -7854,7 +7854,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -7874,7 +7874,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -7885,7 +7885,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D5sRKW…cvJtwb
@@ -7895,7 +7895,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-2"
@@ -7904,7 +7904,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text whitespace-nowrap"
+                        class="justify-end font-bold whitespace-nowrap TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text"
                       >
                         <span
                           data-testid="Amount"
@@ -7915,7 +7915,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -7929,17 +7929,17 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"
@@ -7961,7 +7961,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
@@ -7981,7 +7981,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             DTLomV…JnG23z
@@ -7991,7 +7991,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-2"
@@ -8000,7 +8000,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end font-bold text-theme-secondary-text whitespace-nowrap"
+                        class="justify-end font-bold whitespace-nowrap TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text"
                       >
                         <span
                           data-testid="Amount"
@@ -8011,7 +8011,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4 font-bold"
+                        class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -8025,17 +8025,17 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center font-bold text-theme-secondary-text"
+                        class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-text"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <button
                           class="Button__StyledButton-mdtvtf-0 iUSBMV"

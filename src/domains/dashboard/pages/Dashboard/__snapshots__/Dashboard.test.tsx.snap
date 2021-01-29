@@ -97,7 +97,7 @@ exports[`Dashboard should render 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -105,7 +105,7 @@ exports[`Dashboard should render 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -144,7 +144,7 @@ exports[`Dashboard should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -174,7 +174,7 @@ exports[`Dashboard should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -256,10 +256,10 @@ exports[`Dashboard should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -484,11 +484,11 @@ exports[`Dashboard should render 1`] = `
                       style="height: 192px; margin-top: 0px;"
                     >
                       <div
-                        class="w-64 inline-block w-full"
+                        class="inline-block w-64 w-full"
                         data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                       >
                         <div
-                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                          class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                           data-testid="Card"
                         >
                           <div
@@ -560,11 +560,11 @@ exports[`Dashboard should render 1`] = `
                       style="height: 192px; margin-top: 0px;"
                     >
                       <div
-                        class="w-64 inline-block w-full"
+                        class="inline-block w-64 w-full"
                         data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                       >
                         <div
-                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                          class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                           data-testid="Card"
                         >
                           <div
@@ -636,11 +636,11 @@ exports[`Dashboard should render 1`] = `
                       style="height: 192px; margin-top: 0px;"
                     >
                       <div
-                        class="w-64 inline-block w-full"
+                        class="inline-block w-64 w-full"
                         data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                       >
                         <div
-                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                          class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                           data-testid="Card"
                         >
                           <div
@@ -713,7 +713,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -737,7 +737,7 @@ exports[`Dashboard should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+                    class="flex items-center py-2 space-x-2 font-semibold rounded focus:outline-none text-theme-secondary-500"
                     data-testid="CollapseToggleButton"
                   >
                     <span>
@@ -774,7 +774,7 @@ exports[`Dashboard should render 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 ciwXyx w-full"
+              class="w-full Tabs__TabList-sc-1lxyvu-1 ciwXyx"
             >
               <button
                 aria-selected="true"
@@ -804,7 +804,7 @@ exports[`Dashboard should render 1`] = `
             data-testid="TransactionTable"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -817,13 +817,13 @@ exports[`Dashboard should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                      class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           ID
@@ -831,7 +831,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder w-50 min-w-50"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -839,16 +839,16 @@ exports[`Dashboard should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Date
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform "
+                            class="transition-transform sc-bdfBwQ kJrqvM "
                             height="5"
                             role="img"
                             width="8"
@@ -861,13 +861,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="relative p-3 m-0 w-96 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Recipient
@@ -875,13 +875,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Info
@@ -889,13 +889,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                      class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Status
@@ -903,7 +903,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -911,16 +911,16 @@ exports[`Dashboard should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Amount
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -933,13 +933,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+                      class="relative p-3 m-0 w-24 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder min-w-24"
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end float-right flex-row-reverse"
+                        class="flex float-right flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Currency
@@ -960,7 +960,7 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                           data-testid="TransactionRow__ID"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -995,7 +995,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1034,7 +1034,7 @@ exports[`Dashboard should render 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D5pVkh…xfKwSv
@@ -1044,7 +1044,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1056,7 +1056,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1077,10 +1077,10 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                          class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1094,7 +1094,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <span
                           class="whitespace-nowrap"
@@ -1119,7 +1119,7 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                           data-testid="TransactionRow__ID"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
@@ -1154,7 +1154,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1193,7 +1193,7 @@ exports[`Dashboard should render 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             DKY5ey…bNF53A
@@ -1203,7 +1203,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1215,7 +1215,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1236,10 +1236,10 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                          class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1253,7 +1253,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <span
                           class="whitespace-nowrap"
@@ -1278,7 +1278,7 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                           data-testid="TransactionRow__ID"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -1313,7 +1313,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1352,7 +1352,7 @@ exports[`Dashboard should render 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D5pVkh…xfKwSv
@@ -1362,7 +1362,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1374,7 +1374,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1395,10 +1395,10 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                          class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1412,7 +1412,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <span
                           class="whitespace-nowrap"
@@ -1437,7 +1437,7 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                           data-testid="TransactionRow__ID"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
@@ -1472,7 +1472,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1511,7 +1511,7 @@ exports[`Dashboard should render 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             DKY5ey…bNF53A
@@ -1521,7 +1521,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex space-x-1 align-middle"
@@ -1533,7 +1533,7 @@ exports[`Dashboard should render 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
+                        class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex p-1 align-middle"
@@ -1554,10 +1554,10 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                          class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
                           color="success"
                           data-testid="TransactionRowAmount"
                         >
@@ -1571,7 +1571,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM"
                       >
                         <span
                           class="whitespace-nowrap"
@@ -1592,7 +1592,7 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <button
-            class="Button__StyledButton-mdtvtf-0 iUSBMV mt-10 mb-5 w-full"
+            class="mt-10 mb-5 w-full Button__StyledButton-mdtvtf-0 iUSBMV"
             data-testid="transactions__fetch-more-button"
             type="button"
           >

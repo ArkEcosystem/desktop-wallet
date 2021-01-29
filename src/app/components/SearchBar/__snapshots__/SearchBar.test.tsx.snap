@@ -3,14 +3,14 @@
 exports[`SearchBar should render 1`] = `
 <DocumentFragment>
   <div
-    class="bg-theme-secondary-100 px-10 pt-8 pb-8 undefined"
+    class="px-10 pt-8 pb-8 bg-theme-secondary-100 undefined"
     data-testid="SearchBar"
   >
     <div
       class="flex items-center py-6 px-10 rounded shadow-xl bg-theme-background"
     >
       <div
-        class="sc-bdfBwQ fPrsah mr-8 w-4 text-theme-secondary-300"
+        class="mr-8 w-4 sc-bdfBwQ fPrsah text-theme-secondary-300"
         height="1em"
         width="1em"
       >
@@ -22,13 +22,13 @@ exports[`SearchBar should render 1`] = `
         class="flex-1 pl-4 mr-4 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures border-none shadow-none"
+          class="overflow-hidden py-3 px-4 w-full rounded border border-none shadow-none transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
           data-testid="Input"
           placeholder="What would you like to search for?"
         />
       </div>
       <button
-        class="Button__StyledButton-mdtvtf-0 ePkfgQ my-1"
+        class="my-1 Button__StyledButton-mdtvtf-0 ePkfgQ"
         data-testid="SearchBar__button"
         type="button"
       >

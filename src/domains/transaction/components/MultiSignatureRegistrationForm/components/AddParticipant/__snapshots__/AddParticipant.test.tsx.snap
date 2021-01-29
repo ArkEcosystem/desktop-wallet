@@ -7,7 +7,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -29,7 +29,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
               class="absolute left-1"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+                class="mx-3 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
                 data-testid="Avatar"
               >
                 <div
@@ -45,7 +45,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+              class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -74,7 +74,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         </p>
       </fieldset>
       <button
-        class="Button__StyledButton-mdtvtf-0 iUSBMV my-4 w-full"
+        class="my-4 w-full Button__StyledButton-mdtvtf-0 iUSBMV"
         type="button"
       >
         <div
@@ -91,7 +91,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -104,13 +104,13 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Avatar
@@ -118,13 +118,13 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Address
@@ -132,13 +132,13 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Action
@@ -189,7 +189,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -241,7 +241,7 @@ exports[`Add Participant should fail to find 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -263,7 +263,7 @@ exports[`Add Participant should fail to find 1`] = `
               class="absolute left-1"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+                class="mx-3 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
                 data-testid="Avatar"
               >
                 <div
@@ -279,7 +279,7 @@ exports[`Add Participant should fail to find 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+              class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -308,7 +308,7 @@ exports[`Add Participant should fail to find 1`] = `
         </p>
       </fieldset>
       <button
-        class="Button__StyledButton-mdtvtf-0 iUSBMV my-4 w-full"
+        class="my-4 w-full Button__StyledButton-mdtvtf-0 iUSBMV"
         type="button"
       >
         <div
@@ -325,7 +325,7 @@ exports[`Add Participant should fail to find 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -338,13 +338,13 @@ exports[`Add Participant should fail to find 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Avatar
@@ -352,13 +352,13 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Address
@@ -366,13 +366,13 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Action
@@ -423,7 +423,7 @@ exports[`Add Participant should fail to find 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -475,7 +475,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -497,7 +497,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
               class="absolute left-1"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+                class="mx-3 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
                 data-testid="Avatar"
               >
                 <div
@@ -513,7 +513,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+              class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -542,7 +542,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         </p>
       </fieldset>
       <button
-        class="Button__StyledButton-mdtvtf-0 iUSBMV my-4 w-full"
+        class="my-4 w-full Button__StyledButton-mdtvtf-0 iUSBMV"
         type="button"
       >
         <div
@@ -559,7 +559,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -572,13 +572,13 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Avatar
@@ -586,13 +586,13 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Address
@@ -600,13 +600,13 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Action
@@ -657,7 +657,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -709,7 +709,7 @@ exports[`Add Participant should render custom participants 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -731,11 +731,11 @@ exports[`Add Participant should render custom participants 1`] = `
               class="absolute left-1"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                class="mx-3 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
               />
             </div>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+              class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -759,7 +759,7 @@ exports[`Add Participant should render custom participants 1`] = `
         </div>
       </fieldset>
       <button
-        class="Button__StyledButton-mdtvtf-0 kwcZQn my-4 w-full"
+        class="my-4 w-full Button__StyledButton-mdtvtf-0 kwcZQn"
         disabled=""
         type="button"
       >
@@ -777,7 +777,7 @@ exports[`Add Participant should render custom participants 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -790,13 +790,13 @@ exports[`Add Participant should render custom participants 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Avatar
@@ -804,13 +804,13 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Address
@@ -818,13 +818,13 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Action
@@ -875,7 +875,7 @@ exports[`Add Participant should render custom participants 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -927,7 +927,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -949,7 +949,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               class="absolute left-1"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+                class="mx-3 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
                 data-testid="Avatar"
               >
                 <div
@@ -964,7 +964,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               </div>
             </div>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+              class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -988,7 +988,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="Button__StyledButton-mdtvtf-0 kwcZQn my-4 w-full"
+        class="my-4 w-full Button__StyledButton-mdtvtf-0 kwcZQn"
         disabled=""
         type="button"
       >
@@ -1006,7 +1006,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -1019,13 +1019,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Avatar
@@ -1033,13 +1033,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Address
@@ -1047,13 +1047,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Action
@@ -1104,7 +1104,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1179,7 +1179,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
@@ -1231,7 +1231,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1253,7 +1253,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               class="absolute left-1"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+                class="mx-3 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
                 data-testid="Avatar"
               >
                 <div
@@ -1268,7 +1268,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               </div>
             </div>
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+              class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
@@ -1292,7 +1292,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="Button__StyledButton-mdtvtf-0 kwcZQn my-4 w-full"
+        class="my-4 w-full Button__StyledButton-mdtvtf-0 kwcZQn"
         disabled=""
         type="button"
       >
@@ -1310,7 +1310,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -1323,13 +1323,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Avatar
@@ -1337,13 +1337,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Address
@@ -1351,13 +1351,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden "
+                    class="flex hidden align-top flex-inline "
                   >
                     <div>
                       Action
@@ -1408,7 +1408,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1483,7 +1483,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="inline-flex items-center no-ligatures"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                         data-testid="address__wallet-address"
                       >
                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb

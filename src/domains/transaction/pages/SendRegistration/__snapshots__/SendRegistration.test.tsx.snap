@@ -92,7 +92,7 @@ exports[`Registration should show error step and go back 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -100,7 +100,7 @@ exports[`Registration should show error step and go back 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -139,7 +139,7 @@ exports[`Registration should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -169,7 +169,7 @@ exports[`Registration should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -251,10 +251,10 @@ exports[`Registration should show error step and go back 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -273,7 +273,7 @@ exports[`Registration should show error step and go back 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -336,7 +336,7 @@ exports[`Registration should show error step and go back 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -405,7 +405,7 @@ exports[`Registration should show error step and go back 1`] = `
                         </div>
                       </button>
                       <button
-                        class="Button__StyledButton-mdtvtf-0 ePkfgQ space-x-2"
+                        class="space-x-2 Button__StyledButton-mdtvtf-0 ePkfgQ"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >

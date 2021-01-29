@@ -91,7 +91,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -99,7 +99,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -138,7 +138,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -168,7 +168,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -250,10 +250,10 @@ exports[`PluginDetails should render properly 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -272,7 +272,7 @@ exports[`PluginDetails should render properly 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -369,7 +369,7 @@ exports[`PluginDetails should render properly 1`] = `
                       </div>
                     </button>
                     <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
+                      class="ml-3 Button__StyledButton-mdtvtf-0 iUSBMV"
                       data-testid="PluginHeader__button--warning"
                       type="button"
                     >
@@ -667,10 +667,10 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-5 rounded-lg border Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="flex justify-center items-center text-theme-warning-600"
               >
                 <div
                   class="sc-bdfBwQ daKoZl"
@@ -683,7 +683,7 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
+                class="rounded-md border pointer-events-none border-theme-warning-600"
               />
               <div
                 class="flex flex-col space-y-2"
@@ -775,14 +775,14 @@ exports[`PluginDetails should render properly 1`] = `
                         </span>
                       </span>
                       <span
-                        class="cursor-pointer pl-3"
+                        class="pl-3 cursor-pointer"
                       >
                         <span>
                           Date
                         </span>
                       </span>
                       <span
-                        class="cursor-pointer pl-3"
+                        class="pl-3 cursor-pointer"
                       >
                         <span>
                           Most popular
@@ -959,7 +959,7 @@ exports[`PluginDetails should render properly 1`] = `
                               class="flex items-center w-10"
                             >
                               <div
-                                class="sc-bdfBwQ liSwOQ mx-auto -mt-2"
+                                class="mx-auto -mt-2 sc-bdfBwQ liSwOQ"
                                 height="18"
                                 width="15"
                               >
@@ -988,7 +988,7 @@ exports[`PluginDetails should render properly 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-dlfnbm hQdFZp mt-2 ml-10 text-theme-secondary-600"
+                            class="mt-2 ml-10 sc-dlfnbm hQdFZp text-theme-secondary-600"
                           >
                             <a
                               href="#"
@@ -1197,7 +1197,7 @@ exports[`PluginDetails should render properly 1`] = `
                         >
                           Next
                           <div
-                            class="sc-bdfBwQ fdfkzt ml-2"
+                            class="ml-2 sc-bdfBwQ fdfkzt"
                             height="12"
                             width="12"
                           >
@@ -1226,7 +1226,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex items-center text-2xl whitespace-nowrap"
                   >
                     <div
-                      class="sc-bdfBwQ eZPcdm mr-1 -mt-1"
+                      class="mr-1 -mt-1 sc-bdfBwQ eZPcdm"
                       height="19"
                       width="34"
                     >
@@ -1319,7 +1319,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt jTJugx h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt jTJugx bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -1382,7 +1382,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt cDjSmG h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt cDjSmG bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -1436,7 +1436,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt elULua h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt elULua bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -1481,7 +1481,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt ivwEjI h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt ivwEjI bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -1517,7 +1517,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt ecshJL h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt ecshJL bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
@@ -1626,7 +1626,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1634,7 +1634,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -1673,7 +1673,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -1703,7 +1703,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -1785,10 +1785,10 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -1807,7 +1807,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1904,7 +1904,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </button>
                     <button
-                      class="Button__StyledButton-mdtvtf-0 ePkfgQ ml-3"
+                      class="ml-3 Button__StyledButton-mdtvtf-0 ePkfgQ"
                       data-testid="PluginHeader__button--update"
                       type="button"
                     >
@@ -1923,7 +1923,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </button>
                     <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
+                      class="ml-3 Button__StyledButton-mdtvtf-0 iUSBMV"
                       data-testid="PluginHeader__button--warning"
                       type="button"
                     >
@@ -1942,7 +1942,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </button>
                     <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
+                      class="ml-3 Button__StyledButton-mdtvtf-0 iUSBMV"
                       data-testid="PluginHeader__button--uninstall"
                       type="button"
                     >
@@ -2240,10 +2240,10 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-5 rounded-lg border Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="flex justify-center items-center text-theme-warning-600"
               >
                 <div
                   class="sc-bdfBwQ daKoZl"
@@ -2256,7 +2256,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
+                class="rounded-md border pointer-events-none border-theme-warning-600"
               />
               <div
                 class="flex flex-col space-y-2"
@@ -2348,14 +2348,14 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         </span>
                       </span>
                       <span
-                        class="cursor-pointer pl-3"
+                        class="pl-3 cursor-pointer"
                       >
                         <span>
                           Date
                         </span>
                       </span>
                       <span
-                        class="cursor-pointer pl-3"
+                        class="pl-3 cursor-pointer"
                       >
                         <span>
                           Most popular
@@ -2532,7 +2532,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                               class="flex items-center w-10"
                             >
                               <div
-                                class="sc-bdfBwQ liSwOQ mx-auto -mt-2"
+                                class="mx-auto -mt-2 sc-bdfBwQ liSwOQ"
                                 height="18"
                                 width="15"
                               >
@@ -2561,7 +2561,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-dlfnbm hQdFZp mt-2 ml-10 text-theme-secondary-600"
+                            class="mt-2 ml-10 sc-dlfnbm hQdFZp text-theme-secondary-600"
                           >
                             <a
                               href="#"
@@ -2770,7 +2770,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         >
                           Next
                           <div
-                            class="sc-bdfBwQ fdfkzt ml-2"
+                            class="ml-2 sc-bdfBwQ fdfkzt"
                             height="12"
                             width="12"
                           >
@@ -2799,7 +2799,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex items-center text-2xl whitespace-nowrap"
                   >
                     <div
-                      class="sc-bdfBwQ eZPcdm mr-1 -mt-1"
+                      class="mr-1 -mt-1 sc-bdfBwQ eZPcdm"
                       height="19"
                       width="34"
                     >
@@ -2892,7 +2892,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt jTJugx h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt jTJugx bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -2955,7 +2955,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt cDjSmG h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt cDjSmG bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -3009,7 +3009,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt elULua h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt elULua bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -3054,7 +3054,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt ivwEjI h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt ivwEjI bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -3090,7 +3090,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="mt-1 w-full h-2 rounded-lg bg-theme-secondary-200"
                       >
                         <div
-                          class="sc-hKgILt ecshJL h-2 rounded-lg bg-theme-warning-400"
+                          class="h-2 rounded-lg sc-hKgILt ecshJL bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />

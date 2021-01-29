@@ -191,7 +191,7 @@ exports[`Wallets should load more wallets 1`] = `
             data-testid="WalletTable"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -204,7 +204,7 @@ exports[`Wallets should load more wallets 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -212,16 +212,16 @@ exports[`Wallets should load more wallets 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Wallet Address
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -234,13 +234,13 @@ exports[`Wallets should load more wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Wallet Type
@@ -248,7 +248,7 @@ exports[`Wallets should load more wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -256,16 +256,16 @@ exports[`Wallets should load more wallets 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Balance
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -278,7 +278,7 @@ exports[`Wallets should load more wallets 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -286,16 +286,16 @@ exports[`Wallets should load more wallets 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Fiat Value
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -318,7 +318,7 @@ exports[`Wallets should load more wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -358,7 +358,7 @@ exports[`Wallets should load more wallets 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -369,7 +369,7 @@ exports[`Wallets should load more wallets 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6…VBMs6YUYD
@@ -379,7 +379,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -388,7 +388,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -399,7 +399,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -415,7 +415,7 @@ exports[`Wallets should load more wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -455,7 +455,7 @@ exports[`Wallets should load more wallets 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -466,7 +466,7 @@ exports[`Wallets should load more wallets 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D5sRKWckH…yC3cvJtwb
@@ -476,7 +476,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -485,7 +485,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -496,7 +496,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -512,7 +512,7 @@ exports[`Wallets should load more wallets 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -552,7 +552,7 @@ exports[`Wallets should load more wallets 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             AdVSe37ni…HF4LpLoiX
@@ -562,7 +562,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -571,7 +571,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -582,7 +582,7 @@ exports[`Wallets should load more wallets 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -606,7 +606,7 @@ exports[`Wallets should load more wallets 1`] = `
 exports[`Wallets should open and close ledger import modal 1`] = `
 <DocumentFragment>
   <div
-    class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+    class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
   >
     <div
       class="container py-16 px-14 mx-auto "
@@ -794,7 +794,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
             data-testid="WalletTable"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -807,7 +807,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -815,16 +815,16 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Wallet Address
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -837,13 +837,13 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Wallet Type
@@ -851,7 +851,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -859,16 +859,16 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Balance
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -881,7 +881,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -889,16 +889,16 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Fiat Value
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -921,7 +921,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -961,7 +961,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -972,7 +972,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6…VBMs6YUYD
@@ -982,7 +982,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -991,7 +991,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -1002,7 +1002,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -1018,7 +1018,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -1058,7 +1058,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -1069,7 +1069,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D5sRKWckH…yC3cvJtwb
@@ -1079,7 +1079,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -1088,7 +1088,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -1099,7 +1099,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -1115,7 +1115,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -1155,7 +1155,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             AdVSe37ni…HF4LpLoiX
@@ -1165,7 +1165,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -1174,7 +1174,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -1185,7 +1185,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -1209,14 +1209,14 @@ exports[`Wallets should open and close ledger import modal 1`] = `
           data-testid="modal__overlay"
         />
         <div
-          class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+          class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
           data-testid="modal__inner"
         >
           <div
             class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
           >
             <button
-              class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+              class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
               data-testid="modal__close-btn"
               type="button"
             >
@@ -1472,7 +1472,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
           data-testid="WalletsList"
         >
           <div
-            class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 p-6 rounded-lg text-theme-secondary-text undefined"
+            class="p-6 rounded-lg border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-text undefined"
             data-testid="EmptyBlock"
           >
             <div>
@@ -1690,11 +1690,11 @@ exports[`Wallets should render grid 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -1766,11 +1766,11 @@ exports[`Wallets should render grid 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -1842,11 +1842,11 @@ exports[`Wallets should render grid 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -2139,7 +2139,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                           class="flex items-center mr-4 -space-x-1"
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-transparent"
+                            class="border-transparent Circle-uw7h4j-0 JkqUV"
                           >
                             <span>
                               <span
@@ -2156,127 +2156,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                             </span>
                           </div>
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-transparent"
-                          >
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 44px; height: 44px; border-radius: 50%;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                        <span>
-                          <span
-                            class="flex items-center leading-none"
-                          >
-                            <span
-                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                              style="width: 1px; height: 16px;"
-                            >
-                              ‌
-                            </span>
-                            ‌
-                          </span>
-                        </span>
-                      </div>
-                      <div
-                        class="flex items-center mt-4 space-x-1 h-7"
-                      >
-                        <span>
-                          <span
-                            class="flex items-center leading-none"
-                          >
-                            <span
-                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                              style="width: 1px; height: 18px;"
-                            >
-                              ‌
-                            </span>
-                            ‌
-                          </span>
-                        </span>
-                        <span>
-                          <span
-                            class="flex items-center leading-none"
-                          >
-                            <span
-                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                              style="width: 35px; height: 18px;"
-                            >
-                              ‌
-                            </span>
-                            ‌
-                          </span>
-                        </span>
-                      </div>
-                      <span
-                        class="flex items-center mt-1 h-4"
-                      >
-                        <span>
-                          <span
-                            class="flex items-center leading-none"
-                          >
-                            <span
-                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                              style="width: 1px; height: 12px;"
-                            >
-                              ‌
-                            </span>
-                            ‌
-                          </span>
-                        </span>
-                      </span>
-                    </div>
-                    <div
-                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 192px; margin-top: 0px;"
-                >
-                  <div
-                    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
-                    data-testid="Card"
-                  >
-                    <div
-                      class="flex relative flex-col justify-between p-4 h-full"
-                      data-testid="WalletCard__skeleton"
-                    >
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="flex items-center mr-4 -space-x-1"
-                        >
-                          <div
-                            class="Circle-uw7h4j-0 JkqUV border-transparent"
-                          >
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 44px; height: 44px; border-radius: 50%;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                          </div>
-                          <div
-                            class="Circle-uw7h4j-0 JkqUV border-transparent"
+                            class="border-transparent Circle-uw7h4j-0 JkqUV"
                           >
                             <span>
                               <span
@@ -2379,7 +2259,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                           class="flex items-center mr-4 -space-x-1"
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-transparent"
+                            class="border-transparent Circle-uw7h4j-0 JkqUV"
                           >
                             <span>
                               <span
@@ -2396,7 +2276,127 @@ exports[`Wallets should render grid in loading state 1`] = `
                             </span>
                           </div>
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-transparent"
+                            class="border-transparent Circle-uw7h4j-0 JkqUV"
+                          >
+                            <span>
+                              <span
+                                class="flex items-center leading-none"
+                              >
+                                <span
+                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                  style="width: 44px; height: 44px; border-radius: 50%;"
+                                >
+                                  ‌
+                                </span>
+                                ‌
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <span>
+                          <span
+                            class="flex items-center leading-none"
+                          >
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 1px; height: 16px;"
+                            >
+                              ‌
+                            </span>
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                      <div
+                        class="flex items-center mt-4 space-x-1 h-7"
+                      >
+                        <span>
+                          <span
+                            class="flex items-center leading-none"
+                          >
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 1px; height: 18px;"
+                            >
+                              ‌
+                            </span>
+                            ‌
+                          </span>
+                        </span>
+                        <span>
+                          <span
+                            class="flex items-center leading-none"
+                          >
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 35px; height: 18px;"
+                            >
+                              ‌
+                            </span>
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                      <span
+                        class="flex items-center mt-1 h-4"
+                      >
+                        <span>
+                          <span
+                            class="flex items-center leading-none"
+                          >
+                            <span
+                              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                              style="width: 1px; height: 12px;"
+                            >
+                              ‌
+                            </span>
+                            ‌
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                    <div
+                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 192px; margin-top: 0px;"
+                >
+                  <div
+                    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
+                    data-testid="Card"
+                  >
+                    <div
+                      class="flex relative flex-col justify-between p-4 h-full"
+                      data-testid="WalletCard__skeleton"
+                    >
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="flex items-center mr-4 -space-x-1"
+                        >
+                          <div
+                            class="border-transparent Circle-uw7h4j-0 JkqUV"
+                          >
+                            <span>
+                              <span
+                                class="flex items-center leading-none"
+                              >
+                                <span
+                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                  style="width: 44px; height: 44px; border-radius: 50%;"
+                                >
+                                  ‌
+                                </span>
+                                ‌
+                              </span>
+                            </span>
+                          </div>
+                          <div
+                            class="border-transparent Circle-uw7h4j-0 JkqUV"
                           >
                             <span>
                               <span
@@ -2681,7 +2681,7 @@ exports[`Wallets should render list 1`] = `
             data-testid="WalletTable"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
               role="table"
             >
               <table
@@ -2694,7 +2694,7 @@ exports[`Wallets should render list 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -2702,16 +2702,16 @@ exports[`Wallets should render list 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex align-top flex-inline "
                       >
                         <div>
                           Wallet Address
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -2724,13 +2724,13 @@ exports[`Wallets should render list 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex justify-center align-top flex-inline "
                       >
                         <div>
                           Wallet Type
@@ -2738,7 +2738,7 @@ exports[`Wallets should render list 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -2746,16 +2746,16 @@ exports[`Wallets should render list 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Balance
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -2768,7 +2768,7 @@ exports[`Wallets should render list 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -2776,16 +2776,16 @@ exports[`Wallets should render list 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                        class="flex flex-row-reverse justify-end align-top flex-inline"
                       >
                         <div>
                           Fiat Value
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                             height="5"
                             role="img"
                             width="8"
@@ -2808,7 +2808,7 @@ exports[`Wallets should render list 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -2848,7 +2848,7 @@ exports[`Wallets should render list 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -2859,7 +2859,7 @@ exports[`Wallets should render list 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6…VBMs6YUYD
@@ -2869,7 +2869,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -2878,7 +2878,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -2889,7 +2889,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -2905,7 +2905,7 @@ exports[`Wallets should render list 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -2945,7 +2945,7 @@ exports[`Wallets should render list 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -2956,7 +2956,7 @@ exports[`Wallets should render list 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D5sRKWckH…yC3cvJtwb
@@ -2966,7 +2966,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -2975,7 +2975,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -2986,7 +2986,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -3002,7 +3002,7 @@ exports[`Wallets should render list 1`] = `
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
+                        class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims"
                       >
                         <div
                           class="-space-x-2"
@@ -3042,7 +3042,7 @@ exports[`Wallets should render list 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             AdVSe37ni…HF4LpLoiX
@@ -3052,7 +3052,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center text-sm font-bold text-center align-middle"
+                        class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
                           class="inline-flex items-center space-x-1"
@@ -3061,7 +3061,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm font-semibold justify-end"
+                        class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <span
                           data-testid="Amount"
@@ -3072,7 +3072,7 @@ exports[`Wallets should render list 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end text-theme-secondary-400"
+                        class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM text-theme-secondary-400"
                       >
                         <span
                           data-testid="Amount"
@@ -3297,11 +3297,11 @@ exports[`Wallets should render without testnet wallets 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -3371,11 +3371,11 @@ exports[`Wallets should render without testnet wallets 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__blank"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
                       data-testid="Card"
                     >
                       <div
@@ -3413,11 +3413,11 @@ exports[`Wallets should render without testnet wallets 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__blank"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
                       data-testid="Card"
                     >
                       <div
@@ -3664,11 +3664,11 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -3740,11 +3740,11 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -3816,11 +3816,11 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                   style="height: 192px; margin-top: 0px;"
                 >
                   <div
-                    class="w-64 inline-block w-full"
+                    class="inline-block w-64 w-full"
                     data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-48"
+                      class="h-48 Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div

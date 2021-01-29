@@ -10,7 +10,7 @@ exports[`Notifications should render notification item 1`] = `
       >
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-3"
+            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
               class="flex items-center -space-x-1"
@@ -49,7 +49,7 @@ exports[`Notifications should render notification item 1`] = `
               class="inline-flex items-center no-ligatures"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                 data-testid="address__wallet-address"
               >
                 D8rr7B…s6YUYD
@@ -59,10 +59,10 @@ exports[`Notifications should render notification item 1`] = `
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
           >
             <div
-              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
               color="success"
               data-testid="TransactionRowAmount"
             >

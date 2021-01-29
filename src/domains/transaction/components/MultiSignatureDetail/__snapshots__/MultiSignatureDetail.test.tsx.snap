@@ -10,14 +10,14 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -85,7 +85,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -96,7 +96,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -142,7 +142,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -338,7 +338,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -385,7 +385,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -441,14 +441,14 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -516,7 +516,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -527,7 +527,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -573,7 +573,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -769,7 +769,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -816,7 +816,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -857,14 +857,14 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -932,7 +932,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -943,7 +943,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -1132,7 +1132,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1179,7 +1179,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1220,14 +1220,14 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1295,7 +1295,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -1306,7 +1306,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -1355,7 +1355,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                             class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
                           >
                             <div
-                              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                              class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                               role="table"
                             >
                               <table
@@ -1368,13 +1368,13 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                     role="row"
                                   >
                                     <th
-                                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                                       colspan="1"
                                       data-testid="table__th--0"
                                       role="columnheader"
                                     >
                                       <div
-                                        class="flex flex-inline align-top hidden "
+                                        class="flex hidden align-top flex-inline "
                                       >
                                         <div>
                                           Avatar
@@ -1382,13 +1382,13 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                       </div>
                                     </th>
                                     <th
-                                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                                       colspan="1"
                                       data-testid="table__th--1"
                                       role="columnheader"
                                     >
                                       <div
-                                        class="flex flex-inline align-top hidden "
+                                        class="flex hidden align-top flex-inline "
                                       >
                                         <div>
                                           Address
@@ -1396,13 +1396,13 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                       </div>
                                     </th>
                                     <th
-                                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                                      class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
                                       colspan="1"
                                       data-testid="table__th--2"
                                       role="columnheader"
                                     >
                                       <div
-                                        class="flex flex-inline align-top hidden "
+                                        class="flex hidden align-top flex-inline "
                                       >
                                         <div>
                                           Amount
@@ -1446,7 +1446,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                           class="inline-flex items-center no-ligatures"
                                         >
                                           <span
-                                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                             data-testid="address__wallet-address"
                                           >
                                             D8rr7B…s6YUYD
@@ -1501,7 +1501,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                           class="inline-flex items-center no-ligatures"
                                         >
                                           <span
-                                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                                             data-testid="address__wallet-address"
                                           >
                                             D8rr7B…s6YUYD
@@ -1705,7 +1705,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1752,7 +1752,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1793,14 +1793,14 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1868,7 +1868,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -1879,7 +1879,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B…s6YUYD
@@ -2038,7 +2038,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2085,7 +2085,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2126,14 +2126,14 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -2201,7 +2201,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -2212,7 +2212,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -2258,7 +2258,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2454,7 +2454,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2501,7 +2501,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2542,14 +2542,14 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -2617,7 +2617,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -2628,7 +2628,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -2729,7 +2729,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                 class="inline-flex items-center no-ligatures"
                               >
                                 <span
-                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   <span
@@ -2740,7 +2740,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                   </span>
                                 </span>
                                 <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                  class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                   data-testid="address__wallet-address"
                                 >
                                   D61mfS…J3Dyib
@@ -2884,7 +2884,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2931,7 +2931,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2972,14 +2972,14 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -3047,7 +3047,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -3058,7 +3058,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -3159,7 +3159,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                 class="inline-flex items-center no-ligatures"
                               >
                                 <span
-                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                   data-testid="address__wallet-name"
                                 >
                                   <span
@@ -3170,7 +3170,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                   </span>
                                 </span>
                                 <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                  class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                   data-testid="address__wallet-address"
                                 >
                                   D61mfS…J3Dyib
@@ -3314,7 +3314,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3361,7 +3361,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3402,14 +3402,14 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -3477,7 +3477,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -3488,7 +3488,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -3534,7 +3534,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -3730,7 +3730,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3777,7 +3777,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3844,14 +3844,14 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -3919,7 +3919,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                             data-testid="address__wallet-name"
                           >
                             <span
@@ -3930,7 +3930,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                             data-testid="address__wallet-address"
                           >
                             DNzn2R…GwaMbH
@@ -3976,7 +3976,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                           class="inline-flex items-center no-ligatures"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -4172,7 +4172,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4219,7 +4219,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4275,14 +4275,14 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -4385,7 +4385,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4432,7 +4432,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hQGDyr bg-theme-background bg-theme-success-200 text-theme-success-500"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div

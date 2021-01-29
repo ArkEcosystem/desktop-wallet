@@ -96,7 +96,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -104,7 +104,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -143,7 +143,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -173,7 +173,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -255,10 +255,10 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -277,7 +277,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -340,7 +340,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -418,7 +418,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
@@ -434,7 +434,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                   </span>
                                 </span>
                                 <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                                  class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                                   data-testid="Link__external"
                                   height="1em"
                                   width="1em"
@@ -520,7 +520,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 <span
@@ -531,7 +531,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B…s6YUYD
@@ -645,7 +645,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                     class="inline-flex items-center no-ligatures"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                      class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       <span
@@ -656,7 +656,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS…J3Dyib
@@ -710,7 +710,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                     class="inline-flex items-center no-ligatures"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                      class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       <span
@@ -721,7 +721,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                       data-testid="address__wallet-address"
                                     >
                                       D5L5zX…d6iWVr
@@ -874,7 +874,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -882,7 +882,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -921,7 +921,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -951,7 +951,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -1033,10 +1033,10 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -1055,7 +1055,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1118,7 +1118,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1196,7 +1196,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf"
@@ -1212,7 +1212,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                   </span>
                                 </span>
                                 <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                                  class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                                   data-testid="Link__external"
                                   height="1em"
                                   width="1em"
@@ -1298,7 +1298,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 <span
@@ -1309,7 +1309,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B…s6YUYD
@@ -1423,7 +1423,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                     class="inline-flex items-center no-ligatures"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                      class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       <span
@@ -1434,7 +1434,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                       data-testid="address__wallet-address"
                                     >
                                       D5L5zX…d6iWVr
@@ -1587,7 +1587,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1595,7 +1595,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -1634,7 +1634,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -1664,7 +1664,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -1746,10 +1746,10 @@ exports[`SendVote should send a vote transaction 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -1768,7 +1768,7 @@ exports[`SendVote should send a vote transaction 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1831,7 +1831,7 @@ exports[`SendVote should send a vote transaction 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1909,7 +1909,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
@@ -1925,7 +1925,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                   </span>
                                 </span>
                                 <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                                  class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                                   data-testid="Link__external"
                                   height="1em"
                                   width="1em"
@@ -2011,7 +2011,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 <span
@@ -2022,7 +2022,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B…s6YUYD
@@ -2136,7 +2136,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                     class="inline-flex items-center no-ligatures"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                      class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       <span
@@ -2147,7 +2147,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS…J3Dyib
@@ -2300,7 +2300,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2308,7 +2308,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -2347,7 +2347,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -2377,7 +2377,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -2459,10 +2459,10 @@ exports[`SendVote should send a vote transaction 2`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -2481,7 +2481,7 @@ exports[`SendVote should send a vote transaction 2`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2544,7 +2544,7 @@ exports[`SendVote should send a vote transaction 2`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2622,7 +2622,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
@@ -2638,7 +2638,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                                   </span>
                                 </span>
                                 <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                                  class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                                   data-testid="Link__external"
                                   height="1em"
                                   width="1em"
@@ -2724,7 +2724,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                               class="inline-flex items-center no-ligatures"
                             >
                               <span
-                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                 data-testid="address__wallet-name"
                               >
                                 <span
@@ -2735,7 +2735,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                 data-testid="address__wallet-address"
                               >
                                 D8rr7B…s6YUYD
@@ -2849,7 +2849,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                                     class="inline-flex items-center no-ligatures"
                                   >
                                     <span
-                                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                      class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                                       data-testid="address__wallet-name"
                                     >
                                       <span
@@ -2860,7 +2860,7 @@ exports[`SendVote should send a vote transaction 2`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                                       data-testid="address__wallet-address"
                                     >
                                       D61mfS…J3Dyib
@@ -3013,7 +3013,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3021,7 +3021,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -3060,7 +3060,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -3090,7 +3090,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -3172,10 +3172,10 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -3194,7 +3194,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3257,7 +3257,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3312,7 +3312,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3331,13 +3331,13 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3502,7 +3502,7 @@ exports[`SendVote should show error step and go back 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3510,7 +3510,7 @@ exports[`SendVote should show error step and go back 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -3549,7 +3549,7 @@ exports[`SendVote should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -3579,7 +3579,7 @@ exports[`SendVote should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -3661,10 +3661,10 @@ exports[`SendVote should show error step and go back 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -3683,7 +3683,7 @@ exports[`SendVote should show error step and go back 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3746,7 +3746,7 @@ exports[`SendVote should show error step and go back 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3815,7 +3815,7 @@ exports[`SendVote should show error step and go back 1`] = `
                         </div>
                       </button>
                       <button
-                        class="Button__StyledButton-mdtvtf-0 ePkfgQ space-x-2"
+                        class="space-x-2 Button__StyledButton-mdtvtf-0 ePkfgQ"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >

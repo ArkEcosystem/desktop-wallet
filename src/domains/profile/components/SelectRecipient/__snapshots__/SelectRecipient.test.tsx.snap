@@ -11,11 +11,11 @@ exports[`SelectRecipient should render disabled 1`] = `
         class="absolute left-1"
       >
         <div
-          class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+          class="mx-3 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
         />
       </div>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+        class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
         data-testid="SelectRecipient__input"
         disabled=""
         type="text"
@@ -51,11 +51,11 @@ exports[`SelectRecipient should render empty 1`] = `
         class="absolute left-1"
       >
         <div
-          class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+          class="mx-3 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
         />
       </div>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+        class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
         data-testid="SelectRecipient__input"
         type="text"
         value=""
@@ -90,12 +90,12 @@ exports[`SelectRecipient should render invalid 1`] = `
         class="absolute left-1"
       >
         <div
-          class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+          class="mx-3 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
         />
       </div>
       <input
         aria-invalid="true"
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+        class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
         data-testid="SelectRecipient__input"
         type="text"
         value=""
@@ -130,7 +130,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
         class="absolute left-1"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+          class="mx-3 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
           data-testid="Avatar"
         >
           <div
@@ -145,7 +145,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
         </div>
       </div>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+        class="overflow-hidden py-3 px-4 pr-11 pl-14 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
         data-testid="SelectRecipient__input"
         type="text"
         value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"

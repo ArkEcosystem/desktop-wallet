@@ -6,7 +6,7 @@ exports[`RecipientList should render condensed variant 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -19,13 +19,13 @@ exports[`RecipientList should render condensed variant 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Avatar
@@ -33,13 +33,13 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Address
@@ -47,13 +47,13 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Amount
@@ -61,13 +61,13 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Action
@@ -111,7 +111,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -122,7 +122,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -177,7 +177,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -188,7 +188,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -243,7 +243,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -254,7 +254,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -309,7 +309,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJK…SJKDFJ
@@ -345,7 +345,7 @@ exports[`RecipientList should render editable 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -358,13 +358,13 @@ exports[`RecipientList should render editable 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Avatar
@@ -372,13 +372,13 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Address
@@ -386,13 +386,13 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Amount
@@ -400,13 +400,13 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Action
@@ -459,7 +459,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -470,7 +470,7 @@ exports[`RecipientList should render editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -567,7 +567,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -578,7 +578,7 @@ exports[`RecipientList should render editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -675,7 +675,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -686,7 +686,7 @@ exports[`RecipientList should render editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -783,7 +783,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJK…SJKDFJ
@@ -852,7 +852,7 @@ exports[`RecipientList should render non-editable 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -865,13 +865,13 @@ exports[`RecipientList should render non-editable 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Avatar
@@ -879,13 +879,13 @@ exports[`RecipientList should render non-editable 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Address
@@ -893,13 +893,13 @@ exports[`RecipientList should render non-editable 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Amount
@@ -952,7 +952,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -963,7 +963,7 @@ exports[`RecipientList should render non-editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1033,7 +1033,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1044,7 +1044,7 @@ exports[`RecipientList should render non-editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1114,7 +1114,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1125,7 +1125,7 @@ exports[`RecipientList should render non-editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1195,7 +1195,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJK…SJKDFJ
@@ -1237,7 +1237,7 @@ exports[`RecipientList should render without amount column 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1250,13 +1250,13 @@ exports[`RecipientList should render without amount column 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Avatar
@@ -1264,13 +1264,13 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Address
@@ -1278,13 +1278,13 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 first:pl-0 last:pr-0 hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden "
+                class="flex hidden align-top flex-inline "
               >
                 <div>
                   Action
@@ -1337,7 +1337,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1348,7 +1348,7 @@ exports[`RecipientList should render without amount column 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1425,7 +1425,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1436,7 +1436,7 @@ exports[`RecipientList should render without amount column 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1513,7 +1513,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1524,7 +1524,7 @@ exports[`RecipientList should render without amount column 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1601,7 +1601,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
                     data-testid="address__wallet-address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ

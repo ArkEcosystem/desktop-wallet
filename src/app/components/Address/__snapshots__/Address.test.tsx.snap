@@ -14,7 +14,7 @@ exports[`Formatted Address should render address only 1`] = `
     class="inline-flex items-center no-ligatures"
   >
     <span
-      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
       data-testid="address__wallet-address"
     >
       ASuusX…GQ3kqT
@@ -29,7 +29,7 @@ exports[`Formatted Address should render with normal font 1`] = `
     class="inline-flex items-center no-ligatures"
   >
     <span
-      class="max-w-24 flex-auto truncate mr-2 font-normal text-base text-theme-text"
+      class="flex-auto mr-2 text-base font-normal max-w-24 truncate text-theme-text"
       data-testid="address__wallet-name"
     >
       <span
@@ -40,7 +40,7 @@ exports[`Formatted Address should render with normal font 1`] = `
       </span>
     </span>
     <span
-      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-normal text-base"
+      class="text-base font-normal TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
       data-testid="address__wallet-address"
     >
       ASuusX…GQ3kqT
@@ -55,7 +55,7 @@ exports[`Formatted Address should render with wallet name 1`] = `
     class="inline-flex items-center no-ligatures"
   >
     <span
-      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+      class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
       data-testid="address__wallet-name"
     >
       <span
@@ -66,7 +66,7 @@ exports[`Formatted Address should render with wallet name 1`] = `
       </span>
     </span>
     <span
-      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+      class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
       data-testid="address__wallet-address"
     >
       ASuusX…GQ3kqT

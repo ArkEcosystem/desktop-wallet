@@ -90,7 +90,7 @@ exports[`Settings should change a password 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -98,7 +98,7 @@ exports[`Settings should change a password 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -131,7 +131,7 @@ exports[`Settings should change a password 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -162,7 +162,7 @@ exports[`Settings should change a password 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -244,10 +244,10 @@ exports[`Settings should change a password 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -266,7 +266,7 @@ exports[`Settings should change a password 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -328,7 +328,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -355,7 +355,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -382,7 +382,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -409,7 +409,7 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -473,7 +473,7 @@ exports[`Settings should change a password 1`] = `
                     id="password-settings__form"
                   >
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -491,13 +491,13 @@ exports[`Settings should change a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--currentPassword"
                           name="currentPassword"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -518,7 +518,7 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -536,13 +536,13 @@ exports[`Settings should change a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -563,7 +563,7 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -581,13 +581,13 @@ exports[`Settings should change a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -725,7 +725,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -733,7 +733,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -772,7 +772,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -802,7 +802,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -884,10 +884,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -906,7 +906,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -968,7 +968,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -998,7 +998,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1025,7 +1025,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1052,7 +1052,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1115,7 +1115,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
@@ -1149,7 +1149,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -1170,7 +1170,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         class="flex flex-col w-2/4"
                       >
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1185,7 +1185,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           </label>
                           <input
                             aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                            class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
@@ -1198,7 +1198,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           </p>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1215,7 +1215,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="passphraseLanguage"
                               readonly=""
@@ -1240,7 +1240,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     English
@@ -1250,7 +1250,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-381-menu"
                                     aria-labelledby="downshift-381-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-380-input"
                                     name="passphraseLanguage"
@@ -1266,10 +1266,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -1282,7 +1282,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1299,7 +1299,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -1324,7 +1324,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     BTC (Ƀ)
@@ -1334,7 +1334,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-383-menu"
                                     aria-labelledby="downshift-383-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-382-input"
                                     name="currency"
@@ -1350,10 +1350,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -1370,7 +1370,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         class="flex flex-col w-2/4 ml-5"
                       >
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1387,7 +1387,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -1412,7 +1412,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     English
@@ -1422,7 +1422,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-385-menu"
                                     aria-labelledby="downshift-385-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-384-input"
                                     name="language"
@@ -1438,10 +1438,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -1454,7 +1454,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1471,7 +1471,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="marketProvider"
                               readonly=""
@@ -1496,7 +1496,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     CryptoCompare
@@ -1506,7 +1506,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-387-menu"
                                     aria-labelledby="downshift-387-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-386-input"
                                     name="marketProvider"
@@ -1522,10 +1522,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -1538,7 +1538,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1555,7 +1555,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="timeFormat"
                               readonly=""
@@ -1580,7 +1580,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     12h
@@ -1590,7 +1590,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     aria-controls="downshift-389-menu"
                                     aria-labelledby="downshift-389-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-388-input"
                                     name="timeFormat"
@@ -1606,10 +1606,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -1635,7 +1635,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       data-testid="list-divided__items"
                     >
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col pb-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -1685,7 +1685,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
+                        class="flex flex-col py-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -1734,7 +1734,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pt-8"
+                        class="flex flex-col pt-8 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -1758,7 +1758,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           data-testid="list-divided-item__content"
                         >
                           <fieldset
-                            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                           >
                             <label
                               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1775,7 +1775,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                 data-testid="select-list__input"
                                 name="automaticSignOutPeriod"
                                 readonly=""
@@ -1800,7 +1800,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     data-testid="SelectDropdownInput"
                                   >
                                     <span
-                                      class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                      class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                       data-testid="SelectDropdownInput__typeahead"
                                     >
                                       1 minute
@@ -1810,7 +1810,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                       aria-controls="downshift-391-menu"
                                       aria-labelledby="downshift-391-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                      class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-390-input"
                                       name="automaticSignOutPeriod"
@@ -1826,10 +1826,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   />
                                 </div>
                                 <div
-                                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                  class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    class="transition-transform sc-bdfBwQ gLRWTb "
                                     height="5"
                                     width="7"
                                   >
@@ -1856,7 +1856,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       data-testid="list-divided__items"
                     >
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col pb-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -1906,7 +1906,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
+                        class="flex flex-col py-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -1956,7 +1956,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pt-6"
+                        class="flex flex-col pt-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -2158,7 +2158,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2166,7 +2166,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -2199,7 +2199,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -2230,7 +2230,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -2312,10 +2312,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -2334,7 +2334,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2396,7 +2396,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2423,7 +2423,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2450,7 +2450,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -2480,7 +2480,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2542,11 +2542,11 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     data-testid="list-divided__items"
                   >
                     <li
-                      class="flex flex-col w-full pb-6"
+                      class="flex flex-col pb-6 w-full"
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -2620,11 +2620,11 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                       </div>
                     </li>
                     <li
-                      class="flex flex-col w-full pt-6"
+                      class="flex flex-col pt-6 w-full"
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -2673,7 +2673,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="pt-6"
                         >
                           <fieldset
-                            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                           >
                             <label
                               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2690,7 +2690,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                 data-testid="select-list__input"
                                 name="load-plugins"
                                 readonly=""
@@ -2719,7 +2719,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                       aria-controls="downshift-1399-menu"
                                       aria-labelledby="downshift-1399-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                      class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-1398-input"
                                       name="load-plugins"
@@ -2735,10 +2735,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   />
                                 </div>
                                 <div
-                                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                  class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    class="transition-transform sc-bdfBwQ gLRWTb "
                                     height="5"
                                     width="7"
                                   >
@@ -2874,7 +2874,7 @@ exports[`Settings should render 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2882,7 +2882,7 @@ exports[`Settings should render 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -2921,7 +2921,7 @@ exports[`Settings should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -2951,7 +2951,7 @@ exports[`Settings should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -3033,10 +3033,10 @@ exports[`Settings should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -3055,7 +3055,7 @@ exports[`Settings should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3117,7 +3117,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -3147,7 +3147,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3174,7 +3174,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3201,7 +3201,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3264,7 +3264,7 @@ exports[`Settings should render 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
@@ -3298,7 +3298,7 @@ exports[`Settings should render 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -3319,7 +3319,7 @@ exports[`Settings should render 1`] = `
                         class="flex flex-col w-2/4"
                       >
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3333,7 +3333,7 @@ exports[`Settings should render 1`] = `
                             />
                           </label>
                           <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                            class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
@@ -3341,7 +3341,7 @@ exports[`Settings should render 1`] = `
                           />
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3358,7 +3358,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="passphraseLanguage"
                               readonly=""
@@ -3383,7 +3383,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     English
@@ -3393,7 +3393,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-1-menu"
                                     aria-labelledby="downshift-1-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-0-input"
                                     name="passphraseLanguage"
@@ -3409,10 +3409,10 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -3425,7 +3425,7 @@ exports[`Settings should render 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3442,7 +3442,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -3467,7 +3467,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     BTC (Ƀ)
@@ -3477,7 +3477,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-3-menu"
                                     aria-labelledby="downshift-3-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-2-input"
                                     name="currency"
@@ -3493,10 +3493,10 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -3513,7 +3513,7 @@ exports[`Settings should render 1`] = `
                         class="flex flex-col w-2/4 ml-5"
                       >
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3530,7 +3530,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -3555,7 +3555,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     English
@@ -3565,7 +3565,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-5-menu"
                                     aria-labelledby="downshift-5-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-4-input"
                                     name="language"
@@ -3581,10 +3581,10 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -3597,7 +3597,7 @@ exports[`Settings should render 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3614,7 +3614,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="marketProvider"
                               readonly=""
@@ -3639,7 +3639,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     CryptoCompare
@@ -3649,7 +3649,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-7-menu"
                                     aria-labelledby="downshift-7-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-6-input"
                                     name="marketProvider"
@@ -3665,10 +3665,10 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -3681,7 +3681,7 @@ exports[`Settings should render 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3698,7 +3698,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="timeFormat"
                               readonly=""
@@ -3723,7 +3723,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     12h
@@ -3733,7 +3733,7 @@ exports[`Settings should render 1`] = `
                                     aria-controls="downshift-9-menu"
                                     aria-labelledby="downshift-9-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-8-input"
                                     name="timeFormat"
@@ -3749,10 +3749,10 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -3778,7 +3778,7 @@ exports[`Settings should render 1`] = `
                       data-testid="list-divided__items"
                     >
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col pb-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -3827,7 +3827,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
+                        class="flex flex-col py-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -3876,7 +3876,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pt-8"
+                        class="flex flex-col pt-8 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -3900,7 +3900,7 @@ exports[`Settings should render 1`] = `
                           data-testid="list-divided-item__content"
                         >
                           <fieldset
-                            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                           >
                             <label
                               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3917,7 +3917,7 @@ exports[`Settings should render 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                 data-testid="select-list__input"
                                 name="automaticSignOutPeriod"
                                 readonly=""
@@ -3942,7 +3942,7 @@ exports[`Settings should render 1`] = `
                                     data-testid="SelectDropdownInput"
                                   >
                                     <span
-                                      class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                      class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                       data-testid="SelectDropdownInput__typeahead"
                                     >
                                       1 minute
@@ -3952,7 +3952,7 @@ exports[`Settings should render 1`] = `
                                       aria-controls="downshift-11-menu"
                                       aria-labelledby="downshift-11-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                      class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-10-input"
                                       name="automaticSignOutPeriod"
@@ -3968,10 +3968,10 @@ exports[`Settings should render 1`] = `
                                   />
                                 </div>
                                 <div
-                                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                  class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    class="transition-transform sc-bdfBwQ gLRWTb "
                                     height="5"
                                     width="7"
                                   >
@@ -3998,7 +3998,7 @@ exports[`Settings should render 1`] = `
                       data-testid="list-divided__items"
                     >
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col pb-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -4048,7 +4048,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
+                        class="flex flex-col py-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -4097,7 +4097,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pt-6"
+                        class="flex flex-col pt-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -4298,7 +4298,7 @@ exports[`Settings should render password settings 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4306,7 +4306,7 @@ exports[`Settings should render password settings 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -4339,7 +4339,7 @@ exports[`Settings should render password settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -4370,7 +4370,7 @@ exports[`Settings should render password settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -4452,10 +4452,10 @@ exports[`Settings should render password settings 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -4474,7 +4474,7 @@ exports[`Settings should render password settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4536,7 +4536,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4563,7 +4563,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4590,7 +4590,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4617,7 +4617,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -4681,7 +4681,7 @@ exports[`Settings should render password settings 1`] = `
                     id="password-settings__form"
                   >
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -4699,13 +4699,13 @@ exports[`Settings should render password settings 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4726,7 +4726,7 @@ exports[`Settings should render password settings 1`] = `
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -4744,13 +4744,13 @@ exports[`Settings should render password settings 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4888,7 +4888,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4896,7 +4896,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -4929,7 +4929,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -4960,7 +4960,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -5042,10 +5042,10 @@ exports[`Settings should render peer settings 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -5064,7 +5064,7 @@ exports[`Settings should render peer settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5126,7 +5126,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5153,7 +5153,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -5183,7 +5183,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5210,7 +5210,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5272,11 +5272,11 @@ exports[`Settings should render peer settings 1`] = `
                     data-testid="list-divided__items"
                   >
                     <li
-                      class="flex flex-col w-full pb-6"
+                      class="flex flex-col pb-6 w-full"
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -5323,11 +5323,11 @@ exports[`Settings should render peer settings 1`] = `
                       </div>
                     </li>
                     <li
-                      class="flex flex-col w-full pt-6"
+                      class="flex flex-col pt-6 w-full"
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -5498,7 +5498,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5506,7 +5506,7 @@ exports[`Settings should render plugin settings 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -5539,7 +5539,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -5570,7 +5570,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -5652,10 +5652,10 @@ exports[`Settings should render plugin settings 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -5674,7 +5674,7 @@ exports[`Settings should render plugin settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5736,7 +5736,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5763,7 +5763,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5790,7 +5790,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -5820,7 +5820,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5882,11 +5882,11 @@ exports[`Settings should render plugin settings 1`] = `
                     data-testid="list-divided__items"
                   >
                     <li
-                      class="flex flex-col w-full pb-6"
+                      class="flex flex-col pb-6 w-full"
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -5960,11 +5960,11 @@ exports[`Settings should render plugin settings 1`] = `
                       </div>
                     </li>
                     <li
-                      class="flex flex-col w-full pt-6"
+                      class="flex flex-col pt-6 w-full"
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -6013,7 +6013,7 @@ exports[`Settings should render plugin settings 1`] = `
                           class="pt-6"
                         >
                           <fieldset
-                            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                           >
                             <label
                               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -6030,7 +6030,7 @@ exports[`Settings should render plugin settings 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                 data-testid="select-list__input"
                                 name="load-plugins"
                                 readonly=""
@@ -6059,7 +6059,7 @@ exports[`Settings should render plugin settings 1`] = `
                                       aria-controls="downshift-1287-menu"
                                       aria-labelledby="downshift-1287-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                      class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-1286-input"
                                       name="load-plugins"
@@ -6075,10 +6075,10 @@ exports[`Settings should render plugin settings 1`] = `
                                   />
                                 </div>
                                 <div
-                                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                  class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    class="transition-transform sc-bdfBwQ gLRWTb "
                                     height="5"
                                     width="7"
                                   >
@@ -6214,7 +6214,7 @@ exports[`Settings should set a password 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6222,7 +6222,7 @@ exports[`Settings should set a password 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -6255,7 +6255,7 @@ exports[`Settings should set a password 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -6286,7 +6286,7 @@ exports[`Settings should set a password 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -6368,10 +6368,10 @@ exports[`Settings should set a password 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -6390,7 +6390,7 @@ exports[`Settings should set a password 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6452,7 +6452,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6479,7 +6479,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6506,7 +6506,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6533,7 +6533,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -6597,7 +6597,7 @@ exports[`Settings should set a password 1`] = `
                     id="password-settings__form"
                   >
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -6615,13 +6615,13 @@ exports[`Settings should set a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--currentPassword"
                           name="currentPassword"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6642,7 +6642,7 @@ exports[`Settings should set a password 1`] = `
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -6660,13 +6660,13 @@ exports[`Settings should set a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6687,7 +6687,7 @@ exports[`Settings should set a password 1`] = `
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -6705,13 +6705,13 @@ exports[`Settings should set a password 1`] = `
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6849,7 +6849,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6857,7 +6857,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -6890,7 +6890,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -6921,7 +6921,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -7003,10 +7003,10 @@ exports[`Settings should show an error toast if the current password does not ma
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -7025,7 +7025,7 @@ exports[`Settings should show an error toast if the current password does not ma
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -7087,7 +7087,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7114,7 +7114,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7141,7 +7141,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7168,7 +7168,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -7232,7 +7232,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     id="password-settings__form"
                   >
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -7250,13 +7250,13 @@ exports[`Settings should show an error toast if the current password does not ma
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--currentPassword"
                           name="currentPassword"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7277,7 +7277,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -7295,13 +7295,13 @@ exports[`Settings should show an error toast if the current password does not ma
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_1"
                           name="password_1"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7322,7 +7322,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       </div>
                     </fieldset>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -7340,13 +7340,13 @@ exports[`Settings should show an error toast if the current password does not ma
                         data-testid="InputPassword"
                       >
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                           data-testid="Password-settings__input--password_2"
                           name="password_2"
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7483,7 +7483,7 @@ exports[`Settings should update profile 1`] = `
                     class="rounded-lg"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="w-12 h-12 Button__StyledButton-mdtvtf-0 fHYGyx group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7491,7 +7491,7 @@ exports[`Settings should update profile 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -7530,7 +7530,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
+                      class="p-1 sc-bdfBwQ iNulIV"
                       height="18"
                       width="18"
                     >
@@ -7560,7 +7560,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -7642,10 +7642,10 @@ exports[`Settings should update profile 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 jAXOXr bg-theme-background bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        class="transition-transform sc-bdfBwQ kJrqvM "
                         height="5"
                         width="8"
                       >
@@ -7664,7 +7664,7 @@ exports[`Settings should update profile 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
+      class="container flex items-center py-5 px-14 mx-auto space-x-3 text-sm font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -7726,7 +7726,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
@@ -7756,7 +7756,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7783,7 +7783,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7810,7 +7810,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="flex items-center py-5 pr-8 pl-10 rounded-lg h-15 "
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7873,7 +7873,7 @@ exports[`Settings should update profile 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
@@ -7907,7 +7907,7 @@ exports[`Settings should update profile 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -7928,7 +7928,7 @@ exports[`Settings should update profile 1`] = `
                         class="flex flex-col w-2/4"
                       >
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -7942,7 +7942,7 @@ exports[`Settings should update profile 1`] = `
                             />
                           </label>
                           <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                            class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
@@ -7950,7 +7950,7 @@ exports[`Settings should update profile 1`] = `
                           />
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -7967,7 +7967,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="passphraseLanguage"
                               readonly=""
@@ -7992,7 +7992,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     English
@@ -8002,7 +8002,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-39-menu"
                                     aria-labelledby="downshift-39-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-38-input"
                                     name="passphraseLanguage"
@@ -8018,10 +8018,10 @@ exports[`Settings should update profile 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -8034,7 +8034,7 @@ exports[`Settings should update profile 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -8051,7 +8051,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -8076,7 +8076,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     BTC (Ƀ)
@@ -8086,7 +8086,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-41-menu"
                                     aria-labelledby="downshift-41-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-40-input"
                                     name="currency"
@@ -8102,10 +8102,10 @@ exports[`Settings should update profile 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -8122,7 +8122,7 @@ exports[`Settings should update profile 1`] = `
                         class="flex flex-col w-2/4 ml-5"
                       >
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -8139,7 +8139,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -8164,7 +8164,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     English
@@ -8174,7 +8174,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-43-menu"
                                     aria-labelledby="downshift-43-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-42-input"
                                     name="language"
@@ -8190,10 +8190,10 @@ exports[`Settings should update profile 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -8206,7 +8206,7 @@ exports[`Settings should update profile 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -8223,7 +8223,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="marketProvider"
                               readonly=""
@@ -8248,7 +8248,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     CryptoCompare
@@ -8258,7 +8258,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-45-menu"
                                     aria-labelledby="downshift-45-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-44-input"
                                     name="marketProvider"
@@ -8274,10 +8274,10 @@ exports[`Settings should update profile 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -8290,7 +8290,7 @@ exports[`Settings should update profile 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                          class="mt-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                         >
                           <label
                             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -8307,7 +8307,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="select-list__input"
                               name="timeFormat"
                               readonly=""
@@ -8332,7 +8332,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="SelectDropdownInput"
                                 >
                                   <span
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                    class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                     data-testid="SelectDropdownInput__typeahead"
                                   >
                                     12h
@@ -8342,7 +8342,7 @@ exports[`Settings should update profile 1`] = `
                                     aria-controls="downshift-47-menu"
                                     aria-labelledby="downshift-47-label"
                                     autocomplete="off"
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                    class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                     data-testid="SelectDropdownInput__input"
                                     id="downshift-46-input"
                                     name="timeFormat"
@@ -8358,10 +8358,10 @@ exports[`Settings should update profile 1`] = `
                                 />
                               </div>
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb transition-transform "
+                                  class="transition-transform sc-bdfBwQ gLRWTb "
                                   height="5"
                                   width="7"
                                 >
@@ -8387,7 +8387,7 @@ exports[`Settings should update profile 1`] = `
                       data-testid="list-divided__items"
                     >
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col pb-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -8437,7 +8437,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
+                        class="flex flex-col py-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -8486,7 +8486,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pt-8"
+                        class="flex flex-col pt-8 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -8510,7 +8510,7 @@ exports[`Settings should update profile 1`] = `
                           data-testid="list-divided-item__content"
                         >
                           <fieldset
-                            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                           >
                             <label
                               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -8527,7 +8527,7 @@ exports[`Settings should update profile 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                 data-testid="select-list__input"
                                 name="automaticSignOutPeriod"
                                 readonly=""
@@ -8552,7 +8552,7 @@ exports[`Settings should update profile 1`] = `
                                     data-testid="SelectDropdownInput"
                                   >
                                     <span
-                                      class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                                      class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                                       data-testid="SelectDropdownInput__typeahead"
                                     >
                                       1 minute
@@ -8562,7 +8562,7 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="downshift-49-menu"
                                       aria-labelledby="downshift-49-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                                      class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-48-input"
                                       name="automaticSignOutPeriod"
@@ -8578,10 +8578,10 @@ exports[`Settings should update profile 1`] = `
                                   />
                                 </div>
                                 <div
-                                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                                  class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    class="transition-transform sc-bdfBwQ gLRWTb "
                                     height="5"
                                     width="7"
                                   >
@@ -8608,7 +8608,7 @@ exports[`Settings should update profile 1`] = `
                       data-testid="list-divided__items"
                     >
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col pb-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -8658,7 +8658,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
+                        class="flex flex-col py-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -8708,7 +8708,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pt-6"
+                        class="flex flex-col pt-6 w-full"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div

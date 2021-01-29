@@ -21,7 +21,7 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
           class="flex items-center space-x-3"
         >
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="block-link}"
@@ -37,7 +37,7 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
               </span>
             </span>
             <div
-              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
               data-testid="Link__external"
               height="1em"
               width="1em"
@@ -93,7 +93,7 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
           class="flex items-center space-x-3"
         >
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="transaction-link}"
@@ -109,7 +109,7 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
               </span>
             </span>
             <div
-              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
               data-testid="Link__external"
               height="1em"
               width="1em"

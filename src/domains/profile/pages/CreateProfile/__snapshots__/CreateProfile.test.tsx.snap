@@ -40,7 +40,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -78,7 +78,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -92,14 +92,14 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           />
                         </label>
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -128,7 +128,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -144,7 +144,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -165,13 +165,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -197,7 +197,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </p>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -216,13 +216,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -248,7 +248,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </p>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -265,7 +265,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -290,7 +290,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -301,7 +301,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               aria-controls="downshift-133-menu"
                               aria-labelledby="downshift-133-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-132-input"
                               name="currency"
@@ -317,7 +317,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-133-item-0"
                               role="option"
@@ -330,7 +330,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-133-item-1"
                               role="option"
@@ -343,7 +343,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-133-item-2"
                               role="option"
@@ -356,7 +356,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-133-item-3"
                               role="option"
@@ -369,7 +369,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-133-item-4"
                               role="option"
@@ -382,7 +382,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-133-item-5"
                               role="option"
@@ -395,7 +395,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-133-item-6"
                               role="option"
@@ -408,7 +408,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-133-item-7"
                               role="option"
@@ -421,7 +421,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-133-item-8"
                               role="option"
@@ -434,7 +434,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-133-item-9"
                               role="option"
@@ -447,7 +447,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-133-item-10"
                               role="option"
@@ -460,7 +460,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-133-item-11"
                               role="option"
@@ -473,7 +473,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-133-item-12"
                               role="option"
@@ -486,7 +486,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-133-item-13"
                               role="option"
@@ -499,7 +499,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-133-item-14"
                               role="option"
@@ -512,7 +512,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-133-item-15"
                               role="option"
@@ -525,7 +525,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-133-item-16"
                               role="option"
@@ -538,7 +538,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-133-item-17"
                               role="option"
@@ -552,10 +552,10 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -580,7 +580,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -705,7 +705,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -743,7 +743,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -758,7 +758,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         </label>
                         <input
                           aria-invalid="true"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
@@ -770,7 +770,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -799,7 +799,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -815,7 +815,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -835,13 +835,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -862,7 +862,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -882,13 +882,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -909,7 +909,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -926,7 +926,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -951,7 +951,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -962,7 +962,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                               aria-controls="downshift-49-menu"
                               aria-labelledby="downshift-49-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-48-input"
                               name="currency"
@@ -978,7 +978,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-49-item-0"
                               role="option"
@@ -991,7 +991,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-49-item-1"
                               role="option"
@@ -1004,7 +1004,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-49-item-2"
                               role="option"
@@ -1017,7 +1017,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-49-item-3"
                               role="option"
@@ -1030,7 +1030,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-49-item-4"
                               role="option"
@@ -1043,7 +1043,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-49-item-5"
                               role="option"
@@ -1056,7 +1056,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-49-item-6"
                               role="option"
@@ -1069,7 +1069,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-49-item-7"
                               role="option"
@@ -1082,7 +1082,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-49-item-8"
                               role="option"
@@ -1095,7 +1095,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-49-item-9"
                               role="option"
@@ -1108,7 +1108,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-49-item-10"
                               role="option"
@@ -1121,7 +1121,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-49-item-11"
                               role="option"
@@ -1134,7 +1134,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-49-item-12"
                               role="option"
@@ -1147,7 +1147,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-49-item-13"
                               role="option"
@@ -1160,7 +1160,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-49-item-14"
                               role="option"
@@ -1173,7 +1173,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-49-item-15"
                               role="option"
@@ -1186,7 +1186,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-49-item-16"
                               role="option"
@@ -1199,7 +1199,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-49-item-17"
                               role="option"
@@ -1213,10 +1213,10 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -1241,7 +1241,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -1366,7 +1366,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1404,7 +1404,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1419,7 +1419,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         </label>
                         <input
                           aria-invalid="true"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
@@ -1431,7 +1431,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -1460,7 +1460,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -1476,7 +1476,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1496,13 +1496,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1523,7 +1523,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1543,13 +1543,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1570,7 +1570,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -1587,7 +1587,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -1612,7 +1612,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -1623,7 +1623,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                               aria-controls="downshift-75-menu"
                               aria-labelledby="downshift-75-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-74-input"
                               name="currency"
@@ -1639,7 +1639,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-75-item-0"
                               role="option"
@@ -1652,7 +1652,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-75-item-1"
                               role="option"
@@ -1665,7 +1665,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-75-item-2"
                               role="option"
@@ -1678,7 +1678,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-75-item-3"
                               role="option"
@@ -1691,7 +1691,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-75-item-4"
                               role="option"
@@ -1704,7 +1704,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-75-item-5"
                               role="option"
@@ -1717,7 +1717,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-75-item-6"
                               role="option"
@@ -1730,7 +1730,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-75-item-7"
                               role="option"
@@ -1743,7 +1743,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-75-item-8"
                               role="option"
@@ -1756,7 +1756,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-75-item-9"
                               role="option"
@@ -1769,7 +1769,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-75-item-10"
                               role="option"
@@ -1782,7 +1782,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-75-item-11"
                               role="option"
@@ -1795,7 +1795,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-75-item-12"
                               role="option"
@@ -1808,7 +1808,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-75-item-13"
                               role="option"
@@ -1821,7 +1821,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-75-item-14"
                               role="option"
@@ -1834,7 +1834,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-75-item-15"
                               role="option"
@@ -1847,7 +1847,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-75-item-16"
                               role="option"
@@ -1860,7 +1860,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-75-item-17"
                               role="option"
@@ -1874,10 +1874,10 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -1902,7 +1902,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -2027,7 +2027,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2065,7 +2065,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2079,14 +2079,14 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           />
                         </label>
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -2115,7 +2115,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -2131,7 +2131,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2151,13 +2151,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2178,7 +2178,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2198,13 +2198,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2225,7 +2225,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2242,7 +2242,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -2267,7 +2267,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -2278,7 +2278,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-controls="downshift-201-menu"
                               aria-labelledby="downshift-201-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-200-input"
                               name="currency"
@@ -2294,7 +2294,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-201-item-0"
                               role="option"
@@ -2307,7 +2307,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-201-item-1"
                               role="option"
@@ -2320,7 +2320,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-201-item-2"
                               role="option"
@@ -2333,7 +2333,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-201-item-3"
                               role="option"
@@ -2346,7 +2346,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-201-item-4"
                               role="option"
@@ -2359,7 +2359,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-201-item-5"
                               role="option"
@@ -2372,7 +2372,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-201-item-6"
                               role="option"
@@ -2385,7 +2385,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-201-item-7"
                               role="option"
@@ -2398,7 +2398,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-201-item-8"
                               role="option"
@@ -2411,7 +2411,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-201-item-9"
                               role="option"
@@ -2424,7 +2424,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-201-item-10"
                               role="option"
@@ -2437,7 +2437,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-201-item-11"
                               role="option"
@@ -2450,7 +2450,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-201-item-12"
                               role="option"
@@ -2463,7 +2463,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-201-item-13"
                               role="option"
@@ -2476,7 +2476,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-201-item-14"
                               role="option"
@@ -2489,7 +2489,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-201-item-15"
                               role="option"
@@ -2502,7 +2502,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-201-item-16"
                               role="option"
@@ -2515,7 +2515,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-201-item-17"
                               role="option"
@@ -2529,10 +2529,10 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -2557,7 +2557,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -2681,7 +2681,7 @@ exports[`CreateProfile should render 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2719,7 +2719,7 @@ exports[`CreateProfile should render 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2733,14 +2733,14 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </label>
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -2780,7 +2780,7 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2800,13 +2800,13 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2827,7 +2827,7 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2847,13 +2847,13 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2874,7 +2874,7 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -2891,7 +2891,7 @@ exports[`CreateProfile should render 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -2920,7 +2920,7 @@ exports[`CreateProfile should render 1`] = `
                               aria-controls="downshift-1-menu"
                               aria-labelledby="downshift-1-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-0-input"
                               name="currency"
@@ -2936,10 +2936,10 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform "
+                            class="transition-transform sc-bdfBwQ gLRWTb "
                             height="5"
                             width="7"
                           >
@@ -2964,7 +2964,7 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -3089,7 +3089,7 @@ exports[`CreateProfile should store profile 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3127,7 +3127,7 @@ exports[`CreateProfile should store profile 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3141,14 +3141,14 @@ exports[`CreateProfile should store profile 1`] = `
                           />
                         </label>
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -3172,7 +3172,7 @@ exports[`CreateProfile should store profile 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -3184,7 +3184,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </div>
                           </div>
                           <button
-                            class="Button__StyledButton-mdtvtf-0 jCnXkX flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            class="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6 Button__StyledButton-mdtvtf-0 jCnXkX"
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
@@ -3207,7 +3207,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3227,13 +3227,13 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3254,7 +3254,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3274,13 +3274,13 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3301,7 +3301,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3318,7 +3318,7 @@ exports[`CreateProfile should store profile 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -3343,7 +3343,7 @@ exports[`CreateProfile should store profile 1`] = `
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -3354,7 +3354,7 @@ exports[`CreateProfile should store profile 1`] = `
                               aria-controls="downshift-11-menu"
                               aria-labelledby="downshift-11-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-10-input"
                               name="currency"
@@ -3370,7 +3370,7 @@ exports[`CreateProfile should store profile 1`] = `
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-11-item-0"
                               role="option"
@@ -3383,7 +3383,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-11-item-1"
                               role="option"
@@ -3396,7 +3396,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-11-item-2"
                               role="option"
@@ -3409,7 +3409,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-11-item-3"
                               role="option"
@@ -3422,7 +3422,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-11-item-4"
                               role="option"
@@ -3435,7 +3435,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-11-item-5"
                               role="option"
@@ -3448,7 +3448,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-11-item-6"
                               role="option"
@@ -3461,7 +3461,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-11-item-7"
                               role="option"
@@ -3474,7 +3474,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-11-item-8"
                               role="option"
@@ -3487,7 +3487,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-11-item-9"
                               role="option"
@@ -3500,7 +3500,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-11-item-10"
                               role="option"
@@ -3513,7 +3513,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-11-item-11"
                               role="option"
@@ -3526,7 +3526,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-11-item-12"
                               role="option"
@@ -3539,7 +3539,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-11-item-13"
                               role="option"
@@ -3552,7 +3552,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-11-item-14"
                               role="option"
@@ -3565,7 +3565,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-11-item-15"
                               role="option"
@@ -3578,7 +3578,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-11-item-16"
                               role="option"
@@ -3591,7 +3591,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-11-item-17"
                               role="option"
@@ -3605,10 +3605,10 @@ exports[`CreateProfile should store profile 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -3633,7 +3633,7 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -3757,7 +3757,7 @@ exports[`CreateProfile should store profile with password 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3795,7 +3795,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3809,14 +3809,14 @@ exports[`CreateProfile should store profile with password 1`] = `
                           />
                         </label>
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -3845,7 +3845,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -3861,7 +3861,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3881,13 +3881,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3908,7 +3908,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3926,13 +3926,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3953,7 +3953,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -3970,7 +3970,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -3995,7 +3995,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -4006,7 +4006,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-controls="downshift-101-menu"
                               aria-labelledby="downshift-101-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-100-input"
                               name="currency"
@@ -4022,7 +4022,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-101-item-0"
                               role="option"
@@ -4035,7 +4035,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-101-item-1"
                               role="option"
@@ -4048,7 +4048,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-101-item-2"
                               role="option"
@@ -4061,7 +4061,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-101-item-3"
                               role="option"
@@ -4074,7 +4074,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-101-item-4"
                               role="option"
@@ -4087,7 +4087,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-101-item-5"
                               role="option"
@@ -4100,7 +4100,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-101-item-6"
                               role="option"
@@ -4113,7 +4113,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-101-item-7"
                               role="option"
@@ -4126,7 +4126,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-101-item-8"
                               role="option"
@@ -4139,7 +4139,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-101-item-9"
                               role="option"
@@ -4152,7 +4152,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-101-item-10"
                               role="option"
@@ -4165,7 +4165,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-101-item-11"
                               role="option"
@@ -4178,7 +4178,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-101-item-12"
                               role="option"
@@ -4191,7 +4191,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-101-item-13"
                               role="option"
@@ -4204,7 +4204,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-101-item-14"
                               role="option"
@@ -4217,7 +4217,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-101-item-15"
                               role="option"
@@ -4230,7 +4230,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-101-item-16"
                               role="option"
@@ -4243,7 +4243,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-101-item-17"
                               role="option"
@@ -4257,10 +4257,10 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -4285,7 +4285,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
@@ -4409,7 +4409,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
+        class="flex flex-col flex-1 justify-center Section__SectionWrapper-sc-8cjvre-0 Aphxw"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -4447,7 +4447,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -4461,14 +4461,14 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           />
                         </label>
                         <input
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                          class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
                           data-testid="Input"
                           name="name"
                         />
                       </fieldset>
                     </div>
                     <div
-                      class="group space-y-2 undefined"
+                      class="space-y-2 group undefined"
                     >
                       <div
                         class="flex flex-row"
@@ -4497,7 +4497,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                                  class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                                   height="18"
                                   width="24"
                                 >
@@ -4513,7 +4513,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -4533,13 +4533,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4560,7 +4560,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -4580,13 +4580,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        class="overflow-hidden py-3 px-4 pr-12 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="my-px mr-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4607,7 +4607,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -4624,7 +4624,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none sr-only Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -4649,7 +4649,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -4660,7 +4660,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-controls="downshift-167-menu"
                               aria-labelledby="downshift-167-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default"
+                              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none cursor-default Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-166-input"
                               name="currency"
@@ -4676,7 +4676,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           >
                             <li
                               aria-selected="true"
-                              class="select-list-option cursor-default is-highlighted"
+                              class="cursor-default select-list-option is-highlighted"
                               data-testid="select-list__toggle-option-0"
                               id="downshift-167-item-0"
                               role="option"
@@ -4689,7 +4689,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-1"
                               id="downshift-167-item-1"
                               role="option"
@@ -4702,7 +4702,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-2"
                               id="downshift-167-item-2"
                               role="option"
@@ -4715,7 +4715,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-3"
                               id="downshift-167-item-3"
                               role="option"
@@ -4728,7 +4728,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-4"
                               id="downshift-167-item-4"
                               role="option"
@@ -4741,7 +4741,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-5"
                               id="downshift-167-item-5"
                               role="option"
@@ -4754,7 +4754,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-6"
                               id="downshift-167-item-6"
                               role="option"
@@ -4767,7 +4767,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-7"
                               id="downshift-167-item-7"
                               role="option"
@@ -4780,7 +4780,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-8"
                               id="downshift-167-item-8"
                               role="option"
@@ -4793,7 +4793,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-9"
                               id="downshift-167-item-9"
                               role="option"
@@ -4806,7 +4806,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-10"
                               id="downshift-167-item-10"
                               role="option"
@@ -4819,7 +4819,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-11"
                               id="downshift-167-item-11"
                               role="option"
@@ -4832,7 +4832,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-12"
                               id="downshift-167-item-12"
                               role="option"
@@ -4845,7 +4845,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-13"
                               id="downshift-167-item-13"
                               role="option"
@@ -4858,7 +4858,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-14"
                               id="downshift-167-item-14"
                               role="option"
@@ -4871,7 +4871,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-15"
                               id="downshift-167-item-15"
                               role="option"
@@ -4884,7 +4884,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-16"
                               id="downshift-167-item-16"
                               role="option"
@@ -4897,7 +4897,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             </li>
                             <li
                               aria-selected="false"
-                              class="select-list-option cursor-default "
+                              class="cursor-default select-list-option "
                               data-testid="select-list__toggle-option-17"
                               id="downshift-167-item-17"
                               role="option"
@@ -4911,10 +4911,10 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="w-10 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV text-theme-secondary-500"
                         >
                           <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                            class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -4939,7 +4939,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
-                        class="flex justify-between flex-col items-start"
+                        class="flex flex-col justify-between items-start"
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div

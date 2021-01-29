@@ -10,14 +10,14 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -66,7 +66,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -77,7 +77,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -212,7 +212,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -228,7 +228,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -279,7 +279,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
@@ -295,7 +295,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -344,14 +344,14 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -400,7 +400,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -411,7 +411,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -546,7 +546,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -562,7 +562,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -613,7 +613,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
@@ -629,7 +629,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -678,14 +678,14 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -734,7 +734,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -745,7 +745,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -880,7 +880,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -896,7 +896,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -947,7 +947,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
@@ -963,7 +963,7 @@ exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a 
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1012,14 +1012,14 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1068,7 +1068,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1079,7 +1079,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1214,7 +1214,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -1230,7 +1230,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1281,7 +1281,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
@@ -1297,7 +1297,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1346,14 +1346,14 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1402,7 +1402,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1413,7 +1413,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1548,7 +1548,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -1564,7 +1564,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1615,7 +1615,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
@@ -1631,7 +1631,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1680,14 +1680,14 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="flex overflow-hidden absolute right-0 left-0 z-50 flex-col p-10 mx-auto rounded-xl shadow-2xl Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          class="w-11 h-11 Button__StyledButton-mdtvtf-0 fHYGyx"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1736,7 +1736,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="inline-flex items-center no-ligatures"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                    class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                     data-testid="address__wallet-name"
                   >
                     <span
@@ -1747,7 +1747,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B…s6YUYD
@@ -1882,7 +1882,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
@@ -1898,7 +1898,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -1949,7 +1949,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
@@ -1965,7 +1965,7 @@ exports[`LegacyMagistrateDetail Legacy Business Transactions should render a leg
                       </span>
                     </span>
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      class="flex-shrink-0 ml-2 text-sm sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"

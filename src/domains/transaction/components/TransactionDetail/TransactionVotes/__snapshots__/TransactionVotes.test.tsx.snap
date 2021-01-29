@@ -28,7 +28,7 @@ exports[`TransactionVotes should render loading state 1`] = `
     </div>
     <span>
       <span
-        class="react-loading-skeleton mb-1 css-1vmnjpn-skeletonStyles-Skeleton"
+        class="mb-1 react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
         style="width: 44px; height: 44px; border-radius: 50%;"
       >
         ‌
@@ -114,7 +114,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                 class="inline-flex items-center no-ligatures"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                  class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   <span
@@ -125,7 +125,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -216,7 +216,7 @@ exports[`TransactionVotes should render with votes 1`] = `
                 class="inline-flex items-center no-ligatures"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                  class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   <span
@@ -227,7 +227,7 @@ exports[`TransactionVotes should render with votes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -318,7 +318,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 class="inline-flex items-center no-ligatures"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                  class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   <span
@@ -329,7 +329,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -383,7 +383,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 class="inline-flex items-center no-ligatures"
               >
                 <span
-                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                  class="flex-auto mr-2 text-base font-semibold max-w-24 truncate text-theme-text"
                   data-testid="address__wallet-name"
                 >
                   <span
@@ -394,7 +394,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate"
                   data-testid="address__wallet-address"
                 >
                   test-address

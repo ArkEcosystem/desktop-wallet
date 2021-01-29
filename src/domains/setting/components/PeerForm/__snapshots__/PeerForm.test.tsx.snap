@@ -7,7 +7,7 @@ exports[`PeerForm should render 1`] = `
     data-testid="PeerForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc my-8"
+      class="my-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -37,7 +37,7 @@ exports[`PeerForm should render 1`] = `
             data-testid="SelectNetworkInput"
           >
             <div
-              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+              class="px-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
             >
               <div
                 class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -49,7 +49,7 @@ exports[`PeerForm should render 1`] = `
               aria-controls="CustomPeers__network-menu"
               aria-labelledby="CustomPeers__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="CustomPeers__network-input"
               placeholder="Enter a cryptoasset name"
@@ -66,7 +66,7 @@ exports[`PeerForm should render 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -80,14 +80,14 @@ exports[`PeerForm should render 1`] = `
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="PeerForm__name-input"
         name="name"
         value=""
       />
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -101,14 +101,14 @@ exports[`PeerForm should render 1`] = `
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="PeerForm__host-input"
         name="host"
         value=""
       />
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -168,7 +168,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
     data-testid="PeerForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc my-8"
+      class="my-8 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -198,7 +198,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
             data-testid="SelectNetworkInput"
           >
             <div
-              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+              class="px-4 InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
             >
               <div
                 aria-label="ARK Devnet"
@@ -218,7 +218,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
               </div>
             </div>
             <span
-              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+              class="py-3 font-normal border border-transparent opacity-50 pointer-events-none InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG pl-15"
               data-testid="SelectNetworkInput__typeahead"
             >
               ARK Devnet
@@ -228,7 +228,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
               aria-controls="CustomPeers__network-menu"
               aria-labelledby="CustomPeers__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+              class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures pl-15"
               data-testid="SelectNetworkInput__input"
               id="CustomPeers__network-input"
               placeholder="Enter a cryptoasset name"
@@ -245,7 +245,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -259,14 +259,14 @@ exports[`PeerForm should render the peer on the form 1`] = `
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="PeerForm__name-input"
         name="name"
         value="ROBank"
       />
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -280,14 +280,14 @@ exports[`PeerForm should render the peer on the form 1`] = `
         />
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+        class="overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures "
         data-testid="PeerForm__host-input"
         name="host"
         value="http://167.114.29.48:4003/api"
       />
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"

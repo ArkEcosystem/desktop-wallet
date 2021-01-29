@@ -10,7 +10,7 @@ exports[`SelectAddress should render disabled 1`] = `
       type="button"
     >
       <div
-        class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+        class="mr-3 ml-4 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
       />
       <div
         class="inline-flex items-center no-ligatures"
@@ -30,7 +30,7 @@ exports[`SelectAddress should render disabled 1`] = `
       </div>
     </button>
     <input
-      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
+      class="hidden overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -44,12 +44,12 @@ exports[`SelectAddress should render empty 1`] = `
 <div>
   <div>
     <button
-      class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
+      class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
-        class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+        class="mr-3 ml-4 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
       />
       <div
         class="inline-flex items-center no-ligatures"
@@ -69,7 +69,7 @@ exports[`SelectAddress should render empty 1`] = `
       </div>
     </button>
     <input
-      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
+      class="hidden overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -88,7 +88,7 @@ exports[`SelectAddress should render invalid 1`] = `
       type="button"
     >
       <div
-        class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+        class="mr-3 ml-4 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
       />
       <div
         class="inline-flex items-center no-ligatures"
@@ -109,7 +109,7 @@ exports[`SelectAddress should render invalid 1`] = `
     </button>
     <input
       aria-invalid="true"
-      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
+      class="hidden overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -123,12 +123,12 @@ exports[`SelectAddress should render with preselected address 1`] = `
 <div>
   <div>
     <button
-      class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
+      class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-4"
+        class="mx-4 Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
         data-testid="Avatar"
       >
         <div
@@ -145,7 +145,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
         class="inline-flex items-center no-ligatures"
       >
         <span
-          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+          class="text-base font-semibold TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate"
           data-testid="address__wallet-address"
         >
           bP6T9GQ3kqP6T…TTTP6T9GQ3kqT
@@ -166,7 +166,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
       </div>
     </button>
     <input
-      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
+      class="hidden overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
@@ -180,12 +180,12 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
 <div>
   <div>
     <button
-      class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
+      class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress "
       data-testid="SelectAddress__wrapper"
       type="button"
     >
       <div
-        class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+        class="mr-3 ml-4 Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
       />
       <div
         class="inline-flex items-center no-ligatures"
@@ -218,7 +218,7 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
       </div>
     </button>
     <input
-      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
+      class="hidden overflow-hidden py-3 px-4 w-full rounded border transition-colors duration-200 appearance-none Input__InputStyled-wu99qs-0 eVdxgh bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text no-ligatures"
       data-testid="SelectAddress__input"
       readonly=""
       type="text"
