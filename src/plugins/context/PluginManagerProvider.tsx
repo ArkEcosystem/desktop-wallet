@@ -2,6 +2,7 @@ import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { toasts } from "app/services";
+import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
@@ -15,7 +16,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<any>({});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 
-	/* istanbul ignore next */
 	const [pluginRegistry] = useState(() => new PluginRegistry());
 
 	const [pluginManager] = useState(() => {
@@ -44,6 +44,14 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			toasts.error(e.message);
 		}
 	}, [pluginManager]);
+
+	const loadPlugin = useCallback(
+		async (dir: string) => {
+			const results = await PluginLoaderFileSystem.ipc().find(dir);
+			pluginManager.plugins().fill([results]);
+		},
+		[pluginManager],
+	);
 
 	const trigger = useCallback(() => setState((prev: any) => ({ ...prev })), []);
 
@@ -87,25 +95,28 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			toasts.error(`Failed to fetch packages`);
 		}
 
-		const configurations = packages.map((config) =>
-			PluginConfigurationData.make({
-				id: config.id(),
-				name: config.name(),
-				alias: config.alias(),
-				date: config.date(),
-				version: config.version(),
-				description: config.description(),
-				author: config.author(),
-				logo: config.logo(),
-			}),
-		);
+		const configurations = packages
+			.filter((config) => !!config.sourceProvider())
+			.map((config) =>
+				PluginConfigurationData.make({
+					id: config.id(),
+					name: config.name(),
+					alias: config.alias(),
+					date: config.date(),
+					version: config.version(),
+					description: config.description(),
+					author: config.author(),
+					logo: config.logo(),
+					sourceProvider: config.sourceProvider(),
+				}),
+			);
 
 		const localConfigurations = pluginManager
 			.plugins()
 			.all()
 			.map((item) => item.config());
 
-		const merged = uniqBy([...configurations, ...localConfigurations], (item) => item.id());
+		const merged = uniqBy([...localConfigurations, ...configurations], (item) => item.id());
 
 		setIsFetchingPackages(false);
 		setState((prev: any) => ({ ...prev, packages: merged }));
@@ -113,9 +124,31 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages || [], [state]);
 
+	const installPlugin = useCallback(
+		async (name: string) => {
+			const config = pluginPackages.find((pkg) => pkg.name() === name);
+
+			const source = config!.get<{ url: string }>("sourceProvider");
+
+			if (!source?.url) {
+				/* istanbul ignore next */
+				throw new Error(`The repository of the plugin "${name}" could not be found.`);
+			}
+
+			const archiveUrl = `${source.url}/archive/master.zip`;
+
+			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
+			await loadPlugin(savedDir);
+
+			trigger();
+		},
+		[pluginPackages, loadPlugin, trigger],
+	);
+
 	return {
 		pluginRegistry,
 		fetchPluginPackages,
+		installPlugin,
 		isFetchingPackages,
 		pluginPackages,
 		pluginManager,

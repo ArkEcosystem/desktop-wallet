@@ -104,7 +104,7 @@ export class PluginControllerRepository {
 			}
 		}
 
-		this.#plugins = plugins;
+		this.#plugins.push(...plugins);
 	}
 
 	// Helpers

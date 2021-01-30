@@ -33,25 +33,34 @@ export class PluginLoaderFileSystem {
 		const entries: PluginRawInstance[] = [];
 
 		for (const dir of paths) {
-			const configPath = path.join(dir, "package.json");
-			const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
-
-			const sourcePath = resolve.sync(dir, ".");
-
-			/* istanbul ignore next */
-			if (sourcePath) {
-				const source = fs.readFileSync(sourcePath, "utf-8");
-
-				entries.push({
-					sourcePath,
-					source,
-					config,
-					dir,
-				});
+			try {
+				const result = this.find(dir);
+				entries.push(result!);
+			} catch {
+				continue;
 			}
 		}
 
 		return entries;
+	}
+
+	find(dir: string) {
+		const configPath = path.join(dir, "package.json");
+		const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
+
+		const sourcePath = resolve.sync(dir, ".");
+
+		/* istanbul ignore next */
+		if (sourcePath) {
+			const source = fs.readFileSync(sourcePath, "utf-8");
+
+			return {
+				sourcePath,
+				source,
+				config,
+				dir,
+			};
+		}
 	}
 
 	private findPathsByConfigFiles() {
