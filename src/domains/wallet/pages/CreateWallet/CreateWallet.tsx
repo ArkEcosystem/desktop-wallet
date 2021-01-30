@@ -77,6 +77,10 @@ export const CreateWallet = () => {
 	);
 
 	const handleBack = () => {
+		if (activeTab === 1) {
+			return history.push(`/profiles/${activeProfile.id()}/dashboard`);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -107,7 +111,7 @@ export const CreateWallet = () => {
 
 							<div className="flex justify-end mt-10 space-x-3">
 								<Button
-									disabled={activeTab === 1}
+									disabled={isSubmitting}
 									data-testid="CreateWallet__back-button"
 									variant="secondary"
 									onClick={handleBack}

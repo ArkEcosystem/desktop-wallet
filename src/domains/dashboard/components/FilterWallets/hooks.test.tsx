@@ -42,7 +42,7 @@ describe("useWalletFilters", () => {
 			result.current.update("viewType", "list");
 		});
 
-		expect(result.current.isFilterChanged).toBe(true);
+		expect(result.current.isFilterChanged).toBe(false);
 		await waitFor(() => expect(result.current.viewType).toBe("list"));
 	});
 

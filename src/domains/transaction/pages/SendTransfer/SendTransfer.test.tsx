@@ -293,7 +293,7 @@ describe("SendTransfer", () => {
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
-	//
+
 	it("should select a cryptoasset and select sender without wallet id param", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
@@ -370,6 +370,16 @@ describe("SendTransfer", () => {
 			);
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
+			const goSpy = jest.spyOn(history, "go").mockImplementation();
+
+			const backButton = getByTestId("SendTransfer__button--back");
+			expect(backButton).not.toHaveAttribute("disabled");
+			act(() => {
+				fireEvent.click(backButton);
+			});
+
+			expect(goSpy).toHaveBeenCalledWith(-1);
+
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 			expect(getByTestId("modal__inner")).toBeTruthy();
@@ -439,10 +449,12 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 
 			// Go back to wallet
-			const historySpy = jest.spyOn(history, "push");
+			const pushSpy = jest.spyOn(history, "push");
 			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
-			historySpy.mockRestore();
+			expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
+			goSpy.mockRestore();
+			pushSpy.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});

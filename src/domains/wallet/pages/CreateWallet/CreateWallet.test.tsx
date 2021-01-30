@@ -330,6 +330,15 @@ describe("CreateWallet", () => {
 		const continueButton = getByTestId("CreateWallet__continue-button");
 		const backButton = getByTestId("CreateWallet__back-button");
 
+		const historySpy = jest.spyOn(history, "push").mockImplementation();
+
+		expect(backButton).not.toHaveAttribute("disabled");
+		act(() => {
+			fireEvent.click(backButton);
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${fixtureProfileId}/dashboard`);
+
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -416,8 +425,6 @@ describe("CreateWallet", () => {
 
 		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
-		const historySpy = jest.spyOn(history, "push");
-
 		act(() => {
 			if (alias) {
 				fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: alias } });
@@ -435,6 +442,8 @@ describe("CreateWallet", () => {
 		expect(wallet.alias()).toEqual(alias);
 
 		expect(asFragment()).toMatchSnapshot();
+
+		historySpy.mockRestore();
 	});
 
 	it("should not have a pending wallet if leaving on step 1", async () => {
