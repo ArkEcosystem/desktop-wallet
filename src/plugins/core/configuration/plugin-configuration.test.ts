@@ -61,6 +61,11 @@ describe("Plugin Configuration", () => {
 		expect(subject.author()).toBe("Jhon");
 	});
 
+	it("should return author from contributors with array of strings", () => {
+		const subject = PluginConfigurationData.make({ name: "plugin-test", contributors: ["Jhon"] });
+		expect(subject.author()).toBe("Jhon");
+	});
+
 	it("should return default version", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test" });
 		expect(subject.version()).toBe("0.0.0");
