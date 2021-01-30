@@ -98,7 +98,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 			savePeerSettings();
 		}
-	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, syncWallets]);
+	}, [activeProfile, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, persist, syncWallets]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
