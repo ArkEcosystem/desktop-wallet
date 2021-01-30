@@ -106,6 +106,22 @@ describe("SendDelegateResignation", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 
+		it("should go back to wallet details", async () => {
+			const historySpy = jest.spyOn(history, "push").mockImplementation();
+
+			const { getByTestId } = renderPage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			act(() => {
+				fireEvent.click(getByTestId("SendDelegateResignation__back-button"));
+			});
+
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
+			historySpy.mockRestore();
+		});
+
 		it("should navigate between 1st and 2nd step", async () => {
 			const { getByTestId } = renderPage();
 

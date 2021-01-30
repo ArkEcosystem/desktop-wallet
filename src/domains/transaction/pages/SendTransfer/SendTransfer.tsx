@@ -156,7 +156,7 @@ export const SendTransfer = () => {
 		abortRef.current.abort();
 
 		if (activeTab === 1) {
-			history.go(-1);
+			return history.go(-1);
 		}
 
 		setActiveTab(activeTab - 1);

@@ -78,7 +78,7 @@ export const CreateWallet = () => {
 
 	const handleBack = () => {
 		if (activeTab === 1) {
-			history.push(`/profiles/${activeProfile.id()}/dashboard`);
+			return history.push(`/profiles/${activeProfile.id()}/dashboard`);
 		}
 
 		setActiveTab(activeTab - 1);

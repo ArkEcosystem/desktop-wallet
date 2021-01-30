@@ -71,7 +71,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 describe("Registration", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().first();
+		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")!;
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
 
 		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "ark.devnet");
@@ -254,6 +254,22 @@ describe("Registration", () => {
 
 		signMock.mockRestore();
 		secondPublicKeyMock.mockRestore();
+	});
+
+	it("should go back to wallet details", async () => {
+		const { getByTestId } = await renderPage(wallet);
+
+		const historySpy = jest.spyOn(history, "push").mockImplementation();
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__back-button"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
+		historySpy.mockRestore();
 	});
 
 	it("should show error step and go back", async () => {

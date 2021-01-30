@@ -74,7 +74,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const handleBack = () => {
 		if (activeTab === 1) {
-			history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
+			return history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
 		}
 
 		setActiveTab(activeTab - 1);
