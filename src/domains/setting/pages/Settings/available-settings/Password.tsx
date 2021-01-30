@@ -2,14 +2,17 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
 
-export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: SettingsProps) => {
+export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
+	const { env, persist } = useEnvironmentContext();
+
 	const usesPassword = activeProfile.usesPassword();
 
 	const { t } = useTranslation();
@@ -31,7 +34,7 @@ export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: Settin
 
 		reset();
 
-		await env.persist();
+		await persist(activeProfile);
 
 		onSuccess(t("SETTINGS.PASSWORD.SUCCESS"));
 	};

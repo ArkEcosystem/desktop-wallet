@@ -61,7 +61,6 @@ export const Settings = () => {
 
 		return (
 			<ActiveSettings
-				env={env}
 				formConfig={{ context: form, register, errors }}
 				onSuccess={handleSuccess}
 				onError={handleError}
