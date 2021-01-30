@@ -19,6 +19,10 @@ type PluginListItemProps = {
 export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLaunch, plugin }: PluginListItemProps) => {
 	const { t } = useTranslation();
 
+	const handleInstall = () => {
+		onInstall?.(plugin);
+	};
+
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
@@ -98,7 +102,7 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 
 			<TableCell variant="end" className="w-16" innerClassName="justify-end">
 				{!plugin.isInstalled && (
-					<Button variant="secondary" onClick={() => onInstall(plugin)} data-testid="PluginListItem__install">
+					<Button variant="secondary" onClick={handleInstall} data-testid="PluginListItem__install">
 						{t("COMMON.INSTALL")}
 					</Button>
 				)}

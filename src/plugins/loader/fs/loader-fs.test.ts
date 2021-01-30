@@ -19,6 +19,16 @@ describe("PluginLoaderFileSystem", () => {
 		expect(subject.search()).toHaveLength(2);
 	});
 
+	it("should not fail on search", () => {
+		const pathSpy = jest.spyOn(subject, "find").mockImplementationOnce(() => {
+			throw new Error();
+		});
+
+		expect(subject.search()).toHaveLength(1);
+
+		pathSpy.mockRestore();
+	});
+
 	it("should remove a valid folder", () => {
 		const fsExtra = require("fs-extra");
 		const removeMock = jest.spyOn(fsExtra, "remove").mockImplementation();

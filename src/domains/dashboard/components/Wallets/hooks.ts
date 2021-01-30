@@ -21,24 +21,14 @@ export const useWalletDisplay = ({
 
 	const { listWallets, gridWallets, listHasMore } = useMemo(() => {
 		const listWallets = wallets
-			.filter((wallet: any, index: number) => {
-				if (!viewMore && index > listPagerLimit) {
-					return false;
-				}
-
-				if (!selectedNetworkIds?.includes(wallet.network().id())) {
-					return false;
-				}
-
+			.filter((wallet: any) => {
 				if (displayType === "favorites") {
 					return wallet.isStarred();
 				}
-
 				if (displayType === "ledger") {
 					return wallet.isLedger();
 				}
-
-				return wallet && !wallet.isBlank;
+				return wallet && !wallet.isBlank && selectedNetworkIds?.includes(wallet.network().id());
 			})
 			.map((wallet) => ({ wallet }));
 
@@ -87,9 +77,9 @@ export const useWalletDisplay = ({
 		};
 
 		return {
-			listWallets,
+			listWallets: viewMore ? listWallets : listWallets.slice(0, listPagerLimit),
 			gridWallets: loadGridWallets(),
-			listHasMore: wallets.length > 0 && wallets.length > listWallets.length,
+			listHasMore: wallets.length > 0 && listWallets.length > listPagerLimit && !viewMore,
 		};
 	}, [wallets, selectedNetworkIds, displayType, viewMore, sliderOptions.slidesPerView, listPagerLimit]);
 

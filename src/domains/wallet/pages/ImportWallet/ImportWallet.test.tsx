@@ -191,6 +191,40 @@ describe("ImportWallet", () => {
 		expect(form.current.getValues()).toEqual({ name: "Test" });
 	});
 
+	it("should go back to dashboard", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		const historySpy = jest.spyOn(history, "push").mockImplementationOnce();
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered;
+
+		const backButton = getByTestId("ImportWallet__back-button");
+		expect(backButton).toBeTruthy();
+		expect(backButton).not.toHaveAttribute("disabled");
+
+		await fireEvent.click(backButton);
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${fixtureProfileId}/dashboard`);
+
+		historySpy.mockRestore();
+	});
+
 	it("should go to previous step", async () => {
 		const history = createMemoryHistory();
 		history.push(route);
