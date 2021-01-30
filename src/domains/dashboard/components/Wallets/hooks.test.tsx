@@ -45,7 +45,7 @@ describe("useWalletDisplay hook", () => {
 		});
 
 		expect(result.current.listWallets).toHaveLength(2);
-		expect(result.current.listHasMore).toBe(true);
+		expect(result.current.listHasMore).toBe(false);
 	});
 
 	it("should limit list type wallets", async () => {
@@ -73,7 +73,7 @@ describe("useWalletDisplay hook", () => {
 				useWalletDisplay({
 					wallets,
 					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
-					viewMore: false,
+					viewMore: true,
 					listPagerLimit: 1,
 				}),
 			{
@@ -81,7 +81,7 @@ describe("useWalletDisplay hook", () => {
 			},
 		);
 
-		expect(result.current.listWallets).toHaveLength(2);
+		expect(result.current.listWallets).toHaveLength(3);
 	});
 
 	it("should filter wallets by selectedNetworkIds", async () => {
@@ -96,7 +96,7 @@ describe("useWalletDisplay hook", () => {
 	it("should return listHasMore boolean", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(
-			() => useWalletDisplay({ wallets, selectedNetworkIds: ["ark.devnet"], listPagerLimit: 1, viewMore: true }),
+			() => useWalletDisplay({ wallets, selectedNetworkIds: ["ark.devnet"], listPagerLimit: 1, viewMore: false }),
 			{
 				wrapper,
 			},

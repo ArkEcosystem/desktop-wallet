@@ -155,6 +155,10 @@ export const SendTransfer = () => {
 		// Abort any existing listener
 		abortRef.current.abort();
 
+		if (activeTab === 1) {
+			return history.go(-1);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -243,7 +247,7 @@ export const SendTransfer = () => {
 										{activeTab < 3 && (
 											<>
 												<Button
-													disabled={activeTab === 1}
+													disabled={isSubmitting}
 													data-testid="SendTransfer__button--back"
 													variant="secondary"
 													onClick={handleBack}
