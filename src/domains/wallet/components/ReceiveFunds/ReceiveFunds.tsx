@@ -92,7 +92,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 				{isFormOpen && (
 					<Form context={form} onSubmit={console.log}>
-						<ReceiveFundsForm />
+						<ReceiveFundsForm network={network} />
 					</Form>
 				)}
 			</div>

@@ -2,11 +2,11 @@ import { Alert } from "app/components/Alert";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
 import { useValidation } from "app/hooks";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ReceiveFundsForm = () => {
+export const ReceiveFundsForm = ({ network }: { network: string }) => {
 	const { t } = useTranslation();
 
 	const form = useFormContext();
@@ -18,6 +18,11 @@ export const ReceiveFundsForm = () => {
 	useEffect(() => {
 		register("amount");
 	}, [register]);
+
+	const isSmartbridgeUsedInNetwork = useMemo(() => {
+		const smartbridgeNetworks = ["ark.mainnet", "ark.devnet"];
+		return smartbridgeNetworks.includes(network);
+	}, [network]);
 
 	return (
 		<div data-testid="ReceiveFundsForm">
@@ -34,19 +39,21 @@ export const ReceiveFundsForm = () => {
 					<FormHelperText />
 				</FormField>
 
-				<FormField name="smartbridge">
-					<FormLabel label={t("COMMON.SMARTBRIDGE")} required={false} optional={true} />
-					<InputCounter
-						ref={register(receiveFunds.smartbridge())}
-						data-testid="ReceiveFundsForm__smartbridge"
-						type="text"
-						placeholder=" "
-						className="pr-24"
-						defaultValue={smartbridge}
-						maxLengthLabel={maxLength.toString()}
-					/>
-					<FormHelperText />
-				</FormField>
+				{isSmartbridgeUsedInNetwork && (
+					<FormField name="smartbridge">
+						<FormLabel label={t("COMMON.SMARTBRIDGE")} required={false} optional={true} />
+						<InputCounter
+							ref={register(receiveFunds.smartbridge())}
+							data-testid="ReceiveFundsForm__smartbridge"
+							type="text"
+							placeholder=" "
+							className="pr-24"
+							defaultValue={smartbridge}
+							maxLengthLabel={maxLength.toString()}
+						/>
+						<FormHelperText />
+					</FormField>
+				)}
 
 				{smartbridge?.length > maxLength && (
 					<div className="mt-8" data-testid="ReceiveFundsForm__smartbridge-warning">
