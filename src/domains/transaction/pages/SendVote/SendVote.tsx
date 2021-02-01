@@ -196,7 +196,7 @@ export const SendVote = () => {
 				// @README: This needs to be temporarily hardcoded here because we need to create 1 or 2
 				// transactions but the SDK is only capable of creating 1 transaction because it has no
 				// concept of all those weird legacy constructs that exist within ARK.
-				if (senderWallet?.networkId() === 'ark.mainnet') {
+				if (senderWallet?.networkId() === "ark.mainnet") {
 					const unvoteTransaction = await transactionBuilder.build(
 						"vote",
 						{
