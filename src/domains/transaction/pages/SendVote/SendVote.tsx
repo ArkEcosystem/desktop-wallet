@@ -196,6 +196,7 @@ export const SendVote = () => {
 				// @README: This needs to be temporarily hardcoded here because we need to create 1 or 2
 				// transactions but the SDK is only capable of creating 1 transaction because it has no
 				// concept of all those weird legacy constructs that exist within ARK.
+				/* istanbul ignore next */
 				if (senderWallet?.networkId() === "ark.mainnet") {
 					const unvoteTransaction = await transactionBuilder.build(
 						"vote",
@@ -301,7 +302,7 @@ export const SendVote = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
