@@ -204,7 +204,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		.map(mapConfigToPluginData);
 
 	const handleSelectPlugin = (pluginId: string) =>
-		history.push(`/profiles/${activeProfile.id()}/plugins/${pluginId}`);
+		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${pluginId}`);
 
 	const handleEnablePlugin = (pluginData: any) => {
 		pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });

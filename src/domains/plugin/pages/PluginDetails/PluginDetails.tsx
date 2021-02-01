@@ -1,14 +1,15 @@
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useQueryParams } from "app/hooks";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
+import { usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { pluginData, reviewData } from "../../data";
+import { reviewData } from "../../data";
 
 const commentsSortOptions = {
 	type: "Best",
@@ -16,17 +17,19 @@ const commentsSortOptions = {
 };
 
 type PluginDetailsProps = {
-	pluginData?: any;
 	reviewData?: any;
-	isInstalled?: boolean;
 };
 
-export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDetailsProps) => {
+export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const activeProfile = useActiveProfile();
+	const queryParams = useQueryParams();
 
 	const { t } = useTranslation();
+	const { pluginPackages } = usePluginManagerContext();
 
-	const { name, author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
+	const pluginId = queryParams.get("pluginId");
+	const pluginData = pluginPackages.find((item) => item.id().toString() === pluginId)?.toObject() || ({} as any);
+
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [
@@ -35,27 +38,18 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 			route: `/profiles/${activeProfile.id()}/plugins`,
 		},
 		{
-			label: name,
+			label: pluginData.title,
 		},
 	];
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader
-					name={name}
-					author={author}
-					category={category}
-					url={url}
-					rating={averageRating}
-					version={version}
-					size={size}
-					isInstalled={isInstalled}
-				/>
+				<PluginHeader {...pluginData} />
 			</Section>
 
 			<Section>
-				<PluginInfo about={about} permissions={permissions} screenshots={screenshots} />
+				<PluginInfo about={""} permissions={[]} screenshots={[]} />
 			</Section>
 
 			<Section>
@@ -77,7 +71,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 						className="p-8 mb-auto ml-32 rounded-xl border-2 border-theme-secondary-300 dark:border-theme-secondary-800"
 						data-testid="plugin-details__review-box"
 					>
-						<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />
+						<ReviewBox averageScore={""} ratings={ratings} totalAvaliations={totalAvaliations} />
 					</div>
 				</div>
 			</Section>
@@ -86,7 +80,5 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 };
 
 PluginDetails.defaultProps = {
-	isInstalled: false,
-	pluginData,
 	reviewData,
 };

@@ -1,54 +1,53 @@
-import { createMemoryHistory } from "history";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { PluginController, PluginManager, PluginManagerProvider, usePluginManagerContext } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
-import { getDefaultProfileId, renderWithRouter } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { PluginDetails } from "./PluginDetails";
 
-const history = createMemoryHistory();
-
-const pluginDetailsURL = `/profiles/${getDefaultProfileId()}/plugins/wsx123`;
-
 describe("PluginDetails", () => {
-	beforeAll(() => {
-		history.push(pluginDetailsURL);
+	let manager: PluginManager;
+	let profile: Profile;
+
+	beforeEach(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		manager = new PluginManager();
 	});
 
-	it("should render properly", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins/:pluginId">
-				<PluginDetails />
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
+	it("should render properly", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
 			</Route>,
 			{
-				routes: [pluginDetailsURL],
-				history,
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
 			},
 		);
 
-		expect(getByTestId("plugin-details__header")).toBeTruthy();
-		expect(getByTestId("plugin-details__comments")).toBeTruthy();
-		expect(getByTestId("plugin-details__review-box")).toBeTruthy();
+		fireEvent.click(screen.getByText("Fetch Packages"));
 
-		expect(asFragment()).toMatchSnapshot();
-	});
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
-	it("should render properly as installed", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins/:pluginId">
-				<PluginDetails isInstalled />
-			</Route>,
-			{
-				routes: [pluginDetailsURL],
-				history,
-			},
-		);
-
-		expect(getByTestId("plugin-details__header")).toBeTruthy();
-		expect(getByTestId("plugin-details__comments")).toBeTruthy();
-		expect(getByTestId("plugin-details__review-box")).toBeTruthy();
-		expect(getByTestId("PluginHeader__button--uninstall")).toBeTruthy();
-		expect(getByTestId("PluginHeader__button--open")).toBeTruthy();
-
-		expect(asFragment()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 });
