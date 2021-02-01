@@ -6,7 +6,7 @@ import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import { usePluginManagerContext } from "plugins";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { reviewData } from "../../data";
@@ -25,11 +25,30 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const queryParams = useQueryParams();
 
 	const { t } = useTranslation();
-	const { pluginPackages } = usePluginManagerContext();
+	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
-	const pluginData = pluginPackages.find((item) => item.id().toString() === pluginId)?.toObject() || ({} as any);
+	const isInstalled = pluginManager.plugins().findById(pluginId!);
 
+	const latestConfiguration = useMemo(() => pluginConfigurations.find((item) => item.id() === pluginId), [
+		pluginConfigurations,
+		pluginId,
+	]);
+	const packageConfiguration = useMemo(() => pluginPackages.find((item) => item.id() === pluginId), [
+		pluginPackages,
+		pluginId,
+	]);
+
+	const plugin = useMemo(() => {
+		// Installed plugins should display the configuration
+		// of the downloaded version and the latest one only if the user updates it.
+		if (isInstalled) {
+			return packageConfiguration;
+		}
+		return latestConfiguration || packageConfiguration;
+	}, [isInstalled, packageConfiguration, latestConfiguration]);
+
+	const pluginData = plugin?.toObject() || ({} as any);
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [
@@ -45,11 +64,11 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} />
+				<PluginHeader {...pluginData} isInstalled={isInstalled} />
 			</Section>
 
 			<Section>
-				<PluginInfo about={""} permissions={[]} screenshots={[]} />
+				<PluginInfo {...pluginData} isInstalled={isInstalled} />
 			</Section>
 
 			<Section>

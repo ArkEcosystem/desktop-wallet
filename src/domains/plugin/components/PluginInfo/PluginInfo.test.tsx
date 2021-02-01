@@ -9,13 +9,13 @@ describe("PluginInfo", () => {
 		const permissions = ["Embedded Webpages", "API Requests", "Access to Profiles"];
 
 		const { asFragment, getByTestId, getAllByTestId } = render(
-			<PluginInfo about={about} permissions={permissions} screenshots={[1, 2, 3]} />,
+			<PluginInfo description={about} permissions={permissions} images={["https://ark.io/screenshot.png"]} />,
 		);
 
 		expect(getByTestId("plugin-info__about")).toHaveTextContent(about);
 		expect(getByTestId("plugin-info__permissions")).toHaveTextContent(permissions.join(", "));
 		expect(getByTestId("plugin-info__screenshots--pagination")).toBeTruthy();
-		expect(getAllByTestId("plugin-info__screenshot")).toHaveLength(9);
+		expect(getAllByTestId("plugin-info__screenshot")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

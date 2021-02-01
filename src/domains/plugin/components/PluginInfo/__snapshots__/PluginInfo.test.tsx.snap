@@ -43,14 +43,14 @@ exports[`PluginInfo should render properly 1`] = `
       data-testid="plugin-info__screenshots--pagination"
     />
     <div
-      class="pb-8"
+      class="mt-4"
     >
       <div
         class="relative"
       >
         <div
           class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
-          style="height: 288px;"
+          style="height: 232px;"
         >
           <div
             class="h-full swiper-wrapper important:z-0 "
@@ -58,74 +58,23 @@ exports[`PluginInfo should render properly 1`] = `
           >
             <div
               class="swiper-slide"
-              style="height: 192px; margin-top: 0px;"
+              style="height: 200px; margin-top: 0px;"
             >
-              <div
-                class="flex pb-10 mt-3 mr-3 space-x-4"
-              >
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-              </div>
-            </div>
-            <div
-              class="swiper-slide"
-              style="height: 192px; margin-top: 0px;"
-            >
-              <div
-                class="flex pb-10 mt-3 mr-3 space-x-4"
-              >
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-              </div>
-            </div>
-            <div
-              class="swiper-slide"
-              style="height: 192px; margin-top: 0px;"
-            >
-              <div
-                class="flex pb-10 mt-3 mr-3 space-x-4"
-              >
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-                <div
-                  class="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
-                  data-testid="plugin-info__screenshot"
-                />
-              </div>
+              <img
+                alt="Screenshot"
+                class="object-contain rounded-lg bg-theme-secondary-200 overflow-hidden w-full max-h-44"
+                data-testid="plugin-info__screenshot"
+                src="https://ark.io/screenshot.png"
+              />
             </div>
           </div>
-          <div
-            class="flex justify-center items-center h-6 swiper-pagination important:bottom-8 important:z-0"
-          />
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="mt-8"
+  >
     <div
       class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >

@@ -12,7 +12,7 @@ exports[`PluginSpecs should render properly 1`] = `
         class="flex"
       >
         <div
-          class="flex flex-col"
+          class="flex flex-col pr-6"
         >
           <span
             class="font-bold text-theme-secondary-400"
@@ -76,6 +76,7 @@ exports[`PluginSpecs should render properly 1`] = `
       >
         <div
           class="flex flex-col text-right"
+          data-testid="PluginSpecs__version"
         >
           <span
             class="font-bold text-theme-secondary-400"
@@ -125,7 +126,7 @@ exports[`PluginSpecs should render without url and size 1`] = `
         class="flex"
       >
         <div
-          class="flex flex-col"
+          class="flex flex-col pr-6"
         >
           <span
             class="font-bold text-theme-secondary-400"
@@ -203,6 +204,7 @@ exports[`PluginSpecs should render without url and size 1`] = `
       >
         <div
           class="flex flex-col text-right"
+          data-testid="PluginSpecs__version"
         >
           <span
             class="font-bold text-theme-secondary-400"
