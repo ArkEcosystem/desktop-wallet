@@ -1,6 +1,5 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
-import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useReloadPath } from "app/hooks";
 import { toasts } from "app/services";
 import React, { useState } from "react";
@@ -11,8 +10,6 @@ import { availableSettings } from "./available-settings";
 
 export const Settings = () => {
 	const [activeSettings, setActiveSettings] = useState("General");
-
-	const { env } = useEnvironmentContext();
 
 	const reloadPath = useReloadPath();
 
@@ -61,7 +58,6 @@ export const Settings = () => {
 
 		return (
 			<ActiveSettings
-				env={env}
 				formConfig={{ context: form, register, errors }}
 				onSuccess={handleSuccess}
 				onError={handleError}
