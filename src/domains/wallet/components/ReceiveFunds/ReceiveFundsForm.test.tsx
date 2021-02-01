@@ -14,7 +14,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm network="ark.mainnet" />
 				</Form>,
 			);
 
@@ -30,7 +30,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm network="ark.mainnet" />
 				</Form>,
 			);
 
@@ -50,7 +50,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm network="ark.mainnet" />
 				</Form>,
 			);
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
@@ -70,7 +70,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm network="ark.mainnet" />
 				</Form>,
 			);
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
@@ -79,6 +79,23 @@ describe("ReceiveFundsForm", () => {
 			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe(smartbridge));
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge-warning")).toBeInTheDocument());
+
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("should not show smartbridge if network is not ark", async () => {
+		const smartbridge = Array(256).fill("x").join("");
+		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));
+
+		await act(async () => {
+			const { asFragment, getByTestId } = render(
+				<Form context={form.current} onSubmit={(_) => _}>
+					<ReceiveFundsForm network="compedia.mainnet" />
+				</Form>,
+			);
+
+			expect(() => getByTestId("ReceiveFundsForm__smartbridge")).toThrow();
 
 			expect(asFragment()).toMatchSnapshot();
 		});
