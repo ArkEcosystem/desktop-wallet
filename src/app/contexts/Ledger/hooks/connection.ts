@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, WalletData } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
@@ -38,7 +38,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
-				wallet.data().set(WalletFlag.LedgerIndex, path);
+				wallet.data().set(WalletData.LedgerIndex, path);
 			}
 			await persist();
 		},

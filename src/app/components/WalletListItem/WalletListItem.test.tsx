@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletData, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -22,7 +22,7 @@ describe("WalletListItem", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletFlag.LedgerIndex, 0);
+		wallet.data().set(WalletData.LedgerIndex, 0);
 	});
 
 	it("should render", () => {

@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
@@ -16,7 +16,7 @@ const prepareMultiSignature = (
 });
 
 const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWriteWallet, signFn: SignFn) => {
-	const path = wallet.data().get<string>(WalletFlag.LedgerIndex);
+	const path = wallet.data().get<string>(WalletData.LedgerIndex);
 	let senderPublicKey = wallet.publicKey();
 
 	if (!senderPublicKey) {
