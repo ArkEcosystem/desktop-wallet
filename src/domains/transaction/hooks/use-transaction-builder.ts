@@ -16,7 +16,7 @@ const prepareMultiSignature = (
 });
 
 const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWriteWallet, signFn: SignFn) => {
-	const path = wallet.data().get<string>(WalletData.LedgerIndex);
+	const path = wallet.data().get<string>(WalletData.LedgerPath);
 	let senderPublicKey = wallet.publicKey();
 
 	if (!senderPublicKey) {
