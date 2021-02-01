@@ -56,6 +56,11 @@ export const Pagination = ({
 		paginationButtons,
 	]);
 
+	if (totalPages <= 1) {
+		console.log("HERE", totalPages, totalCount, itemsPerPage);
+		return null;
+	}
+
 	if (variant === "condensed") {
 		return (
 			<CompactPagination
