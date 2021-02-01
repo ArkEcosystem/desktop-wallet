@@ -1,7 +1,6 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
-import { Spinner } from "app/components/Spinner";
 import { toasts } from "app/services";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -135,9 +134,10 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 						variant="secondary"
 						type="button"
 						disabled={isValidating || !address}
+						isLoading={isValidating}
 						onClick={handleSubmit(() => addParticipant())}
 					>
-						{isValidating ? <Spinner size="sm" /> : t("TRANSACTION.MULTISIGNATURE.ADD_PARTICIPANT")}
+						{t("TRANSACTION.MULTISIGNATURE.ADD_PARTICIPANT")}
 					</Button>
 				</SubForm>
 			</FormProvider>

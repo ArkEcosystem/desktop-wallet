@@ -1,6 +1,5 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
@@ -64,16 +63,11 @@ export const Paginator = ({
 				{activeIndex < size && (
 					<Button
 						disabled={isNextDisabled || isNextLoading}
+						isLoading={isNextLoading}
 						onClick={() => onNext?.(activeIndex + 1)}
 						data-testid="Paginator__continue-button"
 					>
-						{isNextLoading ? (
-							<span className="px-3">
-								<Spinner size="sm" />
-							</span>
-						) : (
-							t("COMMON.CONTINUE")
-						)}
+						{t("COMMON.CONTINUE")}
 					</Button>
 				)}
 
