@@ -57,7 +57,6 @@ export const Pagination = ({
 	]);
 
 	if (totalPages <= 1) {
-		console.log("HERE", totalPages, totalCount, itemsPerPage);
 		return null;
 	}
 
