@@ -84,6 +84,7 @@ const PluginManagerHome = ({
 				{viewType === "list" && (
 					<PluginList
 						plugins={plugins}
+						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onEnable={onEnable}
 						onDisable={onDisable}
@@ -120,6 +121,7 @@ const PluginManagerHome = ({
 					<PluginList
 						plugins={plugins}
 						onInstall={onInstall}
+						onLaunch={onLaunch}
 						onEnable={onEnable}
 						onDisable={onDisable}
 						onDelete={onDelete}
