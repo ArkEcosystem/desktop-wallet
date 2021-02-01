@@ -19,10 +19,11 @@ import * as yup from "yup";
 
 import { SettingsProps } from "../Settings.models";
 
-export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
+export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
-	const { state } = useEnvironmentContext();
+
 	const activeProfile = useActiveProfile();
+	const { env, state, persist } = useEnvironmentContext();
 
 	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
 		activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast) || false,
@@ -92,12 +93,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
 				await syncWallets();
-				await env.persist();
+				await persist(activeProfile);
 			};
 
 			savePeerSettings();
 		}
-	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, syncWallets]);
+	}, [activeProfile, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, persist, syncWallets]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -207,7 +208,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
 		await syncWallets();
-		await env.persist();
+		await persist(activeProfile);
 
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
 	};
