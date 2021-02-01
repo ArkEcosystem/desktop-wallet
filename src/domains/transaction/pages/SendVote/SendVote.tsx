@@ -287,7 +287,7 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
-			console.log(error)
+			console.log(error);
 
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
