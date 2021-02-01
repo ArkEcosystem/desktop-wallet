@@ -25,7 +25,7 @@ export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			if (isLoading) {
 				return (
 					<div className="flex relative items-center">
-						<span className="flex items-center space-x-2 invisible">
+						<span className="flex invisible items-center space-x-2">
 							{icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
 							{children}
 						</span>
