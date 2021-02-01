@@ -32,14 +32,14 @@ test("should navigate and apply filters", async (t) => {
 
 test("should navigate to plugin details and back", async (t) => {
 	await t.click(Selector('[data-testid="PluginGrid"] > div > div').withText("Transaction Export"));
-	await t.expect(Selector("span").withExactText("ARK Explorer").exists).ok();
+	await t.expect(Selector("span").withExactText("Transaction Export").exists).ok();
 
-	await t.expect(getLocation()).contains("/plugins/@dated/transaction-export-plugin");
+	await t.expect(getLocation()).contains("/plugins/details?pluginId=@dated/transaction-export-plugin");
 
 	await scrollToTop();
 
 	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE));
 
 	await t.expect(getLocation()).contains("/plugins");
-	await t.expect(getLocation()).notContains("/plugins/@dated/transaction-export-plugin");
+	await t.expect(getLocation()).notContains("/plugins/details");
 });
