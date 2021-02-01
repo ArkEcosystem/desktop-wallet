@@ -142,7 +142,7 @@ export const SendVote = () => {
 		setActiveTab(newIndex);
 	};
 
-	const confirmSendVote = (type: "unvote" | "vote") =>
+	const confirmSendVote = (type: "unvote" | "vote" | "combined") =>
 		new Promise((resolve) => {
 			const interval = setInterval(async () => {
 				let isConfirmed = false;
@@ -150,10 +150,20 @@ export const SendVote = () => {
 				await activeWallet.syncVotes();
 				const walletVotes = activeWallet.votes();
 
-				isConfirmed =
-					type === "unvote"
-						? !walletVotes.find((vote) => vote.address() === unvotes[0].address())
-						: !!walletVotes.find((vote) => vote.address() === votes[0].address());
+				if (type === "vote") {
+					isConfirmed = !!walletVotes.find((vote) => vote.address() === votes[0].address());
+				}
+
+				if (type === "unvote") {
+					isConfirmed = !walletVotes.find((vote) => vote.address() === unvotes[0].address());
+				}
+
+				if (type === "combined") {
+					const voteConfirmed = !!walletVotes.find((vote) => vote.address() === votes[0].address());
+					const unvoteConfirmed = !walletVotes.find((vote) => vote.address() === unvotes[0].address());
+
+					isConfirmed = voteConfirmed && unvoteConfirmed;
+				}
 
 				if (isConfirmed) {
 					clearInterval(interval);
@@ -181,43 +191,72 @@ export const SendVote = () => {
 			};
 
 			if (unvotes.length > 0 && votes.length > 0) {
-				const unvoteTransaction = await transactionBuilder.build(
-					"vote",
-					{
-						...voteTransactionInput,
-						data: {
-							unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+				const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+
+				// @README: This needs to be temporarily hardcoded here because we need to create 1 or 2
+				// transactions but the SDK is only capable of creating 1 transaction because it has no
+				// concept of all those weird legacy constructs that exist within ARK.
+				if (senderWallet?.networkId() === 'ark.mainnet') {
+					const unvoteTransaction = await transactionBuilder.build(
+						"vote",
+						{
+							...voteTransactionInput,
+							data: {
+								unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							},
 						},
-					},
-					{ abortSignal },
-				);
+						{ abortSignal },
+					);
 
-				await transactionBuilder.broadcast(unvoteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(unvoteTransaction.id(), voteTransactionInput);
 
-				await env.persist();
+					await env.persist();
 
-				await confirmSendVote("unvote");
+					await confirmSendVote("unvote");
 
-				const voteTransaction = await transactionBuilder.build(
-					"vote",
-					{
-						...voteTransactionInput,
-						data: {
-							votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+					const voteTransaction = await transactionBuilder.build(
+						"vote",
+						{
+							...voteTransactionInput,
+							data: {
+								votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							},
 						},
-					},
-					{ abortSignal },
-				);
+						{ abortSignal },
+					);
 
-				await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
 
-				await env.persist();
+					await env.persist();
 
-				setTransaction(voteTransaction);
+					setTransaction(voteTransaction);
 
-				setActiveTab(4);
+					setActiveTab(4);
 
-				await confirmSendVote("vote");
+					await confirmSendVote("vote");
+				} else {
+					// @README: If we are not interacting with ark.mainnet we can combine the
+					// votes and unvotes in a single transaction to save fees and processing time.
+					const voteTransaction = await transactionBuilder.build(
+						"vote",
+						{
+							...voteTransactionInput,
+							data: {
+								votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+								unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+							},
+						},
+						{ abortSignal },
+					);
+
+					await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
+
+					await env.persist();
+
+					setActiveTab(4);
+
+					await confirmSendVote("combined");
+				}
 			} else {
 				const isUnvote = unvotes.length > 0;
 				const transaction = await transactionBuilder.build(
@@ -258,7 +297,7 @@ export const SendVote = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
