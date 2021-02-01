@@ -253,6 +253,8 @@ export const SendVote = () => {
 
 					await env.persist();
 
+					setTransaction(voteTransaction);
+
 					setActiveTab(4);
 
 					await confirmSendVote("combined");
@@ -285,6 +287,8 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
+			console.log(error)
+
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
