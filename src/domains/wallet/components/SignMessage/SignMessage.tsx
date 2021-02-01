@@ -70,7 +70,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					<Input type="text" disabled />
 					<div className="flex absolute top-0 items-center mt-2 ml-4">
 						<div className="flex items-center">
-							<Avatar address="test" size="sm" noShadow />
+							<Avatar address={signatoryAddress} size="sm" noShadow />
 							<span className="ml-3 font-semibold ">{signatoryAddress}</span>
 						</div>
 					</div>
