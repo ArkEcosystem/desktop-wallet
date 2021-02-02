@@ -13,7 +13,70 @@ const workflow = {
 			types: ["ready_for_review", "synchronize", "opened"],
 		},
 	},
-	jobs: {},
+	jobs: {
+		"build-and-upload": {
+			"runs-on": "ubuntu-latest",
+			strategy: {
+				matrix: {
+					"node-version": ["12.x"],
+				},
+			},
+			steps: [
+				{
+					uses: "actions/checkout@v2",
+					with: {
+						ref: "${{ github.head_ref }}",
+					},
+				},
+				{
+					name: "Get yarn cache directory path",
+					id: "yarn-cache-dir-path",
+					run: 'echo "::set-output name=dir::$(yarn cache dir)"',
+				},
+				{
+					name: "Cache node modules",
+					uses: "actions/cache@v2",
+					id: "yarn-cache",
+					with: {
+						path: "${{ steps.yarn-cache-dir-path.outputs.dir }}",
+						key: "${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}",
+						"restore-keys": "${{ runner.os }}-yarn-",
+					},
+				},
+				{
+					name: "Use Node.js ${{ matrix.node-version }}",
+					uses: "actions/setup-node@v1",
+					with: {
+						"node-version": "${{ matrix.node-version }}",
+					},
+				},
+				{
+					name: "Update System",
+					run: "sudo apt-get update",
+				},
+				{
+					name: "Install (Ledger Requirements)",
+					run: "sudo apt-get install libudev-dev libusb-1.0-0-dev",
+				},
+				{
+					name: "Install (Yarn)",
+					run: "yarn install --ignore-engines --frozen-lockfile",
+				},
+				{
+					name: "Rebuild",
+					run: "npm rebuild",
+				},
+				{
+					name: "Upload Modules Artifact",
+					uses: "actions/upload-artifact@v2",
+					with: {
+						name: "node_modules",
+						path: "${{ github.workspace }}/node_modules",
+					},
+				},
+			],
+		},
+	},
 };
 
 const directories = {
@@ -151,6 +214,7 @@ for (const [directory, threshold] of Object.entries(directories)) {
 	};
 
 	const job = {
+		needs: "build-and-upload",
 		"runs-on": "ubuntu-latest",
 		strategy: {
 			matrix: {
@@ -162,21 +226,6 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				uses: "actions/checkout@v2",
 				with: {
 					ref: "${{ github.head_ref }}",
-				},
-			},
-			{
-				name: "Get yarn cache directory path",
-				id: "yarn-cache-dir-path",
-				run: 'echo "::set-output name=dir::$(yarn cache dir)"',
-			},
-			{
-				name: "Cache node modules",
-				uses: "actions/cache@v2",
-				id: "yarn-cache",
-				with: {
-					path: "${{ steps.yarn-cache-dir-path.outputs.dir }}",
-					key: "${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}",
-					"restore-keys": "${{ runner.os }}-yarn-",
 				},
 			},
 			{
@@ -195,12 +244,12 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				run: "sudo apt-get install libudev-dev libusb-1.0-0-dev",
 			},
 			{
-				name: "Install (Yarn)",
-				run: "yarn install --frozen-lockfile",
-			},
-			{
-				name: "Rebuild",
-				run: "npm rebuild",
+				name: "Download Modules Artifact",
+				uses: "actions/download-artifact@v2",
+				with: {
+					name: "node_modules",
+					path: "${{ github.workspace }}/node_modules",
+				},
 			},
 			{
 				name: "Test",
