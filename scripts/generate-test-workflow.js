@@ -151,7 +151,6 @@ for (const [directory, threshold] of Object.entries(directories)) {
 	};
 
 	const job = {
-		needs: "build-and-upload",
 		"runs-on": "ubuntu-latest",
 		strategy: {
 			matrix: {
@@ -173,24 +172,27 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				},
 			},
 			{
+				name: "Get yarn cache directory path",
+				id: "yarn-cache-dir-path",
+				run: 'echo "::set-output name=dir::$(yarn cache dir)"',
+			},
+			{
+				name: "Cache node modules",
+				uses: "actions/cache@v2",
+				id: "yarn-cache",
+				with: {
+					path: "${{ steps.yarn-cache-dir-path.outputs.dir }}",
+					key: "${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}",
+					"restore-keys": "${{ runner.os }}-yarn-",
+				},
+			},
+			{
 				name: "Update System",
 				run: "sudo apt-get update",
 			},
 			{
 				name: "Install (Ledger Requirements)",
 				run: "sudo apt-get install libudev-dev libusb-1.0-0-dev",
-			},
-			{
-				name: "Download Modules Artifact",
-				uses: "actions/download-artifact@v2",
-				with: {
-					name: "node_modules",
-					path: "${{ github.workspace }}/node_modules.tar.gz",
-				},
-			},
-			{
-				name: "Unpack TAR",
-				run: "tar -xvzf ${{ github.workspace }}/node_modules.tar.gz",
 			},
 			{
 				name: "Test",
