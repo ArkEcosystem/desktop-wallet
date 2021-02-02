@@ -104,12 +104,11 @@ export const AddRecipient = ({
 
 	useEffect(() => {
 		register("remainingBalance");
+		register("isSendAllSelected");
 	}, [register]);
 
 	useEffect(() => {
-		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO)
-			? BigNumber.ZERO
-			: remainingBalance.minus(amount || 0);
+		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO) ? BigNumber.ZERO : remainingBalance;
 
 		setValue("remainingBalance", remaining);
 	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
@@ -243,6 +242,7 @@ export const AddRecipient = ({
 									setValue("displayAmount", currency.display);
 									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
 									singleRecipientOnChange(currency.value, recipientAddress);
+									setValue("isSendAllSelected", false);
 								}}
 							/>
 							<InputAddonEnd>
@@ -262,6 +262,7 @@ export const AddRecipient = ({
 										});
 
 										singleRecipientOnChange(remaining.toString(), recipientAddress);
+										setValue("isSendAllSelected", true);
 									}}
 									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
 								>
