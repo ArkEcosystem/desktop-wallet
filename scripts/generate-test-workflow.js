@@ -86,7 +86,7 @@ const workflow = {
 const directories = {
 	app: {
 		branches: 94.14,
-		functions: 97.85,
+		functions: 97.71,
 		lines: 98.05,
 		statements: 97.85,
 	},
@@ -151,7 +151,7 @@ const directories = {
 		statements: 60,
 	},
 	"domains/transaction": {
-		branches: 99.51,
+		branches: 99.5,
 		functions: 95.33,
 		lines: 85.05,
 		statements: 85.52,
