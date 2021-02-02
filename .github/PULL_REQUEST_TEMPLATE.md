@@ -1,7 +1,7 @@
 <!--
 Thanks for your interest in the project. Bugs filed and PRs submitted are appreciated!
 
-Please make sure you're familiar with and follow the instructions in the [contributing guidelines](https://learn.ark.dev/have-a-question/contribution-guidelines/contributing).
+Please make sure you're familiar with and follow the instructions in the [contributing guidelines](https://ark.dev/docs/program-incentives/guidelines/contributing).
 
 Please fill out the information below to expedite the review and (hopefully) merge of your pull request!
 -->
