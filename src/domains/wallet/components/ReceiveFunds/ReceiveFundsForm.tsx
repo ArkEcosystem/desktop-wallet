@@ -1,4 +1,4 @@
-import { FeatureFlag,Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { FeatureFlag, Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Alert } from "app/components/Alert";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
