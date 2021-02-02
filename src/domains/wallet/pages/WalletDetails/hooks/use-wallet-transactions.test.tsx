@@ -59,7 +59,6 @@ describe("Wallet Transactions Hook", () => {
 
 		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
 		jest.spyOn(wallet.transaction(), "broadcasted").mockReturnValue({ 1: transfer });
-		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(true);
 
 		const confirm = jest.spyOn(wallet.transaction(), "confirm").mockResolvedValue(true);
 
