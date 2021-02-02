@@ -409,9 +409,8 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/plugins/@dated/transaction-export-plugin`,
-		);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
+		expect(history.location.search).toEqual("?pluginId=@dated/transaction-export-plugin");
 	});
 
 	it("should enable plugin on my-plugins", async () => {
