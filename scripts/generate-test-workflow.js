@@ -68,14 +68,14 @@ const workflow = {
 				},
 				{
 					name: "Package Modules",
-					run: "tar -czvf node_modules.tar.gz ${{ github.workspace }}/node_modules",
+					run: "tar -czvf ${{ github.workspace }}/node_modules.tar.gz ${{ github.workspace }}/node_modules",
 				},
 				{
 					name: "Upload Modules Artifact",
 					uses: "actions/upload-artifact@v2",
 					with: {
 						name: "node_modules",
-						path: "node_modules.tar",
+						path: "${{ github.workspace }}/node_modules.tar",
 					},
 				},
 			],
@@ -252,11 +252,12 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				uses: "actions/download-artifact@v2",
 				with: {
 					name: "node_modules",
+					path: "${{ github.workspace }}/node_modules.tar",
 				},
 			},
 			{
 				name: "Unpack TAR",
-				run: "tar -xvzf node_modules.tar.gz",
+				run: "tar -xvzf ${{ github.workspace }}/node_modules.tar.gz",
 			},
 			{
 				name: "Test",
