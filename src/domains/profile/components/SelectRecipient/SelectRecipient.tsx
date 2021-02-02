@@ -68,7 +68,6 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 					<Input
 						className="pr-11 pl-14"
 						data-testid="SelectRecipient__input"
-						type="text"
 						ref={ref}
 						defaultValue={selectedAddress}
 						onChange={(ev: any) => onInputChange(ev.target.value)}

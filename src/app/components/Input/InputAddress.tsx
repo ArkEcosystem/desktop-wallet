@@ -55,13 +55,7 @@ export const InputAddress = ({
 
 	return (
 		<InputGroup className="max-w-20">
-			<Input
-				ref={registerRef?.(rules)}
-				type="text"
-				className="pr-12"
-				data-testid="InputAddress__input"
-				{...props}
-			/>
+			<Input ref={registerRef?.(rules)} className="pr-12" data-testid="InputAddress__input" {...props} />
 			<InputAddonEnd className="my-px mr-4">
 				<button
 					data-testid="InputAddress__qr-button"

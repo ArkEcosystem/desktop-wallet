@@ -63,51 +63,49 @@ export const FormStep = ({
 	}, [setValue, fees]);
 
 	return (
-		<section data-testid="SendVote__form-step" className="space-y-8">
+		<section data-testid="SendVote__form-step">
 			<Header
 				title={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-				<TransactionSender
-					address={wallet.address()}
-					alias={wallet.alias()}
-					isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
-				/>
+			<TransactionSender
+				address={wallet.address()}
+				alias={wallet.alias()}
+				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+			/>
 
-				{unvotes.length > 0 && (
-					<TransactionDetail label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
-						<VoteList votes={unvotes} />
-					</TransactionDetail>
-				)}
-
-				{votes.length > 0 && (
-					<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
-						<VoteList votes={votes} />
-					</TransactionDetail>
-				)}
-
-				<TransactionDetail>
-					<FormField name="fee">
-						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-						<InputFee
-							min={fees.min}
-							avg={fees.avg}
-							max={fees.max}
-							defaultValue={fee || 0}
-							value={fee || 0}
-							step={0.01}
-							onChange={(currency) => {
-								setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
-							}}
-						/>
-						<FormHelperText />
-					</FormField>
+			{unvotes.length > 0 && (
+				<TransactionDetail label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
+					<VoteList votes={unvotes} />
 				</TransactionDetail>
-			</div>
+			)}
+
+			{votes.length > 0 && (
+				<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
+					<VoteList votes={votes} />
+				</TransactionDetail>
+			)}
+
+			<TransactionDetail>
+				<FormField name="fee">
+					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+					<InputFee
+						min={fees.min}
+						avg={fees.avg}
+						max={fees.max}
+						defaultValue={fee || 0}
+						value={fee || 0}
+						step={0.01}
+						onChange={(currency) => {
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						}}
+					/>
+					<FormHelperText />
+				</FormField>
+			</TransactionDetail>
 		</section>
 	);
 };

@@ -2,7 +2,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input, InputGroup } from "app/components/Input";
+import { Input } from "app/components/Input";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import React from "react";
 import { useFormContext } from "react-hook-form";
@@ -23,21 +23,16 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 			<SendTransactionForm networks={networks} profile={profile} transactionType="ipfs" hasWalletId={true}>
 				<FormField name="hash">
 					<FormLabel label={t("TRANSACTION.IPFS_HASH")} />
-					<InputGroup>
-						<Input
-							data-testid="Input__hash"
-							type="text"
-							placeholder=" "
-							className="pr-20"
-							defaultValue={hash}
-							onChange={(event: any) =>
-								setValue("hash", event.target.value, {
-									shouldValidate: true,
-									shouldDirty: true,
-								})
-							}
-						/>
-					</InputGroup>
+					<Input
+						data-testid="Input__hash"
+						defaultValue={hash}
+						onChange={(event: any) =>
+							setValue("hash", event.target.value, {
+								shouldValidate: true,
+								shouldDirty: true,
+							})
+						}
+					/>
 					<FormHelperText />
 				</FormField>
 			</SendTransactionForm>
