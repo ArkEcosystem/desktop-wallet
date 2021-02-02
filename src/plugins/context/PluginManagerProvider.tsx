@@ -77,7 +77,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			try {
 				await PluginLoaderFileSystem.ipc().remove(plugin.dir()!);
 				pluginManager.plugins().removeById(plugin.config().id(), profile);
-				trigger();
 
 				toasts.success(`The plugin ${plugin.config().title()} was removed successfully.`);
 			} catch (e) {
