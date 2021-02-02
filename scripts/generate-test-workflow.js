@@ -75,7 +75,7 @@ const workflow = {
 					uses: "actions/upload-artifact@v2",
 					with: {
 						name: "node_modules",
-						path: "${{ github.workspace }}/node_modules.tar",
+						path: "${{ github.workspace }}/node_modules.tar.gz",
 					},
 				},
 			],
@@ -252,7 +252,7 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				uses: "actions/download-artifact@v2",
 				with: {
 					name: "node_modules",
-					path: "${{ github.workspace }}/node_modules.tar",
+					path: "${{ github.workspace }}/node_modules.tar.gz",
 				},
 			},
 			{
