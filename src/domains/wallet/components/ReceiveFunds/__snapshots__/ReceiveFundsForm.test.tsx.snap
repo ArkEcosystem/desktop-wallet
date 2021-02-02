@@ -138,6 +138,76 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
 </DocumentFragment>
 `;
 
+exports[`ReceiveFundsForm should not show smartbridge if is not supported by network 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div
+      data-testid="ReceiveFundsForm"
+    >
+      <div
+        class="mt-8 space-y-8"
+      >
+        <fieldset
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        >
+          <label
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            data-testid="FormLabel"
+            for="amount"
+          >
+            Amount
+          </label>
+          <input
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
+            data-testid="ReceiveFundsForm__amount"
+            name="amount"
+            placeholder="Amount"
+            value=""
+          />
+        </fieldset>
+        <div
+          class="mt-8"
+          data-testid="ReceiveFundsForm__smartbridge-warning"
+        >
+          <div
+            class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          >
+            <div
+              class="flex items-center justify-center text-theme-warning-600"
+            >
+              <div
+                class="sc-bdfBwQ daKoZl"
+                height="1.75em"
+                width="1.75em"
+              >
+                <svg>
+                  alert-warning.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="pointer-events-none border rounded-md border-theme-warning-600"
+            />
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <p
+                class="leading-relaxed break-words dark:text-theme-secondary-500"
+              >
+                Please note that you have exceeded the number of characters allowed, anything over 255 characters will not appear in smartbridges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
 exports[`ReceiveFundsForm should render 1`] = `
 <DocumentFragment>
   <form

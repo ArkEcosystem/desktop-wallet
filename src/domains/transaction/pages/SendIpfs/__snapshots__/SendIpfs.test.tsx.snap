@@ -434,7 +434,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         </div>
                       </div>
                       <p
-                        class="text-sm font-normal text-theme-danger-500"
+                        class="font-normal text-sm text-theme-danger-500"
                       >
                         Invalid Mnemonic
                       </p>
@@ -2263,7 +2263,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           value="invalid-ipfs-hash"
                         />
                         <p
-                          class="text-sm font-normal text-theme-danger-500"
+                          class="font-normal text-sm text-theme-danger-500"
                         >
                           'IPFS Hash' is invalid
                         </p>
