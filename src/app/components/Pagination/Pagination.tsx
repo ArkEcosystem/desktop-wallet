@@ -56,6 +56,10 @@ export const Pagination = ({
 		paginationButtons,
 	]);
 
+	if (totalPages <= 1) {
+		return null;
+	}
+
 	if (variant === "condensed") {
 		return (
 			<CompactPagination

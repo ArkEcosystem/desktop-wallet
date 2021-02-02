@@ -97,15 +97,25 @@ describe("LedgerTabs", () => {
 			);
 		};
 
-		const { container } = renderWithRouter(<Component />, { routes: [`/profiles/${profile.id()}`] });
+		const { container, history } = renderWithRouter(<Component />, { routes: [`/profiles/${profile.id()}`] });
 
 		await waitFor(() => expect(screen.getByTestId("SelectNetwork")).toBeInTheDocument());
 		await waitFor(() => expect(nextSelector()).toBeDisabled());
-		await waitFor(() => expect(backSelector()).toBeDisabled());
+		await waitFor(() => expect(backSelector()).toBeEnabled());
 
 		formRef!.setValue("network", wallet.network(), { shouldDirty: true, shouldValidate: true });
 
 		expect(container).toMatchSnapshot();
+
+		const historySpy = jest.spyOn(history, "push").mockImplementation();
+
+		act(() => {
+			fireEvent.click(backSelector());
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/dashboard`);
+
+		historySpy.mockRestore();
 
 		await waitFor(() => expect(nextSelector()).toBeEnabled());
 

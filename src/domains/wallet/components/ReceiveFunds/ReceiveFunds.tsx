@@ -1,3 +1,4 @@
+import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -17,7 +18,7 @@ type ReceiveFundsProps = {
 	address: string;
 	icon: string;
 	name?: string;
-	network: string;
+	network?: Network;
 	isOpen: boolean;
 	onClose?: () => void;
 };
@@ -28,11 +29,12 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
+	const networkId = network?.id?.();
 
 	const { uri, image } = useQRCode({
 		amount,
 		smartbridge,
-		network,
+		network: networkId,
 		address,
 	});
 
@@ -49,7 +51,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.NAME")}
-						extra={<NetworkIcon size="lg" coin={icon} network={network} />}
+						extra={<NetworkIcon size="lg" coin={icon} network={networkId} />}
 					>
 						{name}
 					</TransactionDetail>
@@ -62,7 +64,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					borderPosition="bottom"
 					extra={
 						<div className="-space-x-2 whitespace-nowrap">
-							{!name && <NetworkIcon size="lg" coin={icon} network={network} />}
+							{!name && <NetworkIcon size="lg" coin={icon} network={networkId} />}
 							<Avatar address={address} size="lg" />
 						</div>
 					}
@@ -92,7 +94,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 				{isFormOpen && (
 					<Form context={form} onSubmit={console.log}>
-						<ReceiveFundsForm />
+						<ReceiveFundsForm network={network} />
 					</Form>
 				)}
 			</div>
