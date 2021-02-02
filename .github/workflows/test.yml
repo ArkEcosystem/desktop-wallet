@@ -10,7 +10,7 @@ on:
             - synchronize
             - opened
 jobs:
-    build-and-upload:
+    app:
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -39,51 +39,16 @@ jobs:
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
             - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
+              run: yarn install --frozen-lockfile
             - name: Rebuild
               run: npm rebuild
-            - name: Package Modules
-              run: tar -czvf ${{ github.workspace }}/node_modules.tar.gz ${{ github.workspace
-                  }}/node_modules
-            - name: Upload Modules Artifact
-              uses: actions/upload-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-    app:
-        needs: build-and-upload
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version:
-                    - 12.x
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: Update System
-              run: sudo apt-get update
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/app
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
                   --coverage
                   --collectCoverageFrom='["src/app/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/app/":{"branches":94.14,"functions":97.71,"lines":98.05,"statements":97.85}}'
+                  --coverageThreshold='{"./src/app/":{"branches":94.14,"functions":97.85,"lines":98.05,"statements":97.85}}'
     domains-contact:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -93,6 +58,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -101,13 +76,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/contact --forceExit --maxWorkers=50%
@@ -115,7 +87,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/contact/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/contact/":{"branches":100,"functions":69.86,"lines":38.29,"statements":38.71}}'
     domains-dashboard:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -125,6 +96,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -133,13 +114,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/dashboard --forceExit --maxWorkers=50%
@@ -147,7 +125,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/dashboard/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/dashboard/":{"branches":100,"functions":88.89,"lines":82.87,"statements":83.27}}'
     domains-error:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -157,6 +134,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -165,13 +152,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/error --forceExit --maxWorkers=50%
@@ -179,7 +163,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/error/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/error/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-exchange:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -189,6 +172,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -197,13 +190,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/exchange --forceExit --maxWorkers=50%
@@ -211,7 +201,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/exchange/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/exchange/":{"branches":100,"functions":100,"lines":97.96,"statements":97.96}}'
     domains-network:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -221,6 +210,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -229,13 +228,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/network --forceExit --maxWorkers=50%
@@ -243,7 +239,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/network/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/network/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-news:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -253,6 +248,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -261,13 +266,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/news --forceExit --maxWorkers=50%
@@ -275,7 +277,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/news/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":84.44,"lines":68.31,"statements":69.13}}'
     domains-plugin:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -285,6 +286,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -293,13 +304,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/plugin --forceExit --maxWorkers=50%
@@ -307,7 +315,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/plugin/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/plugin/":{"branches":100,"functions":94.06,"lines":90.6,"statements":90.42}}'
     domains-profile:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -317,6 +324,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -325,13 +342,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/profile --forceExit --maxWorkers=50%
@@ -339,7 +353,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/profile/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":80.25,"lines":67.57,"statements":68.04}}'
     domains-setting:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -349,6 +362,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -357,13 +380,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/setting --forceExit --maxWorkers=50%
@@ -371,7 +391,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/setting/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/setting/":{"branches":100,"functions":93.1,"lines":89.56,"statements":89.02}}'
     domains-splash:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -381,6 +400,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -389,13 +418,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/splash --forceExit --maxWorkers=50%
@@ -403,7 +429,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/splash/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/splash/":{"branches":50,"functions":50,"lines":60,"statements":60}}'
     domains-transaction:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -413,6 +438,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -421,21 +456,17 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/transaction --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/transaction/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/transaction/":{"branches":99.5,"functions":95.33,"lines":85.05,"statements":85.52}}'
+                  --coverageThreshold='{"./src/domains/transaction/":{"branches":99.51,"functions":95.33,"lines":85.05,"statements":85.52}}'
     domains-vote:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -445,6 +476,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -453,13 +494,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/vote --forceExit --maxWorkers=50%
@@ -467,7 +505,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/vote/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/vote/":{"branches":100,"functions":98.77,"lines":95.16,"statements":95.47}}'
     domains-wallet:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -477,6 +514,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -485,13 +532,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/wallet --forceExit --maxWorkers=50%
@@ -499,7 +543,6 @@ jobs:
                   --collectCoverageFrom='["src/domains/wallet/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/wallet/":{"branches":98.09,"functions":83.27,"lines":70.49,"statements":71.03}}'
     migrations:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -509,6 +552,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -517,13 +570,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/migrations --forceExit --maxWorkers=50%
@@ -531,7 +581,6 @@ jobs:
                   --collectCoverageFrom='["src/migrations/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/migrations/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     plugins:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -541,6 +590,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -549,13 +608,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/plugins
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
@@ -563,7 +619,6 @@ jobs:
                   --collectCoverageFrom='["src/plugins/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/plugins/":{"branches":100,"functions":96.34,"lines":97.78,"statements":97.97}}'
     router:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -573,6 +628,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -581,13 +646,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/router
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
@@ -595,7 +657,6 @@ jobs:
                   --collectCoverageFrom='["src/router/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/router/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     utils:
-        needs: build-and-upload
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -605,6 +666,16 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.head_ref }}
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -613,13 +684,10 @@ jobs:
               run: sudo apt-get update
             - name: Install (Ledger Requirements)
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Download Modules Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: node_modules
-                  path: ${{ github.workspace }}/node_modules.tar.gz
-            - name: Unpack TAR
-              run: tar -xvzf ${{ github.workspace }}/node_modules.tar.gz
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+            - name: Rebuild
+              run: npm rebuild
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/utils
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
