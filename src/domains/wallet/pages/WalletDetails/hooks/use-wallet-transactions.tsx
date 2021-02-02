@@ -2,7 +2,7 @@ import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { useSynchronizer } from "app/hooks";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 export const useWalletTransactions = (
 	wallet: ReadWriteWallet,
@@ -27,8 +27,18 @@ export const useWalletTransactions = (
 		}
 	}, [wallet]);
 
+	const abortRef = useRef<() => void>();
+
 	const sync = useCallback(
 		async (cursor: string | number | undefined) => {
+			if (abortRef.current) {
+				abortRef.current();
+			}
+
+			let aborted = false;
+
+			abortRef.current = () => (aborted = true);
+
 			setIsLoading(true);
 
 			const methodMap = {
@@ -43,6 +53,10 @@ export const useWalletTransactions = (
 			const queryParams = transactionType ? { ...defaultQueryParams, ...transactionType } : defaultQueryParams;
 			// @ts-ignore
 			const response = await wallet[method](queryParams);
+
+			if (aborted) {
+				return;
+			}
 
 			setItemCount(response.items().length);
 			setNextPage(response.nextPage());
@@ -68,9 +82,19 @@ export const useWalletTransactions = (
 	 * Run periodically every 30 seconds to check for new transactions
 	 */
 	const verifyNew = useCallback(async () => {
-		const response = await wallet.transactions({ limit, cursor: 1 });
+		const methodMap = {
+			all: "transactions",
+			sent: "sentTransactions",
+			received: "receivedTransactions",
+		};
+
+		const method = methodMap[mode as keyof typeof methodMap];
+		const queryParams = transactionType ? { limit, cursor: 1, ...transactionType } : { limit, cursor: 1 };
+		// @ts-ignore
+		const response = await wallet[method](queryParams);
+
 		setTransactions((prev) => uniqBy([...response.items(), ...prev], (item) => item.id()));
-	}, [wallet, limit]);
+	}, [wallet, limit, mode, transactionType]);
 
 	const jobs = useMemo(
 		() => [
