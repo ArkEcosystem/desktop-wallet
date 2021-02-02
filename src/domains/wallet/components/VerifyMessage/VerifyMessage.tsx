@@ -63,7 +63,6 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 							<FormLabel label="Signed message content" />
 							<Input
 								data-testid="VerifyMessage_message-content"
-								type="text"
 								defaultValue={""}
 								ref={register({ required: true })}
 							/>
@@ -79,7 +78,6 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 				<FormField name="message" className="mt-8">
 					<FormLabel label={t("COMMON.MESSAGE")} />
 					<Input
-						type="text"
 						data-testid="VerifyMessage__message-input"
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -92,7 +90,6 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 				<FormField name="signatory" className="mt-8">
 					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
 					<Input
-						type="text"
 						data-testid="VerifyMessage__signatory-input"
 						defaultValue={signatory}
 						ref={register({
@@ -107,7 +104,6 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 				<FormField name="signature" className="mt-8">
 					<FormLabel label={t("COMMON.SIGNATURE")} />
 					<Input
-						type="text"
 						data-testid="VerifyMessage__signature-input"
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {

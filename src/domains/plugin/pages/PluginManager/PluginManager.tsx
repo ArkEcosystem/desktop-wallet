@@ -27,6 +27,7 @@ type PluginManagerHomeProps = {
 	onEnable: (plugin: any) => void;
 	onDisable: (plugin: any) => void;
 	onInstall: any;
+	onLaunch: (plugin: any) => void;
 	viewType: string;
 	paths?: any;
 	isLoading?: boolean;
@@ -43,6 +44,7 @@ const PluginManagerHome = ({
 	onDelete,
 	onSelect,
 	onInstall,
+	onLaunch,
 	viewType,
 	paths,
 	plugins,
@@ -82,6 +84,7 @@ const PluginManagerHome = ({
 				{viewType === "list" && (
 					<PluginList
 						plugins={plugins}
+						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onEnable={onEnable}
 						onDisable={onDisable}
@@ -118,6 +121,7 @@ const PluginManagerHome = ({
 					<PluginList
 						plugins={plugins}
 						onInstall={onInstall}
+						onLaunch={onLaunch}
 						onEnable={onEnable}
 						onDisable={onDisable}
 						onDelete={onDelete}
@@ -152,6 +156,7 @@ const PluginManagerHome = ({
 				{viewType === "list" && (
 					<PluginList
 						plugins={plugins}
+						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onEnable={onEnable}
 						onDisable={onDisable}
@@ -217,6 +222,10 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	};
 
 	const handleDeletePlugin = () => console.log("delete");
+
+	const handleLaunchPlugin = (pluginData: any) => {
+		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginData.id}`);
+	};
 
 	const handleInstallPlugin = useCallback(
 		async (pluginData: any) => {
@@ -284,6 +293,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDisable={handleDisablePlugin}
 									onDelete={handleDeletePlugin}
 									onSelect={handleSelectPlugin}
+									onLaunch={handleLaunchPlugin}
 								/>
 							</div>
 						)}
@@ -316,6 +326,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
+									onLaunch={handleLaunchPlugin}
 									className="mt-6"
 								/>
 							</div>
@@ -345,6 +356,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								onDelete={handleDeletePlugin}
 								onEnable={handleEnablePlugin}
 								onDisable={handleDisablePlugin}
+								onLaunch={handleLaunchPlugin}
 								className="mt-6"
 							/>
 						)}

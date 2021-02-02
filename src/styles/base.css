@@ -23,7 +23,7 @@ main {
 }
 
 .no-ligatures {
-	font-feature-settings: "liga" 0;
+	font-feature-settings: "liga" off, "calt" off;
 }
 
 @layer utilities {

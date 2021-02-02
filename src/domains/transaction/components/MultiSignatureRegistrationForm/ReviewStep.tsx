@@ -25,51 +25,44 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="MultiSignature__review-step" className="space-y-8">
+		<section data-testid="MultiSignature__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-				<TransactionSender address={wallet.address()} alias={wallet.alias()} />
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-				<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
-					<RecipientList
-						showAmount={false}
-						variant="condensed"
-						recipients={participants}
-						isEditable={false}
-					/>
-				</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
+				<RecipientList showAmount={false} variant="condensed" recipients={participants} isEditable={false} />
+			</TransactionDetail>
 
-				<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
-					<div className="flex items-center space-x-1 font-semibold">
-						<span>{minParticipants}</span>
-						<span className="text-theme-secondary-500">
-							{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", { length: participants.length })}
-						</span>
-					</div>
-				</TransactionDetail>
-
-				<TransactionDetail
-					label={t("TRANSACTION.TYPE")}
-					extra={
-						<div>
-							<Circle className="border-black bg-theme-background" size="lg">
-								<Icon name="Multisig" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
-				</TransactionDetail>
-
-				<div className="mt-2">
-					<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
+				<div className="flex items-center space-x-1 font-semibold">
+					<span>{minParticipants}</span>
+					<span className="text-theme-secondary-500">
+						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", { length: participants.length })}
+					</span>
 				</div>
+			</TransactionDetail>
+
+			<TransactionDetail
+				label={t("TRANSACTION.TYPE")}
+				extra={
+					<div>
+						<Circle className="border-black bg-theme-background" size="lg">
+							<Icon name="Multisig" width={20} height={20} />
+						</Circle>
+					</div>
+				}
+			>
+				{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
+			</TransactionDetail>
+
+			<div className="mt-2">
+				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

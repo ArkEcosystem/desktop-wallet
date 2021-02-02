@@ -10,8 +10,13 @@ export const sendIpfs = (t: any) => ({
 		}),
 	}),
 	hash: () => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("TRANSACTION.IPFS_HASH"),
+		}),
 		validate: (value: string) =>
 			/(Qm[A-HJ-NP-Za-km-z1-9]{44,45})/.test(value) ||
-			t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
+			t("COMMON.VALIDATION.FIELD_INVALID", {
+				field: t("TRANSACTION.IPFS_HASH"),
+			}),
 	}),
 });

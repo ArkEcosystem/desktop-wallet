@@ -75,7 +75,6 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 
 				<Input
 					data-testid="SelectAddress__input"
-					type="text"
 					ref={ref}
 					value={selectedAddress || ""}
 					className="hidden"

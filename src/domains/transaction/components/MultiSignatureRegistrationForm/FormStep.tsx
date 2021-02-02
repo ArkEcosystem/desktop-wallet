@@ -61,47 +61,45 @@ export const FormStep = ({
 				subtitle={t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<div className="space-y-8">
-				<AddParticipant
-					profile={profile}
-					wallet={wallet}
-					onChange={handleParticipants}
-					defaultParticipants={participants}
-				/>
+			<AddParticipant
+				profile={profile}
+				wallet={wallet}
+				onChange={handleParticipants}
+				defaultParticipants={participants}
+			/>
 
-				<FormField name="minParticipants">
-					<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
-					<InputGroup>
-						<Input
-							data-testid="MultiSignatureRegistrationForm__min-participants"
-							type="number"
-							value={minParticipants ?? 0}
-							onChange={handleInput}
-						/>
-						<InputAddonEnd className="pr-4 pointer-events-none text-theme-secondary-400">
-							{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
-								length: Math.max(2, participants?.length || 0),
-							})}
-						</InputAddonEnd>
-					</InputGroup>
-				</FormField>
-
-				<FormField name="fee">
-					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-					<InputFee
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
-						defaultValue={fee || 0}
-						value={fee || 0}
-						step={step}
-						onChange={(currency) =>
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-						}
+			<FormField name="minParticipants">
+				<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
+				<InputGroup>
+					<Input
+						data-testid="MultiSignatureRegistrationForm__min-participants"
+						type="number"
+						value={minParticipants ?? 0}
+						onChange={handleInput}
 					/>
-					<FormHelperText />
-				</FormField>
-			</div>
+					<InputAddonEnd className="pr-4 pointer-events-none text-theme-secondary-400">
+						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
+							length: Math.max(2, participants?.length || 0),
+						})}
+					</InputAddonEnd>
+				</InputGroup>
+			</FormField>
+
+			<FormField name="fee">
+				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+				<InputFee
+					min={fees.min}
+					avg={fees.avg}
+					max={fees.max}
+					defaultValue={fee || 0}
+					value={fee || 0}
+					step={step}
+					onChange={(currency) =>
+						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+					}
+				/>
+				<FormHelperText />
+			</FormField>
 		</section>
 	);
 };

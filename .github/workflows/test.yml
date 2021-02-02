@@ -43,8 +43,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/app --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/app/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/app
+                  --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
+                  --coverage
+                  --collectCoverageFrom='["src/app/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/app/":{"branches":94.14,"functions":97.71,"lines":98.05,"statements":97.85}}'
     domains-contact:
         runs-on: ubuntu-latest
         strategy:
@@ -78,8 +81,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/contact --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/contact/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/contact --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/contact/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/contact/":{"branches":100,"functions":69.86,"lines":38.29,"statements":38.71}}'
     domains-dashboard:
         runs-on: ubuntu-latest
         strategy:
@@ -113,8 +119,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/dashboard --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/dashboard/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/dashboard --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/dashboard/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/dashboard/":{"branches":100,"functions":88.89,"lines":82.87,"statements":83.27}}'
     domains-error:
         runs-on: ubuntu-latest
         strategy:
@@ -148,8 +157,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/error --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/error/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/error --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/error/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/error/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-exchange:
         runs-on: ubuntu-latest
         strategy:
@@ -183,8 +195,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/exchange --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/exchange/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/exchange --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/exchange/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/exchange/":{"branches":100,"functions":100,"lines":97.96,"statements":97.96}}'
     domains-network:
         runs-on: ubuntu-latest
         strategy:
@@ -218,8 +233,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/network --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/network/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/network --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/network/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/network/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-news:
         runs-on: ubuntu-latest
         strategy:
@@ -253,8 +271,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/news --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/news/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/news --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/news/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":84.44,"lines":68.31,"statements":69.13}}'
     domains-plugin:
         runs-on: ubuntu-latest
         strategy:
@@ -288,8 +309,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/plugin --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/plugin/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/plugin --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/plugin/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/plugin/":{"branches":100,"functions":94.06,"lines":90.6,"statements":90.42}}'
     domains-profile:
         runs-on: ubuntu-latest
         strategy:
@@ -323,8 +347,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/profile --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/profile/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/profile --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/profile/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":80.25,"lines":67.57,"statements":68.04}}'
     domains-setting:
         runs-on: ubuntu-latest
         strategy:
@@ -358,8 +385,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/setting --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/setting/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/setting --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/setting/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/setting/":{"branches":100,"functions":93.1,"lines":89.56,"statements":89.02}}'
     domains-splash:
         runs-on: ubuntu-latest
         strategy:
@@ -393,8 +423,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/splash --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/splash/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/splash --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/splash/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/splash/":{"branches":50,"functions":50,"lines":60,"statements":60}}'
     domains-transaction:
         runs-on: ubuntu-latest
         strategy:
@@ -428,8 +461,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/transaction --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/transaction/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/transaction --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/transaction/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/transaction/":{"branches":99.5,"functions":95.33,"lines":85.05,"statements":85.52}}'
     domains-vote:
         runs-on: ubuntu-latest
         strategy:
@@ -463,8 +499,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/vote --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/vote/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/vote --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/vote/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/vote/":{"branches":100,"functions":98.77,"lines":95.16,"statements":95.47}}'
     domains-wallet:
         runs-on: ubuntu-latest
         strategy:
@@ -498,8 +537,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/domains/wallet --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/domains/wallet/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/domains/wallet --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/domains/wallet/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/domains/wallet/":{"branches":98.09,"functions":83.27,"lines":70.49,"statements":71.03}}'
     migrations:
         runs-on: ubuntu-latest
         strategy:
@@ -533,8 +575,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/migrations --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/migrations/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/migrations --forceExit --maxWorkers=50%
+                  --logHeapUsage--watchAll=false --coverage
+                  --collectCoverageFrom='["src/migrations/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/migrations/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     plugins:
         runs-on: ubuntu-latest
         strategy:
@@ -568,8 +613,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/plugins --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/plugins/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/plugins
+                  --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
+                  --coverage
+                  --collectCoverageFrom='["src/plugins/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/plugins/":{"branches":100,"functions":96.34,"lines":97.78,"statements":97.97}}'
     router:
         runs-on: ubuntu-latest
         strategy:
@@ -603,8 +651,11 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/router --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/router/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/router
+                  --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
+                  --coverage
+                  --collectCoverageFrom='["src/router/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/router/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     utils:
         runs-on: ubuntu-latest
         strategy:
@@ -638,5 +689,8 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: yarn test:coverage src/utils --forceExit --maxWorkers=4
-                  --collectCoverageFrom=src/utils/**/*.{js,jsx,ts,tsx}
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/utils
+                  --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
+                  --coverage
+                  --collectCoverageFrom='["src/utils/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
+                  --coverageThreshold='{"./src/utils/":{"branches":55.71,"functions":23.4,"lines":50,"statements":46.94}}'

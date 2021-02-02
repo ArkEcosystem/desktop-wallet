@@ -2690,7 +2690,7 @@ exports[`ImportWallet should render 3st step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Cryptoasset
           </div>
@@ -2725,7 +2725,7 @@ exports[`ImportWallet should render 3st step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Address
           </div>
@@ -2768,7 +2768,7 @@ exports[`ImportWallet should render 3st step 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-secondary-700"
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
         >
           Balance
         </div>
@@ -3251,9 +3251,8 @@ exports[`ImportWallet should render as ledger import 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 kwcZQn"
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
                     data-testid="Paginator__back-button"
-                    disabled=""
                     type="button"
                   >
                     <div

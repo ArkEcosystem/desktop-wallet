@@ -139,8 +139,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const source = config!.get<{ url: string }>("sourceProvider");
 
+			/* istanbul ignore next */
 			if (!source?.url) {
-				/* istanbul ignore next */
 				throw new Error(`The repository of the plugin "${name}" could not be found.`);
 			}
 

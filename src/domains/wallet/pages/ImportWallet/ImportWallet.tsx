@@ -5,7 +5,6 @@ import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -188,15 +187,10 @@ export const ImportWallet = () => {
 										<Button
 											disabled={!isValid || isSubmitting}
 											type="submit"
+											isLoading={isSubmitting}
 											data-testid="ImportWallet__continue-button"
 										>
-											{isSubmitting ? (
-												<span className="px-3">
-													<Spinner size="sm" />
-												</span>
-											) : (
-												t("COMMON.CONTINUE")
-											)}
+											{t("COMMON.CONTINUE")}
 										</Button>
 									)}
 

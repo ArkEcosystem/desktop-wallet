@@ -180,7 +180,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                 name="name"
               />
               <p
-                class="text-sm text-theme-danger-500"
+                class="font-normal text-sm text-theme-danger-500"
               >
                 A Wallet named 'ARK Wallet 2' already exists on this profile
               </p>
@@ -292,7 +292,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                 name="name"
               />
               <p
-                class="text-sm text-theme-danger-500"
+                class="font-normal text-sm text-theme-danger-500"
               >
                 A Wallet named 'ark wallet 2' already exists on this profile
               </p>
@@ -404,7 +404,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                 name="name"
               />
               <p
-                class="text-sm text-theme-danger-500"
+                class="font-normal text-sm text-theme-danger-500"
               >
                 A Wallet named 'ARK Wallet 2' already exists on this profile
               </p>
@@ -516,7 +516,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                 name="name"
               />
               <p
-                class="text-sm text-theme-danger-500"
+                class="font-normal text-sm text-theme-danger-500"
               >
                 A Wallet named 'ARK Wallet 2' already exists on this profile
               </p>
@@ -628,7 +628,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                 name="name"
               />
               <p
-                class="text-sm text-theme-danger-500"
+                class="font-normal text-sm text-theme-danger-500"
               >
                 'Name' is invalid
               </p>
@@ -740,7 +740,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                 name="name"
               />
               <p
-                class="text-sm text-theme-danger-500"
+                class="font-normal text-sm text-theme-danger-500"
               >
                 'Name' should have at most 42 characters
               </p>

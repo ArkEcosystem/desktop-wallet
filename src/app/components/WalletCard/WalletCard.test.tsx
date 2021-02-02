@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletData, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -24,7 +24,7 @@ describe("Wallet Card", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletFlag.LedgerIndex, 0);
+		wallet.data().set(WalletData.LedgerPath, "0");
 
 		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 	});

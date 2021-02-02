@@ -254,7 +254,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 								<Input
-									type="text"
 									ref={register({
 										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
