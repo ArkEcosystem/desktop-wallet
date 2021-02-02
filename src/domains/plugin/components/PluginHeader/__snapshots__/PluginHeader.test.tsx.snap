@@ -10,14 +10,14 @@ exports[`PluginHeader should render properly 1`] = `
       class="flex w-full"
     >
       <div
-        class="rounded-lg overflow-hidden w-40 h-full"
+        class="overflow-hidden w-40 h-full rounded-lg"
       >
         <svg>
           plugin-logo-placeholder.svg
         </svg>
       </div>
       <div
-        class="flex flex-col justify-between space-y-3 pl-8 w-full"
+        class="flex flex-col justify-between pl-8 space-y-3 w-full"
       >
         <div
           class="flex justify-between items-center"
@@ -74,7 +74,7 @@ exports[`PluginHeader should render properly 1`] = `
           type="horizontal"
         />
         <div
-          class="flex space-4 justify-between"
+          class="flex justify-between space-4"
         >
           <div
             class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -198,17 +198,17 @@ exports[`PluginHeader should render with logo 1`] = `
       class="flex w-full"
     >
       <div
-        class="rounded-lg overflow-hidden w-40 h-full"
+        class="overflow-hidden w-40 h-full rounded-lg"
       >
         <img
           alt="Logo"
-          class="rounded-lg w-full"
+          class="w-full rounded-lg"
           data-testid="PluginCard__logo"
           src="https://ark.io/logo.png"
         />
       </div>
       <div
-        class="flex flex-col justify-between space-y-3 pl-8 w-full"
+        class="flex flex-col justify-between pl-8 space-y-3 w-full"
       >
         <div
           class="flex justify-between items-center"
@@ -284,7 +284,7 @@ exports[`PluginHeader should render with logo 1`] = `
           type="horizontal"
         />
         <div
-          class="flex space-4 justify-between"
+          class="flex justify-between space-4"
         >
           <div
             class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"

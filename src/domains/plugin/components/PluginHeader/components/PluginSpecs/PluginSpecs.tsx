@@ -61,7 +61,7 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size }
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex space-4 justify-between">
+		<div className="flex justify-between space-4">
 			<div className="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800">
 				<GridCol>
 					<div className="flex flex-col pr-6">

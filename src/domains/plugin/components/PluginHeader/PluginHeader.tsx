@@ -54,14 +54,14 @@ export const PluginHeader = (props: Props) => {
 	return (
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<div className="rounded-lg overflow-hidden w-40 h-full">
+				<div className="overflow-hidden w-40 h-full rounded-lg">
 					{props.logo ? (
-						<img data-testid="PluginCard__logo" src={props.logo} alt="Logo" className="rounded-lg w-full" />
+						<img data-testid="PluginCard__logo" src={props.logo} alt="Logo" className="w-full rounded-lg" />
 					) : (
 						<Image name="PluginLogoPlaceholder" domain="plugin" />
 					)}
 				</div>
-				<div className="flex flex-col justify-between space-y-3 pl-8 w-full">
+				<div className="flex flex-col justify-between pl-8 space-y-3 w-full">
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col mr-2">
 							<span className="text-2xl font-bold">{props.title}</span>

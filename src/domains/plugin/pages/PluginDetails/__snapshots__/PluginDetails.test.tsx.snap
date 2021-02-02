@@ -333,14 +333,14 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex w-full"
             >
               <div
-                class="rounded-lg overflow-hidden w-40 h-full"
+                class="overflow-hidden w-40 h-full rounded-lg"
               >
                 <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between space-y-3 pl-8 w-full"
+                class="flex flex-col justify-between pl-8 space-y-3 w-full"
               >
                 <div
                   class="flex justify-between items-center"
@@ -362,13 +362,13 @@ exports[`PluginDetails should render properly 1`] = `
                   >
                     <button
                       class="Button__StyledButton-mdtvtf-0 ePkfgQ"
-                      data-testid="PluginHeader__button--install"
+                      data-testid="PluginHeader__button--open"
                       type="button"
                     >
                       <div
                         class="flex relative items-center space-x-2"
                       >
-                        Install
+                        Open
                       </div>
                     </button>
                     <button
@@ -390,6 +390,25 @@ exports[`PluginDetails should render properly 1`] = `
                         </div>
                       </div>
                     </button>
+                    <button
+                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
+                      data-testid="PluginHeader__button--uninstall"
+                      type="button"
+                    >
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            trash.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -397,7 +416,7 @@ exports[`PluginDetails should render properly 1`] = `
                   type="horizontal"
                 />
                 <div
-                  class="flex space-4 justify-between"
+                  class="flex justify-between space-4"
                 >
                   <div
                     class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -1739,14 +1758,14 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               class="flex w-full"
             >
               <div
-                class="rounded-lg overflow-hidden w-40 h-full"
+                class="overflow-hidden w-40 h-full rounded-lg"
               >
                 <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between space-y-3 pl-8 w-full"
+                class="flex flex-col justify-between pl-8 space-y-3 w-full"
               >
                 <div
                   class="flex justify-between items-center"
@@ -1803,7 +1822,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                   type="horizontal"
                 />
                 <div
-                  class="flex space-4 justify-between"
+                  class="flex justify-between space-4"
                 >
                   <div
                     class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -3145,14 +3164,14 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               class="flex w-full"
             >
               <div
-                class="rounded-lg overflow-hidden w-40 h-full"
+                class="overflow-hidden w-40 h-full rounded-lg"
               >
                 <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between space-y-3 pl-8 w-full"
+                class="flex flex-col justify-between pl-8 space-y-3 w-full"
               >
                 <div
                   class="flex justify-between items-center"
@@ -3211,7 +3230,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                   type="horizontal"
                 />
                 <div
-                  class="flex space-4 justify-between"
+                  class="flex justify-between space-4"
                 >
                   <div
                     class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
