@@ -191,7 +191,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </div>
                     </div>
                     <p
-                      class="text-sm font-normal text-theme-danger-500"
+                      class="font-normal text-sm text-theme-danger-500"
                     >
                       'Password' should have at least 6 characters
                     </p>
@@ -242,7 +242,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </div>
                     </div>
                     <p
-                      class="text-sm font-normal text-theme-danger-500"
+                      class="font-normal text-sm text-theme-danger-500"
                     >
                       Passwords do not match
                     </p>
@@ -762,7 +762,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           name="name"
                         />
                         <p
-                          class="text-sm font-normal text-theme-danger-500"
+                          class="font-normal text-sm text-theme-danger-500"
                         >
                           A profile with this name already exists
                         </p>
@@ -1422,7 +1422,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           name="name"
                         />
                         <p
-                          class="text-sm font-normal text-theme-danger-500"
+                          class="font-normal text-sm text-theme-danger-500"
                         >
                           'Name' should have at most 42 characters
                         </p>
