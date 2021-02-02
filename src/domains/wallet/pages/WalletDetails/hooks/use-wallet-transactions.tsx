@@ -2,7 +2,7 @@ import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { useSynchronizer } from "app/hooks";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 export const useWalletTransactions = (
 	wallet: ReadWriteWallet,
@@ -27,8 +27,18 @@ export const useWalletTransactions = (
 		}
 	}, [wallet]);
 
+	const abortRef = useRef<() => void>();
+
 	const sync = useCallback(
 		async (cursor: string | number | undefined) => {
+			if (abortRef.current) {
+				abortRef.current();
+			}
+
+			let aborted = false;
+
+			abortRef.current = () => (aborted = true);
+
 			setIsLoading(true);
 
 			const methodMap = {
@@ -43,6 +53,10 @@ export const useWalletTransactions = (
 			const queryParams = transactionType ? { ...defaultQueryParams, ...transactionType } : defaultQueryParams;
 			// @ts-ignore
 			const response = await wallet[method](queryParams);
+
+			if (aborted) {
+				return;
+			}
 
 			setItemCount(response.items().length);
 			setNextPage(response.nextPage());
