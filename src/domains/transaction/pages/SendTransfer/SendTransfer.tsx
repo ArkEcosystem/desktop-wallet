@@ -5,7 +5,6 @@ import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -279,8 +278,9 @@ export const SendTransfer = () => {
 													data-testid="SendTransfer__button--continue"
 													disabled={!isValid || isSubmitting}
 													onClick={handleNext}
+													isLoading={isSubmitting}
 												>
-													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
+													{t("COMMON.CONTINUE")}
 												</Button>
 											</>
 										)}

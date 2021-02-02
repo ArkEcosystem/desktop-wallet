@@ -6,7 +6,6 @@ import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
-import { Spinner } from "app/components/Spinner";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
@@ -166,9 +165,10 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 									data-testid="transactions__fetch-more-button"
 									variant="secondary"
 									className="mt-10 mb-5 w-full"
+									isLoading={isLoadingTransactions}
 									onClick={() => fetchMore()}
 								>
-									{isLoadingTransactions ? <Spinner size="sm" /> : t("COMMON.VIEW_MORE")}
+									{t("COMMON.VIEW_MORE")}
 								</Button>
 							)}
 
