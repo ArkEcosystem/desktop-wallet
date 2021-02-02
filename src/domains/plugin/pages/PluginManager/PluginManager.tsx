@@ -77,6 +77,8 @@ const PluginManagerHome = ({
 						onEnable={onEnable}
 						onDisable={onDisable}
 						onDelete={onDelete}
+						onInstall={onInstall}
+						onLaunch={onLaunch}
 						withPagination={false}
 						isLoading={isLoading}
 					/>
@@ -113,6 +115,8 @@ const PluginManagerHome = ({
 						onEnable={onEnable}
 						onDisable={onDisable}
 						onDelete={onDelete}
+						onInstall={onInstall}
+						onLaunch={onLaunch}
 						withPagination={false}
 						isLoading={isLoading}
 					/>
@@ -149,6 +153,8 @@ const PluginManagerHome = ({
 						onEnable={onEnable}
 						onDisable={onDisable}
 						onDelete={onDelete}
+						onInstall={onInstall}
+						onLaunch={onLaunch}
 						withPagination={false}
 						isLoading={isLoading}
 					/>
@@ -309,6 +315,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
+									onInstall={handleInstallPlugin}
+									onLaunch={handleLaunchPlugin}
 									className="mt-6"
 									isLoading={isFetchingPackages}
 								/>
@@ -322,7 +330,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								</h2>
 								<PluginList
 									plugins={installedPlugins}
-									onInstall={void 0}
+									onInstall={handleInstallPlugin}
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
@@ -343,6 +351,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
+									onInstall={handleInstallPlugin}
+									onLaunch={handleLaunchPlugin}
 									className="mt-6"
 									isLoading={isFetchingPackages}
 								/>
