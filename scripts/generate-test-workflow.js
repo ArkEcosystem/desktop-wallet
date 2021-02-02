@@ -101,9 +101,9 @@ for (const directory of directories) {
 			},
 			{
 				name: "Test",
-				run: `yarn test:coverage src/${directory} --forceExit --maxWorkers=50% --collectCoverageFrom=src/${directory}/**/*.{js,jsx,ts,tsx} --coverageThreshold=${JSON.stringify(
+				run: `./node_modules/react-app-rewired/bin/index.js --expose-gc test src/${directory} --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false --coverage --collectCoverageFrom="src/${directory}/**/*.{js,jsx,ts,tsx}" --coverageThreshold='${JSON.stringify(
 					coverageThreshold,
-				)}`,
+				)}'`,
 			},
 		],
 	};
