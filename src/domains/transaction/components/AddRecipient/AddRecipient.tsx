@@ -150,6 +150,10 @@ export const AddRecipient = ({
 		}
 	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
+	useEffect(() => {
+		setValue("isSendAllSelected", isSingle);
+	}, [isSingle, setValue]);
+
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) {
 			return;
@@ -245,30 +249,32 @@ export const AddRecipient = ({
 									setValue("isSendAllSelected", false);
 								}}
 							/>
-							<InputAddonEnd>
-								<button
-									type="button"
-									data-testid="AddRecipient__send-all"
-									onClick={() => {
-										const remaining = remainingBalance.isGreaterThan(fee)
-											? remainingBalance.minus(fee)
-											: remainingBalance;
+							{isSingle && (
+								<InputAddonEnd>
+									<button
+										type="button"
+										data-testid="AddRecipient__send-all"
+										onClick={() => {
+											const remaining = remainingBalance.isGreaterThan(fee)
+												? remainingBalance.minus(fee)
+												: remainingBalance;
 
-										setValue("displayAmount", remaining.toHuman());
+											setValue("displayAmount", remaining.toHuman());
 
-										setValue("amount", remaining.toString(), {
-											shouldValidate: true,
-											shouldDirty: true,
-										});
+											setValue("amount", remaining.toString(), {
+												shouldValidate: true,
+												shouldDirty: true,
+											});
 
-										singleRecipientOnChange(remaining.toString(), recipientAddress);
-										setValue("isSendAllSelected", true);
-									}}
-									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
-								>
-									{t("TRANSACTION.SEND_ALL")}
-								</button>
-							</InputAddonEnd>
+											singleRecipientOnChange(remaining.toString(), recipientAddress);
+											setValue("isSendAllSelected", true);
+										}}
+										className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+									>
+										{t("TRANSACTION.SEND_ALL")}
+									</button>
+								</InputAddonEnd>
+							)}
 						</InputGroup>
 						<FormHelperText />
 					</FormField>

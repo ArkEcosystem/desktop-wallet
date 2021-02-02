@@ -119,6 +119,42 @@ describe("Wallet Transactions Hook", () => {
 		});
 	});
 
+	it("should abort previous sync", async () => {
+		const Component = () => {
+			const { fetchMore, transactions } = useWalletTransactions(wallet, { limit: 10 });
+			return (
+				<div>
+					<ul>
+						{transactions.map((item) => (
+							<li key={item.id()}>{item.id()}</li>
+						))}
+					</ul>
+					<button onClick={fetchMore}>More</button>
+				</div>
+			);
+		};
+
+		render(<Component />);
+
+		act(() => {
+			fireEvent.click(screen.getByRole("button"));
+		});
+
+		await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.click(screen.getByRole("button"));
+		});
+
+		act(() => {
+			fireEvent.click(screen.getByRole("button"));
+		});
+
+		await act(async () => {
+			await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(3));
+		});
+	});
+
 	it("should run periodically", async () => {
 		jest.useFakeTimers();
 		const spyTransactions = jest.spyOn(wallet, "transactions");
@@ -141,6 +177,27 @@ describe("Wallet Transactions Hook", () => {
 		jest.useRealTimers();
 	});
 
+	it("should run periodically given a transaction type", async () => {
+		jest.useFakeTimers();
+		const spyTransactions = jest.spyOn(wallet, "transactions");
+		const spySync = jest.spyOn(wallet.transaction(), "sync");
+
+		const Component = () => {
+			const { transactions } = useWalletTransactions(wallet, { limit: 10, transactionType: "transfer" });
+			return <h1>{transactions.length}</h1>;
+		};
+
+		render(<Component />);
+
+		jest.advanceTimersByTime(50000);
+
+		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2), { timeout: 4000 });
+		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
+
+		spyTransactions.mockRestore();
+		spySync.mockRestore();
+		jest.useRealTimers();
+	});
 	it("should be no more on initial render", () => {
 		const Component = () => {
 			const { hasMore } = useWalletTransactions(wallet, { limit: 10 });

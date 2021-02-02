@@ -1,7 +1,7 @@
 import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
-import { toasts } from "app/services";
+import { httpClient, toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
@@ -13,7 +13,10 @@ import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
-	const [state, setState] = useState<any>({});
+	const [state, setState] = useState({
+		packages: [],
+		configurations: [],
+	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 
 	const [pluginRegistry] = useState(() => new PluginRegistry());
@@ -101,13 +104,18 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				PluginConfigurationData.make({
 					id: config.id(),
 					name: config.name(),
-					alias: config.alias(),
 					date: config.date(),
 					version: config.version(),
 					description: config.description(),
 					author: config.author(),
-					logo: config.logo(),
 					sourceProvider: config.sourceProvider(),
+					"desktop-wallet": {
+						logo: config.logo(),
+						categories: config.categories(),
+						title: config.alias(),
+						permissions: config.permissions(),
+						images: config.images(),
+					},
 				}),
 			);
 
@@ -122,7 +130,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		setState((prev: any) => ({ ...prev, packages: merged }));
 	}, [pluginManager, pluginRegistry]);
 
-	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages || [], [state]);
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
+	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
 	const installPlugin = useCallback(
 		async (name: string) => {
@@ -145,6 +154,19 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginPackages, loadPlugin, trigger],
 	);
 
+	const fetchLatestPackageConfiguration = useCallback(async (repositoryURL: string) => {
+		const configurationURL = `${repositoryURL}/raw/master/package.json`;
+		const response = await httpClient.get(configurationURL);
+		const configData = PluginConfigurationData.make(response.json());
+
+		setState((prev: any) => {
+			const configurations = prev.configurations;
+
+			const merged = uniqBy([configData, ...configurations], (item) => item.id());
+			return { ...prev, configurations: merged };
+		});
+	}, []);
+
 	return {
 		pluginRegistry,
 		fetchPluginPackages,
@@ -157,6 +179,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		state,
 		reportPlugin,
 		deletePlugin,
+		fetchLatestPackageConfiguration,
+		pluginConfigurations,
 	};
 };
 
