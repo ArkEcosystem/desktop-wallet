@@ -1,13 +1,22 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, getDefaultWalletId, render, waitFor } from "utils/testing-library";
 
 import { ReceiveFunds } from "./ReceiveFunds";
 
+let network: Network;
+
 describe("ReceiveFunds", () => {
+	beforeEach(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const wallet = profile.wallets().findById(getDefaultWalletId());
+		network = wallet.network();
+	});
+
 	it("should render without a wallet name", async () => {
 		const { asFragment, queryAllByTestId } = render(
-			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
+			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network={network} />,
 		);
 
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(0));
@@ -19,7 +28,7 @@ describe("ReceiveFunds", () => {
 
 	it("should not render qrcode without an address", async () => {
 		// @ts-ignore
-		const { asFragment, queryAllByTestId } = render(<ReceiveFunds isOpen={true} icon="ARK" network="ark.devnet" />);
+		const { asFragment, queryAllByTestId } = render(<ReceiveFunds isOpen={true} icon="ARK" network={network} />);
 
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(0));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__address")).toHaveLength(1));
@@ -30,7 +39,7 @@ describe("ReceiveFunds", () => {
 
 	it("should render with a wallet name", async () => {
 		const { asFragment, queryAllByTestId } = render(
-			<ReceiveFunds isOpen={true} address="abc" icon="ARK" name="My Wallet" network="ark.devnet" />,
+			<ReceiveFunds isOpen={true} address="abc" icon="ARK" name="My Wallet" network={network} />,
 		);
 
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(1));
@@ -49,7 +58,7 @@ describe("ReceiveFunds", () => {
 				address="abc"
 				icon="ARK"
 				name="My Wallet"
-				network="ark.devnet"
+				network={network}
 				onClose={onClose}
 			/>,
 		);
@@ -66,7 +75,7 @@ describe("ReceiveFunds", () => {
 
 	it("should open qr code form", async () => {
 		const { getByTestId, queryAllByTestId } = render(
-			<ReceiveFunds isOpen={true} address="abc" icon="ARK" name="My Wallet" network="ark.devnet" />,
+			<ReceiveFunds isOpen={true} address="abc" icon="ARK" name="My Wallet" network={network} />,
 		);
 
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(1));
