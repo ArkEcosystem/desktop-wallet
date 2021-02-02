@@ -45,7 +45,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/app --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/app/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/app":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/app/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-contact:
         runs-on: ubuntu-latest
         strategy:
@@ -81,7 +81,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/contact --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/contact/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/contact":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/contact/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-dashboard:
         runs-on: ubuntu-latest
         strategy:
@@ -117,7 +117,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/dashboard --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/dashboard/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/dashboard":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/dashboard/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-error:
         runs-on: ubuntu-latest
         strategy:
@@ -153,7 +153,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/error --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/error/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/error":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/error/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-exchange:
         runs-on: ubuntu-latest
         strategy:
@@ -189,7 +189,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/exchange --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/exchange/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/exchange":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/exchange/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-network:
         runs-on: ubuntu-latest
         strategy:
@@ -225,7 +225,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/network --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/network/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/network":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/network/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-news:
         runs-on: ubuntu-latest
         strategy:
@@ -261,7 +261,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/news --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/news/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/news":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/news/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-plugin:
         runs-on: ubuntu-latest
         strategy:
@@ -297,7 +297,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/plugin --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/plugin/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/plugin":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/plugin/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-profile:
         runs-on: ubuntu-latest
         strategy:
@@ -333,7 +333,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/profile --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/profile/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/profile":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/profile/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-setting:
         runs-on: ubuntu-latest
         strategy:
@@ -369,7 +369,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/setting --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/setting/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/setting":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/setting/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-splash:
         runs-on: ubuntu-latest
         strategy:
@@ -405,7 +405,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/splash --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/splash/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/splash":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/splash/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-transaction:
         runs-on: ubuntu-latest
         strategy:
@@ -441,7 +441,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/transaction --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/transaction/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/transaction":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/transaction/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-vote:
         runs-on: ubuntu-latest
         strategy:
@@ -477,7 +477,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/vote --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/vote/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/vote":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/vote/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     domains-wallet:
         runs-on: ubuntu-latest
         strategy:
@@ -513,7 +513,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/domains/wallet --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/domains/wallet/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/domains/wallet":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/domains/wallet/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     migrations:
         runs-on: ubuntu-latest
         strategy:
@@ -549,7 +549,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/migrations --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/migrations/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/migrations":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/migrations/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     plugins:
         runs-on: ubuntu-latest
         strategy:
@@ -585,7 +585,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/plugins --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/plugins/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/plugins":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/plugins/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     router:
         runs-on: ubuntu-latest
         strategy:
@@ -621,7 +621,7 @@ jobs:
             - name: Test
               run: yarn test:coverage src/router --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/router/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/router":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/router/":{"branches":100,"functions":100,"lines":100,"statements":100}}
     utils:
         runs-on: ubuntu-latest
         strategy:
@@ -657,4 +657,4 @@ jobs:
             - name: Test
               run: yarn test:coverage src/utils --forceExit --maxWorkers=50%
                   --collectCoverageFrom=src/utils/**/*.{js,jsx,ts,tsx}
-                  --coverageThreshold={"./src/utils":{"branches":100,"functions":100,"lines":100,"statements":100}}
+                  --coverageThreshold={"./src/utils/":{"branches":100,"functions":100,"lines":100,"statements":100}}

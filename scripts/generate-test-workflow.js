@@ -39,7 +39,7 @@ const directories = [
 
 for (const directory of directories) {
 	const coverageThreshold = {
-		[`./src/${directory}`]: {
+		[`./src/${directory}/`]: {
 			branches: 100,
 			functions: 100,
 			lines: 100,
