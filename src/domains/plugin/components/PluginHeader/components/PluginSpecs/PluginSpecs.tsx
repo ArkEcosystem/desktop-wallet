@@ -17,8 +17,6 @@ type Props = {
 
 type GridColProps = {
 	children: React.ReactNode;
-	colSpan?: number;
-	justify?: string;
 	padding?: string;
 };
 
@@ -36,16 +34,10 @@ const GridItem = ({ label, value, textDirection, ...props }: GridItemProps) => (
 	</div>
 );
 
-const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
+const GridCol = ({ children, padding }: GridColProps) => {
 	const mountClassName = () => {
 		let styles = "flex";
 
-		if (colSpan) {
-			styles = `${styles} col-span-${colSpan}`;
-		}
-		if (justify) {
-			styles = `${styles} justify-${justify}`;
-		}
 		if (padding) {
 			styles = `${styles} ${padding}`;
 		}
@@ -83,7 +75,12 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size }
 					{domain ? (
 						<div className="flex flex-col">
 							<div className="font-bold text-theme-secondary-400">{t("COMMON.URL")}</div>
-							<a href="/" onClick={() => openExternal(url!)} className="font-bold text-theme-primary-600">
+							<a
+								data-testid="PluginSpecs__url"
+								href="/"
+								onClick={() => openExternal(url!)}
+								className="font-bold text-theme-primary-600"
+							>
 								{domain}
 							</a>
 						</div>

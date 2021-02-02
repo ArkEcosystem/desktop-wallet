@@ -23,7 +23,7 @@ export const PluginInfo = ({ description, permissions, images }: Props) => {
 				</div>
 			) : null}
 
-			{permissions ? (
+			{permissions.length ? (
 				<div className="mt-8">
 					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.PERMISSIONS")}</p>
 					<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__permissions">

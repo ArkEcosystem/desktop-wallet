@@ -18,4 +18,13 @@ describe("PluginInfo", () => {
 		expect(getAllByTestId("plugin-info__screenshot")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render without permissions", () => {
+		const about = "Testing About text content";
+
+		const { asFragment, getByTestId, queryByTestId } = render(<PluginInfo description={about} permissions={[]} />);
+
+		expect(queryByTestId("plugin-info__permissions")).not.toBeInTheDocument();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
