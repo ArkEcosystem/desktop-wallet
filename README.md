@@ -29,7 +29,7 @@ pamac build ark-desktop
 Install via [Homebrew](https://brew.sh/):
 
 ```shell
-brew cask install ark-desktop-wallet
+brew install --cask ark-desktop-wallet
 ```
 
 ## Translations
