@@ -206,6 +206,7 @@ export const AddRecipient = ({
 				data-testid="AddRecipient__form-wrapper"
 				className={`${showMultiPaymentOption ? "mt-6" : ""}`}
 				noBackground={isSingle}
+				noPadding={!showMultiPaymentOption}
 			>
 				<div className="space-y-8">
 					<FormField name="recipientAddress">

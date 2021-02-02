@@ -29,11 +29,57 @@ const plugins = [
 ];
 
 describe("PluginList", () => {
-	it("should render", () => {
+	it("should render pagination", () => {
+		const morePlugins = [
+			{
+				id: "drakula-theme",
+				title: "Drakula Theme",
+				author: "Breno Polanski",
+				category: "other",
+				version: "1.3.8",
+				size: "163 KB",
+				isInstalled: true,
+				isEnabled: true,
+				isGrant: true,
+			},
+			{
+				id: "avfc-theme",
+				title: "Avfc Theme",
+				author: "ARK.io",
+				category: "other",
+				version: "1.3.8",
+				size: "163 KB",
+				isInstalled: true,
+				isEnabled: true,
+				isGrant: true,
+			},
+			{
+				id: "red-snow-theme",
+				title: "Red snow theme",
+				author: "ARK.io",
+				category: "other",
+				version: "1.3.8",
+				size: "163 KB",
+				isInstalled: true,
+				isEnabled: true,
+				isGrant: true,
+			},
+		];
+		const { asFragment, getAllByTestId, getByTestId } = render(
+			<PluginList itemsPerPage={4} plugins={[...plugins, ...morePlugins]} />,
+		);
+
+		expect(getAllByTestId("TableRow")).toHaveLength(4);
+		expect(getByTestId("Pagination")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("shouldn't render pagination", () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(<PluginList plugins={plugins} />);
 
 		expect(getAllByTestId("TableRow")).toHaveLength(2);
-		expect(getByTestId("Pagination")).toBeTruthy();
+		expect(() => getByTestId("Pagination")).toThrow(/Unable to find an element by/);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

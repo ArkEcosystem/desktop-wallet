@@ -1,8 +1,9 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-const SubFormWrapper = styled.div<{ noBackground?: boolean }>`
-	${tw`space-y-8 rounded-lg p-5 -mx-5`}
+const SubFormWrapper = styled.div<{ noBackground?: boolean; noPadding?: boolean }>`
+	${tw`space-y-8 rounded-lg`};
+	${({ noPadding }) => !noPadding && tw`p-5 -mx-5`};
 	${({ noBackground }) =>
 		!noBackground &&
 		css`
@@ -16,12 +17,14 @@ export const SubForm = ({
 	className,
 	children,
 	noBackground,
+	noPadding,
 }: {
 	className?: string;
 	children: React.ReactNode;
 	noBackground?: boolean;
+	noPadding?: boolean;
 }) => (
-	<SubFormWrapper className={className} noBackground={!!noBackground}>
+	<SubFormWrapper className={className} noBackground={noBackground} noPadding={noPadding}>
 		{children}
 	</SubFormWrapper>
 );
