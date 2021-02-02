@@ -38,6 +38,24 @@ const directories = [
 ];
 
 for (const directory of directories) {
+	const collectCoverageFrom = [
+		`src/${directory}/**/*.{js,jsx,ts,tsx}`,
+		"!<rootDir>/build/*",
+		"!<rootDir>/dist/*",
+		"!jest.setup.js",
+		"!src/**/e2e/*.ts",
+		"!src/**/*.e2e.ts",
+		"!src/**/*.models.{js,jsx,ts,tsx}",
+		"!src/**/*.stories.{js,jsx,ts,tsx}",
+		"!src/**/*.styles.{js,jsx,ts,tsx}",
+		"!src/electron/**/*",
+		"!src/i18n/**/*",
+		"!src/tests/**/*",
+		"!src/tailwind.config.js",
+		"!src/utils/e2e-utils.ts",
+		"!src/polyfill/**/*",
+	];
+
 	const coverageThreshold = {
 		[`./src/${directory}/`]: {
 			branches: 100,
@@ -101,9 +119,9 @@ for (const directory of directories) {
 			},
 			{
 				name: "Test",
-				run: `./node_modules/react-app-rewired/bin/index.js --expose-gc test src/${directory} --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false --coverage --collectCoverageFrom="src/${directory}/**/*.{js,jsx,ts,tsx}" --coverageThreshold='${JSON.stringify(
-					coverageThreshold,
-				)}'`,
+				run: `./node_modules/react-app-rewired/bin/index.js --expose-gc test src/${directory} --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false --coverage --collectCoverageFrom='${JSON.stringify(
+					collectCoverageFrom,
+				)}' --coverageThreshold='${JSON.stringify(coverageThreshold)}'`,
 			},
 		],
 	};
