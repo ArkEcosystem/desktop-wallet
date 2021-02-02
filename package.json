@@ -72,23 +72,6 @@
 	},
 	"jest": {
 		"automock": false,
-		"collectCoverageFrom": [
-			"src/**/*.{js,jsx,ts,tsx}",
-			"!<rootDir>/build/*",
-			"!<rootDir>/dist/*",
-			"!jest.setup.js",
-			"!src/**/e2e/*.ts",
-			"!src/**/*.e2e.ts",
-			"!src/**/*.models.{js,jsx,ts,tsx}",
-			"!src/**/*.stories.{js,jsx,ts,tsx}",
-			"!src/**/*.styles.{js,jsx,ts,tsx}",
-			"!src/electron/**/*",
-			"!src/i18n/**/*",
-			"!src/tests/**/*",
-			"!src/tailwind.config.js",
-			"!src/utils/e2e-utils.ts",
-			"!src/polyfill/**/*"
-		],
 		"coveragePathIgnorePatterns": [
 			"index.ts",
 			"index.tsx",
@@ -103,10 +86,10 @@
 		],
 		"coverageThreshold": {
 			"global": {
-				"branches": 100,
-				"functions": 100,
-				"lines": 100,
-				"statements": 100
+				"branches": 0,
+				"functions": 0,
+				"lines": 0,
+				"statements": 0
 			}
 		},
 		"moduleDirectories": [
@@ -200,6 +183,7 @@
 		"@babel/preset-typescript": "^7.10.4",
 		"@ledgerhq/hw-transport": "^5.36.0",
 		"@ledgerhq/hw-transport-mocker": "^5.36.0",
+		"@sindresorhus/slugify": "^1.1.0",
 		"@testing-library/jest-dom": "^5.11.6",
 		"@testing-library/react": "^11.2.2",
 		"@testing-library/react-hooks": "^3.7.0",
@@ -238,7 +222,6 @@
 		"autoprefixer": "^9.8.0",
 		"babel-loader": "^8.1.0",
 		"bcrypto": "^5.3.0",
-		"codecov": "^3.8.1",
 		"concurrently": "^5.3.0",
 		"copy-webpack-plugin": "^6.0.3",
 		"cross-env": "^7.0.3",
@@ -281,7 +264,8 @@
 		"testcafe-browser-provider-electron": "^0.0.16",
 		"typescript": "^3.9.5",
 		"wait-on": "^5.2.0",
-		"webpack-node-externals": "^2.5.2"
+		"webpack-node-externals": "^2.5.2",
+		"yaml": "^1.10.0"
 	},
 	"optionalDependencies": {
 		"fsevents": "*"
