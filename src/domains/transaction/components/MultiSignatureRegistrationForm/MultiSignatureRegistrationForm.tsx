@@ -30,17 +30,15 @@ const transactionDetails = ({ transaction, translations, wallet }: SendRegistrat
 		<TransactionDetail
 			label={translations("TRANSACTION.TYPE")}
 			extra={
-				<div>
-					<Circle className="border-black bg-theme-background" size="lg">
-						<Icon name="Multisig" width={20} height={20} />
-					</Circle>
-				</div>
+				<Circle className="border-theme-text" size="lg">
+					<Icon name="Multisig" width={20} height={20} />
+				</Circle>
 			}
 		>
 			{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
 		</TransactionDetail>
 
-		<TransactionDetail label="TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATE_ADDRESS">
+		<TransactionDetail label="TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATED_ADDRESS">
 			{transaction.generatedAddress}
 		</TransactionDetail>
 
