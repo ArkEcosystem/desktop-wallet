@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
@@ -172,6 +172,7 @@ describe("PluginManager", () => {
 
 	it.skip("should install plugin from header install button", async () => {
 		const { asFragment, getByTestId } = rendered;
+		profile.settings().set(ProfileSetting.AdvancedMode, true);
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -200,6 +201,8 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+
+		profile.settings().set(ProfileSetting.AdvancedMode, false);
 	});
 
 	it.skip("should install a plugin from other category", async () => {

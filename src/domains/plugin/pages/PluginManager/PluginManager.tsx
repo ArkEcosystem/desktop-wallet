@@ -1,3 +1,4 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
@@ -181,6 +182,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [currentView, setCurrentView] = useState("home");
 	const [viewType, setViewType] = useState("grid");
 
+	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
+
 	const mapConfigToPluginData = (config: PluginConfigurationData) => {
 		const localPlugin = pluginManager.plugins().findById(config.id());
 		return {
@@ -253,13 +256,17 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onSearch={() => console.log("search")}
 									extra={<SearchBarPluginFilters />}
 								/>
-								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-								<Button data-testid="PluginManager_header--install" onClick={void 0}>
-									<div className="flex items-center space-x-2 whitespace-nowrap">
-										<Icon name="File" width={15} height={15} />
-										<span>Install File</span>
-									</div>
-								</Button>
+								{isAdvancedMode ? (
+									<>
+										<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+										<Button data-testid="PluginManager_header--install" onClick={void 0}>
+											<div className="flex items-center space-x-2 whitespace-nowrap">
+												<Icon name="File" width={15} height={15} />
+												<span>Install from URL</span>
+											</div>
+										</Button>
+									</>
+								) : null}
 							</div>
 						}
 					/>
