@@ -23,7 +23,9 @@ export const useWalletTransactions = (
 		await wallet.transaction().sync();
 		const broadcasted = Object.keys(wallet.transaction().broadcasted());
 		for (const id of broadcasted) {
-			await wallet.transaction().confirm(id);
+			if (wallet.transaction().isAwaitingConfirmation(id)) {
+				await wallet.transaction().confirm(id);
+			}
 		}
 	}, [wallet]);
 
