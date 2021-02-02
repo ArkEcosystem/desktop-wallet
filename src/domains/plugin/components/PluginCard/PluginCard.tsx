@@ -77,7 +77,7 @@ export const PluginCard = ({
 					if (action.value === "disable") {
 						onDisable?.();
 					}
-					if (action.valaue === "launch") {
+					if (action.value === "launch") {
 						onLaunch?.();
 					}
 					if (action.value === "install") {

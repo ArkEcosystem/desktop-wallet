@@ -189,4 +189,21 @@ describe("PluginGrid", () => {
 
 		expect(onInstall).toHaveBeenCalledTimes(1);
 	});
+
+	it("should trigger launch", () => {
+		const onLaunch = jest.fn();
+
+		render(
+			<PluginGrid
+				plugins={[{ ...plugins[0], isInstalled: true, hasLaunch: true }]}
+				onSelect={jest.fn()}
+				onLaunch={onLaunch}
+			/>,
+		);
+
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
+		fireEvent.click(screen.getByTestId("dropdown__option--2"));
+
+		expect(onLaunch).toHaveBeenCalledTimes(1);
+	});
 });
