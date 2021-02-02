@@ -12,7 +12,9 @@ export const useWalletTransactions = (
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
 		...wallet.transaction().signed(),
-	}).filter((item) => item.isMultiSignature());
+	})
+		// TODO: Use the `isMultiSignature()` method from interface when ready on the platform-sdk
+		.filter((item) => !!item.get("multiSignature"));
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	const [itemCount, setItemCount] = useState<number>(0);
