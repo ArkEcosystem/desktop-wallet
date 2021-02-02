@@ -21,12 +21,10 @@ export const useWalletTransactions = (
 
 	const syncMultiSignatures = useCallback(async () => {
 		await wallet.transaction().sync();
+
 		const broadcasted = Object.keys(wallet.transaction().broadcasted());
-		for (const id of broadcasted) {
-			if (wallet.transaction().isAwaitingConfirmation(id)) {
-				await wallet.transaction().confirm(id);
-			}
-		}
+		
+		await Promise.allSettled(broadcasted.map((id) => wallet.transaction().confirm(id)));
 	}, [wallet]);
 
 	const sync = useCallback(
