@@ -38,6 +38,15 @@ const directories = [
 ];
 
 for (const directory of directories) {
+	const coverageThreshold = {
+		[`./src/${directory}`]: {
+			branches: 100,
+			functions: 100,
+			lines: 100,
+			statements: 100,
+		},
+	};
+
 	const job = {
 		"runs-on": "ubuntu-latest",
 		strategy: {
@@ -92,7 +101,9 @@ for (const directory of directories) {
 			},
 			{
 				name: "Test",
-				run: `yarn test:coverage src/${directory} --forceExit --maxWorkers=50% --collectCoverageFrom=src/${directory}/**/*.{js,jsx,ts,tsx}`,
+				run: `yarn test:coverage src/${directory} --forceExit --maxWorkers=50% --collectCoverageFrom=src/${directory}/**/*.{js,jsx,ts,tsx} --coverageThreshold=${JSON.stringify(
+					coverageThreshold,
+				)}`,
 			},
 		],
 	};
