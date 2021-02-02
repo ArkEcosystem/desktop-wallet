@@ -431,11 +431,7 @@ describe("SendIpfs", () => {
 
 			expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash");
 
-			await waitFor(() =>
-				expect(getByTestId("SendIpfs__form-step")).toHaveTextContent(
-					transactionTranslations.INPUT_IPFS_HASH.VALIDATION.NOT_VALID,
-				),
-			);
+			await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toHaveTextContent("'IPFS Hash' is invalid"));
 
 			await waitFor(() => expect(container).toMatchSnapshot());
 		});

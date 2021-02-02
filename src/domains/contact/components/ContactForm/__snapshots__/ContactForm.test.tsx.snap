@@ -111,7 +111,6 @@ exports[`ContactForm should select 1`] = `
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
-            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
@@ -214,7 +213,7 @@ exports[`ContactForm should select with errors 1`] = `
         value=""
       />
       <p
-        class="text-sm text-theme-danger-500"
+        class="font-normal text-sm text-theme-danger-500"
       >
         Contact name error
       </p>
@@ -303,7 +302,6 @@ exports[`ContactForm should select with errors 1`] = `
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
-            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
@@ -489,7 +487,6 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
-            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
@@ -675,7 +672,6 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
-            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"

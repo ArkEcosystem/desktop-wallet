@@ -186,7 +186,6 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			<div className="relative w-full">
 				<Input
 					data-testid="select-list__input"
-					type="text"
 					ref={ref}
 					value={selected?.value || ""}
 					className="sr-only"

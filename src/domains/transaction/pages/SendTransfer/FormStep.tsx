@@ -73,12 +73,10 @@ export const FormStep = ({
 						/>
 					</div>
 
-					<FormField name="smartbridge" className="relative">
+					<FormField name="smartbridge">
 						<FormLabel label="Smartbridge" required={false} />
 						<InputCounter
 							data-testid="Input__smartbridge"
-							type="text"
-							placeholder=" "
 							className="pr-24"
 							maxLengthLabel="255"
 							defaultValue={smartbridge}

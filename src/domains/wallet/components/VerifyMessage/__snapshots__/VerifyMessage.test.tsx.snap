@@ -154,7 +154,6 @@ exports[`VerifyMessage should render 1`] = `
                       class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                       data-testid="VerifyMessage_message-content"
                       name="signed-message-content"
-                      type="text"
                       value=""
                     />
                   </fieldset>
@@ -315,7 +314,6 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                     data-testid="VerifyMessage__message-input"
                     name="message"
-                    type="text"
                   />
                 </fieldset>
                 <fieldset
@@ -337,7 +335,6 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     data-testid="VerifyMessage__signatory-input"
                     disabled=""
                     name="signatory"
-                    type="text"
                     value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
                   />
                 </fieldset>
@@ -359,7 +356,6 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                     data-testid="VerifyMessage__signature-input"
                     name="signature"
-                    type="text"
                   />
                 </fieldset>
               </div>

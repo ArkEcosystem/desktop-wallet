@@ -10,7 +10,7 @@ exports[`TransactionAmount should render 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Amount
       </div>
@@ -56,7 +56,7 @@ exports[`TransactionAmount should render currency amount 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Amount
       </div>
@@ -102,7 +102,7 @@ exports[`TransactionAmount should render label for multiple recipients 1`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Amount
       </div>
@@ -148,7 +148,7 @@ exports[`TransactionAmount should render label for multiple recipients 2`] = `
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-secondary-700"
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
         Total Amount
       </div>
