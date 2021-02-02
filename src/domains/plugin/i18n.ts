@@ -1,4 +1,7 @@
 export const translations: { [key: string]: any } = {
+	WARNING_DISCLAIMER:
+		"Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.",
+
 	DEVELOPER_RESPONSE: "Developer response",
 
 	MODAL_BEST_PLUGINS: {
@@ -18,6 +21,13 @@ export const translations: { [key: string]: any } = {
 		ITEM_1: "Allows access to the Desktop Wallet alerts",
 		ITEM_2: "Allows access to play audio from within the Desktop Wallet",
 		ITEM_3: "Allows access to the Desktop Wallet events",
+	},
+
+	MODAL_MANUAL_INSTALL_PLUGIN: {
+		TITLE: "Install from URL",
+		DESCRIPTION:
+			"Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.",
+		PLACEHOLDER: "Github Repository URL",
 	},
 
 	MODAL_ADD_BLACKLIST_PLUGIN: {

@@ -14,6 +14,7 @@ import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
+import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { usePluginManagerContext } from "plugins";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -181,6 +182,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const [currentView, setCurrentView] = useState("home");
 	const [viewType, setViewType] = useState("grid");
+	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 
@@ -230,6 +232,15 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginData.id}`);
 	};
 
+	const handleManualInstall = (result: { pluginId: string; repositoryURL: string }) => {
+		setIsManualInstallModalOpen(false);
+		history.push(
+			`/profiles/${activeProfile.id()}/plugins/details?pluginId=${result.pluginId}&repositoryURL=${
+				result.repositoryURL
+			}`,
+		);
+	};
+
 	const handleInstallPlugin = useCallback(
 		async (pluginData: any) => {
 			try {
@@ -259,7 +270,10 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								{isAdvancedMode ? (
 									<>
 										<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-										<Button data-testid="PluginManager_header--install" onClick={void 0}>
+										<Button
+											data-testid="PluginManager_header--install"
+											onClick={() => setIsManualInstallModalOpen(true)}
+										>
 											<div className="flex items-center space-x-2 whitespace-nowrap">
 												<Icon name="File" width={15} height={15} />
 												<span>Install from URL</span>
@@ -372,6 +386,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			</Page>
 
 			<InstallPlugin isOpen={false} onClose={void 0} onCancel={void 0} />
+			<PluginManualInstallModal
+				isOpen={isManualInstallModalOpen}
+				onClose={() => setIsManualInstallModalOpen(false)}
+				onSuccess={handleManualInstall}
+			/>
 		</>
 	);
 };

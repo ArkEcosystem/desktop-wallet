@@ -165,6 +165,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			const merged = uniqBy([configData, ...configurations], (item) => item.id());
 			return { ...prev, configurations: merged };
 		});
+
+		return configData.id();
 	}, []);
 
 	return {

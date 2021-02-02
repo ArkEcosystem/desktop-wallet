@@ -8,7 +8,16 @@ import nock from "nock";
 import { LaunchPluginService, PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	screen,
+	waitFor,
+	within,
+} from "testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
@@ -170,37 +179,48 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.skip("should install plugin from header install button", async () => {
-		const { asFragment, getByTestId } = rendered;
+	it("should install plugin from header install button", async () => {
+		nock("https://github.com/")
+			.get("/arkecosystem/test-plugin/raw/master/package.json")
+			.reply(200, { name: "test-plugin" });
+
 		profile.settings().set(ProfileSetting.AdvancedMode, true);
 
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<PluginManager />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.queryByTestId("PluginManager_header--install")).toBeInTheDocument());
+
+		// Open and close
+		fireEvent.click(screen.queryByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
+		fireEvent.click(screen.queryByTestId("modal__close-btn"));
+
+		// Open and type
+		fireEvent.click(screen.queryByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
+
+		fireEvent.input(screen.getByTestId("PluginManualInstallModal__input"), {
+			target: { value: "https://github.com/arkecosystem/test-plugin" },
 		});
+		fireEvent.click(screen.getByTestId("PluginManualInstallModal__submit-button"));
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+		// Modal closed
+		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).not.toBeInTheDocument());
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
-
-		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
+		expect(history.location.search).toEqual(
+			`?pluginId=test-plugin&repositoryURL=https://github.com/arkecosystem/test-plugin`,
+		);
 
 		profile.settings().set(ProfileSetting.AdvancedMode, false);
 	});
