@@ -132,6 +132,7 @@ exports[`PluginHeader should render properly 1`] = `
                 </div>
                 <a
                   class="font-bold text-theme-primary-600"
+                  data-testid="PluginSpecs__url"
                   href="/"
                 >
                   github.com
@@ -342,6 +343,7 @@ exports[`PluginHeader should render with logo 1`] = `
                 </div>
                 <a
                   class="font-bold text-theme-primary-600"
+                  data-testid="PluginSpecs__url"
                   href="/"
                 >
                   github.com
