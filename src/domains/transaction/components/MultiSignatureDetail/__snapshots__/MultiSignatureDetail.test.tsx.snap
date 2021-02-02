@@ -295,14 +295,12 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -338,7 +336,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -347,7 +345,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -385,7 +383,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -394,7 +392,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -726,14 +724,12 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -769,7 +765,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -778,7 +774,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -816,7 +812,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -825,7 +821,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -1089,14 +1085,12 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -1132,7 +1126,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1141,7 +1135,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -1179,7 +1173,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1188,7 +1182,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -1662,14 +1656,12 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -1705,7 +1697,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1714,7 +1706,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -1752,7 +1744,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -1761,7 +1753,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -1995,14 +1987,12 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -2038,7 +2028,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2047,7 +2037,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -2085,7 +2075,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2094,7 +2084,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -2411,14 +2401,12 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -2454,7 +2442,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2463,7 +2451,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -2501,7 +2489,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2510,7 +2498,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -2841,14 +2829,12 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -2884,7 +2870,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2893,7 +2879,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -2931,7 +2917,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -2940,7 +2926,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -3271,14 +3257,12 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -3314,7 +3298,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3323,7 +3307,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -3361,7 +3345,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3370,7 +3354,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -3687,14 +3671,12 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -3730,7 +3712,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3739,7 +3721,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -3777,7 +3759,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -3786,7 +3768,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -4129,14 +4111,12 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -4172,7 +4152,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4181,7 +4161,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -4219,7 +4199,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4228,7 +4208,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -4347,9 +4327,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                     <div
                       data-testid="Signatures"
                     >
-                      <h3
-                        class="mb-0"
-                      >
+                      <h3>
                         Signatures
                       </h3>
                       <div
@@ -4385,7 +4363,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4394,7 +4372,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
@@ -4432,7 +4410,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                                 </div>
                               </div>
                               <span
-                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                                class="Badge__Wrapper-sc-1d7juq8-0 hQGDyr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
                                 data-testid="Signatures__signed-badge"
                               >
                                 <div
@@ -4441,7 +4419,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                                   width="12"
                                 >
                                   <svg>
-                                    checkmark.svg
+                                    signature-status-ok.svg
                                   </svg>
                                 </div>
                                 <span />
