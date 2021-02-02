@@ -198,4 +198,38 @@ describe("PluginManagerProvider", () => {
 
 		ipcRendererSpy.mockRestore();
 	});
+
+	it("should render properly for remote package", async () => {
+		nock("https://github.com/")
+			.get("/arkecosystem/remote-plugin/raw/master/package.json")
+			.reply(200, { name: "remote-plugin" });
+
+		const Component = () => {
+			const { fetchLatestPackageConfiguration, pluginConfigurations } = usePluginManagerContext();
+			return (
+				<>
+					<button
+						onClick={() => fetchLatestPackageConfiguration("https://github.com/arkecosystem/remote-plugin")}
+					>
+						Fetch Package
+					</button>
+					<ul>
+						{pluginConfigurations.map((item) => (
+							<li key={item.id()}>{item.name()}</li>
+						))}
+					</ul>
+				</>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch Package"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+	});
 });

@@ -178,4 +178,22 @@ describe("Plugin Configuration", () => {
 		const subject = PluginConfigurationData.make({});
 		expect(subject.isOfficial()).toBe(false);
 	});
+
+	it("should return true for existing category", () => {
+		const subject = PluginConfigurationData.make({ "desktop-wallet": { categories: ["exchange"] } });
+		expect(subject.hasCategory("exchange")).toBe(true);
+	});
+
+	it("should return to object", () => {
+		const subject = PluginConfigurationData.make({
+			description: "The Plugin",
+			name: "plugin-test",
+			version: "0.0.1",
+		});
+		expect(subject.toObject()).toMatchObject({
+			description: "The Plugin",
+			name: "plugin-test",
+			version: "0.0.1",
+		});
+	});
 });
