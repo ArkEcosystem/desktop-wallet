@@ -53,66 +53,70 @@ exports[`PluginManualInstallModal should render properly 1`] = `
             Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.
           </div>
           <div
-            class="flex justify-center mt-8"
-          >
-            <input
-              aria-invalid="false"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-              data-testid="Input"
-              placeholder="Github Repository URL"
-              value="https://github.com/arkecosystem/test-plugin"
-            />
-          </div>
-          <div
-            class="flex justify-center my-8"
-          >
-            <button
-              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
-              data-testid="PluginManualInstallModal__submit-button"
-              type="submit"
-            >
-              <div
-                class="flex relative items-center space-x-2"
-              >
-                <span>
-                  Confirm
-                </span>
-              </div>
-            </button>
-          </div>
-          <div
-            class="Alert__AlertWrapper-sc-1rcd7no-0 ifLGhi flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+            data-testid="PluginManualInstallModal"
           >
             <div
-              class="flex items-center justify-center text-theme-warning-600"
+              class="flex justify-center mt-8"
             >
-              <div
-                class="sc-gsTCUz cUuJwN"
-                height="1.75em"
-                width="1.75em"
-              >
-                <svg>
-                  alert-warning.svg
-                </svg>
-              </div>
+              <input
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                data-testid="PluginManualInstallModal__input"
+                placeholder="Github Repository URL"
+                value="https://github.com/arkecosystem/test-plugin"
+              />
             </div>
-            <span
-              class="pointer-events-none border rounded-md border-theme-warning-600"
-            />
             <div
-              class="flex flex-col space-y-2"
+              class="flex justify-center my-8"
             >
-              <p
-                class="text-lg font-bold text-theme-warning-600"
-                data-testid="alert__title"
+              <button
+                class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                data-testid="PluginManualInstallModal__submit-button"
+                type="submit"
               >
-                Disclaimer
-              </p>
-              <p
-                class="leading-relaxed break-words dark:text-theme-secondary-500"
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  <span>
+                    Confirm
+                  </span>
+                </div>
+              </button>
+            </div>
+            <div
+              class="Alert__AlertWrapper-sc-1rcd7no-0 ifLGhi flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+            >
+              <div
+                class="flex items-center justify-center text-theme-warning-600"
               >
-                Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
-              </p>
+                <div
+                  class="sc-gsTCUz cUuJwN"
+                  height="1.75em"
+                  width="1.75em"
+                >
+                  <svg>
+                    alert-warning.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="pointer-events-none border rounded-md border-theme-warning-600"
+              />
+              <div
+                class="flex flex-col space-y-2"
+              >
+                <p
+                  class="text-lg font-bold text-theme-warning-600"
+                  data-testid="alert__title"
+                >
+                  Disclaimer
+                </p>
+                <p
+                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                >
+                  Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
+                </p>
+              </div>
             </div>
           </div>
         </div>

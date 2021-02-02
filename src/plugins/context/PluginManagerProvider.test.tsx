@@ -199,6 +199,53 @@ describe("PluginManagerProvider", () => {
 		ipcRendererSpy.mockRestore();
 	});
 
+	it("should install plugin from custom url", async () => {
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:loader-fs.find") {
+				return {
+					config: { name: "test-plugin", version: "0.0.1" },
+					source: () => void 0,
+					sourcePath: "/plugins/test-plugin/index.js",
+					dir: "/plugins/test-plugin",
+				};
+			}
+
+			if (channel === "plugin:download") {
+				return "/plugins/test-plugin";
+			}
+		});
+
+		const Component = () => {
+			const { installPlugin } = usePluginManagerContext();
+			return (
+				<div>
+					<button onClick={() => installPlugin("test-plugin", "https://github.com/arkecosystem/test-plugin")}>
+						Fetch
+					</button>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "test-plugin",
+				url: "https://github.com/arkecosystem/test-plugin/archive/master.zip",
+			}),
+		);
+
+		await waitFor(() => expect(manager.plugins().findById("test-plugin")).toBeTruthy());
+
+		ipcRendererSpy.mockRestore();
+	});
+
 	it("should render properly for remote package", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/remote-plugin/raw/master/package.json")

@@ -1,12 +1,13 @@
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile, useQueryParams } from "app/hooks";
+import { toasts } from "app/services";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import { usePluginManagerContext } from "plugins";
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { reviewData } from "../../data";
@@ -25,9 +26,10 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const queryParams = useQueryParams();
 
 	const { t } = useTranslation();
-	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
+	const { pluginPackages, pluginConfigurations, pluginManager, installPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
+	const repositoryURL = queryParams.get("repositoryURL");
 	const isInstalled = pluginManager.plugins().findById(pluginId!);
 
 	const latestConfiguration = useMemo(() => pluginConfigurations.find((item) => item.id() === pluginId), [
@@ -49,6 +51,7 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	}, [isInstalled, packageConfiguration, latestConfiguration]);
 
 	const pluginData = plugin?.toObject() || ({} as any);
+	const { title } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [
@@ -61,10 +64,19 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 		},
 	];
 
+	const handleInstallPlugin = useCallback(async () => {
+		try {
+			await installPlugin(pluginId!, repositoryURL!);
+			toasts.success(`The plugin "${title}" was successfully installed`);
+		} catch {
+			toasts.error(`Failed to install plugin "${title}"`);
+		}
+	}, [installPlugin, pluginId, repositoryURL, title]);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} isInstalled={isInstalled} />
+				<PluginHeader {...pluginData} isInstalled={isInstalled} onInstall={handleInstallPlugin} />
 			</Section>
 
 			<Section>

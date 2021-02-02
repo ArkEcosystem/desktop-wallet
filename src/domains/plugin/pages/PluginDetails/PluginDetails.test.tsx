@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { ipcRenderer } from "electron";
 import nock from "nock";
 import { PluginController, PluginManager, PluginManagerProvider, usePluginManagerContext } from "plugins";
 import React from "react";
@@ -128,5 +129,66 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("My Export Transaction").length).toBeGreaterThan(0));
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should install package", async () => {
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:loader-fs.find") {
+				return {
+					config: { name: "remote-plugin", version: "0.0.1" },
+					source: () => void 0,
+					sourcePath: "/plugins/remote-plugin/index.js",
+					dir: "/plugins/remote-plugin",
+				};
+			}
+
+			if (channel === "plugin:download") {
+				return "/plugins/remote-plugin";
+			}
+		});
+
+		nock("https://github.com/")
+			.get("/arkecosystem/remote-plugin/raw/master/package.json")
+			.reply(200, { name: "remote-plugin" });
+
+		const FetchComponent = () => {
+			const { fetchLatestPackageConfiguration } = usePluginManagerContext();
+			return (
+				<button
+					onClick={() => fetchLatestPackageConfiguration("https://github.com/arkecosystem/remote-plugin")}
+				>
+					Fetch
+				</button>
+			);
+		};
+
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [
+					`/profiles/${profile.id()}/plugins/details?pluginId=remote-plugin&repositoryURL=https://github.com/arkecosystem/remote-plugin`,
+				],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() => expect(screen.getAllByText("Remote Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--install"));
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "remote-plugin",
+				url: "https://github.com/arkecosystem/remote-plugin/archive/master.zip",
+			}),
+		);
+
+		await waitFor(() => expect(manager.plugins().findById("remote-plugin")).toBeTruthy());
 	});
 });
