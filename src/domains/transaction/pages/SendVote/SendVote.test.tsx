@@ -299,7 +299,7 @@ describe("SendVote", () => {
 			}, 3000);
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 4000 });
-			await waitFor(() => expect(setInterval).toHaveBeenCalledTimes(2));
+			await waitFor(() => expect(setInterval).toHaveBeenCalledTimes(1));
 
 			jest.runOnlyPendingTimers();
 

@@ -3,7 +3,6 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Modal } from "app/components/Modal";
-import { Spinner } from "app/components/Spinner";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { toasts } from "app/services";
@@ -55,9 +54,10 @@ const Paginator = (props: {
 					<Button
 						disabled={!props.isEnabled || props.isLoading}
 						data-testid="Paginator__continue"
+						isLoading={props.isLoading}
 						onClick={props.onContinue}
 					>
-						{props.isLoading ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
+						{t("COMMON.CONTINUE")}
 					</Button>
 				</>
 			)}
@@ -124,8 +124,13 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 
 					{canBeBroadascated && !canBeSigned && activeStep === 1 && (
 						<div className="flex justify-center mt-8 space-x-2">
-							<Button type="submit" data-testid="MultiSignatureDetail__broadcast">
-								{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
+							<Button
+								disabled={isSubmitting}
+								type="submit"
+								isLoading={isSubmitting}
+								data-testid="MultiSignatureDetail__broadcast"
+							>
+								{t("COMMON.SEND")}
 							</Button>
 						</div>
 					)}

@@ -1,10 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -50,7 +50,7 @@ export const SendTransfer = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { senderAddress, fees, remainingBalance, amount } = watch();
+	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected } = watch();
 	const { sendTransfer, common } = useValidation();
 
 	const abortRef = useRef(new AbortController());
@@ -66,6 +66,9 @@ export const SendTransfer = () => {
 			common.fee(() => fees, remainingBalance, wallet?.network?.()),
 		);
 		register("smartbridge", sendTransfer.smartbridge());
+
+		register("remainingBalance");
+		register("isSendAllSelected");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
 
 	useEffect(() => {
@@ -96,6 +99,23 @@ export const SendTransfer = () => {
 			setValue("smartbridge", state.memo);
 		}
 	}, [state, setValue]);
+
+	useEffect(() => {
+		if (!isSendAllSelected) {
+			return;
+		}
+
+		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
+			return;
+		}
+
+		const remaining = remainingBalance.minus(fee);
+
+		setValue("displayAmount", remaining.toHuman());
+		setValue("amount", remaining.toString());
+
+		form.trigger(["fee", "amount"]);
+	}, [fee]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
@@ -258,8 +278,9 @@ export const SendTransfer = () => {
 													data-testid="SendTransfer__button--continue"
 													disabled={!isValid || isSubmitting}
 													onClick={handleNext}
+													isLoading={isSubmitting}
 												>
-													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
+													{t("COMMON.CONTINUE")}
 												</Button>
 											</>
 										)}
