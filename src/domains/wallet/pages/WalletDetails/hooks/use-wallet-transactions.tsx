@@ -23,7 +23,7 @@ export const useWalletTransactions = (
 		await wallet.transaction().sync();
 
 		const broadcasted = Object.keys(wallet.transaction().broadcasted());
-		
+
 		await Promise.allSettled(broadcasted.map((id) => wallet.transaction().confirm(id)));
 	}, [wallet]);
 
