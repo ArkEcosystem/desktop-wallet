@@ -43,7 +43,7 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Package Modules
-              run: tar -cvf node_modules.tar ${{ github.workspace }}/node_modules
+              run: tar -czvf node_modules.tar.gz ${{ github.workspace }}/node_modules
             - name: Upload Modules Artifact
               uses: actions/upload-artifact@v2
               with:
@@ -73,7 +73,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/app
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
@@ -104,7 +104,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/contact --forceExit --maxWorkers=50%
@@ -135,7 +135,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/dashboard --forceExit --maxWorkers=50%
@@ -166,7 +166,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/error --forceExit --maxWorkers=50%
@@ -197,7 +197,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/exchange --forceExit --maxWorkers=50%
@@ -228,7 +228,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/network --forceExit --maxWorkers=50%
@@ -259,7 +259,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/news --forceExit --maxWorkers=50%
@@ -290,7 +290,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/plugin --forceExit --maxWorkers=50%
@@ -321,7 +321,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/profile --forceExit --maxWorkers=50%
@@ -352,7 +352,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/setting --forceExit --maxWorkers=50%
@@ -383,7 +383,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/splash --forceExit --maxWorkers=50%
@@ -414,7 +414,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/transaction --forceExit --maxWorkers=50%
@@ -445,7 +445,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/vote --forceExit --maxWorkers=50%
@@ -476,7 +476,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/wallet --forceExit --maxWorkers=50%
@@ -507,7 +507,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/migrations --forceExit --maxWorkers=50%
@@ -538,7 +538,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/plugins
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
@@ -569,7 +569,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/router
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
@@ -600,7 +600,7 @@ jobs:
               with:
                   name: node_modules
             - name: Unpack TAR
-              run: tar -xvzf node_modules.tar
+              run: tar -xvzf node_modules.tar.gz
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/utils
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
