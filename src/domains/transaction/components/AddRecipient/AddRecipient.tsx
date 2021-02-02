@@ -150,23 +150,6 @@ export const AddRecipient = ({
 		}
 	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
-	useEffect(() => {
-		if (!shouldSendAll) {
-			return;
-		}
-
-		const amountValue = BigNumber.make(amount);
-
-		if (!amountValue.isPositive() || amountValue.isZero()) {
-			return;
-		}
-
-		const remaining = remainingBalance.isGreaterThan(fee) ? remainingBalance.minus(fee) : remainingBalance;
-		setValue("fee", fee, { shouldValidate: true, shouldDirty: true });
-		setValue("displayAmount", remaining.toHuman());
-		setValue("amount", remaining.toString());
-	}, [fee, shouldSendAll]); // eslint-disable-line react-hooks/exhaustive-deps
-
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) {
 			return;
