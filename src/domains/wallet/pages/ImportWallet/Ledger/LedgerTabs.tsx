@@ -14,7 +14,7 @@ import { LedgerConnectionStep } from "./LedgerConnectionStep";
 import { LedgerImportStep } from "./LedgerImportStep";
 import { LedgerScanStep } from "./LedgerScanStep";
 
-export const Paginator = ({
+const Paginator = ({
 	size,
 	activeIndex,
 	showRetry,
@@ -29,9 +29,9 @@ export const Paginator = ({
 	activeIndex: number;
 	showRetry?: boolean;
 	onRetry?: () => void;
-	onBack?: (newIndex: number) => void;
-	onNext?: (newIndex: number) => void;
-	onSubmit?: () => void;
+	onBack: () => void;
+	onNext: () => void;
+	onSubmit: () => void;
 	isNextDisabled?: boolean;
 	isNextLoading?: boolean;
 }) => {
@@ -50,12 +50,7 @@ export const Paginator = ({
 
 			<div className="flex space-x-3">
 				{activeIndex < size && (
-					<Button
-						disabled={activeIndex === 1}
-						variant="secondary"
-						onClick={() => onBack?.(activeIndex - 1)}
-						data-testid="Paginator__back-button"
-					>
+					<Button variant="secondary" onClick={onBack} data-testid="Paginator__back-button">
 						{t("COMMON.BACK")}
 					</Button>
 				)}
@@ -64,7 +59,7 @@ export const Paginator = ({
 					<Button
 						disabled={isNextDisabled || isNextLoading}
 						isLoading={isNextLoading}
-						onClick={() => onNext?.(activeIndex + 1)}
+						onClick={onNext}
 						data-testid="Paginator__continue-button"
 					>
 						{t("COMMON.CONTINUE")}
@@ -120,22 +115,20 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 		history.push(`/profiles/${activeProfile.id()}/dashboard`);
 	};
 
-	const handleNext = useCallback(
-		async (newIndex: number) => {
-			if (newIndex === 4) {
-				await handleSubmit((data: any) => importWallets(data))();
-			}
-			setActiveTab(newIndex);
-		},
-		[handleSubmit, importWallets],
-	);
-
-	const handleBack = (newIndex: number) => {
-		if (newIndex === 2) {
-			setActiveTab(1);
-			return;
+	const handleNext = useCallback(async () => {
+		if (activeTab === 3) {
+			await handleSubmit((data: any) => importWallets(data))();
 		}
-		setActiveTab(newIndex);
+
+		setActiveTab(activeTab + 1);
+	}, [activeTab, handleSubmit, importWallets]);
+
+	const handleBack = () => {
+		if (activeTab === 1) {
+			return history.push(`/profiles/${activeProfile.id()}/dashboard`);
+		}
+
+		setActiveTab(activeTab - (activeTab === 3 ? 2 : 1));
 	};
 
 	const handleRetry = useCallback((fn?: () => void) => {
