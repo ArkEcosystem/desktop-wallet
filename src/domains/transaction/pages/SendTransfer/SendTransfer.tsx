@@ -106,11 +106,11 @@ export const SendTransfer = () => {
 			return;
 		}
 
-		if (BigNumber.make(amount).isLessThanOrEqualTo(BigNumber.ZERO)) {
+		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
 			return;
 		}
 
-		const remaining = remainingBalance.isGreaterThan(fee) ? remainingBalance.minus(fee) : remainingBalance;
+		const remaining = remainingBalance.minus(fee);
 
 		setValue("displayAmount", remaining.toHuman());
 		setValue("amount", remaining.toString());
