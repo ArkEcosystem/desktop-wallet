@@ -1,0 +1,44 @@
+name: Format
+
+on:
+    pull_request:
+        types: [ready_for_review, synchronize, opened]
+
+jobs:
+    eslint:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+                  token: ${{ secrets.GH_TOKEN }}
+
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              id: yarn-cache
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-yarn-
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --frozen-lockfile
+
+            - name: Format
+              run: yarn format
+
+            - uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: "style: resolve style guide violations"
+                  branch: ${{ github.head_ref }}
