@@ -165,13 +165,6 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				},
 			},
 			{
-				name: "Use Node.js ${{ matrix.node-version }}",
-				uses: "actions/setup-node@v1",
-				with: {
-					"node-version": "${{ matrix.node-version }}",
-				},
-			},
-			{
 				name: "Get yarn cache directory path",
 				id: "yarn-cache-dir-path",
 				run: 'echo "::set-output name=dir::$(yarn cache dir)"',
@@ -187,12 +180,27 @@ for (const [directory, threshold] of Object.entries(directories)) {
 				},
 			},
 			{
+				name: "Use Node.js ${{ matrix.node-version }}",
+				uses: "actions/setup-node@v1",
+				with: {
+					"node-version": "${{ matrix.node-version }}",
+				},
+			},
+			{
 				name: "Update System",
 				run: "sudo apt-get update",
 			},
 			{
 				name: "Install (Ledger Requirements)",
 				run: "sudo apt-get install libudev-dev libusb-1.0-0-dev",
+			},
+			{
+				name: "Install (Yarn)",
+				run: "yarn install --frozen-lockfile",
+			},
+			{
+				name: "Rebuild",
+				run: "npm rebuild",
 			},
 			{
 				name: "Test",
