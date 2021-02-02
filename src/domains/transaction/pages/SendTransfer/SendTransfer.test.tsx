@@ -340,6 +340,118 @@ describe("SendTransfer", () => {
 		});
 	});
 
+	it("should recalculate amount when fee changes and send all is selected", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
+			await waitFor(() =>
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(
+					profile.contacts().values()[0].addresses().values()[0].address(),
+				),
+			);
+
+			// Amount
+			const sendAll = getByTestId("AddRecipient__send-all");
+			fireEvent.click(sendAll);
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[0]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.00357"));
+			fireEvent.click(fees[1]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
+			fireEvent.click(fees[2]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6.63"));
+		});
+	});
+
+	it("should handle fee change when send all is selected with zero balance", async () => {
+		const history = createMemoryHistory();
+
+		const emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		const emptyWallet = await emptyProfile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
+
+		const transferURL = `/profiles/${emptyProfile.id()}/wallets/${emptyWallet.id()}/send-transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(emptyWallet.address()),
+			);
+
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			// Amount
+			const sendAll = getByTestId("AddRecipient__send-all");
+			fireEvent.click(sendAll);
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[0]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.00357"));
+			fireEvent.click(fees[1]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
+			fireEvent.click(fees[2]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6.63"));
+		});
+	});
+
 	it("should send a single transfer", async () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
