@@ -25,7 +25,7 @@ export const Dashboard = () => {
 				<Wallets
 					title={t("COMMON.WALLETS")}
 					walletsCount={profileWalletsCount}
-					isLoading={profileIsSyncing && profileWalletsCount === 0}
+					isLoading={profileIsSyncing}
 					onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 					onImportLedgerWallet={() =>
