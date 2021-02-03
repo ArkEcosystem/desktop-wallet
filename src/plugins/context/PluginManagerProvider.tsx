@@ -84,7 +84,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				toasts.error(e.message);
 			}
 		},
-		[pluginManager, trigger],
+		[pluginManager],
 	);
 
 	const fetchPluginPackages = useCallback(async () => {

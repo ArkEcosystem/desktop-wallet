@@ -37,15 +37,17 @@ export const PluginUninstallConfirmation = ({ isOpen, profile, plugin, onClose, 
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="secondary" onClick={onClose} data-testid="PluginUninstall__cancel-button">
-					{t("COMMON.CANCEL")}
-				</Button>
+			<div data-testid="PluginUninstallConfirmation">
+				<div className="flex justify-end mt-8 space-x-3">
+					<Button variant="secondary" onClick={onClose} data-testid="PluginUninstall__cancel-button">
+						{t("COMMON.CANCEL")}
+					</Button>
 
-				<Button type="submit" onClick={handleDelete} data-testid="PluginUninstall__submit-button">
-					<Icon name="Trash" />
-					<span>{t("COMMON.DELETE")}</span>
-				</Button>
+					<Button type="submit" onClick={handleDelete} data-testid="PluginUninstall__submit-button">
+						<Icon name="Trash" />
+						<span>{t("COMMON.DELETE")}</span>
+					</Button>
+				</div>
 			</div>
 		</Modal>
 	);
