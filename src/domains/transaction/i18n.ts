@@ -184,7 +184,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Confirm Your Transaction",
 		DESCRIPTION:
 			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
-		LOADING_MESSAGE: "Waiting for confirmation ...",
+		LOADING_MESSAGE: "Waiting for confirmation …",
 	},
 
 	LINK_TYPES: {
