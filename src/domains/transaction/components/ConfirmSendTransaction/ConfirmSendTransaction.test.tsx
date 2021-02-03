@@ -1,5 +1,5 @@
 import React from "react";
-import { act,fireEvent, render } from "utils/testing-library";
+import { act, fireEvent, render } from "utils/testing-library";
 
 import { ConfirmSendTransaction } from "./ConfirmSendTransaction";
 
