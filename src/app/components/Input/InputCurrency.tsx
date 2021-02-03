@@ -2,14 +2,15 @@ import { Currency } from "@arkecosystem/platform-sdk-intl";
 import React, { useCallback, useLayoutEffect, useState } from "react";
 
 import { Input } from "./Input";
+import { InputGroup } from "./InputGroup";
 
-type Props = { onChange?: (value: any) => void; magnitude?: number } & Omit<
+type Props = { onChange?: (value: any) => void; magnitude?: number; errorClassName?: string } & Omit<
 	React.InputHTMLAttributes<any>,
 	"onChange" | "defaultValue"
 >;
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, magnitude, ...props }: Props, ref) => {
+	({ onChange, value, magnitude, children, errorClassName, ...props }: Props, ref) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
 		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
 
@@ -32,14 +33,18 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		return (
-			<Input
-				data-testid="InputCurrency"
-				type="text"
-				value={amount.display}
-				onChange={handleInput}
-				ref={ref}
-				{...props}
-			/>
+			<InputGroup>
+				<Input
+					data-testid="InputCurrency"
+					type="text"
+					value={amount.display}
+					onChange={handleInput}
+					ref={ref}
+					{...props}
+					errorClassName={errorClassName}
+				/>
+				{children}
+			</InputGroup>
 		);
 	},
 );

@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { Input } from "app/components/Input";
+import { InputDefault } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
@@ -253,7 +253,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-								<Input
+								<InputDefault
 									type="text"
 									ref={register({
 										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {

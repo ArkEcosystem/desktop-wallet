@@ -1,9 +1,18 @@
+import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
+import cn from "classnames";
 import React, { useEffect, useRef } from "react";
 import tw, { styled } from "twin.macro";
 
 import { useFormField } from "../Form/useFormField";
+import { InputAddonEnd } from "./InputGroup";
 
-type InputProps = { as?: React.ElementType; isInvalid?: boolean; isFocused?: boolean } & React.HTMLProps<any>;
+type InputProps = {
+	as?: React.ElementType;
+	isInvalid?: boolean;
+	isFocused?: boolean;
+	errorClassName?: string;
+} & React.HTMLProps<any>;
 
 const InputStyled = styled.input`
 	&:focus {
@@ -30,8 +39,10 @@ const InputStyled = styled.input`
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
-	({ isInvalid, className, isFocused, ...props }: InputProps, ref) => {
+	({ isInvalid, className, isFocused, errorClassName, ...props }: InputProps, ref) => {
 		const fieldContext = useFormField();
+
+		const isInvalidValue = fieldContext?.isInvalid || isInvalid;
 
 		const focusRef = useRef<InputElement>(null);
 		ref = isFocused ? focusRef : ref;
@@ -42,16 +53,29 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		}, [focusRef, isFocused]);
 
 		return (
-			<InputStyled
-				data-testid="Input"
-				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures ${
-					className || ""
-				}`}
-				name={fieldContext?.name}
-				aria-invalid={fieldContext?.isInvalid || isInvalid}
-				ref={ref}
-				{...props}
-			/>
+			<>
+				<InputStyled
+					data-testid="Input"
+					className={cn(
+						"overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures",
+						className,
+					)}
+					name={fieldContext?.name}
+					aria-invalid={isInvalidValue}
+					ref={ref}
+					{...props}
+				/>
+
+				{isInvalidValue && (
+					<InputAddonEnd className={cn("my-px mr-4", errorClassName)}>
+						<Tooltip content={fieldContext?.errorMessage} variant="small">
+							<span>
+								<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
+							</span>
+						</Tooltip>
+					</InputAddonEnd>
+				)}
+			</>
 		);
 	},
 );

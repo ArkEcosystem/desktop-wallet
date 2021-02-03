@@ -59,6 +59,7 @@ export const InputAddress = ({
 				ref={registerRef?.(rules)}
 				type="text"
 				className="pr-12"
+				errorClassName="mr-6"
 				data-testid="InputAddress__input"
 				{...props}
 			/>

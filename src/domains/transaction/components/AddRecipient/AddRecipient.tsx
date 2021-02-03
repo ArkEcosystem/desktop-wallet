@@ -2,10 +2,11 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { InputAddonEnd, InputCurrency, InputGroup } from "app/components/Input";
+import { InputAddonEnd } from "app/components/Input";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
+import { InputAmount } from "domains/transaction/components/InputAmount";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -231,19 +232,17 @@ export const AddRecipient = ({
 
 					<FormField name="amount">
 						<FormLabel label={t("COMMON.AMOUNT")} />
-						<InputGroup>
-							<InputCurrency
-								disabled={!isSenderFilled}
-								data-testid="AddRecipient__amount"
-								placeholder={t("COMMON.AMOUNT")}
-								className="pr-20"
-								value={getValues("displayAmount") || recipientsAmount}
-								onChange={(currency) => {
-									setValue("displayAmount", currency.display);
-									setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
-									singleRecipientOnChange(currency.value, recipientAddress);
-								}}
-							/>
+						<InputAmount
+							disabled={!isSenderFilled}
+							data-testid="AddRecipient__amount"
+							placeholder={t("COMMON.AMOUNT")}
+							value={getValues("displayAmount") || recipientsAmount}
+							onChange={(currency) => {
+								setValue("displayAmount", currency.display);
+								setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
+								singleRecipientOnChange(currency.value, recipientAddress);
+							}}
+						>
 							<InputAddonEnd>
 								<button
 									type="button"
@@ -262,12 +261,12 @@ export const AddRecipient = ({
 
 										singleRecipientOnChange(remaining.toString(), recipientAddress);
 									}}
-									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+									className="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>
 							</InputAddonEnd>
-						</InputGroup>
+						</InputAmount>
 						<FormHelperText />
 					</FormField>
 				</div>
