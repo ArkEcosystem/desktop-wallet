@@ -8,6 +8,7 @@ import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import { usePluginManagerContext } from "plugins";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { reviewData } from "../../data";
 
@@ -23,12 +24,15 @@ type PluginDetailsProps = {
 export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const activeProfile = useActiveProfile();
 	const queryParams = useQueryParams();
+	const history = useHistory();
 
 	const { t } = useTranslation();
 	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
-	const isInstalled = pluginManager.plugins().findById(pluginId!);
+	const pluginCtrl = pluginManager.plugins().findById(pluginId!);
+	const isInstalled = !!pluginCtrl;
+	const hasLaunch = !!pluginCtrl?.hooks().hasCommand("service:launch.render");
 
 	const latestConfiguration = useMemo(() => pluginConfigurations.find((item) => item.id() === pluginId), [
 		pluginConfigurations,
@@ -61,14 +65,18 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 		},
 	];
 
+	const handleLaunch = () => {
+		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginId}`);
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} isInstalled={isInstalled} />
+				<PluginHeader {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
 			</Section>
 
 			<Section>
-				<PluginInfo {...pluginData} isInstalled={isInstalled} />
+				<PluginInfo {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
 			</Section>
 
 			<Section>
