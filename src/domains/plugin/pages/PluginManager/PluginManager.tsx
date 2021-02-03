@@ -271,18 +271,16 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					/>
 				</Section>
 
-				<div className="-mb-5">
-					<PluginManagerNavigationBar
-						selected={currentView}
-						onChange={setCurrentView}
-						selectedViewType={viewType}
-						onSelectGridView={() => setViewType("grid")}
-						onSelectListView={() => setViewType("list")}
-						installedPluginsCount={installedPlugins.length}
-					/>
-				</div>
+				<PluginManagerNavigationBar
+					selected={currentView}
+					onChange={setCurrentView}
+					selectedViewType={viewType}
+					onSelectGridView={() => setViewType("grid")}
+					onSelectListView={() => setViewType("list")}
+					installedPluginsCount={installedPlugins.length}
+				/>
 
-				<Section>
+				<Section marginTop={false}>
 					<div data-testid={`PluginManager__container--${currentView}`}>
 						<div className="flex justify-between items-center" />
 
