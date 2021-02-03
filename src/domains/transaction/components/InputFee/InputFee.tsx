@@ -1,6 +1,6 @@
 import { InputRange } from "app/components/Input";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
-import React from "react";
+import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useFeeFormat } from "./hooks";
@@ -21,7 +21,7 @@ export type InputFee = {
 };
 
 // TODO: Remove defaultValue?
-export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
+export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, step }: InputFeeProps) => {
 	const { t } = useTranslation();
 
 	const { fee, toHuman, updateFee } = useFeeFormat({ defaultValue, value, avg });
@@ -45,7 +45,7 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 					min={minHuman}
 					max={maxHuman}
 					step={step}
-					onChange={onChange}
+					onChange={handleFeeChange}
 				/>
 			</div>
 
@@ -76,4 +76,4 @@ export const InputFee = ({ defaultValue, value, avg, min, max, onChange, step }:
 			</SelectionBar>
 		</div>
 	);
-};
+});

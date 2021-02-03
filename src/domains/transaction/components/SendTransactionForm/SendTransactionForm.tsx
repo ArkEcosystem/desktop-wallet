@@ -124,8 +124,8 @@ export const SendTransactionForm = ({
 					min={fees.min}
 					avg={fees.avg}
 					max={fees.max}
-					defaultValue={fee || 0}
-					value={fee || 0}
+					defaultValue={fee}
+					value={fee}
 					step={0.01}
 					onChange={(currency) => {
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
