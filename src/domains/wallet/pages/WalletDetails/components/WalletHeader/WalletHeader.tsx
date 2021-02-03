@@ -356,9 +356,6 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			</header>
 
 			<SignMessage
-				profileId={profile.id()}
-				walletId={wallet.id()}
-				signatoryAddress={wallet.address()}
 				isOpen={modal === "sign-message"}
 				onClose={() => setModal(undefined)}
 				onCancel={() => setModal(undefined)}

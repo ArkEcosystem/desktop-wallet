@@ -1,29 +1,47 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { createMemoryHistory } from "history";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { Route } from "react-router-dom";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	waitFor,
+} from "testing-library";
 
 import { translations } from "../../i18n";
 import { SignMessage } from "./SignMessage";
 
+const history = createMemoryHistory();
+let walletUrl: string;
+
 let profile: Profile;
 let wallet: ReadWriteWallet;
+
 const mnemonic = "this is a top secret password";
 
 describe("SignMessage", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		wallet = await profile.wallets().importByMnemonic(mnemonic, "ARK", "ark.devnet");
+
+		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+		history.push(walletUrl);
 	});
 
 	it("should render", () => {
 		const { asFragment } = renderWithRouter(
-			<SignMessage
-				profileId={profile.id()}
-				walletId={wallet.id()}
-				signatoryAddress="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-				isOpen={true}
-			/>,
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<SignMessage isOpen={true} />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -41,12 +59,13 @@ describe("SignMessage", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<SignMessage
-					profileId={profile.id()}
-					walletId={wallet.id()}
-					signatoryAddress="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-					isOpen={true}
-				/>,
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<SignMessage isOpen={true} />
+				</Route>,
+				{
+					routes: [walletUrl],
+					history,
+				},
 			);
 
 			await waitFor(() =>
@@ -68,6 +87,8 @@ describe("SignMessage", () => {
 			expect(mnemonicInput).toBeTruthy();
 
 			await fireEvent.change(mnemonicInput, { target: { value: mnemonic } });
+
+			await waitFor(() => expect(getByTestId("SignMessage__submit-button")).not.toHaveAttribute("disabled"));
 
 			await fireEvent.click(getByTestId("SignMessage__submit-button"));
 
