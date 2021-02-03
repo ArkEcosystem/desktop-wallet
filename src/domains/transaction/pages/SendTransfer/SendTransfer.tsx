@@ -25,7 +25,8 @@ export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const location = useLocation();
-	const { walletId: hasWalletId } = useParams();
+	const { walletId } = useParams<{ walletId: string }>();
+	const hasWalletId = walletId !== undefined;
 	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -222,7 +223,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 

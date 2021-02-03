@@ -21,7 +21,8 @@ import { useHistory, useParams } from "react-router-dom";
 export const Votes = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
-	const { walletId: hasWalletId } = useParams();
+	const { walletId } = useParams<{ walletId: string }>();
+	const hasWalletId = walletId !== undefined;
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -261,7 +262,7 @@ export const Votes = () => {
 								onReset={() => setSearchQuery("")}
 								debounceTimeout={100}
 							/>
-							<div className="mr-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+							<div className="h-10 mr-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown
@@ -272,7 +273,7 @@ export const Votes = () => {
 											</div>
 										}
 									>
-										<div className="py-7 px-10 w-128">
+										<div className="px-10 py-7 w-128">
 											<FilterWallets {...filterProperties} showToggleViews={false} />
 										</div>
 									</Dropdown>
@@ -292,7 +293,7 @@ export const Votes = () => {
 			{isEmptyObject(walletsByCoin) ? (
 				<Section className="flex-1">
 					<EmptyBlock>
-						<div className="flex justify-between items-center">
+						<div className="flex items-center justify-between">
 							<Trans
 								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
 								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"

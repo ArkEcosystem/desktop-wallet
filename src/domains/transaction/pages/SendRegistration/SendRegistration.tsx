@@ -35,7 +35,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [crumbs, setCrumbs] = useState<Crumb[]>([]);
 	const { findByType } = useFees();
 
-	const { registrationType } = useParams();
+	const { registrationType } = useParams<{ registrationType: string }>();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -173,7 +173,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
-					className="mx-auto max-w-xl"
+					className="max-w-xl mx-auto"
 					context={form}
 					onSubmit={handleSubmit}
 				>
