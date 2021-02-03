@@ -25,10 +25,11 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const queryParams = useQueryParams();
 
 	const { t } = useTranslation();
-	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
+	const { pluginPackages, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
-	const isInstalled = pluginManager.plugins().findById(pluginId!);
+	const pluginCtrl = pluginManager.plugins().findById(pluginId!);
+	const isInstalled = !!pluginCtrl;
 
 	const latestConfiguration = useMemo(() => pluginConfigurations.find((item) => item.id() === pluginId), [
 		pluginConfigurations,
@@ -61,10 +62,14 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 		},
 	];
 
+	const handleReportPlugin = () => {
+		reportPlugin(pluginCtrl!);
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} isInstalled={isInstalled} />
+				<PluginHeader {...pluginData} isInstalled={isInstalled} onReport={handleReportPlugin} />
 			</Section>
 
 			<Section>

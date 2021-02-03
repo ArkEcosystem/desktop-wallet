@@ -18,6 +18,7 @@ type Props = {
 	size: string;
 	isInstalled?: boolean;
 	isOfficial?: boolean;
+	onReport?: () => void;
 };
 
 export const PluginHeader = (props: Props) => {
@@ -31,7 +32,12 @@ export const PluginHeader = (props: Props) => {
 					{/* <Button className="ml-3" data-testid="PluginHeader__button--update">
 						<Icon name="Update" />
 					</Button> */}
-					<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
+					<Button
+						className="ml-3"
+						data-testid="PluginHeader__button--report"
+						variant="secondary"
+						onClick={props.onReport}
+					>
 						<Icon name="Report" width={20} height={20} />
 					</Button>
 					<Button className="ml-3" data-testid="PluginHeader__button--uninstall" variant="secondary">

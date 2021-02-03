@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { ipcRenderer } from "electron";
 import nock from "nock";
 import { PluginController, PluginManager, PluginManagerProvider, usePluginManagerContext } from "plugins";
 import React from "react";
@@ -128,5 +129,48 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("My Export Transaction").length).toBeGreaterThan(0));
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should report plugin", async () => {
+		const ipcRendererMock = jest.spyOn(ipcRenderer, "send").mockImplementation();
+
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		expect(container).toMatchSnapshot();
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--report"));
+
+		expect(ipcRendererMock).toHaveBeenCalledWith(
+			"open-external",
+			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=undefined",
+		);
+
+		ipcRendererMock.mockRestore();
 	});
 });

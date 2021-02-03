@@ -13,7 +13,7 @@ export const PluginView = () => {
 	const { t } = useTranslation();
 
 	const profile = useActiveProfile();
-	const { pluginManager } = usePluginManagerContext();
+	const { pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
@@ -27,6 +27,10 @@ export const PluginView = () => {
 			label: plugin!.config().title()!,
 		},
 	];
+
+	const handleReportPlugin = () => {
+		reportPlugin(plugin!);
+	};
 
 	return (
 		<Page profile={profile} crumbs={crumbs}>
@@ -77,7 +81,7 @@ export const PluginView = () => {
 
 					<div className="flex items-center space-x-2">
 						<Tooltip content="Report this plugin">
-							<Button size="icon">
+							<Button data-testid="PluginView__report" size="icon" onClick={handleReportPlugin}>
 								<Icon name="AlertWarning" width="1.5rem" height="1.25rem" />
 							</Button>
 						</Tooltip>
