@@ -30,7 +30,7 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
-	const { pluginPackages, pluginConfigurations, pluginManager, trigger } = usePluginManagerContext();
+	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
 	const pluginCtrl = pluginManager.plugins().findById(pluginId!);
@@ -69,7 +69,6 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 
 	const handleOnDelete = () => {
 		history.push(`/profiles/${activeProfile.id()}/plugins`);
-		trigger();
 	};
 
 	return (

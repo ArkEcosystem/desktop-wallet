@@ -16,7 +16,7 @@ export const PluginView = () => {
 	const history = useHistory();
 
 	const profile = useActiveProfile();
-	const { pluginManager, trigger } = usePluginManagerContext();
+	const { pluginManager } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
@@ -35,7 +35,6 @@ export const PluginView = () => {
 
 	const handleOnDelete = () => {
 		history.push(`/profiles/${profile.id()}/plugins`);
-		trigger();
 	};
 
 	return (

@@ -58,41 +58,45 @@ exports[`Plugin Uninstall Confirmation should remove the plugin 1`] = `
             Are you sure you want to remove 'Test Plugin'? Uninstalling this plugin will remove it from all profiles on this system.
           </div>
           <div
-            class="flex justify-end mt-8 space-x-3"
+            data-testid="PluginUninstallConfirmation"
           >
-            <button
-              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-              data-testid="PluginUninstall__cancel-button"
-              type="button"
+            <div
+              class="flex justify-end mt-8 space-x-3"
             >
-              <div
-                class="flex relative items-center space-x-2"
-              >
-                Cancel
-              </div>
-            </button>
-            <button
-              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
-              data-testid="PluginUninstall__submit-button"
-              type="submit"
-            >
-              <div
-                class="flex relative items-center space-x-2"
+              <button
+                class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                data-testid="PluginUninstall__cancel-button"
+                type="button"
               >
                 <div
-                  class="sc-gsTCUz cXMmJt"
-                  height="1em"
-                  width="1em"
+                  class="flex relative items-center space-x-2"
                 >
-                  <svg>
-                    trash.svg
-                  </svg>
+                  Cancel
                 </div>
-                <span>
-                  Delete
-                </span>
-              </div>
-            </button>
+              </button>
+              <button
+                class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                data-testid="PluginUninstall__submit-button"
+                type="submit"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  <div
+                    class="sc-gsTCUz cXMmJt"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                  <span>
+                    Delete
+                  </span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
