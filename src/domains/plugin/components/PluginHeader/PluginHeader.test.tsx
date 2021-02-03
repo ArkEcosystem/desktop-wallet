@@ -32,11 +32,12 @@ describe("PluginHeader", () => {
 				version="1.3.8"
 				size="4.2 Mb"
 				isInstalled
+				hasLaunch
 			/>,
 		);
 
 		expect(screen.getByTestId("PluginCard__logo")).toBeInTheDocument();
-		expect(screen.getByTestId("PluginHeader__button--open")).toBeInTheDocument();
+		expect(screen.getByTestId("PluginHeader__button--launch")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
 });
