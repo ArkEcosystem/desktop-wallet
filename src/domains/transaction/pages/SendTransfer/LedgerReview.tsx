@@ -5,11 +5,9 @@ import { TransactionMemo, TransactionRecipients } from "domains/transaction/comp
 import { evaluateFee } from "domains/transaction/utils";
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 
 export const TransferLedgerReview = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { getValues } = useFormContext();
-	const { t } = useTranslation();
 
 	const { fee, recipients, smartbridge } = getValues();
 
