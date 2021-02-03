@@ -102,7 +102,9 @@ describe("SignIn", () => {
 		// wait for formState.isValid to be updated
 		await findByTestId("SignIn__submit-button");
 
-		expect(queryByText("The Password is invalid")).toBeTruthy();
+		// expect(queryByText("The Password is invalid")).toBeTruthy();
+		const errorMessage = getByTestId("Input-error");
+		expect(errorMessage).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
 
@@ -133,7 +135,9 @@ describe("SignIn", () => {
 			await findByTestId("SignIn__submit-button");
 		}
 
-		expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
+		// expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
+		const errorMessage = getByTestId("Input-error");
+		expect(errorMessage).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
@@ -145,6 +149,13 @@ describe("SignIn", () => {
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(() => expect(queryByText("The Password is invalid")).toBeTruthy(), { timeout: 10000 });
+		await waitFor(
+			() => {
+				// expect(queryByText("The Password is invalid")).toBeTruthy()
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
+			},
+			{ timeout: 10000 },
+		);
 	});
 });

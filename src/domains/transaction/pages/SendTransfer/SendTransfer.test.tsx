@@ -24,7 +24,6 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
 
 const passphrase = getDefaultWalletMnemonic();
@@ -715,9 +714,11 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
-			);
+			await waitFor(() => {
+				// expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
+			});
 
 			signMock.mockRestore();
 

@@ -24,7 +24,6 @@ import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.j
 import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
 import { getDefaultWalletMnemonic } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { SendVote } from "../SendVote";
 
 const fixtureProfileId = getDefaultProfileId();
@@ -589,9 +588,11 @@ describe("SendVote", () => {
 			fireEvent.click(getByTestId("SendVote__button--submit"));
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
-			);
+			await waitFor(() => {
+				// expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
+			});
 
 			signMock.mockRestore();
 

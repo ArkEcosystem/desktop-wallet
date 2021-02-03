@@ -83,7 +83,9 @@ describe("UpdateWalletName", () => {
 				fireEvent.input(getByTestId("UpdateWalletName__input"), { target: { value: name } });
 			});
 
-			expect(getByText(`A Wallet named '${name.trim()}' already exists on this profile`)).toBeTruthy();
+			// expect(getByText(`A Wallet named '${name.trim()}' already exists on this profile`)).toBeTruthy();
+			const errorMessage = getByTestId("Input-error");
+			expect(errorMessage).toBeVisible();
 			expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
 
 			expect(asFragment()).toMatchSnapshot();

@@ -21,7 +21,6 @@ import {
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 import { getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
 
 const passphrase = getDefaultWalletMnemonic();
@@ -319,9 +318,11 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
-			);
+			await waitFor(() => {
+				// expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
+			});
 
 			signMock.mockRestore();
 
@@ -431,11 +432,12 @@ describe("SendIpfs", () => {
 
 			expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash");
 
-			await waitFor(() =>
-				expect(getByTestId("SendIpfs__form-step")).toHaveTextContent(
-					transactionTranslations.INPUT_IPFS_HASH.VALIDATION.NOT_VALID,
-				),
-			);
+			await waitFor(() => {
+				// expect(getByTestId("SendIpfs__form-step")).toHaveTextContent(
+				// 	transactionTranslations.INPUT_IPFS_HASH.VALIDATION.NOT_VALID,
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
+			});
 
 			await waitFor(() => expect(container).toMatchSnapshot());
 		});

@@ -135,9 +135,11 @@ describe("ContactForm", () => {
 
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 			await waitFor(() => {
-				expect(getByTestId("ContactForm__address")).toHaveTextContent(
-					translations.VALIDATION.ADDRESS_IS_INVALID,
-				);
+				// expect(getByTestId("ContactForm__address")).toHaveTextContent(
+				// 	translations.VALIDATION.ADDRESS_IS_INVALID,
+				// );
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
 				expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 			});
 		});
@@ -191,9 +193,11 @@ describe("ContactForm", () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 
 			await waitFor(() => {
-				expect(getByTestId("ContactForm__address")).toHaveTextContent(
-					translations.VALIDATION.ADDRESS_EXISTS_SUFFIX,
-				);
+				// expect(getByTestId("ContactForm__address")).toHaveTextContent(
+				// 	translations.VALIDATION.ADDRESS_EXISTS_SUFFIX,
+				// );
+				const errorMessage = getByTestId("Input-error");
+				expect(errorMessage).toBeVisible();
 				expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 			});
 		});

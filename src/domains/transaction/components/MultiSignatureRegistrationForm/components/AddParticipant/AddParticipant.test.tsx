@@ -38,11 +38,13 @@ describe("Add Participant", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
-		await waitFor(() =>
-			expect(
-				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
-			).toBeInTheDocument(),
-		);
+		await waitFor(() => {
+			// expect(
+			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
+			// ).toBeInTheDocument(),
+			const errorMessage = screen.getByTestId("Input-error");
+			expect(errorMessage).toBeVisible();
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -70,11 +72,13 @@ describe("Add Participant", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
-		await waitFor(() =>
-			expect(
-				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND),
-			).toBeInTheDocument(),
-		);
+		await waitFor(() => {
+			// expect(
+			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND),
+			// ).toBeInTheDocument(),
+			const errorMessage = screen.getByTestId("Input-error");
+			expect(errorMessage).toBeVisible();
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -106,11 +110,13 @@ describe("Add Participant", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
-		await waitFor(() =>
-			expect(
-				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_ALREADY_ADDED),
-			).toBeInTheDocument(),
-		);
+		await waitFor(() => {
+			// expect(
+			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_ALREADY_ADDED),
+			// ).toBeInTheDocument(),
+			const errorMessage = screen.getByTestId("Input-error");
+			expect(errorMessage).toBeVisible();
+		});
 	});
 
 	it("should fail if cannot find the address remotely", async () => {
@@ -136,11 +142,13 @@ describe("Add Participant", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 		});
 
-		await waitFor(() =>
-			expect(
-				screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
-			).toBeInTheDocument(),
-		);
+		await waitFor(() => {
+			// expect(
+			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
+			// ).toBeInTheDocument(),
+			const errorMessage = screen.getByTestId("Input-error");
+			expect(errorMessage).toBeVisible();
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 	});

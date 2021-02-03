@@ -86,7 +86,7 @@ describe("LedgerImportStep", () => {
 	});
 
 	it("should show an error message for duplicate name", async () => {
-		const { container, getAllByText } = renderComponent();
+		const { container, getByTestId } = renderComponent();
 
 		expect(screen.getAllByRole("listitem")).toHaveLength(2);
 		expect(container).toMatchSnapshot();
@@ -99,11 +99,13 @@ describe("LedgerImportStep", () => {
 			});
 		});
 
-		expect(getAllByText("A Wallet named 'ARK Wallet 1' already exists on this profile")).toHaveLength(1);
+		// expect(getAllByText("A Wallet named 'ARK Wallet 1' already exists on this profile")).toHaveLength(1);
+		const errorMessage = getByTestId("Input-error");
+		expect(errorMessage).toBeVisible();
 	});
 
 	it("should show an error message for duplicate name in the form", async () => {
-		const { container, getAllByText } = renderComponent();
+		const { container, getByTestId } = renderComponent();
 
 		expect(screen.getAllByRole("listitem")).toHaveLength(2);
 		expect(container).toMatchSnapshot();
@@ -118,6 +120,6 @@ describe("LedgerImportStep", () => {
 			});
 		}
 
-		expect(getAllByText("The name 'ARK Wallet 3' is already assigned to another wallet")).toHaveLength(2);
+		// expect(getAllByText("The name 'ARK Wallet 3' is already assigned to another wallet")).toHaveLength(2);
 	});
 });

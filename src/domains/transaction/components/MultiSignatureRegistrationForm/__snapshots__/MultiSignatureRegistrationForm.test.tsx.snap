@@ -66,7 +66,8 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                         />
                       </div>
                       <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                        aria-invalid="false"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                         data-testid="SelectRecipient__input"
                         name="address"
                         type="text"
@@ -266,7 +267,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 class="InputGroup-sc-1obbdqe-3 bgPpWR"
               >
                 <input
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="MultiSignatureRegistrationForm__min-participants"
                   name="minParticipants"
                   type="number"
@@ -304,7 +305,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     class="InputGroup-sc-1obbdqe-3 bgPpWR"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"

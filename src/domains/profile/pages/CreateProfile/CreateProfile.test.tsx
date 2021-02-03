@@ -2,7 +2,6 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
-import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
 import os from "os";
 import React from "react";
@@ -149,7 +148,9 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS)).toBeTruthy();
+		// expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS)).toBeTruthy();
+		const errorMessage = getByTestId("Input-error");
+		expect(errorMessage).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -171,7 +172,9 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		expect(getByText("'Name' should have at most 42 characters")).toBeTruthy();
+		// expect(getByText("'Name' should have at most 42 characters")).toBeTruthy();
+		const errorMessage = getByTestId("Input-error");
+		expect(errorMessage).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});

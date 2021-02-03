@@ -131,18 +131,33 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 data-testid="FormLabel__required"
               />
             </label>
-            <input
-              aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="Input__username"
-              name="username"
-              value="thisisaveryveryverylongdelegatename"
-            />
-            <p
-              class="text-sm text-theme-danger-500"
+            <div
+              class="InputGroup-sc-1obbdqe-3 bgPpWR"
             >
-              'Delegate Name' should have at most 20 characters
-            </p>
+              <input
+                aria-invalid="true"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                data-testid="Input__username"
+                name="username"
+                value="thisisaveryveryverylongdelegatename"
+              />
+              <div
+                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                data-testid="Input-error"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      alert-warning.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </div>
           </fieldset>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -169,7 +184,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -381,12 +396,16 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 data-testid="FormLabel__required"
               />
             </label>
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="Input__username"
-              name="username"
-              value=""
-            />
+            <div
+              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                data-testid="Input__username"
+                name="username"
+                value=""
+              />
+            </div>
           </fieldset>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -413,7 +432,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -848,12 +867,16 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 data-testid="FormLabel__required"
               />
             </label>
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="Input__username"
-              name="username"
-              value=""
-            />
+            <div
+              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                data-testid="Input__username"
+                name="username"
+                value=""
+              />
+            </div>
           </fieldset>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -880,7 +903,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1092,12 +1115,16 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 data-testid="FormLabel__required"
               />
             </label>
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="Input__username"
-              name="username"
-              value="test_delegate"
-            />
+            <div
+              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                data-testid="Input__username"
+                name="username"
+                value="test_delegate"
+              />
+            </div>
           </fieldset>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1124,7 +1151,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1336,18 +1363,33 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 data-testid="FormLabel__required"
               />
             </label>
-            <input
-              aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="Input__username"
-              name="username"
-              value="arkx"
-            />
-            <p
-              class="text-sm text-theme-danger-500"
+            <div
+              class="InputGroup-sc-1obbdqe-3 bgPpWR"
             >
-              'Delegate Name' already exists
-            </p>
+              <input
+                aria-invalid="true"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                data-testid="Input__username"
+                name="username"
+                value="arkx"
+              />
+              <div
+                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                data-testid="Input-error"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      alert-warning.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </div>
           </fieldset>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1374,7 +1416,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1586,18 +1628,33 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 data-testid="FormLabel__required"
               />
             </label>
-            <input
-              aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="Input__username"
-              name="username"
-              value="<invalid>"
-            />
-            <p
-              class="text-sm text-theme-danger-500"
+            <div
+              class="InputGroup-sc-1obbdqe-3 bgPpWR"
             >
-              The following characters are not allowed: '&lt;', '&gt;'
-            </p>
+              <input
+                aria-invalid="true"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                data-testid="Input__username"
+                name="username"
+                value="<invalid>"
+              />
+              <div
+                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                data-testid="Input-error"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      alert-warning.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </div>
           </fieldset>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1624,7 +1681,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"

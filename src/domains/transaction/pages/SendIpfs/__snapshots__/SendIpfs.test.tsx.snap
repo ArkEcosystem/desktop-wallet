@@ -408,11 +408,27 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
                         />
+                        <div
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
+                          data-testid="Input-error"
+                        >
+                          <span>
+                            <div
+                              class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                alert-warning.svg
+                              </svg>
+                            </div>
+                          </span>
+                        </div>
                         <div
                           class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                         >
@@ -433,11 +449,6 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                           </button>
                         </div>
                       </div>
-                      <p
-                        class="text-sm text-theme-danger-500"
-                      >
-                        Invalid Mnemonic
-                      </p>
                     </fieldset>
                   </div>
                 </div>
@@ -689,7 +700,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="InputGroup-sc-1obbdqe-3 bgPpWR"
             >
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -2272,19 +2283,30 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <input
                             aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
+                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20 pr-12"
                             data-testid="Input__hash"
                             name="hash"
                             placeholder=" "
                             type="text"
                             value="invalid-ipfs-hash"
                           />
+                          <div
+                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                            data-testid="Input-error"
+                          >
+                            <span>
+                              <div
+                                class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  alert-warning.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
                         </div>
-                        <p
-                          class="text-sm text-theme-danger-500"
-                        >
-                          The IPFS hash is not valid
-                        </p>
                       </fieldset>
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -2311,7 +2333,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             >
                               <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
