@@ -2,7 +2,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env,getDefaultProfileId, render, renderWithRouter } from "utils/testing-library";
+import { env, getDefaultProfileId, render, renderWithRouter } from "utils/testing-library";
 
 import { GridWallet, WalletsGrid } from "./";
 
