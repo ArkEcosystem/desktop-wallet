@@ -980,8 +980,7 @@ describe("SendTransfer", () => {
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);
 
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
+			fireEvent.change(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 
 			fireEvent.click(getByTestId("AddRecipient__add-button"));
 			await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(1));

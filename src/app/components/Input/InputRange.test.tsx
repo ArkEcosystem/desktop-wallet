@@ -51,6 +51,6 @@ describe("InputRange", () => {
 		fireEvent.change(input, { target: { value: "11" } });
 
 		waitFor(() => expect(input).toHaveValue("10"));
-		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "10");
+		expect(getByTestId("Range__thumb")).not.toHaveAttribute("aria-valuenow", "11");
 	});
 });

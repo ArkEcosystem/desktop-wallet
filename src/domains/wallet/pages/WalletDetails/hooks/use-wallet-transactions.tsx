@@ -12,7 +12,9 @@ export const useWalletTransactions = (
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
 		...wallet.transaction().signed(),
-	}).filter((item) => item.isMultiSignature());
+	})
+		// TODO: Use the `isMultiSignature()` method from interface when ready on the platform-sdk
+		.filter((item) => !!item.get("multiSignature"));
 
 	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
 	const [itemCount, setItemCount] = useState<number>(0);
@@ -21,10 +23,10 @@ export const useWalletTransactions = (
 
 	const syncMultiSignatures = useCallback(async () => {
 		await wallet.transaction().sync();
+
 		const broadcasted = Object.keys(wallet.transaction().broadcasted());
-		for (const id of broadcasted) {
-			await wallet.transaction().confirm(id);
-		}
+
+		await Promise.allSettled(broadcasted.map((id) => wallet.transaction().confirm(id)));
 	}, [wallet]);
 
 	const abortRef = useRef<() => void>();

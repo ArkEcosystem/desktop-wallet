@@ -7,12 +7,13 @@ import { useTranslation } from "react-i18next";
 
 const WaitingBadge = () => {
 	const { t } = useTranslation();
+
 	return (
 		<Tooltip content={t("COMMON.AWAITING_SIGNATURE")}>
 			<Badge
 				data-testid="Signatures__waiting-badge"
-				className="bg-theme-danger-100 text-theme-danger-400"
-				icon="StatusPending"
+				className="bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white"
+				icon="SignatureStatusPending"
 			/>
 		</Tooltip>
 	);
@@ -20,12 +21,13 @@ const WaitingBadge = () => {
 
 const SignedBadge = () => {
 	const { t } = useTranslation();
+
 	return (
 		<Tooltip content={t("COMMON.SIGNED")}>
 			<Badge
 				data-testid="Signatures__signed-badge"
-				className="bg-theme-success-200 text-theme-success-500"
-				icon="Checkmark"
+				className="bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
+				icon="SignatureStatusOk"
 			/>
 		</Tooltip>
 	);
@@ -84,7 +86,7 @@ export const Signatures = ({
 
 	return (
 		<div data-testid="Signatures">
-			<h3 className="mb-0">{t("TRANSACTION.SIGNATURES")}</h3>
+			<h3>{t("TRANSACTION.SIGNATURES")}</h3>
 
 			<div className="flex">
 				<div>

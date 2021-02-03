@@ -151,7 +151,7 @@ describe("PluginGrid", () => {
 
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onDelete={onDelete} />);
 
-		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[1]);
 		fireEvent.click(screen.getByTestId("dropdown__option--0"));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
@@ -162,7 +162,7 @@ describe("PluginGrid", () => {
 
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onEnable={onEnable} />);
 
-		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[1]);
 		fireEvent.click(screen.getByTestId("dropdown__option--1"));
 
 		expect(onEnable).toHaveBeenCalledTimes(1);
@@ -173,9 +173,37 @@ describe("PluginGrid", () => {
 
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onDisable={onDisable} />);
 
-		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[1]);
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[2]);
 		fireEvent.click(screen.getByTestId("dropdown__option--1"));
 
 		expect(onDisable).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger install", () => {
+		const onInstall = jest.fn();
+
+		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onInstall={onInstall} />);
+
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
+		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+
+		expect(onInstall).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger launch", () => {
+		const onLaunch = jest.fn();
+
+		render(
+			<PluginGrid
+				plugins={[{ ...plugins[0], isInstalled: true, hasLaunch: true }]}
+				onSelect={jest.fn()}
+				onLaunch={onLaunch}
+			/>,
+		);
+
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
+		fireEvent.click(screen.getByTestId("dropdown__option--2"));
+
+		expect(onLaunch).toHaveBeenCalledTimes(1);
 	});
 });
