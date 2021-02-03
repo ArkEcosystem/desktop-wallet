@@ -1,8 +1,8 @@
 // UI Elements
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Input } from "app/components/Input";
+import { Form, FormField, FormLabel } from "app/components/Form";
+import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
@@ -61,13 +61,12 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 					<div className="mt-8">
 						<FormField name="signed-message-content">
 							<FormLabel label="Signed message content" />
-							<Input
+							<InputDefault
 								data-testid="VerifyMessage_message-content"
 								type="text"
 								defaultValue={""}
 								ref={register({ required: true })}
 							/>
-							<FormHelperText />
 						</FormField>
 					</div>
 				</div>
@@ -78,7 +77,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 			<div data-testid="noverify-address__content">
 				<FormField name="message" className="mt-8">
 					<FormLabel label={t("COMMON.MESSAGE")} />
-					<Input
+					<InputDefault
 						type="text"
 						data-testid="VerifyMessage__message-input"
 						ref={register({
@@ -87,11 +86,10 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 							}).toString(),
 						})}
 					/>
-					<FormHelperText />
 				</FormField>
 				<FormField name="signatory" className="mt-8">
 					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
-					<Input
+					<InputDefault
 						type="text"
 						data-testid="VerifyMessage__signatory-input"
 						defaultValue={signatory}
@@ -102,11 +100,10 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 						})}
 						disabled
 					/>
-					<FormHelperText />
 				</FormField>
 				<FormField name="signature" className="mt-8">
 					<FormLabel label={t("COMMON.SIGNATURE")} />
-					<Input
+					<InputDefault
 						type="text"
 						data-testid="VerifyMessage__signature-input"
 						ref={register({
@@ -115,7 +112,6 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 							}).toString(),
 						})}
 					/>
-					<FormHelperText />
 				</FormField>
 			</div>
 		);

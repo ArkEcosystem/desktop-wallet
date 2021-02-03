@@ -3,9 +3,9 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputPassword } from "app/components/Input";
+import { Input, InputDefault, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import { useEnvironmentContext } from "app/contexts";
@@ -78,7 +78,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			</FormField>
 			<FormField name="message">
 				<FormLabel label={t("COMMON.MESSAGE")} />
-				<Input
+				<InputDefault
 					type="text"
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -87,7 +87,6 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					})}
 					data-testid="SignMessage__message-input"
 				/>
-				<FormHelperText />
 			</FormField>
 			<FormField name="mnemonic">
 				<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
@@ -99,7 +98,6 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					})}
 					data-testid="SignMessage__mnemonic-input"
 				/>
-				<FormHelperText />
 			</FormField>
 			<div className="flex justify-end space-x-3">
 				<Button variant="secondary" onClick={onCancel} data-testid="SignMessage__cancel">

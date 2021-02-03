@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
 import { useFees } from "app/hooks";
@@ -104,7 +104,6 @@ export const FormStep = ({
 								setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 							}}
 						/>
-						<FormHelperText />
 					</FormField>
 				</TransactionDetail>
 			</div>

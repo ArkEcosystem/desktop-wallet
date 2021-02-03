@@ -1,6 +1,6 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
-import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
+import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddonEnd } from "app/components/Input";
 import { Tooltip } from "app/components/Tooltip";
@@ -227,7 +227,6 @@ export const AddRecipient = ({
 								singleRecipientOnChange(getValues("amount"), address);
 							}}
 						/>
-						<FormHelperText />
 					</FormField>
 
 					<FormField name="amount">
@@ -267,7 +266,6 @@ export const AddRecipient = ({
 								</button>
 							</InputAddonEnd>
 						</InputAmount>
-						<FormHelperText />
 					</FormField>
 				</div>
 

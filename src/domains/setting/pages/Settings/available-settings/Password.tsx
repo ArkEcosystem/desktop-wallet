@@ -1,5 +1,5 @@
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useActiveProfile } from "app/hooks";
@@ -62,7 +62,6 @@ export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: Settin
 							})}
 							data-testid="Password-settings__input--currentPassword"
 						/>
-						<FormHelperText />
 					</FormField>
 				)}
 
@@ -99,7 +98,6 @@ export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: Settin
 								})}
 								data-testid={`Password-settings__input--password_${password}`}
 							/>
-							<FormHelperText />
 						</FormField>
 					);
 				})}

@@ -1,6 +1,6 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
+import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Spinner } from "app/components/Spinner";
 import { toasts } from "app/services";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
@@ -127,7 +127,6 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 							})}
 							onChange={(address: string) => setValue("address", address, { shouldDirty: true })}
 						/>
-						<FormHelperText />
 					</FormField>
 
 					<Button

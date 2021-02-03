@@ -1,5 +1,5 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useValidation } from "app/hooks";
@@ -49,7 +49,6 @@ export const AuthenticationStep = ({
 					data-testid="AuthenticationStep__mnemonic"
 					ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
 				/>
-				<FormHelperText />
 			</FormField>
 
 			{wallet.isSecondSignature() && !skipSecondSignature && (
@@ -59,7 +58,6 @@ export const AuthenticationStep = ({
 						data-testid="AuthenticationStep__second-mnemonic"
 						ref={register(authentication.secondMnemonic(wallet.coin(), wallet.secondPublicKey()!))}
 					/>
-					<FormHelperText />
 				</FormField>
 			)}
 		</div>

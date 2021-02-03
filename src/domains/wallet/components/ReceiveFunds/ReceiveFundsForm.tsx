@@ -1,5 +1,5 @@
 import { Alert } from "app/components/Alert";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
 import { useValidation } from "app/hooks";
 import React, { useEffect } from "react";
@@ -31,7 +31,6 @@ export const ReceiveFundsForm = () => {
 						value={getValues("amount")}
 						onChange={(currency) => setValue("amount", currency.display)}
 					/>
-					<FormHelperText />
 				</FormField>
 
 				<FormField name="smartbridge">
@@ -45,7 +44,6 @@ export const ReceiveFundsForm = () => {
 						defaultValue={smartbridge}
 						maxLengthLabel={maxLength.toString()}
 					/>
-					<FormHelperText />
 				</FormField>
 
 				{smartbridge?.length > maxLength && (

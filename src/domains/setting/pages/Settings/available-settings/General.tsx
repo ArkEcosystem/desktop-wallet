@@ -1,6 +1,6 @@
 import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { InputDefault } from "app/components/Input";
@@ -130,7 +130,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						}))}
 						defaultValue={`${activeProfile.settings().get(ProfileSetting.AutomaticSignOutPeriod)}`}
 					/>
-					<FormHelperText />
 				</FormField>
 			),
 			wrapperClass: "pt-8",
@@ -270,7 +269,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 									defaultValue={activeProfile.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="passphraseLanguage">
@@ -287,7 +285,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.passphraseLanguages}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Bip39Locale)}
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="currency">
@@ -304,7 +301,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.currencies}
 									defaultValue={activeProfile.settings().get(ProfileSetting.ExchangeCurrency)}
 								/>
-								<FormHelperText />
 							</FormField>
 						</div>
 
@@ -323,7 +319,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.languages}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Locale)}
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="marketProvider">
@@ -340,7 +335,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.marketProviders}
 									defaultValue={activeProfile.settings().get(ProfileSetting.MarketProvider)}
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="timeFormat">
@@ -357,7 +351,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.timeFormats}
 									defaultValue={activeProfile.settings().get(ProfileSetting.TimeFormat)}
 								/>
-								<FormHelperText />
 							</FormField>
 						</div>
 					</div>

@@ -3,9 +3,9 @@ import { Contact, ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
+import { Form, FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddress } from "app/components/Input";
+import { InputAddress, InputDefault } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -167,7 +167,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 		>
 			<FormField name="name">
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NAME")}</FormLabel>
-				<Input
+				<InputDefault
 					data-testid="contact-form__name-input"
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -184,7 +184,6 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 					onChange={() => onChange?.("name", name)}
 					defaultValue={contact?.name?.()}
 				/>
-				<FormHelperText errorMessage={errors?.name} />
 			</FormField>
 
 			<SubForm>
@@ -196,7 +195,6 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 						onSelect={handleSelectNetwork}
 						selected={network}
 					/>
-					<FormHelperText errorMessage={form.errors} />
 				</FormField>
 
 				<FormField name="address" data-testid="ContactForm__address">
@@ -208,7 +206,6 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 						onChange={() => onChange?.("address", address)}
 						data-testid="contact-form__address-input"
 					/>
-					<FormHelperText />
 				</FormField>
 
 				<div className="mt-4">

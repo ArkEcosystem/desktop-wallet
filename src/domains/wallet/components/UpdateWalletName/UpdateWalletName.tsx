@@ -1,7 +1,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Input } from "app/components/Input";
+import { Form, FormField, FormLabel } from "app/components/Form";
+import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -44,7 +44,7 @@ export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, o
 			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
 				<FormField name="name">
 					<FormLabel required={false}>{t("COMMON.NAME")}</FormLabel>
-					<Input
+					<InputDefault
 						data-testid="UpdateWalletName__input"
 						ref={register({
 							validate: {
@@ -84,7 +84,6 @@ export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, o
 							},
 						})}
 					/>
-					<FormHelperText />
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
