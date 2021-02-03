@@ -21,7 +21,7 @@ const AnchorStyled = styled.a<{ isExternal: boolean }>`
 
 					&:after {
 						content: "";
-						${tw`block w-full border-b absolute bottom-0 border-dotted`}
+						${tw`absolute bottom-0 block w-full border-b border-dotted`}
 					}
 				}
 			}
@@ -35,6 +35,7 @@ type AnchorProps = {
 } & React.AnchorHTMLAttributes<any>;
 
 const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
+	// @ts-ignore
 	({ isExternal, showExternalIcon, children, rel, ...props }: AnchorProps, ref) => (
 		<AnchorStyled
 			data-testid="Link"
