@@ -901,7 +901,29 @@ exports[`PluginGrid should render pagination 1`] = `
           </div>
           <div
             class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -1917,7 +1939,29 @@ exports[`PluginGrid should render without pagination 1`] = `
           </div>
           <div
             class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -2302,7 +2346,29 @@ exports[`PluginGrid shouldn't render pagination 1`] = `
           </div>
           <div
             class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
