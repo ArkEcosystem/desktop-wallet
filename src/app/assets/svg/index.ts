@@ -91,6 +91,8 @@ import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as SettingsHorizontal } from "./settings-horizontal.svg";
+import { ReactComponent as SignatureStatusOk } from "./signature-status-ok.svg";
+import { ReactComponent as SignatureStatusPending } from "./signature-status-pending.svg";
 import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
@@ -203,6 +205,8 @@ export const SvgCollection: any = {
 	Sent,
 	Settings,
 	SettingsHorizontal,
+	SignatureStatusOk,
+	SignatureStatusPending,
 	Smartbridge,
 	Sort,
 	Star,
