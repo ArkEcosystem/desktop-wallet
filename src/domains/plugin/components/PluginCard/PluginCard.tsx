@@ -6,12 +6,13 @@ import { useTranslation } from "react-i18next";
 import tw, { css, styled } from "twin.macro";
 
 type PluginCardProps = {
-	isOwner: boolean;
 	plugin: any;
 	onClick?: () => void;
 	onDisable?: () => void;
 	onEnable?: () => void;
 	onDelete?: () => void;
+	onLaunch?: () => void;
+	onInstall?: () => void;
 };
 
 const PluginImageContainer = styled.div`
@@ -24,26 +25,47 @@ const PluginImageContainer = styled.div`
 	`}
 `;
 
-export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDelete }: PluginCardProps) => {
+export const PluginCard = ({
+	plugin,
+	onClick,
+	onEnable,
+	onDisable,
+	onDelete,
+	onLaunch,
+	onInstall,
+}: PluginCardProps) => {
 	const { t } = useTranslation();
 
 	const actions = useMemo(() => {
-		const result = [{ label: t("COMMON.DELETE"), value: "delete" }];
+		if (plugin.isInstalled) {
+			const result = [{ label: t("COMMON.DELETE"), value: "delete" }];
 
-		if (plugin.isEnabled) {
-			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
-		} else {
-			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+			if (plugin.isEnabled) {
+				result.push({ label: t("COMMON.DISABLE"), value: "disable" });
+			} else {
+				result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+			}
+
+			if (plugin.hasLaunch) {
+				result.push({ label: t("COMMON.LAUNCH"), value: "launch" });
+			}
+
+			return result;
 		}
 
-		return result;
+		return [
+			{
+				label: t("COMMON.INSTALL"),
+				value: "install",
+			},
+		];
 	}, [t, plugin]);
 
 	return (
 		<div data-testid={`PluginCard--${plugin.id}`}>
 			<Card
 				onClick={onClick}
-				actions={plugin.isInstalled ? actions : undefined}
+				actions={actions}
 				className="h-52"
 				onSelect={(action: any) => {
 					if (action.value === "delete") {
@@ -54,6 +76,12 @@ export const PluginCard = ({ isOwner, plugin, onClick, onEnable, onDisable, onDe
 					}
 					if (action.value === "disable") {
 						onDisable?.();
+					}
+					if (action.value === "launch") {
+						onLaunch?.();
+					}
+					if (action.value === "install") {
+						onInstall?.();
 					}
 				}}
 			>

@@ -43,7 +43,29 @@ exports[`PluginCard should render 1`] = `
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="flex overflow-hidden justify-center w-4"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -94,7 +116,29 @@ exports[`PluginCard should render custom logo 1`] = `
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="flex overflow-hidden justify-center w-4"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -153,7 +197,29 @@ exports[`PluginCard should render grant icon 1`] = `
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="flex overflow-hidden justify-center w-4"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -212,7 +278,29 @@ exports[`PluginCard should render official icon 1`] = `
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="flex overflow-hidden justify-center w-4"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>
