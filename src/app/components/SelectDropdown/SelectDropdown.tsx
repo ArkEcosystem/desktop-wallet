@@ -107,7 +107,7 @@ const SelectDropdown = ({
 					disabled={disabled}
 					{...getInputProps({
 						placeholder,
-						className: "cursor-default" + `${isInvalid && " pr-16"}`,
+						className: `cursor-default ${isInvalid && " pr-16"}`,
 						onFocus: openMenu,
 						onBlur: () => {
 							if (inputValue && items.length > 0) {
