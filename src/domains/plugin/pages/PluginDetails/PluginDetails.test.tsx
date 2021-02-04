@@ -61,7 +61,7 @@ describe("PluginDetails", () => {
 	it("should render properly for remote package", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/remote-plugin/raw/master/package.json")
-			.reply(200, { name: "remote-plugin" });
+			.reply(200, { name: "remote-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
 		const FetchComponent = () => {
 			const { fetchLatestPackageConfiguration } = usePluginManagerContext();
@@ -217,7 +217,7 @@ describe("PluginDetails", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "remote-plugin", version: "0.0.1" },
+					config: { name: "remote-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
 					source: () => void 0,
 					sourcePath: "/plugins/remote-plugin/index.js",
 					dir: "/plugins/remote-plugin",

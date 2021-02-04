@@ -21,7 +21,7 @@ describe("PluginManualInstallModal", () => {
 			.get("/arkecosystem/fail-plugin/raw/master/package.json")
 			.replyWithError("Failed")
 			.get("/arkecosystem/test-plugin/raw/master/package.json")
-			.reply(200, { name: "test-plugin" });
+			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
 		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
 

@@ -182,7 +182,7 @@ describe("PluginManager", () => {
 	it("should install plugin from header install button", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/test-plugin/raw/master/package.json")
-			.reply(200, { name: "test-plugin" });
+			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
 		profile.settings().set(ProfileSetting.AdvancedMode, true);
 
@@ -350,7 +350,7 @@ describe("PluginManager", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "new-plugin", version: "0.0.1" },
+					config: { name: "new-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
 					source: () => void 0,
 					sourcePath: "/plugins/new-plugin/index.js",
 					dir: "/plugins/new-plugin",
