@@ -13,7 +13,7 @@ export const LedgerConfirmation = ({ children }: { children?: React.ReactNode })
 				{t("TRANSACTION.LEDGER_CONFIRMATION.DESCRIPTION")}
 			</div>
 			<div className="inline-flex justify-center items-center mt-8 space-x-3 w-full">
-				<Spinner color="primary" />
+				<Spinner />
 				<span className="font-semibold text-black" data-testid="LedgerConfirmation-loading_message">
 					{t("TRANSACTION.LEDGER_CONFIRMATION.LOADING_MESSAGE")}
 				</span>
