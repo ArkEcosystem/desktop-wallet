@@ -34,7 +34,7 @@ export const PluginView = () => {
 	];
 
 	const handleReportPlugin = () => {
-		reportPlugin(plugin!);
+		reportPlugin(plugin!.config());
 	};
 
 	const handleOnDelete = () => {

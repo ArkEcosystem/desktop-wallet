@@ -53,7 +53,7 @@ export const PluginDetails = () => {
 	];
 
 	const handleReportPlugin = () => {
-		reportPlugin(pluginCtrl!);
+		reportPlugin(plugin!);
 	};
 
 	const handleOnDelete = () => {

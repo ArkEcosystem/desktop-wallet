@@ -56,7 +56,12 @@ export const PluginHeader = (props: Props) => {
 		return (
 			<>
 				<Button data-testid="PluginHeader__button--install">{t("COMMON.INSTALL")}</Button>
-				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
+				<Button
+					className="ml-3"
+					onClick={props.onReport}
+					data-testid="PluginHeader__button--report"
+					variant="secondary"
+				>
 					<Icon name="Report" width={20} height={20} />
 				</Button>
 			</>
