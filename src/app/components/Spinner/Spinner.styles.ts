@@ -1,28 +1,24 @@
 import tw, { css } from "twin.macro";
-import { Size } from "types";
+import { Color, Size } from "types";
 
 const baseStyle = [
-	tw`rounded-full`,
+	tw`animate-spin rounded-full border border-theme-secondary-200 dark:border-black`,
 	css`
-		@keyframes spin {
-			to {
-				transform: rotate(360deg);
-			}
-		}
-		animation: spin 1.2s linear infinite;
-		border: 5px solid var(--theme-color-secondary-200);
+		border-width: 5px;
 	`,
 ];
 
-const getColor = (color: string): any => {
-	const colorBase = `var(--theme-color-${color})`;
-
-	if (!["primary", "success", "danger", "warning"].includes(color)) {
-		throw new Error(`Failed to find a color for "${color}"`);
-	}
+const getColor = (color: Color): any => {
+	const baseColors: Record<Color, string> = {
+		info: "primary-600",
+		success: "success-600",
+		warning: "warning-600",
+		danger: "danger-400",
+		hint: "hint-500",
+	};
 
 	return css`
-		border-left-color: ${colorBase};
+		border-left-color: var(--theme-color-${baseColors[color]}) !important;
 	`;
 };
 
@@ -37,7 +33,7 @@ const getSize = (size?: Size): any => {
 	}
 };
 
-export const getStyles = ({ color, size }: { color?: string; size?: Size }) => [
+export const getStyles = ({ color, size }: { color?: Color; size?: Size }) => [
 	...baseStyle,
 	getSize(size),
 	...getColor(color!),

@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { ipcRenderer } from "electron";
 import nock from "nock";
 import {
 	LaunchPluginService,
@@ -54,7 +55,6 @@ describe("PluginDetails", () => {
 		fireEvent.click(screen.getByText("Fetch Packages"));
 
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
-
 		expect(container).toMatchSnapshot();
 	});
 
@@ -142,7 +142,6 @@ describe("PluginDetails", () => {
 			(api) => api.launch().render(<h1>Test</h1>),
 		);
 		manager.services().register([new LaunchPluginService()]);
-
 		manager.plugins().push(plugin);
 		plugin.enable(profile, { autoRun: true });
 
@@ -171,5 +170,46 @@ describe("PluginDetails", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/plugins/view`);
 		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
+	});
+
+	it("should remove package", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--uninstall"));
+		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+
+		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
+		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
+
+		await waitFor(() => expect(manager.plugins().findById(plugin.config().id())).toBeUndefined());
+		await waitFor(() => expect(history.location.pathname).toBe(`/profiles/${profile.id()}/plugins`));
+
+		invokeMock.mockRestore();
 	});
 });

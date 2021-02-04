@@ -4,6 +4,7 @@ import { useActiveProfile, useQueryParams } from "app/hooks";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
+import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import { usePluginManagerContext } from "plugins";
 import React, { useMemo } from "react";
@@ -25,6 +26,8 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const activeProfile = useActiveProfile();
 	const queryParams = useQueryParams();
 	const history = useHistory();
+
+	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
 	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
@@ -69,10 +72,20 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginId}`);
 	};
 
+	const handleOnDelete = () => {
+		history.push(`/profiles/${activeProfile.id()}/plugins`);
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
+				<PluginHeader
+					{...pluginData}
+					isInstalled={isInstalled}
+					hasLaunch={hasLaunch}
+					onLaunch={handleLaunch}
+					onUninstall={() => setIsUninstallOpen(true)}
+				/>
 			</Section>
 
 			<Section>
@@ -102,6 +115,16 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 					</div>
 				</div>
 			</Section>
+
+			{pluginCtrl && (
+				<PluginUninstallConfirmation
+					isOpen={isUninstallOpen}
+					plugin={pluginCtrl}
+					profile={activeProfile}
+					onClose={() => setIsUninstallOpen(false)}
+					onDelete={handleOnDelete}
+				/>
+			)}
 		</Page>
 	);
 };
