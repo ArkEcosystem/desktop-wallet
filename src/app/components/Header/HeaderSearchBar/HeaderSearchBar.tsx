@@ -71,7 +71,7 @@ export const HeaderSearchBar = ({
 				<SearchBarInputWrapper
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className={`absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 ${
+					className={`absolute z-20 flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 ${
 						offsetClassName || "top-1/2 transform -translate-y-1/2"
 					}`}
 				>
