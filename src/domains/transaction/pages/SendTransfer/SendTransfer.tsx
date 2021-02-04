@@ -15,7 +15,7 @@ import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransaction } from "domains/transaction/hooks/use-transaction";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, {useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
