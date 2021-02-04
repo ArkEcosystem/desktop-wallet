@@ -1,7 +1,13 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { ipcRenderer } from "electron";
 import nock from "nock";
-import { PluginController, PluginManager, PluginManagerProvider, usePluginManagerContext } from "plugins";
+import {
+	LaunchPluginService,
+	PluginController,
+	PluginManager,
+	PluginManagerProvider,
+	usePluginManagerContext,
+} from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
 import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
@@ -128,6 +134,42 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("My Export Transaction").length).toBeGreaterThan(0));
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should open the plugin view", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
+			(api) => api.launch().render(<h1>Test</h1>),
+		);
+		manager.services().register([new LaunchPluginService()]);
+		manager.plugins().push(plugin);
+		plugin.enable(profile, { autoRun: true });
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--launch"));
+
+		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/plugins/view`);
+		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
 	});
 
 	it("should remove package", async () => {
