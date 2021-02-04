@@ -33,7 +33,7 @@ describe("WalletsGrid", () => {
 	});
 
 	it("should render loading state", async () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+		const { getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletsGrid wallets={wallets} isVisible={true} isLoading={true} />,
 			</Route>,
@@ -44,11 +44,10 @@ describe("WalletsGrid", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("WalletCard__skeleton").length).toBeGreaterThan(2));
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render wallets", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletsGrid wallets={wallets} isVisible={true} />,
 			</Route>,
@@ -60,6 +59,5 @@ describe("WalletsGrid", () => {
 
 		expect(getByTestId("WalletsGrid")).toBeTruthy();
 		await waitFor(() => expect(getAllByTestId("Card").length).toBe(2));
-		expect(asFragment()).toMatchSnapshot();
 	});
 });
