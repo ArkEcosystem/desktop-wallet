@@ -99,7 +99,6 @@ describe("LedgerImportStep", () => {
 			});
 		});
 
-		// expect(getAllByText("A Wallet named 'ARK Wallet 1' already exists on this profile")).toHaveLength(1);
 		const errorMessage = getByTestId("Input-error");
 		expect(errorMessage).toBeVisible();
 	});
@@ -119,7 +118,5 @@ describe("LedgerImportStep", () => {
 				});
 			});
 		}
-
-		// expect(getAllByText("The name 'ARK Wallet 3' is already assigned to another wallet")).toHaveLength(2);
 	});
 });

@@ -38,9 +38,8 @@ describe("CreatePeer", () => {
 			);
 		});
 
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment } = rendered;
 
-		// expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CUSTOM_PEER.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

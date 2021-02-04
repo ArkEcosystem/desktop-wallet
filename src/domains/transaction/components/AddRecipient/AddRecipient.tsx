@@ -263,6 +263,7 @@ export const AddRecipient = ({
 										});
 
 										singleRecipientOnChange(remaining.toString(), recipientAddress);
+										setValue("isSendAllSelected", true);
 									}}
 									className="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
 								>

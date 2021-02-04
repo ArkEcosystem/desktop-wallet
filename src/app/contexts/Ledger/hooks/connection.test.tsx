@@ -82,7 +82,7 @@ describe("Use Ledger Connection", () => {
 		listenSpy.mockReset();
 	});
 
-	it("should import ledger wallets", async () => {
+	it("should import ledger wallets", () => {
 		const Component = () => {
 			const { importLedgerWallets } = useLedgerConnection(transport);
 			const wallets = profile.wallets().values();
@@ -110,12 +110,6 @@ describe("Use Ledger Connection", () => {
 
 		act(() => {
 			fireEvent.click(screen.getByText("Import"));
-		});
-
-		await waitFor(() => {
-			// expect(screen.queryByText("DQx1w8KE7nEW1nX9gj9iWjMXnp8Q3xyn3y-Ledger")).toBeInTheDocument(),
-			// const errorMessage = screen.getByTestId("Input-error");
-			// expect(errorMessage).toBeVisible();
 		});
 
 		profile.wallets().forget("DQx1w8KE7nEW1nX9gj9iWjMXnp8Q3xyn3y");

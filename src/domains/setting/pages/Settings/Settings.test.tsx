@@ -338,7 +338,6 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			// expect(getByText("The 'Peer IP' is not valid")).toBeVisible()
 			const errorMessage = getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
 		});
@@ -350,7 +349,6 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			// expect(getByText("The 'Peer IP' does not have 'http://' or 'https://'")).toBeVisible()
 			const errorMessage = getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
 		});
@@ -419,7 +417,6 @@ describe("Settings", () => {
 		await waitFor(() => {
 			const errorMessage = getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
-			// expect(getByText(translations.SETTINGS.PEERS.VALIDATION.HOST_EXISTS)).toBeVisible()
 		});
 
 		act(() => {

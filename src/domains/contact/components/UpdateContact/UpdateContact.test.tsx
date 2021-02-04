@@ -34,9 +34,6 @@ describe("UpdateContact", () => {
 			<UpdateContact profile={profile} isOpen={true} contact={updatingContact} />,
 		);
 
-		// expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_UPDATE_CONTACT.TITLE);
-		// const errorMessage = getByTestId("Input-error");
-		// expect(errorMessage).toBeVisible();
 		expect(asFragment()).toMatchSnapshot();
 	});
 

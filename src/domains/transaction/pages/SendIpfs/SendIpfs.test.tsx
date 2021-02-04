@@ -319,7 +319,6 @@ describe("SendIpfs", () => {
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() => {
-				// expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			});
@@ -433,8 +432,6 @@ describe("SendIpfs", () => {
 			expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash");
 
 			await waitFor(() => {
-				// expect(getByTestId("SendIpfs__form-step")).toHaveTextContent(
-				// 	transactionTranslations.INPUT_IPFS_HASH.VALIDATION.NOT_VALID,
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			});

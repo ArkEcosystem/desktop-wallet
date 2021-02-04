@@ -589,7 +589,6 @@ describe("SendVote", () => {
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() => {
-				// expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			});

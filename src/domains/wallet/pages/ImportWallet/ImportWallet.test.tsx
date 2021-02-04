@@ -589,7 +589,6 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: "123" } });
 
 			await waitFor(() => {
-				// expect(getByText(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID)).toBeVisible();
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			});
@@ -654,7 +653,6 @@ describe("ImportWallet", () => {
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
 
 			await waitFor(() => {
-				// expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			});
@@ -670,7 +668,6 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
 			await waitFor(() => {
-				// expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			});

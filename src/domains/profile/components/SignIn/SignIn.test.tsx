@@ -102,7 +102,6 @@ describe("SignIn", () => {
 		// wait for formState.isValid to be updated
 		await findByTestId("SignIn__submit-button");
 
-		// expect(queryByText("The Password is invalid")).toBeTruthy();
 		const errorMessage = getByTestId("Input-error");
 		expect(errorMessage).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
@@ -135,7 +134,6 @@ describe("SignIn", () => {
 			await findByTestId("SignIn__submit-button");
 		}
 
-		// expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
 		const errorMessage = getByTestId("Input-error");
 		expect(errorMessage).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
@@ -151,7 +149,6 @@ describe("SignIn", () => {
 
 		await waitFor(
 			() => {
-				// expect(queryByText("The Password is invalid")).toBeTruthy()
 				const errorMessage = getByTestId("Input-error");
 				expect(errorMessage).toBeVisible();
 			},

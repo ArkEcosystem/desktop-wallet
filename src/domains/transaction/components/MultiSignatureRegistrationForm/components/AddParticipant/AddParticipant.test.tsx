@@ -39,9 +39,6 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			// expect(
-			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
-			// ).toBeInTheDocument(),
 			const errorMessage = screen.getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
 		});
@@ -73,9 +70,6 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			// expect(
-			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND),
-			// ).toBeInTheDocument(),
 			const errorMessage = screen.getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
 		});
@@ -111,9 +105,6 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			// expect(
-			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_ALREADY_ADDED),
-			// ).toBeInTheDocument(),
 			const errorMessage = screen.getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
 		});
@@ -143,9 +134,6 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			// expect(
-			// 	screen.queryByText(transactionTranslations.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND),
-			// ).toBeInTheDocument(),
 			const errorMessage = screen.getByTestId("Input-error");
 			expect(errorMessage).toBeVisible();
 		});
