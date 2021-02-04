@@ -15,7 +15,8 @@ import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
-import { usePluginManagerContext } from "plugins";
+import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
+import { PluginController, usePluginManagerContext } from "plugins";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -179,7 +180,13 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, pluginPackages, isFetchingPackages, installPlugin } = usePluginManagerContext();
+	const {
+		fetchPluginPackages,
+		pluginPackages,
+		isFetchingPackages,
+		installPlugin,
+		trigger,
+	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -188,7 +195,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const [currentView, setCurrentView] = useState("home");
 	const [viewType, setViewType] = useState("grid");
+
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
+	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 
@@ -232,10 +241,13 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		persist();
 	};
 
-	const handleDeletePlugin = () => console.log("delete");
+	const handleDeletePlugin = (pluginData: any) => {
+		setUninstallSelectedPlugin(pluginManager.plugins().findById(pluginData.id));
+	};
 
 	const handleLaunchPlugin = (pluginData: any) => {
 		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginData.id}`);
+		persist();
 	};
 
 	const handleManualInstall = (result: { pluginId: string; repositoryURL: string }) => {
@@ -258,6 +270,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		},
 		[installPlugin],
 	);
+
+	const onDeletePlugin = () => {
+		setUninstallSelectedPlugin(undefined);
+		trigger();
+	};
 
 	return (
 		<>
@@ -292,18 +309,16 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					/>
 				</Section>
 
-				<div className="-mb-5">
-					<PluginManagerNavigationBar
-						selected={currentView}
-						onChange={setCurrentView}
-						selectedViewType={viewType}
-						onSelectGridView={() => setViewType("grid")}
-						onSelectListView={() => setViewType("list")}
-						installedPluginsCount={installedPlugins.length}
-					/>
-				</div>
+				<PluginManagerNavigationBar
+					selected={currentView}
+					onChange={setCurrentView}
+					selectedViewType={viewType}
+					onSelectGridView={() => setViewType("grid")}
+					onSelectListView={() => setViewType("list")}
+					installedPluginsCount={installedPlugins.length}
+				/>
 
-				<Section>
+				<Section marginTop={false}>
 					<div data-testid={`PluginManager__container--${currentView}`}>
 						<div className="flex justify-between items-center" />
 
@@ -396,11 +411,22 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			</Page>
 
 			<InstallPlugin isOpen={false} onClose={void 0} onCancel={void 0} />
+
 			<PluginManualInstallModal
 				isOpen={isManualInstallModalOpen}
 				onClose={() => setIsManualInstallModalOpen(false)}
 				onSuccess={handleManualInstall}
 			/>
+
+			{uninstallSelectedPlugin && (
+				<PluginUninstallConfirmation
+					isOpen={true}
+					plugin={uninstallSelectedPlugin}
+					profile={activeProfile}
+					onClose={() => setUninstallSelectedPlugin(undefined)}
+					onDelete={onDeletePlugin}
+				/>
+			)}
 		</>
 	);
 };

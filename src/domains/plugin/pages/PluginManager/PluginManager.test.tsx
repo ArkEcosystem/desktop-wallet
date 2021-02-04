@@ -489,7 +489,7 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { getByTestId } = rendered;
+		const { getByTestId, queryByTestId } = rendered;
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -499,9 +499,15 @@ describe("PluginManager", () => {
 		);
 		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
 
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
+		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
-		pluginManager.plugins().removeById(plugin.config().id(), profile);
+		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
+		fireEvent.click(getByTestId("PluginUninstall__submit-button"));
+
+		await waitFor(() => expect(pluginManager.plugins().findById(plugin.config().id())).toBeUndefined());
+		await waitFor(() => expect(queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
+
+		invokeMock.mockRestore();
 	});
 
 	it("should open the plugin view page", () => {

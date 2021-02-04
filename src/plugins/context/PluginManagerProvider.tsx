@@ -13,7 +13,10 @@ import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
-	const [state, setState] = useState({
+	const [state, setState] = useState<{
+		packages: PluginConfigurationData[];
+		configurations: PluginConfigurationData[];
+	}>({
 		packages: [],
 		configurations: [],
 	});
@@ -77,9 +80,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			try {
 				await PluginLoaderFileSystem.ipc().remove(plugin.dir()!);
 				pluginManager.plugins().removeById(plugin.config().id(), profile);
-				trigger();
 
 				toasts.success(`The plugin ${plugin.config().title()} was removed successfully.`);
+				trigger();
 			} catch (e) {
 				/* istanbul ignore next */
 				toasts.error(e.message);
