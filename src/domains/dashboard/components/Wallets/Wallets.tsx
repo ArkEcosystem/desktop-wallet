@@ -93,7 +93,7 @@ export const Wallets = ({
 			<div className="mt-1">
 				<WalletsGrid
 					isVisible={viewType === "grid"}
-					isLoading={isLoading}
+					isLoading={isLoading && walletsCount === 0}
 					wallets={gridWallets}
 					sliderOptions={sliderOptions}
 					onWalletAction={onWalletAction}

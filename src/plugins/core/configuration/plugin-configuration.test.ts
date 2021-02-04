@@ -4,7 +4,10 @@ import { PluginConfigurationData } from "./plugin-configuration";
 
 describe("Plugin Configuration", () => {
 	it("should validate successful", () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test" });
+		const subject = PluginConfigurationData.make({
+			name: "plugin-test",
+			keywords: ["@arkecosystem", "desktop-wallet"],
+		});
 		expect(subject.validate()).toBeTruthy();
 	});
 
