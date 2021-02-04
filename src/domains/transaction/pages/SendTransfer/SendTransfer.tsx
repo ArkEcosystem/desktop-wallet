@@ -12,6 +12,7 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { useTransaction } from "domains/transaction/hooks/use-transaction";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, {useEffect, useMemo, useRef, useState } from "react";
@@ -31,11 +32,13 @@ export const SendTransfer = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [shouldConfirmSend, setShouldConfirmSend] = useState(false);
+	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -57,6 +60,7 @@ export const SendTransfer = () => {
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
 	useEffect(() => {
 		register("remainingBalance");
@@ -280,7 +284,7 @@ export const SendTransfer = () => {
 													data-testid="SendTransfer__button--continue"
 													disabled={!isValid || isSubmitting}
 													onClick={handleNext}
-													isLoading={isSubmitting}
+													isLoading={isSubmitting || isConfirming}
 												>
 													{t("COMMON.CONTINUE")}
 												</Button>
@@ -298,11 +302,27 @@ export const SendTransfer = () => {
 												</Button>
 
 												<Button
-													onClick={() => setShouldConfirmSend(true)}
+													onClick={async () => {
+														setIsConfirming(true);
+
+														const unconfirmed = await fetchWalletUnconfirmedTransactions(
+															activeWallet,
+														);
+
+														console.log(
+															"unconfirmed",
+															unconfirmed.map((u) => console.log(u.id())),
+														);
+														if (unconfirmed.length > 0) {
+															return setShouldConfirmSend(true);
+														}
+
+														handleSubmit(submitForm)();
+													}}
 													data-testid="SendTransfer__button--submit"
-													disabled={!isValid || isSubmitting}
+													disabled={!isValid || isSubmitting || isConfirming}
 													icon="Send"
-													isLoading={isSubmitting}
+													isLoading={isSubmitting || isConfirming}
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>
@@ -334,6 +354,7 @@ export const SendTransfer = () => {
 							handleSubmit(submitForm)();
 						}}
 						onClose={() => {
+							setIsConfirming(false);
 							setShouldConfirmSend(false);
 						}}
 					/>
