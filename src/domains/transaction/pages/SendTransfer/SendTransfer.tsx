@@ -10,10 +10,11 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
@@ -29,6 +30,7 @@ export const SendTransfer = () => {
 	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
+	const [shouldConfirmSend, setShouldConfirmSend] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const { env } = useEnvironmentContext();
@@ -296,7 +298,7 @@ export const SendTransfer = () => {
 												</Button>
 
 												<Button
-													type="submit"
+													onClick={() => setShouldConfirmSend(true)}
 													data-testid="SendTransfer__button--submit"
 													disabled={!isValid || isSubmitting}
 													icon="Send"
@@ -324,6 +326,17 @@ export const SendTransfer = () => {
 							</div>
 						</div>
 					</Tabs>
+
+					<ConfirmSendTransaction
+						isOpen={shouldConfirmSend}
+						onConfirm={() => {
+							setShouldConfirmSend(false);
+							handleSubmit(submitForm)();
+						}}
+						onClose={() => {
+							setShouldConfirmSend(false);
+						}}
+					/>
 				</Form>
 			</Section>
 		</Page>
