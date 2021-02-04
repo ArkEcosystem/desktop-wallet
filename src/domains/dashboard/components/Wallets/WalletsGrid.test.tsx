@@ -2,7 +2,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, render, renderWithRouter } from "utils/testing-library";
+import { env, getDefaultProfileId, render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { GridWallet, WalletsGrid } from "./";
 
@@ -32,7 +32,7 @@ describe("WalletsGrid", () => {
 		expect(() => getByTestId("WalletsGrid")).toThrow();
 	});
 
-	it("should render loading state", () => {
+	it("should render loading state", async () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletsGrid wallets={wallets} isVisible={true} isLoading={true} />,
@@ -43,11 +43,11 @@ describe("WalletsGrid", () => {
 			},
 		);
 
-		expect(getAllByTestId("WalletCard__skeleton").length).toBeGreaterThan(2);
+		await waitFor(() => expect(getAllByTestId("WalletCard__skeleton").length).toBeGreaterThan(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render wallets", () => {
+	it("should render wallets", async () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletsGrid wallets={wallets} isVisible={true} />,
@@ -59,7 +59,7 @@ describe("WalletsGrid", () => {
 		);
 
 		expect(getByTestId("WalletsGrid")).toBeTruthy();
-		expect(getAllByTestId("Card")).toHaveLength(2);
+		await waitFor(() => expect(getAllByTestId("Card").length).toBe(2));
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
