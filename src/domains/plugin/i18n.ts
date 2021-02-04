@@ -13,6 +13,12 @@ export const translations: { [key: string]: any } = {
 			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
 	},
 
+	MODAL_UNINSTALL: {
+		TITLE: "Uninstall Plugin",
+		DESCRIPTION:
+			"Are you sure you want to remove '{{ name }}'? Uninstalling this plugin will remove it from all profiles on this system.",
+	},
+
 	MODAL_INSTALL_PLUGIN: {
 		DESCRIPTION: "This plugin needs the following permissions:",
 		ITEM_1: "Allows access to the Desktop Wallet alerts",
