@@ -28,7 +28,7 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 			const pluginId = await fetchLatestPackageConfiguration(url);
 			onSuccess?.({ pluginId, repositoryURL: url });
 		} catch {
-			toasts.error("Failed to find the plugin repository. Please verify the URL and try again.");
+			toasts.error("Failed to find a valid plugin repository. Please verify the URL and try again.");
 		}
 		setIsLoading(false);
 	};

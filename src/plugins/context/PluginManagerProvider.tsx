@@ -167,6 +167,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		const response = await httpClient.get(configurationURL);
 		const configData = PluginConfigurationData.make(response.json());
 
+		configData.validate();
+
 		setState((prev: any) => {
 			const configurations = prev.configurations;
 
