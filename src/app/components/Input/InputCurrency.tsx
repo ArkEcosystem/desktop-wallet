@@ -29,6 +29,9 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 			const { value } = event.target;
 
 			onChange?.(convertValue(value));
+
+			// works not like expected
+			setAmount(convertValue(value));
 		};
 
 		return <Input data-testid="InputCurrency" value={amount.display} onChange={handleInput} ref={ref} {...props} />;
