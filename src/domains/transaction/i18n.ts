@@ -172,7 +172,7 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_CONFIRM_SEND_TRANSACTION: {
 		TITLE: "Confirm Transaction",
-		DESCRIPTION: "There are still some previous unconfirmed transactions. Are you sure you want to continue?",
+		DESCRIPTION: "Recent transactions are pending confirmation. Are you sure you want to continue?",
 	},
 
 	MODAL_SECOND_SIGNATURE_DETAIL: {
