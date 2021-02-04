@@ -378,7 +378,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				address={wallet.address()}
 				icon={wallet.coinId()}
 				name={wallet.alias()}
-				network={wallet.networkId()}
+				network={wallet.network()}
 				onClose={() => setModal(undefined)}
 			/>
 

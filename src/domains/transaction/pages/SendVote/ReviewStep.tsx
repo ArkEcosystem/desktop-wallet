@@ -33,36 +33,34 @@ export const ReviewStep = ({
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendVote__review-step" className="space-y-8">
+		<section data-testid="SendVote__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-				<TransactionSender
-					address={wallet.address()}
-					alias={wallet.alias()}
-					isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
-				/>
+			<TransactionSender
+				address={wallet.address()}
+				alias={wallet.alias()}
+				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+			/>
 
-				{unvotes.length > 0 && (
-					<TransactionDetail label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
-						<VoteList votes={unvotes} />
-					</TransactionDetail>
-				)}
+			{unvotes.length > 0 && (
+				<TransactionDetail label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
+					<VoteList votes={unvotes} />
+				</TransactionDetail>
+			)}
 
-				{votes.length > 0 && (
-					<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
-						<VoteList votes={votes} />
-					</TransactionDetail>
-				)}
+			{votes.length > 0 && (
+				<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
+					<VoteList votes={votes} />
+				</TransactionDetail>
+			)}
 
-				<div className="mt-2">
-					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
-				</div>
+			<div className="mt-2">
+				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

@@ -27,35 +27,33 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendIpfs__review-step" className="space-y-8">
+		<section data-testid="SendIpfs__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}
 			/>
 
-			<div>
-				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-				<TransactionSender
-					address={wallet.address()}
-					alias={wallet.alias()}
-					isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
-				/>
+			<TransactionSender
+				address={wallet.address()}
+				alias={wallet.alias()}
+				isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+			/>
 
-				<TransactionDetail
-					label={t("TRANSACTION.IPFS_HASH")}
-					extra={
-						<Circle className="border-theme-text" size="lg">
-							<Icon name="Ipfs" width={21} height={23} />
-						</Circle>
-					}
-				>
-					{hash}
-				</TransactionDetail>
+			<TransactionDetail
+				label={t("TRANSACTION.IPFS_HASH")}
+				extra={
+					<Circle className="border-theme-text" size="lg">
+						<Icon name="Ipfs" width={21} height={23} />
+					</Circle>
+				}
+			>
+				{hash}
+			</TransactionDetail>
 
-				<div className="mt-2">
-					<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
-				</div>
+			<div className="mt-2">
+				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

@@ -1,7 +1,7 @@
 // UI Elements
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
@@ -67,6 +67,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 								defaultValue={""}
 								ref={register({ required: true })}
 							/>
+							<FormHelperText />
 						</FormField>
 					</div>
 				</div>
@@ -86,6 +87,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 							}).toString(),
 						})}
 					/>
+					<FormHelperText />
 				</FormField>
 				<FormField name="signatory" className="mt-8">
 					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
@@ -100,6 +102,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 						})}
 						disabled
 					/>
+					<FormHelperText />
 				</FormField>
 				<FormField name="signature" className="mt-8">
 					<FormLabel label={t("COMMON.SIGNATURE")} />
@@ -112,6 +115,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 							}).toString(),
 						})}
 					/>
+					<FormHelperText />
 				</FormField>
 			</div>
 		);

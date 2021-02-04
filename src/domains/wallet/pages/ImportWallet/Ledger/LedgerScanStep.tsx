@@ -11,7 +11,6 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Skeleton } from "app/components/Skeleton";
-import { Spinner } from "app/components/Spinner";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
 import { useLedgerContext } from "app/contexts";
@@ -228,13 +227,10 @@ export const LedgerScanStep = ({
 						variant="secondary"
 						className="w-full"
 						disabled={!isConnected || canRetry || isBusy || isScanning}
+						isLoading={isScanning || isBusy}
 						onClick={scanMore}
 					>
-						{isScanning || isBusy ? (
-							<Spinner size="sm" color="primary" />
-						) : (
-							<span>{t("COMMON.VIEW_MORE")}</span>
-						)}
+						{t("COMMON.VIEW_MORE")}
 					</Button>
 				</div>
 			</Tooltip>

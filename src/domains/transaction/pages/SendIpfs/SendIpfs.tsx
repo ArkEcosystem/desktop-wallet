@@ -2,7 +2,6 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
@@ -190,13 +189,10 @@ export const SendIpfs = () => {
 												<Button
 													data-testid="SendIpfs__button--continue"
 													disabled={!formState.isValid || formState.isSubmitting}
+													isLoading={formState.isSubmitting}
 													onClick={handleNext}
 												>
-													{formState.isSubmitting ? (
-														<Spinner size="sm" />
-													) : (
-														t("COMMON.CONTINUE")
-													)}
+													{t("COMMON.CONTINUE")}
 												</Button>
 											</>
 										)}

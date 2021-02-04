@@ -5,7 +5,7 @@ import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { createMemoryHistory } from "history";
 import nock from "nock";
-import { PluginController } from "plugins";
+import { LaunchPluginService, PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
@@ -409,9 +409,8 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(history.location.pathname).toEqual(
-			`/profiles/${fixtureProfileId}/plugins/@dated/transaction-export-plugin`,
-		);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
+		expect(history.location.search).toEqual("?pluginId=@dated/transaction-export-plugin");
 	});
 
 	it("should enable plugin on my-plugins", async () => {
@@ -467,7 +466,7 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { getByTestId } = rendered;
+		const { getByTestId, queryByTestId } = rendered;
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -477,8 +476,36 @@ describe("PluginManager", () => {
 		);
 		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
 
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
+		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
-		pluginManager.plugins().removeById(plugin.config().id(), profile);
+		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
+		fireEvent.click(getByTestId("PluginUninstall__submit-button"));
+
+		await waitFor(() => expect(pluginManager.plugins().findById(plugin.config().id())).toBeUndefined());
+		await waitFor(() => expect(queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
+
+		invokeMock.mockRestore();
+	});
+
+	it("should open the plugin view page", () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
+			(api) => api.launch().render(<h1>My Plugin View</h1>),
+		);
+
+		pluginManager.services().register([new LaunchPluginService()]);
+		pluginManager.plugins().push(plugin);
+
+		plugin.enable(profile, { autoRun: true });
+
+		const { getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		fireEvent.click(getByTestId("PluginListItem__launch"));
+
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/view`);
+		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
 	});
 });

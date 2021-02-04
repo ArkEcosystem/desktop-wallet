@@ -193,7 +193,7 @@ describe("PluginsCategory", () => {
 		const pluginsContainer = getByTestId("PluginsCategory__plugins");
 
 		act(() => {
-			fireEvent.click(within(pluginsContainer).getAllByTestId("dropdown__toggle")[0]);
+			fireEvent.click(within(pluginsContainer).getAllByTestId("dropdown__toggle")[6]);
 			fireEvent.click(within(pluginsContainer).getByTestId("dropdown__option--0"));
 		});
 

@@ -1,4 +1,4 @@
-import { PluginDetails, PluginManager, PluginsCategory } from "./pages";
+import { PluginDetails, PluginManager, PluginsCategory, PluginView } from "./pages";
 
 export const PluginRoutes = [
 	{
@@ -7,7 +7,12 @@ export const PluginRoutes = [
 		component: PluginsCategory,
 	},
 	{
-		path: "/profiles/:profileId/plugins/:pluginId",
+		path: "/profiles/:profileId/plugins/view",
+		exact: true,
+		component: PluginView,
+	},
+	{
+		path: "/profiles/:profileId/plugins/details",
 		exact: true,
 		component: PluginDetails,
 	},

@@ -8,6 +8,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
@@ -19,8 +20,9 @@ import { setScreenshotProtection } from "utils/electron-utils";
 
 import { SettingsProps } from "../Settings.models";
 
-export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
+export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
+	const { env, persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
@@ -231,9 +233,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
-		activeProfile.save();
-
-		await env.persist();
+		await persist(activeProfile);
 
 		onSuccess();
 	};

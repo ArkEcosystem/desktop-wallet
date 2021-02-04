@@ -32,7 +32,7 @@ export const TransactionDetail = ({
 		className={`${className} no-ligatures`}
 	>
 		<div className="flex-1 space-y-2">
-			{label && <div className="text-sm font-semibold text-theme-secondary-700">{label}</div>}
+			{label && <div className="text-sm font-semibold text-theme-secondary-700 no-ligatures">{label}</div>}
 
 			<div className="font-semibold">{children}</div>
 		</div>

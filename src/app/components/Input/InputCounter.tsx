@@ -20,14 +20,7 @@ export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Pr
 
 	return (
 		<InputGroup>
-			<Input
-				data-testid="InputCounter__input"
-				type="text"
-				className="pr-18"
-				ref={ref}
-				{...props}
-				onChange={handleChange}
-			/>
+			<Input data-testid="InputCounter__input" className="pr-18" ref={ref} {...props} onChange={handleChange} />
 			<InputAddonEnd
 				data-testid="InputCounter__counter"
 				className="px-2 text-sm pointer-events-none text-theme-secondary-500"

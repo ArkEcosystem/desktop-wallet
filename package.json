@@ -72,23 +72,6 @@
 	},
 	"jest": {
 		"automock": false,
-		"collectCoverageFrom": [
-			"src/**/*.{js,jsx,ts,tsx}",
-			"!<rootDir>/build/*",
-			"!<rootDir>/dist/*",
-			"!jest.setup.js",
-			"!src/**/e2e/*.ts",
-			"!src/**/*.e2e.ts",
-			"!src/**/*.models.{js,jsx,ts,tsx}",
-			"!src/**/*.stories.{js,jsx,ts,tsx}",
-			"!src/**/*.styles.{js,jsx,ts,tsx}",
-			"!src/electron/**/*",
-			"!src/i18n/**/*",
-			"!src/tests/**/*",
-			"!src/tailwind.config.js",
-			"!src/utils/e2e-utils.ts",
-			"!src/polyfill/**/*"
-		],
 		"coveragePathIgnorePatterns": [
 			"index.ts",
 			"index.tsx",
@@ -101,14 +84,6 @@
 			"clover",
 			"html"
 		],
-		"coverageThreshold": {
-			"global": {
-				"branches": 100,
-				"functions": 100,
-				"lines": 100,
-				"statements": 100
-			}
-		},
 		"moduleDirectories": [
 			"node_modules",
 			"utils"
@@ -120,25 +95,23 @@
 		"testRunner": "jest-circus/runner"
 	},
 	"dependencies": {
-		"@arkecosystem/platform-sdk": "^2.6.1",
-		"@arkecosystem/platform-sdk-ada": "^2.6.1",
-		"@arkecosystem/platform-sdk-ark": "^2.6.1",
-		"@arkecosystem/platform-sdk-atom": "^2.6.1",
-		"@arkecosystem/platform-sdk-btc": "^2.6.1",
-		"@arkecosystem/platform-sdk-crypto": "^2.6.1",
-		"@arkecosystem/platform-sdk-eos": "^2.6.1",
-		"@arkecosystem/platform-sdk-eth": "^2.6.1",
-		"@arkecosystem/platform-sdk-intl": "^2.6.1",
-		"@arkecosystem/platform-sdk-lsk": "^2.6.1",
-		"@arkecosystem/platform-sdk-markets": "^2.6.1",
-		"@arkecosystem/platform-sdk-neo": "^2.6.1",
-		"@arkecosystem/platform-sdk-news": "^2.6.1",
-		"@arkecosystem/platform-sdk-profiles": "^2.6.1",
-		"@arkecosystem/platform-sdk-support": "^2.6.1",
-		"@arkecosystem/platform-sdk-trx": "^2.6.1",
-		"@arkecosystem/platform-sdk-xrp": "^2.6.1",
+		"@arkecosystem/platform-sdk": "^2.7.6",
+		"@arkecosystem/platform-sdk-ada": "^2.7.6",
+		"@arkecosystem/platform-sdk-ark": "^2.7.6",
+		"@arkecosystem/platform-sdk-atom": "^2.7.6",
+		"@arkecosystem/platform-sdk-btc": "^2.7.6",
+		"@arkecosystem/platform-sdk-crypto": "^2.7.6",
+		"@arkecosystem/platform-sdk-eos": "^2.7.6",
+		"@arkecosystem/platform-sdk-eth": "^2.7.6",
+		"@arkecosystem/platform-sdk-intl": "^2.7.6",
+		"@arkecosystem/platform-sdk-lsk": "^2.7.6",
+		"@arkecosystem/platform-sdk-neo": "^2.7.6",
+		"@arkecosystem/platform-sdk-news": "^2.7.6",
+		"@arkecosystem/platform-sdk-profiles": "^2.7.6",
+		"@arkecosystem/platform-sdk-support": "^2.7.6",
+		"@arkecosystem/platform-sdk-trx": "^2.7.6",
+		"@arkecosystem/platform-sdk-xrp": "^2.7.6",
 		"@arkecosystem/utils": "1.2.1",
-		"@ledgerhq/devices": "^5.36.0",
 		"@ledgerhq/hw-transport-node-hid-singleton": "^5.36.0",
 		"@tailwindcss/forms": "^0.2.1",
 		"@tailwindcss/postcss7-compat": "^2.0.2",
@@ -161,9 +134,7 @@
 		"framer-motion": "^2.1.2",
 		"fs-extra": "^9.0.1",
 		"glob": "^7.1.6",
-		"hash-wasm": "^3.7.1",
 		"i18next": "^19.8.4",
-		"isomorphic-fetch": "^3.0.0",
 		"node-hid": "^2.1.1",
 		"parse-author": "^2.0.0",
 		"pretty-bytes": "5.5.0",
@@ -200,6 +171,7 @@
 		"@babel/preset-typescript": "^7.10.4",
 		"@ledgerhq/hw-transport": "^5.36.0",
 		"@ledgerhq/hw-transport-mocker": "^5.36.0",
+		"@sindresorhus/slugify": "^1.1.0",
 		"@testing-library/jest-dom": "^5.11.6",
 		"@testing-library/react": "^11.2.2",
 		"@testing-library/react-hooks": "^3.7.0",
@@ -214,7 +186,6 @@
 		"@types/electron-devtools-installer": "^2.2.0",
 		"@types/electron-window-state": "^2.0.34",
 		"@types/eslint-plugin-prettier": "^3.1.0",
-		"@types/isomorphic-fetch": "^0.0.35",
 		"@types/jest": "^26.0.19",
 		"@types/ledgerhq__hw-transport": "^4.21.3",
 		"@types/node": "^14.0.13",
@@ -283,7 +254,8 @@
 		"testcafe-browser-provider-electron": "^0.0.16",
 		"typescript": "^3.9.5",
 		"wait-on": "^5.2.0",
-		"webpack-node-externals": "^2.5.2"
+		"webpack-node-externals": "^2.5.2",
+		"yaml": "^1.10.0"
 	},
 	"optionalDependencies": {
 		"fsevents": "*"

@@ -1570,22 +1570,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                 </div>
                 <div
                   class="flex justify-center"
-                >
-                  <div
-                    class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                    data-testid="Pagination"
-                  >
-                    <div
-                      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                      >
-                        1
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </div>
@@ -3166,22 +3151,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                 </div>
                 <div
                   class="flex justify-center"
-                >
-                  <div
-                    class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                    data-testid="Pagination"
-                  >
-                    <div
-                      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                      >
-                        1
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </div>
@@ -3721,7 +3691,29 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -3775,7 +3767,29 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -3829,7 +3843,29 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -3883,7 +3919,29 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -5698,22 +5756,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 </div>
                 <div
                   class="flex justify-center"
-                >
-                  <div
-                    class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                    data-testid="Pagination"
-                  >
-                    <div
-                      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                      >
-                        1
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </div>
@@ -6417,7 +6460,29 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -6471,7 +6536,29 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -6525,7 +6612,29 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -6579,7 +6688,29 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -7517,7 +7648,29 @@ exports[`PluginsCategory should render 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -7571,7 +7724,29 @@ exports[`PluginsCategory should render 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -7625,7 +7800,29 @@ exports[`PluginsCategory should render 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -7679,7 +7876,29 @@ exports[`PluginsCategory should render 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -8271,7 +8490,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   class="relative"
                 >
                   <div
-                    class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
+                    class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                     data-testid="header-search-bar__input"
                   >
                     <div
@@ -8504,7 +8723,29 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -8558,7 +8799,29 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -8612,7 +8875,29 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -8666,7 +8951,29 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -9440,7 +9747,29 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -9494,7 +9823,29 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -9548,7 +9899,29 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -9602,7 +9975,29 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </div>
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -11417,22 +11812,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                 </div>
                 <div
                   class="flex justify-center"
-                >
-                  <div
-                    class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                    data-testid="Pagination"
-                  >
-                    <div
-                      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                      >
-                        1
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </div>

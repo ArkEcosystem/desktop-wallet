@@ -1,245 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PluginGrid should render 1`] = `
-<DocumentFragment>
-  <div
-    data-testid="PluginGrid"
-  >
-    <div
-      class="grid grid-cols-4 gap-5 undefined"
-    />
-    <div
-      class="grid grid-cols-4 gap-5 undefined"
-    >
-      <div
-        data-testid="PluginCard--ark-explorer"
-      >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
-          data-testid="Card"
-        >
-          <div
-            class="flex flex-col h-full items-between"
-          >
-            <div
-              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
-            >
-              <svg>
-                plugin-logo-placeholder.svg
-              </svg>
-            </div>
-            <div>
-              <div
-                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
-              >
-                <div
-                  class="truncate"
-                >
-                  ARK Explorer
-                </div>
-                <div>
-                  <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      official-ark-plugin.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                <div
-                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  ARK.io
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
-        </div>
-      </div>
-      <div
-        data-testid="PluginCard--ark-avatars"
-      >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
-          data-testid="Card"
-        >
-          <div
-            class="flex flex-col h-full items-between"
-          >
-            <div
-              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
-            >
-              <svg>
-                plugin-logo-placeholder.svg
-              </svg>
-            </div>
-            <div>
-              <div
-                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
-              >
-                <div
-                  class="truncate"
-                >
-                  ARK Avatars
-                </div>
-                <div>
-                  <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      grant.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                <div
-                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  ARK.io
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        data-testid="PluginCard--ark-theme"
-      >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
-          data-testid="Card"
-        >
-          <div
-            class="flex flex-col h-full items-between"
-          >
-            <div
-              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
-            >
-              <svg>
-                plugin-logo-placeholder.svg
-              </svg>
-            </div>
-            <div>
-              <div
-                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
-              >
-                <div
-                  class="truncate"
-                >
-                  ARK Theme
-                </div>
-                <div>
-                  <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      grant.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                <div
-                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  ARK.io
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex justify-center mt-4"
-    >
-      <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-        >
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`PluginGrid should render custom number of skeletons 1`] = `
 <DocumentFragment>
   <div
@@ -1074,77 +834,364 @@ exports[`PluginGrid should render custom number of skeletons 1`] = `
     />
     <div
       class="flex justify-center mt-4"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginGrid should render pagination 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="PluginGrid"
+  >
+    <div
+      class="grid grid-cols-4 gap-5 undefined"
+    />
+    <div
+      class="grid grid-cols-4 gap-5 undefined"
+    >
+      <div
+        data-testid="PluginCard--ark-explorer"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  ARK Explorer
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  ARK.io
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="PluginCard--ark-avatars"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  ARK Avatars
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  ARK.io
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="PluginCard--ark-theme"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  ARK Theme
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  ARK.io
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="PluginCard--drakula-theme"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  Drakula Theme
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  Breno Polanski
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center mt-4"
     >
       <div
         class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
         data-testid="Pagination"
       >
-        <button
-          class="Button__StyledButton-mdtvtf-0 iUSBMV"
-          data-testid="Pagination__first"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ fdfkzt"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-first.svg
-              </svg>
-            </div>
-          </div>
-        </button>
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
           <div
-            class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-            data-testid="PaginationSearchButton"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
           >
-            <span
-              data-testid="PaginationSearch__toggle"
-            >
-               
-              <span>
-                ...
-              </span>
-               
-            </span>
+            1
           </div>
           <div
-            class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-            data-testid="PaginationSearchButton"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
           >
-            <span
-              data-testid="PaginationSearch__toggle"
-            >
-               
-              <span>
-                ...
-              </span>
-               
-            </span>
+            2
           </div>
         </div>
         <button
           class="Button__StyledButton-mdtvtf-0 iUSBMV"
-          data-testid="Pagination__last"
+          data-testid="Pagination__next"
           type="button"
         >
           <div
             class="flex relative items-center space-x-2"
           >
+            Next
             <div
-              class="sc-bdfBwQ fdfkzt"
+              class="sc-bdfBwQ fdfkzt ml-2"
               height="12"
               width="12"
             >
               <svg>
-                pagination-last.svg
+                forward.svg
               </svg>
             </div>
           </div>
@@ -1825,83 +1872,7 @@ exports[`PluginGrid should render skeletons 1`] = `
     />
     <div
       class="flex justify-center mt-4"
-    >
-      <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-        data-testid="Pagination"
-      >
-        <button
-          class="Button__StyledButton-mdtvtf-0 iUSBMV"
-          data-testid="Pagination__first"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ fdfkzt"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-first.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-        <div
-          class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-        >
-          <div
-            class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-            data-testid="PaginationSearchButton"
-          >
-            <span
-              data-testid="PaginationSearch__toggle"
-            >
-               
-              <span>
-                ...
-              </span>
-               
-            </span>
-          </div>
-          <div
-            class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-            data-testid="PaginationSearchButton"
-          >
-            <span
-              data-testid="PaginationSearch__toggle"
-            >
-               
-              <span>
-                ...
-              </span>
-               
-            </span>
-          </div>
-        </div>
-        <button
-          class="Button__StyledButton-mdtvtf-0 iUSBMV"
-          data-testid="Pagination__last"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ fdfkzt"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-last.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-    </div>
+    />
   </div>
 </DocumentFragment>
 `;
@@ -1968,7 +1939,29 @@ exports[`PluginGrid should render without pagination 1`] = `
           </div>
           <div
             class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -2287,6 +2280,253 @@ exports[`PluginGrid should split by page 1`] = `
         </button>
       </div>
     </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginGrid shouldn't render pagination 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="PluginGrid"
+  >
+    <div
+      class="grid grid-cols-4 gap-5 undefined"
+    />
+    <div
+      class="grid grid-cols-4 gap-5 undefined"
+    >
+      <div
+        data-testid="PluginCard--ark-explorer"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  ARK Explorer
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  ARK.io
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="PluginCard--ark-avatars"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  ARK Avatars
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  ARK.io
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="PluginCard--ark-theme"
+      >
+        <div
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+          data-testid="Card"
+        >
+          <div
+            class="flex flex-col h-full items-between"
+          >
+            <div
+              class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+            <div>
+              <div
+                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+              >
+                <div
+                  class="truncate"
+                >
+                  ARK Theme
+                </div>
+                <div>
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                >
+                  ARK.io
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+          >
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex overflow-hidden justify-center w-4"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center mt-4"
+    />
   </div>
 </DocumentFragment>
 `;

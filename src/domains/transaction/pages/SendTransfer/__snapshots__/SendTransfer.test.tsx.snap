@@ -531,7 +531,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
-                              type="text"
                               value=""
                             />
                           </div>
@@ -598,7 +597,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
                           >
                             <div
                               class="space-y-8"
@@ -635,7 +634,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       data-testid="SelectRecipient__input"
                                       disabled=""
                                       name="recipientAddress"
-                                      type="text"
                                       value=""
                                     />
                                     <div
@@ -1508,7 +1506,6 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
-              type="text"
               value=""
             />
           </div>
@@ -1575,7 +1572,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
           >
             <div
               class="space-y-8"
@@ -1612,7 +1609,6 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                       data-testid="SelectRecipient__input"
                       disabled=""
                       name="recipientAddress"
-                      type="text"
                       value=""
                     />
                     <div
@@ -1950,7 +1946,6 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
-              type="text"
               value=""
             />
           </div>
@@ -2017,7 +2012,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
           >
             <div
               class="space-y-8"
@@ -2054,7 +2049,6 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                       data-testid="SelectRecipient__input"
                       disabled=""
                       name="recipientAddress"
-                      type="text"
                       value=""
                     />
                     <div
@@ -2392,7 +2386,6 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
-              type="text"
               value=""
             />
           </div>
@@ -2459,7 +2452,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
           >
             <div
               class="space-y-8"
@@ -2507,7 +2500,6 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                       data-testid="SelectRecipient__input"
                       disabled=""
                       name="recipientAddress"
-                      type="text"
                       value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
                     />
                     <div
@@ -2734,7 +2726,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-secondary-700"
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
         >
           Cryptoasset
         </div>
@@ -2769,7 +2761,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-secondary-700"
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
         >
           Sender
         </div>
@@ -2826,7 +2818,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-secondary-700"
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
         >
           Recipient
         </div>
@@ -2868,7 +2860,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
         class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-secondary-700"
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
         >
           Smartbridge
         </div>
@@ -3015,7 +3007,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             ID
           </div>
@@ -3082,7 +3074,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Cryptoasset
           </div>
@@ -3117,7 +3109,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Sender
           </div>
@@ -3174,7 +3166,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Recipient
           </div>
@@ -3216,7 +3208,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Amount
           </div>
@@ -3257,7 +3249,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-secondary-700"
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
             Transaction Fee
           </div>
@@ -3820,7 +3812,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
-                              type="text"
                               value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                             />
                           </div>
@@ -3887,7 +3878,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
                           >
                             <div
                               class="space-y-8"
@@ -3923,7 +3914,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                                       data-testid="SelectRecipient__input"
                                       name="recipientAddress"
-                                      type="text"
                                       value=""
                                     />
                                     <div
@@ -4640,7 +4630,6 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
-                              type="text"
                               value=""
                             />
                           </div>
@@ -4707,7 +4696,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
                           >
                             <div
                               class="space-y-8"
@@ -4744,7 +4733,6 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                       data-testid="SelectRecipient__input"
                                       disabled=""
                                       name="recipientAddress"
-                                      type="text"
                                       value=""
                                     />
                                     <div
@@ -5524,7 +5512,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
-                              type="text"
                               value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                             />
                           </div>
@@ -5591,7 +5578,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
                           >
                             <div
                               class="space-y-8"
@@ -5627,7 +5614,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                                       data-testid="SelectRecipient__input"
                                       name="recipientAddress"
-                                      type="text"
                                       value=""
                                     />
                                     <div
@@ -6390,7 +6376,6 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
-                              type="text"
                               value=""
                             />
                           </div>
@@ -6457,7 +6442,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 gaoeoe mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
                           >
                             <div
                               class="space-y-8"
@@ -6494,7 +6479,6 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                       data-testid="SelectRecipient__input"
                                       disabled=""
                                       name="recipientAddress"
-                                      type="text"
                                       value=""
                                     />
                                     <div
@@ -7126,7 +7110,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-secondary-700"
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
                             ID
                           </div>
@@ -7193,7 +7177,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-secondary-700"
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
                             Cryptoasset
                           </div>
@@ -7228,7 +7212,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-secondary-700"
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
                             Sender
                           </div>
@@ -7285,7 +7269,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-secondary-700"
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
                             Recipient
                           </div>
@@ -7327,7 +7311,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-secondary-700"
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
                             Amount
                           </div>
@@ -7368,7 +7352,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-semibold text-theme-secondary-700"
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
                             Transaction Fee
                           </div>

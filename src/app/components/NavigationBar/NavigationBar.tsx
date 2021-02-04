@@ -303,7 +303,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 							address={selectedWallet.address}
 							icon={selectedWallet.coinName}
 							name={selectedWallet.name}
-							network={selectedWallet.coinId}
+							network={profile.wallets().findByAddress(selectedWallet.address)?.network()}
 							onClose={() => setSelectedWallet(undefined)}
 						/>
 					)}

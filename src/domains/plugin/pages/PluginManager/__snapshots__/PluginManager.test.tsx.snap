@@ -3583,193 +3583,189 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="-mb-5"
+        <nav
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__gaming"
-                      title="Gaming"
-                    >
-                      <span>
-                        Gaming
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__theme"
-                      title="Theme"
-                    >
-                      <span>
-                        Theme
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    My Plugins
-                  </span>
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    1
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__gaming"
+                    title="Gaming"
+                  >
+                    <span>
+                      Gaming
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__theme"
+                    title="Theme"
+                  >
+                    <span>
+                      Theme
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                >
+                  1
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+          class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -4133,22 +4129,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   </div>
                   <div
                     class="flex justify-center"
-                  >
-                    <div
-                      class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                      data-testid="Pagination"
-                    >
-                      <div
-                        class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                      >
-                        <div
-                          class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                        >
-                          1
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  />
                 </div>
               </div>
             </div>
@@ -6296,193 +6277,189 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="-mb-5"
+        <nav
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__gaming"
-                      title="Gaming"
-                    >
-                      <span>
-                        Gaming
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__theme"
-                      title="Theme"
-                    >
-                      <span>
-                        Theme
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    My Plugins
-                  </span>
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    1
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__gaming"
+                    title="Gaming"
+                  >
+                    <span>
+                      Gaming
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__theme"
+                    title="Theme"
+                  >
+                    <span>
+                      Theme
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                >
+                  1
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+          class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -6846,22 +6823,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   </div>
                   <div
                     class="flex justify-center"
-                  >
-                    <div
-                      class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                      data-testid="Pagination"
-                    >
-                      <div
-                        class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                      >
-                        <div
-                          class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                        >
-                          1
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  />
                 </div>
               </div>
             </div>
@@ -8573,7 +8535,29 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -8652,7 +8636,29 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -8730,7 +8736,29 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -9275,187 +9303,183 @@ exports[`PluginManager should render 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="-mb-5"
+        <nav
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__gaming"
-                      title="Gaming"
-                    >
-                      <span>
-                        Gaming
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__theme"
-                      title="Theme"
-                    >
-                      <span>
-                        Theme
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
+                  >
+                    <span>
+                      Home
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__gaming"
+                    title="Gaming"
+                  >
+                    <span>
+                      Gaming
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__theme"
+                    title="Theme"
+                  >
+                    <span>
+                      Theme
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+          class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -9544,7 +9568,29 @@ exports[`PluginManager should render 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -9623,7 +9669,29 @@ exports[`PluginManager should render 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -9701,7 +9769,29 @@ exports[`PluginManager should render 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -10027,7 +10117,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="relative"
                   >
                     <div
-                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
+                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                       data-testid="header-search-bar__input"
                     >
                       <div
@@ -10135,187 +10225,183 @@ exports[`PluginManager should search for plugin 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="-mb-5"
+        <nav
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__gaming"
-                      title="Gaming"
-                    >
-                      <span>
-                        Gaming
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__theme"
-                      title="Theme"
-                    >
-                      <span>
-                        Theme
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
+                  >
+                    <span>
+                      Home
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__gaming"
+                    title="Gaming"
+                  >
+                    <span>
+                      Gaming
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__theme"
+                    title="Theme"
+                  >
+                    <span>
+                      Theme
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+          class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -10404,7 +10490,29 @@ exports[`PluginManager should search for plugin 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -10483,7 +10591,29 @@ exports[`PluginManager should search for plugin 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -10561,7 +10691,29 @@ exports[`PluginManager should search for plugin 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -10942,187 +11094,183 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="-mb-5"
+        <nav
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__gaming"
-                      title="Gaming"
-                    >
-                      <span>
-                        Gaming
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__theme"
-                      title="Theme"
-                    >
-                      <span>
-                        Theme
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
+                  >
+                    <span>
+                      Home
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__gaming"
+                    title="Gaming"
+                  >
+                    <span>
+                      Gaming
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__theme"
+                    title="Theme"
+                  >
+                    <span>
+                      Theme
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+          class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -11150,83 +11298,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   />
                   <div
                     class="flex justify-center mt-4"
-                  >
-                    <div
-                      class="Pagination__Wrapper-x7juhx-0 klvluR mt-5"
-                      data-testid="Pagination"
-                    >
-                      <button
-                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                        data-testid="Pagination__first"
-                        type="button"
-                      >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          <div
-                            class="sc-gsTCUz cmyhNZ"
-                            height="12"
-                            width="12"
-                          >
-                            <svg>
-                              pagination-first.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                      <div
-                        class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                      >
-                        <div
-                          class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-                          data-testid="PaginationSearchButton"
-                        >
-                          <span
-                            data-testid="PaginationSearch__toggle"
-                          >
-                             
-                            <span>
-                              ...
-                            </span>
-                             
-                          </span>
-                        </div>
-                        <div
-                          class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-                          data-testid="PaginationSearchButton"
-                        >
-                          <span
-                            data-testid="PaginationSearch__toggle"
-                          >
-                             
-                            <span>
-                              ...
-                            </span>
-                             
-                          </span>
-                        </div>
-                      </div>
-                      <button
-                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                        data-testid="Pagination__last"
-                        type="button"
-                      >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          <div
-                            class="sc-gsTCUz cmyhNZ"
-                            height="12"
-                            width="12"
-                          >
-                            <svg>
-                              pagination-last.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                  />
                 </div>
               </div>
             </div>
@@ -11599,187 +11671,183 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="-mb-5"
+        <nav
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__gaming"
-                      title="Gaming"
-                    >
-                      <span>
-                        Gaming
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__theme"
-                      title="Theme"
-                    >
-                      <span>
-                        Theme
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        0
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        1
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
+                  >
+                    <span>
+                      Home
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__gaming"
+                    title="Gaming"
+                  >
+                    <span>
+                      Gaming
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__theme"
+                    title="Theme"
+                  >
+                    <span>
+                      Theme
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      0
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      1
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-gsTCUz fHxsLl"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-gsTCUz fHxsLl"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+          class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -11868,7 +11936,29 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -11947,7 +12037,29 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -12025,7 +12137,29 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                            />
+                            >
+                              <div
+                                class="relative"
+                              >
+                                <span
+                                  data-testid="dropdown__toggle"
+                                >
+                                  <div
+                                    class="flex overflow-hidden justify-center w-4"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

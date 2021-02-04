@@ -1,5 +1,5 @@
 import { Alert } from "app/components/Alert";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
@@ -35,21 +35,20 @@ export const FormStep = ({ fees, senderWallet }: StepProps) => {
 				</TransactionDetail>
 			</div>
 
-			<div className="space-y-8">
-				<FormField name="fee" className="font-normal">
-					<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-					<InputFee
-						value={fee}
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
-						step={0.01}
-						onChange={(currency) =>
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-						}
-					/>
-				</FormField>
-			</div>
+			<FormField name="fee">
+				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+				<InputFee
+					value={fee}
+					min={fees.min}
+					avg={fees.avg}
+					max={fees.max}
+					step={0.01}
+					onChange={(currency) =>
+						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
+					}
+				/>
+				<FormHelperText />
+			</FormField>
 		</section>
 	);
 };

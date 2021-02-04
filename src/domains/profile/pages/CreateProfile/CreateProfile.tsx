@@ -59,7 +59,7 @@ export const CreateProfile = () => {
 			profile.auth().setPassword(password);
 		}
 
-		await persist();
+		await persist(profile);
 
 		history.push("/");
 	};

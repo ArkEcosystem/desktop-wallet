@@ -105,12 +105,11 @@ export const AddRecipient = ({
 
 	useEffect(() => {
 		register("remainingBalance");
+		register("isSendAllSelected");
 	}, [register]);
 
 	useEffect(() => {
-		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO)
-			? BigNumber.ZERO
-			: remainingBalance.minus(amount || 0);
+		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO) ? BigNumber.ZERO : remainingBalance;
 
 		setValue("remainingBalance", remaining);
 	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
@@ -151,6 +150,10 @@ export const AddRecipient = ({
 			clearFields();
 		}
 	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
+
+	useEffect(() => {
+		setValue("isSendAllSelected", isSingle);
+	}, [isSingle, setValue]);
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) {
@@ -207,6 +210,7 @@ export const AddRecipient = ({
 				data-testid="AddRecipient__form-wrapper"
 				className={`${showMultiPaymentOption ? "mt-6" : ""}`}
 				noBackground={isSingle}
+				noPadding={!showMultiPaymentOption}
 			>
 				<div className="space-y-8">
 					<FormField name="recipientAddress">
