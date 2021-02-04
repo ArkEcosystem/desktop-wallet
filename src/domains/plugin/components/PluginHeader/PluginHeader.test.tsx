@@ -1,10 +1,11 @@
 import React from "react";
-import { render, screen } from "utils/testing-library";
+import { fireEvent, render, screen } from "utils/testing-library";
 
 import { PluginHeader } from "./PluginHeader";
 
 describe("PluginHeader", () => {
 	it("should render properly", () => {
+		const onInstall = jest.fn();
 		const { container } = render(
 			<PluginHeader
 				title="Test Plugin"
@@ -13,11 +14,16 @@ describe("PluginHeader", () => {
 				url="https://github.com/arkecosystem"
 				version="1.3.8"
 				size="4.2 Mb"
+				onInstall={onInstall}
 			/>,
 		);
 
 		expect(screen.getByTestId("PluginHeader__button--install")).toBeInTheDocument();
 		expect(screen.getByText("Test Plugin")).toBeInTheDocument();
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--install"));
+
+		expect(onInstall).toHaveBeenCalled();
 		expect(container).toMatchSnapshot();
 	});
 
