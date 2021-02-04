@@ -21,6 +21,7 @@ export const PluginDetails = () => {
 	const pluginId = queryParams.get("pluginId");
 	const pluginCtrl = pluginManager.plugins().findById(pluginId!);
 	const isInstalled = !!pluginCtrl;
+	const hasLaunch = !!pluginCtrl?.hooks().hasCommand("service:launch.render");
 
 	const latestConfiguration = useMemo(() => pluginConfigurations.find((item) => item.id() === pluginId), [
 		pluginConfigurations,
@@ -56,6 +57,10 @@ export const PluginDetails = () => {
 		reportPlugin(plugin!);
 	};
 
+	const handleLaunch = () => {
+		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginId}`);
+	};
+
 	const handleOnDelete = () => {
 		history.push(`/profiles/${activeProfile.id()}/plugins`);
 	};
@@ -68,11 +73,13 @@ export const PluginDetails = () => {
 					isInstalled={isInstalled}
 					onUninstall={() => setIsUninstallOpen(true)}
 					onReport={handleReportPlugin}
+					hasLaunch={hasLaunch}
+					onLaunch={handleLaunch}
 				/>
 			</Section>
 
 			<Section>
-				<PluginInfo {...pluginData} isInstalled={isInstalled} />
+				<PluginInfo {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
 			</Section>
 
 			{pluginCtrl && (
