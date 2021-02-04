@@ -16,7 +16,7 @@ export const LedgerConfirmation = ({ children }: { children?: React.ReactNode })
 			</div>
 
 			<div className="inline-flex items-center mt-8 space-x-3 w-full">
-				<Spinner color="primary" />
+				<Spinner />
 				<span
 					className="font-semibold text-theme-secondary-900 dark:text-theme-secondary-600"
 					data-testid="LedgerConfirmation-loading_message"
