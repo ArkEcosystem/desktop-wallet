@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
@@ -8,7 +8,16 @@ import nock from "nock";
 import { LaunchPluginService, PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	screen,
+	waitFor,
+	within,
+} from "testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
@@ -170,36 +179,50 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.skip("should install plugin from header install button", async () => {
-		const { asFragment, getByTestId } = rendered;
+	it("should install plugin from header install button", async () => {
+		nock("https://github.com/")
+			.get("/arkecosystem/test-plugin/raw/master/package.json")
+			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		profile.settings().set(ProfileSetting.AdvancedMode, true);
+
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<PluginManager />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.queryByTestId("PluginManager_header--install")).toBeInTheDocument());
+
+		// Open and close
+		fireEvent.click(screen.queryByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
+		fireEvent.click(screen.queryByTestId("modal__close-btn"));
+
+		// Open and type
+		fireEvent.click(screen.queryByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
+
+		fireEvent.input(screen.getByTestId("PluginManualInstallModal__input"), {
+			target: { value: "https://github.com/arkecosystem/test-plugin" },
 		});
+		fireEvent.click(screen.getByTestId("PluginManualInstallModal__submit-button"));
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+		// Modal closed
+		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).not.toBeInTheDocument());
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		});
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
+		expect(history.location.search).toEqual(
+			`?pluginId=test-plugin&repositoryURL=https://github.com/arkecosystem/test-plugin`,
+		);
 
-		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
-
-		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
+		profile.settings().set(ProfileSetting.AdvancedMode, false);
 	});
 
 	it.skip("should install a plugin from other category", async () => {
@@ -327,7 +350,7 @@ describe("PluginManager", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "new-plugin", version: "0.0.1" },
+					config: { name: "new-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
 					source: () => void 0,
 					sourcePath: "/plugins/new-plugin/index.js",
 					dir: "/plugins/new-plugin",

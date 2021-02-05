@@ -19,6 +19,7 @@ type Props = {
 	isInstalled?: boolean;
 	isOfficial?: boolean;
 	onReport?: () => void;
+	onInstall?: () => void;
 	hasLaunch?: boolean;
 	onLaunch?: () => void;
 	onUninstall?: () => void;
@@ -61,7 +62,9 @@ export const PluginHeader = (props: Props) => {
 
 		return (
 			<>
-				<Button data-testid="PluginHeader__button--install">{t("COMMON.INSTALL")}</Button>
+				<Button data-testid="PluginHeader__button--install" onClick={props.onInstall}>
+					{t("COMMON.INSTALL")}
+				</Button>
 				<Button
 					className="ml-3"
 					onClick={props.onReport}
