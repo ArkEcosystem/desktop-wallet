@@ -137,7 +137,6 @@ describe("SignIn", () => {
 		const errorMessage = getByTestId("Input-error");
 		expect(errorMessage).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
-		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		act(() => {
 			jest.advanceTimersByTime(65000);
