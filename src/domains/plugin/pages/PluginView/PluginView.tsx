@@ -4,19 +4,24 @@ import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Tooltip } from "app/components/Tooltip";
 import { useActiveProfile, useQueryParams } from "app/hooks";
+import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { LaunchRender, usePluginManagerContext } from "plugins";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 export const PluginView = () => {
 	const queryParams = useQueryParams();
 	const { t } = useTranslation();
+	const history = useHistory();
 
 	const profile = useActiveProfile();
-	const { pluginManager } = usePluginManagerContext();
+	const { pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
+
+	const [isUninstallOpen, setIsUninstallOpen] = useState(false);
 
 	const crumbs = [
 		{
@@ -24,9 +29,17 @@ export const PluginView = () => {
 			label: t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE"),
 		},
 		{
-			label: plugin!.config().title()!,
+			label: plugin?.config().title() as string,
 		},
 	];
+
+	const handleReportPlugin = () => {
+		reportPlugin(plugin!.config());
+	};
+
+	const handleOnDelete = () => {
+		history.push(`/profiles/${profile.id()}/plugins`);
+	};
 
 	return (
 		<Page profile={profile} crumbs={crumbs}>
@@ -77,13 +90,17 @@ export const PluginView = () => {
 
 					<div className="flex items-center space-x-2">
 						<Tooltip content="Report this plugin">
-							<Button size="icon">
+							<Button data-testid="PluginView__report" size="icon" onClick={handleReportPlugin}>
 								<Icon name="AlertWarning" width="1.5rem" height="1.25rem" />
 							</Button>
 						</Tooltip>
 
 						<Tooltip content="Uninstall">
-							<Button size="icon">
+							<Button
+								data-testid="PluginView__uninstall"
+								size="icon"
+								onClick={() => setIsUninstallOpen(true)}
+							>
 								<Icon name="Trash" width="1.5rem" height="1.25rem" />
 							</Button>
 						</Tooltip>
@@ -98,6 +115,16 @@ export const PluginView = () => {
 					fallback={<h1>Plugin not loaded or enabled</h1>}
 				/>
 			</div>
+
+			{plugin && (
+				<PluginUninstallConfirmation
+					isOpen={isUninstallOpen}
+					plugin={plugin}
+					profile={profile}
+					onClose={() => setIsUninstallOpen(false)}
+					onDelete={handleOnDelete}
+				/>
+			)}
 		</Page>
 	);
 };

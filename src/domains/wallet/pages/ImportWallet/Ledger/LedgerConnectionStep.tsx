@@ -34,7 +34,7 @@ const ConnectionContent = ({
 			<Image name="WaitingLedgerDevice" domain="wallet" className="mx-auto" />
 
 			<div className="inline-flex justify-center items-center space-x-3 w-full">
-				<Spinner color="primary" />
+				<Spinner />
 				<span className="font-semibold animate-pulse text-theme-secondary-text">
 					{t("WALLETS.MODAL_LEDGER_WALLET.OPEN_APP", { coin: coinName })}
 				</span>
