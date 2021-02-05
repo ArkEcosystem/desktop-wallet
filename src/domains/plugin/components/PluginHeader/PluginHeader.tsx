@@ -18,6 +18,7 @@ type Props = {
 	size: string;
 	isInstalled?: boolean;
 	isOfficial?: boolean;
+	onReport?: () => void;
 	onInstall?: () => void;
 	hasLaunch?: boolean;
 	onLaunch?: () => void;
@@ -39,7 +40,12 @@ export const PluginHeader = (props: Props) => {
 					{/* <Button className="ml-3" data-testid="PluginHeader__button--update">
 						<Icon name="Update" />
 					</Button> */}
-					<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
+					<Button
+						className="ml-3"
+						data-testid="PluginHeader__button--report"
+						variant="secondary"
+						onClick={props.onReport}
+					>
 						<Icon name="Report" width={20} height={20} />
 					</Button>
 					<Button
@@ -59,7 +65,12 @@ export const PluginHeader = (props: Props) => {
 				<Button data-testid="PluginHeader__button--install" onClick={props.onInstall}>
 					{t("COMMON.INSTALL")}
 				</Button>
-				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
+				<Button
+					className="ml-3"
+					onClick={props.onReport}
+					data-testid="PluginHeader__button--report"
+					variant="secondary"
+				>
 					<Icon name="Report" width={20} height={20} />
 				</Button>
 			</>

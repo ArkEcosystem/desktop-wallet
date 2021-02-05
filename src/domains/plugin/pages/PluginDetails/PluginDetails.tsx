@@ -17,7 +17,13 @@ export const PluginDetails = () => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
-	const { pluginPackages, pluginConfigurations, pluginManager, installPlugin } = usePluginManagerContext();
+	const {
+		pluginPackages,
+		pluginConfigurations,
+		pluginManager,
+		installPlugin,
+		reportPlugin,
+	} = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
 	const repositoryURL = queryParams.get("repositoryURL");
@@ -58,6 +64,10 @@ export const PluginDetails = () => {
 		},
 	];
 
+	const handleReportPlugin = () => {
+		reportPlugin(plugin!);
+	};
+
 	const handleInstallPlugin = useCallback(async () => {
 		try {
 			await installPlugin(pluginId!, repositoryURL!);
@@ -81,10 +91,11 @@ export const PluginDetails = () => {
 				<PluginHeader
 					{...pluginData}
 					isInstalled={isInstalled}
+					onUninstall={() => setIsUninstallOpen(true)}
+					onReport={handleReportPlugin}
 					onInstall={handleInstallPlugin}
 					hasLaunch={hasLaunch}
 					onLaunch={handleLaunch}
-					onUninstall={() => setIsUninstallOpen(true)}
 				/>
 			</Section>
 
