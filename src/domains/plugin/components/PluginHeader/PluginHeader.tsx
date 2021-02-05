@@ -18,6 +18,9 @@ type Props = {
 	size: string;
 	isInstalled?: boolean;
 	isOfficial?: boolean;
+	onInstall?: () => void;
+	hasLaunch?: boolean;
+	onLaunch?: () => void;
 	onUninstall?: () => void;
 };
 
@@ -28,7 +31,11 @@ export const PluginHeader = (props: Props) => {
 		if (props.isInstalled) {
 			return (
 				<>
-					<Button data-testid="PluginHeader__button--open">{t("COMMON.OPEN")}</Button>
+					{props.hasLaunch && (
+						<Button data-testid="PluginHeader__button--launch" onClick={props.onLaunch}>
+							{t("COMMON.LAUNCH")}
+						</Button>
+					)}
 					{/* <Button className="ml-3" data-testid="PluginHeader__button--update">
 						<Icon name="Update" />
 					</Button> */}
@@ -49,7 +56,9 @@ export const PluginHeader = (props: Props) => {
 
 		return (
 			<>
-				<Button data-testid="PluginHeader__button--install">{t("COMMON.INSTALL")}</Button>
+				<Button data-testid="PluginHeader__button--install" onClick={props.onInstall}>
+					{t("COMMON.INSTALL")}
+				</Button>
 				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
 					<Icon name="Report" width={20} height={20} />
 				</Button>
