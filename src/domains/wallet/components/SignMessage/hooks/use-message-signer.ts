@@ -1,0 +1,49 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Profile, ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { upperFirst } from "@arkecosystem/utils";
+
+type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
+
+const signWithLedger = async (message: string, wallet: ReadWriteWallet) => {
+	const path = wallet.data().get<string>(WalletData.LedgerPath);
+	
+	let signatory = wallet.publicKey();
+
+	if (!signatory) {
+		signatory = await wallet.coin().ledger().getPublicKey(path!);
+	}
+
+	return {
+		signatory,
+		message,
+		signature: await wallet.ledger().signMessage(path!, Buffer.from(message, "hex")),
+	};
+};
+
+const withAbortPromise = (signal?: AbortSignal) => <T>(promise: Promise<T>) =>
+	new Promise<T>((resolve, reject) => {
+		if (signal) {
+			signal.onabort = () => reject("ERR_ABORT");
+		}
+
+		return promise.then(resolve).catch(reject);
+	});
+
+export const useMessageSigner = (profile: Profile) => {
+	const sign = async (
+		wallet: ReadWriteWallet,
+		message: string,
+		mnemonic?: string,
+		options?: {
+			abortSignal?: AbortSignal;
+		},
+	): Promise<Contracts.SignedMessage> => {
+		if (wallet.isLedger()) {
+			return withAbortPromise(options?.abortSignal)(signWithLedger(message, wallet));
+		}
+
+		return wallet.message().sign({ message, mnemonic: mnemonic! });
+	};
+
+	return { sign };
+};

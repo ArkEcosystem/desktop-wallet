@@ -12,8 +12,11 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { createRef, useEffect, useState } from "react";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+
+import { useMessageSigner } from "./hooks/use-message-signer";
 
 type SignMessageProps = {
 	isOpen: boolean;
@@ -31,6 +34,8 @@ const initialState = {
 
 export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => {
 	const [isSigned, setIsSigned] = useState(false);
+	const [isAwaitingLedger, setIsAwaitingLedger] = useState(false);
+
 	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(initialState);
 
 	const { env } = useEnvironmentContext();
@@ -44,6 +49,8 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	const profile = useActiveProfile();
 	const wallet = useActiveWallet();
 
+	const { sign } = useMessageSigner(profile);
+
 	const isLedger = wallet.isLedger();
 	const { authentication } = useValidation();
 
@@ -55,13 +62,19 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	}, [isOpen]);
 
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
-		const signedMessageResult = await wallet?.message().sign({
-			message,
-			mnemonic,
-		});
+		if (isLedger) {
+			setIsAwaitingLedger(true);
+		}
+
+		const signedMessageResult = await sign(wallet, message, mnemonic);
 
 		setSignedMessage(signedMessageResult);
+
 		setIsSigned(true);
+
+		if (isLedger) {
+			setIsAwaitingLedger(false);
+		}
 	};
 
 	const SignFormRender = (
@@ -90,9 +103,9 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 					<FormHelperText />
 				</FormField>
 
-				{isLedger ? (
-					<span>@TODO ledger hint</span>
-				) : (
+				{isLedger && isAwaitingLedger && <LedgerConfirmation />}
+
+				{!isLedger && (
 					<FormField name="mnemonic">
 						<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
 						<InputPassword
