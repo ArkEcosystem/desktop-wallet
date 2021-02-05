@@ -48,7 +48,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 
 		useLayoutEffect(() => {
 			ref.current.setSelectionRange(selectionRange.start, selectionRange.end);
-		}, [amount]);
+		}, [amount, ref, selectionRange.start, selectionRange.end]);
 
 		return <Input data-testid="InputCurrency" value={amount.display} onChange={handleInput} ref={ref} {...props} />;
 	},
