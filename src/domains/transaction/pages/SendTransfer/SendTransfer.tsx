@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
@@ -31,7 +31,7 @@ export const SendTransfer = () => {
 	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [shouldConfirmSend, setShouldConfirmSend] = useState(false);
+	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
@@ -309,8 +309,10 @@ export const SendTransfer = () => {
 															activeWallet,
 														);
 
+														setUnconfirmedTransactions(unconfirmed);
+
 														if (unconfirmed.length > 0) {
-															return setShouldConfirmSend(true);
+															return;
 														}
 
 														handleSubmit(submitForm)();
@@ -344,14 +346,15 @@ export const SendTransfer = () => {
 					</Tabs>
 
 					<ConfirmSendTransaction
-						isOpen={shouldConfirmSend}
+						unconfirmedTransactions={unconfirmedTransactions}
+						isOpen={unconfirmedTransactions.length > 0}
 						onConfirm={() => {
-							setShouldConfirmSend(false);
 							handleSubmit(submitForm)();
+							setUnconfirmedTransactions([]);
 						}}
 						onClose={() => {
 							setIsConfirming(false);
-							setShouldConfirmSend(false);
+							setUnconfirmedTransactions([]);
 						}}
 					/>
 				</Form>
