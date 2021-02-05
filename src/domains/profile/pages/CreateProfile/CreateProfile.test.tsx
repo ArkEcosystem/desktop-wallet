@@ -148,8 +148,7 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		const errorMessage = getByTestId("Input-error");
-		expect(errorMessage).toBeVisible();
+		expect(getByTestId("Input-error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -171,8 +170,7 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		const errorMessage = getByTestId("Input-error");
-		expect(errorMessage).toBeVisible();
+		expect(getByTestId("Input-error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});

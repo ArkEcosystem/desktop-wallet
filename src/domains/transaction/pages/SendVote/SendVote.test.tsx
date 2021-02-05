@@ -589,8 +589,7 @@ describe("SendVote", () => {
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() => {
-				const errorMessage = getByTestId("Input-error");
-				expect(errorMessage).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			signMock.mockRestore();

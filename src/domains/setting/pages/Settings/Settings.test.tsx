@@ -338,8 +338,7 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			expect(getByTestId("Input-error")).toBeVisible();
 		});
 
 		act(() => {
@@ -349,8 +348,7 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			expect(getByTestId("Input-error")).toBeVisible();
 		});
 
 		act(() => {
@@ -415,8 +413,7 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			expect(getByTestId("Input-error")).toBeVisible();
 		});
 
 		act(() => {

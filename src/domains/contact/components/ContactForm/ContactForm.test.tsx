@@ -135,8 +135,7 @@ describe("ContactForm", () => {
 
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 			await waitFor(() => {
-				const errorMessage = getByTestId("Input-error");
-				expect(errorMessage).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 				expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 			});
 		});
@@ -190,8 +189,7 @@ describe("ContactForm", () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 
 			await waitFor(() => {
-				const errorMessage = getByTestId("Input-error");
-				expect(errorMessage).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 				expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 			});
 		});

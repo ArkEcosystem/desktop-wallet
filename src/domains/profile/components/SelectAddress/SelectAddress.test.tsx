@@ -26,8 +26,7 @@ describe("SelectAddress", () => {
 
 	it("should render invalid", () => {
 		const { container, getByTestId } = render(<SelectAddress isInvalid wallets={wallets} />);
-		const errorMessage = getByTestId("Input-error");
-		expect(errorMessage).toBeVisible();
+		expect(getByTestId("Input-error")).toBeVisible();
 		expect(container).toMatchSnapshot();
 	});
 

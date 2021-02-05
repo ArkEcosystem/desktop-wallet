@@ -99,8 +99,7 @@ describe("LedgerImportStep", () => {
 			});
 		});
 
-		const errorMessage = getByTestId("Input-error");
-		expect(errorMessage).toBeVisible();
+		expect(getByTestId("Input-error")).toBeVisible();
 	});
 
 	it("should show an error message for duplicate name in the form", async () => {

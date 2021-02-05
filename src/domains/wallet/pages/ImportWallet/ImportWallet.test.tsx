@@ -589,8 +589,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: "123" } });
 
 			await waitFor(() => {
-				const errorMessage = getByTestId("Input-error");
-				expect(errorMessage).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
@@ -653,8 +652,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
 
 			await waitFor(() => {
-				const errorMessage = getByTestId("Input-error");
-				expect(errorMessage).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			const addressToggle = getByTestId("ImportWallet__address-toggle");
@@ -668,8 +666,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
 			await waitFor(() => {
-				const errorMessage = getByTestId("Input-error");
-				expect(errorMessage).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
