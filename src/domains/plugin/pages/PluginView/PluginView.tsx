@@ -16,7 +16,7 @@ export const PluginView = () => {
 	const history = useHistory();
 
 	const profile = useActiveProfile();
-	const { pluginManager } = usePluginManagerContext();
+	const { pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
@@ -32,6 +32,10 @@ export const PluginView = () => {
 			label: plugin?.config().title() as string,
 		},
 	];
+
+	const handleReportPlugin = () => {
+		reportPlugin(plugin!.config());
+	};
 
 	const handleOnDelete = () => {
 		history.push(`/profiles/${profile.id()}/plugins`);
@@ -86,7 +90,7 @@ export const PluginView = () => {
 
 					<div className="flex items-center space-x-2">
 						<Tooltip content="Report this plugin">
-							<Button size="icon">
+							<Button data-testid="PluginView__report" size="icon" onClick={handleReportPlugin}>
 								<Icon name="AlertWarning" width="1.5rem" height="1.25rem" />
 							</Button>
 						</Tooltip>
