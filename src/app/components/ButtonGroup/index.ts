@@ -1,2 +1,2 @@
-export * from "./SelectionBar";
+export * from "./ButtonGroup";
 export * from "./useSelectionState";

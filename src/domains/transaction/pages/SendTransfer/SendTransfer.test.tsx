@@ -388,7 +388,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[0]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.00357"));
 			fireEvent.click(fees[1]);
@@ -442,7 +442,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[0]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.00357"));
 			fireEvent.click(fees[1]);
@@ -513,7 +513,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
@@ -623,7 +623,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -731,7 +731,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -802,7 +802,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
@@ -886,7 +886,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -1006,7 +1006,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 

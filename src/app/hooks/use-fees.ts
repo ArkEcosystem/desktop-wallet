@@ -32,9 +32,9 @@ export const useFees = () => {
 				transactionFees = env.fees().findByType(coin, network, type);
 			}
 
-			return formatWithDefaultStatic(transactionFees);
+			return transactionFees;
 		},
-		[env, formatWithDefaultStatic],
+		[env],
 	);
 
 	return {

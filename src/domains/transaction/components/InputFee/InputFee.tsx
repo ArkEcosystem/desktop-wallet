@@ -1,5 +1,5 @@
 import { InputRange } from "app/components/Input";
-import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
+import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -49,31 +49,34 @@ export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, st
 				/>
 			</div>
 
-			<SelectionBar>
-				<SelectionBarOption
+			<ButtonGroup>
+				<ButtonGroupOption
+					disabled={!min}
 					value={minHuman}
-					isValueChecked={() => fee.display === minHuman}
-					setCheckedValue={() => handleFeeChange({ display: minHuman, value: min })}
+					isSelected={() => fee.display === minHuman}
+					setSelectedValue={() => handleFeeChange({ display: minHuman, value: min })}
 				>
-					{t("TRANSACTION.FEES.MIN")}
-				</SelectionBarOption>
+					{t("TRANSACTION.FEES.SLOW")}
+				</ButtonGroupOption>
 
-				<SelectionBarOption
+				<ButtonGroupOption
+					disabled={!avg}
 					value={avgHuman}
-					isValueChecked={() => fee.display === avgHuman}
-					setCheckedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
+					isSelected={() => fee.display === avgHuman}
+					setSelectedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
 				>
 					{t("TRANSACTION.FEES.AVERAGE")}
-				</SelectionBarOption>
+				</ButtonGroupOption>
 
-				<SelectionBarOption
+				<ButtonGroupOption
+					disabled={!max}
 					value={maxHuman}
-					isValueChecked={() => fee.display === maxHuman}
-					setCheckedValue={() => handleFeeChange({ display: maxHuman, value: max })}
+					isSelected={() => fee.display === maxHuman}
+					setSelectedValue={() => handleFeeChange({ display: maxHuman, value: max })}
 				>
-					{t("TRANSACTION.FEES.MAX")}
-				</SelectionBarOption>
-			</SelectionBar>
+					{t("TRANSACTION.FEES.FAST")}
+				</ButtonGroupOption>
+			</ButtonGroup>
 		</div>
 	);
 });

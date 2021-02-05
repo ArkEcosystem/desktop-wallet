@@ -59,7 +59,7 @@ describe("InputFee", () => {
 		expect(getByTestId("InputCurrency")).toHaveValue("2");
 
 		act(() => {
-			fireEvent.click(getByText(transactionTranslations.FEES.MIN));
+			fireEvent.click(getByText(transactionTranslations.FEES.SLOW));
 		});
 
 		await waitFor(() => {
@@ -97,7 +97,7 @@ describe("InputFee", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByText(transactionTranslations.FEES.MAX));
+			fireEvent.click(getByText(transactionTranslations.FEES.FAST));
 		});
 
 		await waitFor(() => {

@@ -76,7 +76,7 @@ describe("SendTransactionForm", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
