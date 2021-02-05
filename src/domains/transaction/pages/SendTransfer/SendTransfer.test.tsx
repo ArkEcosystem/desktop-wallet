@@ -1094,16 +1094,18 @@ describe("SendTransfer", () => {
 		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
-		// items
+		//@ts-ignore
 		const sentTransactionsMock = jest.spyOn(wallet, "sentTransactions").mockImplementation(() =>
 			Promise.resolve({
 				items: () => [
 					{
-						type: () => "transfer",
+						isTransfer: () => true,
+						isMultiPayment: () => false,
 						isConfirmed: () => false,
 					},
 					{
-						type: () => "multiPayment",
+						isTransfer: () => false,
+						isMultiPayment: () => true,
 						isConfirmed: () => false,
 					},
 				],
