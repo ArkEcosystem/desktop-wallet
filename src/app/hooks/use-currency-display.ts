@@ -16,7 +16,7 @@ export const useCurrencyDisplay = () => {
 		return [Math.min(sanitized.toNumber(), Number(maxNumber))];
 	}, []);
 
-	const converToCurrency = useCallback((value: CurrencyInput | any): CurrencyInput => {
+	const convertToCurrency = useCallback((value: CurrencyInput | any): CurrencyInput => {
 		if (!isNil(value.display)) {
 			return value;
 		}
@@ -25,6 +25,6 @@ export const useCurrencyDisplay = () => {
 
 	return {
 		formatRange,
-		converToCurrency,
+		convertToCurrency,
 	};
 };
