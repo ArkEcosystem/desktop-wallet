@@ -112,7 +112,7 @@ test("should show an error message for invalid address", async (t) => {
 
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
-	await t.expect(Selector('[data-testid="Input-error"]')).exist.ok({ timeout: 5000 });
+	await t.expect(Selector('[data-testid="Input-error"]').exists).ok({ timeout: 5000 });
 });
 
 test("should show an error message for duplicate address", async (t) => {
