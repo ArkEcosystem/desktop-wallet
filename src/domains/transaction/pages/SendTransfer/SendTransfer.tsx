@@ -309,10 +309,6 @@ export const SendTransfer = () => {
 															activeWallet,
 														);
 
-														console.log(
-															"unconfirmed",
-															unconfirmed.map((u) => console.log(u.id())),
-														);
 														if (unconfirmed.length > 0) {
 															return setShouldConfirmSend(true);
 														}
