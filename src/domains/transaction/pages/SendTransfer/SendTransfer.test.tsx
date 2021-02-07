@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -1102,11 +1103,31 @@ describe("SendTransfer", () => {
 						isTransfer: () => true,
 						isMultiPayment: () => false,
 						isConfirmed: () => false,
+						timestamp: () => DateTime.make(),
+						total: () => BigNumber.make(1),
+						isSent: () => true,
+						wallet: () => wallet,
+						type: () => "transfer",
+						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
+						convertedTotal: () => BigNumber.ZERO,
+						isVote: () => false,
+						isUnvote: () => false,
 					},
 					{
 						isTransfer: () => false,
 						isMultiPayment: () => true,
 						isConfirmed: () => false,
+						timestamp: () => DateTime.make(),
+						total: () => BigNumber.make(1),
+						isSent: () => true,
+						wallet: () => wallet,
+						type: () => "multiPayment",
+						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
+						convertedTotal: () => BigNumber.ZERO,
+						isVote: () => false,
+						isUnvote: () => false,
 					},
 				],
 			}),
