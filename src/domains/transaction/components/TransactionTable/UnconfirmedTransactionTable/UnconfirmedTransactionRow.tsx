@@ -6,7 +6,7 @@ import { Size } from "types";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { TransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
-import { TransactionRowMode } from "../TransactionRow/TransactionRowMode";
+import { TransactionRowRecipientIcon } from "../TransactionRow/TransactionRowRecipientIcon";
 import { TransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
 type Props = {
@@ -17,7 +17,6 @@ type Props = {
 
 export const UnconfirmedTransactionRow = ({ transaction, walletName, iconSize, ...props }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
-
 	return (
 		<TableRow
 			onMouseEnter={() =>
@@ -26,13 +25,18 @@ export const UnconfirmedTransactionRow = ({ transaction, walletName, iconSize, .
 			onMouseLeave={() => setShadowColor("")}
 			{...props}
 		>
-			<TableCell variant="start" innerClassName="space-x-3" isCompact>
+			<TableCell variant="start" innerClassName="space-x-3 text-theme-secondary-500" isCompact>
 				<TimeAgo date={transaction.timestamp()?.toString() as string} />
-				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 			</TableCell>
 
 			<TableCell variant="start" innerClassName="space-x-3" isCompact>
-				<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} iconSize="sm" />
+				<TransactionRowRecipientIcon
+					size="sm"
+					recipient={transaction.recipient()}
+					type={transaction.type()}
+					className={`bg-theme-background font-semibold border-theme-success-200 text-theme-success-600 dark:border-theme-success-600`}
+					circleShadowColor={shadowColor}
+				/>
 				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 			</TableCell>
 

@@ -22,12 +22,11 @@ export const ConfirmSendTransaction = ({
 	const { t } = useTranslation();
 
 	return (
-		<Modal
-			title={t("TRANSACTION.MODAL_CONFIRM_SEND_TRANSACTION.TITLE")}
-			description={t("TRANSACTION.MODAL_CONFIRM_SEND_TRANSACTION.DESCRIPTION")}
-			isOpen={isOpen}
-			onClose={onClose}
-		>
+		<Modal title={t("TRANSACTION.MODAL_CONFIRM_SEND_TRANSACTION.TITLE")} isOpen={isOpen} onClose={onClose}>
+			<div className="my-8 text-theme-secondary-text">
+				{t("TRANSACTION.MODAL_CONFIRM_SEND_TRANSACTION.DESCRIPTION")}
+			</div>
+
 			<UnconfirmedTransactionTable transactions={unconfirmedTransactions} />
 
 			<div className="flex justify-end mt-8 space-x-3">

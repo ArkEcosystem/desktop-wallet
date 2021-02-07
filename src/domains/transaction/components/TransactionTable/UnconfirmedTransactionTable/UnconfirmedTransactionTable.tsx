@@ -17,11 +17,9 @@ export const UnconfirmedTransactionTable = memo(({ transactions }: Props) => {
 			Header: t("COMMON.DATE"),
 			accessor: (transaction: ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 			sortDescFirst: true,
-			cellWidth: "w-50",
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
-			cellWidth: "w-96",
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
