@@ -49,15 +49,109 @@ exports[`ConfirmSendTransaction should render modal 1`] = `
         <div
           class="flex-1"
         >
-          <svg
-            class="my-8"
-          >
-            wallet-update.svg
-          </svg>
           <div
-            class="mt-1 text-theme-secondary-text"
+            class="my-8 text-theme-secondary-text"
           >
             You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?
+          </div>
+          <div
+            class="relative"
+            data-testid="TransactionTable"
+          >
+            <div
+              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              role="table"
+            >
+              <table
+                cellpadding="0"
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                    role="row"
+                  >
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top  "
+                      >
+                        <div>
+                          Date
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform "
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top  "
+                      >
+                        <div>
+                          Recipient
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                      >
+                        <div>
+                          Amount
+                        </div>
+                        <div
+                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                />
+              </table>
+            </div>
           </div>
           <div
             class="flex justify-end mt-8 space-x-3"
@@ -70,7 +164,7 @@ exports[`ConfirmSendTransaction should render modal 1`] = `
               <div
                 class="flex relative items-center space-x-2"
               >
-                Cancel
+                Back
               </div>
             </button>
             <button
@@ -81,7 +175,7 @@ exports[`ConfirmSendTransaction should render modal 1`] = `
               <div
                 class="flex relative items-center space-x-2"
               >
-                Confirm
+                Continue
               </div>
             </button>
           </div>
