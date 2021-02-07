@@ -1,5 +1,5 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { ExtendedTransactionData,Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
