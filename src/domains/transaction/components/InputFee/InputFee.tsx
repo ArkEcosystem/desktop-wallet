@@ -53,7 +53,7 @@ export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, st
 				<ButtonGroupOption
 					disabled={!min}
 					value={minHuman}
-					isSelected={() => fee.display === minHuman}
+					isSelected={() => !!min && fee.display === minHuman}
 					setSelectedValue={() => handleFeeChange({ display: minHuman, value: min })}
 				>
 					{t("TRANSACTION.FEES.SLOW")}
@@ -62,7 +62,7 @@ export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, st
 				<ButtonGroupOption
 					disabled={!avg}
 					value={avgHuman}
-					isSelected={() => fee.display === avgHuman}
+					isSelected={() => !!avg && fee.display === avgHuman}
 					setSelectedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
 				>
 					{t("TRANSACTION.FEES.AVERAGE")}
@@ -71,7 +71,7 @@ export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, st
 				<ButtonGroupOption
 					disabled={!max}
 					value={maxHuman}
-					isSelected={() => fee.display === maxHuman}
+					isSelected={() => !!max && fee.display === maxHuman}
 					setSelectedValue={() => handleFeeChange({ display: maxHuman, value: max })}
 				>
 					{t("TRANSACTION.FEES.FAST")}

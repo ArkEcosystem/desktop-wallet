@@ -17,13 +17,13 @@ export const ButtonGroup = ({ children }: ButtonGroupProps) => (
 
 const ButtonGroupOptionStyled = styled.button`
 	& {
-		${tw`text-xs flex items-center px-4 h-full transition-colors duration-300 focus:outline-none rounded font-bold border-2 border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-600`};
+		${tw`flex items-center px-5 h-full transition-colors duration-300 focus:outline-none rounded font-semibold border-2 border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-text`};
 	}
 	&[aria-checked="true"] {
 		${tw`border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
 	}
 	&:disabled {
-		${tw`cursor-not-allowed`},
+		${tw`border border-theme-secondary-300 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700 cursor-not-allowed`},
 	}
 `;
 
