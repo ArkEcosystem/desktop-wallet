@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -9,6 +9,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
+import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -104,6 +105,7 @@ export const SearchWallet = ({
 	onSelectWallet,
 }: SearchWalletProps) => {
 	const [query, setQuery] = useState("");
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 
@@ -190,7 +192,10 @@ export const SearchWallet = ({
 							coinId={wallet.networkId()}
 							coinName={wallet.coinId()}
 							currency={wallet.currency()}
-							exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
+							exchangeCurrency={
+								wallet.exchangeCurrency() ||
+								(activeProfile.settings().get(ProfileSetting.ExchangeCurrency) as string)
+							}
 							name={wallet.alias()}
 							showFiatValue={showFiatValue}
 							showNetwork={showNetwork}
