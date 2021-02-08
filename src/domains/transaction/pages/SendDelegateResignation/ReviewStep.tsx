@@ -7,17 +7,14 @@ import {
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
 import { evaluateFee } from "domains/transaction/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 
-	const { getValues, unregister, watch } = useFormContext();
-
-	const [watched] = useState(() => watch());
-	const fee = getValues("fee") || watched.fee;
+	const { getValues, unregister } = useFormContext();
 
 	useEffect(() => {
 		unregister("mnemonic");
@@ -26,8 +23,8 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) 
 	return (
 		<section data-testid="SendDelegateResignation__review-step">
 			<Header
-				title={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.REVIEW_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.REVIEW_STEP.DESCRIPTION")}
 			/>
 
 			<TransactionNetwork
@@ -42,7 +39,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) 
 			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox fee={evaluateFee(fee)} ticker={senderWallet.currency()} />
+				<TotalAmountBox fee={evaluateFee(getValues("fee"))} ticker={senderWallet.currency()} />
 			</div>
 		</section>
 	);

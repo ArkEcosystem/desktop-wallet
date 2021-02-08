@@ -1,12 +1,11 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useFees } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { isMnemonicError } from "domains/transaction/utils";
@@ -27,7 +26,9 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 
-	const { formState, getValues, register, setError, setValue, watch } = form;
+	const { common } = useValidation();
+
+	const { formState, getValues, register, setError, setValue } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -38,7 +39,6 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-	const { findByType } = useFees();
 
 	const crumbs = [
 		{
@@ -54,23 +54,13 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 		},
 	];
 
-	const fees = watch("fees");
-
 	useEffect(() => {
-		register("fee");
 		register("fees");
-	}, [register]);
-
-	useEffect(() => {
-		const setTransactionFees = async (wallet: ReadWriteWallet) => {
-			const fees = await findByType(wallet.coinId(), wallet.networkId(), "delegateResignation");
-
-			setValue("fees", fees);
-			setValue("fee", fees.avg || fees.static);
-		};
-
-		setTransactionFees(activeWallet);
-	}, [setValue, activeWallet, findByType]);
+		register(
+			"fee",
+			common.fee(() => getValues("fees"), activeWallet?.balance?.(), activeWallet?.network?.()),
+		);
+	}, [activeWallet, common, getValues, register]);
 
 	const handleBack = () => {
 		if (activeTab === 1) {
@@ -120,91 +110,85 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
-						{fees && (
-							<>
-								<StepIndicator size={4} activeIndex={activeTab} />
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-								<div className="mt-8">
-									<TabPanel tabId={1}>
-										<FormStep fees={fees} senderWallet={activeWallet} />
-									</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FormStep senderWallet={activeWallet} />
+							</TabPanel>
 
-									<TabPanel tabId={2}>
-										<ReviewStep senderWallet={activeWallet} />
-									</TabPanel>
+							<TabPanel tabId={2}>
+								<ReviewStep senderWallet={activeWallet} />
+							</TabPanel>
 
-									<TabPanel tabId={3}>
-										<AuthenticationStep wallet={activeWallet} />
-									</TabPanel>
+							<TabPanel tabId={3}>
+								<AuthenticationStep wallet={activeWallet} />
+							</TabPanel>
 
-									<TabPanel tabId={4}>
-										<SummaryStep senderWallet={activeWallet} transaction={transaction} />
-									</TabPanel>
+							<TabPanel tabId={4}>
+								<SummaryStep senderWallet={activeWallet} transaction={transaction} />
+							</TabPanel>
 
-									<TabPanel tabId={5}>
-										<ErrorStep
-											onBack={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
-											}
-											isRepeatDisabled={isSubmitting || !isValid}
-											onRepeat={form.handleSubmit(handleSubmit)}
-										/>
-									</TabPanel>
+							<TabPanel tabId={5}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={isSubmitting || !isValid}
+									onRepeat={form.handleSubmit(handleSubmit)}
+								/>
+							</TabPanel>
 
-									<div className="flex justify-end mt-10 space-x-3">
-										{activeTab < 4 && (
-											<Button
-												disabled={isSubmitting}
-												data-testid="SendDelegateResignation__back-button"
-												variant="secondary"
-												onClick={handleBack}
-											>
-												{t("COMMON.BACK")}
-											</Button>
-										)}
+							<div className="flex justify-end mt-10 space-x-3">
+								{activeTab < 4 && (
+									<Button
+										disabled={isSubmitting}
+										data-testid="SendDelegateResignation__back-button"
+										variant="secondary"
+										onClick={handleBack}
+									>
+										{t("COMMON.BACK")}
+									</Button>
+								)}
 
-										{activeTab < 3 && (
-											<Button
-												data-testid="SendDelegateResignation__continue-button"
-												disabled={!isValid}
-												onClick={handleNext}
-											>
-												{t("COMMON.CONTINUE")}
-											</Button>
-										)}
+								{activeTab < 3 && (
+									<Button
+										data-testid="SendDelegateResignation__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										{t("COMMON.CONTINUE")}
+									</Button>
+								)}
 
-										{activeTab === 3 && (
-											<Button
-												type="submit"
-												data-testid="SendDelegateResignation__send-button"
-												disabled={!isValid}
-												className="space-x-2"
-												isLoading={isSubmitting}
-												icon="Send"
-											>
-												<span>{t("COMMON.SEND")}</span>
-											</Button>
-										)}
+								{activeTab === 3 && (
+									<Button
+										type="submit"
+										data-testid="SendDelegateResignation__send-button"
+										disabled={!isValid}
+										className="space-x-2"
+										isLoading={isSubmitting}
+										icon="Send"
+									>
+										<span>{t("COMMON.SEND")}</span>
+									</Button>
+								)}
 
-										{activeTab === 4 && (
-											<Button
-												data-testid="SendDelegateResignation__wallet-button"
-												variant="secondary"
-												onClick={() => {
-													history.push(
-														`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-													);
-												}}
-											>
-												{t("COMMON.BACK_TO_WALLET")}
-											</Button>
-										)}
-									</div>
-								</div>
-							</>
-						)}
+								{activeTab === 4 && (
+									<Button
+										data-testid="SendDelegateResignation__wallet-button"
+										variant="secondary"
+										onClick={() => {
+											history.push(
+												`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+											);
+										}}
+									>
+										{t("COMMON.BACK_TO_WALLET")}
+									</Button>
+								)}
+							</div>
+						</div>
 					</Tabs>
 				</Form>
 			</Section>
