@@ -26,7 +26,7 @@ describe("useProfileSyncStatus", () => {
 	});
 
 	it("#idle", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
@@ -42,7 +42,7 @@ describe("useProfileSyncStatus", () => {
 	});
 
 	it("#restoring", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
@@ -62,7 +62,7 @@ describe("useProfileSyncStatus", () => {
 	});
 
 	it("#restored", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
@@ -82,7 +82,7 @@ describe("useProfileSyncStatus", () => {
 	});
 
 	it("#syncing", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
@@ -100,7 +100,7 @@ describe("useProfileSyncStatus", () => {
 	});
 
 	it("#synced", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
@@ -118,7 +118,7 @@ describe("useProfileSyncStatus", () => {
 	});
 
 	it("#completed", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
@@ -207,7 +207,7 @@ describe("useProfileSynchronizer", () => {
 
 	it("should restore profile", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 
 		history.push(dashboardURL);
 
@@ -229,9 +229,9 @@ describe("useProfileSynchronizer", () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 	});
 
-	it("should restore profile and reset test password for demo", async () => {
+	it("should restore profile and reset test password for e2e", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		history.push(dashboardURL);
 
@@ -276,7 +276,7 @@ describe("useProfileRestore", () => {
 
 	it("should restore", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 		profile.wallets().flush();
 
@@ -303,7 +303,7 @@ describe("useProfileRestore", () => {
 
 	it("should restore a profile that uses password", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		const wrapper = ({ children }: any) => (
@@ -327,9 +327,9 @@ describe("useProfileRestore", () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 	});
 
-	it("should restore in demo", async () => {
+	it("should restore in e2e", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		const profile = env.profiles().findById(getDefaultProfileId());
 		profile.wallets().flush();
@@ -357,7 +357,7 @@ describe("useProfileRestore", () => {
 
 	it("should restore only once", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_BUILD_MODE = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
 
 		const profile = env.profiles().findById(getDefaultProfileId());
 		profile.wallets().flush();

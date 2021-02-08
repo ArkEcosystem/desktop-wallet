@@ -65,8 +65,8 @@ const Main = () => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
-				const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
-				if (__DEMO__) {
+				const __E2E__ = process.env.REACT_APP_IS_E2E;
+				if (__E2E__) {
 					migrateProfileFixtures(env);
 				}
 
@@ -113,12 +113,12 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
-	const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
+	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const __STAGING__ = process.env.REACT_APP_BUILD_MODE === "staging";
 
 	let storage: string | StubStorage = "indexeddb";
 	/* istanbul ignore next */
-	if (!__STAGING__ && (__DEV__ || __DEMO__)) {
+	if (!__STAGING__ && (__DEV__ || __E2E__)) {
 		storage = new StubStorage();
 	}
 
