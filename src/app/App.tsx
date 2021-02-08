@@ -34,8 +34,6 @@ import { i18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
 
-const __DEV__ = process.env.NODE_ENV !== "production";
-
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();
