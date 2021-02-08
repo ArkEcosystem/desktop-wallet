@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile,ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -11,6 +11,7 @@ import { SearchWallet } from "./SearchWallet";
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 let wallets: ReadWriteWallet[];
+let profile: Profile;
 
 describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue) => {
 	beforeAll(() => {
@@ -18,7 +19,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 	});
 
 	beforeEach(() => {
-		const profile = env.profiles().findById(getDefaultProfileId());
+		profile = env.profiles().findById(getDefaultProfileId());
 
 		wallets = profile.wallets().values();
 		wallets[0].settings().set(WalletSetting.Alias, "Sample Wallet");
@@ -28,6 +29,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
+					profile={profile}
 					showFiatValue={showFiatValue}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
@@ -50,11 +52,12 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
-	it("should render with BTC as the default exchange currency", async () => {
+	it("should render with the default exchange currency enabled from profile settings", async () => {
 		const walletWithExchangeCurrencyMock = jest.spyOn(wallets[0], "exchangeCurrency").mockReturnValue(undefined);
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
+					profile={profile}
 					showFiatValue={showFiatValue}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
@@ -84,7 +87,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<SearchWallet isOpen={true} onClose={onClose} showFiatValue={showFiatValue} />
+				<SearchWallet profile={profile} isOpen={true} onClose={onClose} showFiatValue={showFiatValue} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -102,6 +105,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		const { getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
+					profile={profile}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
@@ -150,6 +154,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		const { getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
+					profile={profile}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
@@ -199,6 +204,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		const { getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
+					profile={profile}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
@@ -257,6 +263,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		const { getByTestId, queryAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
+					profile={profile}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
