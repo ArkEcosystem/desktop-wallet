@@ -66,7 +66,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 			const fees = await findByType(wallet.coinId(), wallet.networkId(), "delegateResignation");
 
 			setValue("fees", fees);
-			setValue("fee", fees?.avg);
+			setValue("fee", fees.avg || fees.static);
 		};
 
 		setTransactionFees(activeWallet);
@@ -130,7 +130,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 									</TabPanel>
 
 									<TabPanel tabId={2}>
-										<ReviewStep fees={fees} senderWallet={activeWallet} />
+										<ReviewStep senderWallet={activeWallet} />
 									</TabPanel>
 
 									<TabPanel tabId={3}>
@@ -138,11 +138,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 									</TabPanel>
 
 									<TabPanel tabId={4}>
-										<SummaryStep
-											fees={fees}
-											senderWallet={activeWallet}
-											transaction={transaction}
-										/>
+										<SummaryStep senderWallet={activeWallet} transaction={transaction} />
 									</TabPanel>
 
 									<TabPanel tabId={5}>
