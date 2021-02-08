@@ -15,14 +15,14 @@ describe("ButtonGroup", () => {
 
 describe("ButtonGroupOption", () => {
 	it("should render", () => {
-		const isValueChecked = jest.fn((value: any) => (value === 1 ? true : false));
-		const setCheckedValue = jest.fn();
+		const isSelected = jest.fn((value: any) => (value === 1 ? true : false));
+		const setSelectedValue = jest.fn();
 		const { getAllByTestId, asFragment } = render(
 			<>
-				<ButtonGroupOption isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={1}>
+				<ButtonGroupOption isSelected={isSelected} setSelectedValue={setSelectedValue} value={1}>
 					Test 1
 				</ButtonGroupOption>
-				<ButtonGroupOption isValueChecked={isValueChecked} setCheckedValue={setCheckedValue} value={2}>
+				<ButtonGroupOption isSelected={isSelected} setSelectedValue={setSelectedValue} value={2}>
 					Test 2
 				</ButtonGroupOption>
 				,
@@ -34,7 +34,7 @@ describe("ButtonGroupOption", () => {
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 
 		fireEvent.click(buttons[0]);
-		expect(setCheckedValue).toHaveBeenCalledWith(1);
+		expect(setSelectedValue).toHaveBeenCalledWith(1);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -61,6 +61,6 @@ describe("ButtonGroupOption", () => {
 			fireEvent.click(buttons[0]);
 		});
 
-		expect(state.current.checkedValue).toEqual(1);
+		expect(state.current.selectedValue).toEqual(1);
 	});
 });
