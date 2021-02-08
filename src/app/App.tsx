@@ -114,13 +114,8 @@ export const App = () => {
 
 	/* istanbul ignore next */
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	const __STAGING__ = process.env.REACT_APP_BUILD_MODE === "staging";
-
-	let storage: string | StubStorage = "indexeddb";
 	/* istanbul ignore next */
-	if (!__STAGING__ && (__DEV__ || __E2E__)) {
-		storage = new StubStorage();
-	}
+	const storage = __E2E__ ? new StubStorage() : "indexeddb";
 
 	const [env] = useState(
 		() =>
