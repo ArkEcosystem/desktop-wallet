@@ -56,8 +56,6 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const fees = watch("fees");
 
-	console.log(fees);
-
 	useEffect(() => {
 		register("fee");
 		register("fees");
