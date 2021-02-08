@@ -29,7 +29,7 @@ export const UnconfirmedTransactionRow = ({ transaction, walletName, iconSize, .
 				<TimeAgo date={transaction.timestamp()?.toString() as string} />
 			</TableCell>
 
-			<TableCell variant="start" innerClassName="space-x-3" isCompact>
+			<TableCell innerClassName="space-x-3" isCompact>
 				<TransactionRowRecipientIcon
 					size="sm"
 					recipient={transaction.recipient()}
