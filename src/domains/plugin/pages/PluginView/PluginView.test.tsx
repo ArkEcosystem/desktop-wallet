@@ -82,6 +82,39 @@ describe("Plugin View", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should report plugin", async () => {
+		const ipcRendererMock = jest.spyOn(ipcRenderer, "send").mockImplementation();
+		const plugin = new PluginController(
+			{
+				name: "test-plugin",
+				version: "0.0.1",
+			},
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/view">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<PluginView />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		await waitFor(() => expect(screen.queryAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginView__report"));
+
+		expect(ipcRendererMock).toHaveBeenCalledWith(
+			"open-external",
+			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=0.0.1",
+		);
+
+		ipcRendererMock.mockRestore();
+	});
 	it("should uninstall plugin", async () => {
 		const plugin = new PluginController(
 			{
@@ -102,8 +135,6 @@ describe("Plugin View", () => {
 				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
 			},
 		);
-
-		await waitFor(() => expect(screen.queryAllByText("Test Plugin").length).toBeGreaterThan(0));
 
 		fireEvent.click(screen.getByTestId("PluginView__uninstall"));
 

@@ -1,28 +1,15 @@
-import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile, useQueryParams } from "app/hooks";
-import { Comments } from "domains/plugin/components/Comments";
+import { toasts } from "app/services";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
-import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import { usePluginManagerContext } from "plugins";
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { reviewData } from "../../data";
-
-const commentsSortOptions = {
-	type: "Best",
-	direction: "asc",
-};
-
-type PluginDetailsProps = {
-	reviewData?: any;
-};
-
-export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
+export const PluginDetails = () => {
 	const activeProfile = useActiveProfile();
 	const queryParams = useQueryParams();
 	const history = useHistory();
@@ -30,11 +17,20 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
-	const { pluginPackages, pluginConfigurations, pluginManager } = usePluginManagerContext();
+	const {
+		pluginPackages,
+		pluginConfigurations,
+		pluginManager,
+		installPlugin,
+		reportPlugin,
+	} = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
+	const repositoryURL = queryParams.get("repositoryURL");
+
 	const pluginCtrl = pluginManager.plugins().findById(pluginId!);
 	const isInstalled = !!pluginCtrl;
+	const hasLaunch = !!pluginCtrl?.hooks().hasCommand("service:launch.render");
 
 	const latestConfiguration = useMemo(() => pluginConfigurations.find((item) => item.id() === pluginId), [
 		pluginConfigurations,
@@ -55,7 +51,8 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	}, [isInstalled, packageConfiguration, latestConfiguration]);
 
 	const pluginData = plugin?.toObject() || ({} as any);
-	const { comments, ratings, totalAvaliations } = reviewData;
+
+	const { title } = pluginData;
 
 	const crumbs = [
 		{
@@ -63,9 +60,26 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 			route: `/profiles/${activeProfile.id()}/plugins`,
 		},
 		{
-			label: pluginData.title,
+			label: title,
 		},
 	];
+
+	const handleReportPlugin = () => {
+		reportPlugin(plugin!);
+	};
+
+	const handleInstallPlugin = useCallback(async () => {
+		try {
+			await installPlugin(pluginId!, repositoryURL!);
+			toasts.success(`The plugin "${title}" was successfully installed`);
+		} catch {
+			toasts.error(`Failed to install plugin "${title}"`);
+		}
+	}, [installPlugin, pluginId, repositoryURL, title]);
+
+	const handleLaunch = () => {
+		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginId}`);
+	};
 
 	const handleOnDelete = () => {
 		history.push(`/profiles/${activeProfile.id()}/plugins`);
@@ -74,35 +88,19 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
-				<PluginHeader {...pluginData} isInstalled={isInstalled} onUninstall={() => setIsUninstallOpen(true)} />
+				<PluginHeader
+					{...pluginData}
+					isInstalled={isInstalled}
+					onUninstall={() => setIsUninstallOpen(true)}
+					onReport={handleReportPlugin}
+					onInstall={handleInstallPlugin}
+					hasLaunch={hasLaunch}
+					onLaunch={handleLaunch}
+				/>
 			</Section>
 
 			<Section>
-				<PluginInfo {...pluginData} isInstalled={isInstalled} />
-			</Section>
-
-			<Section>
-				<div className="flex">
-					<div className="flex flex-col">
-						<div className="flex justify-between items-center">
-							<h2 className="mb-0">Reviews ARK Explorer</h2>
-							<Button data-testid="ReviewBox__button--comment" variant="secondary">
-								Leave a comment
-							</Button>
-						</div>
-
-						<div className="col-span-2" data-testid="plugin-details__comments">
-							<Comments comments={comments} sortOptions={commentsSortOptions} />
-						</div>
-					</div>
-
-					<div
-						className="p-8 mb-auto ml-32 rounded-xl border-2 border-theme-secondary-300 dark:border-theme-secondary-800"
-						data-testid="plugin-details__review-box"
-					>
-						<ReviewBox averageScore={""} ratings={ratings} totalAvaliations={totalAvaliations} />
-					</div>
-				</div>
+				<PluginInfo {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
 			</Section>
 
 			{pluginCtrl && (
@@ -116,8 +114,4 @@ export const PluginDetails = ({ reviewData }: PluginDetailsProps) => {
 			)}
 		</Page>
 	);
-};
-
-PluginDetails.defaultProps = {
-	reviewData,
 };
