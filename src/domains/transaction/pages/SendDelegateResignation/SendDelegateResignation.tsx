@@ -50,7 +50,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
 		},
 		{
-			label: t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE"),
+			label: t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.TITLE"),
 		},
 	];
 
