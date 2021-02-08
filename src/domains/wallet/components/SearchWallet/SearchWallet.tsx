@@ -1,4 +1,4 @@
-import { Profile,ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -126,7 +126,7 @@ export const SearchWallet = ({
 			return [
 				...commonColumns,
 				{
-					Header: t("COMMON.FIAT_VALUE"),
+					Header: t("COMMON.VALUE"),
 					accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
 					className: "justify-end",
 				},
