@@ -176,9 +176,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                       <div
                         class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
-                        data-testid="Input-error"
                       >
-                        <span>
+                        <span
+                          data-errortext="'Password' should have at least 6 characters"
+                          data-testid="Input-error"
+                        >
                           <div
                             class="sc-bdfBwQ iyevwF text-theme-danger-500"
                             height="20"
@@ -238,9 +240,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                       <div
                         class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
-                        data-testid="Input-error"
                       >
-                        <span>
+                        <span
+                          data-errortext="Passwords do not match"
+                          data-testid="Input-error"
+                        >
                           <div
                             class="sc-bdfBwQ iyevwF text-theme-danger-500"
                             height="20"
@@ -792,9 +796,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           />
                           <div
                             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
-                            data-testid="Input-error"
                           >
-                            <span>
+                            <span
+                              data-errortext="A profile with this name already exists"
+                              data-testid="Input-error"
+                            >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
                                 height="20"
@@ -1467,9 +1473,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           />
                           <div
                             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
-                            data-testid="Input-error"
                           >
-                            <span>
+                            <span
+                              data-errortext="'Name' should have at most 42 characters"
+                              data-testid="Input-error"
+                            >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
                                 height="20"

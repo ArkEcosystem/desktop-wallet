@@ -67,9 +67,9 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 				/>
 
 				{isInvalidValue && (
-					<InputAddonEnd className={cn("my-px mr-4", errorClassName)} data-testid="Input-error">
+					<InputAddonEnd className={cn("my-px mr-4", errorClassName)}>
 						<Tooltip content={fieldContext?.errorMessage} variant="small">
-							<span>
+							<span data-errortext={fieldContext?.errorMessage} data-testid="Input-error">
 								<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
 							</span>
 						</Tooltip>

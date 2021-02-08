@@ -143,6 +143,9 @@ describe("SignIn", () => {
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(() => expect(getByTestId("Input-error")).toBeVisible(), { timeout: 10000 });
+		await waitFor(
+			() => expect(getByTestId("Input-error")).toHaveAttribute("data-errortext", "The Password is invalid"),
+			{ timeout: 10000 },
+		);
 	});
 });

@@ -1196,9 +1196,11 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             />
                             <div
                               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
-                              data-testid="Input-error"
                             >
-                              <span>
+                              <span
+                                data-errortext="Profile name already exists"
+                                data-testid="Input-error"
+                              >
                                 <div
                                   class="sc-bdfBwQ iyevwF text-theme-danger-500"
                                   height="20"

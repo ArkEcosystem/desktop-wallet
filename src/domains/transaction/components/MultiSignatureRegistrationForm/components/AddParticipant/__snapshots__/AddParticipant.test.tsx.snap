@@ -52,9 +52,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
-              data-testid="Input-error"
             >
-              <span>
+              <span
+                data-errortext="The address could not be found"
+                data-testid="Input-error"
+              >
                 <div
                   class="sc-bdfBwQ iyevwF text-theme-danger-500"
                   height="20"
@@ -296,9 +298,11 @@ exports[`Add Participant should fail to find 1`] = `
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
-              data-testid="Input-error"
             >
-              <span>
+              <span
+                data-errortext="The address could not be found"
+                data-testid="Input-error"
+              >
                 <div
                   class="sc-bdfBwQ iyevwF text-theme-danger-500"
                   height="20"
@@ -540,9 +544,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
-              data-testid="Input-error"
             >
-              <span>
+              <span
+                data-errortext="The public key could not be found"
+                data-testid="Input-error"
+              >
                 <div
                   class="sc-bdfBwQ iyevwF text-theme-danger-500"
                   height="20"
