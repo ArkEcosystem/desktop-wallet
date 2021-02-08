@@ -23,7 +23,7 @@
 	"scripts": {
 		"build": "yarn compile && react-app-rewired build",
 		"build:ci": "cross-env REACT_APP_IS_E2E=1 GENERATE_SOURCEMAP=false yarn build",
-		"build:e2e": "cross-env REACT_APP_BUILD_MODE=e2e yarn build:ci",
+		"build:e2e": "cross-env REACT_APP_IS_E2E=1 GENERATE_SOURCEMAP=false yarn build",
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
 		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
