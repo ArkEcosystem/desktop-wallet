@@ -61,9 +61,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const trigger = useCallback(() => setState((prev: any) => ({ ...prev })), []);
 
-	const reportPlugin = useCallback((plugin: PluginController) => {
-		const name = plugin.config().get("name");
-		const version = plugin.config().get("version");
+	const reportPlugin = useCallback((pluginConfig: PluginConfigurationData) => {
+		const name = pluginConfig.name();
+		const version = pluginConfig.version();
 
 		const url = `https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=${name}&plugin_version=${version}`;
 
