@@ -1,11 +1,12 @@
 import Tippy, { TippyProps } from "@tippyjs/react";
 import { useThemeName } from "app/hooks";
 import React from "react";
+import { Size } from "types";
 
 import { getVariantClassNames } from "./Tooltip.styles";
 
 export type TooltipProps = {
-	variant: "default" | "sm";
+	variant: Size;
 } & TippyProps;
 
 export const Tooltip = ({ variant, ...props }: TooltipProps) => {
@@ -17,5 +18,5 @@ export const Tooltip = ({ variant, ...props }: TooltipProps) => {
 };
 
 Tooltip.defaultProps = {
-	variant: "default",
+	variant: "5xl", // Trigger default handler
 };
