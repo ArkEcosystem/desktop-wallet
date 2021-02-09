@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
@@ -71,6 +71,7 @@ export const GenerationStep = ({
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={step}
+						showFeeOptions={wallet.network().can(Coins.FeatureFlag.MiscellaneousDynamicFees)}
 						onChange={(currency) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}

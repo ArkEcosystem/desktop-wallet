@@ -13,8 +13,9 @@ type CurrencyInput = {
 };
 
 type Props = {
-	avg: any;
+	disabled?: boolean;
 	value?: CurrencyInput;
+	avg: any;
 	min: string;
 	max: string;
 	step: number;
@@ -25,7 +26,7 @@ type Props = {
 
 // TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
+	({ min, max, step, avg, magnitude, onChange, value, disabled }: Props, ref) => {
 		const { formatRange, convertToCurrency } = useCurrencyDisplay();
 		const [values, setValues] = React.useState<CurrencyInput[]>([convertToCurrency(avg)]);
 
@@ -50,14 +51,19 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		return (
 			<InputGroup>
 				<InputCurrency
-					style={{
-						background: getTrackBackground({
-							values: [trackBackgroundMinValue],
-							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
-							min: minValue,
-							max: Number(max),
-						}),
-					}}
+					disabled={disabled}
+					style={
+						disabled
+							? undefined
+							: {
+									background: getTrackBackground({
+										values: [trackBackgroundMinValue],
+										colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
+										min: minValue,
+										max: Number(max),
+									}),
+							  }
+					}
 					magnitude={magnitude}
 					value={values[0].display}
 					ref={ref}

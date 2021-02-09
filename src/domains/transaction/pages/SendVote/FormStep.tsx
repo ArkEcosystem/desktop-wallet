@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -99,6 +99,7 @@ export const FormStep = ({
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
+						showFeeOptions={wallet.network().can(Coins.FeatureFlag.MiscellaneousDynamicFees)}
 						onChange={(currency) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}
