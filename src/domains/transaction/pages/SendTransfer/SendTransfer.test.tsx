@@ -729,6 +729,10 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
 			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
+			// Smartbridge
+			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
