@@ -496,7 +496,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -520,12 +520,31 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                             class="InputGroup-sc-1obbdqe-3 bgPpWR"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                              aria-invalid="true"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
                               data-testid="InputCurrency"
                               name="fee"
                               type="text"
                               value="1"
                             />
+                            <div
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                            >
+                              <span
+                                data-errortext="The selected fee is below the minimum  (25.00000000 ARK) and may not be forged"
+                                data-testid="Input-error"
+                              >
+                                <div
+                                  class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                                  height="20"
+                                  width="20"
+                                >
+                                  <svg>
+                                    alert-warning.svg
+                                  </svg>
+                                </div>
+                              </span>
+                            </div>
                           </div>
                         </div>
                         <div
@@ -562,6 +581,11 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                           </button>
                         </div>
                       </div>
+                      <p
+                        class="font-normal text-sm text-theme-danger-500"
+                      >
+                        The selected fee is below the minimum  (25.00000000 ARK) and may not be forged
+                      </p>
                     </fieldset>
                   </section>
                 </div>
@@ -580,8 +604,9 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                     </div>
                   </button>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                    class="Button__StyledButton-mdtvtf-0 kwcZQn"
                     data-testid="SendDelegateResignation__continue-button"
+                    disabled=""
                     type="button"
                   >
                     <div
