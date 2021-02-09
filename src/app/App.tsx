@@ -34,8 +34,6 @@ import { i18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
 
-const __DEV__ = process.env.NODE_ENV !== "production";
-
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();
@@ -65,8 +63,8 @@ const Main = () => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
-				const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
-				if (__DEMO__) {
+				const __E2E__ = process.env.REACT_APP_IS_E2E;
+				if (__E2E__) {
 					migrateProfileFixtures(env);
 				}
 
@@ -113,14 +111,9 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
-	const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
-	const __STAGING__ = process.env.REACT_APP_BUILD_MODE === "staging";
-
-	let storage: string | StubStorage = "indexeddb";
+	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	/* istanbul ignore next */
-	if (!__STAGING__ && (__DEV__ || __DEMO__)) {
-		storage = new StubStorage();
-	}
+	const storage = __E2E__ ? new StubStorage() : "indexeddb";
 
 	const [env] = useState(
 		() =>

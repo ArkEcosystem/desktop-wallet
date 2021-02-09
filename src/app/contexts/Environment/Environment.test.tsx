@@ -113,8 +113,8 @@ describe("Environment Context", () => {
 		await waitFor(() => expect(profile.settings().get(ProfileSetting.Name)).toEqual("bar"));
 	});
 
-	it("should not persist on demo", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+	it("should not persist on e2e", async () => {
+		process.env.REACT_APP_IS_E2E = "1";
 		const Details = () => {
 			const context = useEnvironmentContext();
 			const count = React.useMemo(() => context.env.profiles().count(), [context]);
