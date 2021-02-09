@@ -1,5 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
+import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
@@ -113,22 +113,26 @@ export const Welcome = () => {
 										onSelect={(action: any) => handleProfileAction(profile, action)}
 									/>
 								))}
-								<div className="rounded-lg overflow-hidden m-2.5">
-									<Button
-										variant="secondary"
-										className="w-40 h-40"
-										onClick={() => history.push("/profiles/create")}
-									>
-										<div className="flex flex-col justify-center items-center">
-											<Circle size="xl" noShadow>
+
+								<Card
+									className="w-40 h-40 leading-tight m-2.5 group"
+									onClick={() => history.push("/profiles/create")}
+								>
+									<div className="flex flex-col justify-center items-center mx-auto h-full">
+										<div>
+											<Circle
+												size="xl"
+												noShadow
+												className="dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-600"
+											>
 												<Icon name="Plus" width={12} height={12} />
 											</Circle>
-											<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">
-												{t("PROFILE.CREATE_PROFILE")}
-											</span>
 										</div>
-									</Button>
-								</div>
+										<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-600">
+											{t("PROFILE.CREATE_PROFILE")}
+										</span>
+									</div>
+								</Card>
 							</div>
 						</div>
 					</div>
