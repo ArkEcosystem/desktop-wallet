@@ -1,4 +1,9 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Checkbox } from "app/components/Checkbox";
+import { Clipboard } from "app/components/Clipboard";
+import { Input, InputCurrency } from "app/components/Input";
+import { Spinner } from "app/components/Spinner";
+import { TabPanel, Tabs } from "app/components/Tabs";
 import { runUnknownCode } from "plugins/loader/vm";
 
 import { Box } from "../components/shared/Box";
@@ -88,7 +93,10 @@ export class PluginControllerRepository {
 
 		for (const entry of instances) {
 			try {
-				const callback = runUnknownCode(entry.source, entry.sourcePath, { ark: { Components: { Box } } });
+				const callback = runUnknownCode(entry.source, entry.sourcePath, {
+					ark: { Components: { Box, Tabs, TabPanel, Spinner, Clipboard, Input, InputCurrency, Checkbox } },
+					window,
+				});
 				const plugin = new PluginController(
 					entry.config,
 					// @ts-ignore
