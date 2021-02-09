@@ -31,7 +31,7 @@ export const translations: { [key: string]: any } = {
 			ADVANCED_MODE: {
 				TITLE: "Advanced Mode",
 				DESCRIPTION:
-					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
+					"Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.",
 			},
 			AUTOMATIC_SIGN_OUT_PERIOD: {
 				TITLE: "Automatic Sign Out Period",
@@ -41,17 +41,15 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Other",
 			DARK_THEME: {
 				TITLE: "Dark Theme",
-				DESCRIPTION: "Enables a dark, high contrast color scheme.",
+				DESCRIPTION: "When enabled, changes to a dark, high contrast theme.",
 			},
 			DEVELOPMENT_NETWORKS: {
-				TITLE: "Development Network",
-				DESCRIPTION:
-					"To create or import wallets from development and/or test networks, you must first enable this feature.",
+				TITLE: "Development Networks",
+				DESCRIPTION: "When enabled, allows application to add development and test networks.",
 			},
 			UPDATE_LEDGER: {
 				TITLE: "Update Ledger in Background",
-				DESCRIPTION:
-					"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
+				DESCRIPTION: "Allows Ledger wallets to automatically update and sync data in the background.",
 			},
 		},
 		SUCCESS: "Your profile settings have been updated",
