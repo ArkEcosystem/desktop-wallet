@@ -372,7 +372,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SearchWallet uses fiat value = false should render with BTC as the default exchange currency 1`] = `
+exports[`SearchWallet uses fiat value = false should render with the default exchange currency enabled from profile settings 1`] = `
 <DocumentFragment>
   <div
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
@@ -884,7 +884,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
-                          Fiat Value
+                          Value
                         </div>
                         <div
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -1168,7 +1168,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SearchWallet uses fiat value = true should render with BTC as the default exchange currency 1`] = `
+exports[`SearchWallet uses fiat value = true should render with the default exchange currency enabled from profile settings 1`] = `
 <DocumentFragment>
   <div
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
@@ -1308,7 +1308,7 @@ exports[`SearchWallet uses fiat value = true should render with BTC as the defau
                         class="flex flex-inline align-top justify-end flex-row-reverse"
                       >
                         <div>
-                          Fiat Value
+                          Value
                         </div>
                         <div
                           class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"

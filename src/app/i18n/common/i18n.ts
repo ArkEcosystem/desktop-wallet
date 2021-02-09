@@ -68,6 +68,7 @@ export const translations: { [key: string]: any } = {
 	FAVORITES: "Favorites",
 	FETCH: "Fetch",
 	FIAT_VALUE: "Fiat Value",
+	VALUE: "Value",
 	FILTER_BLACKLISTED_PLUGINS: "Apply blacklist",
 	FINISH: "Finish",
 	FORGED_ARK: "Forged ARK",

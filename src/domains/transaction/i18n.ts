@@ -170,6 +170,12 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Transaction IPFS Hash",
 	},
 
+	MODAL_CONFIRM_SEND_TRANSACTION: {
+		TITLE: "Confirm Transaction",
+		DESCRIPTION:
+			"You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?",
+	},
+
 	MODAL_SECOND_SIGNATURE_DETAIL: {
 		TITLE: "Second Signature",
 	},
@@ -184,7 +190,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Confirm Your Transaction",
 		DESCRIPTION:
 			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
-		LOADING_MESSAGE: "Waiting for confirmation ...",
+		LOADING_MESSAGE: "Waiting for confirmation …",
 	},
 
 	LINK_TYPES: {
@@ -260,7 +266,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_RESIGN_REGISTRATION: {
-		FIRST_STEP: {
+		FORM_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",
 				DESCRIPTION: "Resign your delegate for always.",
@@ -268,12 +274,9 @@ export const translations: { [key: string]: any } = {
 					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
 			},
 		},
-		SECOND_STEP: {
+		REVIEW_STEP: {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Check the information again before Resignation",
-		},
-		FOURTH_STEP: {
-			TITLE: "Delegate Resignation",
 		},
 	},
 

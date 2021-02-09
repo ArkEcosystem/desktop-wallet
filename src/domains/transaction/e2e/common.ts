@@ -42,8 +42,7 @@ export const goToDelegateResignationPage = async (t: any) => {
 
 	await t
 		.expect(
-			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE)
-				.exists,
+			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.TITLE).exists,
 		)
 		.ok();
 };
