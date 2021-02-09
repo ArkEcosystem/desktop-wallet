@@ -1,6 +1,6 @@
 export const getVariantClassNames = (variant: string) => {
 	switch (variant) {
-		case "small":
+		case "sm":
 			return "text-xs font-medium";
 		default:
 			return "";
