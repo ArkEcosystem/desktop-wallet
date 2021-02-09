@@ -22,6 +22,8 @@ const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
 			return tw`bg-theme-primary-600 hover:bg-theme-primary-700 text-white`;
 		case "secondary":
 			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white`;
+		case "tertiary":
+			return tw`border-2 rounded-lg bg-theme-background border-theme-primary-100 hover:border-theme-background dark:border-theme-secondary-800 text-theme-primary-600 hover:text-theme-primary-700 dark:text-white hover:dark:text-white`;
 		case "danger":
 			return tw`bg-theme-danger-100 dark:bg-theme-danger-400 hover:bg-theme-danger-400 dark:hover:bg-theme-danger-500 text-theme-danger-400 dark:text-white hover:text-white`;
 		default:

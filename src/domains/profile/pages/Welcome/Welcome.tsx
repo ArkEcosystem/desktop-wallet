@@ -1,5 +1,4 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
@@ -13,6 +12,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
+
+import { Button } from "./Welcome.styles";
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();
@@ -113,22 +114,20 @@ export const Welcome = () => {
 										onSelect={(action: any) => handleProfileAction(profile, action)}
 									/>
 								))}
-								<div className="rounded-lg overflow-hidden m-2.5">
-									<Button
-										variant="secondary"
-										className="w-40 h-40"
-										onClick={() => history.push("/profiles/create")}
-									>
-										<div className="flex flex-col justify-center items-center">
-											<Circle size="xl" noShadow>
-												<Icon name="Plus" width={12} height={12} />
-											</Circle>
-											<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">
-												{t("PROFILE.CREATE_PROFILE")}
-											</span>
-										</div>
-									</Button>
-								</div>
+								<Button
+									variant="tertiary"
+									className="w-40 h-40 m-2.5 hover:shadow-xl"
+									onClick={() => history.push("/profiles/create")}
+								>
+									<div className="flex flex-col justify-center items-center">
+										<Circle size="xl" noShadow>
+											<Icon name="Plus" width={12} height={12} />
+										</Circle>
+										<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate">
+											{t("PROFILE.CREATE_PROFILE")}
+										</span>
+									</div>
+								</Button>
 							</div>
 						</div>
 					</div>
