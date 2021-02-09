@@ -266,7 +266,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_RESIGN_REGISTRATION: {
-		FIRST_STEP: {
+		FORM_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",
 				DESCRIPTION: "Resign your delegate for always.",
@@ -274,12 +274,9 @@ export const translations: { [key: string]: any } = {
 					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
 			},
 		},
-		SECOND_STEP: {
+		REVIEW_STEP: {
 			TITLE: "Transaction Review",
 			DESCRIPTION: "Check the information again before Resignation",
-		},
-		FOURTH_STEP: {
-			TITLE: "Delegate Resignation",
 		},
 	},
 

@@ -1,12 +1,19 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import { StepProps } from "domains/transaction/pages/SendDelegateResignation/SendDelegateResignation.models";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const SummaryStep = ({ fees, senderWallet, transaction }: StepProps) => {
+export const SummaryStep = ({
+	senderWallet,
+	transaction,
+}: {
+	senderWallet: ReadWriteWallet;
+	transaction: Contracts.SignedTransactionData;
+}) => {
 	const { t } = useTranslation();
 
 	return (
@@ -25,7 +32,7 @@ export const SummaryStep = ({ fees, senderWallet, transaction }: StepProps) => {
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
-				<TransactionFee currency={senderWallet.currency()} value={transaction!.fee()} paddingPosition="top" />
+				<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
 			</TransactionSuccessful>
 		</section>
 	);
