@@ -67,7 +67,7 @@ describe("App", () => {
 	});
 
 	it("should render splash screen", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 
@@ -82,7 +82,7 @@ describe("App", () => {
 	});
 
 	it.each([false, true])("should set the theme based on system preferences", async (shouldUseDarkColors) => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
 
@@ -96,7 +96,7 @@ describe("App", () => {
 	});
 
 	it("should enter profile", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
@@ -134,8 +134,8 @@ describe("App", () => {
 		const profileDashboardUrl = `/profiles/${passwordProtectedProfile.id()}/dashboard`;
 		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
 	});
-	it("should close splash screen if not demo", async () => {
-		process.env.REACT_APP_BUILD_MODE = undefined;
+	it("should close splash screen if not e2e", async () => {
+		process.env.REACT_APP_IS_E2E = "1";
 
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 
@@ -146,7 +146,7 @@ describe("App", () => {
 	});
 
 	it("should render welcome screen after splash screen", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 		expect(getByTestId("Splash__text")).toBeInTheDocument();
@@ -163,7 +163,7 @@ describe("App", () => {
 	});
 
 	it("should render the offline screen if there is no internet connection", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		jest.spyOn(window.navigator, "onLine", "get").mockReturnValueOnce(false);
 
@@ -191,7 +191,7 @@ describe("App", () => {
 			throw new Error("failed to boot env");
 		});
 
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		let rendered: RenderResult;
 
@@ -217,7 +217,7 @@ describe("App", () => {
 	});
 
 	it("should render mock", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
+		process.env.REACT_APP_IS_E2E = "1";
 
 		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 		expect(getByTestId("Splash__text")).toBeInTheDocument();

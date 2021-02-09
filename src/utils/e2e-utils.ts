@@ -158,7 +158,11 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/devnet/transactions"),
-		mockRequest("https://dwallets.ark.io/api/transactions?limit=30", "coins/ark/devnet/transactions"),
+		// unconfirmed transactions list before sending single or multiPayment transaction
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+			{ meta: {}, data: [] },
+		),
 
 		...searchAddressesMocks(),
 	],

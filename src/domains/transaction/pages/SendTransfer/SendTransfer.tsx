@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
@@ -10,7 +10,9 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { useTransaction } from "domains/transaction/hooks/use-transaction";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -29,11 +31,14 @@ export const SendTransfer = () => {
 	const { state } = location;
 
 	const [activeTab, setActiveTab] = useState(1);
+	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
+	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -55,6 +60,7 @@ export const SendTransfer = () => {
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
 	useEffect(() => {
 		register("remainingBalance");
@@ -278,7 +284,7 @@ export const SendTransfer = () => {
 													data-testid="SendTransfer__button--continue"
 													disabled={!isValid || isSubmitting}
 													onClick={handleNext}
-													isLoading={isSubmitting}
+													isLoading={isSubmitting || isConfirming}
 												>
 													{t("COMMON.CONTINUE")}
 												</Button>
@@ -296,11 +302,25 @@ export const SendTransfer = () => {
 												</Button>
 
 												<Button
-													type="submit"
+													onClick={async () => {
+														setIsConfirming(true);
+
+														const unconfirmed = await fetchWalletUnconfirmedTransactions(
+															activeWallet,
+														);
+
+														setUnconfirmedTransactions(unconfirmed);
+
+														if (unconfirmed.length > 0) {
+															return;
+														}
+
+														handleSubmit(submitForm)();
+													}}
 													data-testid="SendTransfer__button--submit"
-													disabled={!isValid || isSubmitting}
+													disabled={!isValid || isSubmitting || isConfirming}
 													icon="Send"
-													isLoading={isSubmitting}
+													isLoading={isSubmitting || isConfirming}
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>
@@ -324,6 +344,19 @@ export const SendTransfer = () => {
 							</div>
 						</div>
 					</Tabs>
+
+					<ConfirmSendTransaction
+						unconfirmedTransactions={unconfirmedTransactions}
+						isOpen={unconfirmedTransactions.length > 0}
+						onConfirm={() => {
+							handleSubmit(submitForm)();
+							setUnconfirmedTransactions([]);
+						}}
+						onClose={() => {
+							setIsConfirming(false);
+							setUnconfirmedTransactions([]);
+						}}
+					/>
 				</Form>
 			</Section>
 		</Page>
