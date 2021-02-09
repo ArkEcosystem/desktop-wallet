@@ -91,10 +91,8 @@ export const SendTransactionForm = ({
 
 	return (
 		<div className="space-y-8 SendTransactionForm">
-			<FormField name="network" className="relative">
-				<div className="mb-2">
-					<FormLabel label={t("COMMON.CRYPTOASSET")} />
-				</div>
+			<FormField name="network">
+				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="SendTransactionForm__network"
 					networks={availableNetworks}
@@ -106,10 +104,8 @@ export const SendTransactionForm = ({
 				/>
 			</FormField>
 
-			<FormField name="senderAddress" className="relative">
-				<div className="mb-2">
-					<FormLabel label={t("TRANSACTION.SENDER")} />
-				</div>
+			<FormField name="senderAddress">
+				<FormLabel label={t("TRANSACTION.SENDER")} />
 
 				<div data-testid="sender-address">
 					<SelectAddress
