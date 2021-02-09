@@ -69,7 +69,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					ref={ref}
 					onChange={handleInput}
 				/>
-				{Number(min) < Number(max) && (
+				{!disabled && Number(min) < Number(max) && (
 					<div className="absolute bottom-0 px-1 w-full">
 						<Range
 							colors={["var(--theme-color-primary-600)", "transparent"]}
