@@ -4,7 +4,7 @@ import { useConfiguration } from "app/contexts";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useMemo } from "react";
 
-export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
+export const useDashboardConfig = ({ profile, defaults }: { profile: Profile; defaults?: DashboardConfiguration }) => {
 	const defaultConfiguration: DashboardConfiguration = {
 		showTransactions: true,
 		walletsDisplayType: "all",
@@ -15,6 +15,7 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 				.values()
 				.map((wallet) => wallet.network().id()),
 		),
+		...defaults,
 	};
 
 	const { dashboard, setConfiguration } = useConfiguration();
@@ -35,8 +36,34 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 		profile.settings().set(ProfileSetting.DashboardConfiguration, dashboardConfiguration);
 	};
 
+	const { selectedNetworkIds, walletsDisplayType } = dashboardConfiguration;
+	const allWalletsLength = profile.wallets().values().length;
+	const selectedWallets = useMemo(
+		() =>
+			profile
+				.wallets()
+				.values()
+				.filter((wallet) => {
+					if (!selectedNetworkIds?.includes(wallet.network().id())) {
+						return false;
+					}
+
+					if (walletsDisplayType === "favorites") {
+						return wallet.isStarred();
+					}
+
+					if (walletsDisplayType === "ledger") {
+						return wallet.isLedger();
+					}
+
+					return true;
+				}),
+		[profile, dashboard, selectedNetworkIds, walletsDisplayType, allWalletsLength],
+	);
+
 	return {
 		setValue,
+		selectedWallets,
 		...dashboardConfiguration,
 		defaultConfiguration,
 	};
