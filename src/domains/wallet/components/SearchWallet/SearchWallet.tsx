@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -89,6 +89,7 @@ type SearchWalletProps = {
 	showNetwork?: boolean;
 	onClose?: any;
 	onSelectWallet?: any;
+	profile?: Profile;
 };
 
 export const SearchWallet = ({
@@ -102,6 +103,7 @@ export const SearchWallet = ({
 	showNetwork,
 	onClose,
 	onSelectWallet,
+	profile,
 }: SearchWalletProps) => {
 	const [query, setQuery] = useState("");
 
@@ -124,7 +126,7 @@ export const SearchWallet = ({
 			return [
 				...commonColumns,
 				{
-					Header: t("COMMON.FIAT_VALUE"),
+					Header: t("COMMON.VALUE"),
 					accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
 					className: "justify-end",
 				},
@@ -190,7 +192,10 @@ export const SearchWallet = ({
 							coinId={wallet.networkId()}
 							coinName={wallet.coinId()}
 							currency={wallet.currency()}
-							exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
+							exchangeCurrency={
+								wallet.exchangeCurrency() ||
+								(profile?.settings().get(ProfileSetting.ExchangeCurrency) as string)
+							}
 							name={wallet.alias()}
 							showFiatValue={showFiatValue}
 							showNetwork={showNetwork}

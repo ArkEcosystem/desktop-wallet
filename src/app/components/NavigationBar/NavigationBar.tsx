@@ -288,6 +288,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 			{profile && (
 				<>
 					<SearchWallet
+						profile={profile}
 						isOpen={searchWalletIsOpen}
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}

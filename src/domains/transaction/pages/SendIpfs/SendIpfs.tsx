@@ -150,13 +150,7 @@ export const SendIpfs = () => {
 							<TabPanel tabId={3}>
 								<AuthenticationStep
 									wallet={activeWallet}
-									ledgerDetails={
-										<IpfsLedgerReview
-											wallet={activeWallet}
-											fee={getValues("fee")}
-											hash={getValues("hash")}
-										/>
-									}
+									ledgerDetails={<IpfsLedgerReview wallet={activeWallet} />}
 								/>
 							</TabPanel>
 							<TabPanel tabId={4}>

@@ -1,5 +1,5 @@
 import { Currency } from "@arkecosystem/platform-sdk-intl";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { Input } from "./Input";
 import { InputGroup } from "./InputGroup";
@@ -9,10 +9,21 @@ type Props = { onChange?: (value: any) => void; magnitude?: number; errorClassNa
 	"onChange" | "defaultValue"
 >;
 
+interface ISelectionRange {
+	start: number | null;
+	end: number | null;
+}
+
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, magnitude, children, errorClassName, ...props }: Props, ref) => {
+	({ onChange, value, magnitude, children, errorClassName, ...props }: Props, ref: any) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
 		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
+		const [selectionRange, setSelectionRange] = useState<ISelectionRange>({
+			start: null,
+			end: null,
+		});
+
+		ref = useRef<HTMLInputElement>();
 
 		useEffect(() => {
 			const evaluateValue = (value: any) => {
@@ -27,10 +38,18 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		}, [value]); // eslint-disable-line react-hooks/exhaustive-deps
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-			const { value } = event.target;
+			const { value, selectionStart, selectionEnd } = event.target;
+
+			setSelectionRange({ start: selectionStart, end: selectionEnd });
 
 			onChange?.(convertValue(value));
+
+			setAmount(convertValue(value));
 		};
+
+		useLayoutEffect(() => {
+			ref.current.setSelectionRange(selectionRange.start, selectionRange.end);
+		}, [amount, ref, selectionRange.start, selectionRange.end]);
 
 		return (
 			<InputGroup>

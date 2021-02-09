@@ -13,7 +13,7 @@ type Props = {
 export const EnvironmentContext = React.createContext<any>(undefined);
 
 export const EnvironmentProvider = ({ children, env }: Props) => {
-	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
+	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const [state, setState] = React.useState<any>(undefined);
 
 	const history = useHistory();
@@ -21,8 +21,8 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 
 	const persist = React.useCallback(
 		async (profile?: Profile) => {
-			if (isDemo) {
-				// prevent from persisting in demo. e2e tests hang.
+			if (__E2E__) {
+				// prevent from persisting when in e2e mode. Tests failing
 				setState({});
 				return;
 			}
@@ -38,7 +38,7 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 			// Force update
 			setState({});
 		},
-		[env, isDemo, getProfileFromUrl, history],
+		[env, __E2E__, getProfileFromUrl, history],
 	);
 
 	return (
