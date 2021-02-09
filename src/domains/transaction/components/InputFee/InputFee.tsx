@@ -1,5 +1,5 @@
-import { InputRange } from "app/components/Input";
 import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
+import { InputRange } from "app/components/Input";
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 

@@ -6,11 +6,7 @@ type ButtonGroupProps = {
 };
 
 export const ButtonGroup = ({ children }: ButtonGroupProps) => (
-	<div
-		data-testid="ButtonGroup"
-		role="radiogroup"
-		className="inline-flex overflow-hidden items-center space-x-2"
-	>
+	<div data-testid="ButtonGroup" role="radiogroup" className="inline-flex overflow-hidden items-center space-x-2">
 		{children}
 	</div>
 );
@@ -35,7 +31,13 @@ type ButtonGroupOptionProps = {
 	setSelectedValue: (value: string | number) => void;
 };
 
-export const ButtonGroupOption = ({ value, disabled, isSelected, setSelectedValue, children }: ButtonGroupOptionProps) => (
+export const ButtonGroupOption = ({
+	value,
+	disabled,
+	isSelected,
+	setSelectedValue,
+	children,
+}: ButtonGroupOptionProps) => (
 	<ButtonGroupOptionStyled
 		disabled={disabled}
 		type="button"
