@@ -123,12 +123,12 @@ export const Welcome = () => {
 											<Circle
 												size="xl"
 												noShadow
-												className="dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-600"
+												className="text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700"
 											>
 												<Icon name="Plus" width={12} height={12} />
 											</Circle>
 										</div>
-										<span className="mt-3 font-semibold text-theme-primary-text max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-600">
+										<span className="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700">
 											{t("PROFILE.CREATE_PROFILE")}
 										</span>
 									</div>
