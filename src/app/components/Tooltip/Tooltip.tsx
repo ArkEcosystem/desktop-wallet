@@ -5,7 +5,7 @@ import React from "react";
 import { getVariantClassNames } from "./Tooltip.styles";
 
 export type TooltipProps = {
-	variant: "default" | "small";
+	variant: "default" | "sm";
 } & TippyProps;
 
 export const Tooltip = ({ variant, ...props }: TooltipProps) => {
