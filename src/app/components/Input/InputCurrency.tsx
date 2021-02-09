@@ -3,13 +3,13 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import { Input } from "./Input";
 
-type Props = { onChange?: (value: any) => void; magnitude?: number } & Omit<
+type Props = { onChange?: (value: any) => void; magnitude?: number; as?: React.ElementType<any> } & Omit<
 	React.InputHTMLAttributes<any>,
 	"onChange" | "defaultValue"
 >;
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, magnitude, ...props }: Props, ref) => {
+	({ onChange, value, as: Component, magnitude, ...props }: Props, ref) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
 		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
 
@@ -30,6 +30,10 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 
 			onChange?.(convertValue(value));
 		};
+
+		if (Component) {
+			return <Component value={amount.display} onChange={handleInput} ref={ref} {...props} />;
+		}
 
 		return <Input data-testid="InputCurrency" value={amount.display} onChange={handleInput} ref={ref} {...props} />;
 	},

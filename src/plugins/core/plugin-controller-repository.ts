@@ -95,7 +95,6 @@ export class PluginControllerRepository {
 			try {
 				const callback = runUnknownCode(entry.source, entry.sourcePath, {
 					ark: { Components: { Box, Tabs, TabPanel, Spinner, Clipboard, Input, InputCurrency, Checkbox } },
-					window,
 				});
 				const plugin = new PluginController(
 					entry.config,
