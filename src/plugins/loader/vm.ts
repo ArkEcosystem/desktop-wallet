@@ -1,6 +1,6 @@
 import { NodeVM } from "vm2";
 
-export const runUnknownCode = (code: string, path: string, sandbox?: any) =>
+export const runUnknownCode = (code: string, path: string, sandbox: any = {}) =>
 	new NodeVM({
 		require: {
 			context: "sandbox",
