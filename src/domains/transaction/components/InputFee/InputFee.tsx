@@ -35,6 +35,8 @@ export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, st
 		onChange?.(currency);
 	};
 
+	const isDisabled = (value: string) => value === "0" || (min === avg && avg === max);
+
 	return (
 		<div data-testid="InputFee" className="flex space-x-2">
 			<div className="flex-1">
@@ -51,27 +53,27 @@ export const InputFee = memo(({ defaultValue, value, avg, min, max, onChange, st
 
 			<ButtonGroup>
 				<ButtonGroupOption
-					disabled={!min}
+					disabled={isDisabled(min)}
 					value={minHuman}
-					isSelected={() => !!min && fee.display === minHuman}
+					isSelected={() => !isDisabled(min) && fee.value === min}
 					setSelectedValue={() => handleFeeChange({ display: minHuman, value: min })}
 				>
 					{t("TRANSACTION.FEES.SLOW")}
 				</ButtonGroupOption>
 
 				<ButtonGroupOption
-					disabled={!avg}
+					disabled={isDisabled(avg)}
 					value={avgHuman}
-					isSelected={() => !!avg && fee.display === avgHuman}
+					isSelected={() => !isDisabled(avg) && fee.value === avg}
 					setSelectedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
 				>
 					{t("TRANSACTION.FEES.AVERAGE")}
 				</ButtonGroupOption>
 
 				<ButtonGroupOption
-					disabled={!max}
+					disabled={isDisabled(max)}
 					value={maxHuman}
-					isSelected={() => !!max && fee.display === maxHuman}
+					isSelected={() => !isDisabled(max) && fee.value === max}
 					setSelectedValue={() => handleFeeChange({ display: maxHuman, value: max })}
 				>
 					{t("TRANSACTION.FEES.FAST")}
