@@ -1,7 +1,7 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { useFees, usePrevious } from "app/hooks";
+import { useFees } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -46,8 +46,6 @@ export const SendTransactionForm = ({
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
 
-	const prevNetwork = usePrevious(network);
-
 	useEffect(() => {
 		const setTransactionFees = async (network: Coins.Network) => {
 			const transactionFees = await findByType(network.coin(), network.id(), transactionType);
@@ -60,10 +58,6 @@ export const SendTransactionForm = ({
 			});
 		};
 
-		if (prevNetwork && !hasWalletId) {
-			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
-		}
-
 		if (network) {
 			setTransactionFees(network);
 			setDynamicFees(network.can(Coins.FeatureFlag.MiscellaneousDynamicFees));
@@ -72,9 +66,17 @@ export const SendTransactionForm = ({
 		}
 
 		setWallets(profile.wallets().values());
-	}, [findByType, hasWalletId, network, prevNetwork, profile, setValue, transactionType]);
+	}, [findByType, network, profile, setValue, transactionType]);
 
-	const onSelectSender = (address: any) => {
+	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
+		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
+			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
+		}
+
+		setValue("network", selectedNetwork);
+	};
+
+	const handleSelectSender = (address: any) => {
 		setValue("senderAddress", address, { shouldValidate: false, shouldDirty: true });
 	};
 
@@ -98,9 +100,7 @@ export const SendTransactionForm = ({
 					networks={availableNetworks}
 					selected={network}
 					disabled={hasWalletId && !!senderAddress}
-					onSelect={(selectedNetwork: Coins.Network | null | undefined) =>
-						setValue("network", selectedNetwork)
-					}
+					onSelect={handleSelectNetwork}
 				/>
 			</FormField>
 
@@ -112,7 +112,7 @@ export const SendTransactionForm = ({
 						address={senderAddress}
 						wallets={wallets}
 						disabled={wallets.length === 0}
-						onChange={onSelectSender}
+						onChange={handleSelectSender}
 					/>
 				</div>
 			</FormField>
