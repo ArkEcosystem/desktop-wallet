@@ -1,8 +1,8 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Input } from "app/components/Input";
+import { Form, FormField, FormLabel } from "app/components/Form";
+import { InputDefault } from "app/components/Input";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -63,7 +63,7 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 
 			<FormField name="name">
 				<FormLabel label={t("SETTINGS.PEERS.NAME")} />
-				<Input
+				<InputDefault
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.NAME"),
@@ -79,12 +79,11 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 					defaultValue={peer?.name}
 					data-testid="PeerForm__name-input"
 				/>
-				<FormHelperText />
 			</FormField>
 
 			<FormField name="host">
 				<FormLabel label={t("SETTINGS.PEERS.PEER_IP")} />
-				<Input
+				<InputDefault
 					ref={register({
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.PEER_IP"),
@@ -100,7 +99,6 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 					defaultValue={peer?.host}
 					data-testid="PeerForm__host-input"
 				/>
-				<FormHelperText />
 			</FormField>
 
 			<FormField name="type">

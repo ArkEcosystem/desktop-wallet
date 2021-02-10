@@ -92,7 +92,8 @@ exports[`AddRecipient should render 1`] = `
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value=""
@@ -136,13 +137,14 @@ exports[`AddRecipient should render 1`] = `
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value=""
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -249,7 +251,8 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value=""
@@ -293,8 +296,20 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value=""
             />
+            <div
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+            >
+              <button
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                data-testid="AddRecipient__send-all"
+                type="button"
+              >
+                Send All
+              </button>
+            </div>
           </div>
         </fieldset>
       </div>
@@ -406,7 +421,8 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                 </div>
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
@@ -450,13 +466,14 @@ exports[`AddRecipient should render with single recipient data 1`] = `
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value="1"
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -563,7 +580,8 @@ exports[`AddRecipient should render without recipients 1`] = `
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value=""
@@ -607,13 +625,14 @@ exports[`AddRecipient should render without recipients 1`] = `
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value=""
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -666,7 +685,8 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value=""
@@ -710,13 +730,14 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value=""
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -823,7 +844,8 @@ exports[`AddRecipient should set available amount 1`] = `
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value=""
@@ -867,13 +889,14 @@ exports[`AddRecipient should set available amount 1`] = `
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value=""
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -980,7 +1003,8 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-11 pl-14"
+                aria-invalid="false"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 value=""
@@ -1024,13 +1048,14 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
+              type="text"
               value=""
             />
             <div
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >

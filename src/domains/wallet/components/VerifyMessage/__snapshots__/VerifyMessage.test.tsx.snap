@@ -150,12 +150,16 @@ exports[`VerifyMessage should render 1`] = `
                         data-testid="FormLabel__required"
                       />
                     </label>
-                    <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-                      data-testid="VerifyMessage_message-content"
-                      name="signed-message-content"
-                      value=""
-                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="VerifyMessage_message-content"
+                        name="signed-message-content"
+                        value=""
+                      />
+                    </div>
                   </fieldset>
                 </div>
               </div>
@@ -310,11 +314,15 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                       data-testid="FormLabel__required"
                     />
                   </label>
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-                    data-testid="VerifyMessage__message-input"
-                    name="message"
-                  />
+                  <div
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                      data-testid="VerifyMessage__message-input"
+                      name="message"
+                    />
+                  </div>
                 </fieldset>
                 <fieldset
                   class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
@@ -330,13 +338,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                       data-testid="FormLabel__required"
                     />
                   </label>
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-                    data-testid="VerifyMessage__signatory-input"
-                    disabled=""
-                    name="signatory"
-                    value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
-                  />
+                  <div
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                      data-testid="VerifyMessage__signatory-input"
+                      disabled=""
+                      name="signatory"
+                      value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
+                    />
+                  </div>
                 </fieldset>
                 <fieldset
                   class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
@@ -352,11 +364,15 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                       data-testid="FormLabel__required"
                     />
                   </label>
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-                    data-testid="VerifyMessage__signature-input"
-                    name="signature"
-                  />
+                  <div
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                      data-testid="VerifyMessage__signature-input"
+                      name="signature"
+                    />
+                  </div>
                 </fieldset>
               </div>
               <div

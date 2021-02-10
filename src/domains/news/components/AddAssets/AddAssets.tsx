@@ -2,7 +2,7 @@ import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { FilterNetwork } from "app/components/FilterNetwork";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -40,7 +40,6 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 						networks={[]}
 						placeholder={t("NEWS.ADD_ASSETS.PLACEHOLDER")}
 					/>
-					<FormHelperText />
 				</FormField>
 
 				<div className="flex flex-col space-y-10">

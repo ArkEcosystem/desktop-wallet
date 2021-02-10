@@ -4,7 +4,6 @@ import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor } from "testing-library";
 
-import { translations } from "../../i18n";
 import { CreatePeer } from "./CreatePeer";
 
 let profile: Profile;
@@ -39,9 +38,8 @@ describe("CreatePeer", () => {
 			);
 		});
 
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment } = rendered;
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CUSTOM_PEER.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
