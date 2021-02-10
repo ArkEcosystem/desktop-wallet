@@ -1,6 +1,6 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
@@ -133,7 +133,6 @@ export const SendTransactionForm = ({
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 					}}
 				/>
-				<FormHelperText />
 			</FormField>
 		</div>
 	);

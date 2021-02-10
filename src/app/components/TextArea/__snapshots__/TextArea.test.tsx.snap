@@ -3,7 +3,7 @@
 exports[`TextArea should render 1`] = `
 <DocumentFragment>
   <textarea
-    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
     data-testid="TextArea"
     style="height: 4px;"
   />
@@ -13,7 +13,7 @@ exports[`TextArea should render 1`] = `
 exports[`TextArea should render as disabled 1`] = `
 <DocumentFragment>
   <textarea
-    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
     data-testid="TextArea"
     disabled=""
   />
@@ -24,8 +24,25 @@ exports[`TextArea should render as invalid 1`] = `
 <DocumentFragment>
   <textarea
     aria-invalid="true"
-    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
     data-testid="TextArea"
   />
+  <div
+    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+  >
+    <span
+      data-testid="Input-error"
+    >
+      <div
+        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+        height="20"
+        width="20"
+      >
+        <svg>
+          alert-warning.svg
+        </svg>
+      </div>
+    </span>
+  </div>
 </DocumentFragment>
 `;

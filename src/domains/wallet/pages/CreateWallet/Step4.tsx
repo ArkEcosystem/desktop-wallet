@@ -2,9 +2,9 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input } from "app/components/Input";
+import { InputDefault } from "app/components/Input";
 import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -43,7 +43,7 @@ export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; 
 
 			<FormField name="name">
 				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} required={false} optional />
-				<Input
+				<InputDefault
 					data-testid="CreateWallet__wallet-name"
 					ref={register({
 						maxLength: {
@@ -62,7 +62,6 @@ export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; 
 						},
 					})}
 				/>
-				<FormHelperText />
 			</FormField>
 		</section>
 	);

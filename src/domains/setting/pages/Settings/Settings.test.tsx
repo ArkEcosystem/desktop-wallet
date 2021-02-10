@@ -247,6 +247,44 @@ describe("Settings", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
+	it("should reset fields on reset", async () => {
+		const { container, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
+		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
+
+		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).toBeChecked());
+		await waitFor(() => expect(getByTestId("General-settings__toggle--isUpdateLedger")).toBeChecked());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__submit-button"));
+		});
+
+		act(() => {
+			fireEvent.click(getByText(translations.COMMON.RESET_DATA));
+		});
+
+		expect(getByTestId("modal__inner")).toBeInTheDocument();
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PROFILE.MODAL_RESET_PROFILE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PROFILE.MODAL_RESET_PROFILE.DESCRIPTION);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("ResetProfile__submit-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).not.toBeChecked());
+		await waitFor(() => expect(getByTestId("General-settings__toggle--isUpdateLedger")).not.toBeChecked());
+	});
+
 	it("should render peer settings", async () => {
 		// Import a wallet after the profile reset test
 		await profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet");
@@ -337,7 +375,9 @@ describe("Settings", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByText("The 'Peer IP' is not valid")).toBeVisible());
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -345,7 +385,9 @@ describe("Settings", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByText("The 'Peer IP' does not have 'http://' or 'https://'")).toBeVisible());
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -408,7 +450,9 @@ describe("Settings", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByText(translations.SETTINGS.PEERS.VALIDATION.HOST_EXISTS)).toBeVisible());
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));

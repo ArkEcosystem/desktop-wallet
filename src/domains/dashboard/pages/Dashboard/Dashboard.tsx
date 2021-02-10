@@ -14,9 +14,9 @@ export const Dashboard = () => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const { showTransactions } = useDashboardConfig({ profile: activeProfile });
 	const { profileIsSyncing } = useConfiguration();
 
+	const { showTransactions, selectedWallets } = useDashboardConfig({ profile: activeProfile });
 	const profileWalletsCount = activeProfile.wallets().count();
 
 	return (
@@ -36,7 +36,7 @@ export const Dashboard = () => {
 				<Transactions
 					profile={activeProfile}
 					isVisible={showTransactions}
-					walletsCount={profileWalletsCount}
+					wallets={selectedWallets}
 					isLoading={profileIsSyncing}
 				/>
 			</Page>

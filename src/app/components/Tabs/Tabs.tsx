@@ -81,21 +81,23 @@ export const TabList = styled.div`
 type TabPanelProps = {
 	children: React.ReactNode;
 	tabId: string | number;
-};
+} & React.HTMLProps<any>;
 
-export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>((props: TabPanelProps, ref) => {
-	const context = React.useContext(TabContext);
-	const isActive = context?.isIdActive(props.tabId);
+export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>(
+	({ tabId, children, ...props }: TabPanelProps, ref) => {
+		const context = React.useContext(TabContext);
+		const isActive = context?.isIdActive(tabId);
 
-	if (!isActive) {
-		return <></>;
-	}
+		if (!isActive) {
+			return <></>;
+		}
 
-	return (
-		<div data-testid="tab-pabel__active-panel" ref={ref}>
-			{props.children}
-		</div>
-	);
-});
+		return (
+			<div data-testid="tab-pabel__active-panel" ref={ref} {...props}>
+				{children}
+			</div>
+		);
+	},
+);
 
 TabPanel.displayName = "TabPanel";

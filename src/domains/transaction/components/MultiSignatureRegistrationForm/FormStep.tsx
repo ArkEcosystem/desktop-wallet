@@ -1,6 +1,6 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { useValidation } from "app/hooks";
@@ -76,6 +76,7 @@ export const FormStep = ({
 						type="number"
 						value={minParticipants ?? 0}
 						onChange={handleInput}
+						errorClassName="mr-20"
 					/>
 					<InputAddonEnd className="pr-4 pointer-events-none text-theme-secondary-400">
 						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
@@ -99,7 +100,6 @@ export const FormStep = ({
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
 					}
 				/>
-				<FormHelperText />
 			</FormField>
 		</section>
 	);

@@ -1,9 +1,9 @@
 import { FeatureFlag } from "@arkecosystem/platform-sdk/dist/coins";
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input } from "app/components/Input";
+import { InputDefault } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -67,15 +67,13 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 			<div className="space-y-8">
 				<FormField name="username">
 					<FormLabel label={t("TRANSACTION.DELEGATE_NAME")} />
-					<Input
+					<InputDefault
 						data-testid="Input__username"
-						className="pr-20"
 						defaultValue={username}
 						onChange={(event: any) =>
 							setValue("username", event.target.value, { shouldValidate: true, shouldDirty: true })
 						}
 					/>
-					<FormHelperText />
 				</FormField>
 
 				<FormField name="fee">
@@ -92,7 +90,6 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
-					<FormHelperText />
 				</FormField>
 			</div>
 		</section>

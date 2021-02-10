@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
@@ -18,12 +18,12 @@ type TransactionsProps = {
 	isCompact?: boolean;
 	profile: Profile;
 	isVisible?: boolean;
-	walletsCount?: number;
+	wallets: ReadWriteWallet[];
 	isLoading?: boolean;
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = false }: TransactionsProps) => {
+	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false }: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
@@ -36,6 +36,7 @@ export const Transactions = memo(
 		const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [
 			profile,
 		]);
+
 		const abortRef = useRef<() => void>();
 
 		const fetchTransactions = useCallback(
@@ -63,8 +64,11 @@ export const Transactions = memo(
 					setTransactions([]);
 				}
 
-				const limit = { limit: 30 };
-				const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
+				const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
+				const queryParams = selectedTransactionType
+					? { ...defaultQuery, ...selectedTransactionType }
+					: defaultQuery;
+
 				// @ts-ignore
 				const response = await profile.transactionAggregate()[method](queryParams);
 				const transactionsAggregate = response.items();
@@ -76,7 +80,7 @@ export const Transactions = memo(
 				setIsLoading(false);
 				setTransactions(currentTransactions.concat(transactionsAggregate));
 			},
-			[transactions, profile, selectedTransactionType],
+			[transactions, profile, selectedTransactionType, wallets],
 		);
 
 		useEffect(() => {
@@ -84,7 +88,7 @@ export const Transactions = memo(
 				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 			}
 			// eslint-disable-next-line
-		}, [activeTransactionModeTab, selectedTransactionType, walletsCount, isLoading]);
+		}, [activeTransactionModeTab, selectedTransactionType, wallets.length, isLoading]);
 
 		if (!isVisible) {
 			return <></>;

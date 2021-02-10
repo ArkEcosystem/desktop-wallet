@@ -6,7 +6,6 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
-import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -590,7 +589,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: "123" } });
 
 			await waitFor(() => {
-				expect(getByText(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID)).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
@@ -653,7 +652,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
 
 			await waitFor(() => {
-				expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			const addressToggle = getByTestId("ImportWallet__address-toggle");
@@ -667,7 +666,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
 			await waitFor(() => {
-				expect(getByText(`Address ${identityAddress} already exists`)).toBeVisible();
+				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");

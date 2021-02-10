@@ -146,7 +146,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
-		expect(getByText("The following characters are not allowed: '<', '>'")).toBeTruthy();
+		expect(getByTestId("Input-error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -171,7 +171,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
-		expect(getByText("'Delegate Name' should have at most 20 characters")).toBeTruthy();
+		expect(getByTestId("Input-error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -194,7 +194,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
-		expect(getByText("'Delegate Name' already exists")).toBeTruthy();
+		expect(getByTestId("Input-error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -142,10 +142,11 @@ exports[`SendTransactionForm should fill out form 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
               data-testid="InputCurrency"
               disabled=""
               name="fee"
+              type="text"
               value="0.71538139"
             />
           </div>
@@ -298,10 +299,11 @@ exports[`SendTransactionForm should render 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
               data-testid="InputCurrency"
               disabled=""
               name="fee"
+              type="text"
               value="0"
             />
           </div>
@@ -484,9 +486,10 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
               data-testid="InputCurrency"
               name="fee"
+              type="text"
               value="0"
             />
             <div
@@ -733,9 +736,10 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
               data-testid="InputCurrency"
               name="fee"
+              type="text"
               value="0"
             />
             <div
