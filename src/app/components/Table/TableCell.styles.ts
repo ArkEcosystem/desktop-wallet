@@ -2,7 +2,7 @@ import tw from "twin.macro";
 
 const baseStyle = tw`flex items-center px-3 my-1 transition-colors duration-100`;
 
-const getHeight = (isCompact?: boolean): any => (isCompact ? tw`h-16` : tw`h-20`);
+const getHeight = () => tw`h-16`;
 
 const getVariant = (variant: "start" | "middle" | "end"): any => {
 	if (variant === "start") {
@@ -14,8 +14,4 @@ const getVariant = (variant: "start" | "middle" | "end"): any => {
 	}
 };
 
-export const getStyles = ({ variant, isSelected, isCompact }: any) => [
-	baseStyle,
-	getHeight(isCompact),
-	getVariant(variant),
-];
+export const getStyles = ({ variant }: any) => [baseStyle, getHeight(), getVariant(variant)];
