@@ -1,10 +1,11 @@
+import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import { useCurrencyDisplay } from "app/hooks";
+import cn from "classnames";
 import React, { useEffect, useMemo } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
-import { InputGroup } from "./InputGroup";
 import { sanitizeStep } from "./utils";
 
 type CurrencyInput = {
@@ -27,6 +28,7 @@ type Props = {
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, avg, magnitude, onChange, value }: Props, ref) => {
 		const { formatRange, converToCurrency } = useCurrencyDisplay();
+		const fieldContext = useFormField();
 		const [values, setValues] = React.useState<CurrencyInput[]>([converToCurrency(avg)]);
 
 		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, max, values]);
@@ -48,21 +50,22 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		return (
-			<InputGroup>
-				<InputCurrency
-					style={{
-						background: getTrackBackground({
-							values: [trackBackgroundMinValue],
-							colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
-							min: minValue,
-							max: Number(max),
-						}),
-					}}
-					magnitude={magnitude}
-					value={values[0].display}
-					ref={ref}
-					onChange={handleInput}
-				/>
+			<InputCurrency
+				style={{
+					background: getTrackBackground({
+						values: [trackBackgroundMinValue],
+						colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
+						min: minValue,
+						max: Number(max),
+					}),
+				}}
+				className={cn({ "pr-12": fieldContext?.isInvalid })}
+				magnitude={magnitude}
+				type="text"
+				value={values[0].display}
+				ref={ref}
+				onChange={handleInput}
+			>
 				{Number(min) < Number(max) && (
 					<div className="absolute bottom-0 px-1 w-full">
 						<Range
@@ -75,7 +78,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						/>
 					</div>
 				)}
-			</InputGroup>
+			</InputCurrency>
 		);
 	},
 );

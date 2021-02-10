@@ -1,6 +1,8 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
+import cn from "classnames";
 import React from "react";
 import { ValidationRules } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -31,6 +33,7 @@ export const InputAddress = ({
 }: InputAddressProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
+	const fieldContext = useFormField();
 
 	const validateAddress = async (address: string) => {
 		const instance: Coins.Coin = await env.coin(coin!, network!);
@@ -55,7 +58,14 @@ export const InputAddress = ({
 
 	return (
 		<InputGroup className="max-w-20">
-			<Input ref={registerRef?.(rules)} className="pr-12" data-testid="InputAddress__input" {...props} />
+			<Input
+				ref={registerRef?.(rules)}
+				type="text"
+				className={cn({ "pr-12": !fieldContext?.isInvalid, "pr-20": fieldContext?.isInvalid })}
+				errorClassName="mr-12"
+				data-testid="InputAddress__input"
+				{...props}
+			/>
 			<InputAddonEnd className="my-px mr-4">
 				<button
 					data-testid="InputAddress__qr-button"

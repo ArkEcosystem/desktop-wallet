@@ -157,10 +157,12 @@ module.exports = {
 				10: "2.5rem",
 				15: "3.75rem",
 				18: "4.5rem",
+				25: "6.25rem",
 				30: "7.5rem",
 			},
 			margin: {
 				"-14": "-3.5rem",
+				18: "4.5rem",
 				25: "6.25rem",
 			},
 			fontSize: {

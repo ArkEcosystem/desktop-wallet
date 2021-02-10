@@ -20,12 +20,16 @@ exports[`ContactForm should select 1`] = `
           data-testid="FormLabel__required"
         />
       </label>
-      <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-        data-testid="contact-form__name-input"
-        name="name"
-        value=""
-      />
+      <div
+        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+          data-testid="contact-form__name-input"
+          name="name"
+          value=""
+        />
+      </div>
     </fieldset>
     <div
       class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs"
@@ -111,6 +115,7 @@ exports[`ContactForm should select 1`] = `
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
+            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
@@ -205,18 +210,35 @@ exports[`ContactForm should select with errors 1`] = `
           data-testid="FormLabel__required"
         />
       </label>
-      <input
-        aria-invalid="true"
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-        data-testid="contact-form__name-input"
-        name="name"
-        value=""
-      />
-      <p
-        class="font-normal text-sm text-theme-danger-500"
+      <div
+        class="InputGroup-sc-1obbdqe-3 bgPpWR"
       >
-        Contact name error
-      </p>
+        <input
+          aria-invalid="true"
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+          data-testid="contact-form__name-input"
+          name="name"
+          value=""
+        />
+        <div
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+        >
+          <span
+            data-errortext="Contact name error"
+            data-testid="Input-error"
+          >
+            <div
+              class="sc-bdfBwQ iyevwF text-theme-danger-500"
+              height="20"
+              width="20"
+            >
+              <svg>
+                alert-warning.svg
+              </svg>
+            </div>
+          </span>
+        </div>
+      </div>
     </fieldset>
     <div
       class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs"
@@ -302,6 +324,7 @@ exports[`ContactForm should select with errors 1`] = `
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
+            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
@@ -396,12 +419,16 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           data-testid="FormLabel__required"
         />
       </label>
-      <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-        data-testid="contact-form__name-input"
-        name="name"
-        value=""
-      />
+      <div
+        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+          data-testid="contact-form__name-input"
+          name="name"
+          value=""
+        />
+      </div>
     </fieldset>
     <div
       class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs"
@@ -487,6 +514,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
+            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
@@ -581,12 +609,16 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           data-testid="FormLabel__required"
         />
       </label>
-      <input
-        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-        data-testid="contact-form__name-input"
-        name="name"
-        value="Brian"
-      />
+      <div
+        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+          data-testid="contact-form__name-input"
+          name="name"
+          value="Brian"
+        />
+      </div>
     </fieldset>
     <div
       class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs"
@@ -672,6 +704,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
             data-testid="contact-form__address-input"
             name="address"
+            type="text"
           />
           <div
             class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"

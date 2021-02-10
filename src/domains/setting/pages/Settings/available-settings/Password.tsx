@@ -1,5 +1,5 @@
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
@@ -66,7 +66,6 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 							})}
 							data-testid="Password-settings__input--currentPassword"
 						/>
-						<FormHelperText />
 					</FormField>
 				)}
 
@@ -103,7 +102,6 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 								})}
 								data-testid={`Password-settings__input--password_${password}`}
 							/>
-							<FormHelperText />
 						</FormField>
 					);
 				})}

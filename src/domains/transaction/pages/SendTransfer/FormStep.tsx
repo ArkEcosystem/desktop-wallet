@@ -1,7 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputCounter } from "app/components/Input";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
@@ -73,18 +73,20 @@ export const FormStep = ({
 						/>
 					</div>
 
-					<FormField name="smartbridge">
+					<FormField name="smartbridge" className="relative">
 						<FormLabel label="Smartbridge" required={false} />
 						<InputCounter
 							data-testid="Input__smartbridge"
-							className="pr-24"
+							type="text"
+							placeholder=" "
+							className="pr-25"
 							maxLengthLabel="255"
 							defaultValue={smartbridge}
 							onChange={(event: ChangeEvent<HTMLInputElement>) =>
 								setValue("smartbridge", event.target.value, { shouldDirty: true, shouldValidate: true })
 							}
+							errorClassName="mr-18"
 						/>
-						<FormHelperText />
 					</FormField>
 				</>
 			</SendTransactionForm>

@@ -117,7 +117,7 @@ test("should error for invalid address", async (t) => {
 
 	// Add address
 	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.expect(Selector("fieldset p").withText(translations.CONTACTS.VALIDATION.ADDRESS_IS_INVALID).exists).ok();
+	await t.expect(Selector('[data-testid="Input-error"]').exists).ok();
 
 	await t
 		.expect(
@@ -154,7 +154,7 @@ test("should error on duplicate address addition", async (t) => {
 
 	// Add address
 	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.expect(Selector("fieldset p").withText(translations.CONTACTS.VALIDATION.ADDRESS_EXISTS_SUFFIX).exists).ok();
+	await t.expect(Selector('[data-testid="Input-error"]').exists).ok();
 
 	await t
 		.expect(
@@ -231,9 +231,7 @@ test("should error if contact name is already taken", async (t) => {
 	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
 	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
 
-	await t
-		.expect(Selector("fieldset p").withText(translations.CONTACTS.VALIDATION.CONTACT_NAME_EXISTS_SUFFIX).exists)
-		.ok();
+	await t.expect(Selector('[data-testid="Input-error"]').exists).ok();
 
 	await t
 		.expect(

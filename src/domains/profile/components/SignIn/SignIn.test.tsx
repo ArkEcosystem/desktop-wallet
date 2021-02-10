@@ -57,7 +57,6 @@ describe("SignIn", () => {
 			expect(onCancel).toBeCalled();
 		});
 	});
-
 	it("should call onSuccess callback", async () => {
 		const onSuccess = jest.fn();
 
@@ -102,7 +101,7 @@ describe("SignIn", () => {
 		// wait for formState.isValid to be updated
 		await findByTestId("SignIn__submit-button");
 
-		expect(queryByText("The Password is invalid")).toBeTruthy();
+		expect(getByTestId("Input-error")).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
 
@@ -133,7 +132,6 @@ describe("SignIn", () => {
 			await findByTestId("SignIn__submit-button");
 		}
 
-		expect(queryByText(/Maximum sign in attempts reached/)).toBeTruthy();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
@@ -145,6 +143,9 @@ describe("SignIn", () => {
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(() => expect(queryByText("The Password is invalid")).toBeTruthy(), { timeout: 10000 });
+		await waitFor(
+			() => expect(getByTestId("Input-error")).toHaveAttribute("data-errortext", "The Password is invalid"),
+			{ timeout: 10000 },
+		);
 	});
 });
