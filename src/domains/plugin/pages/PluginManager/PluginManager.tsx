@@ -9,7 +9,6 @@ import { Page, Section } from "app/components/Layout";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { toasts } from "app/services";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
@@ -18,7 +17,7 @@ import { PluginManualInstallModal } from "domains/plugin/components/PluginManual
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
 import { PluginConfigurationData } from "plugins/core/configuration";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -198,6 +197,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
+	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 
@@ -259,17 +259,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		);
 	};
 
-	const handleInstallPlugin = useCallback(
-		async (pluginData: any) => {
-			try {
-				await installPlugin(pluginData.id);
-				toasts.success(`The plugin "${pluginData.title}" was successfully installed`);
-			} catch {
-				toasts.error(`Failed to install plugin "${pluginData.title}"`);
-			}
-		},
-		[installPlugin],
-	);
+	const openInstallModalPlugin = (pluginData: any) => {
+		setInstallSelectedPlugin(pluginData);
+	};
 
 	const onDeletePlugin = () => {
 		setUninstallSelectedPlugin(undefined);
@@ -330,7 +322,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									paths={paths}
 									viewType={viewType}
 									plugins={homePackages}
-									onInstall={handleInstallPlugin}
+									onInstall={openInstallModalPlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									onDelete={handleDeletePlugin}
@@ -351,7 +343,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
-									onInstall={handleInstallPlugin}
+									onInstall={openInstallModalPlugin}
 									onLaunch={handleLaunchPlugin}
 									className="mt-6"
 									isLoading={isFetchingPackages}
@@ -366,7 +358,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								</h2>
 								<PluginList
 									plugins={installedPlugins}
-									onInstall={handleInstallPlugin}
+									onInstall={openInstallModalPlugin}
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
@@ -387,7 +379,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
-									onInstall={handleInstallPlugin}
+									onInstall={openInstallModalPlugin}
 									onLaunch={handleLaunchPlugin}
 									className="mt-6"
 									isLoading={isFetchingPackages}
@@ -398,7 +390,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
 							<PluginList
 								plugins={filteredPackages}
-								onInstall={handleInstallPlugin}
+								onInstall={openInstallModalPlugin}
 								onDelete={handleDeletePlugin}
 								onEnable={handleEnablePlugin}
 								onDisable={handleDisablePlugin}
@@ -410,7 +402,14 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				</Section>
 			</Page>
 
-			<InstallPlugin isOpen={false} onClose={void 0} onCancel={void 0} />
+			{installSelectedPlugin && (
+				<InstallPlugin
+					plugin={installSelectedPlugin}
+					isOpen={true}
+					onClose={() => setInstallSelectedPlugin(undefined)}
+					onCancel={() => setInstallSelectedPlugin(undefined)}
+				/>
+			)}
 
 			<PluginManualInstallModal
 				isOpen={isManualInstallModalOpen}

@@ -1,5 +1,6 @@
 import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
+import { PluginManager, PluginManagerProvider } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
 import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
@@ -23,11 +24,13 @@ describe("PluginsCategory", () => {
 
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/plugins/categories/:categoryId">
-				<PluginsCategory
-					title="Top Rated plugins"
-					description="Easy way to find, manage and install plugins"
-					initialViewType="grid"
-				/>
+				<PluginManagerProvider manager={new PluginManager()} services={[]}>
+					<PluginsCategory
+						title="Top Rated plugins"
+						description="Easy way to find, manage and install plugins"
+						initialViewType="grid"
+					/>
+				</PluginManagerProvider>
 			</Route>,
 			{
 				routes: [pluginsCategoryURL],
@@ -68,45 +71,6 @@ describe("PluginsCategory", () => {
 
 		expect(within(pluginsContainer).getByTestId("PluginList")).toBeTruthy();
 
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should install plugin from header install button", () => {
-		const { asFragment, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginsCategory_header--install"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
-
-		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should download & install plugin", () => {
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
-
-		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
