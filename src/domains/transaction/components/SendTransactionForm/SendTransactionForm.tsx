@@ -73,7 +73,7 @@ export const SendTransactionForm = ({
 		setDynamicFees(false);
 
 		setWallets(profile.wallets().values());
-	}, [findByType, network, profile, setValue, transactionType]);
+	}, [defaultFees, findByType, network, profile, setValue, transactionType]);
 
 	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
 		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
