@@ -15,6 +15,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		viewType,
 	} = useDashboardConfig({ profile });
 
+	const allWalletsLength = profile.wallets().values().length;
 	const networks = useMemo(() => {
 		const networks = profile
 			.wallets()
@@ -28,7 +29,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			}));
 
 		return uniqBy(networks, (network) => network.id);
-	}, [profile, selectedNetworkIds]);
+	}, [profile, selectedNetworkIds, allWalletsLength]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const isFilterChanged = useMemo(() => {
 		if (showTransactions !== defaultConfiguration.showTransactions) {
