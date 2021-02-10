@@ -337,7 +337,9 @@ describe("Settings", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByText("The 'Peer IP' is not valid")).toBeVisible());
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -345,7 +347,9 @@ describe("Settings", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByText("The 'Peer IP' does not have 'http://' or 'https://'")).toBeVisible());
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -408,7 +412,9 @@ describe("Settings", () => {
 			});
 		});
 
-		await waitFor(() => expect(getByText(translations.SETTINGS.PEERS.VALIDATION.HOST_EXISTS)).toBeVisible());
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));

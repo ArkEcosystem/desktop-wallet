@@ -38,6 +38,7 @@ const SelectDropdown = ({
 	placeholder,
 	disabled,
 	onSelectedItemChange,
+	isInvalid,
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
 
@@ -106,7 +107,7 @@ const SelectDropdown = ({
 					disabled={disabled}
 					{...getInputProps({
 						placeholder,
-						className: "cursor-default",
+						className: `cursor-default ${isInvalid && " pr-16"}`,
 						onFocus: openMenu,
 						onBlur: () => {
 							if (inputValue && items.length > 0) {
@@ -130,6 +131,7 @@ const SelectDropdown = ({
 							}
 						},
 					})}
+					errorClassName="mr-8"
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
@@ -162,6 +164,7 @@ const SelectDropdown = ({
 						))}
 				</SelectOptionsList>
 			</div>
+
 			<InputAddonEnd className="w-10 pointer-events-none text-theme-secondary-500">
 				<Icon
 					name="CaretDown"

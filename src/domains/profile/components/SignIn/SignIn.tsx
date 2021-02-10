@@ -1,7 +1,7 @@
 import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
@@ -118,7 +118,6 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 						disabled={hasReachedLimit()}
 						data-testid="SignIn__input--password"
 					/>
-					<FormHelperText />
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">

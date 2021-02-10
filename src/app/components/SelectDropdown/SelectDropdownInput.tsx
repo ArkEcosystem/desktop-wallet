@@ -3,6 +3,7 @@ import React from "react";
 
 type Props = {
 	suggestion?: string;
+	errorClassName?: string;
 } & React.InputHTMLAttributes<any>;
 
 const TypeAhead = ({ value }: { value?: string }) => (

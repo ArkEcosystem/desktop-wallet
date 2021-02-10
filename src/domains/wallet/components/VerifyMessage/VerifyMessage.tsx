@@ -2,7 +2,7 @@
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Input } from "app/components/Input";
+import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
@@ -61,7 +61,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 					<div className="mt-8">
 						<FormField name="signed-message-content">
 							<FormLabel label="Signed message content" />
-							<Input
+							<InputDefault
 								data-testid="VerifyMessage_message-content"
 								defaultValue={""}
 								ref={register({ required: true })}
@@ -77,7 +77,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 			<div data-testid="noverify-address__content">
 				<FormField name="message" className="mt-8">
 					<FormLabel label={t("COMMON.MESSAGE")} />
-					<Input
+					<InputDefault
 						data-testid="VerifyMessage__message-input"
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -89,7 +89,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 				</FormField>
 				<FormField name="signatory" className="mt-8">
 					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
-					<Input
+					<InputDefault
 						data-testid="VerifyMessage__signatory-input"
 						defaultValue={signatory}
 						ref={register({
@@ -103,7 +103,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 				</FormField>
 				<FormField name="signature" className="mt-8">
 					<FormLabel label={t("COMMON.SIGNATURE")} />
-					<Input
+					<InputDefault
 						data-testid="VerifyMessage__signature-input"
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
