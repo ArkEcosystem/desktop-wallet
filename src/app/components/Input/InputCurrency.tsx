@@ -2,11 +2,14 @@ import { Currency } from "@arkecosystem/platform-sdk-intl";
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { Input } from "./Input";
+import { InputGroup } from "./InputGroup";
 
-type Props = { onChange?: (value: any) => void; magnitude?: number; as?: React.ElementType<any> } & Omit<
-	React.InputHTMLAttributes<any>,
-	"onChange" | "defaultValue"
->;
+type Props = {
+	onChange?: (value: any) => void;
+	magnitude?: number;
+	errorClassName?: string;
+	as?: React.ElementType<any>;
+} & Omit<React.InputHTMLAttributes<any>, "onChange" | "defaultValue">;
 
 interface ISelectionRange {
 	start: number | null;
@@ -14,7 +17,7 @@ interface ISelectionRange {
 }
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, as: Component, magnitude, ...props }: Props, ref: any) => {
+	({ onChange, value, as: Component, magnitude, children, errorClassName, ...props }: Props, ref: any) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
 		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
 		const [selectionRange, setSelectionRange] = useState<ISelectionRange>({
@@ -54,7 +57,20 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 			return <Component value={amount.display} onChange={handleInput} ref={ref} {...props} />;
 		}
 
-		return <Input data-testid="InputCurrency" value={amount.display} onChange={handleInput} ref={ref} {...props} />;
+		return (
+			<InputGroup>
+				<Input
+					data-testid="InputCurrency"
+					type="text"
+					value={amount.display}
+					onChange={handleInput}
+					ref={ref}
+					{...props}
+					errorClassName={errorClassName}
+				/>
+				{children}
+			</InputGroup>
+		);
 	},
 );
 

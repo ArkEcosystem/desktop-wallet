@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { Input } from "./Input";
 import { InputAddonEnd, InputGroup } from "./InputGroup";
 
-type Props = { maxLength?: number; maxLengthLabel?: string; defaultValue?: string } & React.InputHTMLAttributes<any>;
+type Props = {
+	maxLength?: number;
+	maxLengthLabel?: string;
+	defaultValue?: string;
+	errorClassName?: string;
+} & React.InputHTMLAttributes<any>;
 
 export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
 	const [length, setLength] = useState(props.defaultValue?.length || 0);

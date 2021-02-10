@@ -1,8 +1,8 @@
 import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Input, InputPassword } from "app/components/Input";
+import { Form, FormField, FormLabel } from "app/components/Form";
+import { InputDefault, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
@@ -85,8 +85,7 @@ export const CreateProfile = () => {
 									<div className="mr-6 w-full">
 										<FormField name="name">
 											<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-											<Input ref={register(createProfile.name())} />
-											<FormHelperText />
+											<InputDefault ref={register(createProfile.name())} />
 										</FormField>
 									</div>
 
@@ -112,7 +111,6 @@ export const CreateProfile = () => {
 											}
 										}}
 									/>
-									<FormHelperText />
 								</FormField>
 
 								<FormField name="confirmPassword">
@@ -122,7 +120,6 @@ export const CreateProfile = () => {
 										optional={!watch("password")}
 									/>
 									<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
-									<FormHelperText />
 								</FormField>
 
 								<FormField name="currency">
@@ -140,7 +137,6 @@ export const CreateProfile = () => {
 											})
 										}
 									/>
-									<FormHelperText />
 								</FormField>
 							</div>
 

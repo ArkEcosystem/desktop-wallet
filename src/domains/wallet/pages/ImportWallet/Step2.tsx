@@ -1,7 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputAddress, InputPassword } from "app/components/Input";
 import { Toggle } from "app/components/Toggle";
@@ -45,7 +45,6 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 						})}
 						data-testid="ImportWallet__passphrase-input"
 					/>
-					<FormHelperText />
 				</FormField>
 			);
 		}
@@ -69,7 +68,6 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 					}}
 					data-testid="ImportWallet__address-input"
 				/>
-				<FormHelperText />
 			</FormField>
 		);
 	};

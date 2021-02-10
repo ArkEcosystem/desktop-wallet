@@ -7,7 +7,7 @@ type SelectProps = { isInvalid?: boolean } & React.SelectHTMLAttributes<any>;
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 	({ placeholder, children, ...props }: SelectProps, ref) => (
 		<InputGroup>
-			<Input data-testid="Select" as="select" ref={ref} className="pr-12" {...props}>
+			<Input data-testid="Select" as="select" ref={ref} className="pr-12" errorClassName="mr-12" {...props}>
 				{placeholder && (
 					<option value="" disabled>
 						{placeholder}

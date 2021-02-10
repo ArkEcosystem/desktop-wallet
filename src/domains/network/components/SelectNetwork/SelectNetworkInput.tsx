@@ -1,5 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import { useFormField } from "app/components/Form/useFormField";
 import { Input, InputAddon, InputAddonStart, InputGroup } from "app/components/Input";
+import cn from "classnames";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 
@@ -19,22 +21,31 @@ const TypeAhead = ({ value }: { value?: string }) => (
 );
 
 export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Props>(
-	({ network, suggestion, ...props }: Props, ref) => (
-		<InputGroup data-testid="SelectNetworkInput">
-			<InputAddonStart className="px-4">
-				<NetworkIcon
-					data-testid="SelectNetworkInput__network"
-					coin={network?.coin()}
-					network={network?.id()}
-					size="sm"
-					showTooltip={false}
-					noShadow
+	({ network, suggestion, ...props }: Props, ref) => {
+		const fieldContext = useFormField();
+
+		return (
+			<InputGroup data-testid="SelectNetworkInput">
+				<InputAddonStart className="px-4">
+					<NetworkIcon
+						data-testid="SelectNetworkInput__network"
+						coin={network?.coin()}
+						network={network?.id()}
+						size="sm"
+						showTooltip={false}
+						noShadow
+					/>
+				</InputAddonStart>
+				{suggestion && <TypeAhead value={suggestion} />}
+				<Input
+					data-testid="SelectNetworkInput__input"
+					ref={ref}
+					className={cn("pl-15", { "pr-12": fieldContext?.isInvalid })}
+					{...props}
 				/>
-			</InputAddonStart>
-			{suggestion && <TypeAhead value={suggestion} />}
-			<Input data-testid="SelectNetworkInput__input" ref={ref} className="pl-15" {...props} />
-		</InputGroup>
-	),
+			</InputGroup>
+		);
+	},
 );
 
 SelectNetworkInput.displayName = "SelectNetworkInput";
