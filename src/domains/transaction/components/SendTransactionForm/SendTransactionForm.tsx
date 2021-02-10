@@ -60,7 +60,7 @@ export const SendTransactionForm = ({
 			});
 		};
 
-		if (prevNetwork) {
+		if (prevNetwork && !hasWalletId) {
 			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
 		}
 
@@ -72,7 +72,7 @@ export const SendTransactionForm = ({
 		}
 
 		setWallets(profile.wallets().values());
-	}, [findByType, network, prevNetwork, profile, setValue, transactionType]);
+	}, [findByType, hasWalletId, network, prevNetwork, profile, setValue, transactionType]);
 
 	const onSelectSender = (address: any) => {
 		setValue("senderAddress", address, { shouldValidate: false, shouldDirty: true });
