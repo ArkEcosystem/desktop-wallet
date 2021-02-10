@@ -34,7 +34,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 
 		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, max, values]);
 		const trackBackgroundMinValue = Number(values[0].display);
-		const minValue = Number(trackBackgroundMinValue < Number(min) ? trackBackgroundMinValue : min);
+		const minValue = Math.min(Number(min), trackBackgroundMinValue);
 
 		useEffect(() => {
 			setValues([convertToCurrency(value)]);
