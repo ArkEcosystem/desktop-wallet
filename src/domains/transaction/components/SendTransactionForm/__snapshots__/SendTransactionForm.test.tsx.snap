@@ -1,28 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendTransactionForm should render 1`] = `
+exports[`SendTransactionForm should fill out form 1`] = `
 <div>
   <div
     class="space-y-8 SendTransactionForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
-      <div
-        class="mb-2"
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
       >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="network"
-        >
-          Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
       <div>
         <div
           aria-expanded="false"
@@ -69,23 +65,175 @@ exports[`SendTransactionForm should render 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
-      <div
-        class="mb-2"
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="senderAddress"
       >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="senderAddress"
-        >
-          Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
+        Sender
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
+            data-testid="SelectAddress__wrapper"
+            type="button"
+          >
+            <div
+              class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+            />
+            <div
+              class="inline-flex items-center no-ligatures"
+            />
+            <div
+              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <input
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            value=""
           />
-        </label>
+        </div>
       </div>
+    </fieldset>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="fee"
+      >
+        Transaction Fee
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        class="flex space-x-2"
+        data-testid="InputFee"
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
+              data-testid="InputCurrency"
+              disabled=""
+              name="fee"
+              value="0.71538139"
+            />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`SendTransactionForm should render 1`] = `
+<div>
+  <div
+    class="space-y-8 SendTransactionForm"
+  >
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+            >
+              <div
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="senderAddress"
+      >
+        Sender
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
       <div
         data-testid="sender-address"
       >
@@ -156,37 +304,6 @@ exports[`SendTransactionForm should render 1`] = `
               name="fee"
               value="0"
             />
-            <div
-              class="absolute bottom-0 px-1 w-full"
-            >
-              <div
-                class="flex flex-wrap justify-center"
-                data-testid="Range"
-              >
-                <div
-                  class="Range__Track-sc-10itqc2-0 sgjTD"
-                  data-testid="Range__track"
-                  style="transform: scale(1); cursor: pointer;"
-                >
-                  <div
-                    class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                    data-testid="Range__track__filled"
-                  >
-                    <div
-                      aria-valuemax="2e-8"
-                      aria-valuemin="0"
-                      aria-valuenow="0"
-                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                      data-testid="Range__thumb"
-                      draggable="false"
-                      role="slider"
-                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                      tabindex="0"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -201,23 +318,19 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
     class="space-y-8 SendTransactionForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
-      <div
-        class="mb-2"
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
       >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="network"
-        >
-          Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
       <div>
         <div
           aria-expanded="false"
@@ -276,23 +389,19 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
-      <div
-        class="mb-2"
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="senderAddress"
       >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="senderAddress"
-        >
-          Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
+        Sender
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
       <div
         data-testid="sender-address"
       >
@@ -377,7 +486,6 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             <input
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
               data-testid="InputCurrency"
-              disabled=""
               name="fee"
               value="0"
             />
@@ -414,200 +522,6 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             </div>
           </div>
         </div>
-      </div>
-    </fieldset>
-  </div>
-</div>
-`;
-
-exports[`SendTransactionForm should select fill out form 1`] = `
-<div>
-  <div
-    class="space-y-8 SendTransactionForm"
-  >
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
-    >
-      <div
-        class="mb-2"
-      >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="network"
-        >
-          Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
-      <div>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-owns="SendTransactionForm__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="SendTransactionForm__network-input"
-            id="SendTransactionForm__network-label"
-          />
-          <div
-            class="InputGroup-sc-1obbdqe-3 bgPpWR"
-            data-testid="SelectNetworkInput"
-          >
-            <div
-              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
-            >
-              <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
-                data-testid="SelectNetworkInput__network"
-              />
-            </div>
-            <input
-              aria-autocomplete="list"
-              aria-controls="SendTransactionForm__network-menu"
-              aria-labelledby="SendTransactionForm__network-label"
-              autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
-              data-testid="SelectNetworkInput__input"
-              id="SendTransactionForm__network-input"
-              placeholder="Enter a cryptoasset name"
-              value=""
-            />
-          </div>
-        </div>
-        <ul
-          aria-labelledby="SendTransactionForm__network-label"
-          class="hidden"
-          id="SendTransactionForm__network-menu"
-          role="listbox"
-        />
-      </div>
-    </fieldset>
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
-    >
-      <div
-        class="mb-2"
-      >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="senderAddress"
-        >
-          Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
-      <div
-        data-testid="sender-address"
-      >
-        <div>
-          <button
-            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
-            data-testid="SelectAddress__wrapper"
-            type="button"
-          >
-            <div
-              class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
-            />
-            <div
-              class="inline-flex items-center no-ligatures"
-            />
-            <div
-              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
-            >
-              <div
-                class="sc-bdfBwQ iyevwF"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-          <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
-            data-testid="SelectAddress__input"
-            name="senderAddress"
-            readonly=""
-            value=""
-          />
-        </div>
-      </div>
-    </fieldset>
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-    >
-      <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-        data-testid="FormLabel"
-        for="fee"
-      >
-        Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div
-        class="flex space-x-2"
-        data-testid="InputFee"
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
-              data-testid="InputCurrency"
-              name="fee"
-              value="0.00000001"
-            />
-            <div
-              class="absolute bottom-0 px-1 w-full"
-            >
-              <div
-                class="flex flex-wrap justify-center"
-                data-testid="Range"
-              >
-                <div
-                  class="Range__Track-sc-10itqc2-0 sgjTD"
-                  data-testid="Range__track"
-                  style="transform: scale(1); cursor: pointer;"
-                >
-                  <div
-                    class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                    data-testid="Range__track__filled"
-                  >
-                    <div
-                      aria-valuemax="2e-8"
-                      aria-valuemin="0"
-                      aria-valuenow="1e-8"
-                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                      data-testid="Range__thumb"
-                      draggable="false"
-                      role="slider"
-                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                      tabindex="0"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           class="inline-flex overflow-hidden items-center space-x-2"
           data-testid="ButtonGroup"
@@ -623,7 +537,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             Slow
           </button>
           <button
-            aria-checked="true"
+            aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
             data-testid="ButtonGroupOption"
             role="radio"
@@ -653,23 +567,19 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
     class="space-y-8 SendTransactionForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
-      <div
-        class="mb-2"
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
       >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="network"
-        >
-          Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
       <div>
         <div
           aria-expanded="false"
@@ -728,23 +638,19 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
-      <div
-        class="mb-2"
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="senderAddress"
       >
-        <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-          data-testid="FormLabel"
-          for="senderAddress"
-        >
-          Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
-        </label>
-      </div>
+        Sender
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
       <div
         data-testid="sender-address"
       >
@@ -829,7 +735,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             <input
               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
               data-testid="InputCurrency"
-              disabled=""
               name="fee"
               value="0"
             />
@@ -865,6 +770,40 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
               </div>
             </div>
           </div>
+        </div>
+        <div
+          class="inline-flex overflow-hidden items-center space-x-2"
+          data-testid="ButtonGroup"
+          role="radiogroup"
+        >
+          <button
+            aria-checked="false"
+            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+            data-testid="ButtonGroupOption"
+            role="radio"
+            type="button"
+          >
+            Slow
+          </button>
+          <button
+            aria-checked="false"
+            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+            data-testid="ButtonGroupOption"
+            disabled=""
+            role="radio"
+            type="button"
+          >
+            Average
+          </button>
+          <button
+            aria-checked="false"
+            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+            data-testid="ButtonGroupOption"
+            role="radio"
+            type="button"
+          >
+            Fast
+          </button>
         </div>
       </div>
     </fieldset>

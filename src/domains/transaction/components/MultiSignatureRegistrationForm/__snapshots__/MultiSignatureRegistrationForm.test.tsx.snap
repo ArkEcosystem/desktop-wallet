@@ -302,7 +302,6 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   <input
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                     data-testid="InputCurrency"
-                    disabled=""
                     name="fee"
                     value="0"
                   />
@@ -338,6 +337,40 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     </div>
                   </div>
                 </div>
+              </div>
+              <div
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
+                  role="radio"
+                  type="button"
+                >
+                  Slow
+                </button>
+                <button
+                  aria-checked="false"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="false"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  role="radio"
+                  type="button"
+                >
+                  Fast
+                </button>
               </div>
             </div>
           </fieldset>

@@ -373,23 +373,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                       class="space-y-8 SendTransactionForm"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="network"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="network"
-                          >
-                            Cryptoasset
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Cryptoasset
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div>
                           <div
                             aria-expanded="true"
@@ -480,23 +476,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         </div>
                       </fieldset>
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -751,37 +743,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 name="fee"
                                 value="0"
                               />
-                              <div
-                                class="absolute bottom-0 px-1 w-full"
-                              >
-                                <div
-                                  class="flex flex-wrap justify-center"
-                                  data-testid="Range"
-                                >
-                                  <div
-                                    class="Range__Track-sc-10itqc2-0 sgjTD"
-                                    data-testid="Range__track"
-                                    style="transform: scale(1); cursor: pointer;"
-                                  >
-                                    <div
-                                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                                      data-testid="Range__track__filled"
-                                    >
-                                      <div
-                                        aria-valuemax="2e-8"
-                                        aria-valuemin="0"
-                                        aria-valuenow="0"
-                                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                                        data-testid="Range__thumb"
-                                        draggable="false"
-                                        role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                        tabindex="0"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
                           </div>
                           <div
@@ -790,9 +751,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             role="radiogroup"
                           >
                             <button
-                              aria-checked="true"
+                              aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
+                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -802,6 +764,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
+                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -811,6 +774,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
+                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -1392,23 +1356,19 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
       class="space-y-8 SendTransactionForm"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
-        <div
-          class="mb-2"
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="network"
         >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="network"
-          >
-            Cryptoasset
-            <div
-              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Cryptoasset
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div>
           <div
             aria-expanded="false"
@@ -1455,23 +1415,19 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
-        <div
-          class="mb-2"
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="senderAddress"
         >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="senderAddress"
-          >
-            Sender
-            <div
-              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Sender
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div
           data-testid="sender-address"
         >
@@ -1723,74 +1679,11 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                 data-testid="InputCurrency"
+                disabled=""
                 name="fee"
                 value="0"
               />
-              <div
-                class="absolute bottom-0 px-1 w-full"
-              >
-                <div
-                  class="flex flex-wrap justify-center"
-                  data-testid="Range"
-                >
-                  <div
-                    class="Range__Track-sc-10itqc2-0 sgjTD"
-                    data-testid="Range__track"
-                    style="transform: scale(1); cursor: pointer;"
-                  >
-                    <div
-                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                      data-testid="Range__track__filled"
-                    >
-                      <div
-                        aria-valuemax="2e-8"
-                        aria-valuemin="0"
-                        aria-valuenow="0"
-                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                        data-testid="Range__thumb"
-                        draggable="false"
-                        role="slider"
-                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                        tabindex="0"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div
-            class="inline-flex overflow-hidden items-center space-x-2"
-            data-testid="ButtonGroup"
-            role="radiogroup"
-          >
-            <button
-              aria-checked="true"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Slow
-            </button>
-            <button
-              aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Average
-            </button>
-            <button
-              aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Fast
-            </button>
           </div>
         </div>
       </fieldset>
@@ -1827,23 +1720,19 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
       class="space-y-8 SendTransactionForm"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
-        <div
-          class="mb-2"
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="network"
         >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="network"
-          >
-            Cryptoasset
-            <div
-              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Cryptoasset
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div>
           <div
             aria-expanded="false"
@@ -1890,23 +1779,19 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
-        <div
-          class="mb-2"
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="senderAddress"
         >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="senderAddress"
-          >
-            Sender
-            <div
-              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Sender
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div
           data-testid="sender-address"
         >
@@ -2158,74 +2043,11 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                 data-testid="InputCurrency"
+                disabled=""
                 name="fee"
                 value="0"
               />
-              <div
-                class="absolute bottom-0 px-1 w-full"
-              >
-                <div
-                  class="flex flex-wrap justify-center"
-                  data-testid="Range"
-                >
-                  <div
-                    class="Range__Track-sc-10itqc2-0 sgjTD"
-                    data-testid="Range__track"
-                    style="transform: scale(1); cursor: pointer;"
-                  >
-                    <div
-                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                      data-testid="Range__track__filled"
-                    >
-                      <div
-                        aria-valuemax="2e-8"
-                        aria-valuemin="0"
-                        aria-valuenow="0"
-                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                        data-testid="Range__thumb"
-                        draggable="false"
-                        role="slider"
-                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                        tabindex="0"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div
-            class="inline-flex overflow-hidden items-center space-x-2"
-            data-testid="ButtonGroup"
-            role="radiogroup"
-          >
-            <button
-              aria-checked="true"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Slow
-            </button>
-            <button
-              aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Average
-            </button>
-            <button
-              aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Fast
-            </button>
           </div>
         </div>
       </fieldset>
@@ -2262,23 +2084,19 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
       class="space-y-8 SendTransactionForm"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
-        <div
-          class="mb-2"
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="network"
         >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="network"
-          >
-            Cryptoasset
-            <div
-              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Cryptoasset
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div>
           <div
             aria-expanded="false"
@@ -2325,23 +2143,19 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
         </div>
       </fieldset>
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
-        <div
-          class="mb-2"
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="senderAddress"
         >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="senderAddress"
-          >
-            Sender
-            <div
-              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-              data-testid="FormLabel__required"
-            />
-          </label>
-        </div>
+          Sender
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
         <div
           data-testid="sender-address"
         >
@@ -2604,74 +2418,11 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                 data-testid="InputCurrency"
+                disabled=""
                 name="fee"
                 value="0"
               />
-              <div
-                class="absolute bottom-0 px-1 w-full"
-              >
-                <div
-                  class="flex flex-wrap justify-center"
-                  data-testid="Range"
-                >
-                  <div
-                    class="Range__Track-sc-10itqc2-0 sgjTD"
-                    data-testid="Range__track"
-                    style="transform: scale(1); cursor: pointer;"
-                  >
-                    <div
-                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                      data-testid="Range__track__filled"
-                    >
-                      <div
-                        aria-valuemax="2e-8"
-                        aria-valuemin="0"
-                        aria-valuenow="0"
-                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                        data-testid="Range__thumb"
-                        draggable="false"
-                        role="slider"
-                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                        tabindex="0"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div
-            class="inline-flex overflow-hidden items-center space-x-2"
-            data-testid="ButtonGroup"
-            role="radiogroup"
-          >
-            <button
-              aria-checked="true"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Slow
-            </button>
-            <button
-              aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Average
-            </button>
-            <button
-              aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-              data-testid="ButtonGroupOption"
-              role="radio"
-              type="button"
-            >
-              Fast
-            </button>
           </div>
         </div>
       </fieldset>
@@ -3646,23 +3397,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                       class="space-y-8 SendTransactionForm"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="network"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="network"
-                          >
-                            Cryptoasset
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Cryptoasset
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div>
                           <div
                             aria-expanded="false"
@@ -3728,23 +3475,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         </div>
                       </fieldset>
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -4496,23 +4239,19 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                       class="space-y-8 SendTransactionForm"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="network"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="network"
-                          >
-                            Cryptoasset
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Cryptoasset
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div>
                           <div
                             aria-expanded="false"
@@ -4559,23 +4298,19 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         </div>
                       </fieldset>
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -4827,74 +4562,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                                 data-testid="InputCurrency"
+                                disabled=""
                                 name="fee"
                                 value="0"
                               />
-                              <div
-                                class="absolute bottom-0 px-1 w-full"
-                              >
-                                <div
-                                  class="flex flex-wrap justify-center"
-                                  data-testid="Range"
-                                >
-                                  <div
-                                    class="Range__Track-sc-10itqc2-0 sgjTD"
-                                    data-testid="Range__track"
-                                    style="transform: scale(1); cursor: pointer;"
-                                  >
-                                    <div
-                                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                                      data-testid="Range__track__filled"
-                                    >
-                                      <div
-                                        aria-valuemax="2e-8"
-                                        aria-valuemin="0"
-                                        aria-valuenow="0"
-                                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                                        data-testid="Range__thumb"
-                                        draggable="false"
-                                        role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                        tabindex="0"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
-                          </div>
-                          <div
-                            class="inline-flex overflow-hidden items-center space-x-2"
-                            data-testid="ButtonGroup"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-                              data-testid="ButtonGroupOption"
-                              role="radio"
-                              type="button"
-                            >
-                              Slow
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-                              data-testid="ButtonGroupOption"
-                              role="radio"
-                              type="button"
-                            >
-                              Average
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
-                              data-testid="ButtonGroupOption"
-                              role="radio"
-                              type="button"
-                            >
-                              Fast
-                            </button>
                           </div>
                         </div>
                       </fieldset>
@@ -5311,23 +4983,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                       class="space-y-8 SendTransactionForm"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="network"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="network"
-                          >
-                            Cryptoasset
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Cryptoasset
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div>
                           <div
                             aria-expanded="true"
@@ -5418,23 +5086,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         </div>
                       </fieldset>
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -5705,7 +5369,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures "
                                 data-testid="InputCurrency"
                                 name="fee"
-                                value="0"
+                                value="0.71538139"
                               />
                               <div
                                 class="absolute bottom-0 px-1 w-full"
@@ -5724,9 +5388,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       data-testid="Range__track__filled"
                                     >
                                       <div
-                                        aria-valuemax="2e-8"
-                                        aria-valuemin="0"
-                                        aria-valuenow="0"
+                                        aria-valuemax="6.63"
+                                        aria-valuemin="0.00357"
+                                        aria-valuenow="0.71538139"
                                         class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                                         data-testid="Range__thumb"
                                         draggable="false"
@@ -5746,7 +5410,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             role="radiogroup"
                           >
                             <button
-                              aria-checked="true"
+                              aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
                               role="radio"
@@ -5755,7 +5419,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               Slow
                             </button>
                             <button
-                              aria-checked="false"
+                              aria-checked="true"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
                               role="radio"
@@ -6188,23 +5852,19 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                       class="space-y-8 SendTransactionForm"
                     >
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="network"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="network"
-                          >
-                            Cryptoasset
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Cryptoasset
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div>
                           <div
                             aria-expanded="true"
@@ -6295,23 +5955,19 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         </div>
                       </fieldset>
                       <fieldset
-                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+                        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
-                        <div
-                          class="mb-2"
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          data-testid="FormLabel"
+                          for="senderAddress"
                         >
-                          <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                            data-testid="FormLabel"
-                            for="senderAddress"
-                          >
-                            Sender
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
-                          </label>
-                        </div>
+                          Sender
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
                         <div
                           data-testid="sender-address"
                         >
@@ -6566,37 +6222,6 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 name="fee"
                                 value="0"
                               />
-                              <div
-                                class="absolute bottom-0 px-1 w-full"
-                              >
-                                <div
-                                  class="flex flex-wrap justify-center"
-                                  data-testid="Range"
-                                >
-                                  <div
-                                    class="Range__Track-sc-10itqc2-0 sgjTD"
-                                    data-testid="Range__track"
-                                    style="transform: scale(1); cursor: pointer;"
-                                  >
-                                    <div
-                                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                                      data-testid="Range__track__filled"
-                                    >
-                                      <div
-                                        aria-valuemax="2e-8"
-                                        aria-valuemin="0"
-                                        aria-valuenow="0"
-                                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                                        data-testid="Range__thumb"
-                                        draggable="false"
-                                        role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                        tabindex="0"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
                           </div>
                           <div
@@ -6605,9 +6230,10 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             role="radiogroup"
                           >
                             <button
-                              aria-checked="true"
+                              aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
+                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -6617,6 +6243,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
+                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -6626,6 +6253,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
+                              disabled=""
                               role="radio"
                               type="button"
                             >

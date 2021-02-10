@@ -52,7 +52,7 @@ describe("SendTransactionForm", () => {
 		expect(rendered.container).toMatchSnapshot();
 	});
 
-	it("should select fill out form", async () => {
+	it("should fill out form", async () => {
 		const { result: form } = renderHook(() => useForm());
 		form.current.register("fee");
 		form.current.register("senderAddress");
@@ -73,12 +73,6 @@ describe("SendTransactionForm", () => {
 		await act(async () => {
 			form.current.setValue("senderAddress", wallet.address());
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
-
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(fees[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			expect(rendered.container).toMatchSnapshot();
 		});
@@ -135,7 +129,7 @@ describe("SendTransactionForm", () => {
 			max: "663000000",
 			min: "357000",
 			//@ts-ignore
-			avg: undefined,
+			avg: "0",
 		});
 
 		form.current.register("fee");
