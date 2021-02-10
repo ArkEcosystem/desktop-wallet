@@ -5,7 +5,7 @@ import { useFees } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -35,12 +35,15 @@ export const SendTransactionForm = ({
 	const { getValues, setValue, watch } = form;
 	const { network, senderAddress } = watch();
 
-	const defaultFees = {
-		static: "5",
-		min: "0",
-		avg: "0",
-		max: "0",
-	};
+	const defaultFees = useMemo(
+		() => ({
+			static: "5",
+			min: "0",
+			avg: "0",
+			max: "0",
+		}),
+		[],
+	); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const [fees, setFees] = useState<Contracts.TransactionFee>(defaultFees);
 
