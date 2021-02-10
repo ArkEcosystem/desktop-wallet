@@ -1,4 +1,7 @@
 export const translations: { [key: string]: any } = {
+	WARNING_DISCLAIMER:
+		"Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.",
+
 	DEVELOPER_RESPONSE: "Developer response",
 
 	MODAL_BEST_PLUGINS: {
@@ -13,11 +16,24 @@ export const translations: { [key: string]: any } = {
 			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
 	},
 
+	MODAL_UNINSTALL: {
+		TITLE: "Uninstall Plugin",
+		DESCRIPTION:
+			"Are you sure you want to remove '{{ name }}'? Uninstalling this plugin will remove it from all profiles on this system.",
+	},
+
 	MODAL_INSTALL_PLUGIN: {
 		DESCRIPTION: "This plugin needs the following permissions:",
 		ITEM_1: "Allows access to the Desktop Wallet alerts",
 		ITEM_2: "Allows access to play audio from within the Desktop Wallet",
 		ITEM_3: "Allows access to the Desktop Wallet events",
+	},
+
+	MODAL_MANUAL_INSTALL_PLUGIN: {
+		TITLE: "Install from URL",
+		DESCRIPTION:
+			"Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.",
+		PLACEHOLDER: "Github Repository URL",
 	},
 
 	MODAL_ADD_BLACKLIST_PLUGIN: {

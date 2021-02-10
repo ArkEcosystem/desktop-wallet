@@ -13,7 +13,10 @@ import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
-	const [state, setState] = useState({
+	const [state, setState] = useState<{
+		packages: PluginConfigurationData[];
+		configurations: PluginConfigurationData[];
+	}>({
 		packages: [],
 		configurations: [],
 	});
@@ -50,17 +53,17 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const loadPlugin = useCallback(
 		async (dir: string) => {
-			const results = await PluginLoaderFileSystem.ipc().find(dir);
-			pluginManager.plugins().fill([results]);
+			const result = await PluginLoaderFileSystem.ipc().find(dir);
+			pluginManager.plugins().fill([result]);
 		},
 		[pluginManager],
 	);
 
 	const trigger = useCallback(() => setState((prev: any) => ({ ...prev })), []);
 
-	const reportPlugin = useCallback((plugin: PluginController) => {
-		const name = plugin.config().get("name");
-		const version = plugin.config().get("version");
+	const reportPlugin = useCallback((pluginConfig: PluginConfigurationData) => {
+		const name = pluginConfig.name();
+		const version = pluginConfig.version();
 
 		const url = `https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=${name}&plugin_version=${version}`;
 
@@ -77,9 +80,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			try {
 				await PluginLoaderFileSystem.ipc().remove(plugin.dir()!);
 				pluginManager.plugins().removeById(plugin.config().id(), profile);
-				trigger();
 
 				toasts.success(`The plugin ${plugin.config().title()} was removed successfully.`);
+				trigger();
 			} catch (e) {
 				/* istanbul ignore next */
 				toasts.error(e.message);
@@ -134,17 +137,22 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
 	const installPlugin = useCallback(
-		async (name: string) => {
-			const config = pluginPackages.find((pkg) => pkg.name() === name);
-
-			const source = config!.get<{ url: string }>("sourceProvider");
+		async (name: string, repositoryURL?: string) => {
+			let realRepositoryURL = repositoryURL;
 
 			/* istanbul ignore next */
-			if (!source?.url) {
-				throw new Error(`The repository of the plugin "${name}" could not be found.`);
+			if (!realRepositoryURL) {
+				const config = pluginPackages.find((pkg) => pkg.name() === name);
+				const source = config!.get<{ url: string }>("sourceProvider");
+
+				if (!source?.url) {
+					throw new Error(`The repository of the plugin "${name}" could not be found.`);
+				}
+
+				realRepositoryURL = source.url;
 			}
 
-			const archiveUrl = `${source.url}/archive/master.zip`;
+			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
 			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
 			await loadPlugin(savedDir);
@@ -159,12 +167,16 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		const response = await httpClient.get(configurationURL);
 		const configData = PluginConfigurationData.make(response.json());
 
+		configData.validate();
+
 		setState((prev: any) => {
 			const configurations = prev.configurations;
 
 			const merged = uniqBy([configData, ...configurations], (item) => item.id());
 			return { ...prev, configurations: merged };
 		});
+
+		return configData.id();
 	}, []);
 
 	return {

@@ -81,7 +81,7 @@ describe("Plugin Controller subject", () => {
 		const consoleMock = jest.spyOn(console, "error").mockImplementation();
 		subject.fill([
 			{
-				config: { name: "plugin1" },
+				config: { name: "plugin1", keywords: ["@arkecosystem", "desktop-wallet"] },
 				dir: "/plugin1",
 				source: "module.exports = () => void 0",
 				sourcePath: "/plugin1/index.js",

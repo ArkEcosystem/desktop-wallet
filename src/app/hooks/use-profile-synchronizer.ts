@@ -178,11 +178,11 @@ export const useProfileRestore = () => {
 
 		setConfiguration({ profileIsRestoring: true });
 
-		// When in demo mode, profiles are migrated passwordless and
+		// When in e2e mode, profiles are migrated passwordless and
 		// password needs to be set again. The restore should happen
 		// without password and then reset the password.
-		const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
-		if (isDemo) {
+		const __E2E__ = process.env.REACT_APP_IS_E2E;
+		if (__E2E__) {
 			await profile.restore(password);
 
 			await persist();
@@ -210,7 +210,7 @@ export const useProfileRestore = () => {
 };
 
 export const useProfileSynchronizer = () => {
-	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
+	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
@@ -276,7 +276,7 @@ export const useProfileSynchronizer = () => {
 		markAsRestored,
 		status,
 		stop,
-		isDemo,
+		__E2E__,
 	]);
 
 	return { profile, profileIsSyncing };

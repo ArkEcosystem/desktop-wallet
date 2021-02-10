@@ -10,13 +10,13 @@ createFixture(`Create Profile action`);
 const nameInput = Selector("input[name=name]");
 
 test("should show button disabled if required fields are not filled", async (t) => {
-	await t.click(Selector("button").withExactText(translations.PROFILE.CREATE_PROFILE));
+	await t.click(Selector('[data-testid="Card"]').withExactText(translations.PROFILE.CREATE_PROFILE));
 
 	t.expect(Selector('[data-testid="CreateProfile__submit-button"]').hasAttribute("disabled"));
 });
 
 test("should create a profile and navigate to welcome screen", async (t) => {
-	await t.click(Selector("button").withExactText(translations.PROFILE.CREATE_PROFILE));
+	await t.click(Selector('[data-testid="Card"]').withExactText(translations.PROFILE.CREATE_PROFILE));
 
 	await t.expect(getLocation()).contains("/profiles/create");
 
@@ -35,7 +35,7 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 });
 
 test("should create a profile with password and navigate to welcome screen", async (t) => {
-	await t.click(Selector("button").withExactText(translations.PROFILE.CREATE_PROFILE));
+	await t.click(Selector('[data-testid="Card"]').withExactText(translations.PROFILE.CREATE_PROFILE));
 
 	await t.expect(getLocation()).contains("/profiles/create");
 

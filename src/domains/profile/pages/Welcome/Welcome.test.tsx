@@ -187,6 +187,8 @@ describe("Welcome", () => {
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
+		await waitFor(() => expect(getAllByTestId("Card").length).toBe(3));
+
 		const profileCardMenu = getAllByTestId("dropdown__toggle")[0];
 		act(() => {
 			fireEvent.click(profileCardMenu);
@@ -205,7 +207,7 @@ describe("Welcome", () => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("Card").length).toBe(1));
+		await waitFor(() => expect(getAllByTestId("Card").length).toBe(2));
 	});
 
 	it("should change route to create profile", () => {

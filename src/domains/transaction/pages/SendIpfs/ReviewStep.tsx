@@ -49,7 +49,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</Circle>
 				}
 			>
-				{hash}
+				<span className="break-all">{hash}</span>
 			</TransactionDetail>
 
 			<div className="mt-2">

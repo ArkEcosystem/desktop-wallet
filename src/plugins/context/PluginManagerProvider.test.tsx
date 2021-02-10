@@ -66,7 +66,7 @@ describe("PluginManagerProvider", () => {
 
 		const Component = () => {
 			const { reportPlugin } = usePluginManagerContext();
-			const onClick = () => reportPlugin(plugin);
+			const onClick = () => reportPlugin(plugin.config());
 			return <button onClick={onClick}>Click</button>;
 		};
 
@@ -80,7 +80,7 @@ describe("PluginManagerProvider", () => {
 
 		expect(ipcRendererMock).toHaveBeenCalledWith(
 			"open-external",
-			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=undefined",
+			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=0.0.0",
 		);
 		ipcRendererMock.mockRestore();
 	});
@@ -145,7 +145,7 @@ describe("PluginManagerProvider", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "test-plugin", version: "0.0.1" },
+					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
 					source: () => void 0,
 					sourcePath: "/plugins/test-plugin/index.js",
 					dir: "/plugins/test-plugin",
@@ -199,10 +199,57 @@ describe("PluginManagerProvider", () => {
 		ipcRendererSpy.mockRestore();
 	});
 
+	it("should install plugin from custom url", async () => {
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:loader-fs.find") {
+				return {
+					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					source: () => void 0,
+					sourcePath: "/plugins/test-plugin/index.js",
+					dir: "/plugins/test-plugin",
+				};
+			}
+
+			if (channel === "plugin:download") {
+				return "/plugins/test-plugin";
+			}
+		});
+
+		const Component = () => {
+			const { installPlugin } = usePluginManagerContext();
+			return (
+				<div>
+					<button onClick={() => installPlugin("test-plugin", "https://github.com/arkecosystem/test-plugin")}>
+						Fetch
+					</button>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "test-plugin",
+				url: "https://github.com/arkecosystem/test-plugin/archive/master.zip",
+			}),
+		);
+
+		await waitFor(() => expect(manager.plugins().findById("test-plugin")).toBeTruthy());
+
+		ipcRendererSpy.mockRestore();
+	});
+
 	it("should render properly for remote package", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/remote-plugin/raw/master/package.json")
-			.reply(200, { name: "remote-plugin" });
+			.reply(200, { name: "remote-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
 		const Component = () => {
 			const { fetchLatestPackageConfiguration, pluginConfigurations } = usePluginManagerContext();
