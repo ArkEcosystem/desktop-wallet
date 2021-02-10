@@ -35,12 +35,14 @@ export const SendTransactionForm = ({
 	const { getValues, setValue, watch } = form;
 	const { network, senderAddress } = watch();
 
-	const [fees, setFees] = useState<Contracts.TransactionFee>({
+	const defaultFees = {
 		static: "5",
 		min: "0",
 		avg: "0",
 		max: "0",
-	});
+	};
+
+	const [fees, setFees] = useState<Contracts.TransactionFee>(defaultFees);
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
@@ -64,6 +66,11 @@ export const SendTransactionForm = ({
 
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
+
+		setFees(defaultFees);
+		setValue("fees", defaultFees);
+		setValue("fee", "0");
+		setDynamicFees(false);
 
 		setWallets(profile.wallets().values());
 	}, [findByType, network, profile, setValue, transactionType]);
