@@ -153,7 +153,6 @@ describe("SelectRecipient", () => {
 	it("should filter recipients list by network if provided", async () => {
 		const fn = jest.fn();
 
-		// const liskWallet = profile.wallets().generate("test", "lisk.devnet");
 		const lskCoin = await env.coin("ARK", "ark.mainnet");
 
 		const { getByTestId, getAllByTestId } = render(
