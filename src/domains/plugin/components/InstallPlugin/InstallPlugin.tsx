@@ -19,7 +19,6 @@ type InstallPluginProps = {
 export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin }: InstallPluginProps) => {
 	const { t } = useTranslation();
 	const { installPlugin } = usePluginManagerContext();
-	const activeStep = 1;
 
 	const handleDownload = useCallback(async () => {
 		try {
