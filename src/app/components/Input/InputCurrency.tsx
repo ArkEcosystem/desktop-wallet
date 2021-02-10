@@ -4,10 +4,12 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from
 import { Input } from "./Input";
 import { InputGroup } from "./InputGroup";
 
-type Props = { onChange?: (value: any) => void; magnitude?: number; errorClassName?: string } & Omit<
-	React.InputHTMLAttributes<any>,
-	"onChange" | "defaultValue"
->;
+type Props = {
+	onChange?: (value: any) => void;
+	magnitude?: number;
+	errorClassName?: string;
+	as?: React.ElementType<any>;
+} & Omit<React.InputHTMLAttributes<any>, "onChange" | "defaultValue">;
 
 interface ISelectionRange {
 	start: number | null;
@@ -15,7 +17,7 @@ interface ISelectionRange {
 }
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, magnitude, children, errorClassName, ...props }: Props, ref: any) => {
+	({ onChange, value, as: Component, magnitude, children, errorClassName, ...props }: Props, ref: any) => {
 		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
 		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
 		const [selectionRange, setSelectionRange] = useState<ISelectionRange>({
@@ -50,6 +52,10 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		useLayoutEffect(() => {
 			ref.current.setSelectionRange(selectionRange.start, selectionRange.end);
 		}, [amount, ref, selectionRange.start, selectionRange.end]);
+
+		if (Component) {
+			return <Component value={amount.display} onChange={handleInput} ref={ref} {...props} />;
+		}
 
 		return (
 			<InputGroup>
