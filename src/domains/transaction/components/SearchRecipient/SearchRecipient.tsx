@@ -116,7 +116,13 @@ export const SearchRecipient = ({
 	const recipients = useMemo(() => {
 		const recipientsList: Recipient[] = [];
 
-		const isNetworkSelected = (addressNetwork: string) => network?.id() && addressNetwork === network?.id();
+		const isNetworkSelected = (addressNetwork: string) => {
+			if (!network?.id()) {
+				return true;
+			}
+
+			return addressNetwork === network?.id();
+		};
 
 		profileWallets.forEach((wallet) => {
 			if (!isNetworkSelected(wallet.network().id())) {
