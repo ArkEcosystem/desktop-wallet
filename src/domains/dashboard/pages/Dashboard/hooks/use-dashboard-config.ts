@@ -58,7 +58,7 @@ export const useDashboardConfig = ({ profile, defaults }: { profile: Profile; de
 
 					return true;
 				}),
-		[profile, dashboard, selectedNetworkIds, walletsDisplayType, allWalletsLength],
+		[profile, dashboard, selectedNetworkIds, walletsDisplayType, allWalletsLength], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 
 	return {
