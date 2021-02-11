@@ -13,23 +13,24 @@ type InstallPluginProps = {
 	onClose?: any;
 	onCancel?: any;
 	plugin?: any;
+	repositoryURL?: string;
 };
 
 /* TODO: Show steps with download and installation progress*/
-export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin }: InstallPluginProps) => {
+export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProps) => {
 	const { t } = useTranslation();
 	const { installPlugin } = usePluginManagerContext();
 
 	const handleDownload = useCallback(async () => {
 		try {
-			await installPlugin(plugin.id);
+			await installPlugin(plugin.id, repositoryURL);
 			toasts.success(`The plugin "${plugin.title}" was successfully installed`);
 		} catch {
 			toasts.error(`Failed to install plugin "${plugin.title}"`);
 		} finally {
 			onClose?.();
 		}
-	}, [installPlugin, plugin, onClose]);
+	}, [installPlugin, plugin, onClose, repositoryURL]);
 
 	return (
 		<Modal title={t("COMMON.ATTENTION")} size="lg" isOpen={isOpen} onClose={onClose}>
