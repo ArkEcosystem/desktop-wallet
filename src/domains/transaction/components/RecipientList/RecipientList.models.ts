@@ -15,6 +15,7 @@ export type RecipientListItem = {
 };
 
 export type RecipientList = {
+	network?: string;
 	assetSymbol?: string;
 	isEditable?: boolean;
 	recipients?: RecipientListItem[];
