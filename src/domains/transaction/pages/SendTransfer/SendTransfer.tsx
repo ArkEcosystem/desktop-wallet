@@ -306,7 +306,7 @@ export const SendTransfer = () => {
 														setIsConfirming(true);
 
 														const unconfirmed = await fetchWalletUnconfirmedTransactions(
-															activeWallet,
+															wallet!,
 														);
 
 														setUnconfirmedTransactions(unconfirmed);
