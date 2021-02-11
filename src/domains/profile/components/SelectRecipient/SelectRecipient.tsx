@@ -1,3 +1,4 @@
+import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -9,6 +10,7 @@ import { SearchRecipient } from "domains/transaction/components/SearchRecipient"
 import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
+	network?: Network;
 	address?: string;
 	profile: Profile;
 	disabled?: boolean;
@@ -33,7 +35,7 @@ const ProfileAvatar = ({ address }: any) => {
 };
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
-	({ address, profile, disabled, isInvalid, onChange }: SelectRecipientProps, ref) => {
+	({ address, profile, disabled, isInvalid, network, onChange }: SelectRecipientProps, ref) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState("");
 		const fieldContext = useFormField();
@@ -105,6 +107,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				</div>
 
 				<SearchRecipient
+					network={network}
 					isOpen={isRecipientSearchOpen}
 					profile={profile}
 					onAction={(address: string) => handleSelectAddress(address)}
