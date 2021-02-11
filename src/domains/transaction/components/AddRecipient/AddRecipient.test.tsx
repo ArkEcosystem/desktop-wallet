@@ -160,7 +160,7 @@ describe("AddRecipient", () => {
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
+		const selectedAddressValue = profile.wallets().first().address();
 		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
 	});
 

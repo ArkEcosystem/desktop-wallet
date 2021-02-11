@@ -59,7 +59,7 @@ let wallet: ReadWriteWallet;
 describe("SendTransfer", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		wallet = profile.wallets().values()[0];
+		wallet = profile.wallets().first();
 
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions?address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
@@ -394,9 +394,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(
-					profile.contacts().values()[0].addresses().values()[0].address(),
-				),
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -515,9 +513,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(
-					profile.contacts().values()[0].addresses().values()[0].address(),
-				),
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -629,8 +625,8 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
+			await waitFor(() =>
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -738,8 +734,8 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
+			await waitFor(() =>
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -809,9 +805,7 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
@@ -893,9 +887,7 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
@@ -946,7 +938,7 @@ describe("SendTransfer", () => {
 			signMock.mockRestore();
 		});
 	});
-
+	//
 	it("should send a multi payment", async () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T")
@@ -993,9 +985,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
 
 			fireEvent.change(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 
@@ -1007,9 +997,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
-				profile.contacts().values()[0].addresses().values()[0].address(),
-			);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
 
 			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
@@ -1098,9 +1086,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(
-					profile.contacts().values()[0].addresses().values()[0].address(),
-				),
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -1196,9 +1182,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(
-					profile.contacts().values()[0].addresses().values()[0].address(),
-				),
+				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount

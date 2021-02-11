@@ -19,6 +19,7 @@ export const paths = {
 
 export const plugins = [
 	{
+		id: 0,
 		name: "ARK Explorer",
 		author: "ARK Ecosystem",
 		description: "This is a description",
@@ -29,6 +30,7 @@ export const plugins = [
 		isGrant: true,
 	},
 	{
+		id: 1,
 		name: "Animal Avatars",
 		author: "Breno Polanski",
 		description: "This is a description",
@@ -37,6 +39,7 @@ export const plugins = [
 		version: "1.3.8",
 	},
 	{
+		id: 2,
 		name: "ChangeNOW Plugin",
 		author: "ChangeNOW",
 		description: "This is a description",
@@ -45,6 +48,7 @@ export const plugins = [
 		version: "1.3.8",
 	},
 	{
+		id: 4,
 		name: "Bold Ninja",
 		author: "Delegate Fun",
 		description: "This is a description",
