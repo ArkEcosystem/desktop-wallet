@@ -153,14 +153,14 @@ describe("SelectRecipient", () => {
 	it("should filter recipients list by network if provided", async () => {
 		const fn = jest.fn();
 
-		const lskCoin = await env.coin("ARK", "ark.mainnet");
+		const coin = await env.coin("ARK", "ark.mainnet");
 
 		const { getByTestId, getAllByTestId } = render(
 			<SelectRecipient
 				profile={profile}
 				onChange={fn}
 				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
-				network={lskCoin.network()}
+				network={coin.network()}
 			/>,
 		);
 
