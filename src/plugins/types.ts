@@ -35,6 +35,12 @@ export interface PluginAPI {
 	theme(): {
 		decorate: <T = any>(key: string, callback: (Component: T, props: Record<string, any>) => T) => void;
 	};
+	timers(): {
+		clearInterval: (handle: number) => void;
+		clearTimeout: (handle: number) => void;
+		setInterval: (handler: Function, timeout: number) => number;
+		setTimeout: (handler: Function, timeout: number) => number;
+	};
 }
 
 export interface PluginRawInstance {
@@ -52,6 +58,7 @@ export enum PluginServiceIdentifier {
 	Profile = "PROFILE",
 	Store = "STORE",
 	Theme = "THEME",
+	Timers = "TIMERS",
 }
 
 export interface PluginServiceConfig {

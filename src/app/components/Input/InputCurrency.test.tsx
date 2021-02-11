@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
 import { InputCurrency } from "./InputCurrency";
 
@@ -95,5 +95,21 @@ describe("InputCurrency", () => {
 		});
 
 		waitFor(() => expect(input).toHaveValue("1.23"));
+	});
+
+	it("should render with a custom element", async () => {
+		const CustomInput = React.forwardRef((_, ref) => <input placeholder="Custom Input" ref={ref} />);
+		CustomInput.displayName = "CustomInput";
+		const { getByPlaceholderText } = render(<InputCurrency as={CustomInput} />);
+
+		const input = getByPlaceholderText("Custom Input");
+
+		fireEvent.input(input, {
+			target: {
+				value: "1.2",
+			},
+		});
+
+		await waitFor(() => expect(input).toHaveValue("1.2"));
 	});
 });

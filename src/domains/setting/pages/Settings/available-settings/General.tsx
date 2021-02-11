@@ -1,15 +1,15 @@
 import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { Input } from "app/components/Input";
+import { InputDefault } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useReloadPath } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
@@ -21,6 +21,7 @@ import { setScreenshotProtection } from "utils/electron-utils";
 import { SettingsProps } from "../Settings.models";
 
 export const General = ({ formConfig, onSuccess }: SettingsProps) => {
+	const reloadPath = useReloadPath();
 	const activeProfile = useActiveProfile();
 	const { env, persist } = useEnvironmentContext();
 
@@ -87,6 +88,14 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		setIsDevelopmentNetwork(isAccepted);
 	};
 
+	const handleOnReset = () => {
+		setIsResetProfileOpen(false);
+		setIsDevelopmentNetwork(activeProfile.settings().get<boolean>(ProfileSetting.UseTestNetworks)!);
+		setIsAdvancedMode(activeProfile.settings().get<boolean>(ProfileSetting.AdvancedMode)!);
+		context.reset();
+		reloadPath();
+	};
+
 	const securityItems = [
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
@@ -132,7 +141,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 						}))}
 						defaultValue={`${activeProfile.settings().get(ProfileSetting.AutomaticSignOutPeriod)}`}
 					/>
-					<FormHelperText />
 				</FormField>
 			),
 			wrapperClass: "pt-8",
@@ -253,7 +261,8 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-								<Input
+								<InputDefault
+									type="text"
 									ref={register({
 										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
@@ -269,7 +278,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 									defaultValue={activeProfile.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="passphraseLanguage">
@@ -286,7 +294,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.passphraseLanguages}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Bip39Locale)}
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="currency">
@@ -303,7 +310,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.currencies}
 									defaultValue={activeProfile.settings().get(ProfileSetting.ExchangeCurrency)}
 								/>
-								<FormHelperText />
 							</FormField>
 						</div>
 
@@ -322,7 +328,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.languages}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Locale)}
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="marketProvider">
@@ -339,7 +344,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.marketProviders}
 									defaultValue={activeProfile.settings().get(ProfileSetting.MarketProvider)}
 								/>
-								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="timeFormat">
@@ -356,7 +360,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 									options={PlatformSdkChoices.timeFormats}
 									defaultValue={activeProfile.settings().get(ProfileSetting.TimeFormat)}
 								/>
-								<FormHelperText />
 							</FormField>
 						</div>
 					</div>
@@ -405,7 +408,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				profile={activeProfile}
 				onCancel={() => setIsResetProfileOpen(false)}
 				onClose={() => setIsResetProfileOpen(false)}
-				onReset={() => setIsResetProfileOpen(false)}
+				onReset={handleOnReset}
 			/>
 		</>
 	);
