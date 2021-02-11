@@ -1,3 +1,4 @@
+import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -6,13 +7,14 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
 import { Table } from "app/components/Table";
 import { TableCell, TableRow } from "app/components/Table";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 type Recipient = {
 	id: string;
 	address: string;
 	alias?: string;
+	network?: string;
 	avatar: string;
 	type: string;
 };
@@ -69,44 +71,26 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 type SearchRecipientProps = {
 	title?: string;
 	description?: string;
+	network?: Network;
 	isOpen: boolean;
 	profile: Profile;
 	onClose?: () => void;
 	onAction: (address: string) => void;
 };
 
-export const SearchRecipient = ({ title, description, profile, isOpen, onClose, onAction }: SearchRecipientProps) => {
+export const SearchRecipient = ({
+	title,
+	description,
+	profile,
+	isOpen,
+	network,
+	onClose,
+	onAction,
+}: SearchRecipientProps) => {
 	const { t } = useTranslation();
 
 	const contacts = profile.contacts().values();
-	const wallets = profile.wallets().values();
-
-	const availableData: Recipient[] = [];
-
-	contacts.map((contact) =>
-		availableData.push(
-			...contact
-				.addresses()
-				.values()
-				.map((contactAddress) => ({
-					id: contactAddress.id(),
-					address: contactAddress.address(),
-					alias: contact.name(),
-					avatar: contactAddress.avatar(),
-					type: "contact",
-				})),
-		),
-	);
-
-	wallets.map((wallet) =>
-		availableData.push({
-			id: wallet.id(),
-			address: wallet.address(),
-			alias: wallet.alias(),
-			avatar: wallet.avatar(),
-			type: "wallet",
-		}),
-	);
+	const profileWallets = profile.wallets().values();
 
 	const columns = [
 		{
@@ -129,6 +113,55 @@ export const SearchRecipient = ({ title, description, profile, isOpen, onClose, 
 		},
 	];
 
+	const recipients = useMemo(() => {
+		const recipientsList: Recipient[] = [];
+
+		const isNetworkSelected = (addressNetwork: string) => {
+			if (!network?.id()) {
+				return true;
+			}
+
+			return addressNetwork === network?.id();
+		};
+
+		profileWallets.forEach((wallet) => {
+			if (!isNetworkSelected(wallet.network().id())) {
+				return;
+			}
+
+			recipientsList.push({
+				id: wallet.id(),
+				address: wallet.address(),
+				alias: wallet.alias(),
+				avatar: wallet.avatar(),
+				type: "wallet",
+				network: wallet.network().id(),
+			});
+		});
+
+		contacts.forEach((contact) => {
+			contact
+				.addresses()
+				.values()
+				.forEach((contactAddress) => {
+					if (!isNetworkSelected(contactAddress.network())) {
+						return;
+					}
+
+					recipientsList.push({
+						id: contactAddress.id(),
+						address: contactAddress.address(),
+						alias: contact.name(),
+						avatar: contactAddress.avatar(),
+						network: contactAddress.network(),
+						type: "contact",
+					});
+				});
+		});
+
+		return recipientsList;
+	}, [profileWallets, contacts, network]);
+
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -138,7 +171,7 @@ export const SearchRecipient = ({ title, description, profile, isOpen, onClose, 
 			onClose={onClose}
 		>
 			<div className="mt-8">
-				<Table columns={columns} data={availableData}>
+				<Table columns={columns} data={recipients}>
 					{(recipient: Recipient) => <RecipientListItem recipient={recipient} onAction={onAction} />}
 				</Table>
 			</div>
