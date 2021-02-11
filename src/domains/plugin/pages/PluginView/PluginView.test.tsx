@@ -148,4 +148,37 @@ describe("Plugin View", () => {
 
 		invokeMock.mockRestore();
 	});
+
+	it("should uninstall plugin", async () => {
+		const plugin = new PluginController(
+			{
+				name: "test-plugin",
+			},
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/view">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<PluginView />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByTestId("PluginView__uninstall"));
+
+		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+
+		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
+		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));
+
+		await waitFor(() => expect(screen.queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
+
+		invokeMock.mockRestore();
+	});
 });
