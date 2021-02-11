@@ -2,7 +2,15 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	screen,
+	waitFor,
+} from "utils/testing-library";
 
 import { useLedgerConnection } from "./connection";
 
@@ -82,7 +90,7 @@ describe("Use Ledger Connection", () => {
 		listenSpy.mockReset();
 	});
 
-	it("should import ledger wallets", () => {
+	it("should import ledger wallets", async () => {
 		const Component = () => {
 			const { importLedgerWallets } = useLedgerConnection(transport);
 			const wallets = profile.wallets().values();
@@ -96,7 +104,7 @@ describe("Use Ledger Connection", () => {
 				<div>
 					<ul>
 						{wallets.map((wallet) => (
-							<li key={wallet.id()}>
+							<li key={wallet.id()} data-testid="Wallet">
 								{`${wallet.address()}-${wallet.isLedger() ? "Ledger" : "Standard"}`}
 							</li>
 						))}
@@ -106,10 +114,28 @@ describe("Use Ledger Connection", () => {
 			);
 		};
 
-		render(<Component />);
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const { getAllByTestId } = render(<Component />);
+
+		await waitFor(() => {
+			expect(getAllByTestId("Wallet").length).toBeGreaterThan(0);
+		});
+
+		listenSpy.mockReset();
 
 		act(() => {
 			fireEvent.click(screen.getByText("Import"));
+		});
+
+		await waitFor(() => {
+			expect(getAllByTestId("Wallet").length).toBeGreaterThan(0);
 		});
 
 		profile.wallets().forget("DQx1w8KE7nEW1nX9gj9iWjMXnp8Q3xyn3y");
