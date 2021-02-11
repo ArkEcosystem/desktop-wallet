@@ -36,6 +36,42 @@ exports[`Label should render as solid 1`] = `
 </div>
 `;
 
+exports[`Label should render as solid and danger 1`] = `
+<div>
+  <div
+    class="Label-sc-1tj9hzr-0 dXueiu"
+    color="danger"
+  />
+</div>
+`;
+
+exports[`Label should render as solid and default 1`] = `
+<div>
+  <div
+    class="Label-sc-1tj9hzr-0 ftOOah"
+    color="neutral"
+  />
+</div>
+`;
+
+exports[`Label should render as solid and success 1`] = `
+<div>
+  <div
+    class="Label-sc-1tj9hzr-0 kBUHuJ"
+    color="primary"
+  />
+</div>
+`;
+
+exports[`Label should render as solid and success 2`] = `
+<div>
+  <div
+    class="Label-sc-1tj9hzr-0 gXsiCF"
+    color="success"
+  />
+</div>
+`;
+
 exports[`Label should render danger color 1`] = `
 <div>
   <div

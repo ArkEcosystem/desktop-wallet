@@ -57,4 +57,28 @@ describe("Label", () => {
 
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render as solid and success", () => {
+		const { container } = render(<Label variant="solid" color="primary" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render as solid and danger", () => {
+		const { container } = render(<Label variant="solid" color="danger" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render as solid and success", () => {
+		const { container } = render(<Label variant="solid" color="success" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render as solid and default", () => {
+		const { container } = render(<Label variant="solid" color="neutral" />);
+
+		expect(container).toMatchSnapshot();
+	});
 });
