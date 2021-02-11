@@ -316,4 +316,19 @@ describe("SelectDropdown", () => {
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
 	});
+
+	it("should allow entering free text", () => {
+		const { getByTestId } = render(<Select options={options} allowFreeInput={true} />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Test" } });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("Test");
+	});
 });
