@@ -269,7 +269,7 @@ export const SendTransfer = () => {
 							<TabPanel tabId={5}>
 								<ErrorStep
 									onBack={() =>
-										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+										history.push(`/profiles/${activeProfile.id()}/wallets/${wallet!.id()}`)
 									}
 									isRepeatDisabled={formState.isSubmitting}
 									onRepeat={form.handleSubmit(submitForm)}
@@ -315,7 +315,7 @@ export const SendTransfer = () => {
 														setIsConfirming(true);
 
 														const unconfirmed = await fetchWalletUnconfirmedTransactions(
-															activeWallet,
+															wallet!,
 														);
 
 														setUnconfirmedTransactions(unconfirmed);

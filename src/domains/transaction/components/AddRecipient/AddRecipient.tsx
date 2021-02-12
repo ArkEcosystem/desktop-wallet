@@ -228,6 +228,7 @@ export const AddRecipient = ({
 							}
 						/>
 						<SelectRecipient
+							network={network}
 							disabled={!isSenderFilled}
 							address={recipientAddress}
 							ref={register(sendTransfer.recipientAddress(network, addedRecipients, isSingle))}
@@ -304,6 +305,7 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
+						network={network}
 						recipients={addedRecipients}
 						isEditable={true}
 						onRemove={handleRemoveRecipient}
