@@ -3,7 +3,7 @@ import { clickOutsideHandler } from "app/hooks/click-outside";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
-import { Dropdown } from "./Dropdown";
+import { Dropdown, DropdownOptionGroup } from "./Dropdown";
 
 const options = [
 	{ label: "Option 1", value: "1" },
@@ -191,6 +191,54 @@ describe("Dropdown", () => {
 
 	it("should render a top-right", () => {
 		const { getByTestId, container } = render(<Dropdown options={options} position="top-right" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render dropdown group options with divider, icon and secondary label", () => {
+		const primaryOptions: DropdownOptionGroup = {
+			key: "primary",
+			title: "Primary Options 1",
+			options: [
+				{
+					label: "Primary Options 1.1",
+					value: "value 1.1",
+				},
+				{
+					label: "Primary Options 1.2",
+					value: "value 1.2",
+				},
+			],
+		};
+
+		const secondaryOptions: DropdownOptionGroup = {
+			key: "secondary",
+			hasDivider: true,
+			title: "Secondary Options 1",
+			options: [
+				{
+					label: "Secondary Options 1.1",
+					value: "value 1.1",
+					icon: "icon-1",
+					iconPosition: "end",
+				},
+				{
+					label: "Secondary Options 1.2",
+					value: "value 1.2",
+					icon: "icon-2",
+					secondaryLabel: "secondary label",
+					iconPosition: "start",
+				},
+			],
+		};
+		const { getByTestId, container } = render(
+			<Dropdown options={[primaryOptions, secondaryOptions]} position="top-right" />,
+		);
 		const toggle = getByTestId("dropdown__toggle");
 
 		act(() => {

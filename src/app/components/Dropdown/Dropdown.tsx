@@ -40,23 +40,26 @@ export const Wrapper = styled.div<{ position?: string; variant: string }>(getSty
 const isOptionGroup = (options: DropdownOption | DropdownOptionGroup) =>
 	(options as DropdownOptionGroup).key !== undefined;
 
-const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGroup, onSelect: any) => (
-	<div key={key} className="mt-4 first:mt-0">
-		{hasDivider && (
-			<div className="mx-8 -my-2">
-				<Divider dashed />
-			</div>
-		)}
-		<ul>
-			{title && (
-				<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500">
-					{title}
-				</li>
+const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGroup, onSelect: any) => {
+	console.log("key", key);
+	return (
+		<div key={key} className="mt-4 first:mt-0">
+			{hasDivider && (
+				<div className="mx-8 -my-2">
+					<Divider dashed />
+				</div>
 			)}
-			{renderOptions(options, onSelect, key)}
-		</ul>
-	</div>
-);
+			<ul>
+				{title && (
+					<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500">
+						{title}
+					</li>
+				)}
+				{renderOptions(options, onSelect, key)}
+			</ul>
+		</div>
+	);
+};
 
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
 	if (options[0] && isOptionGroup(options[0])) {
