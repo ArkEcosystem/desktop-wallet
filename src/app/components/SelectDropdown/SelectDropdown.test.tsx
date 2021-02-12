@@ -318,6 +318,17 @@ describe("SelectDropdown", () => {
 	});
 
 	it("should allow entering free text", () => {
+		const { getByTestId } = render(<Select options={options} allowFreeInput />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Test" } });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("Test");
+	});
+
+	it("should allow entering free text and handle blur event", () => {
 		const { getByTestId } = render(<Select options={options} allowFreeInput={true} />);
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
@@ -326,9 +337,15 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+			fireEvent.blur(selectDropdown);
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("Test");
+	});
+
+	it("should render with default value when free text is allowed", () => {
+		const { container, getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+		expect(getByTestId("select-list__input")).toHaveValue("3");
+		expect(container).toMatchSnapshot();
 	});
 });
