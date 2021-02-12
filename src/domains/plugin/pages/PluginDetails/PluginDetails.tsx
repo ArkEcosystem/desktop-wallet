@@ -1,11 +1,11 @@
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile, useQueryParams } from "app/hooks";
-import { toasts } from "app/services";
+import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { usePluginManagerContext } from "plugins";
-import React, { useCallback, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -15,15 +15,10 @@ export const PluginDetails = () => {
 	const history = useHistory();
 
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
+	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
-	const {
-		pluginPackages,
-		pluginConfigurations,
-		pluginManager,
-		installPlugin,
-		reportPlugin,
-	} = usePluginManagerContext();
+	const { pluginPackages, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
 	const repositoryURL = queryParams.get("repositoryURL");
@@ -68,21 +63,16 @@ export const PluginDetails = () => {
 		reportPlugin(plugin!);
 	};
 
-	const handleInstallPlugin = useCallback(async () => {
-		try {
-			await installPlugin(pluginId!, repositoryURL!);
-			toasts.success(`The plugin "${title}" was successfully installed`);
-		} catch {
-			toasts.error(`Failed to install plugin "${title}"`);
-		}
-	}, [installPlugin, pluginId, repositoryURL, title]);
-
 	const handleLaunch = () => {
 		history.push(`/profiles/${activeProfile.id()}/plugins/view?pluginId=${pluginId}`);
 	};
 
 	const handleOnDelete = () => {
 		history.push(`/profiles/${activeProfile.id()}/plugins`);
+	};
+
+	const closeInstallModal = () => {
+		setIsInstallOpen(false);
 	};
 
 	return (
@@ -93,7 +83,7 @@ export const PluginDetails = () => {
 					isInstalled={isInstalled}
 					onUninstall={() => setIsUninstallOpen(true)}
 					onReport={handleReportPlugin}
-					onInstall={handleInstallPlugin}
+					onInstall={() => setIsInstallOpen(true)}
 					hasLaunch={hasLaunch}
 					onLaunch={handleLaunch}
 				/>
@@ -102,6 +92,16 @@ export const PluginDetails = () => {
 			<Section>
 				<PluginInfo {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
 			</Section>
+
+			{plugin && (
+				<InstallPlugin
+					plugin={plugin.toObject()}
+					repositoryURL={repositoryURL!}
+					isOpen={isInstallOpen}
+					onClose={closeInstallModal}
+					onCancel={closeInstallModal}
+				/>
+			)}
 
 			{pluginCtrl && (
 				<PluginUninstallConfirmation
