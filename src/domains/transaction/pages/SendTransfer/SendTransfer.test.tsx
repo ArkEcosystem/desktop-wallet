@@ -239,7 +239,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SelectDropdownInput__input")).toBeTruthy());
 		});
 
 		act(() => {
@@ -375,7 +375,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -495,7 +495,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -608,7 +608,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -717,7 +717,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -787,7 +787,7 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address());
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
@@ -869,7 +869,7 @@ describe("SendTransfer", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address());
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
@@ -967,8 +967,6 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
-
 			fireEvent.change(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 
 			fireEvent.click(getByTestId("AddRecipient__add-button"));
@@ -979,7 +977,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address());
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address());
 
 			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
@@ -1068,7 +1066,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
@@ -1164,7 +1162,7 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
-				expect(getByTestId("SelectRecipient__input")).toHaveValue(profile.wallets().first().address()),
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount

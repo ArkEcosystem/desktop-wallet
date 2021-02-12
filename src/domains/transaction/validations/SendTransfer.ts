@@ -35,7 +35,7 @@ export const sendTransfer = (t: any, env: Environment) => ({
 					return true;
 				}
 
-				if (shouldRequire) {
+				if (shouldRequire || !network) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.RECIPIENT"),
 					});

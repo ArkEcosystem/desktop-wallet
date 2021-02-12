@@ -87,7 +87,7 @@ describe("SelectDropdown", () => {
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(firstOption);
+			fireEvent.mouseDown(firstOption);
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
