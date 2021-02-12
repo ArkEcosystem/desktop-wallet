@@ -224,7 +224,7 @@ describe("SendTransfer", () => {
 		let rendered: RenderResult;
 
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
-		history.push(transferURL, { memo: "ARK" });
+		history.push(transferURL, { memo: "ARK", coin: "ark", network: "ark.devnet" });
 
 		await act(async () => {
 			rendered = renderWithRouter(
