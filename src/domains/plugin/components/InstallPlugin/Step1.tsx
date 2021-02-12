@@ -1,7 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = () => {
+type Props = {
+	plugin: any;
+};
+
+export const FirstStep = ({ plugin }: Props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -11,9 +15,9 @@ export const FirstStep = () => {
 			</p>
 			<div className="max-w-sm">
 				<ul className="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text">
-					<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_1")}</li>
-					<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
-					<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
+					{plugin.permissions?.map((permission: string) => (
+						<li key={permission}>{t(`PLUGINS.PERMISSIONS.${permission}`)}</li>
+					))}
 				</ul>
 			</div>
 		</section>
