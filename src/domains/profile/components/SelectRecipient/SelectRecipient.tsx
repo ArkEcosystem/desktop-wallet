@@ -6,6 +6,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Select } from "app/components/SelectDropdown";
 import cn from "classnames";
+import { useProfileAddresses } from "domains/profile/hooks/use-profile-addresses";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
 
@@ -37,7 +38,7 @@ const ProfileAvatar = ({ address }: any) => {
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
 	({ address, profile, disabled, isInvalid, network, onChange }: SelectRecipientProps, ref) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
-		const [selectedAddress, setSelectedAddress] = useState("");
+		const [selectedAddress, setSelectedAddress] = useState(address);
 		const fieldContext = useFormField();
 
 		const isInvalidValue = isInvalid || fieldContext?.isInvalid;
@@ -47,6 +48,12 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				setSelectedAddress(address);
 			}
 		}, [address, setSelectedAddress]);
+
+		const { allAddresses } = useProfileAddresses({ profile, network });
+		const recipientAddresses = allAddresses.map(({ address }) => ({
+			label: address,
+			value: address,
+		}));
 
 		const handleSelectAddress = (address: string) => {
 			setSelectedAddress(address);
@@ -66,11 +73,6 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			onChange?.(value);
 		};
 
-		const recipientAddresses = profile
-			.wallets()
-			.values()
-			.map((wallet) => ({ label: wallet.address(), value: wallet.address() }));
-
 		return (
 			<div>
 				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
@@ -88,13 +90,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						options={recipientAddresses}
 						allowFreeInput={true}
 						errorClassName="mr-12"
-						onChange={(option: any) => {
-							if (selectedAddress === option.value) {
-								return;
-							}
-
-							onInputChange(option.value);
-						}}
+						onChange={(option: any) => onInputChange(option.value)}
 					/>
 
 					<div
