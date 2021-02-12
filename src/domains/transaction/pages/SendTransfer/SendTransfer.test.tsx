@@ -243,6 +243,30 @@ describe("SendTransfer", () => {
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
 
+	it("should render form and use location state without memo", async () => {
+		const history = createMemoryHistory();
+		let rendered: RenderResult;
+
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+		history.push(transferURL, { coin: "ark", network: "ark.devnet" });
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+		});
+
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
 	it("should select cryptoasset first and see select address input clickable", async () => {
 		const history = createMemoryHistory();
 		let rendered: RenderResult;
