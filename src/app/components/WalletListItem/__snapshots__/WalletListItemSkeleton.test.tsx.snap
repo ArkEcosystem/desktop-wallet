@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletListItemSkeleton should render wallet list skeleton 1`] = `
+<div>
+  <table>
+    <tbody
+      data-testid="WalletListSkeleton"
+    >
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+          >
+            <div
+              class="-space-x-2"
+            >
+              <div
+                class="flex items-center mr-2 -space-x-1"
+              >
+                <div
+                  class="Circle-uw7h4j-0 JkqUV border-transparent"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="Circle-uw7h4j-0 JkqUV border-transparent"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <span>
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 260px; height: 16px;"
+              >
+                ‌
+              </span>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center text-sm font-bold text-center align-middle"
+          >
+            <span>
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 100px; height: 16px;"
+              >
+                ‌
+              </span>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
+          >
+            <span>
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 229px; height: 16px;"
+              >
+                ‌
+              </span>
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end text-theme-secondary-400"
+          >
+            <span>
+              <span
+                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                style="width: 100px; height: 16px;"
+              >
+                ‌
+              </span>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
