@@ -90,4 +90,10 @@ describe("Button", () => {
 
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render loading with icon", () => {
+		const { container } = render(<Button isLoading={true} size="icon" icon="icon" iconHeight={2} iconWidth={2} />);
+
+		expect(container).toMatchSnapshot();
+	});
 });
