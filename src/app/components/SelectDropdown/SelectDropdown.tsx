@@ -110,7 +110,7 @@ const SelectDropdown = ({
 	// }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const inputTypeAhead = useMemo(() => {
-		if (inputValue && items.length && isMatch(inputValue, items[0])) {
+		if (inputValue && items.length && isMatch(inputValue, items[0] )) {
 			return [inputValue, items[0].label.slice(inputValue.length)].join("");
 		}
 	}, [items, inputValue]);
@@ -225,13 +225,9 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 		}: SelectProps,
 		ref,
 	) => {
-		const defaultSelectedItem = useMemo(
-			() =>
-				allowFreeInput
-					? ({ value: defaultValue, label: defaultValue } as Option)
-					: options.find((option: Option) => option.value === defaultValue),
-			[defaultValue],
-		);
+		const defaultSelectedItem = useMemo(() => allowFreeInput
+				? ({ value: defaultValue, label: defaultValue } as Option)
+				: options.find((option: Option) => option.value === defaultValue), [defaultValue, allowFreeInput, options]);
 
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
