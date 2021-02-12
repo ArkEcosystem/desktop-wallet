@@ -1,81 +1,53 @@
 import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import React, { useState } from "react";
+import { toasts } from "app/services";
+import { usePluginManagerContext } from "plugins";
+import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
 
 type InstallPluginProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
+	plugin?: any;
+	repositoryURL?: string;
 };
 
-export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps) => {
+/* TODO: Show steps with download and installation progress*/
+export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProps) => {
 	const { t } = useTranslation();
-	const [activeStep, setActiveStep] = useState(1);
+	const { installPlugin } = usePluginManagerContext();
 
-	const handleBack = () => {
-		setActiveStep(activeStep - 1);
-	};
-
-	const handleNext = () => {
-		setActiveStep(activeStep + 1);
-	};
+	const handleDownload = useCallback(async () => {
+		try {
+			await installPlugin(plugin.id, repositoryURL);
+			toasts.success(t("PLUGINS.MODAL_INSTALL_PLUGIN.SUCCESS", { name: plugin.title }));
+		} catch {
+			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.FAILURE", { name: plugin.title }));
+		} finally {
+			onClose?.();
+		}
+	}, [installPlugin, plugin, onClose, repositoryURL, t]);
 
 	return (
-		<Modal
-			title={t(activeStep === 1 ? "COMMON.ATTENTION" : "COMMON.DOWNLOADED")}
-			size="lg"
-			isOpen={isOpen}
-			onClose={onClose}
-		>
-			<Tabs activeId={activeStep}>
+		<Modal title={t("COMMON.ATTENTION")} size="lg" isOpen={isOpen} onClose={onClose}>
+			<Tabs activeId={1}>
 				<TabPanel tabId={1}>
-					<FirstStep />
-				</TabPanel>
-				<TabPanel tabId={2}>
-					<SecondStep />
-				</TabPanel>
-				<TabPanel tabId={3}>
-					<ThirdStep />
+					<FirstStep plugin={plugin} />
 				</TabPanel>
 
 				<div className="flex justify-end mt-8 space-x-3">
-					{activeStep === 1 && (
-						<>
-							<Button variant="secondary" onClick={onCancel} data-testid="InstallPlugin__cancel-button">
-								{t("COMMON.CANCEL")}
-							</Button>
-							<Button onClick={handleNext} data-testid="InstallPlugin__download-button">
-								{t("COMMON.DOWNLOAD")}
-							</Button>
-						</>
-					)}
-
-					{/* TODO: Remove these buttons from the second step in the functional code */}
-					{activeStep === 2 && (
-						<>
-							<Button variant="secondary" onClick={handleBack} data-testid="InstallPlugin__back-button">
-								{t("COMMON.BACK")}
-							</Button>
-							<Button onClick={handleNext} data-testid="InstallPlugin__continue-button">
-								{t("COMMON.CONTINUE")}
-							</Button>
-						</>
-					)}
-
-					{activeStep === 3 && (
-						<>
-							<Button variant="secondary" onClick={handleBack} data-testid="InstallPlugin__cancel-button">
-								{t("COMMON.CANCEL")}
-							</Button>
-							<Button data-testid="InstallPlugin__install-button">{t("COMMON.INSTALL")}</Button>
-						</>
-					)}
+					<>
+						<Button variant="secondary" onClick={onCancel} data-testid="InstallPlugin__cancel-button">
+							{t("COMMON.CANCEL")}
+						</Button>
+						<Button onClick={handleDownload} data-testid="InstallPlugin__download-button">
+							{t("COMMON.DOWNLOAD")}
+						</Button>
+					</>
 				</div>
 			</Tabs>
 		</Modal>
