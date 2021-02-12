@@ -24,13 +24,13 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 	const handleDownload = useCallback(async () => {
 		try {
 			await installPlugin(plugin.id, repositoryURL);
-			toasts.success(`The plugin "${plugin.title}" was successfully installed`);
+			toasts.success(t("PLUGINS.MODAL_INSTALL_PLUGIN.SUCCESS", { name: plugin.title }));
 		} catch {
-			toasts.error(`Failed to install plugin "${plugin.title}"`);
+			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.FAILURE", { name: plugin.title }));
 		} finally {
 			onClose?.();
 		}
-	}, [installPlugin, plugin, onClose, repositoryURL]);
+	}, [installPlugin, plugin, onClose, repositoryURL, t]);
 
 	return (
 		<Modal title={t("COMMON.ATTENTION")} size="lg" isOpen={isOpen} onClose={onClose}>
