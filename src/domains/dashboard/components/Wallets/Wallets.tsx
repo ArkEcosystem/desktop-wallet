@@ -100,6 +100,7 @@ export const Wallets = ({
 				/>
 
 				<WalletsList
+					isLoading={isLoading && walletsCount === 0}
 					isVisible={viewType === "list"}
 					wallets={listWallets}
 					hasMore={listHasMore}

@@ -24,6 +24,13 @@ describe("WalletsList", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should not render if isVisible is false", () => {
+		const { asFragment, getByTestId } = render(<WalletsList wallets={wallets} isVisible={false} />);
+
+		expect(() => getByTestId("WalletsList")).toThrow();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render hidden", () => {
 		const { asFragment, getByTestId } = render(<WalletsList wallets={wallets} isVisible={false} />);
 
@@ -42,6 +49,13 @@ describe("WalletsList", () => {
 		const { asFragment, getByTestId } = render(<WalletsList wallets={[]} />);
 
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render loading state", () => {
+		const { asFragment, getAllByTestId } = render(<WalletsList wallets={[]} isLoading={true} />);
+
+		expect(getAllByTestId("TableRow").length).toBeGreaterThan(0);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

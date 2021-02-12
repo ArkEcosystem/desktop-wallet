@@ -15,7 +15,6 @@ import {
 	renderWithRouter,
 	syncDelegates,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { Wallets } from "./Wallets";
@@ -279,7 +278,7 @@ describe("Wallets", () => {
 	});
 
 	it("should handle list wallet click", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
 			</Route>,
@@ -295,7 +294,7 @@ describe("Wallets", () => {
 		});
 
 		act(() => {
-			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()!));
+			fireEvent.click(getByText(wallets[0].alias()!));
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
