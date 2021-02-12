@@ -60,6 +60,13 @@ const SelectDropdown = ({
 	const isMatch = (inputValue: string, option: Option) =>
 		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
 
+	const handleInputChange = ({ selectedItem }: { selectedItem: Option }) => {
+		if (!allowFreeInput) {
+			return;
+		}
+		onSelectedItemChange({ selected: selectedItem });
+	};
+
 	const {
 		isOpen,
 		closeMenu,
@@ -76,6 +83,13 @@ const SelectDropdown = ({
 	} = useCombobox<Option | null>({
 		items,
 		itemToString,
+		onSelectedItemChange: ({ selectedItem }) => {
+			if (allowFreeInput) {
+				return;
+			}
+
+			onSelectedItemChange?.({ selected: selectedItem });
+		},
 		onInputValueChange: ({ inputValue, selectedItem, type }) => {
 			if (allowFreeInput) {
 				const selected = { label: inputValue as string, value: inputValue as string };
@@ -106,11 +120,10 @@ const SelectDropdown = ({
 
 	useEffect(() => {
 		selectItem(defaultSelectedItem || null);
-	}, [defaultSelectedItem]); // eslint-disable-line react-hooks/exhaustive-deps
-	// }, []); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [defaultSelectedItem, selectItem]);
 
 	const inputTypeAhead = useMemo(() => {
-		if (inputValue && items.length && isMatch(inputValue, items[0] )) {
+		if (inputValue && items.length && isMatch(inputValue, items[0])) {
 			return [inputValue, items[0].label.slice(inputValue.length)].join("");
 		}
 	}, [items, inputValue]);
@@ -130,15 +143,14 @@ const SelectDropdown = ({
 						onFocus: openMenu,
 						onBlur: (event) => {
 							if (allowFreeInput) {
-								const selected = { label: event.target.value, value: event.target.value };
-								selectItem(selected);
-								onSelectedItemChange({ selected });
+								const selectedItem = { label: event.target.value, value: event.target.value };
+								handleInputChange({ selectedItem });
 								return;
 							}
 
 							if (inputValue && items.length > 0) {
 								selectItem(items[0]);
-								onSelectedItemChange({ selected: items[0] });
+								handleInputChange({ selectedItem: items[0] });
 								closeMenu();
 							} else {
 								reset();
@@ -149,7 +161,7 @@ const SelectDropdown = ({
 								// Select first match
 								if (inputValue && items.length > 0) {
 									selectItem(items[0]);
-									onSelectedItemChange({ selected: items[0] });
+									handleInputChange({ selectedItem: items[0] });
 
 									if (event.key === "Enter") {
 										closeMenu();
@@ -179,7 +191,7 @@ const SelectDropdown = ({
 										}`,
 										onMouseDown: () => {
 											selectItem(item);
-											onSelectedItemChange({ selected: item });
+											handleInputChange({ selectedItem: item });
 											closeMenu();
 										},
 									})}
@@ -225,9 +237,13 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 		}: SelectProps,
 		ref,
 	) => {
-		const defaultSelectedItem = useMemo(() => allowFreeInput
-				? ({ value: defaultValue, label: defaultValue } as Option)
-				: options.find((option: Option) => option.value === defaultValue), [defaultValue, allowFreeInput, options]);
+		const defaultSelectedItem = useMemo(
+			() =>
+				allowFreeInput
+					? ({ value: defaultValue, label: defaultValue } as Option)
+					: options.find((option: Option) => option.value === defaultValue),
+			[defaultValue, allowFreeInput, options],
+		);
 
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
