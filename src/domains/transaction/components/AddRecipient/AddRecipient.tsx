@@ -127,10 +127,10 @@ export const AddRecipient = ({
 	}, [recipients, withDeeplink]);
 
 	useEffect(() => {
-		if (network) {
+		if (network && recipientAddress) {
 			trigger("recipientAddress");
 		}
-	}, [network, trigger]);
+	}, [network, recipientAddress, trigger]);
 
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
