@@ -46,7 +46,7 @@ describe("AddRecipient", () => {
 			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
 		);
 
-		// await waitFor(() => expect(getByTestId("SelectRecipient__input")).toHaveValue(""));
+		// await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -71,7 +71,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
-			expect(getByTestId("SelectRecipient__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 		});
 
 		expect(container).toMatchSnapshot();
@@ -87,7 +87,7 @@ describe("AddRecipient", () => {
 			/>,
 		);
 
-		await waitFor(() => expect(getByTestId("SelectRecipient__input")).toHaveValue(""));
+		await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -124,7 +124,7 @@ describe("AddRecipient", () => {
 				},
 			});
 
-			fireEvent.input(getByTestId("SelectRecipient__input"), {
+			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 				},
@@ -133,7 +133,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(form.current.getValues("amount")).toEqual("100000000");
-			expect(getByTestId("SelectRecipient__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
 				{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
 			]);
@@ -161,7 +161,7 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		const selectedAddressValue = profile.wallets().first().address();
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
 	});
 
 	it("should set available amount", async () => {
@@ -242,7 +242,7 @@ describe("AddRecipient", () => {
 					value: values.displayAmount,
 				},
 			});
-			fireEvent.input(getByTestId("SelectRecipient__input"), {
+			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: values.recipientAddress,
 				},
@@ -278,7 +278,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("SelectRecipient__input")).toBeDisabled();
+			expect(getByTestId("SelectDropdownInput__input")).toBeDisabled();
 			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
@@ -295,7 +295,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("SelectRecipient__input")).toBeDisabled();
+			expect(getByTestId("SelectDropdownInput__input")).toBeDisabled();
 			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
@@ -399,7 +399,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectRecipient__input"), {
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: "abc",
 				},
@@ -454,7 +454,7 @@ describe("AddRecipient", () => {
 		await waitFor(() => expect(form.current.getValues("displayAmount")).toEqual(values.displayAmount));
 
 		await act(async () => {
-			fireEvent.input(getByTestId("SelectRecipient__input"), {
+			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: values.recipientAddress,
 				},
@@ -511,7 +511,7 @@ describe("AddRecipient", () => {
 		await waitFor(() => expect(form.current.getValues("displayAmount")).toEqual(values.displayAmount));
 
 		await act(async () => {
-			fireEvent.input(getByTestId("SelectRecipient__input"), {
+			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: values.recipientAddress,
 				},
@@ -522,7 +522,7 @@ describe("AddRecipient", () => {
 			await waitFor(() => expect(getByTestId("AddRecipient__add-button")).toBeTruthy());
 			fireEvent.click(getByTestId("AddRecipient__add-button"));
 
-			await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual(""));
+			await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual("" || undefined));
 			await waitFor(() => expect(form.current.getValues("amount")).toEqual(undefined));
 		});
 
