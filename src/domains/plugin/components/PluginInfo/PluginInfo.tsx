@@ -12,7 +12,7 @@ type Props = {
 
 export const PluginInfo = ({ description, permissions, images, minimumVersion }: Props) => {
 	const { t } = useTranslation();
-	const hasRequirementes = !!minimumVersion;
+	const hasRequirements = !!minimumVersion;
 
 	return (
 		<>
@@ -34,7 +34,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 				</div>
 			) : null}
 
-			{hasRequirementes ? (
+			{hasRequirements ? (
 				<div className="mt-8">
 					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.REQUIREMENTS")}</p>
 					{minimumVersion && (
