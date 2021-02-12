@@ -13,6 +13,7 @@ import { Route } from "react-router-dom";
 import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { toasts } from "../../../../app/services";
+import { translations } from "../../i18n";
 import { PluginDetails } from "./PluginDetails";
 
 describe("PluginDetails", () => {
@@ -347,6 +348,10 @@ describe("PluginDetails", () => {
 
 		fireEvent.click(screen.getByTestId("PluginHeader__button--install"));
 
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
+
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
 				name: "remote-plugin",
@@ -398,6 +403,10 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("Remote Plugin").length).toBeGreaterThan(0));
 
 		fireEvent.click(screen.getByTestId("PluginHeader__button--install"));
+
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
 
 		const toastSpy = jest.spyOn(toasts, "error");
 
