@@ -109,7 +109,29 @@ describe("SendTransfer", () => {
 			coin: "ark",
 			memo: "ARK",
 			method: "transfer",
-			network: "mainnet",
+			network: "ark.mainnet",
+			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
+		};
+
+		await act(async () => {
+			const { getByTestId, asFragment } = render(
+				<FormProvider {...form.current}>
+					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
+				</FormProvider>,
+			);
+
+			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("should render 1st step with custom deeplink values and use them", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const deeplinkProps: any = {
+			amount: "1.2",
+			coin: "ark",
+			method: "transfer",
+			network: "ark.mainnet",
 			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
 		};
 
