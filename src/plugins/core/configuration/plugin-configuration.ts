@@ -119,6 +119,10 @@ export class PluginConfigurationData {
 		return this.manifest().get<string[]>("urls", []);
 	}
 
+	minimumVersion() {
+		return this.manifest().get<string>("minimumVersion");
+	}
+
 	version() {
 		const version = this.get("version");
 		return semver.valid(version) ? semver.coerce(version)?.version : "0.0.0";
@@ -202,6 +206,7 @@ export class PluginConfigurationData {
 			homepage: this.homepage(),
 			description: this.description(),
 			isOfficial: this.isOfficial(),
+			minimumVersion: this.minimumVersion(),
 		};
 	}
 }

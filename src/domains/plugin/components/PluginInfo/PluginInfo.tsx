@@ -7,10 +7,12 @@ type Props = {
 	description?: string;
 	permissions?: any;
 	images?: any;
+	minimumVersion?: string;
 };
 
-export const PluginInfo = ({ description, permissions, images }: Props) => {
+export const PluginInfo = ({ description, permissions, images, minimumVersion }: Props) => {
 	const { t } = useTranslation();
+	const hasRequirementes = !!minimumVersion;
 
 	return (
 		<>
@@ -29,6 +31,19 @@ export const PluginInfo = ({ description, permissions, images }: Props) => {
 					<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__permissions">
 						{permissions.join(", ")}
 					</p>
+				</div>
+			) : null}
+
+			{hasRequirementes ? (
+				<div className="mt-8">
+					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.REQUIREMENTS")}</p>
+					{minimumVersion && (
+						<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__mininum-version">
+							<span>
+								{t("PLUGINS.PLUGIN_INFO.DESKTOP_WALLET_VERSION")} v{minimumVersion}+
+							</span>
+						</p>
+					)}
 				</div>
 			) : null}
 
