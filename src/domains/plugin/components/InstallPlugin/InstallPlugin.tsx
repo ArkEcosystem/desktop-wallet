@@ -3,10 +3,11 @@ import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { toasts } from "app/services";
 import { usePluginManagerContext } from "plugins";
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { FirstStep } from "./Step1";
+import { SecondStep } from "./Step2";
 
 type InstallPluginProps = {
 	isOpen: boolean;
@@ -19,24 +20,38 @@ type InstallPluginProps = {
 /* TODO: Show steps with download and installation progress*/
 export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProps) => {
 	const { t } = useTranslation();
-	const { installPlugin } = usePluginManagerContext();
+	const { downloadPlugin } = usePluginManagerContext();
+	const [activeStep, setActiveStep] = useState(1);
+	const [isDownloading, setIsDownloading] = useState(false);
+	const [downloadProgress, setDownloadProgress] = useState<any>({});
 
 	const handleDownload = useCallback(async () => {
+		setIsDownloading(true);
 		try {
-			await installPlugin(plugin.id, repositoryURL);
+			const savedPath = await downloadPlugin(plugin.id, repositoryURL);
 			toasts.success(t("PLUGINS.MODAL_INSTALL_PLUGIN.SUCCESS", { name: plugin.title }));
 		} catch {
 			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.FAILURE", { name: plugin.title }));
 		} finally {
+			setIsDownloading(false);
 			onClose?.();
 		}
-	}, [installPlugin, plugin, onClose, repositoryURL, t]);
+	}, [downloadPlugin, plugin, onClose, repositoryURL, t]);
 
 	return (
-		<Modal title={t("COMMON.ATTENTION")} size="lg" isOpen={isOpen} onClose={onClose}>
+		<Modal
+			title={t(activeStep === 1 ? "COMMON.ATTENTION" : "COMMON.DOWNLOADING")}
+			size="lg"
+			isOpen={isOpen}
+			onClose={onClose}
+		>
 			<Tabs activeId={1}>
 				<TabPanel tabId={1}>
 					<FirstStep plugin={plugin} />
+				</TabPanel>
+
+				<TabPanel tabId={2}>
+					<SecondStep plugin={plugin} downloadProgress={downloadProgress} />
 				</TabPanel>
 
 				<div className="flex justify-end mt-8 space-x-3">

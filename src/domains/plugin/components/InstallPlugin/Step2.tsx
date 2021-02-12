@@ -3,7 +3,9 @@ import Placeholder from "domains/plugin/images/placeholder.png";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const SecondStep = () => {
+type Props = { plugin: any; downloadProgress: { percent?: number; transferredBytes?: number; totalBytes: number } };
+
+export const SecondStep = ({ plugin, downloadProgress }: Props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -16,12 +18,12 @@ export const SecondStep = () => {
 					<div className="flex flex-col justify-around h-full">
 						<div>
 							<p className="text-sm font-semibold text-theme-secondary-400">{t("COMMON.PLUGIN")}</p>
-							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
+							<p className="text-lg font-semibold text-theme-black">{plugin.title}</p>
 						</div>
 						<div className="flex justify-between">
 							<span>
 								<p className="text-sm font-semibold text-theme-secondary-400">
-									{t("COMMON.DOWNLOADED")}
+									{t("COMMON.DOWNLOADING")}...
 								</p>
 								<p className="font-bold text-theme-secondary-text">154 KB / 154 KB</p>
 							</span>
