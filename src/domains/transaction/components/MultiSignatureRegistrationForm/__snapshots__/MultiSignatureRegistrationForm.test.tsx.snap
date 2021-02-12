@@ -56,21 +56,64 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="absolute left-1"
+                      class="absolute left-1 z-20"
                     >
                       <div
                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                       />
                     </div>
-                    <input
-                      aria-invalid="false"
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                      data-testid="SelectRecipient__input"
-                      name="address"
-                      value=""
-                    />
                     <div
-                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="relative w-full"
+                    >
+                      <input
+                        aria-invalid="false"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        data-testid="select-list__input"
+                        name="address"
+                        readonly=""
+                        value=""
+                      />
+                      <div
+                        class="relative w-full"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-1-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-0-input"
+                            id="downshift-1-label"
+                          />
+                          <div
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="downshift-1-menu"
+                              aria-labelledby="downshift-1-label"
+                              autocomplete="off"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                              data-testid="SelectDropdownInput__input"
+                              id="downshift-0-input"
+                              name="address"
+                              placeholder="Select option"
+                              value=""
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-1-label"
+                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            id="downshift-1-menu"
+                            role="listbox"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                       data-testid="SelectRecipient__select-recipient"
                     >
                       <div
