@@ -4,9 +4,9 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Divider } from "app/components/Divider";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input } from "app/components/Input";
+import { InputDefault } from "app/components/Input";
 import { LedgerData } from "app/contexts/Ledger";
 import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
 import React, { useState } from "react";
@@ -46,7 +46,7 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 
 						<FormField name={`names.${wallet.address}`}>
 							<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />
-							<Input
+							<InputDefault
 								onChange={() => {
 									for (const address of Object.keys(watch("names"))) {
 										trigger(`names.${address}`);
@@ -82,7 +82,6 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 								})}
 								data-testid="ImportWallet__name-input"
 							/>
-							<FormHelperText />
 						</FormField>
 
 						{index !== wallets.length - 1 && <Divider />}

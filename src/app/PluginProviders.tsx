@@ -9,6 +9,7 @@ import {
 	ProfilePluginService,
 	StorePluginService,
 	ThemePluginService,
+	TimersPluginService,
 } from "plugins";
 import React from "react";
 
@@ -27,6 +28,7 @@ export const services = [
 	new ProfilePluginService(),
 	new StorePluginService(),
 	new ThemePluginService(),
+	new TimersPluginService(),
 ];
 
 export const PluginProviders = ({ children }: Props) => {

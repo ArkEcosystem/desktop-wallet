@@ -16,6 +16,7 @@ export type WalletGridProps = {
 export type WalletListProps = {
 	wallets: GridWallet[];
 	isVisible?: boolean;
+	isLoading?: boolean;
 	hasMore?: boolean;
 	onViewMore?: any;
 	onRowClick?: (walletId: string) => void;

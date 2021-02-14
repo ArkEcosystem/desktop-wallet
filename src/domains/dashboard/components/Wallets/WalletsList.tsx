@@ -3,65 +3,74 @@ import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
+import { WalletListItemSkeleton } from "app/components/WalletListItem/WalletListItemSkeleton";
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { WalletListProps } from "./";
 
-export const WalletsList = memo(({ isVisible = true, wallets, hasMore, onRowClick, onViewMore }: WalletListProps) => {
-	const { t } = useTranslation();
+export const WalletsList = memo(
+	({ isVisible = true, wallets, hasMore, onRowClick, onViewMore, isLoading = false }: WalletListProps) => {
+		const { t } = useTranslation();
 
-	const columns = [
-		{
-			Header: t("COMMON.WALLET_ADDRESS"),
-			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.alias() || wallet.address(),
-		},
-		{
-			Header: t("COMMON.WALLET_TYPE"),
-			className: "justify-center",
-		},
-		{
-			Header: t("COMMON.BALANCE"),
-			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.balance?.().toFixed(),
-			className: "justify-end",
-		},
-		{
-			Header: t("COMMON.FIAT_VALUE"),
-			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.convertedBalance?.().toFixed(),
-			className: "justify-end",
-		},
-	];
+		const columns = [
+			{
+				Header: t("COMMON.WALLET_ADDRESS"),
+				accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet?.alias() || wallet?.address(),
+			},
+			{
+				Header: t("COMMON.WALLET_TYPE"),
+				className: "justify-center",
+			},
+			{
+				Header: t("COMMON.BALANCE"),
+				accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet?.balance?.().toFixed(),
+				className: "flex-row-reverse justify-end",
+			},
+			{
+				Header: t("COMMON.FIAT_VALUE"),
+				accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet?.convertedBalance?.().toFixed(),
+				className: "flex-row-reverse justify-end",
+			},
+		];
 
-	if (!isVisible) {
-		return <></>;
-	}
+		if (!isVisible) {
+			return <></>;
+		}
 
-	return (
-		<div data-testid="WalletsList">
-			{wallets.length > 0 && (
-				<div data-testid="WalletTable">
-					<Table columns={columns} data={wallets}>
-						{(rowData: any) => <WalletListItem {...rowData} onClick={onRowClick} />}
-					</Table>
+		const skeletonRows = new Array(3).fill({});
 
-					{hasMore && (
-						<Button
-							variant="secondary"
-							className="mt-10 mb-5 w-full"
-							data-testid="WalletsList__ViewMore"
-							onClick={onViewMore}
-						>
-							{t("COMMON.VIEW_MORE")}
-						</Button>
-					)}
-				</div>
-			)}
+		const tableRows = isLoading ? skeletonRows : wallets;
 
-			{!hasMore && wallets.length === 0 && (
-				<EmptyBlock>{t("DASHBOARD.WALLET_CONTROLS.EMPTY_MESSAGE")}</EmptyBlock>
-			)}
-		</div>
-	);
-});
+		return (
+			<div data-testid="WalletsList">
+				<Table columns={columns} data={tableRows}>
+					{(rowData: any) =>
+						isLoading ? <WalletListItemSkeleton /> : <WalletListItem {...rowData} onClick={onRowClick} />
+					}
+				</Table>
+
+				{wallets.length > 0 && (
+					<div data-testid="WalletTable">
+						{hasMore && (
+							<Button
+								variant="secondary"
+								className="mt-10 mb-5 w-full"
+								data-testid="WalletsList__ViewMore"
+								onClick={onViewMore}
+							>
+								{t("COMMON.VIEW_MORE")}
+							</Button>
+						)}
+					</div>
+				)}
+
+				{!isLoading && !hasMore && wallets.length === 0 && (
+					<EmptyBlock>{t("DASHBOARD.WALLET_CONTROLS.EMPTY_MESSAGE")}</EmptyBlock>
+				)}
+			</div>
+		);
+	},
+);
 
 WalletsList.displayName = "WalletsList";

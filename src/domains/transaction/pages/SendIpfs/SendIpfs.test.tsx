@@ -21,7 +21,6 @@ import {
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 import { getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
 
 const passphrase = getDefaultWalletMnemonic();
@@ -319,9 +318,9 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
-			);
+			await waitFor(() => {
+				expect(getByTestId("Input-error")).toBeVisible();
+			});
 
 			signMock.mockRestore();
 
@@ -431,7 +430,9 @@ describe("SendIpfs", () => {
 
 			expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash");
 
-			await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toHaveTextContent("'IPFS Hash' is invalid"));
+			await waitFor(() => {
+				expect(getByTestId("Input-error")).toBeVisible();
+			});
 
 			await waitFor(() => expect(container).toMatchSnapshot());
 		});

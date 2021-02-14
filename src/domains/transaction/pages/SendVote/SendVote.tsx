@@ -287,8 +287,6 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
-			console.log(error);
-
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
@@ -326,12 +324,7 @@ export const SendVote = () => {
 								<AuthenticationStep
 									wallet={activeWallet}
 									ledgerDetails={
-										<VoteLedgerReview
-											wallet={activeWallet}
-											votes={votes}
-											unvotes={unvotes}
-											fee={getValues("fee")}
-										/>
+										<VoteLedgerReview wallet={activeWallet} votes={votes} unvotes={unvotes} />
 									}
 								/>
 							</TabPanel>

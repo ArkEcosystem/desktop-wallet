@@ -1,12 +1,16 @@
+import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import cn from "classnames";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
+	network?: Network;
 	address?: string;
 	profile: Profile;
 	disabled?: boolean;
@@ -31,9 +35,12 @@ const ProfileAvatar = ({ address }: any) => {
 };
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
-	({ address, profile, disabled, isInvalid, onChange }: SelectRecipientProps, ref) => {
+	({ address, profile, disabled, isInvalid, network, onChange }: SelectRecipientProps, ref) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState("");
+		const fieldContext = useFormField();
+
+		const isInvalidValue = isInvalid || fieldContext?.isInvalid;
 
 		useEffect(() => {
 			if (address) {
@@ -66,15 +73,15 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						<ProfileAvatar address={selectedAddress} />
 					</div>
 					<Input
-						className="pr-11 pl-14"
+						className={cn("pl-14", { "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
 						data-testid="SelectRecipient__input"
 						ref={ref}
 						defaultValue={selectedAddress}
 						onChange={(ev: any) => onInputChange(ev.target.value)}
 						disabled={disabled}
-						isInvalid={isInvalid}
+						isInvalid={isInvalidValue}
+						errorClassName="mr-12"
 					/>
-
 					<div
 						data-testid="SelectRecipient__select-recipient"
 						className="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
@@ -85,6 +92,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				</div>
 
 				<SearchRecipient
+					network={network}
 					isOpen={isRecipientSearchOpen}
 					profile={profile}
 					onAction={(address: string) => handleSelectAddress(address)}

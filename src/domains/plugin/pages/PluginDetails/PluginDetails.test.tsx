@@ -12,6 +12,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
+import { toasts } from "../../../../app/services";
+import { translations } from "../../i18n";
 import { PluginDetails } from "./PluginDetails";
 
 describe("PluginDetails", () => {
@@ -256,6 +258,45 @@ describe("PluginDetails", () => {
 		invokeMock.mockRestore();
 	});
 
+	it("should close remove confirmation", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--uninstall"));
+		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+
+		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
+		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));
+		await waitFor(() => expect(screen.queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
+
+		invokeMock.mockRestore();
+	});
+
 	it("should install package", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
@@ -307,6 +348,10 @@ describe("PluginDetails", () => {
 
 		fireEvent.click(screen.getByTestId("PluginHeader__button--install"));
 
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
+
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
 				name: "remote-plugin",
@@ -315,5 +360,56 @@ describe("PluginDetails", () => {
 		);
 
 		await waitFor(() => expect(manager.plugins().findById("remote-plugin")).toBeTruthy());
+	});
+
+	it("should install package with error", async () => {
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:loader-fs.find") {
+				throw new Error("Plugin not found");
+			}
+		});
+
+		nock("https://github.com/")
+			.get("/arkecosystem/remote-plugin/raw/master/package.json")
+			.reply(200, { name: "remote-plugin" });
+
+		const FetchComponent = () => {
+			const { fetchLatestPackageConfiguration } = usePluginManagerContext();
+			return (
+				<button
+					onClick={() => fetchLatestPackageConfiguration("https://github.com/arkecosystem/remote-plugin")}
+				>
+					Fetch
+				</button>
+			);
+		};
+
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [
+					`/profiles/${profile.id()}/plugins/details?pluginId=remote-plugin&repositoryURL=https://github.com/arkecosystem/remote-plugin`,
+				],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() => expect(screen.getAllByText("Remote Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__button--install"));
+
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
+
+		const toastSpy = jest.spyOn(toasts, "error");
+
+		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
 	});
 });

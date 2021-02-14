@@ -24,7 +24,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 
 	const { t } = useTranslation();
 
-	const shuffled = React.useMemo(() => shuffleOptions({ options, limit, value: answer }), [options, limit, answer]);
+	const [shuffled] = React.useState(() => shuffleOptions({ options, limit, value: answer }));
 
 	const handleClick = (value: string, index: number) => {
 		handleChange(value);

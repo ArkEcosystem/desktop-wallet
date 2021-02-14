@@ -4,7 +4,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { BTC } from "@arkecosystem/platform-sdk-btc";
 import { EOS } from "@arkecosystem/platform-sdk-eos";
-// import { ETH } from "@arkecosystem/platform-sdk-eth";
+import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -288,11 +288,11 @@ export const availableNetworksMock: Coins.Network[] = [
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["wax.mainnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["worbli.mainnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["worbli.testnet"]),
-	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.goerli"]),
-	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.kovan"]),
-	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.mainnet"]),
-	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.rinkeby"]),
-	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks.["eth.ropsten"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks["eth.goerli"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks["eth.kovan"]),
+	new Coins.Network(ETH.manifest.name, ETH.manifest.networks["eth.mainnet"]),
+	new Coins.Network(ETH.manifest.name, ETH.manifest.networks["eth.rinkeby"]),
+	// new Coins.Network(ETH.manifest.name, ETH.manifest.networks["eth.ropsten"]),
 	// new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.betanet"]),
 	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.mainnet"]),
 	new Coins.Network(LSK.manifest.name, LSK.manifest.networks["lsk.testnet"]),

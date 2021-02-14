@@ -3,16 +3,16 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonStart, InputGroup,InputPassword } from "app/components/Input";
+import { Input, InputAddonStart, InputGroup, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { createRef, useEffect, useState } from "react";
-import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -100,7 +100,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 						})}
 						data-testid="SignMessage__message-input"
 					/>
-					<FormHelperText />
 				</FormField>
 
 				{isLedger && isAwaitingLedger && <LedgerConfirmation />}
@@ -112,7 +111,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 							ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
 							data-testid="SignMessage__mnemonic-input"
 						/>
-						<FormHelperText />
 					</FormField>
 				)}
 

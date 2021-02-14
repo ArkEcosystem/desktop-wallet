@@ -58,7 +58,7 @@ describe("Transactions", () => {
 	it("should render", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} />
+				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -76,7 +76,7 @@ describe("Transactions", () => {
 	it("should render hidden", async () => {
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard" isVisible={false}>
-				<Transactions profile={profile} isVisible={false} />
+				<Transactions profile={profile} wallets={profile.wallets().values()} isVisible={false} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -90,7 +90,7 @@ describe("Transactions", () => {
 	it("should filter by type", async () => {
 		const { getByRole, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} />
+				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -124,7 +124,7 @@ describe("Transactions", () => {
 
 		const { getByRole, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={emptyProfile} />
+				<Transactions profile={emptyProfile} wallets={[]} />
 			</Route>,
 			{
 				routes: [emptyProfileURL],
@@ -150,7 +150,7 @@ describe("Transactions", () => {
 	it("should open detail modal on transaction row click", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} />
+				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -181,7 +181,7 @@ describe("Transactions", () => {
 	it("should fetch more transactions", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} isLoading={false} />
+				<Transactions profile={profile} isLoading={false} wallets={profile.wallets().values()} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -214,7 +214,7 @@ describe("Transactions", () => {
 	it("should show loading state if set", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions isLoading={true} profile={profile} />
+				<Transactions isLoading={true} profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -254,7 +254,7 @@ describe("Transactions", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} isLoading={false} />
+				<Transactions profile={profile} isLoading={false} wallets={profile.wallets().values()} />
 			</Route>,
 			{
 				routes: [dashboardURL],

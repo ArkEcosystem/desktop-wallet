@@ -1,7 +1,5 @@
-import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { LayoutControls } from "app/components/LayoutControls";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
@@ -114,15 +112,6 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 									extra={<SearchBarPluginFilters />}
 								/>
 								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-								<Button
-									onClick={() => setInstallPlugin(true)}
-									data-testid="PluginsCategory_header--install"
-								>
-									<div className="flex items-center space-x-2 whitespace-nowrap">
-										<Icon name="File" width={15} height={15} />
-										<span>Install File</span>
-									</div>
-								</Button>
 							</div>
 						}
 					/>
@@ -153,6 +142,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 			</Page>
 
 			<InstallPlugin
+				plugin={{}}
 				isOpen={installPlugin}
 				onClose={() => setInstallPlugin(false)}
 				onCancel={() => setInstallPlugin(false)}

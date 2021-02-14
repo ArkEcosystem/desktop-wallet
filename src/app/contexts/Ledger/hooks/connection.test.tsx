@@ -96,7 +96,7 @@ describe("Use Ledger Connection", () => {
 				<div>
 					<ul>
 						{wallets.map((wallet) => (
-							<li key={wallet.id()}>
+							<li key={wallet.id()} data-testid="Wallet">
 								{`${wallet.address()}-${wallet.isLedger() ? "Ledger" : "Standard"}`}
 							</li>
 						))}
@@ -106,15 +106,29 @@ describe("Use Ledger Connection", () => {
 			);
 		};
 
-		render(<Component />);
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const { getAllByTestId } = render(<Component />);
+
+		await waitFor(() => {
+			expect(getAllByTestId("Wallet").length).toBeGreaterThan(0);
+		});
+
+		listenSpy.mockReset();
 
 		act(() => {
 			fireEvent.click(screen.getByText("Import"));
 		});
 
-		await waitFor(() =>
-			expect(screen.queryByText("DQx1w8KE7nEW1nX9gj9iWjMXnp8Q3xyn3y-Ledger")).toBeInTheDocument(),
-		);
+		await waitFor(() => {
+			expect(getAllByTestId("Wallet").length).toBeGreaterThan(0);
+		});
 
 		profile.wallets().forget("DQx1w8KE7nEW1nX9gj9iWjMXnp8Q3xyn3y");
 		env.persist();
