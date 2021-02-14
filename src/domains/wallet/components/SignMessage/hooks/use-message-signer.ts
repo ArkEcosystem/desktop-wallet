@@ -1,12 +1,11 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
-import { upperFirst } from "@arkecosystem/utils";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 
 const signWithLedger = async (message: string, wallet: ReadWriteWallet) => {
 	const path = wallet.data().get<string>(WalletData.LedgerPath);
-	
+
 	let signatory = wallet.publicKey();
 
 	if (!signatory) {

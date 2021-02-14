@@ -51,6 +51,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			network: string,
 			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
 		) => {
+			console.log("ledger connect");
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
@@ -64,7 +65,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 						bail(new Error("User aborted"));
 					}
 
-					console.log("connecting ledger");
 					await instance.ledger().connect(transport);
 					// Ensure that the app is accessible
 					await instance.ledger().getPublicKey(formatLedgerDerivationPath({ coinType: slip44 }));
@@ -82,6 +82,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	);
 
 	const disconnect = useCallback(async (coin: Coins.Coin) => {
+		console.log("ledger disconnect");
 		await coin.ledger().disconnect();
 		dispatch({ type: "disconnected" });
 	}, []);

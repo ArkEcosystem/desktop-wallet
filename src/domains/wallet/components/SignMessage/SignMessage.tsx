@@ -8,11 +8,12 @@ import { Icon } from "app/components/Icon";
 import { Input, InputAddonStart, InputGroup, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
-import { useEnvironmentContext } from "app/contexts";
+import { useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
-import React, { createRef, useEffect, useState } from "react";
+import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWaitingDevice";
+import React, { createRef, useEffect, useLayoutEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -26,28 +27,30 @@ type SignMessageProps = {
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
 
-const initialState = {
+const initialState: SignedMessageProps = {
 	message: "",
 	signatory: "",
 	signature: "",
 };
 
 export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => {
-	const [isSigned, setIsSigned] = useState(false);
 	const [isAwaitingLedger, setIsAwaitingLedger] = useState(false);
+	const [isAwaitingConfirmation, setIsAwaitingConfirmation] = useState(false);
 
 	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(initialState);
 
-	const { env } = useEnvironmentContext();
+	const isSigned = !!signedMessage.signature;
+
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
-	const { formState, register } = form;
+	const { formState, register, getValues, watch } = form;
 
 	const messageRef = createRef();
 
 	const profile = useActiveProfile();
 	const wallet = useActiveWallet();
+	const { abortConnectionRetry, isConnected } = useLedgerContext();
 
 	const { sign } = useMessageSigner(profile);
 
@@ -57,76 +60,108 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	useEffect(() => {
 		if (!isOpen) {
 			setSignedMessage(initialState);
-			setIsSigned(false);
 		}
 	}, [isOpen]);
 
+	useEffect(
+		() => () => {
+			abortConnectionRetry();
+		},
+		[abortConnectionRetry],
+	);
+
+	useLayoutEffect(() => {
+		if (wallet.isLedger() && !isConnected) {
+			setIsAwaitingLedger(true);
+		}
+	}, [isConnected, setIsAwaitingLedger, wallet]);
+
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
 		if (isLedger) {
-			setIsAwaitingLedger(true);
+			setIsAwaitingConfirmation(true);
 		}
 
 		const signedMessageResult = await sign(wallet, message, mnemonic);
 
 		setSignedMessage(signedMessageResult);
+	};
 
-		setIsSigned(true);
+	const handleLedgerModalClose = (hasDeviceAvailable: boolean) => {
+		setIsAwaitingLedger(false);
 
-		if (isLedger) {
-			setIsAwaitingLedger(false);
+		if (!hasDeviceAvailable) {
+			onClose?.();
 		}
 	};
 
-	const SignFormRender = (
-		<div className="mt-8">
-			<Form context={form} onSubmit={handleSubmit} data-testid="SignMessage__form">
-				<FormField name="signatory-address">
-					<FormLabel label={t("WALLETS.SIGNATORY")} />
-					<InputGroup>
-						<InputAddonStart>
-							<Avatar address={wallet.address()} size="sm" className="ml-4" noShadow />
-						</InputAddonStart>
-						<Input value={wallet.address()} className="font-semibold pl-15" disabled />
-					</InputGroup>
-				</FormField>
+	const { message } = watch();
 
-				<FormField name="message">
-					<FormLabel label={t("COMMON.MESSAGE")} />
-					<Input
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.MESSAGE"),
-							}).toString(),
-						})}
-						data-testid="SignMessage__message-input"
-					/>
-				</FormField>
+	const renderForm = (message: string) => {
+		if (isLedger) {
+			if (isAwaitingLedger) {
+				return <LedgerWaitingDevice isOpen={true} onClose={handleLedgerModalClose} />;
+			}
 
-				{isLedger && isAwaitingLedger && <LedgerConfirmation />}
+			if (isAwaitingConfirmation) {
+				return (
+					<LedgerConfirmation detailsHeading={null}>
+						<TransactionDetail label={t("COMMON.MESSAGE")} border={false}>
+							<span className="break-all">{message}</span>
+						</TransactionDetail>
+					</LedgerConfirmation>
+				);
+			}
+		}
 
-				{!isLedger && (
-					<FormField name="mnemonic">
-						<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
-						<InputPassword
-							ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
-							data-testid="SignMessage__mnemonic-input"
+		return (
+			<div className="mt-8">
+				<Form context={form} onSubmit={handleSubmit} data-testid="SignMessage__form">
+					<FormField name="signatory-address">
+						<FormLabel label={t("WALLETS.SIGNATORY")} />
+						<InputGroup>
+							<InputAddonStart>
+								<Avatar address={wallet.address()} size="sm" className="ml-4" noShadow />
+							</InputAddonStart>
+							<Input value={wallet.address()} className="font-semibold pl-15" disabled />
+						</InputGroup>
+					</FormField>
+
+					<FormField name="message">
+						<FormLabel label={t("COMMON.MESSAGE")} />
+						<Input
+							ref={register({
+								required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("COMMON.MESSAGE"),
+								}).toString(),
+							})}
+							data-testid="SignMessage__message-input"
 						/>
 					</FormField>
-				)}
 
-				<div className="flex justify-end space-x-3">
-					<Button variant="secondary" onClick={onCancel} data-testid="SignMessage__cancel">
-						{t("COMMON.CANCEL")}
-					</Button>
-					<Button disabled={!formState.isValid} type="submit" data-testid="SignMessage__submit-button">
-						{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
-					</Button>
-				</div>
-			</Form>
-		</div>
-	);
+					{!isLedger && (
+						<FormField name="mnemonic">
+							<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
+							<InputPassword
+								ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
+								data-testid="SignMessage__mnemonic-input"
+							/>
+						</FormField>
+					)}
 
-	const SignedMessageRender = (
+					<div className="flex justify-end space-x-3">
+						<Button variant="secondary" onClick={onCancel} data-testid="SignMessage__cancel">
+							{t("COMMON.CANCEL")}
+						</Button>
+						<Button disabled={!formState.isValid} type="submit" data-testid="SignMessage__submit-button">
+							{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
+						</Button>
+					</div>
+				</Form>
+			</div>
+		);
+	};
+
+	const renderSignedMessage = () => (
 		<div className="mt-2">
 			<TransactionDetail
 				border={false}
@@ -168,8 +203,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		</div>
 	);
 
-	const renderContent = () => (isSigned ? SignedMessageRender : SignFormRender);
-
 	return (
 		<Modal
 			isOpen={isOpen}
@@ -177,7 +210,8 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
 			onClose={onClose}
 		>
-			{renderContent()}
+			{message}
+			{isSigned ? renderSignedMessage() : renderForm(message)}
 		</Modal>
 	);
 };
