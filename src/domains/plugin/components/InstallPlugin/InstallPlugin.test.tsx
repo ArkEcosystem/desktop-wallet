@@ -69,6 +69,12 @@ describe("InstallPlugin", () => {
 	});
 
 	it("should download and install plugin", async () => {
+		const onSpy = jest.spyOn(ipcRenderer, "on").mockImplementation((channel, listener) => {
+			if (channel === "plugin:download-progress") {
+				return listener(undefined, { totalBytes: 200 });
+			}
+		});
+
 		const invokeSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
@@ -101,7 +107,6 @@ describe("InstallPlugin", () => {
 		);
 
 		fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		ipcRenderer.send("plugin:download-progress", { totalBytes: 200 });
 
 		await waitFor(() => expect(getByTestId("InstallPlugin__step--second")).toBeInTheDocument());
 
