@@ -120,7 +120,7 @@ describe("DelegateRegistrationForm", () => {
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
 		await act(async () => {
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[2]);
 		});
 

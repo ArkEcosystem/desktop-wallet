@@ -226,23 +226,24 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                data-testid="SelectionBar"
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
                   role="radio"
                   type="button"
                 >
-                  Min
+                  Slow
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
@@ -250,12 +251,12 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
-                  Max
+                  Fast
                 </button>
               </div>
             </div>
@@ -474,23 +475,24 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                data-testid="SelectionBar"
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
                   role="radio"
                   type="button"
                 >
-                  Min
+                  Slow
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
@@ -498,12 +500,12 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
-                  Max
+                  Fast
                 </button>
               </div>
             </div>
@@ -942,23 +944,24 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                data-testid="SelectionBar"
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
                   role="radio"
                   type="button"
                 >
-                  Min
+                  Slow
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
@@ -966,12 +969,12 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </button>
                 <button
                   aria-checked="true"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
-                  Max
+                  Fast
                 </button>
               </div>
             </div>
@@ -1190,23 +1193,24 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                data-testid="SelectionBar"
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
                   role="radio"
                   type="button"
                 >
-                  Min
+                  Slow
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
@@ -1214,12 +1218,12 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
-                  Max
+                  Fast
                 </button>
               </div>
             </div>
@@ -1457,23 +1461,24 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                data-testid="SelectionBar"
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
                   role="radio"
                   type="button"
                 >
-                  Min
+                  Slow
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
@@ -1481,12 +1486,12 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
-                  Max
+                  Fast
                 </button>
               </div>
             </div>
@@ -1724,23 +1729,24 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                data-testid="SelectionBar"
+                class="inline-flex overflow-hidden items-center space-x-2"
+                data-testid="ButtonGroup"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
+                  disabled=""
                   role="radio"
                   type="button"
                 >
-                  Min
+                  Slow
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
@@ -1748,12 +1754,12 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-                  data-testid="SelectionBarOption"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
                 >
-                  Max
+                  Fast
                 </button>
               </div>
             </div>
