@@ -237,4 +237,20 @@ describe("App", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
+
+	it("shouldn't migrate profiles", async () => {
+		process.env.REACT_APP_IS_E2E = undefined;
+
+		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		expect(getByTestId("Splash__text")).toBeInTheDocument();
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 2000));
+		});
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 });
