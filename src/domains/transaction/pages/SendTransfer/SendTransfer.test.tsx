@@ -113,6 +113,7 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form step with deeplink values and use them", async () => {
+		const { result: form } = renderHook(() => useForm());
 		const deeplinkProps: any = {
 			amount: "1.2",
 			coin: "ark",
