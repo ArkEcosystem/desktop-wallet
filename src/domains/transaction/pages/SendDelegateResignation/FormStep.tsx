@@ -1,7 +1,7 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
-import { FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useFees } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -78,11 +78,11 @@ export const FormStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) =>
 					max={fees.max}
 					value={fee}
 					step={0.01}
+					showFeeOptions={senderWallet.network().can(Coins.FeatureFlag.MiscellaneousDynamicFees)}
 					onChange={(currency) =>
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
 					}
 				/>
-				<FormHelperText />
 			</FormField>
 		</section>
 	);

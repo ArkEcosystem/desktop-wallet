@@ -10,19 +10,22 @@ let max: string;
 let avg: string;
 let step: number;
 
+let defaultProps = {};
+
 describe("InputFee", () => {
 	beforeEach(() => {
-		value = (2 * 1e8).toFixed(0);
-		min = (1 * 1e8).toFixed(0);
-		max = (10 * 1e8).toFixed(0);
-		avg = (1.355 * 1e8).toFixed(0);
-		step = 0.001;
+		defaultProps = {
+			value: (2 * 1e8).toFixed(0),
+			min: (1 * 1e8).toFixed(0),
+			max: (10 * 1e8).toFixed(0),
+			avg: (1.355 * 1e8).toFixed(0),
+			step: 0.001,
+			showFeeOptions: true,
+		};
 	});
 
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={value} step={step} />,
-		);
+		const { asFragment, getByTestId } = render(<InputFee {...defaultProps} defaultValue={defaultProps.value} />);
 
 		expect(getByTestId("InputCurrency")).toHaveValue("2");
 		expect(asFragment()).toMatchSnapshot();
@@ -30,11 +33,13 @@ describe("InputFee", () => {
 
 	it("should update fee if value property changes", async () => {
 		const { asFragment, getByTestId, rerender } = render(
-			<InputFee min={min} max={max} avg={avg} defaultValue={value} value={value} step={step} />,
+			<InputFee {...defaultProps} defaultValue={defaultProps.value} />,
 		);
 
 		expect(getByTestId("InputCurrency")).toHaveValue("2");
-		rerender(<InputFee min={min} max={max} avg={avg} defaultValue={value} value={"100000000"} step={step} />);
+
+		rerender(<InputFee {...defaultProps} defaultValue={defaultProps.value} value={"100000000"} />);
+
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("1");
 		});
@@ -46,20 +51,12 @@ describe("InputFee", () => {
 		const onChange = jest.fn();
 
 		const { asFragment, getByText, getByTestId } = render(
-			<InputFee
-				min={min}
-				max={max}
-				avg={avg}
-				defaultValue={value}
-				value={value}
-				step={step}
-				onChange={onChange}
-			/>,
+			<InputFee {...defaultProps} defaultValue={defaultProps.value} onChange={onChange} />,
 		);
 		expect(getByTestId("InputCurrency")).toHaveValue("2");
 
 		act(() => {
-			fireEvent.click(getByText(transactionTranslations.FEES.MIN));
+			fireEvent.click(getByText(transactionTranslations.FEES.SLOW));
 		});
 
 		await waitFor(() => {
@@ -74,7 +71,7 @@ describe("InputFee", () => {
 		const onChange = jest.fn();
 
 		const { asFragment, getByText, getByTestId } = render(
-			<InputFee min={min} max={max} avg={avg} defaultValue={value} step={step} onChange={onChange} />,
+			<InputFee {...defaultProps} defaultValue={defaultProps.value} onChange={onChange} />,
 		);
 
 		act(() => {
@@ -93,11 +90,11 @@ describe("InputFee", () => {
 		const onChange = jest.fn();
 
 		const { asFragment, getByText, getByTestId } = render(
-			<InputFee min={min} max={max} avg={avg} defaultValue={value} step={step} onChange={onChange} />,
+			<InputFee {...defaultProps} defaultValue={defaultProps.value} onChange={onChange} />,
 		);
 
 		act(() => {
-			fireEvent.click(getByText(transactionTranslations.FEES.MAX));
+			fireEvent.click(getByText(transactionTranslations.FEES.FAST));
 		});
 
 		await waitFor(() => {

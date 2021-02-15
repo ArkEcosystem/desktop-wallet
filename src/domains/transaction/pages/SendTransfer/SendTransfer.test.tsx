@@ -70,40 +70,49 @@ describe("SendTransfer", () => {
 		await syncFees();
 	});
 
-	it("should render 1st step (form)", async () => {
+	it("should render form step", async () => {
 		const { result: form } = renderHook(() => useForm());
+
+		let rendered: RenderResult;
+
 		await act(async () => {
-			const { getByTestId, asFragment } = render(
+			rendered = render(
 				<FormProvider {...form.current}>
 					<FormStep networks={[]} profile={profile} />
 				</FormProvider>,
 			);
-
-			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
-			expect(asFragment()).toMatchSnapshot();
 		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 1st step (form) without test networks", async () => {
+	it("should render form step without test networks", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
 
+		let rendered: RenderResult;
+
 		await act(async () => {
-			const { getByTestId, asFragment } = render(
+			rendered = render(
 				<FormProvider {...form.current}>
 					<FormStep networks={env.availableNetworks()} profile={profile} />
 				</FormProvider>,
 			);
-
-			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
-			expect(asFragment()).toMatchSnapshot();
 		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
 		useNetworksMock.mockRestore();
 	});
 
-	it("should render 1st step with deeplink values and use them", async () => {
-		const { result: form } = renderHook(() => useForm());
+	it("should render form step with deeplink values and use them", async () => {
 		const deeplinkProps: any = {
 			amount: "1.2",
 			coin: "ark",
@@ -113,19 +122,25 @@ describe("SendTransfer", () => {
 			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
 		};
 
+		const { result: form } = renderHook(() => useForm());
+
+		let rendered: RenderResult;
+
 		await act(async () => {
-			const { getByTestId, asFragment } = render(
+			rendered = render(
 				<FormProvider {...form.current}>
 					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
 				</FormProvider>,
 			);
-
-			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
-			expect(asFragment()).toMatchSnapshot();
 		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 2nd step (review)", async () => {
+	it("should render review step", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -156,7 +171,7 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 4th step (summary)", async () => {
+	it("should render summary step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const transaction = (await wallet.transactions()).findById(
@@ -173,12 +188,13 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render registration form without selected wallet", async () => {
-		const history = createMemoryHistory();
-		let rendered: RenderResult;
-
+	it("should render transfer form without selected wallet", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+
+		const history = createMemoryHistory();
 		history.push(transferURL);
+
+		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -198,11 +214,12 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form and use location state", async () => {
-		const history = createMemoryHistory();
-		let rendered: RenderResult;
-
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+
+		const history = createMemoryHistory();
 		history.push(transferURL, { memo: "ARK" });
+
+		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -222,11 +239,12 @@ describe("SendTransfer", () => {
 	});
 
 	it("should select cryptoasset first and see select address input clickable", async () => {
-		const history = createMemoryHistory();
-		let rendered: RenderResult;
-
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+
+		const history = createMemoryHistory();
 		history.push(transferURL);
+
+		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -258,11 +276,12 @@ describe("SendTransfer", () => {
 	});
 
 	it("should display disabled address selection input if selected cryptoasset has not available wallets", async () => {
-		const history = createMemoryHistory();
-		let rendered: RenderResult;
-
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+
+		const history = createMemoryHistory();
 		history.push(transferURL);
+
+		let rendered: RenderResult;
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -294,9 +313,9 @@ describe("SendTransfer", () => {
 	});
 
 	it("should select a cryptoasset and select sender without wallet id param", async () => {
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -340,9 +359,9 @@ describe("SendTransfer", () => {
 	});
 
 	it("should recalculate amount when fee changes and send all is selected", async () => {
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -385,7 +404,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[0]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.00357"));
 			fireEvent.click(fees[1]);
@@ -396,13 +415,12 @@ describe("SendTransfer", () => {
 	});
 
 	it("should handle fee change when send all is selected with zero balance", async () => {
-		const history = createMemoryHistory();
-
 		const emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		const emptyWallet = await emptyProfile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
 
 		const transferURL = `/profiles/${emptyProfile.id()}/wallets/${emptyWallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -439,7 +457,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[0]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.00357"));
 			fireEvent.click(fees[1]);
@@ -450,9 +468,9 @@ describe("SendTransfer", () => {
 	});
 
 	it("should send a single transfer", async () => {
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -508,7 +526,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
@@ -573,9 +591,9 @@ describe("SendTransfer", () => {
 			.spyOn(wallet, "multiSignature")
 			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
 
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -618,7 +636,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -682,9 +700,9 @@ describe("SendTransfer", () => {
 			);
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -730,7 +748,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -753,9 +771,9 @@ describe("SendTransfer", () => {
 	});
 
 	it("should error if wrong mnemonic", async () => {
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -799,7 +817,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
@@ -835,9 +853,9 @@ describe("SendTransfer", () => {
 	});
 
 	it("should show error step and go back", async () => {
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -881,7 +899,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -930,9 +948,9 @@ describe("SendTransfer", () => {
 			.get("/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")
 			.reply(200, require("tests/fixtures/coins/ark/devnet/wallets/D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb.json"));
 
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -991,7 +1009,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -1031,9 +1049,9 @@ describe("SendTransfer", () => {
 	});
 
 	it("should require amount if not set", async () => {
-		const history = createMemoryHistory();
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -1079,9 +1097,6 @@ describe("SendTransfer", () => {
 	});
 
 	it("should send a single transfer and show unconfirmed transactions modal", async () => {
-		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
-
 		//@ts-ignore
 		const sentTransactionsMock = jest.spyOn(wallet, "sentTransactions").mockImplementation(() =>
 			Promise.resolve({
@@ -1120,6 +1135,9 @@ describe("SendTransfer", () => {
 			}),
 		);
 
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+		const history = createMemoryHistory();
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -1175,7 +1193,7 @@ describe("SendTransfer", () => {
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 

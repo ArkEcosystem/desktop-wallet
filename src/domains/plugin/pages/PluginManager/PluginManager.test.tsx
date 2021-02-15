@@ -293,7 +293,7 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.skip("should cancel install plugin", async () => {
+	it("should cancel install plugin", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
@@ -350,7 +350,11 @@ describe("PluginManager", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "new-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					config: {
+						name: "new-plugin",
+						version: "0.0.1",
+						keywords: ["@arkecosystem", "desktop-wallet"],
+					},
 					source: () => void 0,
 					sourcePath: "/plugins/new-plugin/index.js",
 					dir: "/plugins/new-plugin",
@@ -374,6 +378,14 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
 		});
 
 		await waitFor(() =>
@@ -406,6 +418,14 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
 		});
 
 		await waitFor(() =>
