@@ -4,7 +4,13 @@ import { Spinner } from "app/components/Spinner";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const LedgerConfirmation = ({ children }: { children?: React.ReactNode }) => {
+export const LedgerConfirmation = ({
+	children,
+	hideSubtitle,
+}: {
+	children?: React.ReactNode;
+	hideSubtitle?: boolean;
+}) => {
 	const { t } = useTranslation();
 
 	return (
@@ -30,7 +36,9 @@ export const LedgerConfirmation = ({ children }: { children?: React.ReactNode })
 					<Divider />
 
 					<section data-testid="LedgerReview__details">
-						<h2 className="text-2xl font-bold mb-0">{t("TRANSACTION.TRANSACTION_DETAILS")}</h2>
+						{!hideSubtitle ? (
+							<h2 className="text-2xl font-bold mb-0">{t("TRANSACTION.TRANSACTION_DETAILS")}</h2>
+						) : null}
 						{children}
 					</section>
 				</>

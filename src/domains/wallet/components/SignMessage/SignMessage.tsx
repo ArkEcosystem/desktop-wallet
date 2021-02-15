@@ -1,183 +1,94 @@
+import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
 import { WalletData } from "@arkecosystem/platform-sdk-profiles";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
-import { Clipboard } from "app/components/Clipboard";
-import { Form, FormField, FormLabel } from "app/components/Form";
-import { Icon } from "app/components/Icon";
-import { Input, InputDefault, InputPassword } from "app/components/Input";
+import { Form } from "app/components/Form";
 import { Modal } from "app/components/Modal";
-import { TextArea } from "app/components/TextArea";
+import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
-import React, { createRef, useEffect, useMemo, useState } from "react";
+import { toasts } from "app/services";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+
+import { FormStep } from "./FormStep";
+import { LedgerReviewMessage } from "./LedgerReview";
+import { SignedStep } from "./SignedStep";
 
 type SignMessageProps = {
 	profileId: string;
 	walletId: string;
-	signatoryAddress: string;
 	isOpen: boolean;
 	onClose?: () => void;
 	onCancel?: () => void;
 };
 
-type SignedMessageProps = { message: string; signatory: string; signature: string };
-
-const initialState = {
-	message: "",
-	signatory: "",
-	signature: "",
-};
-
-export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel }: SignMessageProps) => {
-	const [isSigned, setIsSigned] = useState(false);
-	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(initialState);
-
-	const { env } = useEnvironmentContext();
+export const SignMessage = ({ profileId, walletId, isOpen, onClose, onCancel }: SignMessageProps) => {
 	const form = useForm({ mode: "onChange" });
-	const { t } = useTranslation();
-
-	const { register } = form;
-	const messageRef = createRef();
+	const { env } = useEnvironmentContext();
 
 	const profile = useMemo(() => env?.profiles().findById(profileId), [env, profileId]);
 	const wallet = useMemo(() => profile?.wallets().findById(walletId), [walletId, profile]);
 
-	const { connect } = useLedgerContext();
+	const [activeTab, setActiveTab] = useState("form");
+	const [message, setMessage] = useState<string>();
+	const [signedMessage, setSignedMessage] = useState<SignedMessage>();
 
-	useEffect(() => {
-		if (!isOpen) {
-			setSignedMessage(initialState);
-			setIsSigned(false);
-		}
-	}, [isOpen]);
+	const { connect, abortConnectionRetry } = useLedgerContext();
 
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
-		let signedMessageResult: SignedMessageProps;
+		setMessage(message);
 
-		if (wallet.isLedger()) {
-			const path = wallet.data().get<string>(WalletData.LedgerPath);
-			const bytes = Buffer.from(message, "utf8");
-			await connect(wallet.coinId(), wallet.networkId());
+		try {
+			let signedMessageResult: SignedMessage;
 
-			const signature = await wallet?.ledger().signMessage(path!, bytes);
-			const signatory = wallet.publicKey()!;
+			if (wallet.isLedger()) {
+				setActiveTab("ledger");
 
-			signedMessageResult = { message, signatory, signature };
-		} else {
-			signedMessageResult = await wallet?.message().sign({
-				message,
-				mnemonic,
-			});
+				const path = wallet.data().get<string>(WalletData.LedgerPath);
+				const bytes = Buffer.from(message, "utf8");
+				await connect(wallet.coinId(), wallet.networkId());
+
+				const signature = await wallet?.ledger().signMessage(path!, bytes);
+				const signatory = wallet.publicKey()!;
+
+				signedMessageResult = { message, signatory, signature };
+			} else {
+				signedMessageResult = await wallet?.message().sign({
+					message,
+					mnemonic,
+				});
+			}
+
+			setSignedMessage(signedMessageResult);
+			setActiveTab("signed");
+		} catch {
+			toasts.error("Failed");
+			onClose?.();
 		}
-
-		setSignedMessage(signedMessageResult);
-		setIsSigned(true);
 	};
 
-	const SignFormRender = (
-		<Form context={form} onSubmit={handleSubmit} data-testid="SignMessage__form">
-			<FormField name="signatory-address">
-				<FormLabel label={t("WALLETS.SIGNATORY")} />
-				<div className="relative">
-					<Input type="text" disabled />
-					<div className="flex absolute top-0 items-center mt-2 ml-4">
-						<div className="flex items-center">
-							<Avatar address={signatoryAddress} size="sm" noShadow />
-							<span className="ml-3 font-semibold ">{signatoryAddress}</span>
-						</div>
-					</div>
-				</div>
-			</FormField>
-			<FormField name="message">
-				<FormLabel label={t("COMMON.MESSAGE")} />
-				<InputDefault
-					type="text"
-					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("COMMON.MESSAGE"),
-						}).toString(),
-					})}
-					data-testid="SignMessage__message-input"
-				/>
-			</FormField>
-			{!wallet.isLedger() ? (
-				<FormField name="mnemonic">
-					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
-					<InputPassword
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.YOUR_PASSPHRASE"),
-							}).toString(),
-						})}
-						data-testid="SignMessage__mnemonic-input"
-					/>
-				</FormField>
-			) : null}
-			<div className="flex justify-end space-x-3">
-				<Button variant="secondary" onClick={onCancel} data-testid="SignMessage__cancel">
-					{t("COMMON.CANCEL")}
-				</Button>
-				<Button type="submit" data-testid="SignMessage__submit-button">
-					{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
-				</Button>
-			</div>
-		</Form>
-	);
-
-	const SignedMessageRender = (
-		<div>
-			<TransactionDetail
-				border={false}
-				label={t("WALLETS.SIGNATORY")}
-				extra={
-					<div className="flex items-center">
-						<Circle className="-mr-2 border-black">
-							<Icon name="Delegate" width={25} height={25} />
-						</Circle>
-						<Avatar address={signedMessage.signatory} />
-					</div>
-				}
-			>
-				<Address address={signedMessage.signatory} />
-			</TransactionDetail>
-			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg break-all">
-				{signedMessage.message}
-			</TransactionDetail>
-			<TransactionDetail border label={t("COMMON.SIGNATURE")}>
-				<TextArea
-					className="mt-2 rounded-lg"
-					name="signature"
-					wrap="hard"
-					ref={messageRef}
-					defaultValue={JSON.stringify(signedMessage)}
-				/>
-			</TransactionDetail>
-
-			<div className="flex justify-end pb-5 mt-3">
-				<Clipboard data={JSON.stringify(signedMessage)}>
-					<Button variant="secondary" data-testid="SignMessage__copy-button">
-						<Icon name="Copy" />
-						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
-					</Button>
-				</Clipboard>
-			</div>
-		</div>
-	);
-
-	const renderSignedMessageContent = () => (isSigned ? SignedMessageRender : SignFormRender);
+	// eslint-disable-next-line arrow-body-style
+	useEffect(() => {
+		return () => {
+			abortConnectionRetry();
+		};
+	}, [abortConnectionRetry]);
 
 	return (
-		<Modal
-			isOpen={isOpen}
-			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
-			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
-			onClose={onClose}
-		>
-			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
+		<Modal isOpen={isOpen} title="" onClose={onClose}>
+			<Form context={form} onSubmit={handleSubmit}>
+				<Tabs activeId={activeTab}>
+					<TabPanel tabId="form">
+						<FormStep wallet={wallet} onCancel={onCancel} />
+					</TabPanel>
+
+					<TabPanel tabId="ledger">
+						<LedgerReviewMessage message={message!} />
+					</TabPanel>
+
+					<TabPanel tabId="signed">
+						<SignedStep signedMessage={signedMessage!} />
+					</TabPanel>
+				</Tabs>
+			</Form>
 		</Modal>
 	);
 };
