@@ -43,7 +43,8 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 		try {
 			await installPlugin(savedPath, plugin.id);
 			toasts.success(t("PLUGINS.MODAL_INSTALL_PLUGIN.SUCCESS", { name: plugin.title }));
-		} catch (e) {
+		} catch {
+			/* istanbul ignore next */
 			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.INSTALL_FAILURE", { name: plugin.title }));
 		} finally {
 			onClose?.();

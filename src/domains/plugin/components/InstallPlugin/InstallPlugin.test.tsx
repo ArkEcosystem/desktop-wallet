@@ -43,7 +43,7 @@ describe("InstallPlugin", () => {
 	it("should render 2st step with full download progress", async () => {
 		const { getByTestId, asFragment } = render(
 			<SecondStep
-				plugin={{ title: "My Plugin", logo: "https://ark.io/logo.png" }}
+				plugin={{ title: "My Plugin", logo: "https://ark.io/logo.png", size: "100 B" }}
 				downloadProgress={{ totalBytes: 100, percent: 1, transferredBytes: 100 }}
 			/>,
 		);
