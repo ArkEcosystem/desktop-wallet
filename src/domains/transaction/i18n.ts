@@ -88,9 +88,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	FEES: {
-		MIN: "Min",
+		SLOW: "Slow",
 		AVERAGE: "Average",
-		MAX: "Max",
+		FAST: "Fast",
 	},
 
 	TRANSACTION_TYPES: {

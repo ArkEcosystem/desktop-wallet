@@ -27,13 +27,13 @@ describe("useCurrencyDisplay hook", () => {
 			result: { current },
 		} = renderHook(() => useCurrencyDisplay());
 
-		const fromCurrency = current.converToCurrency({ display: "25", value: "2500000000" });
+		const fromCurrency = current.convertToCurrency({ display: "25", value: "2500000000" });
 		expect(fromCurrency).toEqual({ display: "25", value: "2500000000" });
 
-		const fromNumber = current.converToCurrency(25);
+		const fromNumber = current.convertToCurrency(25);
 		expect(fromNumber).toEqual({ display: "25", value: "2500000000" });
 
-		const fromString = current.converToCurrency("25");
+		const fromString = current.convertToCurrency("25");
 		expect(fromString).toEqual({ display: "25", value: "2500000000" });
 	});
 });
