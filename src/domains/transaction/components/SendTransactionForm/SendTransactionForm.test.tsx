@@ -52,45 +52,11 @@ describe("SendTransactionForm", () => {
 		expect(rendered.container).toMatchSnapshot();
 	});
 
-	it("should select fill out form", async () => {
-		const { result: form } = renderHook(() => useForm());
-		form.current.register("fee");
-		form.current.register("senderAddress");
-		form.current.setValue("fee", defaultFee);
-
-		let rendered: any;
-
-		await act(async () => {
-			rendered = render(
-				<FormProvider {...form.current}>
-					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
-				</FormProvider>,
-			);
-		});
-
-		const { getByTestId } = rendered;
-
-		await act(async () => {
-			form.current.setValue("senderAddress", wallet.address());
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
-
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
-			fireEvent.click(fees[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
-			expect(rendered.container).toMatchSnapshot();
-		});
-	});
-
-	it("should select a sender & update fees", async () => {
+	it("should select a network & update fees", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		form.current.register("fee");
 		form.current.register("network");
-		form.current.register("senderAddress");
-		form.current.setValue("senderAddress", wallet.address());
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
@@ -135,7 +101,7 @@ describe("SendTransactionForm", () => {
 			max: "663000000",
 			min: "357000",
 			//@ts-ignore
-			avg: undefined,
+			avg: "0",
 		});
 
 		form.current.register("fee");
