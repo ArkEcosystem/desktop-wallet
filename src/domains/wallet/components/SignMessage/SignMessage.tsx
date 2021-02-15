@@ -1,3 +1,4 @@
+import { WalletData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -8,9 +9,9 @@ import { Icon } from "app/components/Icon";
 import { Input, InputDefault, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
-import { useEnvironmentContext } from "app/contexts";
+import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -42,6 +43,11 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 	const { register } = form;
 	const messageRef = createRef();
 
+	const profile = useMemo(() => env?.profiles().findById(profileId), [env, profileId]);
+	const wallet = useMemo(() => profile?.wallets().findById(walletId), [walletId, profile]);
+
+	const { connect } = useLedgerContext();
+
 	useEffect(() => {
 		if (!isOpen) {
 			setSignedMessage(initialState);
@@ -50,13 +56,23 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 	}, [isOpen]);
 
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
-		const profile = env?.profiles().findById(profileId);
-		const wallet = profile?.wallets().findById(walletId);
+		let signedMessageResult: SignedMessageProps;
 
-		const signedMessageResult = await wallet?.message().sign({
-			message,
-			mnemonic,
-		});
+		if (wallet.isLedger()) {
+			const path = wallet.data().get<string>(WalletData.LedgerPath);
+			const bytes = Buffer.from(message, "utf8");
+			await connect(wallet.coinId(), wallet.networkId());
+
+			const signature = await wallet?.ledger().signMessage(path!, bytes);
+			const signatory = wallet.publicKey()!;
+
+			signedMessageResult = { message, signatory, signature };
+		} else {
+			signedMessageResult = await wallet?.message().sign({
+				message,
+				mnemonic,
+			});
+		}
 
 		setSignedMessage(signedMessageResult);
 		setIsSigned(true);
@@ -88,17 +104,19 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					data-testid="SignMessage__message-input"
 				/>
 			</FormField>
-			<FormField name="mnemonic">
-				<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
-				<InputPassword
-					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("COMMON.YOUR_PASSPHRASE"),
-						}).toString(),
-					})}
-					data-testid="SignMessage__mnemonic-input"
-				/>
-			</FormField>
+			{!wallet.isLedger() ? (
+				<FormField name="mnemonic">
+					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
+					<InputPassword
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.YOUR_PASSPHRASE"),
+							}).toString(),
+						})}
+						data-testid="SignMessage__mnemonic-input"
+					/>
+				</FormField>
+			) : null}
 			<div className="flex justify-end space-x-3">
 				<Button variant="secondary" onClick={onCancel} data-testid="SignMessage__cancel">
 					{t("COMMON.CANCEL")}
