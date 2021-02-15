@@ -52,23 +52,23 @@ exports[`InputFee should render 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-      data-testid="SelectionBar"
+      class="inline-flex overflow-hidden items-center space-x-2"
+      data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Min
+        Slow
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
@@ -76,12 +76,12 @@ exports[`InputFee should render 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Max
+        Fast
       </button>
     </div>
   </div>
@@ -140,23 +140,23 @@ exports[`InputFee should update fee if value property changes 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-      data-testid="SelectionBar"
+      class="inline-flex overflow-hidden items-center space-x-2"
+      data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Min
+        Slow
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
@@ -164,12 +164,12 @@ exports[`InputFee should update fee if value property changes 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Max
+        Fast
       </button>
     </div>
   </div>
@@ -228,23 +228,23 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-      data-testid="SelectionBar"
+      class="inline-flex overflow-hidden items-center space-x-2"
+      data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Min
+        Slow
       </button>
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
@@ -252,12 +252,12 @@ exports[`InputFee should update fee when clicking on avg 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Max
+        Fast
       </button>
     </div>
   </div>
@@ -316,23 +316,23 @@ exports[`InputFee should update fee when clicking on max 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-      data-testid="SelectionBar"
+      class="inline-flex overflow-hidden items-center space-x-2"
+      data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Min
+        Slow
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
@@ -340,12 +340,12 @@ exports[`InputFee should update fee when clicking on max 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Max
+        Fast
       </button>
     </div>
   </div>
@@ -404,23 +404,23 @@ exports[`InputFee should update fee when clicking on min 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-      data-testid="SelectionBar"
+      class="inline-flex overflow-hidden items-center space-x-2"
+      data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="true"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Min
+        Slow
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
@@ -428,12 +428,12 @@ exports[`InputFee should update fee when clicking on min 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 kUebLA relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
-        data-testid="SelectionBarOption"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+        data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        Max
+        Fast
       </button>
     </div>
   </div>

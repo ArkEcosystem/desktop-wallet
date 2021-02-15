@@ -9,48 +9,6 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 import { useFees } from "./use-fees";
 
 describe("useFees", () => {
-	it("should not modify fees if they have proper values", () => {
-		const fees = {
-			min: "2",
-			max: "4",
-			avg: "3",
-			static: "2",
-		};
-
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
-		const {
-			result: { current },
-		} = renderHook(() => useFees(), { wrapper });
-
-		expect(current.formatWithDefaultStatic(fees)).toEqual({
-			min: "2",
-			max: "4",
-			avg: "3",
-			static: "2",
-		});
-	});
-
-	it("should fallback to static fee if min,max,avg are zero", () => {
-		const fees = {
-			min: "0",
-			max: "0",
-			avg: "0",
-			static: "5",
-		};
-
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
-		const {
-			result: { current },
-		} = renderHook(() => useFees(), { wrapper });
-
-		expect(current.formatWithDefaultStatic(fees)).toEqual({
-			min: "5",
-			max: "5",
-			avg: "5",
-			static: "5",
-		});
-	});
-
 	it("should find fees by type if already synced", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
