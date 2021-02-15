@@ -126,7 +126,7 @@ describe("Registration", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
 
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
@@ -187,7 +187,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(feeInput).toHaveValue("25"));
 
 		act(() => {
-			fireEvent.click(getAllByTestId("SelectionBarOption")[1]);
+			fireEvent.click(getAllByTestId("ButtonGroupOption")[1]);
 		});
 
 		await waitFor(() => expect(feeInput).not.toHaveValue("0"));
