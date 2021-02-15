@@ -1,6 +1,7 @@
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
+import { FormFieldProvider } from "../Form/useFormField";
 import { InputPassword } from "./InputPassword";
 
 describe("InputPassword", () => {
@@ -19,5 +20,22 @@ describe("InputPassword", () => {
 		expect(input).toHaveAttribute("type", "text");
 		fireEvent.click(toggle);
 		expect(input).toHaveAttribute("type", "password");
+	});
+
+	it("should render as a password isInvalid", () => {
+		const context = {
+			name: "test",
+			isInvalid: true,
+			errorMessage: "Error message for password",
+		};
+		const tree = (
+			<FormFieldProvider value={context}>
+				<InputPassword />
+			</FormFieldProvider>
+		);
+		const { asFragment, getByTestId } = render(tree);
+		const input = getByTestId("Input");
+		expect(input).toHaveAttribute("type", "password");
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
