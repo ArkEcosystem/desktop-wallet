@@ -1,3 +1,4 @@
+import { FormFieldProvider } from "app/components/Form/useFormField";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
@@ -19,5 +20,21 @@ describe("InputPassword", () => {
 		expect(input).toHaveAttribute("type", "text");
 		fireEvent.click(toggle);
 		expect(input).toHaveAttribute("type", "password");
+	});
+
+	it("should render invalid", () => {
+		const context = {
+			name: "password",
+			isInvalid: true,
+			errorMessage: "this password is invalid",
+		};
+
+		const { asFragment } = render(
+			<FormFieldProvider value={context}>
+				<InputPassword />
+			</FormFieldProvider>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

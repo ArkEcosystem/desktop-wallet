@@ -274,8 +274,8 @@ SendRegistration.defaultProps = {
 		fees: {
 			static: "5",
 			min: "0",
-			avg: "1",
-			max: "2",
+			avg: "0",
+			max: "0",
 		},
 		fee: "0",
 	},
