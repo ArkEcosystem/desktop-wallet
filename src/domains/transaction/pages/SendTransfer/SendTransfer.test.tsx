@@ -522,7 +522,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			act(() => {
-				fireEvent.click(fees[1]);
+				fireEvent.click(fees[2]);
 			});
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
@@ -1248,9 +1248,9 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 		act(() => {
-			fireEvent.click(fees[1]);
+			fireEvent.click(fees[2]);
 		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
