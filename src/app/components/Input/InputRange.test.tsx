@@ -55,7 +55,7 @@ describe("InputRange", () => {
 	});
 
 	it("should track background min value", async () => {
-		const props = { ...properties, min: "5", value: 2 };
+		const props = { ...properties, min: "4", value: 2, step: 3 };
 		const { getByTestId, asFragment } = render(<InputRange {...props} />);
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("2");
