@@ -11,15 +11,6 @@ import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
 describe("InstallPlugin", () => {
-	beforeEach(() => {
-		// jest.spyOn does not work with the "off" method
-		ipcRenderer.off = jest.fn();
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-	});
-
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<PluginManagerProvider manager={new PluginManager()} services={[]}>

@@ -34,7 +34,6 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 			setSavedPath(savedPath);
 			setTimeout(() => setActiveStep(3), 500); // Animation delay
 		} catch (e) {
-			console.error(e);
 			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.DOWNLOAD_FAILURE", { name: plugin.title }));
 			onClose?.();
 		}
@@ -57,7 +56,7 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 		ipcRenderer.on("plugin:download-progress", listener);
 
 		return () => {
-			ipcRenderer.off("plugin:download-progress", listener);
+			ipcRenderer.removeListener("plugin:download-progress", listener);
 		};
 	}, []);
 
