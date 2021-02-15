@@ -33,7 +33,7 @@ exports[`InstallPlugin should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`InstallPlugin should render 2st step 1`] = `
+exports[`InstallPlugin should render 2st step with full download progress 1`] = `
 <DocumentFragment>
   <section
     data-testid="InstallPlugin__step--second"
@@ -44,11 +44,16 @@ exports[`InstallPlugin should render 2st step 1`] = `
       <div
         class="flex-shrink-0 mr-6"
       >
-        <img
-          alt="Plugin Logo"
-          class="w-32 h-32 rounded-xl"
-          src="placeholder.png"
-        />
+        <div
+          class="overflow-hidden w-32 h-32 rounded-lg"
+        >
+          <img
+            alt="Logo"
+            class="w-full rounded-lg"
+            data-testid="PluginCard__logo"
+            src="https://ark.io/logo.png"
+          />
+        </div>
       </div>
       <div
         class="flex-1"
@@ -65,7 +70,7 @@ exports[`InstallPlugin should render 2st step 1`] = `
             <p
               class="text-lg font-semibold text-theme-black"
             >
-              ARK Explorer
+              My Plugin
             </p>
           </div>
           <div
@@ -75,12 +80,13 @@ exports[`InstallPlugin should render 2st step 1`] = `
               <p
                 class="text-sm font-semibold text-theme-secondary-400"
               >
-                Downloaded
+                Downloading...
               </p>
               <p
                 class="font-bold text-theme-secondary-text"
+                data-testid="InstallPlugin__step--second__progress"
               >
-                154 KB / 154 KB
+                100 B / 100 B
               </p>
             </span>
             <div
@@ -106,7 +112,7 @@ exports[`InstallPlugin should render 2st step 1`] = `
                   r="23"
                   stroke="var(--theme-color-success-600)"
                   stroke-dasharray="144.51326206513048"
-                  stroke-dashoffset="31.792917654328704"
+                  stroke-dashoffset="0"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="4"
@@ -123,7 +129,120 @@ exports[`InstallPlugin should render 2st step 1`] = `
                   y="50%"
                 >
                   <tspan>
-                    78
+                    100
+                    <tspan
+                      dy="-0.6em"
+                      font-size="0.4rem"
+                      font-weight="bold"
+                    >
+                      %
+                    </tspan>
+                  </tspan>
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`InstallPlugin should render 2st step with partial download progress 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="InstallPlugin__step--second"
+  >
+    <div
+      class="flex mt-4"
+    >
+      <div
+        class="flex-shrink-0 mr-6"
+      >
+        <div
+          class="overflow-hidden w-32 h-32 rounded-lg"
+        >
+          <svg>
+            plugin-logo-placeholder.svg
+          </svg>
+        </div>
+      </div>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex flex-col justify-around h-full"
+        >
+          <div>
+            <p
+              class="text-sm font-semibold text-theme-secondary-400"
+            >
+              Plugin
+            </p>
+            <p
+              class="text-lg font-semibold text-theme-black"
+            >
+              My Plugin
+            </p>
+          </div>
+          <div
+            class="flex justify-between"
+          >
+            <span>
+              <p
+                class="text-sm font-semibold text-theme-secondary-400"
+              >
+                Downloading...
+              </p>
+              <p
+                class="font-bold text-theme-secondary-text"
+                data-testid="InstallPlugin__step--second__progress"
+              >
+                0 B / 100 B
+              </p>
+            </span>
+            <div
+              class="mr-2"
+            >
+              <svg
+                height="50"
+                viewBox="0 0 50 50"
+                width="50"
+              >
+                <circle
+                  cx="25"
+                  cy="25"
+                  fill="transparent"
+                  r="23"
+                  stroke="var(--theme-color-success-200)"
+                  stroke-width="4"
+                />
+                <circle
+                  cx="25"
+                  cy="25"
+                  fill="transparent"
+                  r="23"
+                  stroke="var(--theme-color-success-600)"
+                  stroke-dasharray="144.51326206513048"
+                  stroke-dashoffset="144.51326206513048"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                  transform="rotate(-90 25 25)"
+                />
+                <text
+                  data-testid="CircularProgressBar__percentage"
+                  dy="0.3em"
+                  fill="var(--theme-color-success-600)"
+                  font-size="0.8rem"
+                  font-weight="600"
+                  text-anchor="middle"
+                  x="50%"
+                  y="50%"
+                >
+                  <tspan>
+                    0
                     <tspan
                       dy="-0.6em"
                       font-size="0.4rem"
@@ -154,11 +273,13 @@ exports[`InstallPlugin should render 3st step 1`] = `
       <div
         class="flex-shrink-0 mr-6"
       >
-        <img
-          alt="Plugin Logo"
-          class="w-32 h-32 rounded-xl"
-          src="placeholder.png"
-        />
+        <div
+          class="overflow-hidden w-32 h-32 rounded-lg"
+        >
+          <svg>
+            plugin-logo-placeholder.svg
+          </svg>
+        </div>
       </div>
       <div
         class="flex-1"
@@ -175,7 +296,100 @@ exports[`InstallPlugin should render 3st step 1`] = `
             <p
               class="text-lg font-semibold text-theme-black"
             >
-              ARK Explorer
+              My Plugin
+            </p>
+          </div>
+          <div
+            class="flex justify-between"
+          >
+            <span>
+              <p
+                class="text-sm font-semibold text-theme-secondary-400"
+              >
+                Downloaded
+              </p>
+              <p
+                class="font-bold text-theme-secondary-text"
+              >
+                Completed
+              </p>
+            </span>
+            <div
+              class=""
+            >
+              <div
+                class="Circle-uw7h4j-0 JkqUV relative z-10 bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              >
+                <span
+                  class="text-theme-success-600"
+                >
+                  <div
+                    class="sc-bdfBwQ fcykxB"
+                    height="28"
+                    width="28"
+                  >
+                    <svg>
+                      checkmark.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                class="Circle-uw7h4j-0 JkqUV relative z-0 -ml-1 bg-theme-background border-theme-success-600"
+              >
+                <span
+                  class="text-xs font-semibold text-theme-success-600"
+                >
+                  100%
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`InstallPlugin should render 3st step with plugin logo 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="InstallPlugin__step--third"
+  >
+    <div
+      class="flex mt-4"
+    >
+      <div
+        class="flex-shrink-0 mr-6"
+      >
+        <div
+          class="overflow-hidden w-32 h-32 rounded-lg"
+        >
+          <img
+            alt="Logo"
+            class="w-full rounded-lg"
+            data-testid="InstallPlugin__step--third__logo"
+            src="https://ark.io/logo.png"
+          />
+        </div>
+      </div>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex flex-col justify-around h-full"
+        >
+          <div>
+            <p
+              class="text-sm font-semibold text-theme-secondary-400"
+            >
+              Plugin
+            </p>
+            <p
+              class="text-lg font-semibold text-theme-black"
+            >
+              My Plugin
             </p>
           </div>
           <div

@@ -143,7 +143,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			/* istanbul ignore next */
 			if (!realRepositoryURL) {
 				const config = pluginPackages.find((pkg) => pkg.name() === name);
-				const source = config!.get<{ url: string }>("sourceProvider");
+				const source = config?.get<{ url: string }>("sourceProvider");
 
 				if (!source?.url) {
 					throw new Error(`The repository of the plugin "${name}" could not be found.`);
@@ -162,8 +162,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const installPlugin = useCallback(
-		async ({ savedPath, name }) => {
-			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name });
+		async (savedPath, pluginId) => {
+			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name: pluginId });
 
 			await loadPlugin(pluginPath);
 

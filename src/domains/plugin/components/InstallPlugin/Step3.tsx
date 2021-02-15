@@ -1,23 +1,38 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
-import Placeholder from "domains/plugin/images/placeholder.png";
+import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const ThirdStep = () => {
+type Props = {
+	plugin: any;
+};
+
+export const ThirdStep = ({ plugin }: Props) => {
 	const { t } = useTranslation();
 
 	return (
 		<section data-testid="InstallPlugin__step--third">
 			<div className="flex mt-4">
 				<div className="flex-shrink-0 mr-6">
-					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
+					<div className="overflow-hidden w-32 h-32 rounded-lg">
+						{plugin.logo ? (
+							<img
+								data-testid="InstallPlugin__step--third__logo"
+								src={plugin.logo}
+								alt="Logo"
+								className="w-full rounded-lg"
+							/>
+						) : (
+							<Image name="PluginLogoPlaceholder" domain="plugin" />
+						)}
+					</div>
 				</div>
 				<div className="flex-1">
 					<div className="flex flex-col justify-around h-full">
 						<div>
 							<p className="text-sm font-semibold text-theme-secondary-400">{t("COMMON.PLUGIN")}</p>
-							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
+							<p className="text-lg font-semibold text-theme-black">{plugin.title}</p>
 						</div>
 						<div className="flex justify-between">
 							<span>
