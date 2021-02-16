@@ -26,6 +26,7 @@ export const translations: { [key: string]: any } = {
 		WAITING_DEVICE: "Waiting for Ledger device...",
 		OPEN_APP: "Open the {{coin}} app on your device...",
 		CONNECT_SUCCESS: "Successfully connected",
+		NO_DEVICE_FOUND: "No Ledger device was found",
 	},
 
 	MODAL_WALLET_UPDATE: {

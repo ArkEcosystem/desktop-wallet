@@ -22,7 +22,7 @@ import { SignedStep } from "./SignedStep";
 type SignMessageProps = {
 	isOpen: boolean;
 	onClose?: () => void;
-	onCancel: () => void;
+	onCancel?: () => void;
 };
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
@@ -71,7 +71,13 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		if (isLedger) {
 			setActiveTab("ledger");
 
-			await connect(wallet.network().coin(), wallet.networkId());
+			try {
+				await connect(wallet.network().coin(), wallet.networkId());
+			} catch (error) {
+				if (error.includes("no device found")) {
+					toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.NO_DEVICE_FOUND"));
+				}
+			}
 
 			setLedgerState("awaitingConfirmation");
 		}
@@ -93,7 +99,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 				toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.REJECTED"));
 			}
 
-			onCancel();
+			onCancel?.();
 		}
 	};
 
@@ -103,14 +109,13 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		}
 	}, [isConnected, hasDeviceAvailable, ledgerState]);
 
-	const handleCancel = () => {
-		abortRef.current.abort();
-		onCancel();
-	};
-
 	const handleClose = () => {
 		abortRef.current.abort();
-		onClose?.();
+		onCancel?.();
+	};
+
+	const handleCancel = () => {
+		onCancel?.();
 	};
 
 	return (
@@ -122,9 +127,13 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 					</TabPanel>
 
 					<TabPanel tabId="ledger">
-						<LedgerWaitingDevice isOpen={ledgerState === "awaitingDevice"} />
+						<LedgerWaitingDevice isOpen={ledgerState === "awaitingDevice"} onClose={handleClose} />
 
-						<LedgerWaitingApp isOpen={ledgerState === "awaitingApp"} coinName={wallet.network().coin()} />
+						<LedgerWaitingApp
+							isOpen={ledgerState === "awaitingApp"}
+							coinName={wallet.network().coin()}
+							onClose={handleClose}
+						/>
 
 						{ledgerState === "awaitingConfirmation" && <LedgerConfirmationStep message={message!} />}
 					</TabPanel>
