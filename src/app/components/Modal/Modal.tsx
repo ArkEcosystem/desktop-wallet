@@ -1,6 +1,5 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { usePrevious } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
@@ -58,15 +57,16 @@ const ModalContent = (props: ModalContentProps) => {
 	const [offsetClass, setOffsetClass] = useState<string>();
 	const modalRef = useRef<any>();
 
-	const previousHeight = usePrevious(modalRef?.current?.clientHeight);
+	// const previousHeight = usePrevious(modalRef?.current?.clientHeight);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const currentHeight = modalRef?.current?.clientHeight;
 
-		if (previousHeight !== currentHeight) {
-			setOffsetClass(modalOffsetClass(currentHeight, window.innerHeight));
-		}
+		// Todo: Check if this conditions still relevant
+		// if (previousHeight !== currentHeight) {
+		setOffsetClass(modalOffsetClass(currentHeight, window.innerHeight));
+		// }
 	});
 
 	return (
