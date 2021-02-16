@@ -270,7 +270,10 @@ describe("SendTransfer", () => {
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+		await waitFor(() =>
+			expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
+		);
+
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
@@ -307,7 +310,9 @@ describe("SendTransfer", () => {
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
-		expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+		await waitFor(() =>
+			expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
+		);
 		expect(rendered.getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(rendered.asFragment()).toMatchSnapshot();
 	});
@@ -344,7 +349,9 @@ describe("SendTransfer", () => {
 
 			fireEvent.click(rendered.getByTestId("NetworkIcon-ARK-ark.devnet"));
 
-			expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
+			);
 
 			// Select sender
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
@@ -938,7 +945,7 @@ describe("SendTransfer", () => {
 			signMock.mockRestore();
 		});
 	});
-	//
+
 	it("should send a multi payment", async () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T")
