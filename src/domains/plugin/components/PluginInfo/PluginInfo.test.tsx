@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "testing-library";
+import { render, screen } from "utils/testing-library";
 
 import { PluginInfo } from "./PluginInfo";
 
@@ -26,5 +26,12 @@ describe("PluginInfo", () => {
 
 		expect(queryByTestId("plugin-info__permissions")).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with minimum version", () => {
+		const { container } = render(<PluginInfo minimumVersion={"3.0.1"} />);
+
+		expect(screen.getByTestId("plugin-info__mininum-version")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 	});
 });
