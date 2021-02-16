@@ -1,6 +1,6 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { useEnvironmentContext } from "app/contexts";
-import { useCallback, useEffect, useMemo,useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Callback = () => Promise<void | any>;
 
