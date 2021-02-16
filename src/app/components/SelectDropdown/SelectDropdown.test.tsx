@@ -348,4 +348,18 @@ describe("SelectDropdown", () => {
 		expect(getByTestId("select-list__input")).toHaveValue("3");
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should hide dropdown when no matches found in free text mode", () => {
+		const { getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
+		});
+		expect(getByTestId("select-list__input")).toHaveValue(options[0].label);
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Unmatched" } });
+		});
+		expect(() => getByTestId("select-list__toggle-option-0")).toThrow();
+	});
 });
