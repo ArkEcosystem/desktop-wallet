@@ -74,7 +74,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 			try {
 				await connect(wallet.network().coin(), wallet.networkId());
 			} catch (error) {
-				if (error.includes("no device found")) {
+				if (String(error).includes("no device found")) {
 					toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.NO_DEVICE_FOUND"));
 				}
 			}
@@ -111,12 +111,22 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 	const handleClose = () => {
 		abortRef.current.abort();
-		onCancel?.();
+		onClose?.();
 	};
 
 	const handleCancel = () => {
 		onCancel?.();
 	};
+
+	if (activeTab === "ledger") {
+		if (ledgerState === "awaitingDevice") {
+			return <LedgerWaitingDevice isOpen={true} onClose={handleClose} />;
+		}
+
+		if (ledgerState === "awaitingApp") {
+			return <LedgerWaitingApp isOpen={true} coinName={wallet.network().coin()} onClose={handleClose} />;
+		}
+	}
 
 	return (
 		<Modal isOpen={isOpen} title="" onClose={handleClose}>
@@ -127,14 +137,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 					</TabPanel>
 
 					<TabPanel tabId="ledger">
-						<LedgerWaitingDevice isOpen={ledgerState === "awaitingDevice"} onClose={handleClose} />
-
-						<LedgerWaitingApp
-							isOpen={ledgerState === "awaitingApp"}
-							coinName={wallet.network().coin()}
-							onClose={handleClose}
-						/>
-
 						{ledgerState === "awaitingConfirmation" && <LedgerConfirmationStep message={message!} />}
 					</TabPanel>
 
@@ -143,7 +145,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 					</TabPanel>
 
 					{activeTab === "form" && (
-						<div className="flex justify-end mt-10 space-x-3">
+						<div className="flex justify-end mt-8 space-x-3">
 							<Button variant="secondary" onClick={handleCancel} data-testid="SignMessage__cancel">
 								{t("COMMON.CANCEL")}
 							</Button>
@@ -159,11 +161,11 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 					)}
 
 					{activeTab === "signed" && (
-						<div className="flex justify-end mt-10 space-x-3">
+						<div className="flex justify-end mt-8 space-x-3">
 							<Button
 								variant="secondary"
 								onClick={() => setActiveTab("form")}
-								data-testid="SignMessage__cancel"
+								data-testid="SignMessage__back"
 							>
 								{t("COMMON.BACK")}
 							</Button>

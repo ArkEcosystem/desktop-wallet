@@ -14,7 +14,7 @@ export const SignedStep = ({ signedMessage }: { signedMessage: SignedMessage }) 
 
 	return (
 		<section>
-			<Header title={t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")} />
+			<Header title={t("WALLETS.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE")} />
 
 			<TransactionDetail
 				border={false}

@@ -18,8 +18,8 @@ export const FormStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	return (
 		<section className="space-y-8">
 			<Header
-				title={t("WALLETS.MODAL_SIGN_MESSAGE.TITLE")}
-				subtitle={t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION")}
+				title={t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE")}
+				subtitle={t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.DESCRIPTION")}
 			/>
 
 			<FormField name="signatory-address">

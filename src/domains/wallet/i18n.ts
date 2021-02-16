@@ -43,11 +43,21 @@ export const translations: { [key: string]: any } = {
 	},
 
 	MODAL_SIGN_MESSAGE: {
-		TITLE: "Sign Message",
-		SUCCESS_TITLE: "Message Successfully Signed",
-		DESCRIPTION: "Insert a message below to sign using your private key",
-		SIGN: "Sign",
 		COPY_SIGNATURE: "Copy Signature",
+		SIGN: "Sign",
+
+		FORM_STEP: {
+			TITLE: "Sign Message",
+			DESCRIPTION: "Insert a message below to sign using your private key",
+		},
+
+		LEDGER_CONFIRMATION_STEP: {
+			TITLE: "Confirm Your Signature",
+		},
+
+		SIGNED_STEP: {
+			TITLE: "Message Successfully Signed",
+		},
 	},
 
 	MODAL_VERIFY_MESSAGE: {

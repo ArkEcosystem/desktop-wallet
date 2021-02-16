@@ -9,30 +9,33 @@ export const LedgerWaitingDevice = ({
 	isOpen,
 	coinName,
 	onClose,
+	onDeviceAvailable,
 }: {
 	isOpen: boolean;
 	coinName?: string;
-	onClose?: (hasDeviceAvailable: boolean) => void;
+	onClose?: () => void;
+	onDeviceAvailable?: (hasDeviceAvailable: boolean) => void;
 }) => {
 	const { t } = useTranslation();
 	const { hasDeviceAvailable } = useLedgerContext();
 
 	useLayoutEffect(() => {
 		if (hasDeviceAvailable) {
-			onClose?.(true);
+			onDeviceAvailable?.(true);
 		}
-	}, [hasDeviceAvailable, onClose]);
+	}, [hasDeviceAvailable, onDeviceAvailable]);
 
 	return (
-		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={() => onClose?.(false)}>
+		<Modal
+			title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")}
+			description={t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}
+			isOpen={isOpen}
+			onClose={() => onClose?.()}
+		>
 			<div className="mt-8 space-y-8">
-				<div className="text-theme-secondary-700" data-testid="LedgerWaitingDevice-description">
-					{t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}
-				</div>
-
 				<Image name="WaitingLedgerDevice" domain="wallet" className="mx-auto" />
 
-				<div className="inline-flex justify-center items-center space-x-3 w-full">
+				<div className="inline-flex items-center space-x-3 w-full">
 					<Spinner />
 					<span
 						className="font-semibold animate-pulse text-theme-secondary-text"

@@ -109,7 +109,13 @@ export const Wallets = ({
 				/>
 			</div>
 
-			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}
+			{isWaitingLedger && (
+				<LedgerWaitingDevice
+					isOpen={true}
+					onDeviceAvailable={onLedgerModalClose}
+					onClose={() => setIsWaitingLedger(false)}
+				/>
+			)}
 		</Section>
 	);
 };
