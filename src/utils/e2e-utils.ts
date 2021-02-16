@@ -139,6 +139,7 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 
 export const requestMocks = {
 	configuration: [
+		mockRequest("https://dwallets.ark.io/api/blockchain", "coins/ark/devnet/blockchain"),
 		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/devnet/configuration"),
 		mockRequest("https://dwallets.ark.io/api/node/configuration/crypto", "coins/ark/devnet/cryptoConfiguration"),
 		mockRequest("https://dwallets.ark.io/api/node/fees?days=30", "coins/ark/devnet/node-fees"),
