@@ -91,7 +91,11 @@ const SelectDropdown = ({
 			onSelectedItemChange?.({ selected: selectedItem });
 		},
 		onInputValueChange: ({ inputValue, selectedItem, type }) => {
-			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
+			const matchedOptions = inputValue
+				? options.filter((option: Option) => isMatch(inputValue, option))
+				: options;
+
+			setItems(matchedOptions);
 
 			if (type === "__input_change__") {
 				setIsTyping(true);
@@ -101,8 +105,14 @@ const SelectDropdown = ({
 
 			if (allowFreeInput) {
 				const selected = { label: inputValue as string, value: inputValue as string };
+
 				selectItem(selected);
 				onSelectedItemChange({ selected });
+
+				if (matchedOptions.length === 0) {
+					closeMenu();
+				}
+
 				return;
 			}
 
