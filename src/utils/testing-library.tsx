@@ -83,6 +83,8 @@ export const defaultNetMocks = () => {
 
 	// devnet
 	nock("https://dwallets.ark.io")
+		.get("/api/blockchain")
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/blockchain.json"))
 		.get("/api/node/configuration")
 		.reply(200, require("../tests/fixtures/coins/ark/devnet/configuration.json"))
 		.get("/api/peers")
