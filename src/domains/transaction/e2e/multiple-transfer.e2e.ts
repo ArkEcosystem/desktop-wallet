@@ -88,10 +88,12 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
-	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
+	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
 		paste: true,
+		replace: true,
 	});
+	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
+
 	await t.pressKey("tab");
 	await t.pressKey("enter");
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
