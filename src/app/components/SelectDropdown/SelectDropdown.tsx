@@ -136,7 +136,7 @@ const SelectDropdown = ({
 		}
 	}, [inputValue, options]);
 
-	const data = isTyping ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
+	const data = isTyping && inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
 
 	return (
 		<div className="relative w-full">

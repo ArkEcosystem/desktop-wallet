@@ -362,4 +362,22 @@ describe("SelectDropdown", () => {
 		});
 		expect(() => getByTestId("select-list__toggle-option-0")).toThrow();
 	});
+
+	it("should show all options when empty input", () => {
+		const { getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
+		});
+		expect(getByTestId("select-list__input")).toHaveValue(options[0].label);
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "" } });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("");
+		expect(getByTestId("select-list__toggle-option-0")).toBeTruthy();
+		expect(getByTestId("select-list__toggle-option-1")).toBeTruthy();
+		expect(getByTestId("select-list__toggle-option-2")).toBeTruthy();
+	});
 });
