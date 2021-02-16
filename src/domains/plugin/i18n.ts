@@ -106,6 +106,8 @@ export const translations: { [key: string]: any } = {
 		ABOUT: "About the plugin",
 		PERMISSIONS: "Permissions",
 		SCREENSHOTS: "Screenshots",
+		REQUIREMENTS: "Requirements",
+		DESKTOP_WALLET_VERSION: "Desktop Wallet Version",
 	},
 
 	REVIEW_BOX: {
