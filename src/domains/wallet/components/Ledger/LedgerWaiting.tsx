@@ -5,26 +5,30 @@ import { useLedgerContext } from "app/contexts/Ledger/Ledger";
 import React, { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-export const LedgerWaitingDevice = ({
+export const LedgerWaiting = ({
 	isOpen,
+	subject,
+	coinName,
 	onClose,
 }: {
 	isOpen: boolean;
-	onClose: (hasDeviceAvailable: boolean) => void;
+	subject?: "device" | "app";
+	coinName?: string;
+	onClose?: (hasDeviceAvailable: boolean) => void;
 }) => {
 	const { t } = useTranslation();
 	const { hasDeviceAvailable } = useLedgerContext();
 
 	useLayoutEffect(() => {
 		if (hasDeviceAvailable) {
-			onClose(true);
+			onClose?.(true);
 		}
 	}, [hasDeviceAvailable, onClose]);
 
 	return (
-		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={() => onClose(false)}>
+		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={() => onClose?.(false)}>
 			<div className="mt-8 space-y-8">
-				<div className="text-center text-theme-secondary-700" data-testid="LedgerWaitingDevice-description">
+				<div className="text-theme-secondary-700" data-testid="LedgerWaiting-description">
 					{t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}
 				</div>
 
@@ -33,13 +37,19 @@ export const LedgerWaitingDevice = ({
 				<div className="inline-flex justify-center items-center space-x-3 w-full">
 					<Spinner />
 					<span
-						className="font-semibold animate-pulse text-theme-text"
-						data-testid="LedgerWaitingDevice-loading_message"
+						className="font-semibold animate-pulse text-theme-secondary-text"
+						data-testid="LedgerWaiting-loading_message"
 					>
-						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")}
+						{subject === "device"
+							? t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")
+							: t("WALLETS.MODAL_LEDGER_WALLET.OPEN_APP", { coin: coinName })}
 					</span>
 				</div>
 			</div>
 		</Modal>
 	);
+};
+
+LedgerWaiting.defaultProps = {
+	subject: "device",
 };

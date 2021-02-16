@@ -4,16 +4,16 @@ import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import React from "react";
 import { act, fireEvent, render, screen } from "utils/testing-library";
 
-import { LedgerWaitingDevice } from "./LedgerWaitingDevice";
+import { LedgerWaiting } from "./LedgerWaiting";
 
 const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
-describe("LedgerWaitingDevice", () => {
+describe("LedgerWaiting", () => {
 	it("should emit false when closed by button", () => {
 		const onClose = jest.fn();
 		const { asFragment } = render(
 			<LedgerProvider transport={transport}>
-				<LedgerWaitingDevice isOpen={true} onClose={onClose} />
+				<LedgerWaiting isOpen={true} onClose={onClose} />
 			</LedgerProvider>,
 		);
 
@@ -38,7 +38,7 @@ describe("LedgerWaitingDevice", () => {
 
 		render(
 			<LedgerProvider transport={transport}>
-				<LedgerWaitingDevice isOpen={true} onClose={onClose} />
+				<LedgerWaiting isOpen={true} onClose={onClose} />
 			</LedgerProvider>,
 		);
 

@@ -1,1 +1,1 @@
-export * from "./LedgerWaitingDevice";
+export * from "./LedgerWaiting";

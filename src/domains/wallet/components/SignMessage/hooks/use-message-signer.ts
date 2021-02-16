@@ -12,10 +12,12 @@ const signWithLedger = async (message: string, wallet: ReadWriteWallet) => {
 		signatory = await wallet.coin().ledger().getPublicKey(path!);
 	}
 
+	const signature = await wallet.ledger().signMessage(path!, Buffer.from(message));
+
 	return {
 		signatory,
 		message,
-		signature: await wallet.ledger().signMessage(path!, Buffer.from(message, "hex")),
+		signature,
 	};
 };
 

@@ -114,19 +114,19 @@ describe("Dashboard", () => {
 			fireEvent.click(getByText("Import Ledger"));
 		});
 
-		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("LedgerWaiting-description")).toBeInTheDocument());
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		await waitFor(() => expect(queryByTestId("LedgerWaitingDevice-description")).not.toBeInTheDocument());
+		await waitFor(() => expect(queryByTestId("LedgerWaiting-description")).not.toBeInTheDocument());
 
 		act(() => {
 			fireEvent.click(getByText("Import Ledger"));
 		});
 
-		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("LedgerWaiting-description")).toBeInTheDocument());
 
 		act(() => {
 			observer!.next({ type: "add", descriptor: "" });

@@ -51,7 +51,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			network: string,
 			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
 		) => {
-			console.log("ledger connect");
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
@@ -82,7 +81,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	);
 
 	const disconnect = useCallback(async (coin: Coins.Coin) => {
-		console.log("ledger disconnect");
 		await coin.ledger().disconnect();
 		dispatch({ type: "disconnected" });
 	}, []);
