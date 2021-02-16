@@ -1,5 +1,6 @@
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { useEnvironmentContext } from "app/contexts";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useMemo,useRef, useState } from "react";
 
 type Callback = () => Promise<void | any>;
 
@@ -8,19 +9,32 @@ type Job = {
 	interval: number;
 };
 
+type JobError = {
+	timestamp: number;
+	error: any;
+};
+
 export const useSynchronizer = (jobs: Job[]) => {
 	const timers = useRef<number[]>([]);
 	const { persist } = useEnvironmentContext();
+	const [error, setError] = useState<JobError>();
 
 	const run = useCallback(
 		async (callback: Callback) => {
-			await callback();
-			await persist();
+			try {
+				await callback();
+				await persist();
+			} catch (error) {
+				const jobError = { timestamp: DateTime.make().toUNIX(), error };
+				setError(jobError);
+			}
 		},
-		[persist],
+		[persist, setError],
 	);
 
 	const stop = useCallback((props?: { clearTimers: boolean }) => {
+		setError(undefined);
+
 		for (const timer of timers.current) {
 			clearInterval(timer);
 		}
@@ -48,5 +62,11 @@ export const useSynchronizer = (jobs: Job[]) => {
 		};
 	}, [timers]);
 
-	return { start, stop, runAll };
+	return useMemo(() => ({ start, stop, runAll, error, clearError: () => setError(undefined) }), [
+		error,
+		setError,
+		start,
+		stop,
+		runAll,
+	]);
 };
