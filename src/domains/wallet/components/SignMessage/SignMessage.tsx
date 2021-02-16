@@ -1,23 +1,21 @@
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
+import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonStart, InputGroup, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import { TextArea } from "app/components/TextArea";
+import { TabPanel, Tabs } from "app/components/Tabs";
 import { useLedgerContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { LedgerWaiting } from "domains/wallet/components/Ledger";
-import React, { ChangeEvent, createRef, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { LedgerReview } from "./";
+import { FormStep } from "./FormStep";
 import { useMessageSigner } from "./hooks/use-message-signer";
+import { LedgerConfirmationStep } from "./LedgerConfirmationStep";
+import { SignedStep } from "./SignedStep";
 
 type SignMessageProps = {
 	isOpen: boolean;
@@ -27,13 +25,15 @@ type SignMessageProps = {
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
 
-const initialState: SignedMessageProps = {
+const initialState: SignedMessage = {
 	message: "",
 	signatory: "",
 	signature: "",
 };
 
 export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => {
+	const [activeTab, setActiveTab] = useState("form");
+
 	const [isAwaitingApp, setIsAwaitingApp] = useState(false);
 	const [isAwaitingConfirmation, setIsAwaitingConfirmation] = useState(false);
 	const [isAwaitingLedger, setIsAwaitingLedger] = useState(false);
@@ -46,7 +46,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		setIsAwaitingApp(false);
 	};
 
-	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(initialState);
+	const [signedMessage, setSignedMessage] = useState<SignedMessage>(initialState);
 
 	const isSigned = !!signedMessage.signature;
 
@@ -54,8 +54,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 	const form = useForm({ mode: "onChange" });
 	const { formState, register, setValue, unregister } = form;
-
-	const messageRef = createRef();
 
 	const profile = useActiveProfile();
 	const wallet = useActiveWallet();
@@ -66,7 +64,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	const { sign } = useMessageSigner(profile);
 
 	const isLedger = wallet.isLedger();
-	const { authentication } = useValidation();
 
 	useEffect(() => {
 		if (isLedger) {
@@ -124,6 +121,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 		if (isLedger) {
 			setIsAwaitingConfirmation(true);
+			setActiveTab("ledger");
 		}
 
 		try {
@@ -136,6 +134,12 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 			//
 		}
 
+		setActiveTab("signed");
+		restoreDefaults();
+	};
+
+	const handleBack = () => {
+		setActiveTab("form");
 		restoreDefaults();
 	};
 
@@ -150,114 +154,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		restoreDefaults();
 		onClose?.();
 	};
-
-	const renderForm = () => (
-		<div className="mt-8">
-			<Form context={form} onSubmit={handleSubmit} data-testid="SignMessage__form">
-				{isAwaitingConfirmation ? (
-					<LedgerReview />
-				) : (
-					<>
-						<FormField name="signatory-address">
-							<FormLabel label={t("WALLETS.SIGNATORY")} />
-							<InputGroup>
-								<InputAddonStart>
-									<Avatar address={wallet.address()} size="sm" className="ml-4" noShadow />
-								</InputAddonStart>
-								<Input value={wallet.address()} className="font-semibold pl-15" disabled />
-							</InputGroup>
-						</FormField>
-
-						<FormField name="message">
-							<FormLabel label={t("COMMON.MESSAGE")} />
-							<InputGroup>
-								<Input
-									ref={register({
-										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-											field: t("COMMON.MESSAGE"),
-										}).toString(),
-									})}
-									onChange={(event: ChangeEvent<HTMLInputElement>) =>
-										setValue("message", event.target.value, {
-											shouldDirty: true,
-											shouldValidate: true,
-										})
-									}
-									data-testid="SignMessage__message-input"
-								/>
-							</InputGroup>
-						</FormField>
-
-						{!isLedger && (
-							<FormField name="mnemonic">
-								<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
-								<InputPassword
-									ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
-									data-testid="SignMessage__mnemonic-input"
-								/>
-							</FormField>
-						)}
-
-						<div className="flex justify-end space-x-3">
-							<Button variant="secondary" onClick={handleCancel} data-testid="SignMessage__cancel">
-								{t("COMMON.CANCEL")}
-							</Button>
-
-							<Button
-								disabled={!formState.isValid}
-								type="submit"
-								data-testid="SignMessage__submit-button"
-							>
-								{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
-							</Button>
-						</div>
-					</>
-				)}
-			</Form>
-		</div>
-	);
-
-	const renderSignedMessage = () => (
-		<div className="mt-2">
-			<TransactionDetail
-				border={false}
-				label={t("WALLETS.SIGNATORY")}
-				extra={
-					<div className="flex items-center -space-x-2">
-						<Circle size="lg" className="border-theme-text">
-							<Icon name="Delegate" width={25} height={25} />
-						</Circle>
-						<Avatar size="lg" address={signedMessage.signatory} />
-					</div>
-				}
-			>
-				<Address address={signedMessage.signatory} />
-			</TransactionDetail>
-
-			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg break-all">
-				{signedMessage.message}
-			</TransactionDetail>
-
-			<TransactionDetail border label={t("COMMON.SIGNATURE")}>
-				<TextArea
-					className="mt-2 rounded-lg"
-					name="signature"
-					wrap="hard"
-					ref={messageRef}
-					defaultValue={JSON.stringify(signedMessage)}
-				/>
-			</TransactionDetail>
-
-			<div className="flex justify-end pb-5 mt-3">
-				<Clipboard data={JSON.stringify(signedMessage)}>
-					<Button variant="secondary" data-testid="SignMessage__copy-button">
-						<Icon name="Copy" />
-						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
-					</Button>
-				</Clipboard>
-			</div>
-		</div>
-	);
 
 	if (!isOpen) {
 		return <></>;
@@ -279,13 +175,55 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	}
 
 	return (
-		<Modal
-			isOpen={isOpen}
-			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
-			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
-			onClose={handleClose}
-		>
-			{isSigned ? renderSignedMessage() : renderForm()}
+		<Modal isOpen={isOpen} title="" onClose={handleClose}>
+			<Form context={form} onSubmit={handleSubmit}>
+				<Tabs activeId={activeTab}>
+					<TabPanel tabId="form">
+						<FormStep wallet={wallet} />
+					</TabPanel>
+
+					<TabPanel tabId="ledger">
+						<LedgerConfirmationStep />
+					</TabPanel>
+
+					<TabPanel tabId="signed">
+						<SignedStep signedMessage={signedMessage} />
+					</TabPanel>
+
+					<div className="flex justify-end mt-10 space-x-3">
+						{activeTab === "form" && (
+							<>
+								<Button variant="secondary" onClick={handleCancel} data-testid="SignMessage__cancel">
+									{t("COMMON.CANCEL")}
+								</Button>
+
+								<Button
+									disabled={!formState.isValid}
+									type="submit"
+									data-testid="SignMessage__submit-button"
+								>
+									{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
+								</Button>
+							</>
+						)}
+
+						{activeTab === "signed" && (
+							<>
+								<Button variant="secondary" onClick={handleBack} data-testid="SignMessage__cancel">
+									{t("COMMON.BACK")}
+								</Button>
+
+								<Clipboard data={JSON.stringify(signedMessage)}>
+									<Button variant="secondary" data-testid="SignMessage__copy-button">
+										<Icon name="Copy" />
+										<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
+									</Button>
+								</Clipboard>
+							</>
+						)}
+					</div>
+				</Tabs>
+			</Form>
 		</Modal>
 	);
 };

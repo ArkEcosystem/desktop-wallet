@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const LedgerReview = () => {
+export const LedgerConfirmationStep = () => {
 	const { getValues, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
