@@ -1,5 +1,7 @@
+import { act as hookAct,renderHook } from "@testing-library/react-hooks";
+import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import React, { useEffect } from "react";
-import { act, fireEvent, render, screen, waitFor } from "utils/testing-library";
+import { act, env,fireEvent, render, screen, waitFor } from "utils/testing-library";
 
 import { useSynchronizer } from "./use-synchronizer";
 
@@ -91,5 +93,61 @@ describe("Synchronizer Hook", () => {
 		});
 
 		await waitFor(() => expect(clearInterval).toHaveBeenCalledTimes(2));
+	});
+
+	it("should catch and return errors from jobs", async () => {
+		const erroringJob = jest.fn(() => Promise.reject("Some error"));
+
+		const jobsWithErrors = [
+			{
+				callback: erroringJob,
+				interval: 50,
+			},
+		];
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const { result } = renderHook(() => useSynchronizer(jobsWithErrors), { wrapper });
+
+		await hookAct(async () => {
+			result.current.runAll();
+			await waitFor(() =>
+				expect(result.current.error).toEqual({ error: "Some error", timestamp: expect.any(Number) }),
+			);
+		});
+	});
+
+	it("should clear errors", async () => {
+		const erroringJob = jest.fn(() => Promise.reject("Some error"));
+
+		const jobsWithErrors = [
+			{
+				callback: erroringJob,
+				interval: 50,
+			},
+		];
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const { result } = renderHook(() => useSynchronizer(jobsWithErrors), { wrapper });
+
+		await hookAct(async () => {
+			result.current.runAll();
+			await waitFor(() =>
+				expect(result.current.error).toEqual({ error: "Some error", timestamp: expect.any(Number) }),
+			);
+
+			result.current.clearError();
+
+			await waitFor(() => expect(result.current.error).toBeUndefined());
+		});
 	});
 });
