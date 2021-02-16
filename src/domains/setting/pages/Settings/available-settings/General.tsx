@@ -10,6 +10,7 @@ import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useReloadPath } from "app/hooks";
+import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
@@ -23,14 +24,14 @@ import { SettingsProps } from "../Settings.models";
 export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const reloadPath = useReloadPath();
 	const activeProfile = useActiveProfile();
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
 	const name = context.watch("name", activeProfile.settings().get(ProfileSetting.Name));
 
-	const nameMaxLength = 42;
+	const { settings } = useValidation();
 
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
 
@@ -45,18 +46,19 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().get(ProfileSetting.UseTestNetworks) || false,
 	);
 
-	const profiles = useMemo(() => env.profiles().values(), [env]);
+	const formattedName = name.trim();
+
 	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
 	useEffect(() => {
-		if ((!avatarImage || isSvg) && name) {
-			setAvatarImage(AvatarSDK.make(name));
+		if ((!avatarImage || isSvg) && formattedName) {
+			setAvatarImage(AvatarSDK.make(formattedName));
 		} else {
-			if (isSvg && !name) {
+			if (isSvg && !formattedName) {
 				setAvatarImage("");
 			}
 		}
-	}, [name, avatarImage, isSvg, setAvatarImage]);
+	}, [formattedName, avatarImage, isSvg, setAvatarImage]);
 
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -207,21 +209,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		isUpdateLedger,
 		useTestNetworks,
 	}: any) => {
-		const formattedName = name.substring(0, nameMaxLength);
-
-		const profileExists = profiles.some(
-			(profile) =>
-				profile.name() === formattedName && activeProfile.settings().get(ProfileSetting.Name) !== formattedName,
-		);
-
-		if (profileExists) {
-			return context.setError("name", {
-				type: "manual",
-				message: t("SETTINGS.GENERAL.PERSONAL.VALIDATION.NAME_EXISTS"),
-			});
-		}
-
-		activeProfile.settings().set(ProfileSetting.Name, formattedName);
+		activeProfile.settings().set(ProfileSetting.Name, name.trim());
 		activeProfile.settings().set(ProfileSetting.Locale, language);
 		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
 		activeProfile.settings().set(ProfileSetting.MarketProvider, marketProvider);
@@ -255,26 +243,14 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				<div className="relative mt-8">
 					<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-					<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
+					<SelectProfileImage value={avatarImage} name={formattedName} onSelect={setAvatarImage} />
 
 					<div className="flex justify-between mt-8 w-full">
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 								<InputDefault
-									type="text"
-									ref={register({
-										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-										}).toString(),
-										maxLength: {
-											value: nameMaxLength,
-											message: t("COMMON.VALIDATION.MAX_LENGTH", {
-												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-												maxLength: nameMaxLength,
-											}),
-										},
-									})}
+									ref={register(settings.name(activeProfile.id()))}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
 								/>
