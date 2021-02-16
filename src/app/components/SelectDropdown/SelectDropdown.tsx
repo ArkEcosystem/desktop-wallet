@@ -54,7 +54,6 @@ const SelectDropdown = ({
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
 
-	const [items, setItems] = useState([...options]);
 	const [isTyping, setIsTyping] = useState(false);
 
 	const isMatch = (inputValue: string, option: Option) =>
@@ -81,7 +80,7 @@ const SelectDropdown = ({
 		highlightedIndex,
 		reset,
 	} = useCombobox<Option | null>({
-		items,
+		items: options,
 		itemToString,
 		onSelectedItemChange: ({ selectedItem }) => {
 			if (allowFreeInput) {
@@ -91,12 +90,6 @@ const SelectDropdown = ({
 			onSelectedItemChange?.({ selected: selectedItem });
 		},
 		onInputValueChange: ({ inputValue, selectedItem, type }) => {
-			const matchedOptions = inputValue
-				? options.filter((option: Option) => isMatch(inputValue, option))
-				: options;
-
-			setItems(matchedOptions);
-
 			if (type === "__input_change__") {
 				setIsTyping(true);
 			} else {
@@ -108,6 +101,10 @@ const SelectDropdown = ({
 
 				selectItem(selected);
 				onSelectedItemChange({ selected });
+
+				const matchedOptions = inputValue
+					? options.filter((option: Option) => isMatch(inputValue, option))
+					: options;
 
 				if (matchedOptions.length === 0) {
 					closeMenu();
@@ -133,12 +130,13 @@ const SelectDropdown = ({
 	}, [defaultSelectedItem, selectItem]);
 
 	const inputTypeAhead = useMemo(() => {
-		if (inputValue && items.length && isMatch(inputValue, items[0])) {
-			return [inputValue, items[0].label.slice(inputValue.length)].join("");
+		const firstMatch = options.find((option) => isMatch(inputValue, option));
+		if (inputValue && firstMatch) {
+			return [inputValue, firstMatch.label.slice(inputValue.length)].join("");
 		}
-	}, [items, inputValue]);
+	}, [inputValue, options]);
 
-	const data = isTyping ? items : options;
+	const data = isTyping ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
 
 	return (
 		<div className="relative w-full">
@@ -158,9 +156,12 @@ const SelectDropdown = ({
 								return;
 							}
 
-							if (inputValue && items.length > 0) {
-								selectItem(items[0]);
-								handleInputChange({ selectedItem: items[0] });
+							const firstMatch = options.find((option) => isMatch(inputValue, option));
+
+							if (inputValue && firstMatch) {
+								selectItem(firstMatch);
+								handleInputChange({ selectedItem: firstMatch });
+
 								closeMenu();
 							} else {
 								reset();
@@ -169,9 +170,11 @@ const SelectDropdown = ({
 						onKeyDown: (event) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
-								if (inputValue && items.length > 0) {
-									selectItem(items[0]);
-									handleInputChange({ selectedItem: items[0] });
+								const firstMatch = options.find((option) => isMatch(inputValue, option));
+
+								if (inputValue && firstMatch) {
+									selectItem(firstMatch);
+									handleInputChange({ selectedItem: firstMatch });
 
 									if (event.key === "Enter") {
 										closeMenu();
