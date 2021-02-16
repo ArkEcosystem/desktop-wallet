@@ -157,10 +157,14 @@ export const SendTransfer = () => {
 				};
 			}
 
+			const expiration = await wallet?.coin()?.transaction().estimateExpiration();
+			transactionInput.data.expiration = parseInt(expiration!);
+
 			const abortSignal = abortRef.current?.signal;
 			const transaction = await transactionBuilder.build(transactionType, transactionInput, {
 				abortSignal,
 			});
+
 			await transactionBuilder.broadcast(transaction.id(), transactionInput);
 
 			await env.persist();
