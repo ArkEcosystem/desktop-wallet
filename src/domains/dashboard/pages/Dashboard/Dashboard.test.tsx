@@ -4,6 +4,8 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
+import { translations as dashboardTranslations } from "domains/dashboard/i18n";
+import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -95,7 +97,7 @@ describe("Dashboard", () => {
 			return { unsubscribe };
 		});
 
-		const { asFragment, getByTestId, getByText, queryByTestId, getAllByRole } = renderWithRouter(
+		const { asFragment, getByTestId, getByText, queryByText, getAllByRole } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<LedgerProvider transport={transport}>
 					<Dashboard />
@@ -111,22 +113,28 @@ describe("Dashboard", () => {
 		await waitFor(() => expect(getAllByRole("row").length).toBeGreaterThan(1));
 
 		act(() => {
-			fireEvent.click(getByText("Import Ledger"));
+			fireEvent.click(getByText(dashboardTranslations.WALLET_CONTROLS.IMPORT_LEDGER));
 		});
 
-		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(getByText(walletTranslations.MODAL_LEDGER_WALLET.CONNECT_DEVICE)).toBeInTheDocument(),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		await waitFor(() => expect(queryByTestId("LedgerWaitingDevice-description")).not.toBeInTheDocument());
+		await waitFor(() =>
+			expect(queryByText(walletTranslations.MODAL_LEDGER_WALLET.CONNECT_DEVICE)).not.toBeInTheDocument(),
+		);
 
 		act(() => {
-			fireEvent.click(getByText("Import Ledger"));
+			fireEvent.click(getByText(dashboardTranslations.WALLET_CONTROLS.IMPORT_LEDGER));
 		});
 
-		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(getByText(walletTranslations.MODAL_LEDGER_WALLET.CONNECT_DEVICE)).toBeInTheDocument(),
+		);
 
 		act(() => {
 			observer!.next({ type: "add", descriptor: "" });

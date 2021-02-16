@@ -10,7 +10,7 @@ export const LedgerWaitingApp = ({
 	onClose,
 }: {
 	isOpen: boolean;
-	coinName?: string;
+	coinName: string;
 	onClose?: () => void;
 }) => {
 	const { t } = useTranslation();

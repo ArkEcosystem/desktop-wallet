@@ -60,6 +60,6 @@ test("Should successfully sign message", async (t) => {
 	await t.typeText(Selector("input[name=message]"), "Hello World");
 	await t.typeText(Selector("input[name=mnemonic]"), "this is a top secret passphrase");
 	await t.click(Selector("[data-testid=SignMessage__submit-button]"));
-	await t.expect(Selector("h2").withText(translations.WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE).exists).ok();
+	await t.expect(Selector("h2").withText(translations.WALLETS.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE).exists).ok();
 	await t.click(Selector("[data-testid=modal__close-btn]"));
 });
