@@ -5,14 +5,12 @@ import { useLedgerContext } from "app/contexts/Ledger/Ledger";
 import React, { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-export const LedgerWaiting = ({
+export const LedgerWaitingDevice = ({
 	isOpen,
-	subject,
 	coinName,
 	onClose,
 }: {
 	isOpen: boolean;
-	subject?: "device" | "app";
 	coinName?: string;
 	onClose?: (hasDeviceAvailable: boolean) => void;
 }) => {
@@ -28,7 +26,7 @@ export const LedgerWaiting = ({
 	return (
 		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={() => onClose?.(false)}>
 			<div className="mt-8 space-y-8">
-				<div className="text-theme-secondary-700" data-testid="LedgerWaiting-description">
+				<div className="text-theme-secondary-700" data-testid="LedgerWaitingDevice-description">
 					{t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}
 				</div>
 
@@ -38,18 +36,12 @@ export const LedgerWaiting = ({
 					<Spinner />
 					<span
 						className="font-semibold animate-pulse text-theme-secondary-text"
-						data-testid="LedgerWaiting-loading_message"
+						data-testid="LedgerWaitingDevice-loading_message"
 					>
-						{subject === "device"
-							? t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")
-							: t("WALLETS.MODAL_LEDGER_WALLET.OPEN_APP", { coin: coinName })}
+						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")}
 					</span>
 				</div>
 			</div>
 		</Modal>
 	);
-};
-
-LedgerWaiting.defaultProps = {
-	subject: "device",
 };

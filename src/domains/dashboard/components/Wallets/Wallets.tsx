@@ -4,7 +4,7 @@ import { Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks";
 import { useWalletFilters } from "domains/dashboard/components/FilterWallets";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
-import { LedgerWaiting } from "domains/wallet/components/Ledger/LedgerWaiting";
+import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWaitingDevice";
 import React, { useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -109,7 +109,7 @@ export const Wallets = ({
 				/>
 			</div>
 
-			{isWaitingLedger && <LedgerWaiting isOpen={true} onClose={onLedgerModalClose} />}
+			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}
 		</Section>
 	);
 };

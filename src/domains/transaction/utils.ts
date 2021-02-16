@@ -9,3 +9,5 @@ export const evaluateFee = (fee: any) => {
 };
 
 export const isMnemonicError = (error: any) => String(error).includes("Signatory should be");
+
+export const isRejectionError = (error: any) => String(error).includes("Condition of use not satisfied");
