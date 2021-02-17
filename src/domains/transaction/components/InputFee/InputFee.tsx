@@ -21,7 +21,6 @@ export type InputFee = {
 	value: string;
 };
 
-// TODO: Remove defaultValue?
 export const InputFee = memo(
 	({ defaultValue, value, avg, min, max, onChange, step, showFeeOptions }: InputFeeProps) => {
 		const { t } = useTranslation();
