@@ -28,7 +28,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 	const { t } = useTranslation();
 
-	const { context, formState, register } = formConfig;
+	const { context, register } = formConfig;
 	const { isValid, isSubmitting } = context.formState;
 
 	const name = context.watch("name", activeProfile.settings().get(ProfileSetting.Name));
