@@ -83,7 +83,7 @@ describe("SelectRecipient", () => {
 		});
 
 		await waitFor(() =>
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			),
 		);
@@ -109,13 +109,13 @@ describe("SelectRecipient", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<SelectRecipient profile={profile} onChange={fn} />);
 		const address = "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT";
-		const recipientInputField = getByTestId("SelectRecipient__input");
+		const recipientInputField = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			fireEvent.change(recipientInputField, { target: { value: address } });
 		});
 
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(address);
+		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(address);
 		expect(fn).toBeCalledWith(address);
 	});
 
@@ -146,7 +146,7 @@ describe("SelectRecipient", () => {
 
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
 		expect(fn).toBeCalledWith(selectedAddressValue);
 	});
 
