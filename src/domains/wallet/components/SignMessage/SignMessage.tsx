@@ -6,7 +6,7 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useLedgerContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { useActiveWallet } from "app/hooks";
 import { toasts } from "app/services";
 import { isNoDeviceError, isRejectionError } from "domains/transaction/utils";
 import { LedgerWaitingApp, LedgerWaitingDevice } from "domains/wallet/components/Ledger";
