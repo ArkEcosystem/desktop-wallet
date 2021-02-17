@@ -1,5 +1,6 @@
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
+import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import React from "react";
@@ -8,66 +9,100 @@ import { useTranslation } from "react-i18next";
 import { PluginSpecs } from "./components/PluginSpecs";
 
 type Props = {
-	title: string;
+	title?: string;
 	description?: string;
 	logo?: string;
 	author?: string;
 	category: string;
 	url?: string;
-	version: string;
-	size: string;
+	version?: string;
+	size?: string;
 	isInstalled?: boolean;
 	isOfficial?: boolean;
+	isEnabled?: boolean;
+	hasUpdateAvailable?: boolean;
 	onReport?: () => void;
 	onInstall?: () => void;
 	hasLaunch?: boolean;
 	onLaunch?: () => void;
-	onUninstall?: () => void;
+	onDelete?: () => void;
+	onEnable?: () => void;
+	onDisable?: () => void;
+	onUpdate?: () => void;
 };
 
-export const PluginHeader = (props: Props) => {
+export const PluginHeader = ({
+	onDelete,
+	onLaunch,
+	onInstall,
+	onReport,
+	onEnable,
+	onDisable,
+	onUpdate,
+	...props
+}: Props) => {
 	const { t } = useTranslation();
 
 	const getPluginButtons = () => {
 		if (props.isInstalled) {
 			return (
-				<>
+				<div className="flex items-center space-x-3">
 					{props.hasLaunch && (
-						<Button data-testid="PluginHeader__button--launch" onClick={props.onLaunch}>
+						<Button data-testid="PluginHeader__button--launch" onClick={onLaunch}>
 							{t("COMMON.LAUNCH")}
 						</Button>
 					)}
-					{/* <Button className="ml-3" data-testid="PluginHeader__button--update">
-						<Icon name="Update" />
-					</Button> */}
-					<Button
-						className="ml-3"
-						data-testid="PluginHeader__button--report"
-						variant="secondary"
-						onClick={props.onReport}
-					>
+					<Button data-testid="PluginHeader__button--report" variant="secondary" onClick={onReport}>
 						<Icon name="Report" width={20} height={20} />
 					</Button>
-					<Button
-						className="ml-3"
-						data-testid="PluginHeader__button--uninstall"
-						variant="secondary"
-						onClick={props.onUninstall}
-					>
-						<Icon name="Trash" />
-					</Button>
-				</>
+					<Dropdown
+						toggleContent={
+							<Button variant="secondary" size="icon" className="text-left">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
+						}
+						options={[
+							props.hasUpdateAvailable && {
+								label: t("COMMON.UPDATE"),
+								value: "update",
+							},
+							{ label: t("COMMON.DELETE"), value: "delete" },
+							{
+								label: props.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
+								value: props.isEnabled ? "disable" : "enable",
+							},
+						].filter(Boolean)}
+						onSelect={(option: any) => {
+							if (option.value === "delete") {
+								onDelete?.();
+							}
+
+							if (option.value === "enable") {
+								return onEnable?.();
+							}
+
+							if (option.value === "disable") {
+								return onDisable?.();
+							}
+
+							if (option.value === "update") {
+								return onUpdate?.();
+							}
+						}}
+						dropdownClass="text-left"
+					/>
+				</div>
 			);
 		}
 
 		return (
 			<>
-				<Button data-testid="PluginHeader__button--install" onClick={props.onInstall}>
+				<Button data-testid="PluginHeader__button--install" onClick={onInstall}>
 					{t("COMMON.INSTALL")}
 				</Button>
 				<Button
 					className="ml-3"
-					onClick={props.onReport}
+					onClick={onReport}
 					data-testid="PluginHeader__button--report"
 					variant="secondary"
 				>

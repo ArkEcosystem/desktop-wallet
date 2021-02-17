@@ -16,8 +16,7 @@ import { PluginManagerNavigationBar } from "domains/plugin/components/PluginMana
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
-import { PluginConfigurationData } from "plugins/core/configuration";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -189,7 +188,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
-	const { pluginManager } = usePluginManagerContext();
+	const { pluginManager, mapConfigToPluginData } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
 
 	const [currentView, setCurrentView] = useState("home");
@@ -201,28 +200,17 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 
-	const mapConfigToPluginData = useCallback(
-		(config: PluginConfigurationData) => {
-			const localPlugin = pluginManager.plugins().findById(config.id());
-			return {
-				...config.toObject(),
-				isInstalled: !!localPlugin,
-				isEnabled: !!localPlugin?.isEnabled(activeProfile),
-				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
-				hasUpdateAvailable: hasUpdateAvailable(config.id()),
-			};
-		},
-		[hasUpdateAvailable, activeProfile, pluginManager],
-	);
-
 	useEffect(() => {
 		fetchPluginPackages();
 	}, [fetchPluginPackages]);
 
-	const homePackages = allPlugins.map(mapConfigToPluginData);
+	const homePackages = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
 	const filteredPackages = useMemo(
-		() => allPlugins.filter((config) => config.hasCategory(currentView)).map(mapConfigToPluginData),
+		() =>
+			allPlugins
+				.filter((config) => config.hasCategory(currentView))
+				.map(mapConfigToPluginData.bind(null, activeProfile)),
 		[currentView], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 
@@ -230,7 +218,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		.plugins()
 		.all()
 		.map((item) => item.config())
-		.map(mapConfigToPluginData);
+		.map(mapConfigToPluginData.bind(null, activeProfile));
 
 	const handleSelectPlugin = (pluginId: string) =>
 		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${pluginId}`);

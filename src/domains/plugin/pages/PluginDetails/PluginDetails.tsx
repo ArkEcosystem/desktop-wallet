@@ -18,7 +18,14 @@ export const PluginDetails = () => {
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
-	const { allPlugins, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
+	const {
+		allPlugins,
+		pluginConfigurations,
+		pluginManager,
+		reportPlugin,
+		trigger,
+		mapConfigToPluginData,
+	} = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
 	const repositoryURL = queryParams.get("repositoryURL");
@@ -45,7 +52,7 @@ export const PluginDetails = () => {
 		return latestConfiguration || packageConfiguration;
 	}, [isInstalled, packageConfiguration, latestConfiguration]);
 
-	const pluginData = plugin?.toObject() || ({} as any);
+	const pluginData = mapConfigToPluginData(activeProfile, plugin!);
 
 	const { title } = pluginData;
 
@@ -55,7 +62,7 @@ export const PluginDetails = () => {
 			route: `/profiles/${activeProfile.id()}/plugins`,
 		},
 		{
-			label: title,
+			label: title!,
 		},
 	];
 
@@ -81,16 +88,24 @@ export const PluginDetails = () => {
 				<PluginHeader
 					{...pluginData}
 					isInstalled={isInstalled}
-					onUninstall={() => setIsUninstallOpen(true)}
+					onDelete={() => setIsUninstallOpen(true)}
 					onReport={handleReportPlugin}
 					onInstall={() => setIsInstallOpen(true)}
+					onEnable={() => {
+						pluginCtrl?.enable(activeProfile, { autoRun: true });
+						trigger();
+					}}
+					onDisable={() => {
+						pluginCtrl?.disable(activeProfile);
+						trigger();
+					}}
 					hasLaunch={hasLaunch}
 					onLaunch={handleLaunch}
 				/>
 			</Section>
 
 			<Section>
-				<PluginInfo {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
+				<PluginInfo {...pluginData} />
 			</Section>
 
 			{plugin && (

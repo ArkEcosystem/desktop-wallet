@@ -203,6 +203,20 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		return configData.id();
 	}, []);
 
+	const mapConfigToPluginData = useCallback(
+		(profile: Profile, config: PluginConfigurationData) => {
+			const localPlugin = pluginManager.plugins().findById(config.id());
+			return {
+				...config.toObject(),
+				isInstalled: !!localPlugin,
+				isEnabled: !!localPlugin?.isEnabled(profile),
+				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
+				hasUpdateAvailable: hasUpdateAvailable(config.id()),
+			};
+		},
+		[hasUpdateAvailable, pluginManager],
+	);
+
 	return {
 		pluginRegistry,
 		fetchPluginPackages,
@@ -219,6 +233,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		deletePlugin,
 		fetchLatestPackageConfiguration,
 		pluginConfigurations,
+		mapConfigToPluginData,
 	};
 };
 
