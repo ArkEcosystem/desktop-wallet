@@ -22,14 +22,14 @@ describe("Add Participant", () => {
 	it("should fail to find", async () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/wallets")
-			.query({ address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" })
+			.query({ address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba" })
 			.reply(404);
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
 		act(() => {
-			fireEvent.input(screen.getByRole("textbox"), {
+			fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
 				target: {
-					value: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+					value: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba",
 				},
 			});
 		});
@@ -39,8 +39,8 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = screen.getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			const input = screen.getByTestId("SelectDropdownInput__input");
+			expect(input).toHaveAttribute("aria-invalid");
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -58,7 +58,7 @@ describe("Add Participant", () => {
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
 		act(() => {
-			fireEvent.input(screen.getByRole("textbox"), {
+			fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
 				},
@@ -70,8 +70,8 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = screen.getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			const input = screen.getByTestId("SelectDropdownInput__input");
+			expect(input).toHaveAttribute("aria-invalid");
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -93,7 +93,7 @@ describe("Add Participant", () => {
 		);
 
 		act(() => {
-			fireEvent.input(screen.getByRole("textbox"), {
+			fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: wallet.address(),
 				},
@@ -105,8 +105,8 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = screen.getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			const input = screen.getByTestId("SelectDropdownInput__input");
+			expect(input).toHaveAttribute("aria-invalid");
 		});
 	});
 
@@ -122,7 +122,7 @@ describe("Add Participant", () => {
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
 		act(() => {
-			fireEvent.input(screen.getByRole("textbox"), {
+			fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20",
 				},
@@ -134,8 +134,8 @@ describe("Add Participant", () => {
 		});
 
 		await waitFor(() => {
-			const errorMessage = screen.getByTestId("Input-error");
-			expect(errorMessage).toBeVisible();
+			const input = screen.getByTestId("SelectDropdownInput__input");
+			expect(input).toHaveAttribute("aria-invalid");
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -146,7 +146,7 @@ describe("Add Participant", () => {
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} onChange={onChange} />);
 
 		act(() => {
-			fireEvent.input(screen.getByRole("textbox"), {
+			fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: profile.wallets().last().address(),
 				},
@@ -183,7 +183,7 @@ describe("Add Participant", () => {
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
 		act(() => {
-			fireEvent.input(screen.getByRole("textbox"), {
+			fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
 				target: {
 					value: walletFixture.data.address,
 				},

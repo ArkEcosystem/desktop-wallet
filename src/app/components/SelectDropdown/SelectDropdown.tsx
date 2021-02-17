@@ -16,8 +16,12 @@ type Option = {
 type SelectProps = {
 	options: Option[];
 	defaultValue?: string;
+	inputClassName?: string;
 	isInvalid?: boolean;
+	showCaret?: boolean;
 	disabled?: boolean;
+	allowFreeInput?: boolean;
+	errorClassName?: string;
 	onChange?: (selected: Option) => void;
 } & React.InputHTMLAttributes<any>;
 
@@ -25,8 +29,12 @@ type SelectDropdownProps = {
 	options: Option[];
 	defaultSelectedItem?: Option;
 	placeholder?: string;
+	inputClassName?: string;
+	showCaret?: boolean;
 	isInvalid?: boolean;
 	disabled?: boolean;
+	allowFreeInput?: boolean;
+	errorClassName?: string;
 	onSelectedItemChange: any;
 } & React.InputHTMLAttributes<any>;
 
@@ -39,14 +47,24 @@ const SelectDropdown = ({
 	disabled,
 	onSelectedItemChange,
 	isInvalid,
+	inputClassName,
+	allowFreeInput = false,
+	showCaret = true,
+	errorClassName = "mr-8",
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
 
-	const [items, setItems] = useState([...options]);
 	const [isTyping, setIsTyping] = useState(false);
 
 	const isMatch = (inputValue: string, option: Option) =>
 		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
+
+	const handleInputChange = ({ selectedItem }: { selectedItem: Option }) => {
+		if (!allowFreeInput) {
+			return;
+		}
+		onSelectedItemChange({ selected: selectedItem });
+	};
 
 	const {
 		isOpen,
@@ -62,16 +80,37 @@ const SelectDropdown = ({
 		highlightedIndex,
 		reset,
 	} = useCombobox<Option | null>({
-		items,
+		items: options,
 		itemToString,
-		onSelectedItemChange,
-		onInputValueChange: ({ inputValue, selectedItem, type }) => {
-			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
+		onSelectedItemChange: ({ selectedItem }) => {
+			if (allowFreeInput) {
+				return;
+			}
 
+			onSelectedItemChange?.({ selected: selectedItem });
+		},
+		onInputValueChange: ({ inputValue, selectedItem, type }) => {
 			if (type === "__input_change__") {
 				setIsTyping(true);
 			} else {
 				setIsTyping(false);
+			}
+
+			if (allowFreeInput) {
+				const selected = { label: inputValue as string, value: inputValue as string };
+
+				selectItem(selected);
+				onSelectedItemChange({ selected });
+
+				const matchedOptions = inputValue
+					? options.filter((option: Option) => isMatch(inputValue, option))
+					: options;
+
+				if (matchedOptions.length === 0) {
+					closeMenu();
+				}
+
+				return;
 			}
 
 			if (!inputValue) {
@@ -88,15 +127,16 @@ const SelectDropdown = ({
 
 	useEffect(() => {
 		selectItem(defaultSelectedItem || null);
-	}, [selectItem, defaultSelectedItem]);
+	}, [defaultSelectedItem, selectItem]);
 
 	const inputTypeAhead = useMemo(() => {
-		if (inputValue && items.length) {
-			return [inputValue, items[0].label.slice(inputValue.length)].join("");
+		const firstMatch = options.find((option) => isMatch(inputValue, option));
+		if (inputValue && firstMatch) {
+			return [inputValue, firstMatch.label.slice(inputValue.length)].join("");
 		}
-	}, [items, inputValue]);
+	}, [inputValue, options]);
 
-	const data = isTyping ? items : options;
+	const data = isTyping && inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
 
 	return (
 		<div className="relative w-full">
@@ -107,11 +147,21 @@ const SelectDropdown = ({
 					disabled={disabled}
 					{...getInputProps({
 						placeholder,
-						className: `cursor-default ${isInvalid && " pr-16"}`,
+						className: `cursor-default ${isInvalid && " pr-16"} ${inputClassName}`,
 						onFocus: openMenu,
-						onBlur: () => {
-							if (inputValue && items.length > 0) {
-								selectItem(items[0]);
+						onBlur: (event) => {
+							if (allowFreeInput) {
+								const selectedItem = { label: event.target.value, value: event.target.value };
+								handleInputChange({ selectedItem });
+								return;
+							}
+
+							const firstMatch = options.find((option) => isMatch(inputValue, option));
+
+							if (inputValue && firstMatch) {
+								selectItem(firstMatch);
+								handleInputChange({ selectedItem: firstMatch });
+
 								closeMenu();
 							} else {
 								reset();
@@ -120,8 +170,12 @@ const SelectDropdown = ({
 						onKeyDown: (event) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
-								if (inputValue && items.length > 0) {
-									selectItem(items[0]);
+								const firstMatch = options.find((option) => isMatch(inputValue, option));
+
+								if (inputValue && firstMatch) {
+									selectItem(firstMatch);
+									handleInputChange({ selectedItem: firstMatch });
+
 									if (event.key === "Enter") {
 										closeMenu();
 									}
@@ -131,7 +185,7 @@ const SelectDropdown = ({
 							}
 						},
 					})}
-					errorClassName="mr-8"
+					errorClassName={errorClassName}
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
@@ -150,6 +204,7 @@ const SelectDropdown = ({
 										}`,
 										onMouseDown: () => {
 											selectItem(item);
+											handleInputChange({ selectedItem: item });
 											closeMenu();
 										},
 									})}
@@ -165,21 +220,44 @@ const SelectDropdown = ({
 				</SelectOptionsList>
 			</div>
 
-			<InputAddonEnd className="w-10 pointer-events-none text-theme-secondary-500">
-				<Icon
-					name="CaretDown"
-					className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-					width={7}
-					height={5}
-				/>
-			</InputAddonEnd>
+			{showCaret && (
+				<InputAddonEnd className="w-10 pointer-events-none text-theme-secondary-500">
+					<Icon
+						name="CaretDown"
+						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+						width={7}
+						height={5}
+					/>
+				</InputAddonEnd>
+			)}
 		</div>
 	);
 };
 
 export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
-	({ options, defaultValue, placeholder, isInvalid, disabled, onChange }: SelectProps, ref) => {
-		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
+	(
+		{
+			options,
+			defaultValue,
+			placeholder,
+			inputClassName,
+			allowFreeInput,
+			showCaret,
+			isInvalid,
+			disabled,
+			onChange,
+			errorClassName,
+		}: SelectProps,
+		ref,
+	) => {
+		const defaultSelectedItem = useMemo(
+			() =>
+				allowFreeInput
+					? ({ value: defaultValue, label: defaultValue } as Option)
+					: options.find((option: Option) => option.value === defaultValue),
+			[defaultValue, allowFreeInput, options],
+		);
+
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
 		const fieldContext = useFormField();
@@ -196,16 +274,20 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					readOnly
 				/>
 				<SelectDropdown
+					errorClassName={errorClassName}
+					allowFreeInput={allowFreeInput}
+					showCaret={showCaret}
+					inputClassName={inputClassName}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
 					disabled={disabled}
 					isInvalid={isInvalidField}
-					onSelectedItemChange={({ selectedItem }: { selectedItem: Option }) => {
-						setSelected(selectedItem);
+					onSelectedItemChange={({ selected }: { selected: Option }) => {
+						setSelected(selected);
 
-						if (selectedItem) {
-							onChange?.(selectedItem);
+						if (selected) {
+							onChange?.(selected);
 						}
 					}}
 				/>
