@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 
@@ -30,7 +30,7 @@ const withAbortPromise = (signal?: AbortSignal) => <T>(promise: Promise<T>) =>
 		return promise.then(resolve).catch(reject);
 	});
 
-export const useMessageSigner = (profile: Profile) => {
+export const useMessageSigner = () => {
 	const sign = async (
 		wallet: ReadWriteWallet,
 		message: string,

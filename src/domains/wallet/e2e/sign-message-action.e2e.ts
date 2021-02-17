@@ -44,8 +44,8 @@ test("Should open and cancel sign message modal", async (t) => {
 	);
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
-	await t.expect(Selector("[data-testid=SignMessage__cancel]").exists).ok();
-	await t.click(Selector("[data-testid=SignMessage__cancel]"));
+	await t.expect(Selector("[data-testid=SignMessage__cancel-button]").exists).ok();
+	await t.click(Selector("[data-testid=SignMessage__cancel-button]"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 });
 

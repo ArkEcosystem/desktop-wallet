@@ -3,12 +3,14 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
+import { toasts } from "app/services";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
+import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
-import { translations } from "../../i18n";
 import { SignMessage } from "./SignMessage";
 
 const history = createMemoryHistory();
@@ -31,7 +33,13 @@ describe("SignMessage", () => {
 	});
 
 	beforeEach(() => {
+		jest.useFakeTimers();
+
 		transport = createTransportReplayer(RecordStore.fromString(""));
+	});
+
+	afterEach(() => {
+		jest.useRealTimers();
 	});
 
 	it("should render", async () => {
@@ -47,7 +55,7 @@ describe("SignMessage", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -67,7 +75,7 @@ describe("SignMessage", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -94,17 +102,15 @@ describe("SignMessage", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 
 		const messageInput = getByTestId("SignMessage__message-input");
-		expect(messageInput).toBeTruthy();
 
 		act(() => {
 			fireEvent.input(messageInput, { target: { value: "Hello World" } });
 		});
 
 		const mnemonicInput = getByTestId("SignMessage__mnemonic-input");
-		expect(mnemonicInput).toBeTruthy();
 
 		act(() => {
 			fireEvent.input(mnemonicInput, { target: { value: mnemonic } });
@@ -116,7 +122,7 @@ describe("SignMessage", () => {
 			fireEvent.click(getByTestId("SignMessage__submit-button"));
 		});
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
 
 		const writeTextMock = jest.fn();
 		const clipboardOriginal = navigator.clipboard;
@@ -147,17 +153,15 @@ describe("SignMessage", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 
 		const messageInput = getByTestId("SignMessage__message-input");
-		expect(messageInput).toBeTruthy();
 
 		act(() => {
 			fireEvent.input(messageInput, { target: { value: "Hello World" } });
 		});
 
 		const mnemonicInput = getByTestId("SignMessage__mnemonic-input");
-		expect(mnemonicInput).toBeTruthy();
 
 		act(() => {
 			fireEvent.input(mnemonicInput, { target: { value: mnemonic } });
@@ -169,13 +173,13 @@ describe("SignMessage", () => {
 			fireEvent.click(getByTestId("SignMessage__submit-button"));
 		});
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("SignMessage__back-button"));
 		});
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 	});
 
 	it("should sign message with ledger wallet", async () => {
@@ -196,6 +200,10 @@ describe("SignMessage", () => {
 			return { unsubscribe };
 		});
 
+		const signMessageSpy = jest
+			.spyOn(wallet.coin().ledger(), "signMessage")
+			.mockImplementation(() => new Promise((resolve) => setTimeout(() => resolve("signature"), 300)));
+
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
@@ -208,10 +216,77 @@ describe("SignMessage", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByText(translations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 
 		const messageInput = getByTestId("SignMessage__message-input");
-		expect(messageInput).toBeTruthy();
+
+		act(() => {
+			fireEvent.input(messageInput, { target: { value: "Hello World" } });
+		});
+
+		await waitFor(() => expect(getByTestId("SignMessage__submit-button")).toBeEnabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SignMessage__submit-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-loading_message")).toBeTruthy());
+
+		act(() => {
+			observer!.next({ type: "add", descriptor: "" });
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingApp-loading_message")).toBeTruthy());
+
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockResolvedValue(wallet.publicKey()!);
+
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
+
+		signMessageSpy.mockRestore();
+		isLedgerMock.mockRestore();
+		listenSpy.mockRestore();
+		getPublicKeySpy.mockRestore();
+	});
+
+	it("should display error toast if user rejects", async () => {
+		const toastSpy = jest.spyOn(toasts, "error");
+
+		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
+
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const signMessageSpy = jest
+			.spyOn(wallet.coin().ledger(), "signMessage")
+			.mockImplementation(
+				() =>
+					new Promise((_, reject) =>
+						setTimeout(() => reject(new Error("Condition of use not satisfied")), 300),
+					),
+			);
+
+		const { getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<LedgerProvider transport={transport}>
+					<SignMessage isOpen={true} />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+
+		const messageInput = getByTestId("SignMessage__message-input");
 
 		act(() => {
 			fireEvent.input(messageInput, { target: { value: "Hello World" } });
@@ -236,13 +311,68 @@ describe("SignMessage", () => {
 			.mockResolvedValue(wallet.publicKey()!);
 
 		await waitFor(() =>
-			expect(getByText(translations.MODAL_SIGN_MESSAGE.LEDGER_CONFIRMATION_STEP.TITLE)).toBeTruthy(),
+			expect(toastSpy).toHaveBeenCalledWith(transactionTranslations.LEDGER_CONFIRMATION.REJECTED),
 		);
 
-		// @TODO Ledger confirmation
-
+		toastSpy.mockRestore();
+		signMessageSpy.mockRestore();
 		isLedgerMock.mockRestore();
 		listenSpy.mockRestore();
 		getPublicKeySpy.mockRestore();
+	});
+
+	it("should display error toast if ledger is not found in time", async () => {
+		const toastSpy = jest.spyOn(toasts, "error");
+
+		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
+
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const transportSpy = jest
+			.spyOn(transport, "open")
+			.mockImplementation(
+				() => new Promise((_, reject) => setTimeout(() => reject(new Error("no device found")), 300)),
+			);
+
+		const { getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<LedgerProvider transport={transport}>
+					<SignMessage isOpen={true} />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+
+		const messageInput = getByTestId("SignMessage__message-input");
+
+		act(() => {
+			fireEvent.input(messageInput, { target: { value: "Hello World" } });
+		});
+
+		await waitFor(() => expect(getByTestId("SignMessage__submit-button")).toBeEnabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SignMessage__submit-button"));
+		});
+
+		await waitFor(() =>
+			expect(toastSpy).toHaveBeenCalledWith(walletTranslations.MODAL_LEDGER_WALLET.NO_DEVICE_FOUND),
+		);
+
+		toastSpy.mockRestore();
+		transportSpy.mockRestore();
+		isLedgerMock.mockRestore();
+		listenSpy.mockRestore();
 	});
 });

@@ -8,7 +8,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { toasts } from "app/services";
-import { isRejectionError } from "domains/transaction/utils";
+import { isNoDeviceError, isRejectionError } from "domains/transaction/utils";
 import { LedgerWaitingApp, LedgerWaitingDevice } from "domains/wallet/components/Ledger";
 import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -52,7 +52,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable } = useLedgerContext();
 
 	const abortRef = useRef(new AbortController());
-	const { sign } = useMessageSigner(profile);
+	const { sign } = useMessageSigner();
 
 	const isLedger = wallet.isLedger();
 
@@ -74,9 +74,12 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 			try {
 				await connect(wallet.network().coin(), wallet.networkId());
 			} catch (error) {
-				if (String(error).includes("no device found")) {
-					toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.NO_DEVICE_FOUND"));
+				/* istanbul ignore else */
+				if (isNoDeviceError(error)) {
+					toasts.error(t("WALLETS.MODAL_LEDGER_WALLET.NO_DEVICE_FOUND"));
 				}
+
+				onCancel?.();
 			}
 
 			setLedgerState("awaitingConfirmation");
@@ -91,6 +94,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 			setActiveTab("signed");
 		} catch (error) {
+			/* istanbul ignore else */
 			if (isRejectionError(error)) {
 				toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.REJECTED"));
 			}
@@ -108,10 +112,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	const handleClose = () => {
 		abortRef.current.abort();
 		onClose?.();
-	};
-
-	const handleCancel = () => {
-		onCancel?.();
 	};
 
 	if (activeTab === "ledger") {
@@ -142,7 +142,11 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 					{activeTab === "form" && (
 						<div className="flex justify-end mt-8 space-x-3">
-							<Button variant="secondary" onClick={handleCancel} data-testid="SignMessage__cancel-button">
+							<Button
+								variant="secondary"
+								onClick={() => onCancel?.()}
+								data-testid="SignMessage__cancel-button"
+							>
 								{t("COMMON.CANCEL")}
 							</Button>
 
