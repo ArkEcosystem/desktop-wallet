@@ -14,6 +14,7 @@ type PluginListItemProps = {
 	onEnable?: (plugin: any) => void;
 	onDisable?: (plugin: any) => void;
 	onUpdate?: (plugin: any) => void;
+	onClick?: (plugin: any) => void;
 	plugin: any;
 };
 
@@ -24,6 +25,7 @@ export const PluginListItem = ({
 	onDisable,
 	onLaunch,
 	onUpdate,
+	onClick,
 	plugin,
 }: PluginListItemProps) => {
 	const { t } = useTranslation();
@@ -50,9 +52,14 @@ export const PluginListItem = ({
 			</TableCell>
 
 			<TableCell innerClassName="space-x-2">
-				<a href="/" className="font-semibold link">
+				<Button
+					data-testid="PluginListItem__link"
+					variant="transparent"
+					onClick={() => onClick?.(plugin)}
+					className="font-semibold link important:pl-0"
+				>
 					{plugin.title}
-				</a>
+				</Button>
 
 				{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
 				{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}

@@ -9,6 +9,7 @@ type PluginListProps = {
 	className?: string;
 	itemsPerPage?: number;
 	onDelete: any;
+	onClick?: (plugin: any) => void;
 	onLaunch?: (plugin: any) => void;
 	onEnable?: (plugin: any) => void;
 	onDisable?: (plugin: any) => void;
@@ -20,6 +21,7 @@ type PluginListProps = {
 export const PluginList = ({
 	className,
 	itemsPerPage,
+	onClick,
 	onEnable,
 	onDisable,
 	onDelete,
@@ -79,6 +81,7 @@ export const PluginList = ({
 				{(plugin: any) => (
 					<PluginListItem
 						plugin={plugin}
+						onClick={onClick}
 						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onDelete={onDelete}

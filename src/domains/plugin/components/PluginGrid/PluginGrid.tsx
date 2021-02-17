@@ -48,7 +48,7 @@ export const PluginGrid = ({
 				<PluginCard
 					key={plugin.id}
 					plugin={plugin}
-					onClick={() => onSelect(plugin.id)}
+					onClick={() => onSelect(plugin)}
 					onDelete={() => onDelete(plugin)}
 					onEnable={() => onEnable?.(plugin)}
 					onDisable={() => onDisable?.(plugin)}

@@ -136,6 +136,31 @@ describe("PluginListItem", () => {
 		expect(onEnable).toHaveBeenCalledTimes(1);
 	});
 
+	it("should trigger click", () => {
+		const plugin = {
+			id: "ark-explorer",
+			title: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+		};
+
+		const onClick = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onClick={onClick} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("PluginListItem__link"));
+
+		expect(onClick).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger disable", () => {
 		const plugin = {
 			id: "ark-explorer",

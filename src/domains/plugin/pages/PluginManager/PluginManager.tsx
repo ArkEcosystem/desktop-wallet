@@ -87,6 +87,7 @@ const PluginManagerHome = ({
 				{viewType === "list" && (
 					<PluginList
 						plugins={plugins}
+						onClick={onSelect}
 						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onEnable={onEnable}
@@ -125,6 +126,7 @@ const PluginManagerHome = ({
 				{viewType === "list" && (
 					<PluginList
 						plugins={plugins}
+						onClick={onSelect}
 						onInstall={onInstall}
 						onLaunch={onLaunch}
 						onEnable={onEnable}
@@ -163,6 +165,7 @@ const PluginManagerHome = ({
 				{viewType === "list" && (
 					<PluginList
 						plugins={plugins}
+						onClick={onSelect}
 						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onEnable={onEnable}
@@ -178,13 +181,7 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const {
-		fetchPluginPackages,
-		allPlugins,
-		hasUpdateAvailable,
-		isFetchingPackages,
-		trigger,
-	} = usePluginManagerContext();
+	const { fetchPluginPackages, allPlugins, isFetchingPackages, trigger } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -220,8 +217,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		.map((item) => item.config())
 		.map(mapConfigToPluginData.bind(null, activeProfile));
 
-	const handleSelectPlugin = (pluginId: string) =>
-		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${pluginId}`);
+	const handleSelectPlugin = (pluginData: any) =>
+		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${pluginData.id}`);
 
 	const handleEnablePlugin = (pluginData: any) => {
 		pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
@@ -350,6 +347,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								</h2>
 								<PluginList
 									plugins={installedPlugins}
+									onClick={handleSelectPlugin}
 									onInstall={openInstallModalPlugin}
 									onDelete={handleDeletePlugin}
 									onEnable={handleEnablePlugin}
@@ -382,6 +380,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
 							<PluginList
 								plugins={filteredPackages}
+								onClick={handleSelectPlugin}
 								onInstall={openInstallModalPlugin}
 								onDelete={handleDeletePlugin}
 								onEnable={handleEnablePlugin}
