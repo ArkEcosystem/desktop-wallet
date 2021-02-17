@@ -25,8 +25,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 				await callback();
 				await persist();
 			} catch (error) {
-				const jobError = { timestamp: DateTime.make().toUNIX(), error };
-				setError(jobError);
+				setError({ timestamp: DateTime.make().toUNIX(), error });
 			}
 		},
 		[persist, setError],
