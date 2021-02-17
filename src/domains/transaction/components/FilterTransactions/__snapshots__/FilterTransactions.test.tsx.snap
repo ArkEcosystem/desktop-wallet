@@ -102,7 +102,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Transfer
+                      Bridgechain Registration
                     </span>
                   </div>
                 </li>
@@ -114,7 +114,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Second Signature
+                      Bridgechain Resignation
                     </span>
                   </div>
                 </li>
@@ -126,7 +126,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Delegate Registration
+                      Bridgechain Update
                     </span>
                   </div>
                 </li>
@@ -138,7 +138,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Vote
+                      Business Registration
                     </span>
                   </div>
                 </li>
@@ -150,7 +150,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Vote / Unvote
+                      Business Resignation
                     </span>
                   </div>
                 </li>
@@ -162,7 +162,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Multisignature
+                      Business Update
                     </span>
                   </div>
                 </li>
@@ -174,7 +174,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      IPFS
+                      Delegate Registration
                     </span>
                   </div>
                 </li>
@@ -186,7 +186,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Multipayment
+                      Delegate Registration
                     </span>
                   </div>
                 </li>
@@ -198,7 +198,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Timelock
+                      Entity Registration
                     </span>
                   </div>
                 </li>
@@ -210,7 +210,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
-                      Timelock Claim
+                      Entity Resignation
                     </span>
                   </div>
                 </li>
@@ -222,7 +222,115 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     class=""
                   >
                     <span>
+                      Entity Update
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-11"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Timelock Claim
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-12"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Timelock
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-13"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
                       Timelock Refund
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-14"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      IPFS
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-15"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Multipayment
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-16"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Multisignature
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-17"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Second Signature
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-18"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Transfer
+                    </span>
+                  </div>
+                </li>
+                <li
+                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--core-19"
+                >
+                  <div
+                    class=""
+                  >
+                    <span>
+                      Vote
                     </span>
                   </div>
                 </li>
