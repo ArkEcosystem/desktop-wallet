@@ -8,7 +8,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { toasts } from "app/services";
-import { isMnemonicError, isRejectionError } from "domains/transaction/utils";
+import { isRejectionError } from "domains/transaction/utils";
 import { LedgerWaitingApp, LedgerWaitingDevice } from "domains/wallet/components/Ledger";
 import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -91,10 +91,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 			setActiveTab("signed");
 		} catch (error) {
-			if (isMnemonicError(error)) {
-				toasts.error(t("TRANSACTION.INVALID_MNEMONIC"));
-			}
-
 			if (isRejectionError(error)) {
 				toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.REJECTED"));
 			}
@@ -146,7 +142,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 					{activeTab === "form" && (
 						<div className="flex justify-end mt-8 space-x-3">
-							<Button variant="secondary" onClick={handleCancel} data-testid="SignMessage__cancel">
+							<Button variant="secondary" onClick={handleCancel} data-testid="SignMessage__cancel-button">
 								{t("COMMON.CANCEL")}
 							</Button>
 
@@ -165,7 +161,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 							<Button
 								variant="secondary"
 								onClick={() => setActiveTab("form")}
-								data-testid="SignMessage__back"
+								data-testid="SignMessage__back-button"
 							>
 								{t("COMMON.BACK")}
 							</Button>

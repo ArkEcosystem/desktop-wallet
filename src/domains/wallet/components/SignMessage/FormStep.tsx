@@ -2,7 +2,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input, InputAddonStart, InputGroup, InputPassword } from "app/components/Input";
+import { Input, InputAddonStart, InputDefault, InputGroup, InputPassword } from "app/components/Input";
 import { useValidation } from "app/hooks";
 import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
@@ -34,22 +34,20 @@ export const FormStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 			<FormField name="message">
 				<FormLabel label={t("COMMON.MESSAGE")} />
-				<InputGroup>
-					<Input
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.MESSAGE"),
-							}).toString(),
-						})}
-						onChange={(event: ChangeEvent<HTMLInputElement>) =>
-							setValue("message", event.target.value, {
-								shouldDirty: true,
-								shouldValidate: true,
-							})
-						}
-						data-testid="SignMessage__message-input"
-					/>
-				</InputGroup>
+				<InputDefault
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.MESSAGE"),
+						}).toString(),
+					})}
+					onChange={(event: ChangeEvent<HTMLInputElement>) =>
+						setValue("message", event.target.value, {
+							shouldDirty: true,
+							shouldValidate: true,
+						})
+					}
+					data-testid="SignMessage__message-input"
+				/>
 			</FormField>
 
 			{!wallet.isLedger() && (
