@@ -1,5 +1,6 @@
 import { useEnvironmentContext } from "app/contexts";
 import { createProfile } from "domains/profile/validations";
+import { settings } from "domains/setting/validations";
 import {
 	authentication,
 	common,
@@ -28,6 +29,7 @@ export const useValidation = () => {
 			multiSignatureRegistration: multiSignatureRegistration(t),
 			receiveFunds: receiveFunds(t),
 			createProfile: createProfile(t, env),
+			settings: settings(t, env),
 		}),
 		[t, env],
 	);
