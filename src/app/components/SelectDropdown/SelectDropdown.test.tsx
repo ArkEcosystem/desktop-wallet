@@ -87,7 +87,7 @@ describe("SelectDropdown", () => {
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(firstOption);
+			fireEvent.mouseDown(firstOption);
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
@@ -315,5 +315,69 @@ describe("SelectDropdown", () => {
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
+	});
+
+	it("should allow entering free text", () => {
+		const { getByTestId } = render(<Select options={options} allowFreeInput />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Test" } });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("Test");
+	});
+
+	it("should allow entering free text and handle blur event", () => {
+		const { getByTestId } = render(<Select options={options} allowFreeInput={true} />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Test" } });
+		});
+
+		act(() => {
+			fireEvent.blur(selectDropdown);
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("Test");
+	});
+
+	it("should render with default value when free text is allowed", () => {
+		const { container, getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+		expect(getByTestId("select-list__input")).toHaveValue("3");
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should hide dropdown when no matches found in free text mode", () => {
+		const { getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
+		});
+		expect(getByTestId("select-list__input")).toHaveValue(options[0].label);
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Unmatched" } });
+		});
+		expect(() => getByTestId("select-list__toggle-option-0")).toThrow();
+	});
+
+	it("should show all options when empty input", () => {
+		const { getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
+		});
+		expect(getByTestId("select-list__input")).toHaveValue(options[0].label);
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "" } });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("");
+		expect(getByTestId("select-list__toggle-option-0")).toBeTruthy();
+		expect(getByTestId("select-list__toggle-option-1")).toBeTruthy();
+		expect(getByTestId("select-list__toggle-option-2")).toBeTruthy();
 	});
 });
