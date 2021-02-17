@@ -614,22 +614,65 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
-                                      class="absolute left-1"
+                                      class="absolute left-1 z-20"
                                     >
                                       <div
                                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                                       />
                                     </div>
-                                    <input
-                                      aria-invalid="false"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                                      data-testid="SelectRecipient__input"
-                                      disabled=""
-                                      name="recipientAddress"
-                                      value=""
-                                    />
                                     <div
-                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                                      class="relative w-full"
+                                    >
+                                      <input
+                                        aria-invalid="false"
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                        data-testid="select-list__input"
+                                        name="recipientAddress"
+                                        readonly=""
+                                        value=""
+                                      />
+                                      <div
+                                        class="relative w-full"
+                                      >
+                                        <div
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-owns="downshift-89-menu"
+                                          role="combobox"
+                                        >
+                                          <label
+                                            for="downshift-88-input"
+                                            id="downshift-89-label"
+                                          />
+                                          <div
+                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            data-testid="SelectDropdownInput"
+                                          >
+                                            <input
+                                              aria-autocomplete="list"
+                                              aria-controls="downshift-89-menu"
+                                              aria-labelledby="downshift-89-label"
+                                              autocomplete="off"
+                                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                                              data-testid="SelectDropdownInput__input"
+                                              disabled=""
+                                              id="downshift-88-input"
+                                              name="recipientAddress"
+                                              placeholder="Select option"
+                                              value=""
+                                            />
+                                          </div>
+                                          <ul
+                                            aria-labelledby="downshift-89-label"
+                                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                                            id="downshift-89-menu"
+                                            role="listbox"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                                       data-testid="SelectRecipient__select-recipient"
                                     >
                                       <div
@@ -746,8 +789,39 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
-                                value="0"
+                                value="0.71538139"
                               />
+                              <div
+                                class="absolute bottom-0 px-1 w-full"
+                              >
+                                <div
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
+                                >
+                                  <div
+                                    class="Range__Track-sc-10itqc2-0 sgjTD"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
+                                  >
+                                    <div
+                                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="6.63"
+                                        aria-valuemin="0.00357"
+                                        aria-valuenow="0.71538139"
+                                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -759,17 +833,15 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
-                              disabled=""
                               role="radio"
                               type="button"
                             >
                               Slow
                             </button>
                             <button
-                              aria-checked="false"
+                              aria-checked="true"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
-                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -779,7 +851,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
-                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -2352,21 +2423,64 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
-                                      class="absolute left-1"
+                                      class="absolute left-1 z-20"
                                     >
                                       <div
                                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                                       />
                                     </div>
-                                    <input
-                                      aria-invalid="false"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                                      data-testid="SelectRecipient__input"
-                                      name="recipientAddress"
-                                      value=""
-                                    />
                                     <div
-                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                                      class="relative w-full"
+                                    >
+                                      <input
+                                        aria-invalid="false"
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                        data-testid="select-list__input"
+                                        name="recipientAddress"
+                                        readonly=""
+                                        value=""
+                                      />
+                                      <div
+                                        class="relative w-full"
+                                      >
+                                        <div
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-owns="downshift-33-menu"
+                                          role="combobox"
+                                        >
+                                          <label
+                                            for="downshift-32-input"
+                                            id="downshift-33-label"
+                                          />
+                                          <div
+                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            data-testid="SelectDropdownInput"
+                                          >
+                                            <input
+                                              aria-autocomplete="list"
+                                              aria-controls="downshift-33-menu"
+                                              aria-labelledby="downshift-33-label"
+                                              autocomplete="off"
+                                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                                              data-testid="SelectDropdownInput__input"
+                                              id="downshift-32-input"
+                                              name="recipientAddress"
+                                              placeholder="Select option"
+                                              value=""
+                                            />
+                                          </div>
+                                          <ul
+                                            aria-labelledby="downshift-33-label"
+                                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                                            id="downshift-33-menu"
+                                            role="listbox"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                                       data-testid="SelectRecipient__select-recipient"
                                     >
                                       <div
@@ -3683,22 +3797,65 @@ exports[`SendTransfer should render form step 1`] = `
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="absolute left-1"
+                      class="absolute left-1 z-20"
                     >
                       <div
                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                       />
                     </div>
-                    <input
-                      aria-invalid="false"
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                      data-testid="SelectRecipient__input"
-                      disabled=""
-                      name="recipientAddress"
-                      value=""
-                    />
                     <div
-                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="relative w-full"
+                    >
+                      <input
+                        aria-invalid="false"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        data-testid="select-list__input"
+                        name="recipientAddress"
+                        readonly=""
+                        value=""
+                      />
+                      <div
+                        class="relative w-full"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-1-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-0-input"
+                            id="downshift-1-label"
+                          />
+                          <div
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="downshift-1-menu"
+                              aria-labelledby="downshift-1-label"
+                              autocomplete="off"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                              data-testid="SelectDropdownInput__input"
+                              disabled=""
+                              id="downshift-0-input"
+                              name="recipientAddress"
+                              placeholder="Select option"
+                              value=""
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-1-label"
+                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            id="downshift-1-menu"
+                            role="listbox"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                       data-testid="SelectRecipient__select-recipient"
                     >
                       <div
@@ -4052,7 +4209,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="absolute left-1"
+                      class="absolute left-1 z-20"
                     >
                       <div
                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
@@ -4069,16 +4226,59 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         </div>
                       </div>
                     </div>
-                    <input
-                      aria-invalid="false"
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                      data-testid="SelectRecipient__input"
-                      disabled=""
-                      name="recipientAddress"
-                      value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                    />
                     <div
-                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="relative w-full"
+                    >
+                      <input
+                        aria-invalid="false"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        data-testid="select-list__input"
+                        name="recipientAddress"
+                        readonly=""
+                        value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                      />
+                      <div
+                        class="relative w-full"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-9-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-8-input"
+                            id="downshift-9-label"
+                          />
+                          <div
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="downshift-9-menu"
+                              aria-labelledby="downshift-9-label"
+                              autocomplete="off"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                              data-testid="SelectDropdownInput__input"
+                              disabled=""
+                              id="downshift-8-input"
+                              name="recipientAddress"
+                              placeholder="Select option"
+                              value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-9-label"
+                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            id="downshift-9-menu"
+                            role="listbox"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                       data-testid="SelectRecipient__select-recipient"
                     >
                       <div
@@ -4432,22 +4632,65 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="absolute left-1"
+                      class="absolute left-1 z-20"
                     >
                       <div
                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                       />
                     </div>
-                    <input
-                      aria-invalid="false"
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                      data-testid="SelectRecipient__input"
-                      disabled=""
-                      name="recipientAddress"
-                      value=""
-                    />
                     <div
-                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="relative w-full"
+                    >
+                      <input
+                        aria-invalid="false"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                        data-testid="select-list__input"
+                        name="recipientAddress"
+                        readonly=""
+                        value=""
+                      />
+                      <div
+                        class="relative w-full"
+                      >
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="downshift-5-menu"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-4-input"
+                            id="downshift-5-label"
+                          />
+                          <div
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            data-testid="SelectDropdownInput"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="downshift-5-menu"
+                              aria-labelledby="downshift-5-label"
+                              autocomplete="off"
+                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                              data-testid="SelectDropdownInput__input"
+                              disabled=""
+                              id="downshift-4-input"
+                              name="recipientAddress"
+                              placeholder="Select option"
+                              value=""
+                            />
+                          </div>
+                          <ul
+                            aria-labelledby="downshift-5-label"
+                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            id="downshift-5-menu"
+                            role="listbox"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                       data-testid="SelectRecipient__select-recipient"
                     >
                       <div
@@ -5720,22 +5963,65 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
-                                      class="absolute left-1"
+                                      class="absolute left-1 z-20"
                                     >
                                       <div
                                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                                       />
                                     </div>
-                                    <input
-                                      aria-invalid="false"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                                      data-testid="SelectRecipient__input"
-                                      disabled=""
-                                      name="recipientAddress"
-                                      value=""
-                                    />
                                     <div
-                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                                      class="relative w-full"
+                                    >
+                                      <input
+                                        aria-invalid="false"
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                        data-testid="select-list__input"
+                                        name="recipientAddress"
+                                        readonly=""
+                                        value=""
+                                      />
+                                      <div
+                                        class="relative w-full"
+                                      >
+                                        <div
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-owns="downshift-19-menu"
+                                          role="combobox"
+                                        >
+                                          <label
+                                            for="downshift-18-input"
+                                            id="downshift-19-label"
+                                          />
+                                          <div
+                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            data-testid="SelectDropdownInput"
+                                          >
+                                            <input
+                                              aria-autocomplete="list"
+                                              aria-controls="downshift-19-menu"
+                                              aria-labelledby="downshift-19-label"
+                                              autocomplete="off"
+                                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                                              data-testid="SelectDropdownInput__input"
+                                              disabled=""
+                                              id="downshift-18-input"
+                                              name="recipientAddress"
+                                              placeholder="Select option"
+                                              value=""
+                                            />
+                                          </div>
+                                          <ul
+                                            aria-labelledby="downshift-19-label"
+                                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                                            id="downshift-19-menu"
+                                            role="listbox"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                                       data-testid="SelectRecipient__select-recipient"
                                     >
                                       <div
@@ -6531,21 +6817,64 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
-                                      class="absolute left-1"
+                                      class="absolute left-1 z-20"
                                     >
                                       <div
                                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                                       />
                                     </div>
-                                    <input
-                                      aria-invalid="false"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                                      data-testid="SelectRecipient__input"
-                                      name="recipientAddress"
-                                      value=""
-                                    />
                                     <div
-                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                                      class="relative w-full"
+                                    >
+                                      <input
+                                        aria-invalid="false"
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                        data-testid="select-list__input"
+                                        name="recipientAddress"
+                                        readonly=""
+                                        value=""
+                                      />
+                                      <div
+                                        class="relative w-full"
+                                      >
+                                        <div
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-owns="downshift-115-menu"
+                                          role="combobox"
+                                        >
+                                          <label
+                                            for="downshift-114-input"
+                                            id="downshift-115-label"
+                                          />
+                                          <div
+                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            data-testid="SelectDropdownInput"
+                                          >
+                                            <input
+                                              aria-autocomplete="list"
+                                              aria-controls="downshift-115-menu"
+                                              aria-labelledby="downshift-115-label"
+                                              autocomplete="off"
+                                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                                              data-testid="SelectDropdownInput__input"
+                                              id="downshift-114-input"
+                                              name="recipientAddress"
+                                              placeholder="Select option"
+                                              value=""
+                                            />
+                                          </div>
+                                          <ul
+                                            aria-labelledby="downshift-115-label"
+                                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                                            id="downshift-115-menu"
+                                            role="listbox"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                                       data-testid="SelectRecipient__select-recipient"
                                     >
                                       <div
@@ -7387,22 +7716,65 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
-                                      class="absolute left-1"
+                                      class="absolute left-1 z-20"
                                     >
                                       <div
                                         class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                                       />
                                     </div>
-                                    <input
-                                      aria-invalid="false"
-                                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                                      data-testid="SelectRecipient__input"
-                                      disabled=""
-                                      name="recipientAddress"
-                                      value=""
-                                    />
                                     <div
-                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                                      class="relative w-full"
+                                    >
+                                      <input
+                                        aria-invalid="false"
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                                        data-testid="select-list__input"
+                                        name="recipientAddress"
+                                        readonly=""
+                                        value=""
+                                      />
+                                      <div
+                                        class="relative w-full"
+                                      >
+                                        <div
+                                          aria-expanded="false"
+                                          aria-haspopup="listbox"
+                                          aria-owns="downshift-63-menu"
+                                          role="combobox"
+                                        >
+                                          <label
+                                            for="downshift-62-input"
+                                            id="downshift-63-label"
+                                          />
+                                          <div
+                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            data-testid="SelectDropdownInput"
+                                          >
+                                            <input
+                                              aria-autocomplete="list"
+                                              aria-controls="downshift-63-menu"
+                                              aria-labelledby="downshift-63-label"
+                                              autocomplete="off"
+                                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                                              data-testid="SelectDropdownInput__input"
+                                              disabled=""
+                                              id="downshift-62-input"
+                                              name="recipientAddress"
+                                              placeholder="Select option"
+                                              value=""
+                                            />
+                                          </div>
+                                          <ul
+                                            aria-labelledby="downshift-63-label"
+                                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                                            id="downshift-63-menu"
+                                            role="listbox"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                                       data-testid="SelectRecipient__select-recipient"
                                     >
                                       <div
@@ -7519,8 +7891,39 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
-                                value="0"
+                                value="0.71538139"
                               />
+                              <div
+                                class="absolute bottom-0 px-1 w-full"
+                              >
+                                <div
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
+                                >
+                                  <div
+                                    class="Range__Track-sc-10itqc2-0 sgjTD"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
+                                  >
+                                    <div
+                                      class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="6.63"
+                                        aria-valuemin="0.00357"
+                                        aria-valuenow="0.71538139"
+                                        class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -7532,17 +7935,15 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
-                              disabled=""
                               role="radio"
                               type="button"
                             >
                               Slow
                             </button>
                             <button
-                              aria-checked="false"
+                              aria-checked="true"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
-                              disabled=""
                               role="radio"
                               type="button"
                             >
@@ -7552,7 +7953,6 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               aria-checked="false"
                               class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
                               data-testid="ButtonGroupOption"
-                              disabled=""
                               role="radio"
                               type="button"
                             >

@@ -135,6 +135,7 @@ export const AddRecipient = ({
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
 		register("displayAmount");
+		register("recipientAddress", sendTransfer.recipientAddress(network, addedRecipients, isSingle));
 	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle]);
 
 	useEffect(() => {
@@ -231,7 +232,6 @@ export const AddRecipient = ({
 							network={network}
 							disabled={!isSenderFilled}
 							address={recipientAddress}
-							ref={register(sendTransfer.recipientAddress(network, addedRecipients, isSingle))}
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });

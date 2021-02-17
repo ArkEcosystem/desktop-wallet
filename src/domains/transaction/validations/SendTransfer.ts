@@ -26,8 +26,8 @@ export const sendTransfer = (t: any, env: Environment) => ({
 	}),
 	recipientAddress: (network: Coins.Network, recipients: RecipientListItem[], isSingleRecipient: boolean) => ({
 		validate: {
-			valid: async (addressValue: string) => {
-				const address = addressValue.trim();
+			valid: async (addressValue: string | undefined) => {
+				const address = addressValue ? addressValue.trim() : "";
 				const shouldRequire = !address && !recipients.length;
 				const hasAddedRecipients = !address && !isSingleRecipient && recipients.length > 0;
 
@@ -39,7 +39,7 @@ export const sendTransfer = (t: any, env: Environment) => ({
 					return true;
 				}
 
-				if (shouldRequire) {
+				if (shouldRequire || !network) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.RECIPIENT"),
 					});
