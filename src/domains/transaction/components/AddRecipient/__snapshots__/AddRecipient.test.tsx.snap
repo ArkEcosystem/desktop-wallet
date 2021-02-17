@@ -85,21 +85,64 @@ exports[`AddRecipient should render 1`] = `
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value=""
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value=""
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-1-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-0-input"
+                      id="downshift-1-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-1-menu"
+                        aria-labelledby="downshift-1-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-0-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value=""
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-1-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-1-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -244,21 +287,64 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value=""
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value=""
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-15-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-14-input"
+                      id="downshift-15-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-15-menu"
+                        aria-labelledby="downshift-15-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-14-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value=""
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-15-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-15-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -403,7 +489,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
@@ -420,15 +506,58 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                   </div>
                 </div>
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-9-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-8-input"
+                      id="downshift-9-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-9-menu"
+                        aria-labelledby="downshift-9-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-8-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-9-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-9-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -573,21 +702,64 @@ exports[`AddRecipient should render without recipients 1`] = `
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value=""
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value=""
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-5-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-4-input"
+                      id="downshift-5-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-5-menu"
+                        aria-labelledby="downshift-5-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-4-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value=""
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-5-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-5-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -678,21 +850,64 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value=""
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value=""
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-19-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-18-input"
+                      id="downshift-19-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-19-menu"
+                        aria-labelledby="downshift-19-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-18-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value=""
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-19-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-19-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -837,21 +1052,64 @@ exports[`AddRecipient should set available amount 1`] = `
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value=""
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value=""
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-47-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-46-input"
+                      id="downshift-47-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-47-menu"
+                        aria-labelledby="downshift-47-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-46-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value=""
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-47-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-47-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -996,21 +1254,64 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
               data-testid="SelectRecipient__wrapper"
             >
               <div
-                class="absolute left-1"
+                class="absolute left-1 z-20"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-14 pr-11"
-                data-testid="SelectRecipient__input"
-                name="recipientAddress"
-                value=""
-              />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+                class="relative w-full"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                  data-testid="select-list__input"
+                  name="recipientAddress"
+                  readonly=""
+                  value=""
+                />
+                <div
+                  class="relative w-full"
+                >
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-owns="downshift-51-menu"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-50-input"
+                      id="downshift-51-label"
+                    />
+                    <div
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                      data-testid="SelectDropdownInput"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="downshift-51-menu"
+                        aria-labelledby="downshift-51-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
+                        data-testid="SelectDropdownInput__input"
+                        id="downshift-50-input"
+                        name="recipientAddress"
+                        placeholder="Select option"
+                        value=""
+                      />
+                    </div>
+                    <ul
+                      aria-labelledby="downshift-51-label"
+                      class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                      id="downshift-51-menu"
+                      role="listbox"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
