@@ -28,7 +28,9 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 	const { t } = useTranslation();
 
-	const { context, register } = formConfig;
+	const { context, formState, register } = formConfig;
+	const { isValid, isSubmitting } = context.formState;
+
 	const name = context.watch("name", activeProfile.settings().get(ProfileSetting.Name));
 
 	const { settings } = useValidation();
@@ -356,9 +358,14 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
+
 					<div className="space-x-3">
 						<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
-						<Button type="submit" data-testid="General-settings__submit-button">
+						<Button
+							disabled={!isValid || isSubmitting}
+							type="submit"
+							data-testid="General-settings__submit-button"
+						>
 							{t("COMMON.SAVE")}
 						</Button>
 					</div>
