@@ -42,6 +42,23 @@ describe("PluginCard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should trigger update", async () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		const onUpdate = jest.fn();
+
+		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onUpdate={onUpdate} />);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(await findByText(commonTranslations.UPDATE));
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger delete", async () => {
 		const plugin = {
 			...basePlugin,

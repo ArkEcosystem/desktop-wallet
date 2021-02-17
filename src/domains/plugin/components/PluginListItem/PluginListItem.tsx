@@ -8,15 +8,24 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginListItemProps = {
-	onDelete: any;
+	onDelete?: (plugin: any) => void;
 	onInstall: any;
 	onLaunch?: (plugin: any) => void;
 	onEnable?: (plugin: any) => void;
 	onDisable?: (plugin: any) => void;
+	onUpdate?: (plugin: any) => void;
 	plugin: any;
 };
 
-export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLaunch, plugin }: PluginListItemProps) => {
+export const PluginListItem = ({
+	onDelete,
+	onInstall,
+	onEnable,
+	onDisable,
+	onLaunch,
+	onUpdate,
+	plugin,
+}: PluginListItemProps) => {
 	const { t } = useTranslation();
 
 	const handleInstall = () => {
@@ -125,15 +134,19 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 								</Button>
 							}
 							options={[
+								plugin.hasUpdateAvailable && {
+									label: t("COMMON.UPDATE"),
+									value: "update",
+								},
 								{ label: t("COMMON.DELETE"), value: "delete" },
 								{
 									label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
 									value: plugin.isEnabled ? "disable" : "enable",
 								},
-							]}
+							].filter(Boolean)}
 							onSelect={(option: any) => {
 								if (option.value === "delete") {
-									onDelete(plugin);
+									onDelete?.(plugin);
 								}
 
 								if (option.value === "enable") {
@@ -142,6 +155,10 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 
 								if (option.value === "disable") {
 									return onDisable?.(plugin);
+								}
+
+								if (option.value === "update") {
+									return onUpdate?.(plugin);
 								}
 							}}
 							dropdownClass="top-3 text-left"

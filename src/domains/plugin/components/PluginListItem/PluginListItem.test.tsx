@@ -54,6 +54,34 @@ describe("PluginListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should trigger update", () => {
+		const plugin = {
+			id: "ark-explorer",
+			title: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		const onUpdate = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onUpdate={onUpdate} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(getByTestId("dropdown__option--0"));
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger delete", () => {
 		const plugin = {
 			id: "ark-explorer",

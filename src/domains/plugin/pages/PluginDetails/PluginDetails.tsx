@@ -18,7 +18,7 @@ export const PluginDetails = () => {
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 
 	const { t } = useTranslation();
-	const { pluginPackages, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
+	const { allPlugins, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
 	const repositoryURL = queryParams.get("repositoryURL");
@@ -31,8 +31,8 @@ export const PluginDetails = () => {
 		pluginConfigurations,
 		pluginId,
 	]);
-	const packageConfiguration = useMemo(() => pluginPackages.find((item) => item.id() === pluginId), [
-		pluginPackages,
+	const packageConfiguration = useMemo(() => allPlugins.find((item) => item.id() === pluginId), [
+		allPlugins,
 		pluginId,
 	]);
 

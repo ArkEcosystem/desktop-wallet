@@ -17,7 +17,7 @@ import { PluginManualInstallModal } from "domains/plugin/components/PluginManual
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
 import { PluginConfigurationData } from "plugins/core/configuration";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -179,7 +179,13 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, pluginPackages, isFetchingPackages, trigger } = usePluginManagerContext();
+	const {
+		fetchPluginPackages,
+		allPlugins,
+		hasUpdateAvailable,
+		isFetchingPackages,
+		trigger,
+	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -195,24 +201,28 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 
-	const mapConfigToPluginData = (config: PluginConfigurationData) => {
-		const localPlugin = pluginManager.plugins().findById(config.id());
-		return {
-			...config.toObject(),
-			isInstalled: !!localPlugin,
-			isEnabled: !!localPlugin?.isEnabled(activeProfile),
-			hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
-		};
-	};
+	const mapConfigToPluginData = useCallback(
+		(config: PluginConfigurationData) => {
+			const localPlugin = pluginManager.plugins().findById(config.id());
+			return {
+				...config.toObject(),
+				isInstalled: !!localPlugin,
+				isEnabled: !!localPlugin?.isEnabled(activeProfile),
+				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
+				hasUpdateAvailable: hasUpdateAvailable(config.id()),
+			};
+		},
+		[hasUpdateAvailable, activeProfile, pluginManager],
+	);
 
 	useEffect(() => {
 		fetchPluginPackages();
 	}, [fetchPluginPackages]);
 
-	const homePackages = pluginPackages.map(mapConfigToPluginData);
+	const homePackages = allPlugins.map(mapConfigToPluginData);
 
 	const filteredPackages = useMemo(
-		() => pluginPackages.filter((config) => config.hasCategory(currentView)).map(mapConfigToPluginData),
+		() => allPlugins.filter((config) => config.hasCategory(currentView)).map(mapConfigToPluginData),
 		[currentView], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 

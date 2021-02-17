@@ -13,6 +13,7 @@ type PluginCardProps = {
 	onDelete?: () => void;
 	onLaunch?: () => void;
 	onInstall?: () => void;
+	onUpdate?: () => void;
 };
 
 const PluginImageContainer = styled.div`
@@ -33,12 +34,20 @@ export const PluginCard = ({
 	onDelete,
 	onLaunch,
 	onInstall,
+	onUpdate,
 }: PluginCardProps) => {
 	const { t } = useTranslation();
 
 	const actions = useMemo(() => {
 		if (plugin.isInstalled) {
 			const result = [{ label: t("COMMON.DELETE"), value: "delete" }];
+
+			if (plugin.hasUpdateAvailable) {
+				result.push({
+					label: t("COMMON.UPDATE"),
+					value: "update",
+				});
+			}
 
 			if (plugin.isEnabled) {
 				result.push({ label: t("COMMON.DISABLE"), value: "disable" });
@@ -82,6 +91,9 @@ export const PluginCard = ({
 					}
 					if (action.value === "install") {
 						onInstall?.();
+					}
+					if (action.value === "update") {
+						onUpdate?.();
 					}
 				}}
 			>

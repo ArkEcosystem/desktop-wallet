@@ -1,6 +1,6 @@
 import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
-import { uniqBy } from "@arkecosystem/utils";
+import { semver, uniqBy } from "@arkecosystem/utils";
 import { httpClient, toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
@@ -108,7 +108,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 					id: config.id(),
 					name: config.name(),
 					date: config.date(),
-					version: config.version(),
+					version: process.env.REACT_APP_PLUGIN_VERSION ?? config.version(),
 					description: config.description(),
 					author: config.author(),
 					sourceProvider: config.sourceProvider(),
@@ -123,19 +123,42 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				}),
 			);
 
+		setIsFetchingPackages(false);
+		setState((prev: any) => ({ ...prev, packages: configurations }));
+	}, [pluginRegistry]);
+
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
+	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
+
+	const allPlugins: PluginConfigurationData[] = useMemo(() => {
 		const localConfigurations = pluginManager
 			.plugins()
 			.all()
 			.map((item) => item.config());
 
-		const merged = uniqBy([...localConfigurations, ...configurations], (item) => item.id());
+		const merged = uniqBy([...localConfigurations, ...pluginPackages], (item) => item.id());
 
-		setIsFetchingPackages(false);
-		setState((prev: any) => ({ ...prev, packages: merged }));
-	}, [pluginManager, pluginRegistry]);
+		return merged;
+	}, [pluginManager, pluginPackages]);
 
-	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
-	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
+	const hasUpdateAvailable = useCallback(
+		(pluginId: string) => {
+			const localPlugin = pluginManager.plugins().findById(pluginId);
+
+			if (!localPlugin) {
+				return false;
+			}
+
+			const remotePackage = pluginPackages.find((remote) => remote.id() === pluginId);
+
+			if (!remotePackage) {
+				return false;
+			}
+
+			return semver.isGreaterThan(remotePackage.version()!, localPlugin.config().version()!);
+		},
+		[pluginManager, pluginPackages],
+	);
 
 	const installPlugin = useCallback(
 		async (name: string, repositoryURL?: string) => {
@@ -185,6 +208,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		fetchPluginPackages,
 		installPlugin,
 		isFetchingPackages,
+		allPlugins,
+		hasUpdateAvailable,
 		pluginPackages,
 		pluginManager,
 		loadPlugins,

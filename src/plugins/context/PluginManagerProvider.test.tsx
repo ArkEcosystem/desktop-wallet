@@ -114,13 +114,13 @@ describe("PluginManagerProvider", () => {
 		manager.plugins().push(plugin);
 
 		const Component = () => {
-			const { fetchPluginPackages, pluginPackages } = usePluginManagerContext();
+			const { fetchPluginPackages, allPlugins } = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();
 			return (
 				<div>
 					<button onClick={onClick}>Click</button>
 					<ul>
-						{pluginPackages.map((pkg) => (
+						{allPlugins.map((pkg) => (
 							<li key={pkg.name()}>{pkg.name()}</li>
 						))}
 					</ul>
@@ -158,13 +158,13 @@ describe("PluginManagerProvider", () => {
 		});
 
 		const Component = () => {
-			const { fetchPluginPackages, pluginPackages, installPlugin } = usePluginManagerContext();
+			const { fetchPluginPackages, allPlugins, installPlugin } = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();
 			return (
 				<div>
 					<button onClick={onClick}>Fetch</button>
 					<ul>
-						{pluginPackages.map((pkg) => (
+						{allPlugins.map((pkg) => (
 							<li key={pkg.name()}>
 								<span>{pkg.name()}</span>
 								<button onClick={() => installPlugin(pkg.name())}>Install</button>

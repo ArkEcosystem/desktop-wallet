@@ -30,9 +30,9 @@ export const PluginManagerNavigationBar = ({
 	installedPluginsCount,
 }: PluginManagerNavigationBar) => {
 	const { t } = useTranslation();
-	const { pluginPackages } = usePluginManagerContext();
+	const { allPlugins } = usePluginManagerContext();
 	const countsByCategory = menu.reduce(
-		(acc, curr) => ({ ...acc, [curr.name]: pluginPackages.filter((pkg) => pkg.hasCategory(curr.name)).length }),
+		(acc, curr) => ({ ...acc, [curr.name]: allPlugins.filter((pkg) => pkg.hasCategory(curr.name)).length }),
 		{},
 	);
 
@@ -59,7 +59,7 @@ export const PluginManagerNavigationBar = ({
 										{
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
 												{menuItem.name === "home"
-													? pluginPackages.length
+													? allPlugins.length
 													: countsByCategory[menuItem.name]}
 											</span>
 										}
