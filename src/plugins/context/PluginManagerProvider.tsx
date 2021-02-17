@@ -118,6 +118,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 						title: config.alias(),
 						permissions: config.permissions(),
 						images: config.images(),
+						minimumVersion: config.minimumVersion(),
 					},
 				}),
 			);

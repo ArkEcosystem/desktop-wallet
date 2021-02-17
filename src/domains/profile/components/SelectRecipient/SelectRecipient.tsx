@@ -4,8 +4,9 @@ import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
-import { Input } from "app/components/Input";
+import { Select } from "app/components/SelectDropdown";
 import cn from "classnames";
+import { useProfileAddresses } from "domains/profile/hooks/use-profile-addresses";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
 
@@ -37,7 +38,7 @@ const ProfileAvatar = ({ address }: any) => {
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
 	({ address, profile, disabled, isInvalid, network, onChange }: SelectRecipientProps, ref) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
-		const [selectedAddress, setSelectedAddress] = useState("");
+		const [selectedAddress, setSelectedAddress] = useState(address);
 		const fieldContext = useFormField();
 
 		const isInvalidValue = isInvalid || fieldContext?.isInvalid;
@@ -47,6 +48,12 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 				setSelectedAddress(address);
 			}
 		}, [address, setSelectedAddress]);
+
+		const { allAddresses } = useProfileAddresses({ profile, network });
+		const recipientAddresses = allAddresses.map(({ address }) => ({
+			label: address,
+			value: address,
+		}));
 
 		const handleSelectAddress = (address: string) => {
 			setSelectedAddress(address);
@@ -69,22 +76,26 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		return (
 			<div>
 				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
-					<div className="absolute left-1">
+					<div className="absolute left-1 z-20">
 						<ProfileAvatar address={selectedAddress} />
 					</div>
-					<Input
-						className={cn("pl-14", { "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
-						data-testid="SelectRecipient__input"
-						ref={ref}
-						defaultValue={selectedAddress}
-						onChange={(ev: any) => onInputChange(ev.target.value)}
-						disabled={disabled}
+
+					<Select
+						showCaret={false}
+						inputClassName={cn("pl-16", { "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
 						isInvalid={isInvalidValue}
+						disabled={disabled}
+						defaultValue={selectedAddress}
+						ref={ref}
+						options={recipientAddresses}
+						allowFreeInput={true}
 						errorClassName="mr-12"
+						onChange={(option: any) => onInputChange(option.value)}
 					/>
+
 					<div
 						data-testid="SelectRecipient__select-recipient"
-						className="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
+						className="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
 						onClick={openRecipients}
 					>
 						<Icon name="User" width={20} height={20} />
