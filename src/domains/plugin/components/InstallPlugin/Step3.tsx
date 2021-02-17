@@ -50,10 +50,7 @@ export const ThirdStep = ({ plugin }: Props) => {
 										<Icon name="Checkmark" width={28} height={28} />
 									</span>
 								</Circle>
-								<Circle
-									size="lg"
-									className="relative z-0 -ml-1 bg-theme-background border-theme-success-600"
-								>
+								<Circle size="lg" className="relative z-0 bg-theme-background border-theme-success-600">
 									<span className="text-xs font-semibold text-theme-success-600">100%</span>
 								</Circle>
 							</div>
