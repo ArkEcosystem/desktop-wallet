@@ -215,6 +215,31 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 	});
 
+	it("should not update profile if profile name is too long", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), {
+				target: { value: "test profile".repeat(10) },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+	});
+
 	it("should not update profile if profile name exists (padded)", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
