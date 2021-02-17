@@ -46,7 +46,6 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
 
-	const profile = useActiveProfile();
 	const wallet = useActiveWallet();
 
 	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable } = useLedgerContext();
