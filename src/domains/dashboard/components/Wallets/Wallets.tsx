@@ -66,11 +66,9 @@ export const Wallets = ({
 		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
 	};
 
-	const onLedgerModalClose = (hasDeviceAvailable: boolean) => {
+	const handleDeviceAvailable = () => {
 		setIsWaitingLedger(false);
-		if (hasDeviceAvailable) {
-			onImportLedgerWallet?.();
-		}
+		onImportLedgerWallet?.();
 	};
 
 	return (
@@ -112,7 +110,7 @@ export const Wallets = ({
 			{isWaitingLedger && (
 				<LedgerWaitingDevice
 					isOpen={true}
-					onDeviceAvailable={onLedgerModalClose}
+					onDeviceAvailable={handleDeviceAvailable}
 					onClose={() => setIsWaitingLedger(false)}
 				/>
 			)}
