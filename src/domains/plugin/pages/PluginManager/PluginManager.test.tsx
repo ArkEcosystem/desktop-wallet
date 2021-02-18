@@ -8,15 +8,7 @@ import nock from "nock";
 import { LaunchPluginService, PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	fireEvent,
-	getDefaultProfileId,
-	RenderResult,
-	renderWithRouter,
-	waitFor,
-	within,
-} from "testing-library";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
