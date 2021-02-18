@@ -219,6 +219,30 @@ describe("PluginListItem", () => {
 		expect(onLaunch).toHaveBeenCalledTimes(1);
 	});
 
+	it("should render minimum version warning", () => {
+		const plugin = {
+			id: "ark-explorer",
+			name: "ARK Explorer",
+			title: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			hasUpdateAvailable: true,
+			isMinimumVersionSatisfied: false,
+		};
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} />
+				</tbody>
+			</table>,
+		);
+
+		expect(getByTestId("PluginListItem__minimum-version-warning")).toBeInTheDocument();
+	});
+
 	it("should render custom logo", () => {
 		const plugin = {
 			id: "ark-explorer",

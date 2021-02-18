@@ -57,13 +57,23 @@ export const PluginListItem = ({
 					data-testid="PluginListItem__link"
 					variant="transparent"
 					onClick={() => onClick?.(plugin)}
-					className="font-semibold link important:pl-0"
+					className="font-semibold link important:px-0 flex items-center"
 				>
 					{plugin.title}
 				</Button>
 
 				{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
 				{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
+
+				{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
+					<Tooltip
+						content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", { minimumVersion: plugin.minimumVersion })}
+					>
+						<span data-testid="PluginListItem__minimum-version-warning" className="ml-3 text-xl">
+							<Icon name="AlertWarning" className="text-theme-warning-500" />
+						</span>
+					</Tooltip>
+				)}
 			</TableCell>
 
 			<TableCell innerClassName="pr-16">

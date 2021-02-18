@@ -302,7 +302,11 @@ describe("PluginManagerProvider", () => {
 
 	it("should check if plugin update is available", async () => {
 		const plugin = new PluginController(
-			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			{
+				name: "@dated/transaction-export-plugin",
+				version: "1.0.0",
+				"desktop-wallet": { minimumVersion: "4.0.0" },
+			},
 			() => void 0,
 		);
 		manager.plugins().push(plugin);
