@@ -55,9 +55,15 @@ export const PluginHeader = ({
 					<Button data-testid="PluginHeader__button--report" variant="secondary" onClick={onReport}>
 						<Icon name="Report" width={20} height={20} />
 					</Button>
+
 					<Dropdown
 						toggleContent={
-							<Button variant="secondary" size="icon" className="text-left">
+							<Button
+								data-testid="PluginHeader__dropdown-toggle"
+								variant="secondary"
+								size="icon"
+								className="text-left"
+							>
 								<Icon name="Settings" width={20} height={20} />
 							</Button>
 						}

@@ -246,8 +246,8 @@ describe("PluginDetails", () => {
 
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
-		fireEvent.click(screen.getByTestId("PluginHeader__button--uninstall"));
-		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--0"));
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
 		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
@@ -287,8 +287,8 @@ describe("PluginDetails", () => {
 
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
-		fireEvent.click(screen.getByTestId("PluginHeader__button--uninstall"));
-		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--0"));
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
 		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));

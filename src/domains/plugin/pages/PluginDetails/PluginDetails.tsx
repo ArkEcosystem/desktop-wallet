@@ -52,7 +52,7 @@ export const PluginDetails = () => {
 		return latestConfiguration || packageConfiguration;
 	}, [isInstalled, packageConfiguration, latestConfiguration]);
 
-	const pluginData = mapConfigToPluginData(activeProfile, plugin!);
+	const pluginData = (plugin && mapConfigToPluginData(activeProfile, plugin)) || ({} as any);
 
 	const { title } = pluginData;
 
@@ -62,7 +62,7 @@ export const PluginDetails = () => {
 			route: `/profiles/${activeProfile.id()}/plugins`,
 		},
 		{
-			label: title!,
+			label: title,
 		},
 	];
 
