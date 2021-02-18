@@ -1,11 +1,11 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -35,32 +35,20 @@ export const SendTransactionForm = ({
 	const { getValues, setValue, watch } = form;
 	const { network, senderAddress } = watch();
 
-	const defaultFees = useMemo(
-		() => ({
-			static: "5",
-			min: "0",
-			avg: "0",
-			max: "0",
-		}),
-		[],
-	); // eslint-disable-line react-hooks/exhaustive-deps
-
-	const [fees, setFees] = useState<Contracts.TransactionFee>(defaultFees);
-
-	// getValues does not get the value of `defaultValues` on first render
-	const [defaultFee] = useState(() => watch("fee"));
-	const fee = getValues("fee") || defaultFee;
+	const { fee, fees } = watch();
 
 	useEffect(() => {
 		const setTransactionFees = async (network: Coins.Network) => {
 			const transactionFees = await findByType(network.coin(), network.id(), transactionType);
 
-			setFees(transactionFees);
 			setValue("fees", transactionFees);
-			setValue("fee", transactionFees.avg !== "0" ? transactionFees.avg : transactionFees.static, {
-				shouldValidate: true,
-				shouldDirty: true,
-			});
+
+			if (!getValues("fee")) {
+				setValue("fee", transactionFees.avg !== "0" ? transactionFees.avg : transactionFees.static, {
+					shouldValidate: true,
+					shouldDirty: true,
+				});
+			}
 		};
 
 		if (network) {
@@ -70,13 +58,8 @@ export const SendTransactionForm = ({
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
 
-		setFees(defaultFees);
-		setValue("fees", defaultFees);
-		setValue("fee", "0");
-		setDynamicFees(false);
-
 		setWallets(profile.wallets().values());
-	}, [defaultFees, findByType, network, profile, setValue, transactionType]);
+	}, [findByType, network, profile, setValue, transactionType]);
 
 	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
 		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
@@ -132,10 +115,9 @@ export const SendTransactionForm = ({
 			<FormField name="fee">
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
-					min={fees.min}
-					avg={fees.avg}
-					max={fees.max}
-					defaultValue={fee}
+					min={fees?.min}
+					avg={fees?.avg}
+					max={fees?.max}
 					value={fee}
 					step={0.01}
 					showFeeOptions={dynamicFees}
