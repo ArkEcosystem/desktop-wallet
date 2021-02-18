@@ -73,18 +73,6 @@ export const translations: { [key: string]: any } = {
 		PLACEHOLDER: "Github Repository URL",
 	},
 
-	MODAL_ADD_BLACKLIST_PLUGIN: {
-		TITLE: "Add Blacklist",
-		DESCRIPTION: "Find and select a plugin to add or remove it from the blacklist.",
-		SEARCH_PLACEHOLDER: "Search for a plugin",
-	},
-
-	MODAL_BLACKLIST_PLUGINS: {
-		TITLE: "Blacklist",
-		DESCRIPTION:
-			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
-	},
-
 	PAGE_PLUGINS_CATEGORY: {
 		LAYOUT_TITLE: "Plugin list",
 	},

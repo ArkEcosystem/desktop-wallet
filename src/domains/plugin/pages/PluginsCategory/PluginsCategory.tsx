@@ -7,7 +7,7 @@ import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginsCategoryProps = {
@@ -23,14 +23,8 @@ type PluginsProps = {
 };
 
 const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
-	const activeProfile = useActiveProfile();
-	const [blacklist, setBlacklist] = useState<any>([]);
-
-	useEffect(() => {
-		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
-	}, [activeProfile]);
-
 	const plugins = [];
+
 	for (let i = 0; i < 4; i++) {
 		plugins.push({
 			id: i,
@@ -59,21 +53,19 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 		});
 	}
 
-	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
-
 	return (
 		<div>
 			<div data-testid="PluginsCategory__plugins">
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={pluginList}
+						plugins={plugins}
 						onSelect={() => console.log("selected")}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
 				)}
 			</div>
 		</div>

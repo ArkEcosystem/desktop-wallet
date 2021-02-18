@@ -106,18 +106,12 @@ export const translations: { [key: string]: any } = {
 		MENU_ITEM: "Plugins",
 		TITLE: "Plugin Settings",
 		SUBTITLE: "Customize your wallet to suit your needs.",
-		APPLY_BLACKLIST: {
-			TITLE: "Apply Blacklist",
-			DESCRIPTION:
-				"This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.",
-		},
 		PLUGIN_SOURCE: {
 			TITLE: "Plugin Source",
 			DESCRIPTION: "Turn this feature on, you can upload plugins to your wallet from third-party sources.",
 			LOAD_FROM: "Load plugins from",
 		},
 		ADD_PLUGIN: "Add Plugin",
-		OPEN_BLACKLIST: "Open List",
 		SUCCESS: "Your plugin settings have been updated",
 	},
 
