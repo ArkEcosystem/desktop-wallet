@@ -148,7 +148,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			if (!localPlugin) {
 				return false;
 			}
-
 			const remotePackage = pluginPackages.find((remote) => remote.id() === pluginId);
 
 			if (!remotePackage) {

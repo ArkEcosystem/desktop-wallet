@@ -588,4 +588,19 @@ describe("PluginManager", () => {
 
 		historySpy.mockRestore();
 	});
+
+	it("should show update all banner", async () => {
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		pluginManager.plugins().push(plugin);
+
+		const { getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+	});
 });

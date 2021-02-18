@@ -354,7 +354,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									<EmptyBlock size="sm" className="mt-4">
 										<div className="flex items-center w-full justify-between">
 											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-											<Button>{t("PLUGINS.UPDATE_ALL")}</Button>
+											<Button data-testid="PluginManager__update-all">
+												{t("PLUGINS.UPDATE_ALL")}
+											</Button>
 										</div>
 									</EmptyBlock>
 								)}

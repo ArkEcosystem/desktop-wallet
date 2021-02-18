@@ -215,6 +215,82 @@ describe("PluginDetails", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/plugins/view`);
 		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should enable package from header", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+
+		await waitFor(() => expect(plugin.isEnabled(profile)).toBe(true));
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should disable package from header", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+		plugin.enable(profile, { autoRun: true });
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+
+		await waitFor(() => expect(plugin.isEnabled(profile)).toBe(false));
+		manager.plugins().removeById(plugin.config().id(), profile);
 	});
 
 	it("should remove package", async () => {

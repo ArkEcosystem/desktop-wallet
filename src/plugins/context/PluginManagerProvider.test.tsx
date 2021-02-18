@@ -3,6 +3,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import electron, { ipcRenderer } from "electron";
 import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
+import { PluginConfigurationData } from "plugins/core/configuration";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
@@ -278,5 +279,59 @@ describe("PluginManagerProvider", () => {
 		fireEvent.click(screen.getByText("Fetch Package"));
 
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+	});
+
+	it("should map config to plugin data", () => {
+		const config = PluginConfigurationData.make({ name: "my-plugin" });
+
+		const Component = () => {
+			const { mapConfigToPluginData } = usePluginManagerContext();
+			const pluginData = mapConfigToPluginData(profile, config);
+
+			return <span>{pluginData.name}</span>;
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		expect(screen.getByText("my-plugin")).toBeInTheDocument();
+	});
+
+	it("should check if plugin update is available", async () => {
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, allPlugins, mapConfigToPluginData } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			const pluginDatas = allPlugins.map(mapConfigToPluginData.bind(null, profile));
+
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					<ul>
+						{pluginDatas.map((pkg) => (
+							<li key={pkg.id}>{pkg.hasUpdateAvailable ? "Update Available" : "No"}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Click"));
+
+		await waitFor(() => expect(screen.getByText("Update Available")).toBeInTheDocument());
 	});
 });
