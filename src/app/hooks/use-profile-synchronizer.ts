@@ -182,7 +182,7 @@ export const useProfileRestore = () => {
 		// password needs to be set again. The restore should happen
 		// without password and then reset the password.
 		const __E2E__ = process.env.REACT_APP_IS_E2E;
-		if (__E2E__) {
+		if (__E2E__ !== "undefined") {
 			await profile.restore(password);
 
 			await persist();
