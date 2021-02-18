@@ -17,6 +17,7 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { ipcRenderer } from "electron";
 import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
@@ -35,6 +36,8 @@ import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
 
 const Main = () => {
+	ipcRenderer.on('data', (_, data) => console.log(`[RENDERER] ${data}`));
+
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();
 	const { loadPlugins } = usePluginManagerContext();
@@ -81,6 +84,8 @@ const Main = () => {
 		};
 
 		boot();
+
+		ipcRenderer.send('fork');
 	}, [env, handleError, runAll, loadPlugins]);
 
 	const renderContent = () => {

@@ -1,3 +1,4 @@
+import { fork } from "child_process";
 import { app, BrowserWindow, ipcMain, screen, shell } from "electron";
 import isDev from "electron-is-dev";
 import winState from "electron-window-state";
@@ -72,7 +73,22 @@ ipcMain.on("open-external", function (_event, url) {
 	}
 });
 
+ipcMain.on('fork', (e) => {
+	console.log("fork");
+
+	const platform = fork(path.join(__dirname, 'platform/listeners.js'), ['hello'], {
+		stdio: ['pipe', 'pipe', 'pipe', 'ipc'],
+	});
+
+	platform.stdout?.on('data', (data) => e.reply('data', `[OUT] ${data.toString()}`));
+	platform.stderr?.on('data', (data) => e.reply('data', `[ERR] ${data.toString()}`));
+	platform.on('message', (message) => e.reply('data', `[IPC] ${message}`));
+
+	platform.send('boot');
+});
+
 function createWindow() {
+	// Application
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
 	windowState = winState({
