@@ -62,3 +62,26 @@ exports[`Use Ledger Scanner should render 1`] = `
   </div>
 </div>
 `;
+
+exports[`Use Ledger Scanner should render toggleSelectAll and scanRetry 1`] = `
+<div>
+  <div>
+    <ul />
+    <button
+      data-testid="scan"
+    >
+      Scan
+    </button>
+    <button
+      data-testid="retry"
+    >
+      Retry
+    </button>
+    <button
+      data-testid="toggle"
+    >
+      Toggle
+    </button>
+  </div>
+</div>
+`;
