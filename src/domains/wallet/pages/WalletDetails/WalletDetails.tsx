@@ -136,7 +136,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
 								</h2>
 								<FilterTransactions
-									wallets={activeProfile.wallets().values()}
+									wallets={[activeWallet]}
 									onSelect={(_, type) => setSelectedTransactionType(type)}
 									className="mt-2"
 								/>
