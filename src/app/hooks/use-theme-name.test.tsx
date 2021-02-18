@@ -1,7 +1,7 @@
 import { useThemeName } from "app/hooks/use-theme-name";
 import * as utils from "utils/electron-utils";
 
-describe("useThemeName Hook", () => {
+describe("useThemeName", () => {
 	it("should run with shouldUseDarkColors", () => {
 		utils.shouldUseDarkColors = jest.fn(() => true);
 
