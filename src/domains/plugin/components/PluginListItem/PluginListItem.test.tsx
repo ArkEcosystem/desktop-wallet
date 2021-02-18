@@ -79,6 +79,8 @@ describe("PluginListItem", () => {
 		fireEvent.click(getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("dropdown__option--0"));
 
+		expect(getByTestId("PluginListItem__update-badge")).toBeInTheDocument();
+
 		expect(onUpdate).toHaveBeenCalledTimes(1);
 	});
 

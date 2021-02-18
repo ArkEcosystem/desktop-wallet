@@ -1,3 +1,4 @@
+import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
@@ -136,9 +137,21 @@ export const PluginListItem = ({
 						)}
 						<Dropdown
 							toggleContent={
-								<Button variant="secondary" size="icon" className="text-left">
-									<Icon name="Settings" width={20} height={20} />
-								</Button>
+								<div className="relative">
+									{plugin.hasUpdateAvailable && (
+										<Tooltip content={t("PLUGINS.NEW_VERSION_AVAILABLE")}>
+											<Badge
+												data-testid="PluginListItem__update-badge"
+												size="sm"
+												className="bg-theme-danger-500"
+												position="top-right"
+											/>
+										</Tooltip>
+									)}
+									<Button variant="secondary" size="icon" className="text-left">
+										<Icon name="Settings" width={20} height={20} />
+									</Button>
+								</div>
 							}
 							options={[
 								plugin.hasUpdateAvailable && {

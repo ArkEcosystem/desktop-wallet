@@ -1,4 +1,5 @@
 export const translations: { [key: string]: any } = {
+	NEW_VERSION_AVAILABLE: "New version available",
 	WARNING_DISCLAIMER:
 		"Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.",
 
