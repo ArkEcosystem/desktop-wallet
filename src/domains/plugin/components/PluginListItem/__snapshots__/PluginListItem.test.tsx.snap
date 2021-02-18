@@ -15,7 +15,7 @@ exports[`PluginListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex justify-center items-center"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -138,7 +138,7 @@ exports[`PluginListItem should render grant icon 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex justify-center items-center"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -270,7 +270,7 @@ exports[`PluginListItem should render official icon 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex justify-center items-center"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -402,7 +402,7 @@ exports[`PluginListItem should trigger install 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex justify-center items-center"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"

@@ -108,18 +108,6 @@ describe("PluginCard", () => {
 		expect(onDisable).toHaveBeenCalledTimes(1);
 	});
 
-	it("should render custom logo", () => {
-		const plugin = {
-			...basePlugin,
-			logo: "https://ark.io/logo",
-		};
-
-		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} />);
-
-		expect(getByTestId("PluginCard__logo")).toBeInTheDocument();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render official icon", () => {
 		const plugin = {
 			...basePlugin,

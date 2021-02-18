@@ -128,7 +128,10 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		setState((prev: any) => ({ ...prev, packages: configurations }));
 	}, [pluginRegistry]);
 
+	// Plugin configurations loaded from PSDK Plugin's Registry
 	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
+
+	// Plugin configurations loaded manually from URL
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
 	const allPlugins: PluginConfigurationData[] = useMemo(() => {

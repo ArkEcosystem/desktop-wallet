@@ -2,10 +2,10 @@ import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { PluginImage } from "../PluginImage";
 import { PluginSpecs } from "./components/PluginSpecs";
 
 type Props = {
@@ -121,13 +121,8 @@ export const PluginHeader = ({
 	return (
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<div className="overflow-hidden w-40 h-full rounded-lg">
-					{props.logo ? (
-						<img data-testid="PluginCard__logo" src={props.logo} alt="Logo" className="w-full rounded-lg" />
-					) : (
-						<Image name="PluginLogoPlaceholder" domain="plugin" />
-					)}
-				</div>
+				<PluginImage logoURL={props.logo} className="w-40" updatingProgress={42} />
+
 				<div className="flex flex-col justify-between pl-8 space-y-3 w-full">
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col mr-2">

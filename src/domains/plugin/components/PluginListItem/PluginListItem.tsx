@@ -2,11 +2,12 @@ import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Image } from "app/components/Image";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
+import { PluginImage } from "../PluginImage";
 
 type PluginListItemProps = {
 	onDelete?: (plugin: any) => void;
@@ -38,18 +39,7 @@ export const PluginListItem = ({
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
-				<div className="flex justify-center items-center">
-					{plugin.logo ? (
-						<img
-							data-testid="PluginListItem__logo"
-							src={plugin.logo}
-							alt="Logo"
-							className="overflow-hidden w-14 h-14 rounded"
-						/>
-					) : (
-						<Image name="PluginLogoPlaceholder" domain="plugin" className="w-14 h-14" />
-					)}
-				</div>
+				<PluginImage logoURL={plugin.logo} className="w-14 h-14" />
 			</TableCell>
 
 			<TableCell innerClassName="space-x-2">

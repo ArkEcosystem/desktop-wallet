@@ -667,7 +667,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -790,7 +790,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -913,7 +913,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1036,7 +1036,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1159,7 +1159,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1305,7 +1305,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1451,7 +1451,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2269,7 +2269,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2392,7 +2392,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2515,7 +2515,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2638,7 +2638,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2761,7 +2761,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2907,7 +2907,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -3053,7 +3053,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -3667,9 +3667,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3743,9 +3745,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3819,9 +3823,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3895,9 +3901,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3971,9 +3979,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4047,9 +4057,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4123,9 +4135,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4665,9 +4679,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4741,9 +4757,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4817,9 +4835,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4893,9 +4913,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4969,9 +4991,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5045,9 +5069,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5121,9 +5147,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5714,9 +5742,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5790,9 +5820,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5866,9 +5898,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5942,9 +5976,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6018,9 +6054,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6094,9 +6132,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6170,9 +6210,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6712,9 +6754,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6788,9 +6832,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6864,9 +6910,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6940,9 +6988,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -7016,9 +7066,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -7092,9 +7144,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -7168,9 +7222,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -7914,7 +7970,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8037,7 +8093,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8160,7 +8216,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8283,7 +8339,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8406,7 +8462,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8552,7 +8608,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8698,7 +8754,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex justify-center items-center"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"

@@ -26,16 +26,6 @@ describe("PluginHeader", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with logo", () => {
-		const { container } = render(
-			<PluginHeader {...pluginDataFixture} logo="https://ark.io/logo.png" isInstalled hasLaunch />,
-		);
-
-		expect(screen.getByTestId("PluginCard__logo")).toBeInTheDocument();
-		expect(screen.getByTestId("PluginHeader__button--launch")).toBeInTheDocument();
-		expect(container).toMatchSnapshot();
-	});
-
 	it("should trigger update", () => {
 		const onUpdate = jest.fn();
 

@@ -771,7 +771,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                                 >
                                   <div
-                                    class="flex justify-center items-center"
+                                    data-testid="PluginImage__placeholder"
                                   >
                                     <svg
                                       class="w-14 h-14"
@@ -1123,7 +1123,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                                 >
                                   <div
-                                    class="flex justify-center items-center"
+                                    data-testid="PluginImage__placeholder"
                                   >
                                     <svg
                                       class="w-14 h-14"
@@ -1474,7 +1474,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                                 >
                                   <div
-                                    class="flex justify-center items-center"
+                                    data-testid="PluginImage__placeholder"
                                   >
                                     <svg
                                       class="w-14 h-14"
@@ -2351,7 +2351,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                             >
                               <div
-                                class="flex justify-center items-center"
+                                data-testid="PluginImage__placeholder"
                               >
                                 <svg
                                   class="w-14 h-14"
@@ -3252,7 +3252,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                             >
                               <div
-                                class="flex justify-center items-center"
+                                data-testid="PluginImage__placeholder"
                               >
                                 <svg
                                   class="w-14 h-14"
@@ -3962,9 +3962,11 @@ exports[`PluginManager should render 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -4063,9 +4065,11 @@ exports[`PluginManager should render 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -4163,9 +4167,11 @@ exports[`PluginManager should render 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -4855,9 +4861,11 @@ exports[`PluginManager should search for plugin 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -4956,9 +4964,11 @@ exports[`PluginManager should search for plugin 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -5056,9 +5066,11 @@ exports[`PluginManager should search for plugin 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -6243,9 +6255,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -6344,9 +6358,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -6444,9 +6460,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                                data-testid="PluginImage__placeholder"
                               >
-                                <svg>
+                                <svg
+                                  class="mb-4 mr-4 w-20 h-20"
+                                >
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>

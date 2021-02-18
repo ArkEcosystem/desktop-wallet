@@ -243,32 +243,6 @@ describe("PluginListItem", () => {
 		expect(getByTestId("PluginListItem__minimum-version-warning")).toBeInTheDocument();
 	});
 
-	it("should render custom logo", () => {
-		const plugin = {
-			id: "ark-explorer",
-			name: "ARK Explorer",
-			title: "ARK.io",
-			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: true,
-			isEnabled: true,
-			logo: "https://ark.io/logo",
-		};
-
-		const onLaunch = jest.fn();
-
-		const { getByTestId } = render(
-			<table>
-				<tbody>
-					<PluginListItem plugin={plugin} onLaunch={onLaunch} />
-				</tbody>
-			</table>,
-		);
-
-		expect(getByTestId("PluginListItem__logo")).toBeInTheDocument();
-	});
-
 	it("should render official icon", () => {
 		const plugin = {
 			id: "ark-explorer",
