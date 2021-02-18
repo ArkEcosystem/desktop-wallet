@@ -2,6 +2,7 @@ import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
@@ -196,6 +197,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
+	const hasUpdateAvailableCount = allPlugins
+		.map(mapConfigToPluginData.bind(null, activeProfile))
+		.filter((item) => item.hasUpdateAvailable).length;
 
 	useEffect(() => {
 		fetchPluginPackages();
@@ -341,10 +345,20 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						)}
 
 						{currentView === "my-plugins" && viewType === "list" && (
-							<div>
+							<div className="flex flex-col">
 								<h2 className="font-bold">
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
+
+								{hasUpdateAvailableCount > 0 && (
+									<EmptyBlock size="sm" className="mt-4">
+										<div className="flex items-center w-full justify-between">
+											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
+											<Button>{t("PLUGINS.UPDATE_ALL")}</Button>
+										</div>
+									</EmptyBlock>
+								)}
+
 								<PluginList
 									plugins={installedPlugins}
 									onClick={handleSelectPlugin}
