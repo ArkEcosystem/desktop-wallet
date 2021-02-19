@@ -11,13 +11,14 @@ type TableProps = {
 	data: any[];
 	columns: any[];
 	hideHeader?: boolean;
+	initialState?: Record<string, any>;
 };
 
 const TableWrapper = styled.div`
 	${defaultTableStyle}
 `;
 
-export const Table = ({ children, data, columns, hideHeader, className }: TableProps) => {
+export const Table = ({ children, data, columns, hideHeader, className, initialState }: TableProps) => {
 	const tableData = useMemo(() => data, [data]);
 	const tableColumns = useMemo(() => columns, [columns]);
 
@@ -27,6 +28,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 			columns: tableColumns,
 			autoResetSortBy: false,
 			disableSortRemove: true,
+			initialState,
 		},
 		useSortBy,
 	);
