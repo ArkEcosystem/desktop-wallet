@@ -136,6 +136,11 @@ export const defaultNetMocks = () => {
 		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
 		.persist();
 
+	nock("https://raw.githubusercontent.com")
+		.get("/ArkEcosystem/common/master/desktop-wallet/whitelist.json")
+		.reply(200, require("tests/fixtures/plugins/whitelist.json"))
+		.persist();
+
 	for (const pluginName of pluginNames) {
 		nock("https://registry.npmjs.com")
 			.get(`/${pluginName}`)

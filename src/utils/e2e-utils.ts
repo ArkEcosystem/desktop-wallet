@@ -134,6 +134,7 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 			statusCode,
 			{
 				"access-control-allow-origin": "*",
+				"access-control-allow-headers": "Content-Type",
 			},
 		);
 
@@ -184,6 +185,10 @@ export const requestMocks = {
 		...walletMocks(),
 	],
 	plugins: [
+		mockRequest(
+			"https://raw.githubusercontent.com/ArkEcosystem/common/master/desktop-wallet/whitelist.json",
+			"plugins/whitelist",
+		),
 		mockRequest(
 			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
 			"plugins/registry/@dated/transaction-export-plugin",
@@ -243,6 +248,10 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 					url: request.url,
 					method: request.method,
 				};
+
+				if (request.method === "OPTIONS") {
+					return request;
+				}
 
 				if (request.method === "POST") {
 					mock.body = request.body.toString();
