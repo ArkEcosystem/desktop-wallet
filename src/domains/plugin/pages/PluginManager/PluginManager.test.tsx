@@ -8,16 +8,7 @@ import nock from "nock";
 import { LaunchPluginService, PluginController } from "plugins";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	fireEvent,
-	getDefaultProfileId,
-	RenderResult,
-	renderWithRouter,
-	screen,
-	waitFor,
-	within,
-} from "testing-library";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
@@ -186,7 +177,7 @@ describe("PluginManager", () => {
 
 		profile.settings().set(ProfileSetting.AdvancedMode, true);
 
-		renderWithRouter(
+		const { getByTestId, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
 				<PluginProviders>
 					<PluginManager />
@@ -198,30 +189,39 @@ describe("PluginManager", () => {
 			},
 		);
 
-		await waitFor(() => expect(screen.queryByTestId("PluginManager_header--install")).toBeInTheDocument());
+		await waitFor(() => expect(queryByTestId("PluginManager_header--install")).toBeInTheDocument());
 
 		// Open and close
-		fireEvent.click(screen.queryByTestId("PluginManager_header--install"));
-		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
-		fireEvent.click(screen.queryByTestId("modal__close-btn"));
+		act(() => {
+			fireEvent.click(queryByTestId("PluginManager_header--install"));
+		});
+		await waitFor(() => expect(queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
+		act(() => {
+			fireEvent.click(queryByTestId("modal__close-btn"));
+		});
 
 		// Open and type
-		fireEvent.click(screen.queryByTestId("PluginManager_header--install"));
-		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
-
-		fireEvent.input(screen.getByTestId("PluginManualInstallModal__input"), {
-			target: { value: "https://github.com/arkecosystem/test-plugin" },
+		act(() => {
+			fireEvent.click(queryByTestId("PluginManager_header--install"));
 		});
-		fireEvent.click(screen.getByTestId("PluginManualInstallModal__submit-button"));
+		await waitFor(() => expect(queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
 
-		// Modal closed
-		await waitFor(() => expect(screen.queryByTestId("PluginManualInstallModal")).not.toBeInTheDocument());
+		act(() => {
+			fireEvent.input(getByTestId("PluginManualInstallModal__input"), {
+				target: { value: "https://github.com/arkecosystem/test-plugin" },
+			});
+		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
-		expect(history.location.search).toEqual(
-			`?pluginId=test-plugin&repositoryURL=https://github.com/arkecosystem/test-plugin`,
-		);
+		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
+		act(() => {
+			fireEvent.click(getByTestId("PluginManualInstallModal__submit-button"));
+		});
+
+		const redirectUrl = `/profiles/${fixtureProfileId}/plugins/details?pluginId=test-plugin&repositoryURL=https://github.com/arkecosystem/test-plugin`;
+		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
+
+		historySpy.mockRestore();
 		profile.settings().set(ProfileSetting.AdvancedMode, false);
 	});
 
@@ -348,19 +348,6 @@ describe("PluginManager", () => {
 
 	it("should install plugin", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
-			if (channel === "plugin:loader-fs.find") {
-				return {
-					config: {
-						name: "new-plugin",
-						version: "0.0.1",
-						keywords: ["@arkecosystem", "desktop-wallet"],
-					},
-					source: () => void 0,
-					sourcePath: "/plugins/new-plugin/index.js",
-					dir: "/plugins/new-plugin",
-				};
-			}
-
 			if (channel === "plugin:download") {
 				return "/plugins/new-plugin";
 			}
@@ -390,16 +377,11 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
-				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
 
-		await waitFor(() => expect(pluginManager.plugins().findById("new-plugin")).toBeTruthy());
-
 		ipcRendererSpy.mockRestore();
-
-		pluginManager.plugins().removeById("new-plugin", profile);
 	});
 
 	it("should fail to install plugin", async () => {
@@ -430,7 +412,6 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
-				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
@@ -528,9 +509,11 @@ describe("PluginManager", () => {
 
 		invokeMock.mockRestore();
 	});
-
+	//
 	it("should delete plugin on my-plugins", async () => {
 		const onEnabled = jest.fn();
+		pluginManager.plugins().removeById("test-plugin", profile);
+
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
@@ -555,7 +538,7 @@ describe("PluginManager", () => {
 		invokeMock.mockRestore();
 	});
 
-	it("should open the plugin view page", () => {
+	it("should open the plugin view page", async () => {
 		const plugin = new PluginController(
 			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
 			(api) => api.launch().render(<h1>My Plugin View</h1>),
@@ -568,12 +551,22 @@ describe("PluginManager", () => {
 
 		const { getByTestId } = rendered;
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		act(() => {
+			fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		});
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
 
-		fireEvent.click(getByTestId("PluginListItem__launch"));
+		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/view`);
-		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
+		act(() => {
+			fireEvent.click(getByTestId("PluginListItem__launch"));
+		});
+
+		const redirectUrl = `/profiles/${profile.id()}/plugins/view?pluginId=test-plugin`;
+		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
+
+		historySpy.mockRestore();
 	});
 });

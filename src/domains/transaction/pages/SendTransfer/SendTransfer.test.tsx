@@ -113,16 +113,37 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form step with deeplink values and use them", async () => {
+		const { result: form } = renderHook(() => useForm());
 		const deeplinkProps: any = {
 			amount: "1.2",
 			coin: "ark",
 			memo: "ARK",
 			method: "transfer",
-			network: "mainnet",
+			network: "ark.mainnet",
 			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
 		};
 
+		await act(async () => {
+			const { getByTestId, asFragment } = render(
+				<FormProvider {...form.current}>
+					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
+				</FormProvider>,
+			);
+
+			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("should render 1st step with custom deeplink values and use them", async () => {
 		const { result: form } = renderHook(() => useForm());
+		const deeplinkProps: any = {
+			amount: "1.2",
+			coin: "ark",
+			method: "transfer",
+			network: "ark.mainnet",
+			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
+		};
 
 		let rendered: RenderResult;
 
@@ -210,10 +231,34 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form and use location state", async () => {
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
-
 		const history = createMemoryHistory();
-		history.push(transferURL, { memo: "ARK" });
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+		history.push(transferURL, { memo: "ARK", coin: "ark", network: "ark.devnet" });
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+		});
+
+		expect(rendered.asFragment()).toMatchSnapshot();
+	});
+
+	it("should render form and use location state without memo", async () => {
+		const history = createMemoryHistory();
+
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
+		history.push(transferURL, { coin: "ark", network: "ark.devnet" });
 
 		const { getByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">

@@ -48,6 +48,7 @@ export const SendTransfer = () => {
 			fee: 0,
 			amount: 0,
 			remainingBalance: wallet?.balance?.(),
+			recipients: [],
 		},
 		shouldUnregister: false,
 	});
@@ -85,6 +86,21 @@ export const SendTransfer = () => {
 	}, [activeProfile, hasWalletId, senderAddress]);
 
 	useEffect(() => {
+		if (!state) {
+			return;
+		}
+
+		setValue(
+			"network",
+			networks.find((item) => item.coin().toLowerCase() === state.coin && item.id() === state.network),
+		);
+
+		if (state.memo) {
+			setValue("smartbridge", state.memo);
+		}
+	}, [state, setValue, networks]);
+
+	useEffect(() => {
 		if (!wallet?.address?.()) {
 			return;
 		}
@@ -99,12 +115,6 @@ export const SendTransfer = () => {
 			}
 		}
 	}, [wallet, networks, setValue]);
-
-	useEffect(() => {
-		if (state?.memo) {
-			setValue("smartbridge", state.memo);
-		}
-	}, [state, setValue]);
 
 	useEffect(() => {
 		if (!isSendAllSelected) {

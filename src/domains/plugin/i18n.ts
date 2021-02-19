@@ -59,7 +59,8 @@ export const translations: { [key: string]: any } = {
 	MODAL_INSTALL_PLUGIN: {
 		DESCRIPTION: "This plugin needs the following permissions:",
 		SUCCESS: `The plugin "{{name}}" was successfully installed`,
-		FAILURE: `Failed to install plugin "{{name}}"`,
+		INSTALL_FAILURE: `Failed to install plugin "{{name}}"`,
+		DOWNLOAD_FAILURE: `Failed to donwload plugin "{{name}}"`,
 	},
 
 	MODAL_MANUAL_INSTALL_PLUGIN: {
@@ -67,18 +68,6 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION:
 			"Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.",
 		PLACEHOLDER: "Github Repository URL",
-	},
-
-	MODAL_ADD_BLACKLIST_PLUGIN: {
-		TITLE: "Add Blacklist",
-		DESCRIPTION: "Find and select a plugin to add or remove it from the blacklist.",
-		SEARCH_PLACEHOLDER: "Search for a plugin",
-	},
-
-	MODAL_BLACKLIST_PLUGINS: {
-		TITLE: "Blacklist",
-		DESCRIPTION:
-			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
 	},
 
 	PAGE_PLUGINS_CATEGORY: {

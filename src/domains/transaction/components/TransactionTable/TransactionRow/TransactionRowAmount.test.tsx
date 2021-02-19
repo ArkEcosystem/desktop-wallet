@@ -22,4 +22,14 @@ describe("TransactionRowAmount", () => {
 		);
 		expect(getByText("0 BTC")).toBeTruthy();
 	});
+
+	it("should show as received", () => {
+		const { container, getByText } = render(
+			<TransactionRowAmount
+				transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "ARK" }), isSent: () => false }}
+			/>,
+		);
+		expect(getByText("+ 121 ARK")).toBeTruthy();
+		expect(container).toMatchSnapshot();
+	});
 });
