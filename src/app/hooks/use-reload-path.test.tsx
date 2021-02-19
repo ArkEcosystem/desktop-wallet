@@ -1,7 +1,7 @@
 import { fireEvent } from "@testing-library/react";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act,renderWithRouter } from "testing-library";
+import { act, renderWithRouter } from "testing-library";
 
 import { useReloadPath } from "./use-reload-path";
 

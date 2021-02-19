@@ -2,7 +2,6 @@ import { act } from "@testing-library/react-hooks";
 import { clickOutsideHandler } from "app/hooks/click-outside";
 import { fireEvent } from "utils/testing-library";
 
-
 describe("ClickOutside Hook", () => {
 	it("should not call callback if clicked on target element", () => {
 		const el = document;

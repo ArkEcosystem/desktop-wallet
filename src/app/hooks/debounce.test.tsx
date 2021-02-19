@@ -1,4 +1,4 @@
-import { act,waitFor } from "@testing-library/react";
+import { act, waitFor } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 
 import { useDebounce } from "./debounce";
