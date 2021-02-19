@@ -159,7 +159,9 @@ export const AddRecipient = ({
 	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
 	useEffect(() => {
-		setValue("isSendAllSelected", isSingle);
+		if (!isSingle) {
+			setValue("isSendAllSelected", false);
+		}
 	}, [isSingle, setValue]);
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
@@ -248,6 +250,7 @@ export const AddRecipient = ({
 							placeholder={t("COMMON.AMOUNT")}
 							value={getValues("displayAmount") || recipientsAmount}
 							onChange={(currency) => {
+								setValue("isSendAllSelected", false);
 								setValue("displayAmount", currency.display);
 								setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(currency.value, recipientAddress);
