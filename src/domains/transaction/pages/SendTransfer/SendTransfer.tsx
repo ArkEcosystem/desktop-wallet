@@ -48,6 +48,7 @@ export const SendTransfer = () => {
 			fee: 0,
 			amount: 0,
 			remainingBalance: wallet?.balance?.(),
+			recipients: [],
 		},
 		shouldUnregister: false,
 	});
