@@ -182,11 +182,11 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, allPlugins, isFetchingPackages, trigger } = usePluginManagerContext();
+	const { fetchPluginPackages, allPlugins, isFetchingPackages, trigger, updatingStats } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
-	const { pluginManager, mapConfigToPluginData } = usePluginManagerContext();
+	const { pluginManager, mapConfigToPluginData, updatePlugin } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
 
 	const [currentView, setCurrentView] = useState("home");
@@ -195,7 +195,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
-
+	console.log({ updatingStats });
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 	const hasUpdateAvailableCount = allPlugins
 		.map(mapConfigToPluginData.bind(null, activeProfile))
@@ -250,6 +250,10 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				result.repositoryURL
 			}`,
 		);
+	};
+
+	const handleUpdate = (pluginData: any) => {
+		updatePlugin(pluginData.name);
 	};
 
 	const openInstallModalPlugin = (pluginData: any) => {
@@ -338,6 +342,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onDisable={handleDisablePlugin}
 									onInstall={openInstallModalPlugin}
 									onLaunch={handleLaunchPlugin}
+									onUpdate={handleUpdate}
 									className="mt-6"
 									isLoading={isFetchingPackages}
 								/>
@@ -369,6 +374,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onEnable={handleEnablePlugin}
 									onDisable={handleDisablePlugin}
 									onLaunch={handleLaunchPlugin}
+									onUpdate={handleUpdate}
+									updatingStats={updatingStats}
 									className="mt-6"
 								/>
 							</div>

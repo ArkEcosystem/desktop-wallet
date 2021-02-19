@@ -6,7 +6,7 @@ import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
 import appPkg from "../../../package.json";
@@ -22,7 +22,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		configurations: [],
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
-
+	const [updatingStats, setUpdatingStats] = useState<Record<string, any>>({});
 	const [pluginRegistry] = useState(() => new PluginRegistry());
 
 	const [pluginManager] = useState(() => {
@@ -189,7 +189,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
-			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl });
+			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
 
 			return savedDir;
 		},
@@ -197,8 +197,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const installPlugin = useCallback(
-		async (savedPath, pluginId) => {
-			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name: pluginId });
+		async (savedPath, name) => {
+			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name });
 
 			await loadPlugin(pluginPath);
 
@@ -239,6 +239,34 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[hasUpdateAvailable, pluginManager],
 	);
 
+	const updatePlugin = useCallback(
+		async (name: string) => {
+			setUpdatingStats((prev) => ({ ...prev, [name]: { percent: 0.0 } }));
+
+			try {
+				const savedPath = await downloadPlugin(name);
+				await installPlugin(savedPath, name);
+				setTimeout(() => {
+					setUpdatingStats((prev) => ({ ...prev, [name]: { completed: true, failed: false } }));
+				}, 1500);
+			} catch (e) {
+				console.error(e);
+				setUpdatingStats((prev) => ({ ...prev, [name]: { failed: true } }));
+			}
+		},
+		[downloadPlugin, installPlugin],
+	);
+
+	useEffect(() => {
+		// @ts-ignore
+		const listener = (_, value: any) => setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+		ipcRenderer.on("plugin:download-progress", listener);
+
+		return () => {
+			ipcRenderer.removeListener("plugin:download-progress", listener);
+		};
+	}, []);
+
 	return {
 		pluginRegistry,
 		fetchPluginPackages,
@@ -257,6 +285,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		fetchLatestPackageConfiguration,
 		pluginConfigurations,
 		mapConfigToPluginData,
+		updatePlugin,
+		updatingStats,
 	};
 };
 

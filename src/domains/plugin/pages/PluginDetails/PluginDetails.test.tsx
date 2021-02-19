@@ -430,6 +430,7 @@ describe("PluginDetails", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "remote-plugin",
 				url: "https://github.com/arkecosystem/remote-plugin/archive/master.zip",
 			}),
 		);

@@ -377,6 +377,7 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
@@ -412,6 +413,7 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);

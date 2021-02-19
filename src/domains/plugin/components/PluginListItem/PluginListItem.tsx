@@ -17,6 +17,8 @@ type PluginListItemProps = {
 	onDisable?: (plugin: any) => void;
 	onUpdate?: (plugin: any) => void;
 	onClick?: (plugin: any) => void;
+	isUpdating?: boolean;
+	updatingProgress?: any;
 	plugin: any;
 };
 
@@ -28,6 +30,8 @@ export const PluginListItem = ({
 	onLaunch,
 	onUpdate,
 	onClick,
+	isUpdating,
+	updatingProgress,
 	plugin,
 }: PluginListItemProps) => {
 	const { t } = useTranslation();
@@ -39,7 +43,12 @@ export const PluginListItem = ({
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
-				<PluginImage logoURL={plugin.logo} className="w-14 h-14" />
+				<PluginImage
+					logoURL={plugin.logo}
+					className="w-14 h-14"
+					isUpdating={isUpdating}
+					updatingProgress={updatingProgress}
+				/>
 			</TableCell>
 
 			<TableCell innerClassName="space-x-2">
@@ -188,4 +197,8 @@ export const PluginListItem = ({
 			</TableCell>
 		</TableRow>
 	);
+};
+
+PluginListItem.defaultProps = {
+	updatingProgress: 0,
 };

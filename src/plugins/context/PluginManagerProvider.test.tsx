@@ -241,6 +241,7 @@ describe("PluginManagerProvider", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "test-plugin",
 				url: "https://github.com/arkecosystem/test-plugin/archive/master.zip",
 			}),
 		);
@@ -338,5 +339,92 @@ describe("PluginManagerProvider", () => {
 		fireEvent.click(screen.getByText("Click"));
 
 		await waitFor(() => expect(screen.getByText("Update Available")).toBeInTheDocument());
+	});
+
+	it("should update plugin", async () => {
+		const plugin = new PluginController(
+			{
+				name: "@dated/transaction-export-plugin",
+				version: "1.0.0",
+				"desktop-wallet": { minimumVersion: "4.0.0" },
+			},
+			() => void 0,
+		);
+		manager.plugins().push(plugin);
+
+		const onSpy = jest.spyOn(ipcRenderer, "on").mockImplementation((channel, listener) => {
+			if (channel === "plugin:download-progress") {
+				return listener(undefined, { totalBytes: 200, percent: 1, transferredBytes: 200 });
+			}
+		});
+
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:install") {
+				return "/plugins/test-plugin";
+			}
+
+			if (channel === "plugin:loader-fs.find") {
+				return {
+					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					source: () => void 0,
+					sourcePath: "/plugins/test-plugin/index.js",
+					dir: "/plugins/test-plugin",
+				};
+			}
+
+			if (channel === "plugin:download") {
+				return "/plugins/temp/test-plugin";
+			}
+		});
+
+		const Component = () => {
+			const { fetchPluginPackages, allPlugins, updatePlugin, hasUpdateAvailable } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Fetch</button>
+					<ul>
+						{allPlugins.map((pkg) => (
+							<li key={pkg.name()}>
+								<span>{pkg.name()}</span>
+								{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}
+								<button onClick={() => updatePlugin(pkg.name())}>Update</button>
+							</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() => expect(screen.getByText("Update Available")).toBeInTheDocument());
+
+		fireEvent.click(screen.getByText("Update"));
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
+				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
+			}),
+		);
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenCalledWith("plugin:install", {
+				name: "@dated/transaction-export-plugin",
+				savedPath: "/plugins/temp/test-plugin",
+			}),
+		);
+
+		await waitFor(() => expect(manager.plugins().findById("test-plugin")).toBeTruthy());
+
+		ipcRendererSpy.mockRestore();
+		onSpy.mockRestore();
 	});
 });

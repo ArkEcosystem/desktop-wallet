@@ -14,7 +14,7 @@ export const setupPlugins = () => {
 
 	ensureDirSync(downloadPath);
 
-	ipcMain.handle("plugin:download", async (_, { url }) => {
+	ipcMain.handle("plugin:download", async (_, { url, name }) => {
 		const win = BrowserWindow.getFocusedWindow();
 
 		if (!win) {
@@ -26,7 +26,7 @@ export const setupPlugins = () => {
 		await download(win, url, {
 			directory: downloadPath,
 			onStarted: (item) => (savedPath = item.getSavePath()),
-			onProgress: (progress) => win.webContents.send("plugin:download-progress", progress),
+			onProgress: (progress) => win.webContents.send("plugin:download-progress", { ...progress, name }),
 		});
 
 		return savedPath!;

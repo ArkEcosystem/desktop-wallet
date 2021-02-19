@@ -31,7 +31,12 @@ export const PluginImage = ({
 					className,
 				)}
 			>
-				<CircularProgressBar value={updatingProgress} size={progressSize} strokeWidth={2} fontSize={0.8} />
+				<CircularProgressBar
+					value={+(updatingProgress! * 100).toFixed(0)}
+					size={progressSize}
+					strokeWidth={2}
+					fontSize={0.8}
+				/>
 				{showUpdatingLabel && (
 					<p
 						data-testid="PluginImage__updating__label"
@@ -64,4 +69,5 @@ export const PluginImage = ({
 
 PluginImage.defaultProps = {
 	progressSize: 40,
+	updatingProgress: 0,
 };
