@@ -1,4 +1,5 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
@@ -47,9 +48,21 @@ describe("WalletHeader", () => {
 
 		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} onSend={onSend} />);
 
+		expect(getByTestId("WalletHeader__send-button")).toBeEnabled();
+
 		fireEvent.click(getByTestId("WalletHeader__send-button"));
 
 		expect(onSend).toHaveBeenCalled();
+	});
+
+	it("send button should be disabled if wallet has no balance", () => {
+		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+
+		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
+
+		expect(getByTestId("WalletHeader__send-button")).toBeDisabled();
+
+		balanceSpy.mockRestore();
 	});
 
 	it("should show modifiers", () => {

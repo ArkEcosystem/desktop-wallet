@@ -334,7 +334,12 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 								</Button>
 							</div>
 
-							<Button data-testid="WalletHeader__send-button" className="my-auto" onClick={onSend}>
+							<Button
+								data-testid="WalletHeader__send-button"
+								disabled={wallet.balance().isZero()}
+								className="my-auto"
+								onClick={onSend}
+							>
 								{t("COMMON.SEND")}
 							</Button>
 
