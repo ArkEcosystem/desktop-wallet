@@ -7,6 +7,7 @@ import os from "os";
 import React from "react";
 import { act, env, fireEvent, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
+import * as utils from "utils/electron-utils";
 
 import { CreateProfile } from "./CreateProfile";
 
@@ -32,7 +33,7 @@ const baseSettings = {
 	MARKET_PROVIDER: "cryptocompare",
 	NAME: "test profile",
 	SCREENSHOT_PROTECTION: true,
-	THEME: "light",
+	THEME: "dark",
 	TIME_FORMAT: "h:mm A",
 	USE_CUSTOM_PEER: false,
 	USE_MULTI_PEER_BROADCAST: false,
@@ -123,7 +124,7 @@ describe("CreateProfile", () => {
 			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile 2",
-			THEME: "dark",
+			THEME: "light",
 		});
 		expect(profiles[1].usesPassword()).toBe(false);
 
@@ -289,5 +290,23 @@ describe("CreateProfile", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each([true, false])("should set dark mode toggle based on system preferences", async (shouldUseDarkColors) => {
+		const shouldUseDarkColorsSpy = jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
+
+		const { container } = await renderComponent();
+
+		const toggle = container.querySelector("input[name=isDarkMode]");
+
+		if (shouldUseDarkColors) {
+			expect(toggle).toBeChecked();
+		} else {
+			expect(toggle).not.toBeChecked();
+		}
+
+		expect(document.body).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
+
+		shouldUseDarkColorsSpy.mockRestore();
 	});
 });
