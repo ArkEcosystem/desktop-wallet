@@ -14,20 +14,23 @@ const getBorder = (border?: boolean, borderPosition?: "top" | "bottom" | "both")
 		  ]
 		: [];
 
-const getPadding = (paddingPosition?: "top" | "bottom" | "both") => {
-	if (!paddingPosition || paddingPosition === "both") {
-		return tw`py-6`;
-	}
-
-	return paddingPosition === "top" ? tw`pt-6` : tw`pb-6`;
-};
+const getPadding = (padding?: boolean, paddingPosition?: "top" | "bottom" | "both") =>
+	padding
+		? !paddingPosition || paddingPosition === "both"
+			? tw`py-6`
+			: paddingPosition === "top"
+			? tw`pt-6`
+			: tw`pb-6`
+		: tw`py-0`;
 
 export const getStyles = ({
 	border,
 	borderPosition,
+	padding,
 	paddingPosition,
 }: {
 	border?: boolean;
 	borderPosition?: "top" | "bottom" | "both";
+	padding?: boolean;
 	paddingPosition?: "top" | "bottom" | "both";
-}) => [baseStyles(), ...getBorder(border, borderPosition), getPadding(paddingPosition)];
+}) => [baseStyles(), ...getBorder(border, borderPosition), getPadding(padding, paddingPosition)];

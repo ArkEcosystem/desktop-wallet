@@ -1,4 +1,6 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
+import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import * as useQRCodeHook from "domains/wallet/components/ReceiveFunds/hooks";
 import { translations as walletTranslations } from "domains/wallet/i18n";
@@ -75,7 +77,21 @@ describe("WalletHeader", () => {
 	});
 
 	it.each(["cancel", "close"])("should open & %s sign message modal", (action) => {
-		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+		const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
+
+		history.push(walletUrl);
+
+		const { getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<LedgerProvider transport={transport}>
+					<WalletHeader profile={profile} wallet={wallet} />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
@@ -91,7 +107,7 @@ describe("WalletHeader", () => {
 			);
 		});
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_SIGN_MESSAGE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE);
 
 		act(() => {
 			if (action === "close") {
