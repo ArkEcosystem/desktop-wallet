@@ -144,6 +144,10 @@ describe("PluginManagerProvider", () => {
 
 	it("should install plugin from provider", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:install") {
+				return "/plugins/test-plugin";
+			}
+
 			if (channel === "plugin:loader-fs.find") {
 				return {
 					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
@@ -151,10 +155,6 @@ describe("PluginManagerProvider", () => {
 					sourcePath: "/plugins/test-plugin/index.js",
 					dir: "/plugins/test-plugin",
 				};
-			}
-
-			if (channel === "plugin:download") {
-				return "/plugins/test-plugin";
 			}
 		});
 
@@ -168,7 +168,9 @@ describe("PluginManagerProvider", () => {
 						{allPlugins.map((pkg) => (
 							<li key={pkg.name()}>
 								<span>{pkg.name()}</span>
-								<button onClick={() => installPlugin(pkg.name())}>Install</button>
+								<button onClick={() => installPlugin("/plugins/temp/test-plugin", pkg.name())}>
+									Install
+								</button>
 							</li>
 						))}
 					</ul>
@@ -189,9 +191,9 @@ describe("PluginManagerProvider", () => {
 		fireEvent.click(screen.getByText("Install"));
 
 		await waitFor(() =>
-			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:install", {
 				name: "@dated/transaction-export-plugin",
-				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
+				savedPath: "/plugins/temp/test-plugin",
 			}),
 		);
 
@@ -200,7 +202,7 @@ describe("PluginManagerProvider", () => {
 		ipcRendererSpy.mockRestore();
 	});
 
-	it("should install plugin from custom url", async () => {
+	it("should download plugin from custom url", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
@@ -217,10 +219,12 @@ describe("PluginManagerProvider", () => {
 		});
 
 		const Component = () => {
-			const { installPlugin } = usePluginManagerContext();
+			const { downloadPlugin } = usePluginManagerContext();
 			return (
 				<div>
-					<button onClick={() => installPlugin("test-plugin", "https://github.com/arkecosystem/test-plugin")}>
+					<button
+						onClick={() => downloadPlugin("test-plugin", "https://github.com/arkecosystem/test-plugin")}
+					>
 						Fetch
 					</button>
 				</div>
@@ -237,12 +241,9 @@ describe("PluginManagerProvider", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
-				name: "test-plugin",
 				url: "https://github.com/arkecosystem/test-plugin/archive/master.zip",
 			}),
 		);
-
-		await waitFor(() => expect(manager.plugins().findById("test-plugin")).toBeTruthy());
 
 		ipcRendererSpy.mockRestore();
 	});

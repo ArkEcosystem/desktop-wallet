@@ -1245,28 +1245,27 @@ exports[`Wallets should open and close ledger import modal 1`] = `
               class="flex-1"
             >
               <div
+                class="mt-1 text-theme-secondary-text"
+              >
+                Connect your Ledger to PC and confirm the input.
+              </div>
+              <div
                 class="mt-8 space-y-8"
               >
-                <div
-                  class="text-center text-theme-secondary-700"
-                  data-testid="LedgerWaitingDevice-description"
-                >
-                  Connect your Ledger to PC and confirm the input.
-                </div>
                 <svg
                   class="mx-auto"
                 >
                   waiting-ledger-device.svg
                 </svg>
                 <div
-                  class="inline-flex justify-center items-center space-x-3 w-full"
+                  class="inline-flex items-center space-x-3 w-full"
                 >
                   <div
                     class="Spinner-sc-1tybciv-0 gzGczR"
                     color="info"
                   />
                   <span
-                    class="font-semibold animate-pulse text-theme-text"
+                    class="font-semibold animate-pulse text-theme-secondary-text"
                     data-testid="LedgerWaitingDevice-loading_message"
                   >
                     Waiting for Ledger device...

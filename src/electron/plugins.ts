@@ -14,31 +14,35 @@ export const setupPlugins = () => {
 
 	ensureDirSync(downloadPath);
 
-	ipcMain.handle("plugin:download", async (_, { url, name }) => {
+	ipcMain.handle("plugin:download", async (_, { url }) => {
 		const win = BrowserWindow.getFocusedWindow();
 
 		if (!win) {
 			return;
 		}
 
-		let savePath: string;
+		let savedPath: string;
 
 		await download(win, url, {
 			directory: downloadPath,
-			onStarted: (item) => (savePath = item.getSavePath()),
+			onStarted: (item) => (savedPath = item.getSavePath()),
 			onProgress: (progress) => win.webContents.send("plugin:download-progress", progress),
 		});
 
+		return savedPath!;
+	});
+
+	ipcMain.handle("plugin:install", async (_, { savedPath, name }) => {
 		const pluginPath = path.join(installPath, name);
 
-		await decompress(savePath!, pluginPath, {
+		await decompress(savedPath, pluginPath, {
 			map: (file: any) => {
 				file.path = file.path.split("/").slice(1).join("/");
 				return file;
 			},
 		});
 
-		await trash(savePath!);
+		await trash(savedPath);
 
 		return pluginPath;
 	});

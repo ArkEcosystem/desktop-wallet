@@ -348,19 +348,6 @@ describe("PluginManager", () => {
 
 	it("should install plugin", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
-			if (channel === "plugin:loader-fs.find") {
-				return {
-					config: {
-						name: "new-plugin",
-						version: "0.0.1",
-						keywords: ["@arkecosystem", "desktop-wallet"],
-					},
-					source: () => void 0,
-					sourcePath: "/plugins/new-plugin/index.js",
-					dir: "/plugins/new-plugin",
-				};
-			}
-
 			if (channel === "plugin:download") {
 				return "/plugins/new-plugin";
 			}
@@ -390,16 +377,11 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
-				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
 
-		await waitFor(() => expect(pluginManager.plugins().findById("new-plugin")).toBeTruthy());
-
 		ipcRendererSpy.mockRestore();
-
-		pluginManager.plugins().removeById("new-plugin", profile);
 	});
 
 	it("should fail to install plugin", async () => {
@@ -430,7 +412,6 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
-				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);

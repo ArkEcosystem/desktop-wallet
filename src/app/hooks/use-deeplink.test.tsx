@@ -12,7 +12,12 @@ const history = createMemoryHistory();
 const walletURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 
 describe("useDeeplink hook", () => {
-	const toastSpy = jest.spyOn(toasts, "warning").mockImplementationOnce((subject) => jest.fn(subject));
+	const toastWarningSpy = jest.spyOn(toasts, "warning").mockImplementationOnce((subject) => jest.fn(subject));
+	const toastErrorSpy = jest.spyOn(toasts, "error").mockImplementationOnce((subject) => jest.fn(subject));
+
+	beforeEach(() => {
+		jest.clearAllMocks();
+	});
 
 	const TestComponent: React.FC = () => {
 		useDeeplink();
@@ -24,7 +29,7 @@ describe("useDeeplink hook", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(
 				event,
-				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+				"ark:transfer?coin=ark&network=ark.mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
 			),
 		);
 
@@ -42,7 +47,7 @@ describe("useDeeplink hook", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(
 				event,
-				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+				"ark:transfer?coin=ark&network=ark.mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
 			),
 		);
 
@@ -56,15 +61,15 @@ describe("useDeeplink hook", () => {
 		);
 
 		expect(getByText("Deeplink tester")).toBeTruthy();
-		expect(toastSpy).toHaveBeenCalledWith(translations.SELECT_A_PROFILE);
+		expect(toastWarningSpy).toHaveBeenCalledWith(translations.SELECT_A_PROFILE);
 		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
 	});
 
-	it("should subscribe to deeplink listener and toast a warning to select a wallet", () => {
+	it("should subscribe to deeplink listener and toast a warning to coin not supported", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(
 				event,
-				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+				"ark:transfer?coin=doge&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
 			),
 		);
 
@@ -80,7 +85,57 @@ describe("useDeeplink hook", () => {
 		);
 
 		expect(getByText("Deeplink tester")).toBeTruthy();
-		expect(toastSpy).toHaveBeenCalledWith(translations.SELECT_A_WALLET);
+		expect(toastErrorSpy).toHaveBeenLastCalledWith('Invalid URI: Coin "doge" not supported.');
+		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
+	});
+
+	it("should subscribe to deeplink listener and toast a warning to network not supported", () => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=custom&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
+
+		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
+
+		const { getByText, history } = renderWithRouter(
+			<Route pathname="/profiles/:profileId">
+				<TestComponent />
+			</Route>,
+			{
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
+			},
+		);
+
+		expect(getByText("Deeplink tester")).toBeTruthy();
+		expect(toastErrorSpy).toHaveBeenCalledWith('Invalid URI: Network "custom" not supported.');
+		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
+	});
+
+	it("should subscribe to deeplink listener and toast a warning to no senders available", () => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(
+				event,
+				"ark:transfer?coin=ark&network=ark.mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+			),
+		);
+
+		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
+
+		const { getByText, history } = renderWithRouter(
+			<Route pathname="/profiles/:profileId">
+				<TestComponent />
+			</Route>,
+			{
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
+			},
+		);
+
+		expect(getByText("Deeplink tester")).toBeTruthy();
+		expect(toastErrorSpy).toHaveBeenCalledWith(
+			'Invalid URI: The current profile has no wallets available for the "ark.mainnet" network',
+		);
 		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
 	});
 
@@ -88,7 +143,7 @@ describe("useDeeplink hook", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(
 				event,
-				"ark:transfer?coin=ark&network=mainnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
+				"ark:transfer?coin=ark&network=ark.devnet&recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&amount=1.2&memo=ARK",
 			),
 		);
 
@@ -108,15 +163,13 @@ describe("useDeeplink hook", () => {
 		);
 
 		expect(getByText("Deeplink tester")).toBeTruthy();
-		expect(history.location.pathname).toEqual(
-			`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}/send-transfer`,
-		);
+		expect(history.location.pathname).toEqual(`/profiles/${getDefaultProfileId()}/send-transfer`);
 		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
 	});
 
 	it("should subscribe to deeplink listener and navigate when no method found", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
-			callback(event, "ark:vote?coin=ark&network=ark.mainnet&delegate=alessio"),
+			callback(event, "ark:vote?coin=ark&network=ark.devnet&delegate=alessio"),
 		);
 
 		window.history.pushState(

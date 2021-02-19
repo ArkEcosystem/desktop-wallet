@@ -430,17 +430,14 @@ describe("PluginDetails", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
-				name: "remote-plugin",
 				url: "https://github.com/arkecosystem/remote-plugin/archive/master.zip",
 			}),
 		);
-
-		await waitFor(() => expect(manager.plugins().findById("remote-plugin")).toBeTruthy());
 	});
 
 	it("should install package with error", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
-			if (channel === "plugin:loader-fs.find") {
+			if (channel === "plugin:download") {
 				throw new Error("Plugin not found");
 			}
 		});
