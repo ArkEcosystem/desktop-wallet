@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { useSynchronizer, useUpdater } from "./";
 
 enum Intervals {
-	Long = 120000,
+	Long = 7200000,
 }
 
 export const useEnvSynchronizer = () => {

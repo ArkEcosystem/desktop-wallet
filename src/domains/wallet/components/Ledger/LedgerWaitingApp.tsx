@@ -1,29 +1,19 @@
 import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { Spinner } from "app/components/Spinner";
-import { useLedgerContext } from "app/contexts/Ledger/Ledger";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const LedgerWaitingDevice = ({
+export const LedgerWaitingApp = ({
 	isOpen,
 	coinName,
 	onClose,
-	onDeviceAvailable,
 }: {
 	isOpen: boolean;
-	coinName?: string;
+	coinName: string;
 	onClose?: () => void;
-	onDeviceAvailable?: (hasDeviceAvailable: boolean) => void;
 }) => {
 	const { t } = useTranslation();
-	const { hasDeviceAvailable } = useLedgerContext();
-
-	useLayoutEffect(() => {
-		if (hasDeviceAvailable) {
-			onDeviceAvailable?.(true);
-		}
-	}, [hasDeviceAvailable, onDeviceAvailable]);
 
 	return (
 		<Modal
@@ -39,9 +29,9 @@ export const LedgerWaitingDevice = ({
 					<Spinner />
 					<span
 						className="font-semibold animate-pulse text-theme-secondary-text"
-						data-testid="LedgerWaitingDevice-loading_message"
+						data-testid="LedgerWaitingApp-loading_message"
 					>
-						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")}
+						{t("WALLETS.MODAL_LEDGER_WALLET.OPEN_APP", { coin: coinName })}
 					</span>
 				</div>
 			</div>
