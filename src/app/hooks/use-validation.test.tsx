@@ -24,7 +24,7 @@ describe("useValidation hook", () => {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
 			const balance = BigNumber.make(5);
-			const validation = current.common.fee(() => defaultFees, balance);
+			const validation = current.common.fee(balance);
 			const isValid = validation.validate.valid(2);
 
 			expect(isValid).toBe(true);
@@ -36,7 +36,7 @@ describe("useValidation hook", () => {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
 			const balance = BigNumber.ZERO;
-			const validation = current.common.fee(() => defaultFees, balance, mockNetwork);
+			const validation = current.common.fee(balance, mockNetwork);
 			const isValid = validation.validate.valid(2);
 
 			expect(isValid).not.toBe(true);
@@ -48,7 +48,7 @@ describe("useValidation hook", () => {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
 			const balance = BigNumber.make(-5);
-			const validation = current.common.fee(() => defaultFees, balance, mockNetwork);
+			const validation = current.common.fee(balance, mockNetwork);
 			const isValid = validation.validate.valid(2);
 
 			expect(isValid).not.toBe(true);
@@ -60,7 +60,7 @@ describe("useValidation hook", () => {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
 			const balance = BigNumber.make(1);
-			const validation = current.common.fee(() => defaultFees, balance, mockNetwork);
+			const validation = current.common.fee(balance, mockNetwork);
 			const isValid = validation.validate.valid(2);
 
 			expect(isValid).not.toBe(true);
@@ -72,7 +72,7 @@ describe("useValidation hook", () => {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
 			const balance = BigNumber.make(11);
-			const validation = current.common.fee(() => defaultFees, balance, mockNetwork);
+			const validation = current.common.fee(balance, mockNetwork);
 			const isValid = validation.validate.valid(0.9);
 
 			expect(isValid).not.toBe(true);
@@ -84,7 +84,7 @@ describe("useValidation hook", () => {
 				result: { current },
 			} = renderHook(() => useValidation(), { wrapper });
 			const balance = BigNumber.make(11);
-			const validation = current.common.fee(() => defaultFees, balance, mockNetwork);
+			const validation = current.common.fee(balance, mockNetwork);
 			const isValid = validation.validate.valid(6);
 
 			expect(isValid).not.toBe(true);
