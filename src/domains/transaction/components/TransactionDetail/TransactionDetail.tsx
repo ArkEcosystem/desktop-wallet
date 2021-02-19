@@ -9,6 +9,7 @@ export type TransactionDetailProps = {
 	extra?: React.ReactNode;
 	border?: boolean;
 	borderPosition?: "top" | "bottom" | "both";
+	padding?: boolean;
 	paddingPosition?: "top" | "bottom" | "both";
 	className?: string;
 };
@@ -22,12 +23,14 @@ export const TransactionDetail = ({
 	className,
 	extra,
 	label,
+	padding,
 	paddingPosition,
 }: TransactionDetailProps) => (
 	<TransactionDetailStyled
 		data-testid="TransactionDetail"
 		border={border}
 		borderPosition={borderPosition}
+		padding={padding}
 		paddingPosition={paddingPosition}
 		className={`${className} no-ligatures`}
 	>

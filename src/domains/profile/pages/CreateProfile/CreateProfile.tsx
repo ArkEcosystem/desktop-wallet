@@ -9,12 +9,13 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useValidation } from "app/hooks";
+import { useThemeName, useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { setThemeSource } from "utils/electron-utils";
 
 export const CreateProfile = () => {
 	const { env, persist } = useEnvironmentContext();
@@ -23,10 +24,11 @@ export const CreateProfile = () => {
 	const { t } = useTranslation();
 
 	const { watch, register, formState, setValue, trigger } = form;
-	const { name, confirmPassword } = watch(["name", "confirmPassword"], { name: "" });
+	const { name, confirmPassword, isDarkMode } = watch(["name", "confirmPassword", "isDarkMode"], { name: "" });
 
 	const [avatarImage, setAvatarImage] = useState("");
 
+	const theme = useThemeName();
 	const { createProfile } = useValidation();
 
 	const formattedName = name.trim();
@@ -36,6 +38,21 @@ export const CreateProfile = () => {
 			setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
 		}
 	}, [formattedName, avatarImage, setAvatarImage]);
+
+	useLayoutEffect(() => {
+		if (theme === "dark") {
+			setValue("isDarkMode", true);
+		}
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+	useEffect(() => {
+		const newTheme = isDarkMode ? "dark" : "light";
+
+		document.body.classList.remove(`theme-${theme}`);
+		document.body.classList.add(`theme-${newTheme}`);
+
+		setThemeSource(newTheme);
+	}, [isDarkMode, theme]);
 
 	const otherItems = [
 		{
