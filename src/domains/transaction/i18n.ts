@@ -135,6 +135,12 @@ export const translations: { [key: string]: any } = {
 		LEGACY_BRIDGECHAIN_UPDATE: "Bridgechain Update (Legacy)",
 	},
 
+	MODAL_FEE_WARNING: {
+		TITLE: "Fee Warning",
+		DESCRIPTION:
+			"You have selected a fee that is set below statically set by the network. Block producers might not include your transaction in the block if it is set too low. Do you wish to continue?",
+	},
+
 	MODAL_TRANSFER_DETAIL: {
 		TITLE: "Transfer",
 	},
