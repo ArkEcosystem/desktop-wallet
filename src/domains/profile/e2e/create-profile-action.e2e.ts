@@ -26,8 +26,6 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("button").withExactText(translations.COMMON.CREATE));
 
-	await t.wait(1000); // TODO: the profile loading is async so we need to give it a moment
-
 	// Check welcome with created profiles
 	await t.expect(getLocation()).notContains("/profiles/create");
 	await t.expect(Selector("span").withText("John Doe").exists).ok();
@@ -46,8 +44,6 @@ test("should create a profile with password and navigate to welcome screen", asy
 	await t.click('[data-testid="select-list__toggle-option-0"]');
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("button").withExactText(translations.COMMON.CREATE));
-
-	await t.wait(1000); // TODO: the profile loading is async so we need to give it a moment
 
 	// Check welcome with created profiles
 	await t.expect(getLocation()).notContains("/profiles/create");
