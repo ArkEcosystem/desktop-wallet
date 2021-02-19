@@ -185,6 +185,10 @@ export const requestMocks = {
 	],
 	plugins: [
 		mockRequest(
+			"https://raw.githubusercontent.com/ArkEcosystem/common/master/desktop-wallet/whitelist.json",
+			"plugins/whitelist",
+		),
+		mockRequest(
 			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
 			"plugins/registry/@dated/transaction-export-plugin",
 		),
