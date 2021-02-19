@@ -48,7 +48,7 @@ exports[`TransactionTable loading state should render 1`] = `
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
                     class="sc-bdfBwQ kJrqvM transition-transform "
@@ -123,7 +123,7 @@ exports[`TransactionTable loading state should render 1`] = `
                   class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="sc-bdfBwQ kJrqvM transition-transform "
                     height="5"
                     role="img"
                     width="8"
@@ -1085,7 +1085,7 @@ exports[`TransactionTable loading state should render with currency column 1`] =
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
                     class="sc-bdfBwQ kJrqvM transition-transform "
@@ -1160,7 +1160,7 @@ exports[`TransactionTable loading state should render with currency column 1`] =
                   class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="sc-bdfBwQ kJrqvM transition-transform "
                     height="5"
                     role="img"
                     width="8"
@@ -2316,7 +2316,7 @@ exports[`TransactionTable loading state should render with sign column 1`] = `
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
                     class="sc-bdfBwQ kJrqvM transition-transform "
@@ -2391,7 +2391,7 @@ exports[`TransactionTable loading state should render with sign column 1`] = `
                   class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="sc-bdfBwQ kJrqvM transition-transform "
                     height="5"
                     role="img"
                     width="8"
@@ -3462,7 +3462,7 @@ exports[`TransactionTable should render 1`] = `
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
                     class="sc-bdfBwQ kJrqvM transition-transform "
@@ -3537,7 +3537,7 @@ exports[`TransactionTable should render 1`] = `
                   class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="sc-bdfBwQ kJrqvM transition-transform "
                     height="5"
                     role="img"
                     width="8"
@@ -3653,6 +3653,20 @@ exports[`TransactionTable should render 1`] = `
                   class="inline-flex space-x-1 align-middle"
                   data-testid="TransactionRowInfo"
                 >
+                  <span
+                    class="p-1"
+                  >
+                    <div
+                      class="sc-bdfBwQ gzOUUk"
+                      data-testid="TransactionRowInfo__multiSignature"
+                      height="14"
+                      width="22"
+                    >
+                      <svg>
+                        multisig.svg
+                      </svg>
+                    </div>
+                  </span>
                   <span
                     class="p-1"
                   >
@@ -3815,20 +3829,6 @@ exports[`TransactionTable should render 1`] = `
                   class="inline-flex space-x-1 align-middle"
                   data-testid="TransactionRowInfo"
                 >
-                  <span
-                    class="p-1"
-                  >
-                    <div
-                      class="sc-bdfBwQ gzOUUk"
-                      data-testid="TransactionRowInfo__multiSignature"
-                      height="14"
-                      width="22"
-                    >
-                      <svg>
-                        multisig.svg
-                      </svg>
-                    </div>
-                  </span>
                   <span
                     class="p-1"
                   >
@@ -4164,7 +4164,7 @@ exports[`TransactionTable should render with sign 1`] = `
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
                     class="sc-bdfBwQ kJrqvM transition-transform "
@@ -4239,7 +4239,7 @@ exports[`TransactionTable should render with sign 1`] = `
                   class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="sc-bdfBwQ kJrqvM transition-transform "
                     height="5"
                     role="img"
                     width="8"
@@ -4270,191 +4270,6 @@ exports[`TransactionTable should render with sign 1`] = `
         <tbody
           role="rowgroup"
         >
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-              >
-                <a
-                  class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                  data-testid="TransactionRow__ID"
-                  rel="noopener noreferrer"
-                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                >
-                  <span
-                    class="underline-dotted"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        id.svg
-                      </svg>
-                    </div>
-                  </span>
-                </a>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
-              >
-                <span
-                  class="whitespace-nowrap"
-                  data-testid="TransactionRow__timestamp"
-                >
-                  31 Jul 2020 16:34:41
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-              >
-                <div
-                  class="flex items-center -space-x-1"
-                  data-testid="TransactionRowMode"
-                >
-                  <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      data-testid="TransactionRowMode__Sent"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        sent.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="inline-flex items-center no-ligatures"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    ASuusX…GQ3kqT
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-              >
-                <div
-                  class="inline-flex space-x-1 align-middle"
-                  data-testid="TransactionRowInfo"
-                >
-                  <span
-                    class="p-1"
-                  >
-                    <div
-                      class="sc-bdfBwQ edicJQ"
-                      data-testid="TransactionRowInfo__vendorField"
-                      height="16"
-                      width="17"
-                    >
-                      <svg>
-                        smartbridge.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-              >
-                <div
-                  class="inline-flex p-1 align-middle"
-                  data-testid="TransactionRowConfirmation"
-                >
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    data-testid="TransactionRowConfirmation__pending"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
-              >
-                <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
-                  color="danger"
-                  data-testid="TransactionRowAmount"
-                >
-                  <span
-                    data-testid="Amount"
-                  >
-                    - 121 
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-              >
-                <button
-                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                  data-testid="TransactionRow__sign"
-                  type="button"
-                >
-                  <div
-                    class="flex relative items-center space-x-2"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        edit.svg
-                      </svg>
-                    </div>
-                    <span>
-                      Sign
-                    </span>
-                  </div>
-                </button>
-              </div>
-            </td>
-          </tr>
           <tr
             class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
             data-testid="TableRow"
@@ -4654,6 +4469,191 @@ exports[`TransactionTable should render with sign 1`] = `
               </div>
             </td>
           </tr>
+          <tr
+            class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+              >
+                <a
+                  class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                  data-testid="TransactionRow__ID"
+                  rel="noopener noreferrer"
+                  to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                >
+                  <span
+                    class="underline-dotted"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        id.svg
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+              >
+                <span
+                  class="whitespace-nowrap"
+                  data-testid="TransactionRow__timestamp"
+                >
+                  31 Jul 2020 16:34:41
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="inline-flex items-center no-ligatures"
+                >
+                  <span
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    ASuusX…GQ3kqT
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                >
+                  <span
+                    class="p-1"
+                  >
+                    <div
+                      class="sc-bdfBwQ edicJQ"
+                      data-testid="TransactionRowInfo__vendorField"
+                      height="16"
+                      width="17"
+                    >
+                      <svg>
+                        smartbridge.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+              >
+                <div
+                  class="inline-flex p-1 align-middle"
+                  data-testid="TransactionRowConfirmation"
+                >
+                  <div
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
+                    data-testid="TransactionRowConfirmation__pending"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      status-pending.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
+              >
+                <div
+                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    - 121 
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+              >
+                <button
+                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                  data-testid="TransactionRow__sign"
+                  type="button"
+                >
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        edit.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Sign
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -4695,7 +4695,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   Date
                 </div>
                 <div
-                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
                     class="sc-bdfBwQ kJrqvM transition-transform "
@@ -4770,7 +4770,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="sc-bdfBwQ kJrqvM transition-transform "
                     height="5"
                     role="img"
                     width="8"
@@ -4860,6 +4860,20 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   class="inline-flex space-x-1 align-middle"
                   data-testid="TransactionRowInfo"
                 >
+                  <span
+                    class="p-1"
+                  >
+                    <div
+                      class="sc-bdfBwQ gzOUUk"
+                      data-testid="TransactionRowInfo__multiSignature"
+                      height="14"
+                      width="22"
+                    >
+                      <svg>
+                        multisig.svg
+                      </svg>
+                    </div>
+                  </span>
                   <span
                     class="p-1"
                   >
@@ -4996,20 +5010,6 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   class="inline-flex space-x-1 align-middle"
                   data-testid="TransactionRowInfo"
                 >
-                  <span
-                    class="p-1"
-                  >
-                    <div
-                      class="sc-bdfBwQ gzOUUk"
-                      data-testid="TransactionRowInfo__multiSignature"
-                      height="14"
-                      width="22"
-                    >
-                      <svg>
-                        multisig.svg
-                      </svg>
-                    </div>
-                  </span>
                   <span
                     class="p-1"
                   >
