@@ -637,12 +637,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-121-menu"
+                                          aria-owns="downshift-113-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-120-input"
-                                            id="downshift-121-label"
+                                            for="downshift-112-input"
+                                            id="downshift-113-label"
                                           />
                                           <div
                                             class="InputGroup-sc-1obbdqe-3 bgPpWR"
@@ -650,22 +650,22 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-121-menu"
-                                              aria-labelledby="downshift-121-label"
+                                              aria-controls="downshift-113-menu"
+                                              aria-labelledby="downshift-113-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-120-input"
+                                              id="downshift-112-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-121-label"
+                                            aria-labelledby="downshift-113-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-121-menu"
+                                            id="downshift-113-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -2489,12 +2489,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-43-menu"
+                                          aria-owns="downshift-41-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-42-input"
-                                            id="downshift-43-label"
+                                            for="downshift-40-input"
+                                            id="downshift-41-label"
                                           />
                                           <div
                                             class="InputGroup-sc-1obbdqe-3 bgPpWR"
@@ -2502,21 +2502,21 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-43-menu"
-                                              aria-labelledby="downshift-43-label"
+                                              aria-controls="downshift-41-menu"
+                                              aria-labelledby="downshift-41-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-42-input"
+                                              id="downshift-40-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-43-label"
+                                            aria-labelledby="downshift-41-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-43-menu"
+                                            id="downshift-41-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -3398,12 +3398,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-65-menu"
+                                          aria-owns="downshift-61-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-64-input"
-                                            id="downshift-65-label"
+                                            for="downshift-60-input"
+                                            id="downshift-61-label"
                                           />
                                           <div
                                             class="InputGroup-sc-1obbdqe-3 bgPpWR"
@@ -3411,21 +3411,21 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-65-menu"
-                                              aria-labelledby="downshift-65-label"
+                                              aria-controls="downshift-61-menu"
+                                              aria-labelledby="downshift-61-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-64-input"
+                                              id="downshift-60-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-65-label"
+                                            aria-labelledby="downshift-61-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-65-menu"
+                                            id="downshift-61-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -4472,7 +4472,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 disabled=""
                 name="fee"
                 type="text"
-                value="0"
+                value=""
               />
             </div>
           </div>
@@ -6916,12 +6916,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-147-menu"
+                                          aria-owns="downshift-137-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-146-input"
-                                            id="downshift-147-label"
+                                            for="downshift-136-input"
+                                            id="downshift-137-label"
                                           />
                                           <div
                                             class="InputGroup-sc-1obbdqe-3 bgPpWR"
@@ -6929,21 +6929,21 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-147-menu"
-                                              aria-labelledby="downshift-147-label"
+                                              aria-controls="downshift-137-menu"
+                                              aria-labelledby="downshift-137-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-146-input"
+                                              id="downshift-136-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-147-label"
+                                            aria-labelledby="downshift-137-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-147-menu"
+                                            id="downshift-137-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -7815,12 +7815,12 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-95-menu"
+                                          aria-owns="downshift-89-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-94-input"
-                                            id="downshift-95-label"
+                                            for="downshift-88-input"
+                                            id="downshift-89-label"
                                           />
                                           <div
                                             class="InputGroup-sc-1obbdqe-3 bgPpWR"
@@ -7828,22 +7828,22 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-95-menu"
-                                              aria-labelledby="downshift-95-label"
+                                              aria-controls="downshift-89-menu"
+                                              aria-labelledby="downshift-89-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-94-input"
+                                              id="downshift-88-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-95-label"
+                                            aria-labelledby="downshift-89-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-95-menu"
+                                            id="downshift-89-menu"
                                             role="listbox"
                                           />
                                         </div>
