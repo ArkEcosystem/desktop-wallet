@@ -29,6 +29,7 @@ type Props = {
 	onEnable?: () => void;
 	onDisable?: () => void;
 	onUpdate?: () => void;
+	updatingStats?: any;
 };
 
 export const PluginHeader = ({
@@ -39,6 +40,7 @@ export const PluginHeader = ({
 	onEnable,
 	onDisable,
 	onUpdate,
+	updatingStats,
 	...props
 }: Props) => {
 	const { t } = useTranslation();
@@ -121,7 +123,13 @@ export const PluginHeader = ({
 	return (
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<PluginImage logoURL={props.logo} className="w-40" updatingProgress={42} />
+				<PluginImage
+					logoURL={props.logo}
+					className="w-40"
+					isUpdating={updatingStats?.percent !== undefined}
+					updatingProgress={updatingStats?.percent}
+					showUpdatingLabel
+				/>
 
 				<div className="flex flex-col justify-between pl-8 space-y-3 w-full">
 					<div className="flex justify-between items-center">

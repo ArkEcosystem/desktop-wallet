@@ -25,6 +25,8 @@ export const PluginDetails = () => {
 		reportPlugin,
 		trigger,
 		mapConfigToPluginData,
+		updatePlugin,
+		updatingStats,
 	} = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
@@ -99,6 +101,8 @@ export const PluginDetails = () => {
 						pluginCtrl?.disable(activeProfile);
 						trigger();
 					}}
+					onUpdate={() => updatePlugin(pluginData.name)}
+					updatingStats={updatingStats?.[pluginData.name]}
 					hasLaunch={hasLaunch}
 					onLaunch={handleLaunch}
 				/>

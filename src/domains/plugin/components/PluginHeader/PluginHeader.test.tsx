@@ -26,6 +26,14 @@ describe("PluginHeader", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render updating plugin", () => {
+		const onInstall = jest.fn();
+		const { container } = render(<PluginHeader {...pluginDataFixture} updatingStats={{ percent: 0.2 }} />);
+
+		expect(screen.getByTestId("PluginImage__updating")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should trigger update", () => {
 		const onUpdate = jest.fn();
 
