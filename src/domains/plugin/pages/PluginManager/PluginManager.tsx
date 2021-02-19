@@ -195,7 +195,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
-	console.log({ updatingStats });
+
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 	const hasUpdateAvailableCount = allPlugins
 		.map(mapConfigToPluginData.bind(null, activeProfile))
