@@ -134,6 +134,7 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 			statusCode,
 			{
 				"access-control-allow-origin": "*",
+				"access-control-allow-headers": "Content-Type",
 			},
 		);
 
@@ -243,6 +244,10 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 					url: request.url,
 					method: request.method,
 				};
+
+				if (request.method === "OPTIONS") {
+					return request;
+				}
 
 				if (request.method === "POST") {
 					mock.body = request.body.toString();
