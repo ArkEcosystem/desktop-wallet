@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
@@ -27,50 +27,50 @@ export const SendTransactionForm = ({
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
+	const [dynamicFees, setDynamicFees] = useState(false);
+
 	const { findByType } = useFees();
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
 	const { network, senderAddress } = watch();
 
-	const [fees, setFees] = useState<Contracts.TransactionFee>({
-		static: "5",
-		min: "0",
-		avg: "1",
-		max: "2",
-	});
-
-	// getValues does not get the value of `defaultValues` on first render
-	const [defaultFee] = useState(() => watch("fee"));
-	const fee = getValues("fee") || defaultFee;
+	const { fee, fees } = watch();
 
 	useEffect(() => {
-		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
-		const senderWallet = profile.wallets().findByAddress(senderAddress);
+		const setTransactionFees = async (network: Coins.Network) => {
+			const transactionFees = await findByType(network.coin(), network.id(), transactionType);
 
-		const setTransactionFees = async (senderWallet: ReadWriteWallet) => {
-			const transactionFees = await findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
-
-			setFees(transactionFees);
 			setValue("fees", transactionFees);
-			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
+
+			if (!getValues("fee")) {
+				setValue("fee", transactionFees.avg !== "0" ? transactionFees.avg : transactionFees.static, {
+					shouldValidate: true,
+					shouldDirty: true,
+				});
+			}
 		};
 
-		if (senderWallet) {
-			setTransactionFees(senderWallet);
-		}
-	}, [setFees, setValue, profile, senderAddress, transactionType, findByType]);
-
-	useEffect(() => {
 		if (network) {
+			setTransactionFees(network);
+			setDynamicFees(network.can(Coins.FeatureFlag.MiscellaneousDynamicFees));
+
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
 
 		setWallets(profile.wallets().values());
-	}, [network, profile]);
+	}, [findByType, getValues, network, profile, setValue, transactionType]);
 
-	const onSelectSender = (address: any) => {
-		setValue("senderAddress", address, { shouldValidate: true, shouldDirty: true });
+	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
+		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
+			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
+		}
+
+		setValue("network", selectedNetwork);
+	};
+
+	const handleSelectSender = (address: any) => {
+		setValue("senderAddress", address, { shouldValidate: false, shouldDirty: true });
 	};
 
 	useEffect(() => {
@@ -86,32 +86,26 @@ export const SendTransactionForm = ({
 
 	return (
 		<div className="space-y-8 SendTransactionForm">
-			<FormField name="network" className="relative">
-				<div className="mb-2">
-					<FormLabel label={t("COMMON.CRYPTOASSET")} />
-				</div>
+			<FormField name="network">
+				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="SendTransactionForm__network"
 					networks={availableNetworks}
 					selected={network}
 					disabled={hasWalletId && !!senderAddress}
-					onSelect={(selectedNetwork: Coins.Network | null | undefined) =>
-						setValue("network", selectedNetwork)
-					}
+					onSelect={handleSelectNetwork}
 				/>
 			</FormField>
 
-			<FormField name="senderAddress" className="relative">
-				<div className="mb-2">
-					<FormLabel label={t("TRANSACTION.SENDER")} />
-				</div>
+			<FormField name="senderAddress">
+				<FormLabel label={t("TRANSACTION.SENDER")} />
 
 				<div data-testid="sender-address">
 					<SelectAddress
 						address={senderAddress}
 						wallets={wallets}
 						disabled={wallets.length === 0}
-						onChange={onSelectSender}
+						onChange={handleSelectSender}
 					/>
 				</div>
 			</FormField>
@@ -121,12 +115,12 @@ export const SendTransactionForm = ({
 			<FormField name="fee">
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
-					min={fees.min}
-					avg={fees.avg}
-					max={fees.max}
-					defaultValue={fee}
+					min={fees?.min}
+					avg={fees?.avg}
+					max={fees?.max}
 					value={fee}
 					step={0.01}
+					showFeeOptions={dynamicFees}
 					onChange={(currency) => {
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 					}}

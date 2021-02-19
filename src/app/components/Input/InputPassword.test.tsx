@@ -1,7 +1,7 @@
+import { FormFieldProvider } from "app/components/Form/useFormField";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
-import { FormFieldProvider } from "../Form/useFormField";
 import { InputPassword } from "./InputPassword";
 
 describe("InputPassword", () => {

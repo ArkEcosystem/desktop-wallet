@@ -334,7 +334,12 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 								</Button>
 							</div>
 
-							<Button data-testid="WalletHeader__send-button" className="my-auto" onClick={onSend}>
+							<Button
+								data-testid="WalletHeader__send-button"
+								disabled={wallet.balance().isZero()}
+								className="my-auto"
+								onClick={onSend}
+							>
 								{t("COMMON.SEND")}
 							</Button>
 
@@ -355,14 +360,9 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				</div>
 			</header>
 
-			<SignMessage
-				profileId={profile.id()}
-				walletId={wallet.id()}
-				signatoryAddress={wallet.address()}
-				isOpen={modal === "sign-message"}
-				onClose={() => setModal(undefined)}
-				onCancel={() => setModal(undefined)}
-			/>
+			{modal === "sign-message" && (
+				<SignMessage isOpen={true} onClose={() => setModal(undefined)} onCancel={() => setModal(undefined)} />
+			)}
 
 			<VerifyMessage
 				isOpen={modal === "verify-message"}

@@ -3,6 +3,8 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
+import { translations as dashboardTranslations } from "domains/dashboard/i18n";
+import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -15,7 +17,6 @@ import {
 	renderWithRouter,
 	syncDelegates,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { Wallets } from "./Wallets";
@@ -244,7 +245,7 @@ describe("Wallets", () => {
 			return { unsubscribe };
 		});
 
-		const { asFragment, getByTestId, getByText, queryByTestId, getAllByRole } = renderWithRouter(
+		const { asFragment, getByTestId, getByText, queryByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<LedgerProvider transport={transport}>
 					<Wallets />
@@ -257,29 +258,35 @@ describe("Wallets", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByText("Import Ledger"));
+			fireEvent.click(getByText(dashboardTranslations.WALLET_CONTROLS.IMPORT_LEDGER));
 		});
 
-		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(getByText(walletTranslations.MODAL_LEDGER_WALLET.CONNECT_DEVICE)).toBeInTheDocument(),
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		await waitFor(() => expect(queryByTestId("LedgerWaitingDevice-description")).not.toBeInTheDocument());
+		await waitFor(() =>
+			expect(queryByText(walletTranslations.MODAL_LEDGER_WALLET.CONNECT_DEVICE)).not.toBeInTheDocument(),
+		);
 
 		act(() => {
-			fireEvent.click(getByText("Import Ledger"));
+			fireEvent.click(getByText(dashboardTranslations.WALLET_CONTROLS.IMPORT_LEDGER));
 		});
 
-		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+		await waitFor(() =>
+			expect(getByText(walletTranslations.MODAL_LEDGER_WALLET.CONNECT_DEVICE)).toBeInTheDocument(),
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 		listenSpy.mockReset();
 	});
 
 	it("should handle list wallet click", () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
 			</Route>,
@@ -295,7 +302,7 @@ describe("Wallets", () => {
 		});
 
 		act(() => {
-			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()!));
+			fireEvent.click(getByText(wallets[0].alias()!));
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);

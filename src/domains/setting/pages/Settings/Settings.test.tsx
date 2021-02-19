@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
 import { toasts } from "app/services";
 import electron from "electron";
@@ -111,9 +111,16 @@ describe("Settings", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "t" } });
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
+
 		// Toggle Advanced Mode
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
@@ -149,7 +156,7 @@ describe("Settings", () => {
 	});
 
 	it("should not update profile if profile name exists", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -158,25 +165,109 @@ describe("Settings", () => {
 			},
 		);
 
-		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "J" } });
+		const otherProfile = env
+			.profiles()
+			.values()
+			.filter((el: Profile) => el.id() !== profile.id())[0];
 
-		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__submit-button"));
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), {
+				target: { value: otherProfile.settings().get(ProfileSetting.Name) },
+			});
 		});
 
-		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
 
-		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__submit-button"));
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
 		});
 
-		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "Jane Doe" } });
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+	});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("General-settings__submit-button"));
+	it("should not update profile if profile name exists (uppercase)", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		const otherProfile = env
+			.profiles()
+			.values()
+			.filter((el: Profile) => el.id() !== profile.id())[0];
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), {
+				target: { value: otherProfile.settings().get(ProfileSetting.Name).toUpperCase() },
+			});
 		});
 
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+	});
+
+	it("should not update profile if profile name is too long", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), {
+				target: { value: "test profile".repeat(10) },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+	});
+
+	it("should not update profile if profile name exists (padded)", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		const otherProfile = env
+			.profiles()
+			.values()
+			.filter((el: Profile) => el.id() !== profile.id())[0];
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), {
+				target: { value: `  ${otherProfile.settings().get(ProfileSetting.Name)}  ` },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
+
+		act(() => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 	});
 
 	it.each([
@@ -674,102 +765,6 @@ describe("Settings", () => {
 		});
 
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PLUGINS.SUCCESS);
-	});
-
-	it("should open & close modals in the plugin settings", async () => {
-		const { container, asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-		act(() => {
-			fireEvent.click(getByTestId("side-menu__item--Plugins"));
-		});
-		expect(asFragment()).toMatchSnapshot();
-
-		// Open `BlacklistPlugins` modal
-		act(() => {
-			fireEvent.click(getByTestId("plugins__open-list"));
-		});
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-		// Open `AddBlacklistPlugin` modal
-		act(() => {
-			fireEvent.click(getByTestId("plugins__add-plugin"));
-		});
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-	});
-
-	it("should add a plugin to the blacklist", async () => {
-		const { container, getByTestId, getAllByTestId, getAllByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getByTestId("side-menu__item--Plugins"));
-		});
-
-		// Open `AddBlacklistPlugin` modal
-		await waitFor(() => expect(getByTestId("plugins__add-plugin")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("plugins__add-plugin"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
-
-		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(7));
-
-		const addButton = getAllByText("Add")[0];
-		await waitFor(() => expect(addButton).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(addButton);
-		});
-
-		await waitFor(() => expect(getByTestId("modal__close-btn")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-		// Open `BlacklistPlugins` modal
-		act(() => {
-			fireEvent.click(getByTestId("plugins__open-list"));
-		});
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE);
-
-		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 	});
 
 	it("should render password settings", async () => {

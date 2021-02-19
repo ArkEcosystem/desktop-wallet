@@ -72,7 +72,11 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				await retry(connectFn, retryOptions);
 				dispatch({ type: "connected" });
 			} catch (connectError) {
-				instance.ledger().disconnect();
+				try {
+					await instance.ledger().disconnect();
+				} catch {
+					//
+				}
 				dispatch({ type: "failed", message: connectError.message });
 				throw connectError;
 			}

@@ -66,11 +66,9 @@ export const Wallets = ({
 		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
 	};
 
-	const onLedgerModalClose = (hasDeviceAvailable: boolean) => {
+	const handleDeviceAvailable = () => {
 		setIsWaitingLedger(false);
-		if (hasDeviceAvailable) {
-			onImportLedgerWallet?.();
-		}
+		onImportLedgerWallet?.();
 	};
 
 	return (
@@ -100,6 +98,7 @@ export const Wallets = ({
 				/>
 
 				<WalletsList
+					isLoading={isLoading && walletsCount === 0}
 					isVisible={viewType === "list"}
 					wallets={listWallets}
 					hasMore={listHasMore}
@@ -108,7 +107,13 @@ export const Wallets = ({
 				/>
 			</div>
 
-			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}
+			{isWaitingLedger && (
+				<LedgerWaitingDevice
+					isOpen={true}
+					onDeviceAvailable={handleDeviceAvailable}
+					onClose={() => setIsWaitingLedger(false)}
+				/>
+			)}
 		</Section>
 	);
 };

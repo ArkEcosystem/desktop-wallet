@@ -88,9 +88,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	FEES: {
-		MIN: "Min",
+		SLOW: "Slow",
 		AVERAGE: "Average",
-		MAX: "Max",
+		FAST: "Fast",
 	},
 
 	TRANSACTION_TYPES: {
@@ -191,6 +191,7 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION:
 			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
 		LOADING_MESSAGE: "Waiting for confirmation …",
+		REJECTED: "The operation was rejected by the user",
 	},
 
 	LINK_TYPES: {

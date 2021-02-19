@@ -83,6 +83,8 @@ export const defaultNetMocks = () => {
 
 	// devnet
 	nock("https://dwallets.ark.io")
+		.get("/api/blockchain")
+		.reply(200, require("../tests/fixtures/coins/ark/devnet/blockchain.json"))
 		.get("/api/node/configuration")
 		.reply(200, require("../tests/fixtures/coins/ark/devnet/configuration.json"))
 		.get("/api/peers")
@@ -132,6 +134,11 @@ export const defaultNetMocks = () => {
 	nock("https://min-api.cryptocompare.com")
 		.get("/data/dayAvg?fsym=DARK&tsym=BTC&toTs=1593561600")
 		.reply(200, require("tests/fixtures/exchange/cryptocompare.json"))
+		.persist();
+
+	nock("https://raw.githubusercontent.com")
+		.get("/ArkEcosystem/common/master/desktop-wallet/whitelist.json")
+		.reply(200, require("tests/fixtures/plugins/whitelist.json"))
 		.persist();
 
 	for (const pluginName of pluginNames) {

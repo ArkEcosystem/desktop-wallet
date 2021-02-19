@@ -40,9 +40,8 @@ export const Wrapper = styled.div<{ position?: string; variant: string }>(getSty
 const isOptionGroup = (options: DropdownOption | DropdownOptionGroup) =>
 	(options as DropdownOptionGroup).key !== undefined;
 
-const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGroup, onSelect: any) => {
-	console.log("key", key);
-	return (
+const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGroup, onSelect: any) =>
+	options.length ? (
 		<div key={key} className="mt-4 first:mt-0">
 			{hasDivider && (
 				<div className="mx-8 -my-2">
@@ -51,18 +50,17 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 			)}
 			<ul>
 				{title && (
-					<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500">
+					<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500">
 						{title}
 					</li>
 				)}
 				{renderOptions(options, onSelect, key)}
 			</ul>
 		</div>
-	);
-};
+	) : null;
 
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
-	if (options[0] && isOptionGroup(options[0])) {
+	if (options.length && isOptionGroup(options[0])) {
 		return (
 			<div className="pt-5 pb-1">
 				{(options as DropdownOptionGroup[]).map((optionGroup: DropdownOptionGroup) =>

@@ -73,7 +73,7 @@ describe("SelectRecipient", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[profile.wallets().values().length];
 		act(() => {
 			fireEvent.click(firstAddress);
 		});
@@ -83,7 +83,7 @@ describe("SelectRecipient", () => {
 		});
 
 		await waitFor(() =>
-			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+			expect(getByTestId("SelectDropdownInput__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			),
 		);
@@ -109,13 +109,13 @@ describe("SelectRecipient", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<SelectRecipient profile={profile} onChange={fn} />);
 		const address = "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT";
-		const recipientInputField = getByTestId("SelectRecipient__input");
+		const recipientInputField = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			fireEvent.change(recipientInputField, { target: { value: address } });
 		});
 
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(address);
+		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(address);
 		expect(fn).toBeCalledWith(address);
 	});
 
@@ -136,7 +136,7 @@ describe("SelectRecipient", () => {
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[profile.wallets().values().length];
 
 		act(() => {
 			fireEvent.click(firstAddress);
@@ -146,7 +146,29 @@ describe("SelectRecipient", () => {
 
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
 		expect(fn).toBeCalledWith(selectedAddressValue);
+	});
+
+	it("should filter recipients list by network if provided", async () => {
+		const fn = jest.fn();
+
+		const coin = await env.coin("ARK", "ark.mainnet");
+
+		const { getByTestId, getAllByTestId } = render(
+			<SelectRecipient
+				profile={profile}
+				onChange={fn}
+				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
+				network={coin.network()}
+			/>,
+		);
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
+			expect(() => getAllByTestId("RecipientListItem__select-button").toThrow());
+		});
 	});
 });

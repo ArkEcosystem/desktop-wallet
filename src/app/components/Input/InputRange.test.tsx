@@ -10,6 +10,7 @@ const properties = {
 	avg: "0",
 	step: 1,
 };
+
 describe("InputRange", () => {
 	it("should render with default value", async () => {
 		const { asFragment, getByTestId } = render(<InputRange {...properties} />);
@@ -18,6 +19,14 @@ describe("InputRange", () => {
 			expect(getByTestId("InputCurrency")).toHaveValue("5");
 			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "5");
 		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render when disabled", async () => {
+		const { asFragment, getByTestId } = render(<InputRange {...properties} disabled={true} />);
+
+		await waitFor(() => expect(() => getByTestId("Range")).toThrowError(/Unable to find/));
 
 		expect(asFragment()).toMatchSnapshot();
 	});

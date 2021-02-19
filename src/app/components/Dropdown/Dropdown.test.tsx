@@ -247,6 +247,31 @@ describe("Dropdown", () => {
 
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render without options one", () => {
+		const primaryOptions: DropdownOptionGroup = {
+			key: "primary",
+			title: "Primary Options 1",
+			options: [],
+		};
+
+		const secondaryOptions: DropdownOptionGroup = {
+			key: "secondary",
+			hasDivider: true,
+			title: "Secondary Options 1",
+			options: [],
+		};
+		const { getByTestId, container } = render(
+			<Dropdown options={[primaryOptions, secondaryOptions]} position="top-right" />,
+		);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
 });
 
 describe("ClickOutside Hook", () => {

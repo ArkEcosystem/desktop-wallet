@@ -127,8 +127,15 @@ export const AddRecipient = ({
 	}, [recipients, withDeeplink]);
 
 	useEffect(() => {
+		if (network && recipientAddress) {
+			trigger("recipientAddress");
+		}
+	}, [network, recipientAddress, trigger]);
+
+	useEffect(() => {
 		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
 		register("displayAmount");
+		register("recipientAddress", sendTransfer.recipientAddress(network, addedRecipients, isSingle));
 	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle]);
 
 	useEffect(() => {
@@ -152,7 +159,9 @@ export const AddRecipient = ({
 	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
 	useEffect(() => {
-		setValue("isSendAllSelected", isSingle);
+		if (!isSingle) {
+			setValue("isSendAllSelected", false);
+		}
 	}, [isSingle, setValue]);
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
@@ -222,9 +231,9 @@ export const AddRecipient = ({
 							}
 						/>
 						<SelectRecipient
+							network={network}
 							disabled={!isSenderFilled}
 							address={recipientAddress}
-							ref={register(sendTransfer.recipientAddress(network, addedRecipients, isSingle))}
 							profile={profile}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
@@ -241,6 +250,7 @@ export const AddRecipient = ({
 							placeholder={t("COMMON.AMOUNT")}
 							value={getValues("displayAmount") || recipientsAmount}
 							onChange={(currency) => {
+								setValue("isSendAllSelected", false);
 								setValue("displayAmount", currency.display);
 								setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(currency.value, recipientAddress);
@@ -298,6 +308,7 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
+						network={network}
 						recipients={addedRecipients}
 						isEditable={true}
 						onRemove={handleRemoveRecipient}

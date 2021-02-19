@@ -1,7 +1,5 @@
-import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
-import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { LayoutControls } from "app/components/LayoutControls";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
@@ -9,7 +7,7 @@ import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginsCategoryProps = {
@@ -25,14 +23,8 @@ type PluginsProps = {
 };
 
 const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
-	const activeProfile = useActiveProfile();
-	const [blacklist, setBlacklist] = useState<any>([]);
-
-	useEffect(() => {
-		setBlacklist(Array.from(activeProfile.plugins().blacklist()));
-	}, [activeProfile]);
-
 	const plugins = [];
+
 	for (let i = 0; i < 4; i++) {
 		plugins.push({
 			id: i,
@@ -61,21 +53,19 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 		});
 	}
 
-	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
-
 	return (
 		<div>
 			<div data-testid="PluginsCategory__plugins">
 				{viewType === "grid" && (
 					<PluginGrid
-						plugins={pluginList}
+						plugins={plugins}
 						onSelect={() => console.log("selected")}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
 				)}
 			</div>
 		</div>
@@ -114,15 +104,6 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 									extra={<SearchBarPluginFilters />}
 								/>
 								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-								<Button
-									onClick={() => setInstallPlugin(true)}
-									data-testid="PluginsCategory_header--install"
-								>
-									<div className="flex items-center space-x-2 whitespace-nowrap">
-										<Icon name="File" width={15} height={15} />
-										<span>Install File</span>
-									</div>
-								</Button>
 							</div>
 						}
 					/>
@@ -153,6 +134,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 			</Page>
 
 			<InstallPlugin
+				plugin={{}}
 				isOpen={installPlugin}
 				onClose={() => setInstallPlugin(false)}
 				onCancel={() => setInstallPlugin(false)}

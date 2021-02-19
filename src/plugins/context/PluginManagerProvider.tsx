@@ -118,6 +118,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 						title: config.alias(),
 						permissions: config.permissions(),
 						images: config.images(),
+						minimumVersion: config.minimumVersion(),
 					},
 				}),
 			);
@@ -136,14 +137,14 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
-	const installPlugin = useCallback(
+	const downloadPlugin = useCallback(
 		async (name: string, repositoryURL?: string) => {
 			let realRepositoryURL = repositoryURL;
 
 			/* istanbul ignore next */
 			if (!realRepositoryURL) {
 				const config = pluginPackages.find((pkg) => pkg.name() === name);
-				const source = config!.get<{ url: string }>("sourceProvider");
+				const source = config?.get<{ url: string }>("sourceProvider");
 
 				if (!source?.url) {
 					throw new Error(`The repository of the plugin "${name}" could not be found.`);
@@ -154,12 +155,22 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
-			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
-			await loadPlugin(savedDir);
+			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl });
+
+			return savedDir;
+		},
+		[pluginPackages],
+	);
+
+	const installPlugin = useCallback(
+		async (savedPath, pluginId) => {
+			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name: pluginId });
+
+			await loadPlugin(pluginPath);
 
 			trigger();
 		},
-		[pluginPackages, loadPlugin, trigger],
+		[loadPlugin, trigger],
 	);
 
 	const fetchLatestPackageConfiguration = useCallback(async (repositoryURL: string) => {
@@ -182,6 +193,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	return {
 		pluginRegistry,
 		fetchPluginPackages,
+		downloadPlugin,
 		installPlugin,
 		isFetchingPackages,
 		pluginPackages,
