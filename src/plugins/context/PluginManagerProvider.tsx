@@ -250,7 +250,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 					setUpdatingStats((prev) => ({ ...prev, [name]: { completed: true, failed: false } }));
 				}, 1500);
 			} catch (e) {
-				console.error(e);
 				setUpdatingStats((prev) => ({ ...prev, [name]: { failed: true } }));
 			}
 		},

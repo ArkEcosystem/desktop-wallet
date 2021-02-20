@@ -342,6 +342,7 @@ describe("PluginManagerProvider", () => {
 	});
 
 	it("should update plugin", async () => {
+		jest.useFakeTimers();
 		const plugin = new PluginController(
 			{
 				name: "@dated/transaction-export-plugin",
@@ -365,7 +366,11 @@ describe("PluginManagerProvider", () => {
 
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					config: {
+						name: "@dated/transaction-export-plugin",
+						version: "0.0.1",
+						keywords: ["@arkecosystem", "desktop-wallet"],
+					},
 					source: () => void 0,
 					sourcePath: "/plugins/test-plugin/index.js",
 					dir: "/plugins/test-plugin",
@@ -406,7 +411,7 @@ describe("PluginManagerProvider", () => {
 
 		await waitFor(() => expect(screen.getByText("Update Available")).toBeInTheDocument());
 
-		fireEvent.click(screen.getByText("Update"));
+		fireEvent.click(screen.getAllByText("Update")[0]);
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenCalledWith("plugin:download", {
@@ -422,9 +427,10 @@ describe("PluginManagerProvider", () => {
 			}),
 		);
 
-		await waitFor(() => expect(manager.plugins().findById("test-plugin")).toBeTruthy());
+		await waitFor(() => expect(manager.plugins().findById("@dated/transaction-export-plugin")).toBeTruthy());
 
 		ipcRendererSpy.mockRestore();
 		onSpy.mockRestore();
+		jest.useRealTimers();
 	});
 });

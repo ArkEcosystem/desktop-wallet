@@ -114,7 +114,7 @@ export class PluginControllerRepository {
 		for (const [pluginId, plugin] of Object.entries(plugins)) {
 			const currentIndex = this.#plugins.findIndex((item) => item.config().id() === pluginId);
 			// Update existing plugin configuration
-			if (currentIndex > 0) {
+			if (currentIndex >= 0) {
 				this.#plugins[currentIndex] = plugin;
 				delete plugins[pluginId];
 			}
