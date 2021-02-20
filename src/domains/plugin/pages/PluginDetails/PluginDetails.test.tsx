@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { ipcRenderer } from "electron";
 import nock from "nock";
 import {
@@ -485,5 +486,65 @@ describe("PluginDetails", () => {
 		const toastSpy = jest.spyOn(toasts, "error");
 
 		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+	});
+
+	it("should update package", async () => {
+		jest.useFakeTimers();
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockRejectedValue("Failed");
+
+		const plugin = new PluginController(
+			{
+				name: "@dated/transaction-export-plugin",
+				version: "1.0.0",
+				"desktop-wallet": { minimumVersion: "4.0.0" },
+			},
+			() => void 0,
+		);
+		manager.plugins().push(plugin);
+
+		nock("https://registry.npmjs.com")
+			.get("/-/v1/search")
+			.query((params) => params.from === "0")
+			.once()
+			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+			.get("/-/v1/search")
+			.query((params) => params.from === "250")
+			.once()
+			.reply(200, {})
+			.persist();
+
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.persist();
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=@dated/transaction-export-plugin`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+
+		await waitFor(() => expect(screen.getByText(commonTranslations.UPDATE)).toBeInTheDocument());
+		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
+
+		await waitFor(() => expect(ipcRendererSpy).toHaveBeenCalled());
+
+		expect(container).toMatchSnapshot();
+		jest.useRealTimers();
 	});
 });

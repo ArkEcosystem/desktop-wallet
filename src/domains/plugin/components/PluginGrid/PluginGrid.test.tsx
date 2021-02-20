@@ -146,6 +146,23 @@ describe("PluginGrid", () => {
 		expect(onSelect).toHaveBeenCalledTimes(1);
 	});
 
+	it("should trigger update", () => {
+		const onUpdate = jest.fn();
+
+		render(
+			<PluginGrid
+				plugins={[{ ...plugins[0], isInstalled: true, hasUpdateAvailable: true }]}
+				onSelect={jest.fn()}
+				onUpdate={onUpdate}
+			/>,
+		);
+
+		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
+		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger delete", () => {
 		const onDelete = jest.fn();
 
