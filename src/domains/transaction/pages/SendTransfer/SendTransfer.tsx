@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
@@ -12,6 +12,7 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { FeeWarning, FeeWarningVariant } from "domains/transaction/components/FeeWarning";
 import { useTransaction } from "domains/transaction/hooks/use-transaction";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import { isMnemonicError } from "domains/transaction/utils";
@@ -34,6 +35,9 @@ export const SendTransfer = () => {
 	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+
+	const [requireFeeConfirmation, setRequireFeeConfirmation] = useState<FeeWarningVariant | undefined>();
+	const [showFeeWarning, setShowFeeWarning] = useState(false);
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -73,6 +77,8 @@ export const SendTransfer = () => {
 
 		register("remainingBalance");
 		register("isSendAllSelected");
+
+		register("noWarnings");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
 
 	useEffect(() => {
@@ -81,6 +87,26 @@ export const SendTransfer = () => {
 			setWallet(wallet);
 		}
 	}, [activeProfile, hasWalletId, senderAddress]);
+
+	useEffect(() => {
+		if (!fee) {
+			return;
+		}
+
+		const value = BigNumber.make(fee);
+
+		if (value.isLessThan(fees?.min)) {
+			setRequireFeeConfirmation(FeeWarningVariant.Low);
+		}
+
+		if (value.isGreaterThan(fees?.static)) {
+			setRequireFeeConfirmation(FeeWarningVariant.High);
+		}
+
+		if (value.isGreaterThanOrEqualTo(fees?.min) && value.isLessThanOrEqualTo(fees?.static)) {
+			setRequireFeeConfirmation(undefined);
+		}
+	}, [fee, fees]);
 
 	useEffect(() => {
 		if (!state) {
@@ -199,10 +225,15 @@ export const SendTransfer = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = async () => {
+	const handleNext = async (event?: React.MouseEvent, suppressWarning?: boolean) => {
 		abortRef.current = new AbortController();
 
 		const newIndex = activeTab + 1;
+
+		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
 		// Skip authorization step
@@ -216,6 +247,17 @@ export const SendTransfer = () => {
 		}
 
 		setActiveTab(newIndex);
+	};
+
+	const handleFeeWarningConfirm = async (suppressWarning: boolean) => {
+		setShowFeeWarning(false);
+
+		if (suppressWarning) {
+			activeProfile.settings().set(ProfileSetting.DoNotShowFeeWarning, true);
+			await env.persist();
+		}
+
+		handleNext(undefined, true);
 	};
 
 	const crumbs: Crumb[] = [
@@ -355,6 +397,13 @@ export const SendTransfer = () => {
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={requireFeeConfirmation}
+						onCancel={() => setShowFeeWarning(false)}
+						onConfirm={async (suppressWarning: boolean) => await handleFeeWarningConfirm(suppressWarning)}
+					/>
 
 					<ConfirmSendTransaction
 						unconfirmedTransactions={unconfirmedTransactions}

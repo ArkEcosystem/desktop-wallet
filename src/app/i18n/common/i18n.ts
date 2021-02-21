@@ -52,7 +52,6 @@ export const translations: { [key: string]: any } = {
 	DISCLAIMER: "Disclaimer",
 	DISABLE: "Disable",
 	DONE: "Done",
-	DONT_SHOW_AGAIN: "Don't show me this message again",
 	DOWNLOAD: "Download",
 	DOWNLOADED: "Downloaded",
 	DOWNLOADING: "Downloading",

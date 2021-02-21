@@ -137,8 +137,12 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_FEE_WARNING: {
 		TITLE: "Fee Warning",
-		DESCRIPTION:
-			"You have selected a fee that is set below statically set by the network. Block producers might not include your transaction in the block if it is set too low. Do you wish to continue?",
+		DESCRIPTION: {
+			TOO_LOW: "You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue?",
+			TOO_HIGH:
+				"You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue?",
+		},
+		DO_NOT_WARN: "Don’t warn me about fees again",
 	},
 
 	MODAL_TRANSFER_DETAIL: {

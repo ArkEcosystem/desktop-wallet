@@ -1,27 +1,31 @@
 import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
-import { Form, FormField } from "app/components/Form";
+import { FormField } from "app/components/Form";
 import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+
+export enum FeeWarningVariant {
+	Low = "LOW",
+	High = "HIGH",
+}
 
 type FeeWarningProps = {
 	isOpen: boolean;
+	variant?: FeeWarningVariant;
 	onCancel: () => void;
-	onConfirm: (doNotShowAgain: boolean) => void;
+	onConfirm: (suppressWarning: boolean) => void;
 };
 
-export const FeeWarning = ({ isOpen, onCancel, onConfirm }: FeeWarningProps) => {
+export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
 	const { t } = useTranslation();
 
-	const form = useForm({ mode: "onChange" });
-	const { register } = form;
+	const form = useFormContext();
+	const { register, watch } = form;
 
-	const handleSubmit = ({ doNotShowAgain }: any) => {
-		onConfirm(doNotShowAgain);
-	};
+	const suppressWarning = watch("suppressWarning");
 
 	return (
 		<Modal
@@ -31,34 +35,32 @@ export const FeeWarning = ({ isOpen, onCancel, onConfirm }: FeeWarningProps) => 
 			size="lg"
 			onClose={onCancel}
 		>
-			<Form context={form} onSubmit={handleSubmit} className="mt-8">
-				<div className="mt-8 mb-6 text-theme-secondary-text">
-					{t("TRANSACTION.MODAL_FEE_WARNING.DESCRIPTION")}
-				</div>
+			<div className="mt-8 mb-6 text-theme-secondary-text">
+				{t(`TRANSACTION.MODAL_FEE_WARNING.DESCRIPTION.TOO_${variant}`)}
+			</div>
 
-				<FormField name="doNotShowAgain">
-					<label className="flex items-center space-x-2">
-						<Checkbox
-							ref={register()}
-							name="doNotShowAgain"
-							data-testid="FeeWarning__doNotShowAgain-toggle"
-						/>
-						<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
-							{t("COMMON.DONT_SHOW_AGAIN")}
-						</span>
-					</label>
-				</FormField>
+			<FormField name="suppressWarning">
+				<label className="flex items-center space-x-2">
+					<Checkbox
+						ref={register()}
+						name="suppressWarning"
+						data-testid="FeeWarning__suppressWarning-toggle"
+					/>
+					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+						{t("TRANSACTION.MODAL_FEE_WARNING.DO_NOT_WARN")}
+					</span>
+				</label>
+			</FormField>
 
-				<div className="flex justify-end mt-8 space-x-3">
-					<Button variant="secondary" onClick={onCancel} data-testid="FeeWarning__cancel-button">
-						{t("COMMON.CANCEL")}
-					</Button>
+			<div className="flex justify-end mt-8 space-x-3">
+				<Button variant="secondary" onClick={onCancel} data-testid="FeeWarning__cancel-button">
+					{t("COMMON.CANCEL")}
+				</Button>
 
-					<Button type="submit" data-testid="FeeWarning__continue-button">
-						{t("COMMON.CONTINUE")}
-					</Button>
-				</div>
-			</Form>
+				<Button data-testid="FeeWarning__continue-button" onClick={() => onConfirm(suppressWarning)}>
+					{t("COMMON.CONTINUE")}
+				</Button>
+			</div>
 		</Modal>
 	);
 };
