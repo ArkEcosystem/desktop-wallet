@@ -1,14 +1,20 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { FormProvider, useForm } from "react-hook-form";
+import { fireEvent, render, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
-import { FeeWarning } from "./FeeWarning";
+import { FeeWarning, FeeWarningVariant } from "./FeeWarning";
 
 describe("FeeWarning", () => {
 	it("should not render if not open", () => {
+		const { result: form } = renderHook(() => useForm());
+
 		const { asFragment, getByTestId } = render(
-			<FeeWarning isOpen={false} onCancel={jest.fn()} onConfirm={jest.fn()} />,
+			<FormProvider {...form.current}>
+				<FeeWarning isOpen={false} onCancel={jest.fn()} onConfirm={jest.fn()} />
+			</FormProvider>,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -16,21 +22,36 @@ describe("FeeWarning", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(
-			<FeeWarning isOpen={true} onCancel={jest.fn()} onConfirm={jest.fn()} />,
-		);
+	it.each([FeeWarningVariant.Low, FeeWarningVariant.High])(
+		"should render a warning for a fee that is too %s",
+		(variant) => {
+			const { result: form } = renderHook(() => useForm());
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_FEE_WARNING.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_FEE_WARNING.DESCRIPTION);
+			const { asFragment, getByTestId } = render(
+				<FormProvider {...form.current}>
+					<FeeWarning isOpen={true} variant={variant} onCancel={jest.fn()} onConfirm={jest.fn()} />
+				</FormProvider>,
+			);
 
-		expect(asFragment()).toMatchSnapshot();
-	});
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_FEE_WARNING.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.MODAL_FEE_WARNING.DESCRIPTION[`TOO_${variant}`],
+			);
+
+			expect(asFragment()).toMatchSnapshot();
+		},
+	);
 
 	it("should call onCancel callback when closing the modal", () => {
+		const { result: form } = renderHook(() => useForm());
+
 		const onCancel = jest.fn();
 
-		const { getByTestId } = render(<FeeWarning isOpen={true} onCancel={onCancel} onConfirm={jest.fn()} />);
+		const { getByTestId } = render(
+			<FormProvider {...form.current}>
+				<FeeWarning isOpen={true} onCancel={onCancel} onConfirm={jest.fn()} />
+			</FormProvider>,
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
@@ -40,9 +61,15 @@ describe("FeeWarning", () => {
 	});
 
 	it("should call onCancel callback when clicking on cancel button", () => {
+		const { result: form } = renderHook(() => useForm());
+
 		const onCancel = jest.fn();
 
-		const { getByTestId } = render(<FeeWarning isOpen={true} onCancel={onCancel} onConfirm={jest.fn()} />);
+		const { getByTestId } = render(
+			<FormProvider {...form.current}>
+				<FeeWarning isOpen={true} onCancel={onCancel} onConfirm={jest.fn()} />
+			</FormProvider>,
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
@@ -53,14 +80,20 @@ describe("FeeWarning", () => {
 
 	it.each([true, false])(
 		"should pass %s to onConfirm callback when clicking on continue button",
-		(doNotShowAgain) => {
+		(suppressWarning) => {
+			const { result: form } = renderHook(() => useForm());
+
 			const onConfirm = jest.fn();
 
-			const { getByTestId } = render(<FeeWarning isOpen={true} onCancel={jest.fn()} onConfirm={onConfirm} />);
+			const { getByTestId } = render(
+				<FormProvider {...form.current}>
+					<FeeWarning isOpen={true} onCancel={jest.fn()} onConfirm={onConfirm} />
+				</FormProvider>,
+			);
 
-			if (doNotShowAgain) {
+			if (suppressWarning) {
 				act(() => {
-					fireEvent.click(getByTestId("FeeWarning__doNotShowAgain-toggle"));
+					fireEvent.click(getByTestId("FeeWarning__suppressWarning-toggle"));
 				});
 			}
 
@@ -69,7 +102,7 @@ describe("FeeWarning", () => {
 			});
 
 			waitFor(() => {
-				expect(onConfirm).toHaveBeenCalledWith(doNotShowAgain);
+				expect(onConfirm).toHaveBeenCalledWith(suppressWarning);
 			});
 		},
 	);
