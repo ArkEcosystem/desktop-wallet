@@ -44,8 +44,8 @@ const directories = {
 	"domains/exchange": {
 		branches: 100,
 		functions: 100,
-		lines: 97.96,
-		statements: 97.96,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/network": {
 		branches: 100,
