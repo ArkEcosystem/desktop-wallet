@@ -213,7 +213,7 @@ export const SendTransfer = () => {
 		if (
 			newIndex === 3 &&
 			!suppressWarning &&
-			// !activeProfile.settings().get(ProfileSetting.DoNotShowFeeWarning) &&
+			!activeProfile.settings().get(ProfileSetting.DoNotShowFeeWarning) &&
 			requireFeeConfirmation
 		) {
 			return setShowFeeWarning(true);
