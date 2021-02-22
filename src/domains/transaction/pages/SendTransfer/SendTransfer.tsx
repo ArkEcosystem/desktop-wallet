@@ -253,7 +253,7 @@ export const SendTransfer = () => {
 			await env.persist();
 		}
 
-		handleNext(true);
+		await handleNext(true);
 	};
 
 	const crumbs: Crumb[] = [
