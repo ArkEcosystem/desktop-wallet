@@ -1,5 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { useEnvironmentContext } from "app/contexts";
+import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useEffect, useMemo } from "react";
 import React from "react";
 import { useParams } from "react-router-dom";
@@ -9,7 +9,8 @@ import { useSentryContext } from "./SentryProvider";
 export const SentryRouterWrapper = ({ children }: { children: React.ReactNode }) => {
 	const { env } = useEnvironmentContext();
 	const { profileId, walletId } = useParams();
-	const { initSentry, stopSentry, setWalletContext } = useSentryContext();
+	const { initSentry, stopSentry, setWalletContext, setLedgerContext } = useSentryContext();
+	const { isConnected, isAwaitingConnection, hasDeviceAvailable } = useLedgerContext();
 
 	const profile = useMemo(() => {
 		try {
@@ -51,6 +52,10 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 	useEffect(() => {
 		setWalletContext(wallet);
 	}, [wallet, setWalletContext]);
+
+	useEffect(() => {
+		setLedgerContext({ isAwaitingConnection, hasDeviceAvailable, isConnected });
+	}, [setLedgerContext, isAwaitingConnection, hasDeviceAvailable, isConnected]);
 
 	return <>{children}</>;
 };

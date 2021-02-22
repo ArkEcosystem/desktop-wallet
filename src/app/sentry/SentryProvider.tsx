@@ -48,6 +48,23 @@ const useSentry = () => {
 		});
 	};
 
+	const setLedgerContext = (ledgerData?: {
+		hasDeviceAvailable: boolean;
+		isConnected: boolean;
+		isAwaitingConnection: boolean;
+	}) => {
+		if (!ledgerData) {
+			Sentry.setContext("ledger", null);
+			return;
+		}
+
+		Sentry.setContext("ledger", {
+			hasDeviceAvailable: ledgerData.hasDeviceAvailable,
+			isAwaitingConnection: ledgerData.isAwaitingConnection,
+			isConnected: ledgerData.isConnected,
+		});
+	};
+
 	const initSentry = (profile: Profile) => {
 		if (initializedProfileRef.current?.id() === profile.id()) {
 			setProfileContext(profile); // Update data
@@ -85,6 +102,7 @@ const useSentry = () => {
 		captureMessage,
 		initSentry,
 		stopSentry,
+		setLedgerContext,
 		setProfileContext,
 		setWalletContext,
 	};
