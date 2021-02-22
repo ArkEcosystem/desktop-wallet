@@ -909,7 +909,10 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 	});
 
-	it("should send a single transfer with a high fee", async () => {
+	it.each([
+		["high", "1"],
+		["low", "0.000001"],
+	])("should send a single transfer with a %s fee", async (type, fee) => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
 		const history = createMemoryHistory();
@@ -967,9 +970,9 @@ describe("SendTransfer", () => {
 
 		// Fee
 		await act(async () => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: fee } });
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("1");
+		expect(getByTestId("InputCurrency")).toHaveValue(fee);
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
