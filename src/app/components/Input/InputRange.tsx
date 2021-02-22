@@ -25,23 +25,22 @@ type Props = {
 	onChange?: any;
 };
 
-// TODO: tidy up storage of amount (why array of values?)
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, avg, magnitude, onChange, value, disabled }: Props, ref) => {
 		const { formatRange, convertToCurrency } = useCurrencyDisplay();
 		const fieldContext = useFormField();
-		const [values, setValues] = React.useState<CurrencyInput[]>([convertToCurrency(avg)]);
+		const [inputValue, setInputValue] = React.useState<CurrencyInput>(convertToCurrency(avg));
 
-		const rangeValues = useMemo(() => formatRange(values, max), [formatRange, max, values]);
-		const trackBackgroundMinValue = Number(values[0].display);
+		const rangeValues = useMemo(() => formatRange(inputValue, max), [formatRange, max, inputValue]);
+		const trackBackgroundMinValue = Number(inputValue.display);
 		const minValue = Math.min(Number(min), trackBackgroundMinValue);
 
 		useEffect(() => {
-			setValues([convertToCurrency(value)]);
+			setInputValue(convertToCurrency(value));
 		}, [value, convertToCurrency]);
 
 		const handleInput = (currency: CurrencyInput) => {
-			setValues([currency]);
+			setInputValue(currency);
 			onChange?.(currency);
 		};
 
@@ -67,7 +66,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				}
 				className={cn({ "pr-12": fieldContext?.isInvalid })}
 				magnitude={magnitude}
-				value={values[0].display}
+				value={inputValue.display}
 				ref={ref}
 				onChange={handleInput}
 			>
