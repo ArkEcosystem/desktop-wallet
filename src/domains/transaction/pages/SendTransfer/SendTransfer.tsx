@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
@@ -34,8 +34,6 @@ export const SendTransfer = () => {
 	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
-
-	const [showFeeWarning, setShowFeeWarning] = useState(false);
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -79,14 +77,20 @@ export const SendTransfer = () => {
 		register("suppressWarning");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
 
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
+
 	useEffect(() => {
 		if (!hasWalletId && senderAddress) {
 			const wallet = activeProfile.wallets().findByAddress(senderAddress);
 			setWallet(wallet);
 		}
 	}, [activeProfile, hasWalletId, senderAddress]);
-
-	const { requireFeeConfirmation } = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
 		if (!state) {
@@ -210,12 +214,7 @@ export const SendTransfer = () => {
 
 		const newIndex = activeTab + 1;
 
-		if (
-			newIndex === 3 &&
-			!suppressWarning &&
-			!activeProfile.settings().get(ProfileSetting.DoNotShowFeeWarning) &&
-			requireFeeConfirmation
-		) {
+		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
 			return setShowFeeWarning(true);
 		}
 
@@ -232,28 +231,6 @@ export const SendTransfer = () => {
 		}
 
 		setActiveTab(newIndex);
-	};
-
-	const handleFeeWarningCancel = async (suppressWarning: boolean) => {
-		setShowFeeWarning(false);
-
-		if (suppressWarning) {
-			activeProfile.settings().set(ProfileSetting.DoNotShowFeeWarning, true);
-			await env.persist();
-		}
-
-		handleBack();
-	};
-
-	const handleFeeWarningConfirm = async (suppressWarning: boolean) => {
-		setShowFeeWarning(false);
-
-		if (suppressWarning) {
-			activeProfile.settings().set(ProfileSetting.DoNotShowFeeWarning, true);
-			await env.persist();
-		}
-
-		await handleNext(true);
 	};
 
 	const crumbs: Crumb[] = [
@@ -396,9 +373,11 @@ export const SendTransfer = () => {
 
 					<FeeWarning
 						isOpen={showFeeWarning}
-						variant={requireFeeConfirmation}
-						onCancel={handleFeeWarningCancel}
-						onConfirm={handleFeeWarningConfirm}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) => dismissFeeWarning(handleBack, suppressWarning)}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(() => handleNext(true), suppressWarning)
+						}
 					/>
 
 					<ConfirmSendTransaction
