@@ -25,9 +25,9 @@ const directories = {
 	},
 	"domains/contact": {
 		branches: 100,
-		functions: 69.86,
-		lines: 38.29,
-		statements: 38.71,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/dashboard": {
 		branches: 100,
