@@ -31,9 +31,9 @@ const directories = {
 	},
 	"domains/dashboard": {
 		branches: 100,
-		functions: 88.89,
-		lines: 82.87,
-		statements: 83.27,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/error": {
 		branches: 100,
