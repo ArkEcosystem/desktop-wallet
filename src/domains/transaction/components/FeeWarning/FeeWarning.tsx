@@ -15,15 +15,14 @@ export enum FeeWarningVariant {
 type FeeWarningProps = {
 	isOpen: boolean;
 	variant?: FeeWarningVariant;
-	onCancel: () => void;
-	onConfirm: (suppressWarning: boolean) => void;
+	onCancel: (suppressWarning: boolean) => Promise<void>;
+	onConfirm: (suppressWarning: boolean) => Promise<void>;
 };
 
 export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
 	const { t } = useTranslation();
 
-	const form = useFormContext();
-	const { register, watch } = form;
+	const { watch } = useFormContext();
 
 	const suppressWarning = watch("suppressWarning");
 
@@ -41,11 +40,7 @@ export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningP
 
 			<FormField name="suppressWarning">
 				<label className="flex items-center space-x-2">
-					<Checkbox
-						ref={register()}
-						name="suppressWarning"
-						data-testid="FeeWarning__suppressWarning-toggle"
-					/>
+					<Checkbox name="suppressWarning" data-testid="FeeWarning__suppressWarning-toggle" />
 					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 						{t("TRANSACTION.MODAL_FEE_WARNING.DO_NOT_WARN")}
 					</span>
@@ -53,7 +48,11 @@ export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningP
 			</FormField>
 
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="secondary" onClick={onCancel} data-testid="FeeWarning__cancel-button">
+				<Button
+					variant="secondary"
+					onClick={() => onCancel(suppressWarning)}
+					data-testid="FeeWarning__cancel-button"
+				>
 					{t("COMMON.CANCEL")}
 				</Button>
 

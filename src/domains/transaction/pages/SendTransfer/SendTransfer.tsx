@@ -12,9 +12,8 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
-import { FeeWarning, FeeWarningVariant } from "domains/transaction/components/FeeWarning";
-import { useTransaction } from "domains/transaction/hooks/use-transaction";
-import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
+import { useFeeConfirmation, useTransaction, useTransactionBuilder } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -36,7 +35,6 @@ export const SendTransfer = () => {
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const [requireFeeConfirmation, setRequireFeeConfirmation] = useState<FeeWarningVariant | undefined>();
 	const [showFeeWarning, setShowFeeWarning] = useState(false);
 
 	const { env } = useEnvironmentContext();
@@ -78,7 +76,7 @@ export const SendTransfer = () => {
 		register("remainingBalance");
 		register("isSendAllSelected");
 
-		register("noWarnings");
+		register("suppressWarning");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
 
 	useEffect(() => {
@@ -88,25 +86,7 @@ export const SendTransfer = () => {
 		}
 	}, [activeProfile, hasWalletId, senderAddress]);
 
-	useEffect(() => {
-		if (!fee) {
-			return;
-		}
-
-		const value = BigNumber.make(fee);
-
-		if (value.isLessThan(fees?.min)) {
-			setRequireFeeConfirmation(FeeWarningVariant.Low);
-		}
-
-		if (value.isGreaterThan(fees?.static)) {
-			setRequireFeeConfirmation(FeeWarningVariant.High);
-		}
-
-		if (value.isGreaterThanOrEqualTo(fees?.min) && value.isLessThanOrEqualTo(fees?.static)) {
-			setRequireFeeConfirmation(undefined);
-		}
-	}, [fee, fees]);
+	const { requireFeeConfirmation } = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
 		if (!state) {
@@ -225,12 +205,17 @@ export const SendTransfer = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = async (event?: React.MouseEvent, suppressWarning?: boolean) => {
+	const handleNext = async (suppressWarning?: boolean) => {
 		abortRef.current = new AbortController();
 
 		const newIndex = activeTab + 1;
 
-		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
+		if (
+			newIndex === 3 &&
+			!suppressWarning &&
+			// !activeProfile.settings().get(ProfileSetting.DoNotShowFeeWarning) &&
+			requireFeeConfirmation
+		) {
 			return setShowFeeWarning(true);
 		}
 
@@ -249,6 +234,17 @@ export const SendTransfer = () => {
 		setActiveTab(newIndex);
 	};
 
+	const handleFeeWarningCancel = async (suppressWarning: boolean) => {
+		setShowFeeWarning(false);
+
+		if (suppressWarning) {
+			activeProfile.settings().set(ProfileSetting.DoNotShowFeeWarning, true);
+			await env.persist();
+		}
+
+		handleBack();
+	};
+
 	const handleFeeWarningConfirm = async (suppressWarning: boolean) => {
 		setShowFeeWarning(false);
 
@@ -257,7 +253,7 @@ export const SendTransfer = () => {
 			await env.persist();
 		}
 
-		handleNext(undefined, true);
+		handleNext(true);
 	};
 
 	const crumbs: Crumb[] = [
@@ -336,7 +332,7 @@ export const SendTransfer = () => {
 												<Button
 													data-testid="SendTransfer__button--continue"
 													disabled={!isValid || isSubmitting}
-													onClick={handleNext}
+													onClick={async () => await handleNext()}
 													isLoading={isSubmitting || isConfirming}
 												>
 													{t("COMMON.CONTINUE")}
@@ -401,8 +397,8 @@ export const SendTransfer = () => {
 					<FeeWarning
 						isOpen={showFeeWarning}
 						variant={requireFeeConfirmation}
-						onCancel={() => setShowFeeWarning(false)}
-						onConfirm={async (suppressWarning: boolean) => await handleFeeWarningConfirm(suppressWarning)}
+						onCancel={handleFeeWarningCancel}
+						onConfirm={handleFeeWarningConfirm}
 					/>
 
 					<ConfirmSendTransaction
