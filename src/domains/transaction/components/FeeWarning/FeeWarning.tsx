@@ -22,9 +22,9 @@ type FeeWarningProps = {
 export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
 	const { t } = useTranslation();
 
-	const { watch } = useFormContext();
+	const { setValue, watch } = useFormContext();
 
-	const suppressWarning = watch("suppressWarning");
+	const { suppressWarning } = watch();
 
 	return (
 		<Modal
@@ -40,7 +40,11 @@ export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningP
 
 			<FormField name="suppressWarning">
 				<label className="flex items-center space-x-2">
-					<Checkbox name="suppressWarning" data-testid="FeeWarning__suppressWarning-toggle" />
+					<Checkbox
+						name="suppressWarning"
+						data-testid="FeeWarning__suppressWarning-toggle"
+						onChange={() => setValue("suppressWarning", !suppressWarning)}
+					/>
 					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 						{t("TRANSACTION.MODAL_FEE_WARNING.DO_NOT_WARN")}
 					</span>

@@ -57,7 +57,7 @@ exports[`FeeWarning should render a warning for a fee that is too HIGH 1`] = `
           <div
             class="mt-8 mb-6 text-theme-secondary-text"
           >
-            You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue?
+            You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue anyway?
           </div>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -167,7 +167,7 @@ exports[`FeeWarning should render a warning for a fee that is too LOW 1`] = `
           <div
             class="mt-8 mb-6 text-theme-secondary-text"
           >
-            You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue?
+            You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue anyway?
           </div>
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
