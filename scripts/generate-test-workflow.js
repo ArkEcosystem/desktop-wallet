@@ -25,15 +25,15 @@ const directories = {
 	},
 	"domains/contact": {
 		branches: 100,
-		functions: 69.86,
-		lines: 38.29,
-		statements: 38.71,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/dashboard": {
 		branches: 100,
-		functions: 88.89,
-		lines: 82.87,
-		statements: 83.27,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/error": {
 		branches: 100,
@@ -44,8 +44,8 @@ const directories = {
 	"domains/exchange": {
 		branches: 100,
 		functions: 100,
-		lines: 97.96,
-		statements: 97.96,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/network": {
 		branches: 100,
@@ -55,9 +55,9 @@ const directories = {
 	},
 	"domains/news": {
 		branches: 100,
-		functions: 84.44,
-		lines: 68.31,
-		statements: 69.13,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/plugin": {
 		branches: 100,
