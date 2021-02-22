@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
@@ -828,7 +828,7 @@ describe("SendTransfer", () => {
 		signTransactionSpy.mockRestore();
 	});
 
-	it("should return to form step when cancelling fee warning modal", async () => {
+	it("should return to form step by cancelling fee warning", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
 		const history = createMemoryHistory();
@@ -848,16 +848,6 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
-
-		const goSpy = jest.spyOn(history, "go").mockImplementation();
-
-		const backButton = getByTestId("SendTransfer__button--back");
-		expect(backButton).not.toHaveAttribute("disabled");
-		act(() => {
-			fireEvent.click(backButton);
-		});
-
-		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
 		act(() => {
@@ -885,23 +875,24 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await act(async () => {
+		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("1");
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
-		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 		await act(async () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
-		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-		// Fee warning
+		// Review Step
+		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
+
+		// Fee warning
 		await waitFor(() => expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy());
 		await act(async () => {
 			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
@@ -909,10 +900,101 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 	});
 
+	it.each(["cancel", "continue"])(
+		"should update the profile settings when dismissing the fee warning (%s)",
+		async (action) => {
+			const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+			const history = createMemoryHistory();
+			history.push(transferURL);
+
+			const { getAllByTestId, getByTestId, container } = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+
+			await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+			await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select recipient
+			act(() => {
+				fireEvent.click(
+					within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"),
+				);
+			});
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			act(() => {
+				fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
+			});
+			await waitFor(() =>
+				expect(getByTestId("SelectDropdownInput__input")).toHaveValue(profile.wallets().first().address()),
+			);
+
+			// Amount
+			act(() => {
+				fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+			});
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
+
+			// Smartbridge
+			act(() => {
+				fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			});
+			await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+
+			// Fee
+			act(() => {
+				fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
+			});
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+
+			await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+			await act(async () => {
+				fireEvent.click(getByTestId("SendTransfer__button--continue"));
+			});
+
+			// Review Step
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
+			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+			act(() => {
+				fireEvent.click(getByTestId("SendTransfer__button--continue"));
+			});
+
+			const profileSpy = jest.spyOn(profile.settings(), "set").mockImplementation();
+
+			// Fee warning
+			await waitFor(() => expect(getByTestId("FeeWarning__suppressWarning-toggle")).toBeTruthy());
+			await act(async () => {
+				fireEvent.click(getByTestId("FeeWarning__suppressWarning-toggle"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId(`FeeWarning__${action}-button`));
+			});
+
+			expect(profileSpy).toHaveBeenCalledWith(ProfileSetting.DoNotShowFeeWarning, true);
+
+			await waitFor(() =>
+				expect(
+					getByTestId(action === "cancel" ? "SendTransfer__form-step" : "AuthenticationStep"),
+				).toBeTruthy(),
+			);
+
+			profileSpy.mockRestore();
+		},
+	);
+
 	it.each([
 		["high", "1"],
 		["low", "0.000001"],
-	])("should send a single transfer with a %s fee", async (type, fee) => {
+	])("should send a single transfer with a %s fee by confirming the fee warning", async (type, fee) => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
 
 		const history = createMemoryHistory();
@@ -932,16 +1014,6 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
-
-		const goSpy = jest.spyOn(history, "go").mockImplementation();
-
-		const backButton = getByTestId("SendTransfer__button--back");
-		expect(backButton).not.toHaveAttribute("disabled");
-		act(() => {
-			fireEvent.click(backButton);
-		});
-
-		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
 		act(() => {
@@ -969,29 +1041,30 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await act(async () => {
+		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: fee } });
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue(fee);
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue(fee));
 
-		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 		await act(async () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
-		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-		// Fee warning
+		// Review Step
+		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
 
-		// Step 3
+		// Fee warning
 		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
 		await act(async () => {
 			fireEvent.click(getByTestId("FeeWarning__continue-button"));
 		});
+
+		// Auth Step
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 		act(() => {
@@ -999,7 +1072,7 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
-		// Step 5 (skip step 4 for now - ledger confirmation)
+		// Summary Step (skip ledger confirmation for now)
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signTransfer")
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
@@ -1029,7 +1102,6 @@ describe("SendTransfer", () => {
 		});
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
-		goSpy.mockRestore();
 		pushSpy.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
@@ -1086,18 +1158,19 @@ describe("SendTransfer", () => {
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
-		// Step 2
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
-		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-		// Step 3
+		// Review Step
+		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
+
+		// Auth Step
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 		act(() => {
@@ -1105,7 +1178,7 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
-		// Step 5 (skip step 4 for now - ledger confirmation)
+		// Summary Step (skip ledger confirmation for now)
 		const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
 			throw new Error("Signatory should be");
 		});
