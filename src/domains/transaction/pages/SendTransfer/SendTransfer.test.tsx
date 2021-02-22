@@ -445,12 +445,12 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.07320598"));
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("6.63");
+		expect(getByTestId("InputCurrency")).toHaveValue("0.1");
 	});
 
 	it("should handle fee change when send all is selected with zero balance", async () => {
@@ -500,12 +500,12 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.07320598"));
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("6.63");
+		expect(getByTestId("InputCurrency")).toHaveValue("0.1");
 	});
 
 	it("should send a single transfer", async () => {

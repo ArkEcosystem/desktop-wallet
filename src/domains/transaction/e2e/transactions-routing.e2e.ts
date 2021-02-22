@@ -27,7 +27,7 @@ test("should navigate to transfer page", async (t) => {
 	await goToTransferPage(t);
 });
 
-test.only("should navigate to delegate resignation page", async (t) => {
+test("should navigate to delegate resignation page", async (t) => {
 	await goToProfile(t);
 	await importWalletByAddress(t, "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS");
 	await goToDelegateResignationPage(t);

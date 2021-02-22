@@ -65,29 +65,5 @@ describe("useValidation hook", () => {
 
 			expect(isValid).not.toBe(true);
 		});
-
-		it("should error if fee is lower than min", () => {
-			const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
-			const {
-				result: { current },
-			} = renderHook(() => useValidation(), { wrapper });
-			const balance = BigNumber.make(11);
-			const validation = current.common.fee(balance, mockNetwork);
-			const isValid = validation.validate.valid(0.9);
-
-			expect(isValid).not.toBe(true);
-		});
-
-		it("should error if fee is greater than max", () => {
-			const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
-			const {
-				result: { current },
-			} = renderHook(() => useValidation(), { wrapper });
-			const balance = BigNumber.make(11);
-			const validation = current.common.fee(balance, mockNetwork);
-			const isValid = validation.validate.valid(6);
-
-			expect(isValid).not.toBe(true);
-		});
 	});
 });
