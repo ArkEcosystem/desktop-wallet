@@ -119,6 +119,8 @@ export const useProfileSyncStatus = () => {
 
 	const isIdle = () => current.status === "idle";
 	const isRestoring = () => profileIsRestoring || current.status === "restoring";
+	const isRestored = (profile: Profile) =>
+		[...current.restored, ...restoredProfiles].includes(profile.id()) || current.status === "restored";
 	const isSyncing = () => current.status === "syncing";
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
@@ -131,9 +133,7 @@ export const useProfileSyncStatus = () => {
 			return false;
 		}
 
-		return (
-			!isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !current.restored.includes(profile.id())
-		);
+		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !isRestored(profile);
 	};
 
 	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
@@ -160,23 +160,15 @@ export const useProfileSyncStatus = () => {
 };
 
 export const useProfileRestore = () => {
-	const { restoredProfiles, setConfiguration } = useConfiguration();
+	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist } = useEnvironmentContext();
 
 	const restoreProfile = async (profile: Profile, password?: string) => {
-		// For unit tests only. This flag prevents from running restore multiple times
-		// as the profiles are all restored before all tests (see jest.setup)
-		const isRestoredInTests = process.env.TEST_PROFILES_RESTORE_STATUS === "restored";
-		if (isRestoredInTests) {
+		if (!shouldRestore(profile)) {
 			return false;
 		}
 
-		const alreadyRestored = restoredProfiles.includes(profile.id());
-		if (alreadyRestored) {
-			return false;
-		}
-
-		setConfiguration({ profileIsRestoring: true });
+		setStatus("restoring");
 
 		// When in e2e mode, profiles are migrated passwordless and
 		// password needs to be set again. The restore should happen
@@ -187,8 +179,7 @@ export const useProfileRestore = () => {
 
 			await persist();
 
-			setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });
-
+			markAsRestored(profile.id());
 			return true;
 		}
 
@@ -199,13 +190,12 @@ export const useProfileRestore = () => {
 		profile.save(password);
 
 		await persist();
-		setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profile.id()] });
+		markAsRestored(profile.id());
 		return true;
 	};
 
 	return {
 		restoreProfile,
-		restoredProfiles,
 	};
 };
 
@@ -213,6 +203,7 @@ export const useProfileSynchronizer = () => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
+	const { restoreProfile } = useProfileRestore();
 	const profile = useProfileWatcher();
 
 	const {
@@ -241,6 +232,10 @@ export const useProfileSynchronizer = () => {
 		const syncProfile = async (profile?: Profile) => {
 			if (!profile) {
 				return clearProfileSyncStatus();
+			}
+
+			if (shouldRestore(profile)) {
+				await restoreProfile(profile);
 			}
 
 			if (shouldSync()) {
@@ -274,6 +269,7 @@ export const useProfileSynchronizer = () => {
 		setStatus,
 		profileIsSyncing,
 		markAsRestored,
+		restoreProfile,
 		status,
 		stop,
 		__E2E__,
