@@ -59,6 +59,7 @@ export const searchWallets = async (addressMap: Record<string, any>, coin: Coins
 			balance: identity.balance(),
 		};
 
+		/* istanbul ignore next */
 		if (wallet.path) {
 			wallets.push(wallet);
 		}

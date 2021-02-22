@@ -18,10 +18,10 @@ const workflow = {
 
 const directories = {
 	app: {
-		branches: 94.14,
-		functions: 97.71,
-		lines: 98.05,
-		statements: 97.85,
+		branches: 100,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/contact": {
 		branches: 100,

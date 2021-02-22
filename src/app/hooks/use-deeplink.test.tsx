@@ -191,4 +191,24 @@ describe("useDeeplink hook", () => {
 		expect(history.location.pathname).toEqual("/");
 		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
 	});
+
+	it("should use create", () => {
+		ipcRenderer.on.mockImplementationOnce((event, callback) =>
+			callback(event, "ark:vote?coin=ark&network=ark.devnet&delegate=alessio"),
+		);
+
+		window.history.pushState({}, "Deeplink Test", `/profiles/create/wallets/${getDefaultWalletId()}`);
+
+		const { getByText, history } = renderWithRouter(
+			<Route pathname="/profiles/:profileId/wallets/:walletId">
+				<TestComponent />
+			</Route>,
+			{
+				routes: [walletURL],
+			},
+		);
+
+		expect(getByText("Deeplink tester")).toBeTruthy();
+		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
+	});
 });

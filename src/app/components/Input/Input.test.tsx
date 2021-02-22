@@ -15,4 +15,16 @@ describe("Input", () => {
 		const input = getByTestId("Input");
 		expect(input.tagName).toEqual("SELECT");
 	});
+
+	it("should render with focus", () => {
+		const { getByTestId } = render(<Input as="select" isFocused />);
+		const input = getByTestId("Input");
+		expect(input.tagName).toEqual("SELECT");
+	});
+
+	it("should render with invalid", () => {
+		const { getByTestId } = render(<Input as="select" isInvalid={true} />);
+		const input = getByTestId("Input-error");
+		expect(input).toBeVisible();
+	});
 });

@@ -48,12 +48,14 @@ const useDeepLinkHandler = () => {
 
 					const profile = env.profiles().findById(profileId);
 
+					/* istanbul ignore next */
 					if (deeplinkSchema.coin) {
 						if (!allAvailableNetworks.some((item) => item.coin().toLowerCase() === deeplinkSchema.coin)) {
 							throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
 						}
 					}
 
+					/* istanbul ignore next */
 					if (deeplinkSchema.network) {
 						if (!allAvailableNetworks.some((item) => item.id().toLowerCase() === deeplinkSchema.network)) {
 							throw new Error(`Network "${deeplinkSchema.network}" not supported.`);

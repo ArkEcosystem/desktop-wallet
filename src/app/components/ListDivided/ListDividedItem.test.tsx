@@ -45,4 +45,13 @@ describe("ListDividedItem", () => {
 		expect(getByTestId("list-divided-item__content")).toHaveTextContent("Content");
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with labelAddon", () => {
+		const { getByTestId, asFragment } = render(
+			<ListDividedItem labelAddon={<span>Test</span>} content="Content" />,
+		);
+
+		expect(getByTestId("list-divided-item__content")).toHaveTextContent("Content");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

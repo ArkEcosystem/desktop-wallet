@@ -17,4 +17,11 @@ describe("Collapse", () => {
 		expect(getByTestId("Collapse")).toHaveTextContent("Test");
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with custom scroll", () => {
+		const { getByTestId, asFragment } = render(<Collapse className="custom-scroll">Test</Collapse>);
+		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
+		expect(getByTestId("Collapse")).toHaveTextContent("Test");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

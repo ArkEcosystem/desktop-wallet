@@ -178,3 +178,40 @@ exports[`ListDividedItem should render the value 1`] = `
   </li>
 </DocumentFragment>
 `;
+
+exports[`ListDividedItem should render with labelAddon 1`] = `
+<DocumentFragment>
+  <li
+    class="flex flex-col w-full "
+    data-testid="list-divided-item__wrapper"
+  >
+    <div
+      class="flex justify-between items-center"
+      data-testid="list-divided-item__inner-wrapper"
+    >
+      <div
+        class="flex flex-col space-y-2 w-full"
+      >
+        <div
+          class="flex justify-between items-center space-x-5"
+        >
+          <span
+            data-testid="list-divided-item__label"
+          />
+          <span>
+            <span>
+              Test
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class=""
+      data-testid="list-divided-item__content"
+    >
+      Content
+    </div>
+  </li>
+</DocumentFragment>
+`;

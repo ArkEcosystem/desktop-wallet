@@ -73,7 +73,6 @@ describe("PluginManager", () => {
 		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 
-		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
