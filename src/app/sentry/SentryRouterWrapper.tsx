@@ -7,19 +7,19 @@ import { useParams } from "react-router-dom";
 import { useSentryContext } from "./SentryProvider";
 
 export const SentryRouterWrapper = ({ children }: { children: React.ReactNode }) => {
-	const { env } = useEnvironmentContext();
+	const context = useEnvironmentContext();
 	const { profileId, walletId } = useParams();
 	const { initSentry, stopSentry, setWalletContext, setLedgerContext } = useSentryContext();
 	const { isConnected, isAwaitingConnection, hasDeviceAvailable } = useLedgerContext();
 
 	const profile = useMemo(() => {
 		try {
-			return env.profiles().findById(profileId);
+			return context.env.profiles().findById(profileId);
 		} catch {
 			stopSentry();
 			return;
 		}
-	}, [env, profileId, stopSentry]);
+	}, [context, profileId, stopSentry]);
 
 	const wallet = useMemo(() => {
 		if (!walletId) {
@@ -38,8 +38,7 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 			return;
 		}
 
-		// TODO: Change to correct key
-		const isErrorReportingEnabled = profile.settings().get<boolean>(ProfileSetting.AdvancedMode, false);
+		const isErrorReportingEnabled = profile.settings().get<boolean>(ProfileSetting.ErrorReporting, false);
 
 		if (isErrorReportingEnabled) {
 			initSentry(profile);

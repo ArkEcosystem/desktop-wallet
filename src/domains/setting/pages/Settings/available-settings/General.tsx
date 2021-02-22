@@ -168,6 +168,20 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 			wrapperClass: "pb-6",
 		},
 		{
+			label: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.TITLE"),
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
+			labelDescription: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="errorReporting"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.ErrorReporting)}
+					data-testid="General-settings__toggle--errorReporting"
+				/>
+			),
+			wrapperClass: "py-6",
+		},
+		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
@@ -210,6 +224,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		isDarkMode,
 		isUpdateLedger,
 		useTestNetworks,
+		errorReporting,
 	}: any) => {
 		activeProfile.settings().set(ProfileSetting.Name, name.trim());
 		activeProfile.settings().set(ProfileSetting.Locale, language);
@@ -223,6 +238,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
+		activeProfile.settings().set(ProfileSetting.ErrorReporting, errorReporting);
 
 		if (!avatarImage || isSvg) {
 			activeProfile.settings().forget(ProfileSetting.Avatar);

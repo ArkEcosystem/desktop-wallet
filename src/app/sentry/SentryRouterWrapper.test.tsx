@@ -64,8 +64,7 @@ describe("Sentry Router Wrapper", () => {
 		let calledOptions: any;
 		jest.spyOn(Sentry, "init").mockImplementation((value) => (calledOptions = value));
 
-		// TODO: Change to correct key
-		profile.settings().set(ProfileSetting.AdvancedMode, true);
+		profile.settings().set(ProfileSetting.ErrorReporting, true);
 
 		renderWithRouter(
 			<Route path="/profile/:profileId/dashboard">
@@ -88,13 +87,12 @@ describe("Sentry Router Wrapper", () => {
 			}),
 		);
 
-		profile.settings().set(ProfileSetting.AdvancedMode, false);
+		profile.settings().set(ProfileSetting.ErrorReporting, false);
 	});
 
 	it("should init sentry only once", () => {
 		const sentryInitSpy = jest.spyOn(Sentry, "init").mockImplementation();
-		// TODO: Change to correct key
-		profile.settings().set(ProfileSetting.AdvancedMode, true);
+		profile.settings().set(ProfileSetting.ErrorReporting, true);
 
 		const Component = () => (
 			<>
@@ -116,6 +114,6 @@ describe("Sentry Router Wrapper", () => {
 
 		expect(sentryInitSpy).toHaveBeenCalledTimes(1);
 
-		profile.settings().set(ProfileSetting.AdvancedMode, false);
+		profile.settings().set(ProfileSetting.ErrorReporting, false);
 	});
 });
