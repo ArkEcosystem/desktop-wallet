@@ -133,6 +133,9 @@ export const translations: { [key: string]: any } = {
 		LEGACY_BRIDGECHAIN_REGISTRATION: "Bridgechain Registration (Legacy)",
 		LEGACY_BRIDGECHAIN_RESIGNATION: "Bridgechain Resignation (Legacy)",
 		LEGACY_BRIDGECHAIN_UPDATE: "Bridgechain Update (Legacy)",
+		BRIDGECHAIN_REGISTRATION: "Bridgechain Registration",
+		BRIDGECHAIN_RESIGNATION: "Bridgechain Resignation",
+		BRIDGECHAIN_UPDATE: "Bridgechain Update",
 	},
 
 	MODAL_TRANSFER_DETAIL: {
