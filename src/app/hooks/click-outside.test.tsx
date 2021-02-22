@@ -38,4 +38,11 @@ describe("ClickOutside Hook", () => {
 			fireEvent.mouseDown(document);
 		});
 	});
+
+	it("should cover the removeEvent", () => {
+		const div = document.createElement("div");
+		const ref = { current: div };
+		const handler = clickOutsideHandler(ref, () => "test")();
+		expect(handler).toBeUndefined();
+	});
 });

@@ -14,7 +14,7 @@ import { Tooltip } from "app/components/Tooltip";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { css, styled } from "twin.macro";
@@ -129,18 +129,11 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 	const { t } = useTranslation();
 
 	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
-	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
 
-	useEffect(() => {
-		if (selectedWallet) {
-			setSearchWalletIsOpen(false);
-			setReceiveFundsIsOpen(true);
-		}
-	}, [selectedWallet]);
-
 	const handleSelectWallet = (wallet: SelectedWallet) => {
+		setSearchWalletIsOpen(false);
 		setSelectedWallet(wallet);
 	};
 
@@ -300,7 +293,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{selectedWallet && (
 						<ReceiveFunds
-							isOpen={receiveFundsIsOpen}
+							isOpen={true}
 							address={selectedWallet.address}
 							icon={selectedWallet.coinName}
 							name={selectedWallet.name}

@@ -26,6 +26,126 @@ exports[`Dropdown should render 1`] = `
 </div>
 `;
 
+exports[`Dropdown should render a bottom position 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 eWbA-DZ opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <ul
+        data-testid="dropdown__options"
+      >
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--0"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--1"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render a bottom-left position 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 gvgCKL opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <ul
+        data-testid="dropdown__options"
+      >
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--0"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--1"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Dropdown should render a large one 1`] = `
 <div>
   <div
@@ -52,6 +172,66 @@ exports[`Dropdown should render a large one 1`] = `
 </div>
 `;
 
+exports[`Dropdown should render a left position 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 kaMLJx opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <ul
+        data-testid="dropdown__options"
+      >
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--0"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--1"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Dropdown should render a small one 1`] = `
 <div>
   <div
@@ -74,6 +254,323 @@ exports[`Dropdown should render a small one 1`] = `
         </div>
       </div>
     </span>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render a top 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 jIaGuJ opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <ul
+        data-testid="dropdown__options"
+      >
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--0"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--1"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render a top-left position 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 fsyeNf opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <ul
+        data-testid="dropdown__options"
+      >
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--0"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--1"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render a top-right 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 eFLFDw opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <ul
+        data-testid="dropdown__options"
+      >
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--0"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+          data-testid="dropdown__option--1"
+        >
+          <div
+            class=""
+          >
+            <span>
+              Option 2
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render dropdown group options with divider, icon and secondary label 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 eFLFDw opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <div
+        class="pt-5 pb-1"
+      >
+        <div
+          class="mt-4 first:mt-0"
+        >
+          <ul>
+            <li
+              class="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500"
+            >
+              Primary Options 1
+            </li>
+            <ul
+              data-testid="dropdown__options"
+            >
+              <li
+                class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                data-testid="dropdown__option--primary-0"
+              >
+                <div
+                  class=""
+                >
+                  <span>
+                    Primary Options 1.1
+                  </span>
+                </div>
+              </li>
+              <li
+                class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                data-testid="dropdown__option--primary-1"
+              >
+                <div
+                  class=""
+                >
+                  <span>
+                    Primary Options 1.2
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </ul>
+        </div>
+        <div
+          class="mt-4 first:mt-0"
+        >
+          <div
+            class="mx-8 -my-2"
+          >
+            <div
+              class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <ul>
+            <li
+              class="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500"
+            >
+              Secondary Options 1
+            </li>
+            <ul
+              data-testid="dropdown__options"
+            >
+              <li
+                class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                data-testid="dropdown__option--secondary-0"
+              >
+                <div
+                  class="inline-flex space-x-2 items-center"
+                >
+                  <span>
+                    Secondary Options 1.1
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  />
+                </div>
+              </li>
+              <li
+                class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                data-testid="dropdown__option--secondary-1"
+              >
+                <div
+                  class="inline-flex space-x-2 items-center"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  />
+                  <span>
+                    Secondary Options 1.2
+                    <span
+                      class="ml-1 text-theme-secondary-text"
+                    >
+                      secondary label
+                    </span>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -158,6 +655,41 @@ exports[`Dropdown should render with options 1`] = `
         </div>
       </div>
     </span>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render without options one 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <span
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer outline-none focus:outline-none"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            settings.svg
+          </svg>
+        </div>
+      </div>
+    </span>
+    <div
+      class="Dropdown__Wrapper-ocz1je-0 eFLFDw opacity-0 mt-3 py-3 absolute z-10 rounded-lg shadow-xl "
+      data-testid="dropdown__content"
+      style="opacity: 100; height: -30px; overflow-y: scroll;"
+    >
+      <div
+        class="pt-5 pb-1"
+      />
+    </div>
   </div>
 </div>
 `;

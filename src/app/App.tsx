@@ -63,7 +63,7 @@ const Main = () => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
-				const __E2E__ = process.env.REACT_APP_IS_E2E;
+				const __E2E__ = process.env.REACT_APP_IS_E2E !== "undefined";
 				if (__E2E__) {
 					migrateProfileFixtures(env);
 				}

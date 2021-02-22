@@ -99,6 +99,7 @@ export const Transactions = memo(
 				<div className="flex relative justify-between">
 					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 					<FilterTransactions
+						wallets={profile.wallets().values()}
 						onSelect={(_, type) => {
 							setSelectedTransactionType(type);
 						}}

@@ -123,7 +123,7 @@ describe("SendTransfer", () => {
 			recipient: "DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9",
 		};
 
-		await act(async () => {
+		await hookAct(async () => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
 					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />

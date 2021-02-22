@@ -1,10 +1,10 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { usePrevious } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
+import { usePrevious } from "../../hooks";
 import { modalOffsetClass, useModal } from "./";
 
 type ModalProps = {

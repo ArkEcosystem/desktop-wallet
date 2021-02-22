@@ -62,3 +62,90 @@ exports[`Use Ledger Scanner should render 1`] = `
   </div>
 </div>
 `;
+
+exports[`Use Ledger Scanner should render with scanRetry 1`] = `
+<div>
+  <div>
+    <ul />
+    <button>
+      Scan
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
+<div>
+  <div>
+    <ul>
+      <li>
+        <p>
+          Path: 44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
+        </p>
+        <p>
+          Failed: false
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <p>
+          Balance: 2
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/2'/0/0
+        </p>
+        <p>
+          Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+        </p>
+        <p>
+          Failed: false
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <p>
+          Balance: 1
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/3'/0/0
+        </p>
+        <p>
+          Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
+        </p>
+        <p>
+          Failed: false
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <p>
+          Balance: 3
+        </p>
+      </li>
+    </ul>
+    <button>
+      Scan
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Use Ledger Scanner should render with toggleSelect 2`] = `<div />`;
+
+exports[`Use Ledger Scanner should render with toggleSelectAll 1`] = `
+<div>
+  <div>
+    <ul />
+    <button>
+      Scan
+    </button>
+  </div>
+</div>
+`;

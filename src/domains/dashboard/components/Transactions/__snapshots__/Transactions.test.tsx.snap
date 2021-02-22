@@ -135,7 +135,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       Date
                     </div>
                     <div
-                      class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                      class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -210,7 +210,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
                         role="img"
                         width="8"
@@ -412,7 +412,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                     >
                       <span
                         class="underline-dotted"
@@ -438,7 +438,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="whitespace-nowrap"
                       data-testid="TransactionRow__timestamp"
                     >
-                      23 Jul 2020 08:01:52
+                      23 Jul 2020 08:03:20
                     </span>
                   </div>
                 </td>
@@ -472,9 +472,9 @@ exports[`Transactions should fetch more transactions 1`] = `
                           class="w-full h-full"
                         >
                           <img
-                            alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
+                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
                           />
                         </div>
                       </div>
@@ -486,7 +486,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
-                        DKY5ey…bNF53A
+                        D5pVkh…xfKwSv
                       </span>
                     </div>
                   </div>
@@ -536,7 +536,166 @@ exports[`Transactions should fetch more transactions 1`] = `
                       <span
                         data-testid="Amount"
                       >
-                        + 50,000 DARK
+                        + 400,000 DARK
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                  >
+                    <span
+                      class="whitespace-nowrap"
+                      data-testid="TransactionRow__currency"
+                    >
+                      <span
+                        class="text-theme-secondary-text"
+                        data-testid="TransactionRowAmount"
+                      >
+                        0 BTC
+                      </span>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                data-testid="TableRow"
+              >
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      data-testid="TransactionRow__ID"
+                      rel="noopener noreferrer"
+                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                    >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+                  >
+                    <span
+                      class="whitespace-nowrap"
+                      data-testid="TransactionRow__timestamp"
+                    >
+                      23 Jul 2020 08:03:20
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-1"
+                      data-testid="TransactionRowMode"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          data-testid="TransactionRowMode__Received"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            received.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-flex items-center no-ligatures"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D5pVkh…xfKwSv
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+                  >
+                    <div
+                      class="inline-flex space-x-1 align-middle"
+                      data-testid="TransactionRowInfo"
+                    />
+                  </div>
+                </td>
+                <td
+                  class="w-16"
+                >
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+                  >
+                    <div
+                      class="inline-flex p-1 align-middle"
+                      data-testid="TransactionRowConfirmation"
+                    >
+                      <div
+                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        data-testid="TransactionRowConfirmation__confirmed"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          status-ok.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
+                  >
+                    <div
+                      class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                      color="success"
+                      data-testid="TransactionRowAmount"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        + 400,000 DARK
                       </span>
                     </div>
                   </div>
@@ -889,165 +1048,6 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
-                    >
-                      <span
-                        class="underline-dotted"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            id.svg
-                          </svg>
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
-                  >
-                    <span
-                      class="whitespace-nowrap"
-                      data-testid="TransactionRow__timestamp"
-                    >
-                      23 Jul 2020 08:03:20
-                    </span>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-                  >
-                    <div
-                      class="flex items-center -space-x-1"
-                      data-testid="TransactionRowMode"
-                    >
-                      <div
-                        class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          data-testid="TransactionRowMode__Received"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            received.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-flex items-center no-ligatures"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        D5pVkh…xfKwSv
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                  >
-                    <div
-                      class="inline-flex space-x-1 align-middle"
-                      data-testid="TransactionRowInfo"
-                    />
-                  </div>
-                </td>
-                <td
-                  class="w-16"
-                >
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                  >
-                    <div
-                      class="inline-flex p-1 align-middle"
-                      data-testid="TransactionRowConfirmation"
-                    >
-                      <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
-                        data-testid="TransactionRowConfirmation__confirmed"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          status-ok.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
-                  >
-                    <div
-                      class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                      color="success"
-                      data-testid="TransactionRowAmount"
-                    >
-                      <span
-                        data-testid="Amount"
-                      >
-                        + 400,000 DARK
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                  >
-                    <span
-                      class="whitespace-nowrap"
-                      data-testid="TransactionRow__currency"
-                    >
-                      <span
-                        class="text-theme-secondary-text"
-                        data-testid="TransactionRowAmount"
-                      >
-                        0 BTC
-                      </span>
-                    </span>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
-                data-testid="TableRow"
-              >
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                  >
-                    <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                      data-testid="TransactionRow__ID"
-                      rel="noopener noreferrer"
                       to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
                       <span
@@ -1207,7 +1207,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                       data-testid="TransactionRow__ID"
                       rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                      to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                     >
                       <span
                         class="underline-dotted"
@@ -1233,7 +1233,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       class="whitespace-nowrap"
                       data-testid="TransactionRow__timestamp"
                     >
-                      23 Jul 2020 08:03:20
+                      23 Jul 2020 08:01:52
                     </span>
                   </div>
                 </td>
@@ -1267,9 +1267,9 @@ exports[`Transactions should fetch more transactions 1`] = `
                           class="w-full h-full"
                         >
                           <img
-                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                            alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            title="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
                           />
                         </div>
                       </div>
@@ -1281,7 +1281,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
-                        D5pVkh…xfKwSv
+                        DKY5ey…bNF53A
                       </span>
                     </div>
                   </div>
@@ -1331,7 +1331,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                       <span
                         data-testid="Amount"
                       >
-                        + 400,000 DARK
+                        + 50,000 DARK
                       </span>
                     </div>
                   </div>
@@ -1668,7 +1668,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       Date
                     </div>
                     <div
-                      class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                      class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -1743,7 +1743,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
                         role="img"
                         width="8"
@@ -1774,6 +1774,165 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
             <tbody
               role="rowgroup"
             >
+              <tr
+                class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                data-testid="TableRow"
+              >
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      data-testid="TransactionRow__ID"
+                      rel="noopener noreferrer"
+                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                    >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+                  >
+                    <span
+                      class="whitespace-nowrap"
+                      data-testid="TransactionRow__timestamp"
+                    >
+                      23 Jul 2020 08:03:20
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-1"
+                      data-testid="TransactionRowMode"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          data-testid="TransactionRowMode__Received"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            received.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-flex items-center no-ligatures"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D5pVkh…xfKwSv
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+                  >
+                    <div
+                      class="inline-flex space-x-1 align-middle"
+                      data-testid="TransactionRowInfo"
+                    />
+                  </div>
+                </td>
+                <td
+                  class="w-16"
+                >
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+                  >
+                    <div
+                      class="inline-flex p-1 align-middle"
+                      data-testid="TransactionRowConfirmation"
+                    >
+                      <div
+                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        data-testid="TransactionRowConfirmation__confirmed"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          status-ok.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
+                  >
+                    <div
+                      class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                      color="success"
+                      data-testid="TransactionRowAmount"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        + 400,000 DARK
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                  >
+                    <span
+                      class="whitespace-nowrap"
+                      data-testid="TransactionRow__currency"
+                    >
+                      <span
+                        class="text-theme-secondary-text"
+                        data-testid="TransactionRowAmount"
+                      >
+                        0 BTC
+                      </span>
+                    </span>
+                  </div>
+                </td>
+              </tr>
               <tr
                 class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
                 data-testid="TableRow"
@@ -2070,165 +2229,6 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                         data-testid="Amount"
                       >
                         + 50,000 DARK
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                  >
-                    <span
-                      class="whitespace-nowrap"
-                      data-testid="TransactionRow__currency"
-                    >
-                      <span
-                        class="text-theme-secondary-text"
-                        data-testid="TransactionRowAmount"
-                      >
-                        0 BTC
-                      </span>
-                    </span>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
-                data-testid="TableRow"
-              >
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                  >
-                    <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                      data-testid="TransactionRow__ID"
-                      rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
-                    >
-                      <span
-                        class="underline-dotted"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            id.svg
-                          </svg>
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
-                  >
-                    <span
-                      class="whitespace-nowrap"
-                      data-testid="TransactionRow__timestamp"
-                    >
-                      23 Jul 2020 08:03:20
-                    </span>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-                  >
-                    <div
-                      class="flex items-center -space-x-1"
-                      data-testid="TransactionRowMode"
-                    >
-                      <div
-                        class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          data-testid="TransactionRowMode__Received"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            received.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-flex items-center no-ligatures"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        D5pVkh…xfKwSv
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                  >
-                    <div
-                      class="inline-flex space-x-1 align-middle"
-                      data-testid="TransactionRowInfo"
-                    />
-                  </div>
-                </td>
-                <td
-                  class="w-16"
-                >
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                  >
-                    <div
-                      class="inline-flex p-1 align-middle"
-                      data-testid="TransactionRowConfirmation"
-                    >
-                      <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
-                        data-testid="TransactionRowConfirmation__confirmed"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          status-ok.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
-                  >
-                    <div
-                      class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                      color="success"
-                      data-testid="TransactionRowAmount"
-                    >
-                      <span
-                        data-testid="Amount"
-                      >
-                        + 400,000 DARK
                       </span>
                     </div>
                   </div>
@@ -2565,7 +2565,7 @@ exports[`Transactions should render 1`] = `
                       Date
                     </div>
                     <div
-                      class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                      class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -2640,7 +2640,7 @@ exports[`Transactions should render 1`] = `
                       class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
                         role="img"
                         width="8"
@@ -2671,6 +2671,165 @@ exports[`Transactions should render 1`] = `
             <tbody
               role="rowgroup"
             >
+              <tr
+                class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                data-testid="TableRow"
+              >
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                      data-testid="TransactionRow__ID"
+                      rel="noopener noreferrer"
+                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                    >
+                      <span
+                        class="underline-dotted"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            id.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+                  >
+                    <span
+                      class="whitespace-nowrap"
+                      data-testid="TransactionRow__timestamp"
+                    >
+                      23 Jul 2020 08:03:20
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-1"
+                      data-testid="TransactionRowMode"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          data-testid="TransactionRowMode__Received"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            received.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="inline-flex items-center no-ligatures"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        D5pVkh…xfKwSv
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+                  >
+                    <div
+                      class="inline-flex space-x-1 align-middle"
+                      data-testid="TransactionRowInfo"
+                    />
+                  </div>
+                </td>
+                <td
+                  class="w-16"
+                >
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+                  >
+                    <div
+                      class="inline-flex p-1 align-middle"
+                      data-testid="TransactionRowConfirmation"
+                    >
+                      <div
+                        class="sc-bdfBwQ iSzUah text-theme-success-600"
+                        data-testid="TransactionRowConfirmation__confirmed"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          status-ok.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
+                  >
+                    <div
+                      class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                      color="success"
+                      data-testid="TransactionRowAmount"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        + 400,000 DARK
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                  >
+                    <span
+                      class="whitespace-nowrap"
+                      data-testid="TransactionRow__currency"
+                    >
+                      <span
+                        class="text-theme-secondary-text"
+                        data-testid="TransactionRowAmount"
+                      >
+                        0 BTC
+                      </span>
+                    </span>
+                  </div>
+                </td>
+              </tr>
               <tr
                 class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
                 data-testid="TableRow"
@@ -2967,165 +3126,6 @@ exports[`Transactions should render 1`] = `
                         data-testid="Amount"
                       >
                         + 50,000 DARK
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                  >
-                    <span
-                      class="whitespace-nowrap"
-                      data-testid="TransactionRow__currency"
-                    >
-                      <span
-                        class="text-theme-secondary-text"
-                        data-testid="TransactionRowAmount"
-                      >
-                        0 BTC
-                      </span>
-                    </span>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
-                data-testid="TableRow"
-              >
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                  >
-                    <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                      data-testid="TransactionRow__ID"
-                      rel="noopener noreferrer"
-                      to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
-                    >
-                      <span
-                        class="underline-dotted"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            id.svg
-                          </svg>
-                        </div>
-                      </span>
-                    </a>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
-                  >
-                    <span
-                      class="whitespace-nowrap"
-                      data-testid="TransactionRow__timestamp"
-                    >
-                      23 Jul 2020 08:03:20
-                    </span>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-                  >
-                    <div
-                      class="flex items-center -space-x-1"
-                      data-testid="TransactionRowMode"
-                    >
-                      <div
-                        class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          data-testid="TransactionRowMode__Received"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            received.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                            title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="inline-flex items-center no-ligatures"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        D5pVkh…xfKwSv
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                  >
-                    <div
-                      class="inline-flex space-x-1 align-middle"
-                      data-testid="TransactionRowInfo"
-                    />
-                  </div>
-                </td>
-                <td
-                  class="w-16"
-                >
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                  >
-                    <div
-                      class="inline-flex p-1 align-middle"
-                      data-testid="TransactionRowConfirmation"
-                    >
-                      <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
-                        data-testid="TransactionRowConfirmation__confirmed"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          status-ok.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
-                  >
-                    <div
-                      class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                      color="success"
-                      data-testid="TransactionRowAmount"
-                    >
-                      <span
-                        data-testid="Amount"
-                      >
-                        + 400,000 DARK
                       </span>
                     </div>
                   </div>

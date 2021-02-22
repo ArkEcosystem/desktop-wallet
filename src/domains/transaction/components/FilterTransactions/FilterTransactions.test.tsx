@@ -1,9 +1,16 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
 
 import { FilterTransactions } from "./";
 
+let profile: Profile;
+
 describe("FilterTransactions", () => {
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
 	it("should render", () => {
 		const { container, getByRole } = render(<FilterTransactions />);
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
@@ -19,7 +26,9 @@ describe("FilterTransactions", () => {
 	});
 
 	it("should open dropdown list with all transaction types", async () => {
-		const { container, getByRole, getByTestId } = render(<FilterTransactions />);
+		const { container, getByRole, getByTestId } = render(
+			<FilterTransactions wallets={profile.wallets().values()} />,
+		);
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 		act(() => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
@@ -32,7 +41,9 @@ describe("FilterTransactions", () => {
 	it("should emit onChange", async () => {
 		const onSelect = jest.fn();
 
-		const { getByRole, getByTestId } = render(<FilterTransactions onSelect={onSelect} />);
+		const { getByRole, getByTestId } = render(
+			<FilterTransactions wallets={profile.wallets().values()} onSelect={onSelect} />,
+		);
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
 		act(() => {

@@ -399,11 +399,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                               data-testid="SelectNetworkInput"
                             >
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
                               >
                                 <div
                                   aria-label="ARK Devnet"
@@ -423,7 +423,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 </div>
                               </div>
                               <span
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                 data-testid="SelectNetworkInput__typeahead"
                               >
                                 ARK Devnet
@@ -645,7 +645,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             id="downshift-113-label"
                                           />
                                           <div
-                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                             data-testid="SelectDropdownInput"
                                           >
                                             <input
@@ -703,7 +703,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                 >
                                   <input
                                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -715,7 +715,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     value=""
                                   />
                                   <div
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                                   >
                                     <button
                                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -742,7 +742,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           Smartbridge
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -753,7 +753,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             value=""
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
                             data-testid="InputCounter__counter"
                           >
                             0/255
@@ -782,7 +782,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             >
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -1302,7 +1302,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
-                        class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                         data-testid="InputPassword"
                       >
                         <input
@@ -1313,7 +1313,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                           type="password"
                         />
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
                         >
                           <span
                             data-errortext="Invalid Mnemonic"
@@ -1331,7 +1331,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                           </span>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                         >
                           <button
                             class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1471,11 +1471,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               id="SendTransactionForm__network-label"
             />
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -1684,7 +1684,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                             id="downshift-19-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <input
@@ -1742,7 +1742,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   />
                 </label>
                 <div
-                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                 >
                   <input
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -1754,7 +1754,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                     value="1.2"
                   />
                   <div
-                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                   >
                     <button
                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -1781,7 +1781,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           Smartbridge
         </label>
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
         >
           <input
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -1792,7 +1792,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             value=""
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
             data-testid="InputCounter__counter"
           >
             0/255
@@ -1821,7 +1821,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             class="flex-1"
           >
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
             >
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -2258,11 +2258,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                               data-testid="SelectNetworkInput"
                             >
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
                               >
                                 <div
                                   aria-label="ARK Devnet"
@@ -2282,7 +2282,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 </div>
                               </div>
                               <span
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                 data-testid="SelectNetworkInput__typeahead"
                               >
                                 ARK Devnet
@@ -2497,7 +2497,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             id="downshift-41-label"
                                           />
                                           <div
-                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                             data-testid="SelectDropdownInput"
                                           >
                                             <input
@@ -2554,7 +2554,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                 >
                                   <input
                                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -2565,7 +2565,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     value=""
                                   />
                                   <div
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                                   >
                                     <button
                                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -2592,7 +2592,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           Smartbridge
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -2603,7 +2603,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             value="ARK"
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
                             data-testid="InputCounter__counter"
                           >
                             0/255
@@ -2632,7 +2632,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             >
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -3167,11 +3167,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                               data-testid="SelectNetworkInput"
                             >
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
                               >
                                 <div
                                   aria-label="ARK Devnet"
@@ -3191,7 +3191,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 </div>
                               </div>
                               <span
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                 data-testid="SelectNetworkInput__typeahead"
                               >
                                 ARK Devnet
@@ -3406,7 +3406,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             id="downshift-61-label"
                                           />
                                           <div
-                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                             data-testid="SelectDropdownInput"
                                           >
                                             <input
@@ -3463,7 +3463,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                 >
                                   <input
                                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -3474,7 +3474,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     value=""
                                   />
                                   <div
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                                   >
                                     <button
                                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -3501,7 +3501,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           Smartbridge
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -3512,7 +3512,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             value=""
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
                             data-testid="InputCounter__counter"
                           >
                             0/255
@@ -3541,7 +3541,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             >
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -3712,11 +3712,11 @@ exports[`SendTransfer should render form step 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -3914,7 +3914,7 @@ exports[`SendTransfer should render form step 1`] = `
                             id="downshift-1-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <input
@@ -3972,7 +3972,7 @@ exports[`SendTransfer should render form step 1`] = `
                   />
                 </label>
                 <div
-                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                 >
                   <input
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -3984,7 +3984,7 @@ exports[`SendTransfer should render form step 1`] = `
                     value=""
                   />
                   <div
-                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                   >
                     <button
                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -4011,7 +4011,7 @@ exports[`SendTransfer should render form step 1`] = `
           Smartbridge
         </label>
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
         >
           <input
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -4022,7 +4022,7 @@ exports[`SendTransfer should render form step 1`] = `
             value=""
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
             data-testid="InputCounter__counter"
           >
             0/255
@@ -4051,7 +4051,7 @@ exports[`SendTransfer should render form step 1`] = `
             class="flex-1"
           >
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
             >
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -4124,11 +4124,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               id="SendTransactionForm__network-label"
             />
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -4175,9 +4175,8 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         >
           <div>
             <button
-              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress is-disabled "
+              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
               data-testid="SelectAddress__wrapper"
-              disabled=""
               type="button"
             >
               <div
@@ -4299,8 +4298,19 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                       class="absolute left-1 z-20"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
-                      />
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                            title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                          />
+                        </div>
+                      </div>
                     </div>
                     <div
                       class="relative w-full"
@@ -4311,7 +4321,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         data-testid="select-list__input"
                         name="recipientAddress"
                         readonly=""
-                        value=""
+                        value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
                       />
                       <div
                         class="relative w-full"
@@ -4327,7 +4337,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                             id="downshift-9-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <input
@@ -4341,7 +4351,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                               id="downshift-8-input"
                               name="recipientAddress"
                               placeholder="Select option"
-                              value=""
+                              value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
                             />
                           </div>
                           <ul
@@ -4385,7 +4395,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   />
                 </label>
                 <div
-                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                 >
                   <input
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -4394,10 +4404,10 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                     name="amount"
                     placeholder="Amount"
                     type="text"
-                    value=""
+                    value="1.2"
                   />
                   <div
-                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                   >
                     <button
                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -4424,7 +4434,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           Smartbridge
         </label>
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
         >
           <input
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -4435,7 +4445,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             value=""
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
             data-testid="InputCounter__counter"
           >
             0/255
@@ -4464,7 +4474,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             class="flex-1"
           >
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
             >
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -4472,7 +4482,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 disabled=""
                 name="fee"
                 type="text"
-                value=""
+                value="0"
               />
             </div>
           </div>
@@ -4537,11 +4547,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               data-testid="SelectNetworkInput"
             >
               <div
-                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
               >
                 <div
                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -4739,7 +4749,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                             id="downshift-5-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <input
@@ -4797,7 +4807,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                   />
                 </label>
                 <div
-                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                 >
                   <input
                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -4809,7 +4819,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                     value=""
                   />
                   <div
-                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                   >
                     <button
                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -4836,7 +4846,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           Smartbridge
         </label>
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
         >
           <input
             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -4847,7 +4857,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             value=""
           />
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
             data-testid="InputCounter__counter"
           >
             0/255
@@ -4876,7 +4886,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             class="flex-1"
           >
             <div
-              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
             >
               <input
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -5868,11 +5878,11 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                               data-testid="SelectNetworkInput"
                             >
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
                               >
                                 <div
                                   class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
@@ -6070,7 +6080,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                             id="downshift-29-label"
                                           />
                                           <div
-                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                             data-testid="SelectDropdownInput"
                                           >
                                             <input
@@ -6128,7 +6138,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                 >
                                   <input
                                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -6140,7 +6150,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                     value=""
                                   />
                                   <div
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                                   >
                                     <button
                                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -6167,7 +6177,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                           Smartbridge
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -6178,7 +6188,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                             value=""
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
                             data-testid="InputCounter__counter"
                           >
                             0/255
@@ -6207,7 +6217,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             >
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -6660,11 +6670,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                               data-testid="SelectNetworkInput"
                             >
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
                               >
                                 <div
                                   aria-label="ARK Devnet"
@@ -6684,7 +6694,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 </div>
                               </div>
                               <span
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                 data-testid="SelectNetworkInput__typeahead"
                               >
                                 ARK Devnet
@@ -6924,7 +6934,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             id="downshift-137-label"
                                           />
                                           <div
-                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                             data-testid="SelectDropdownInput"
                                           >
                                             <input
@@ -6981,7 +6991,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                 >
                                   <input
                                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -6992,7 +7002,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     value=""
                                   />
                                   <div
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                                   >
                                     <button
                                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -7019,7 +7029,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           Smartbridge
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -7030,7 +7040,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             value=""
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
                             data-testid="InputCounter__counter"
                           >
                             0
@@ -7061,7 +7071,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             >
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -7577,11 +7587,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                               data-testid="SelectNetworkInput"
                             >
                               <div
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
                               >
                                 <div
                                   aria-label="ARK Devnet"
@@ -7601,7 +7611,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 </div>
                               </div>
                               <span
-                                class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
                                 data-testid="SelectNetworkInput__typeahead"
                               >
                                 ARK Devnet
@@ -7823,7 +7833,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                             id="downshift-89-label"
                                           />
                                           <div
-                                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                             data-testid="SelectDropdownInput"
                                           >
                                             <input
@@ -7881,7 +7891,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                                 >
                                   <input
                                     class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
@@ -7893,7 +7903,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                     value=""
                                   />
                                   <div
-                                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
                                   >
                                     <button
                                       class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
@@ -7920,7 +7930,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           Smartbridge
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-25"
@@ -7931,7 +7941,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             value=""
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-secondary-500"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO px-2 text-sm pointer-events-none text-theme-secondary-500"
                             data-testid="InputCounter__counter"
                           >
                             0/255
@@ -7960,7 +7970,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             >
                               <input
                                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"

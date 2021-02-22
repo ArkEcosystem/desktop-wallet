@@ -107,11 +107,6 @@ export const SelectNetwork = ({
 		if (selectedItem && selectedItem.extra?.displayName === network.extra?.displayName) {
 			return "text-theme-success-500 border-theme-success-200";
 		}
-		// Selection is made but not me. Show me disabled
-		/* istanbul ignore next */
-		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName) {
-			return "text-theme-secondary-400";
-		}
 
 		// Initial state. Nothing entered, nothing selected
 		if (!inputValue) {
