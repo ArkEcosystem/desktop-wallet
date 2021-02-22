@@ -275,7 +275,7 @@ jobs:
                   src/domains/news --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/news/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":84.44,"lines":68.31,"statements":69.13}}'
+                  --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-plugin:
         runs-on: ubuntu-latest
         strategy:

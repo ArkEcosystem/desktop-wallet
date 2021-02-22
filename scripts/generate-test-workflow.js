@@ -55,9 +55,9 @@ const directories = {
 	},
 	"domains/news": {
 		branches: 100,
-		functions: 84.44,
-		lines: 68.31,
-		statements: 69.13,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/plugin": {
 		branches: 100,
