@@ -376,7 +376,7 @@ export const SendTransfer = () => {
 						variant={feeWarningVariant}
 						onCancel={(suppressWarning: boolean) => dismissFeeWarning(handleBack, suppressWarning)}
 						onConfirm={(suppressWarning: boolean) =>
-							dismissFeeWarning(() => handleNext(true), suppressWarning)
+							dismissFeeWarning(async () => await handleNext(true), suppressWarning)
 						}
 					/>
 
