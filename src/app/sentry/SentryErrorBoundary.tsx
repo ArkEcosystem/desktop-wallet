@@ -3,5 +3,8 @@ import { ApplicationError } from "domains/error/pages";
 import React from "react";
 
 export const SentryErrorBoundary = ({ children }: { children: React.ReactNode }) => (
-	<Sentry.ErrorBoundary fallback={ApplicationError}>{children}</Sentry.ErrorBoundary>
+	// @ts-ignore
+	<Sentry.ErrorBoundary fallback={(errorData) => <ApplicationError resetErrorBoundary={errorData.resetError} />}>
+		{children}
+	</Sentry.ErrorBoundary>
 );
