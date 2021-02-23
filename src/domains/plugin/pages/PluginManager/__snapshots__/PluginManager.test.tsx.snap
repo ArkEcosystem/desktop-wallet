@@ -568,20 +568,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 colspan="1"
                                 data-testid="table__th--0"
                                 role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden "
-                                >
-                                  <div>
-                                    Logo
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
                               >
@@ -592,7 +578,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                     Name
                                   </div>
                                   <div
-                                    class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                    class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                                   >
                                     <div
                                       class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -610,7 +596,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--2"
+                                data-testid="table__th--1"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -640,7 +626,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--3"
+                                data-testid="table__th--2"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -670,7 +656,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--4"
+                                data-testid="table__th--3"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -700,7 +686,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--5"
+                                data-testid="table__th--4"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -730,7 +716,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--6"
+                                data-testid="table__th--5"
                                 role="columnheader"
                               >
                                 <div
@@ -744,7 +730,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--7"
+                                data-testid="table__th--6"
                                 role="columnheader"
                               >
                                 <div
@@ -764,14 +750,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                               data-testid="TableRow"
                             >
-                              <td
-                                class="w-20"
-                              >
+                              <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                                 >
                                   <div
-                                    class="flex justify-center items-center"
+                                    class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
                                   >
                                     <svg
                                       class="w-14 h-14"
@@ -779,12 +763,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                       plugin-logo-placeholder.svg
                                     </svg>
                                   </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                                >
                                   <a
                                     class="font-semibold link"
                                     href="/"
@@ -915,20 +893,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 colspan="1"
                                 data-testid="table__th--0"
                                 role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden "
-                                >
-                                  <div>
-                                    Logo
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
                               >
@@ -939,7 +903,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                     Name
                                   </div>
                                   <div
-                                    class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                    class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                                   >
                                     <div
                                       class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -957,7 +921,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--2"
+                                data-testid="table__th--1"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -987,7 +951,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--3"
+                                data-testid="table__th--2"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1017,7 +981,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--4"
+                                data-testid="table__th--3"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1047,7 +1011,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--5"
+                                data-testid="table__th--4"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1077,7 +1041,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--6"
+                                data-testid="table__th--5"
                                 role="columnheader"
                               >
                                 <div
@@ -1091,7 +1055,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--7"
+                                data-testid="table__th--6"
                                 role="columnheader"
                               >
                                 <div
@@ -1111,14 +1075,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                               data-testid="TableRow"
                             >
-                              <td
-                                class="w-20"
-                              >
+                              <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                                 >
                                   <div
-                                    class="flex justify-center items-center"
+                                    class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
                                   >
                                     <svg
                                       class="w-14 h-14"
@@ -1126,12 +1088,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                       plugin-logo-placeholder.svg
                                     </svg>
                                   </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                                >
                                   <a
                                     class="font-semibold link"
                                     href="/"
@@ -1261,20 +1217,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 colspan="1"
                                 data-testid="table__th--0"
                                 role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden "
-                                >
-                                  <div>
-                                    Logo
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
                               >
@@ -1285,7 +1227,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                     Name
                                   </div>
                                   <div
-                                    class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                    class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                                   >
                                     <div
                                       class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1303,7 +1245,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--2"
+                                data-testid="table__th--1"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1333,7 +1275,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--3"
+                                data-testid="table__th--2"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1363,7 +1305,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--4"
+                                data-testid="table__th--3"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1393,7 +1335,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--5"
+                                data-testid="table__th--4"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1423,7 +1365,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--6"
+                                data-testid="table__th--5"
                                 role="columnheader"
                               >
                                 <div
@@ -1437,7 +1379,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--7"
+                                data-testid="table__th--6"
                                 role="columnheader"
                               >
                                 <div
@@ -1457,14 +1399,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                               data-testid="TableRow"
                             >
-                              <td
-                                class="w-20"
-                              >
+                              <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                                 >
                                   <div
-                                    class="flex justify-center items-center"
+                                    class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
                                   >
                                     <svg
                                       class="w-14 h-14"
@@ -1472,12 +1412,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                       plugin-logo-placeholder.svg
                                     </svg>
                                   </div>
-                                </div>
-                              </td>
-                              <td>
-                                <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                                >
                                   <a
                                     class="font-semibold link"
                                     href="/"
@@ -4909,20 +4843,6 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
-                          >
-                            <div
-                              class="flex flex-inline align-top hidden "
-                            >
-                              <div>
-                                Logo
-                              </div>
-                            </div>
-                          </th>
-                          <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--1"
-                            role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
                           >
@@ -4933,7 +4853,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                                 Name
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -4951,7 +4871,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--2"
+                            data-testid="table__th--1"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -4981,7 +4901,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--3"
+                            data-testid="table__th--2"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5011,7 +4931,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--4"
+                            data-testid="table__th--3"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5041,7 +4961,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--5"
+                            data-testid="table__th--4"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5071,7 +4991,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--6"
+                            data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
@@ -5085,7 +5005,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--7"
+                            data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
@@ -5105,14 +5025,12 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-20"
-                          >
+                          <td>
                             <div
-                              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
-                                class="flex justify-center items-center"
+                                class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
                               >
                                 <svg
                                   class="w-14 h-14"
@@ -5120,12 +5038,6 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                            >
                               <a
                                 class="font-semibold link"
                                 href="/"
@@ -5799,20 +5711,6 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
-                          >
-                            <div
-                              class="flex flex-inline align-top hidden "
-                            >
-                              <div>
-                                Logo
-                              </div>
-                            </div>
-                          </th>
-                          <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--1"
-                            role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
                           >
@@ -5823,7 +5721,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                                 Name
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -5841,7 +5739,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--2"
+                            data-testid="table__th--1"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5871,7 +5769,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--3"
+                            data-testid="table__th--2"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5901,7 +5799,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--4"
+                            data-testid="table__th--3"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5931,7 +5829,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--5"
+                            data-testid="table__th--4"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -5961,7 +5859,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--6"
+                            data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
@@ -5975,7 +5873,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--7"
+                            data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
@@ -5995,14 +5893,12 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                           data-testid="TableRow"
                         >
-                          <td
-                            class="w-20"
-                          >
+                          <td>
                             <div
-                              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
-                                class="flex justify-center items-center"
+                                class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
                               >
                                 <svg
                                   class="w-14 h-14"
@@ -6010,12 +5906,6 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div
-                              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                            >
                               <a
                                 class="font-semibold link"
                                 href="/"
