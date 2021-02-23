@@ -6,7 +6,6 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
@@ -186,7 +185,6 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		trigger,
 		filters,
 		filterBy,
-		resetFilters,
 	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
@@ -281,19 +279,10 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							<div className="flex justify-end items-top">
 								<HeaderSearchBar
 									defaultQuery={filters.query}
-									label=""
+									label={t("COMMON.SEARCH")}
 									onSearch={(query) => {
 										filterBy({ query });
 									}}
-									extra={
-										<SearchBarPluginFilters
-											initialValues={filters}
-											onReset={resetFilters}
-											onChange={(additionalFilters: any) => {
-												filterBy(additionalFilters);
-											}}
-										/>
-									}
 								/>
 								{isAdvancedMode ? (
 									<>
