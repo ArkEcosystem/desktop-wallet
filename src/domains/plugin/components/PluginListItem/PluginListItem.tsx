@@ -25,22 +25,15 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 
 	return (
 		<TableRow>
-			<TableCell variant="start" className="w-20">
-				<div className="flex justify-center items-center">
+			<TableCell variant="start" innerClassName="space-x-5">
+				<div className="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg">
 					{plugin.logo ? (
-						<img
-							data-testid="PluginListItem__logo"
-							src={plugin.logo}
-							alt="Logo"
-							className="overflow-hidden w-14 h-14 rounded"
-						/>
+						<img data-testid="PluginListItem__logo" src={plugin.logo} alt="Logo" className="" />
 					) : (
 						<Image name="PluginLogoPlaceholder" domain="plugin" className="w-14 h-14" />
 					)}
 				</div>
-			</TableCell>
 
-			<TableCell innerClassName="space-x-2">
 				<a href="/" className="font-semibold link">
 					{plugin.title}
 				</a>
