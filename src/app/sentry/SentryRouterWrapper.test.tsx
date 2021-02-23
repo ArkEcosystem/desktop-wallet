@@ -1,21 +1,23 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import * as Sentry from "@sentry/react";
 import { LedgerProvider } from "app/contexts";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import { env, getDefaultProfileId, getDefaultWalletId, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { SentryProvider } from "./SentryProvider";
 import { SentryRouterWrapper } from "./SentryRouterWrapper";
 
 describe("Sentry Router Wrapper", () => {
 	let profile: Profile;
+	let wallet: ReadWriteWallet;
 	let transport: typeof Transport;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById(getDefaultWalletId());
 		transport = createTransportReplayer(RecordStore.fromString(""));
 		process.env.REACT_APP_SENTRY_DSN = "https://example.sentry-dsn.com";
 	});
@@ -128,5 +130,32 @@ describe("Sentry Router Wrapper", () => {
 		expect(sentryInitSpy).toHaveBeenCalledTimes(1);
 
 		profile.settings().set(ProfileSetting.ErrorReporting, false);
+	});
+
+	it("should register current wallet context", async () => {
+		const setContextSpy = jest.spyOn(Sentry, "setContext").mockImplementation();
+
+		renderWithRouter(
+			<Route path="/profile/:profileId/dashboard/wallet/:walletId">
+				<LedgerProvider transport={transport}>
+					<SentryProvider>
+						<SentryRouterWrapper>
+							<h1>Page</h1>
+						</SentryRouterWrapper>
+					</SentryProvider>
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [`/profile/${profile.id()}/dashboard/wallet/${wallet.id()}`],
+			},
+		);
+
+		await waitFor(() =>
+			expect(setContextSpy).toHaveBeenCalledWith("wallet", {
+				id: "ac38fe6d-4b67-4ef1-85be-17c5f6841129",
+				isLedger: false,
+				networkId: "ark.devnet",
+			}),
+		);
 	});
 });

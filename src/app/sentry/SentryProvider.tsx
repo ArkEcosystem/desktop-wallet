@@ -48,16 +48,11 @@ const useSentry = () => {
 		});
 	};
 
-	const setLedgerContext = (ledgerData?: {
+	const setLedgerContext = (ledgerData: {
 		hasDeviceAvailable: boolean;
 		isConnected: boolean;
 		isAwaitingConnection: boolean;
 	}) => {
-		if (!ledgerData) {
-			Sentry.setContext("ledger", null);
-			return;
-		}
-
 		Sentry.setContext("ledger", {
 			hasDeviceAvailable: ledgerData.hasDeviceAvailable,
 			isAwaitingConnection: ledgerData.isAwaitingConnection,
