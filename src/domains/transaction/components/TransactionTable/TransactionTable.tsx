@@ -35,7 +35,7 @@ export const TransactionTable = memo(
 		const initialState = {
 			sortBy: [
 				{
-					id: t("COMMON.DATE"),
+					id: "date",
 					desc: true,
 				},
 			],
@@ -43,6 +43,7 @@ export const TransactionTable = memo(
 		const commonColumns: any = [
 			{
 				Header: t("COMMON.DATE"),
+				id: "date",
 				accessor: (transaction: ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 				sortDescFirst: true,
 				cellWidth: "w-50",
@@ -62,6 +63,7 @@ export const TransactionTable = memo(
 			},
 			{
 				Header: t("COMMON.AMOUNT"),
+				id: "amount",
 				accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
 				sortDescFirst: true,
 				className: "justify-end",
@@ -76,6 +78,7 @@ export const TransactionTable = memo(
 					},
 					{
 						Header: t("COMMON.AMOUNT"),
+						id: "amount",
 						accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
 						className: "justify-end",
 					},
