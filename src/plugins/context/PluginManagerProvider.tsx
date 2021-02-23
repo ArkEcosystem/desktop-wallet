@@ -12,6 +12,13 @@ import { openExternal } from "utils/electron-utils";
 import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
+type PluginFilters = {
+	categories: string[];
+	claimed: boolean;
+	rating: number;
+	query?: string;
+};
+
 const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<{
 		packages: PluginConfigurationData[];
@@ -21,6 +28,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		configurations: [],
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
+
+	const defaultFilters: PluginFilters = { categories: [], query: "", claimed: false, rating: 1 };
+	const [filters, setFilters] = useState(defaultFilters);
 
 	const [pluginRegistry] = useState(() => new PluginRegistry());
 
@@ -134,7 +144,33 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		setState((prev: any) => ({ ...prev, packages: merged }));
 	}, [pluginManager, pluginRegistry]);
 
-	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
+	const filterPackages = useCallback(
+		(allPackages: PluginConfigurationData[]) => {
+			const filteredPackages = allPackages.filter((pluginPackage) => {
+				let matchesQuery = true;
+				let matchesCategories = true;
+
+				if (filters.query && filters.query !== defaultFilters.query) {
+					matchesQuery = !!pluginPackage.title()?.toLowerCase().includes(filters.query.toLowerCase());
+				}
+
+				if (filters.categories.length !== defaultFilters.categories.length) {
+					matchesCategories = pluginPackage.categories().some((category) => filters.categories.includes(category));
+				}
+
+				return matchesQuery && matchesCategories;
+			});
+
+			return filteredPackages;
+		},
+		[filters, defaultFilters],
+	);
+
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => filterPackages(state.packages), [
+		state,
+		filterPackages,
+	]);
+
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
 	const downloadPlugin = useCallback(
@@ -205,6 +241,11 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		deletePlugin,
 		fetchLatestPackageConfiguration,
 		pluginConfigurations,
+		filters,
+		filterBy: (appliedFilters: any) => {
+			setFilters({ ...filters, ...appliedFilters });
+		},
+		resetFilters: () => setFilters(defaultFilters),
 	};
 };
 

@@ -218,7 +218,7 @@ SearchBarPluginFilters.defaultProps = {
 		},
 		{
 			label: "Themes",
-			value: "themes",
+			value: "theme",
 		},
 		{
 			label: "Other",
