@@ -141,7 +141,6 @@ describe("Use Ledger Scanner", () => {
 							<li key={x.path}>
 								<p>{`Path: ${x.path}`}</p>
 								<p>{`Address: ${x.address}`}</p>
-								<p>{`Address: ${x.address}`}</p>
 								<p>{`Failed: ${isFailed(x.path)}`}</p>
 								<p>{`Selected: ${isSelected(x.path)}`}</p>
 								<input
