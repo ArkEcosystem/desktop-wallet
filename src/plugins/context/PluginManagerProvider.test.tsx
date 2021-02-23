@@ -280,4 +280,169 @@ describe("PluginManagerProvider", () => {
 
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
 	});
+
+	it("should filter packages by search query", async () => {
+		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, pluginPackages, filterBy } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ query: "test" });
+							}}
+							data-testid="QueryByText"
+						 />
+					)}
+
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ categories: ["utility"] });
+							}}
+							data-testid="QueryByUnknownText"
+						 />
+					)}
+					<ul>
+						{pluginPackages.map((pkg) => (
+							<li key={pkg.name()}>{pkg.name()}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByRole("button"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		fireEvent.click(screen.getByTestId("QueryByText"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		fireEvent.click(screen.getByTestId("QueryByUnknownText"));
+		await waitFor(() => expect(() => screen.getAllByRole("listitem")).toThrow());
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should filter by category", async () => {
+		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, pluginPackages, filterBy } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ categories: [] });
+							}}
+							data-testid="QueryByCategory"
+						 />
+					)}
+
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ categories: ["unnkown"] });
+							}}
+							data-testid="QueryByUnknownCategory"
+						 />
+					)}
+					<ul>
+						{pluginPackages.map((pkg) => (
+							<li key={pkg.name()}>{pkg.name()}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByRole("button"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		fireEvent.click(screen.getByTestId("QueryByCategory"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		fireEvent.click(screen.getByTestId("QueryByUnknownCategory"));
+		await waitFor(() => expect(() => screen.getAllByRole("listitem")).toThrow());
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should reset filters", async () => {
+		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, pluginPackages, filterBy, resetFilters } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ query: "test" });
+							}}
+							data-testid="QueryByText"
+						 />
+					)}
+
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								resetFilters();
+							}}
+							data-testid="ResetFilters"
+						 />
+					)}
+					<ul>
+						{pluginPackages.map((pkg) => (
+							<li key={pkg.name()}>{pkg.name()}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByRole("button"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		fireEvent.click(screen.getByTestId("QueryByText"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		fireEvent.click(screen.getByTestId("ResetFilters"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
 });
