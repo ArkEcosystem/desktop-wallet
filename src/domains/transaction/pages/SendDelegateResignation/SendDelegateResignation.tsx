@@ -56,10 +56,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	useEffect(() => {
 		register("fees");
-		register(
-			"fee",
-			common.fee(() => getValues("fees"), activeWallet?.balance?.(), activeWallet?.network?.()),
-		);
+		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
 	}, [activeWallet, common, getValues, register]);
 
 	const handleBack = () => {
