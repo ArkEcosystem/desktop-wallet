@@ -119,7 +119,7 @@ export const translations: { [key: string]: any } = {
 		CATEGORIES: {
 			GAME: "Game",
 			UTILITY: "Utility",
-			THEMES: "Theme",
+			THEME: "Theme",
 			OTHER: "Other",
 		},
 	},
