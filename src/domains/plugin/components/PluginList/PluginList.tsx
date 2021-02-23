@@ -32,15 +32,18 @@ export const PluginList = ({
 
 	const [currentPage, setCurrentPage] = React.useState(1);
 
+	const initialState = {
+		sortBy: [
+			{
+				id: "title",
+			},
+		],
+	};
+
 	const columns = [
 		{
-			Header: "Logo",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.NAME"),
-			accessor: "name",
+			accessor: "title",
 		},
 		{
 			Header: t("COMMON.AUTHOR"),
@@ -75,7 +78,7 @@ export const PluginList = ({
 
 	return (
 		<div data-testid="PluginList" className={className}>
-			<Table columns={columns} data={pagePlugins}>
+			<Table columns={columns} data={pagePlugins} initialState={initialState}>
 				{(plugin: any) => (
 					<PluginListItem
 						plugin={plugin}
