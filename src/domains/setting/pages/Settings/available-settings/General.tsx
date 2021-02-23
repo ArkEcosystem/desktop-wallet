@@ -175,7 +175,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="errorReporting"
-					// @ts-ignore
 					defaultChecked={activeProfile.settings().get(ProfileSetting.ErrorReporting)}
 					data-testid="General-settings__toggle--errorReporting"
 				/>
@@ -239,7 +238,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
-		// @ts-ignore
 		activeProfile.settings().set(ProfileSetting.ErrorReporting, errorReporting);
 
 		if (!avatarImage || isSvg) {

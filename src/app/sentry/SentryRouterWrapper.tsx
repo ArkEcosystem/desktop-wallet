@@ -37,7 +37,7 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 		if (!profile) {
 			return;
 		}
-		// @ts-ignore
+
 		const isErrorReportingEnabled = profile.settings().get<boolean>(ProfileSetting.ErrorReporting, false);
 
 		if (isErrorReportingEnabled) {
