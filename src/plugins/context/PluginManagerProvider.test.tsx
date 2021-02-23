@@ -297,7 +297,7 @@ describe("PluginManagerProvider", () => {
 								filterBy({ query: "test" });
 							}}
 							data-testid="QueryByText"
-						 />
+						/>
 					)}
 
 					{pluginPackages.length > 0 && (
@@ -306,7 +306,7 @@ describe("PluginManagerProvider", () => {
 								filterBy({ categories: ["utility"] });
 							}}
 							data-testid="QueryByUnknownText"
-						 />
+						/>
 					)}
 					<ul>
 						{pluginPackages.map((pkg) => (
@@ -352,7 +352,7 @@ describe("PluginManagerProvider", () => {
 								filterBy({ categories: [] });
 							}}
 							data-testid="QueryByCategory"
-						 />
+						/>
 					)}
 
 					{pluginPackages.length > 0 && (
@@ -361,7 +361,7 @@ describe("PluginManagerProvider", () => {
 								filterBy({ categories: ["unnkown"] });
 							}}
 							data-testid="QueryByUnknownCategory"
-						 />
+						/>
 					)}
 					<ul>
 						{pluginPackages.map((pkg) => (
@@ -407,7 +407,7 @@ describe("PluginManagerProvider", () => {
 								filterBy({ query: "test" });
 							}}
 							data-testid="QueryByText"
-						 />
+						/>
 					)}
 
 					{pluginPackages.length > 0 && (
@@ -416,7 +416,7 @@ describe("PluginManagerProvider", () => {
 								resetFilters();
 							}}
 							data-testid="ResetFilters"
-						 />
+						/>
 					)}
 					<ul>
 						{pluginPackages.map((pkg) => (

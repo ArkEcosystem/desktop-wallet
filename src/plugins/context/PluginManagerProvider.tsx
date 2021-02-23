@@ -155,7 +155,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				}
 
 				if (filters.categories.length !== defaultFilters.categories.length) {
-					matchesCategories = pluginPackage.categories().some((category) => filters.categories.includes(category));
+					matchesCategories = pluginPackage
+						.categories()
+						.some((category) => filters.categories.includes(category));
 				}
 
 				return matchesQuery && matchesCategories;
