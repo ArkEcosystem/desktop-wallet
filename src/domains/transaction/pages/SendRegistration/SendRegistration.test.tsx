@@ -198,33 +198,23 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
-		act(() => {
-			fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
-		});
+		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("Registration__continue-button"));
-		});
+		fireEvent.click(getByTestId("Registration__continue-button"));
 
 		// Review Step
-		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("Registration__continue-button"));
-		});
+		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("Registration__continue-button"));
 
 		// Fee warning
-		await waitFor(() => expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
-		});
+		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 	});
@@ -234,33 +224,23 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
-		act(() => {
-			fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
-		});
+		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("Registration__continue-button"));
-		});
+		fireEvent.click(getByTestId("Registration__continue-button"));
 
 		// Review Step
-		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("Registration__continue-button"));
-		});
+		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("Registration__continue-button"));
 
 		// Fee warning
-		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("FeeWarning__continue-button"));
-		});
+		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 	});
