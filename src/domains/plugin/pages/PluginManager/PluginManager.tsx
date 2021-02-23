@@ -179,7 +179,15 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, pluginPackages, isFetchingPackages, trigger } = usePluginManagerContext();
+	const {
+		fetchPluginPackages,
+		pluginPackages,
+		isFetchingPackages,
+		trigger,
+		filters,
+		filterBy,
+		resetFilters,
+	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -272,9 +280,20 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						extra={
 							<div className="flex justify-end items-top">
 								<HeaderSearchBar
+									defaultQuery={filters.query}
 									label=""
-									onSearch={() => console.log("search")}
-									extra={<SearchBarPluginFilters />}
+									onSearch={(query) => {
+										filterBy({ query });
+									}}
+									extra={
+										<SearchBarPluginFilters
+											initialValues={filters}
+											onReset={resetFilters}
+											onChange={(additionalFilters: any) => {
+												filterBy(additionalFilters);
+											}}
+										/>
+									}
 								/>
 								{isAdvancedMode ? (
 									<>
