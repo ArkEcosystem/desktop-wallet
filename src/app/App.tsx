@@ -23,6 +23,7 @@ import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
+import { useHistory } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
@@ -40,8 +41,11 @@ const Main = () => {
 	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
+	const history = useHistory();
 
-	useProfileSynchronizer();
+	useProfileSynchronizer({
+		onProfileRestoreError: () => history.push("/"),
+	});
 	useDeeplink();
 
 	useEffect(() => {
