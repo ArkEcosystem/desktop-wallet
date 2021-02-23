@@ -9,7 +9,8 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
-import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
+import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -38,7 +39,11 @@ export const SendVote = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
-	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
+
+	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { isValid, isSubmitting } = formState;
+
+	const { fee, fees } = watch();
 	const { sendVote, common } = useValidation();
 
 	const abortRef = useRef(new AbortController());
@@ -60,6 +65,14 @@ export const SendVote = () => {
 			}
 		}
 	}, [activeWallet, networks, register, setValue, common, getValues, sendVote]);
+
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
 		if (unvoteAddresses && unvotes.length === 0) {
@@ -119,10 +132,15 @@ export const SendVote = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = async () => {
+	const handleNext = async (suppressWarning?: boolean) => {
 		abortRef.current = new AbortController();
 
 		const newIndex = activeTab + 1;
+
+		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
 		// Skip authorization step
@@ -339,7 +357,7 @@ export const SendVote = () => {
 									onBack={() =>
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
-									isRepeatDisabled={formState.isSubmitting}
+									isRepeatDisabled={isSubmitting}
 									onRepeat={form.handleSubmit(submitForm)}
 								/>
 							</TabPanel>
@@ -350,7 +368,7 @@ export const SendVote = () => {
 										{activeTab < 3 && (
 											<>
 												<Button
-													disabled={formState.isSubmitting}
+													disabled={isSubmitting}
 													variant="secondary"
 													onClick={handleBack}
 													data-testid="SendVote__button--back"
@@ -358,9 +376,9 @@ export const SendVote = () => {
 													{t("COMMON.BACK")}
 												</Button>
 												<Button
-													disabled={!formState.isValid || formState.isSubmitting}
-													isLoading={formState.isSubmitting}
-													onClick={handleNext}
+													disabled={!isValid || isSubmitting}
+													isLoading={isSubmitting}
+													onClick={async () => await handleNext()}
 													data-testid="SendVote__button--continue"
 												>
 													{t("COMMON.CONTINUE")}
@@ -371,7 +389,7 @@ export const SendVote = () => {
 										{activeTab === 3 && !activeWallet.isLedger() && (
 											<>
 												<Button
-													disabled={formState.isSubmitting}
+													disabled={isSubmitting}
 													variant="secondary"
 													onClick={handleBack}
 													data-testid="SendVote__button--back"
@@ -381,8 +399,8 @@ export const SendVote = () => {
 												<Button
 													type="submit"
 													data-testid="SendVote__button--submit"
-													disabled={!formState.isValid || formState.isSubmitting}
-													isLoading={formState.isSubmitting}
+													disabled={!isValid || isSubmitting}
+													isLoading={isSubmitting}
 													icon="Send"
 												>
 													<span>{t("COMMON.SEND")}</span>
@@ -406,6 +424,15 @@ export const SendVote = () => {
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) => dismissFeeWarning(handleBack, suppressWarning)}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(async () => await handleNext(true), suppressWarning)
+						}
+					/>
 				</Form>
 			</Section>
 		</Page>
