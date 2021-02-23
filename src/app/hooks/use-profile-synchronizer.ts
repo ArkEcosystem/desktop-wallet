@@ -285,6 +285,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		markAsRestored,
 		restoreProfile,
 		status,
+		onProfileRestoreError,
 		stop,
 		__E2E__,
 	]);
