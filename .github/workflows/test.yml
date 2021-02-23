@@ -351,7 +351,7 @@ jobs:
                   src/domains/profile --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/profile/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":80.25,"lines":67.57,"statements":68.04}}'
+                  --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-setting:
         runs-on: ubuntu-latest
         strategy:
