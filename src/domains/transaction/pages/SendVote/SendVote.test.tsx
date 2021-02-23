@@ -8,7 +8,6 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import {
-	act,
 	env,
 	fireEvent,
 	getDefaultProfileId,
@@ -553,31 +552,23 @@ describe("SendVote", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendVote__form-step")).toBeTruthy());
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
-		await waitFor(async () => {
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Review Step
-		await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
-		await waitFor(async () => {
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-		});
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Fee warning
-		await waitFor(() => expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
-		});
+		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toBeTruthy());
 	});
@@ -605,31 +596,23 @@ describe("SendVote", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendVote__form-step")).toBeTruthy());
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
-		await waitFor(async () => {
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Review Step
-		await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
-		await waitFor(async () => {
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-		});
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Fee warning
-		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("FeeWarning__continue-button"));
-		});
+		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 	});
