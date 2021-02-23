@@ -19,7 +19,7 @@ import { SendTransactionForm } from "./";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
-const defaultFee = "71538139";
+const defaultFee = "7320598";
 
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
@@ -81,7 +81,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("7320598"));
 
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());

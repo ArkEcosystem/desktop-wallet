@@ -48,10 +48,7 @@ export const SendVote = () => {
 		register("network", sendVote.network());
 		register("senderAddress", sendVote.senderAddress());
 		register("fees");
-		register(
-			"fee",
-			common.fee(() => getValues("fees"), activeWallet?.balance?.(), activeWallet?.network?.()),
-		);
+		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
