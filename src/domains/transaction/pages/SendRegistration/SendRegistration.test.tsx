@@ -193,6 +193,78 @@ describe("Registration", () => {
 		await waitFor(() => expect(feeInput).not.toHaveValue("0"));
 	});
 
+	it("should return to form step by cancelling fee warning", async () => {
+		const { asFragment, getByTestId, history } = await renderPage(wallet);
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+		});
+		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
+
+		// Fee
+		act(() => {
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
+		await act(async () => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		// Review Step
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
+		await act(async () => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		// Fee warning
+		await waitFor(() => expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy());
+		await act(async () => {
+			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+	});
+
+	it("should proceed to authentication step by confirming fee warning", async () => {
+		const { asFragment, getByTestId, history } = await renderPage(wallet);
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+		});
+		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
+
+		// Fee
+		act(() => {
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
+		await act(async () => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		// Review Step
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
+		await act(async () => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		// Fee warning
+		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+		await act(async () => {
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+	});
+
 	it("should show mnemonic error", async () => {
 		const { getByTestId, queryAllByTestId } = await renderPage(secondWallet);
 
