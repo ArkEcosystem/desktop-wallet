@@ -114,4 +114,13 @@ export const translations: { [key: string]: any } = {
 		UTILITY: "Utility",
 		EXCHANGE: "Exchange",
 	},
+
+	FILTERS: {
+		CATEGORIES: {
+			GAME: "Game",
+			UTILITY: "Utility",
+			THEMES: "Theme",
+			OTHER: "Other",
+		},
+	},
 };
