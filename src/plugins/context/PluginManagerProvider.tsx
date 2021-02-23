@@ -12,13 +12,6 @@ import { openExternal } from "utils/electron-utils";
 import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
-type PluginFilters = {
-	categories: string[];
-	claimed: boolean;
-	rating: number;
-	query?: string;
-};
-
 const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<{
 		packages: PluginConfigurationData[];
@@ -29,7 +22,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 
-	const defaultFilters: PluginFilters = { categories: [], query: "", claimed: false, rating: 1 };
+	const defaultFilters: { categories: string[]; query?: string } = { categories: [], query: "" };
 	const [filters, setFilters] = useState(defaultFilters);
 
 	const [pluginRegistry] = useState(() => new PluginRegistry());
