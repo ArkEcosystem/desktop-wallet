@@ -78,10 +78,10 @@ const directories = {
 		statements: 100,
 	},
 	"domains/splash": {
-		branches: 50,
-		functions: 50,
-		lines: 60,
-		statements: 60,
+		branches: 100,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/transaction": {
 		branches: 99.5,
