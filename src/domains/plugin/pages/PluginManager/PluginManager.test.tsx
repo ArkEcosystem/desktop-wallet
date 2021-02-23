@@ -14,7 +14,6 @@ import { env } from "utils/testing-library";
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
-let consoleSpy: any;
 let rendered: RenderResult;
 let profile: Profile;
 const history = createMemoryHistory();
@@ -23,10 +22,6 @@ const fixtureProfileId = getDefaultProfileId();
 const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
-	beforeAll(() => {
-		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-	});
-
 	beforeEach(async () => {
 		nock("https://registry.npmjs.com")
 			.get("/-/v1/search")
@@ -58,17 +53,11 @@ describe("PluginManager", () => {
 					history,
 				},
 			);
-
-			consoleSpy.mockReset();
 		});
 	});
 
-	afterAll(() => {
-		consoleSpy.mockRestore();
-	});
-
 	it("should render", async () => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
@@ -76,19 +65,20 @@ describe("PluginManager", () => {
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle between list and grid on home", async () => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
+		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
-		console.log("----finished test-----");
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -320,7 +310,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should search for plugin", async () => {
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -332,16 +322,121 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(within(getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy());
 
-		consoleSpy.mockReset();
-
 		act(() => {
 			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
-				target: { value: "test" },
+				target: { value: "Transaction Export" },
 			});
 		});
 
-		await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
-		expect(consoleSpy).toHaveBeenCalledWith("search");
+		await waitFor(() => expect(getAllByTestId("Card")).not.toHaveLength(0));
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "unknown search query" },
+			});
+		});
+
+		await waitFor(() => expect(() => getAllByTestId("Card")).toThrow());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should change filters", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
+
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "Transaction Export" },
+			});
+		});
+
+		await waitFor(() => expect(getAllByTestId("Card")).not.toHaveLength(0));
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "unknown search query" },
+			});
+		});
+
+		await waitFor(() => expect(() => getAllByTestId("Card")).toThrow());
+		expect(asFragment()).toMatchSnapshot();
+
+		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(within(getByTestId("SearchBarPluginFilters")).getByTestId("dropdown__toggle"));
+		});
+		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
+
+		const categoryOption = getByTestId("SearchBarPluginFilters-category-game");
+		expect(categoryOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(categoryOption);
+		});
+
+		await waitFor(() => expect(() => getAllByTestId("Card")).toThrow());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should reset filters", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
+
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "Transaction Export" },
+			});
+		});
+
+		await waitFor(() => expect(getAllByTestId("Card")).not.toHaveLength(0));
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "unknown search query" },
+			});
+		});
+
+		await waitFor(() => expect(() => getAllByTestId("Card")).toThrow());
+		expect(asFragment()).toMatchSnapshot();
+
+		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(within(getByTestId("SearchBarPluginFilters")).getByTestId("dropdown__toggle"));
+		});
+		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
+
+		const resetLink = getByTestId("SearchBarPluginFilters-reset");
+		expect(resetLink).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(resetLink);
+		});
+		await waitFor(() => expect(getAllByTestId("Card")).not.toHaveLength(0));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -352,7 +447,7 @@ describe("PluginManager", () => {
 			}
 		});
 
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
+		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -379,6 +474,7 @@ describe("PluginManager", () => {
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
+		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
 
 		ipcRendererSpy.mockRestore();
 	});
@@ -387,7 +483,7 @@ describe("PluginManager", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockRejectedValue("Failed");
 		const toastSpy = jest.spyOn(toasts, "error");
 
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
+		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -422,9 +518,10 @@ describe("PluginManager", () => {
 	});
 
 	it("should select plugin on home grids", async () => {
-		const { getByTestId, getAllByText } = rendered;
+		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
 
 		act(() => {
 			fireEvent.click(
@@ -441,7 +538,10 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
