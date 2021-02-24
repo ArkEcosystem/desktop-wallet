@@ -99,13 +99,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			displayName: "Elrond",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",
-			iconName: "BTC",
+			iconName: "EGLD",
 		},
 		"egld.testnet": {
 			displayName: "Elrond Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "BTC",
+			iconName: "EGLD",
 		},
 	},
 	// EOS: {
