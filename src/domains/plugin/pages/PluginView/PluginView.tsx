@@ -8,7 +8,7 @@ export const PluginView = () => {
 	const queryParams = useQueryParams();
 
 	const profile = useActiveProfile();
-	const { pluginManager, reportPlugin } = usePluginManagerContext();
+	const { pluginManager } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
