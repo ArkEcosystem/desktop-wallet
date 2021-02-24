@@ -13,7 +13,8 @@ export const translations: { [key: string]: any } = {
 	},
 	MODAL_RESET_PROFILE: {
 		TITLE: "Reset Profile Data",
-		DESCRIPTION: "Do you really want to reset this profile? Once reset, you will not be able to restore it.",
+		DESCRIPTION:
+			"By performing this action, all of your Profile settings, wallet data, and other Profile information will be lost. Do you really want to reset your Profile? This action cannot be undone.",
 		SUCCESS: "Your profile was reset successfully",
 	},
 	MODAL_HISTORY: {
