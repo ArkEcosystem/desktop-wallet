@@ -112,16 +112,16 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 	);
 };
 
-const ButtonWrapper = styled.div`
+export const NavigationButtonWrapper = styled.div`
 	${css`
 		button {
-			${tw`w-12 h-12 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
+			${tw`w-11 h-11 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
 		}
 	`};
 `;
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center w-12 h-12 my-auto mr-4 text-white rounded bg-logo`};
+	${tw`flex items-center justify-center w-11 h-11 my-auto mr-4 text-white rounded bg-logo`};
 `;
 
 export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
@@ -184,10 +184,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
 			<div className="px-4 sm:px-6 lg:px-10">
-				<div className="flex relative justify-between h-20 md:h-24">
+				<div className="flex relative justify-between h-21">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
-							<ARKLogo width={48} />
+							<ARKLogo width={44} />
 						</LogoContainer>
 
 						{title && <span className="text-2xl font-bold">{title}</span>}
@@ -195,7 +195,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{variant === "full" && (
 						<>
-							<ul className="flex mr-auto ml-4 space-x-8 h-20 md:h-24">{renderMenu()}</ul>
+							<ul className="flex mr-auto ml-4 space-x-8 h-21">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
@@ -204,7 +204,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="flex items-center">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
-										<ButtonWrapper>
+										<NavigationButtonWrapper>
 											<Button
 												data-testid="navbar__buttons--send"
 												disabled={!wallets.length}
@@ -214,7 +214,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											>
 												<Icon name="Sent" width={18} height={18} className="p-1" />
 											</Button>
-										</ButtonWrapper>
+										</NavigationButtonWrapper>
 									</Tooltip>
 								</div>
 
@@ -222,7 +222,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="flex overflow-hidden items-center rounded-lg">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
-										<ButtonWrapper>
+										<NavigationButtonWrapper>
 											<Button
 												data-testid="navbar__buttons--receive"
 												disabled={!wallets.length}
@@ -232,7 +232,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											>
 												<Icon name="QrCode" width={22} height={22} className="p-1" />
 											</Button>
-										</ButtonWrapper>
+										</NavigationButtonWrapper>
 									</Tooltip>
 								</div>
 
