@@ -23,16 +23,6 @@ export const PluginView = () => {
 
 	const [isUninstallOpen, setIsUninstallOpen] = useState(false);
 
-	const crumbs = [
-		{
-			route: `/profiles/${profile.id()}/plugins`,
-			label: t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE"),
-		},
-		{
-			label: plugin?.config().title() as string,
-		},
-	];
-
 	const handleReportPlugin = () => {
 		reportPlugin(plugin!.config());
 	};
@@ -42,7 +32,7 @@ export const PluginView = () => {
 	};
 
 	return (
-		<Page profile={profile} crumbs={crumbs}>
+		<Page profile={profile}>
 			<Section>
 				<div className="flex justify-between items-center">
 					<div className="flex items-center space-x-3">
