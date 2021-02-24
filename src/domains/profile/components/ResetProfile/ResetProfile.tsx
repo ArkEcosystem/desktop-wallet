@@ -45,7 +45,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button type="submit" onClick={handleReset} data-testid="ResetProfile__submit-button">
+				<Button type="submit" onClick={handleReset} data-testid="ResetProfile__submit-button" variant="danger">
 					<Icon name="Reset" />
 					<span>{t("COMMON.RESET_DATA")}</span>
 				</Button>
