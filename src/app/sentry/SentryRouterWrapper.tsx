@@ -8,8 +8,8 @@ import { useSentryContext } from "./SentryProvider";
 
 export const SentryRouterWrapper = ({ children }: { children: React.ReactNode }) => {
 	const context = useEnvironmentContext();
-	const { profileId, walletId } = useParams();
-	const { initSentry, stopSentry, setWalletContext, setLedgerContext } = useSentryContext();
+	const { profileId, walletId } = useParams<{ profileId: string; walletId: string }>();
+	const { initSentry, stopSentry, setWalletContext, setLedgerContext, setProfileContext } = useSentryContext();
 	const { isConnected, isAwaitingConnection, hasDeviceAvailable } = useLedgerContext();
 
 	const profile = useMemo(() => {
@@ -34,7 +34,10 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 	}, [profile, walletId]);
 
 	useEffect(() => {
+		setProfileContext(profile);
+
 		if (!profile) {
+			stopSentry();
 			return;
 		}
 
@@ -46,7 +49,7 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 		}
 
 		stopSentry();
-	}, [profile, initSentry, stopSentry]);
+	}, [profile, initSentry, stopSentry, setProfileContext]);
 
 	useEffect(() => {
 		setWalletContext(wallet);

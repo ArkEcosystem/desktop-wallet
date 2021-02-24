@@ -158,4 +158,46 @@ describe("Sentry Router Wrapper", () => {
 			}),
 		);
 	});
+
+	it("should clear wallet context if it does not exist", async () => {
+		const setContextSpy = jest.spyOn(Sentry, "setContext").mockImplementation();
+
+		renderWithRouter(
+			<Route path="/profile/:profileId/dashboard/wallet/:walletId">
+				<LedgerProvider transport={transport}>
+					<SentryProvider>
+						<SentryRouterWrapper>
+							<h1>Page</h1>
+						</SentryRouterWrapper>
+					</SentryProvider>
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [`/profile/${profile.id()}/dashboard/wallet/invalid`],
+			},
+		);
+
+		await waitFor(() => expect(setContextSpy).toHaveBeenCalledWith("wallet", null));
+	});
+
+	it("should clear profile context if it does not exist", async () => {
+		const setContextSpy = jest.spyOn(Sentry, "setContext").mockImplementation();
+
+		renderWithRouter(
+			<Route path="/profile/:profileId/dashboard">
+				<LedgerProvider transport={transport}>
+					<SentryProvider>
+						<SentryRouterWrapper>
+							<h1>Page</h1>
+						</SentryRouterWrapper>
+					</SentryProvider>
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [`/profile/invalid/dashboard`],
+			},
+		);
+
+		await waitFor(() => expect(setContextSpy).toHaveBeenCalledWith("profile", null));
+	});
 });

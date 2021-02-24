@@ -62,7 +62,6 @@ const useSentry = () => {
 
 	const initSentry = (profile: Profile) => {
 		if (initializedProfileRef.current?.id() === profile.id()) {
-			setProfileContext(profile); // Update data
 			return;
 		}
 
