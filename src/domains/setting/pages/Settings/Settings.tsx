@@ -41,6 +41,11 @@ export const Settings = () => {
 			label: t("SETTINGS.PASSWORD.MENU_ITEM"),
 			icon: "Lock",
 		},
+		{
+			itemKey: "Export",
+			label: t("SETTINGS.EXPORT.MENU_ITEM"),
+			icon: "Lock",
+		},
 	];
 
 	const handleSuccess = (message?: string) => {
