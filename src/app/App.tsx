@@ -15,13 +15,13 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
-import { ApplicationError, Offline } from "domains/error/pages";
+import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
+import { useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
@@ -32,7 +32,17 @@ import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironm
 import { useDeeplink, useEnvSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
 import { i18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
+import { SentryProvider } from "./sentry/SentryProvider";
+import { SentryRouterWrapper } from "./sentry/SentryRouterWrapper";
 import { httpClient } from "./services";
+
+const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
+	<>
+		<SentryRouterWrapper>
+			<PluginRouterWrapper>{children}</PluginRouterWrapper>
+		</SentryRouterWrapper>
+	</>
+);
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
@@ -94,7 +104,7 @@ const Main = () => {
 			return <Offline />;
 		}
 
-		return <RouterView routes={routes} middlewares={middlewares} wrapper={PluginRouterWrapper} />;
+		return <RouterView routes={routes} middlewares={middlewares} wrapper={RouteWrappers} />;
 	};
 
 	return (
@@ -143,13 +153,13 @@ export const App = () => {
 		<I18nextProvider i18n={i18n}>
 			<EnvironmentProvider env={env}>
 				<ConfigurationProvider>
-					<ErrorBoundary FallbackComponent={ApplicationError}>
+					<SentryProvider>
 						<LedgerProvider transport={LedgerTransportNodeHID}>
 							<PluginProviders>
 								<Main />
 							</PluginProviders>
 						</LedgerProvider>
-					</ErrorBoundary>
+					</SentryProvider>
 				</ConfigurationProvider>
 			</EnvironmentProvider>
 		</I18nextProvider>
