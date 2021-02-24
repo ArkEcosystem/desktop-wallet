@@ -3,6 +3,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { EGLD } from "@arkecosystem/platform-sdk-egld";
 import { EOS } from "@arkecosystem/platform-sdk-eos";
 import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
@@ -92,6 +93,20 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		// 	textClass: "text-theme-primary-700",
 		// 	iconName: "BTC",
 		// },
+	},
+	EGLD: {
+		"egld.mainnet": {
+			displayName: "Elrond",
+			borderClass: "border-theme-warning-200",
+			textClass: "text-theme-warning-400",
+			iconName: "EGLD",
+		},
+		"egld.testnet": {
+			displayName: "Elrond Testnet",
+			borderClass: "border-theme-primary-500",
+			textClass: "text-theme-primary-700",
+			iconName: "EGLD",
+		},
 	},
 	// EOS: {
 	// 	"eos.mainnet": {
@@ -279,6 +294,8 @@ export const availableNetworksMock: Coins.Network[] = [
 	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["terra.testnet"]),
 	new Coins.Network(BTC.manifest.name, BTC.manifest.networks["btc.livenet"]),
 	new Coins.Network(BTC.manifest.name, BTC.manifest.networks["btc.testnet"]),
+	new Coins.Network(EGLD.manifest.name, EGLD.manifest.networks["egld.mainnet"]),
+	new Coins.Network(EGLD.manifest.name, EGLD.manifest.networks["egld.testnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["bos.mainnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["eos.mainnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["eos.testnet"]),

@@ -51,6 +51,10 @@ export const translations: { [key: string]: any } = {
 				TITLE: "Update Ledger in Background",
 				DESCRIPTION: "Allows Ledger wallets to automatically update and sync data in the background.",
 			},
+			ERROR_REPORTING: {
+				TITLE: "Error Reporting",
+				DESCRIPTION: "Automatically send reports to help to improve our products.",
+			},
 		},
 		SUCCESS: "Your profile settings have been updated",
 		ERROR: "Your profile settings could not be updated",

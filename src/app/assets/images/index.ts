@@ -14,6 +14,7 @@ import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
 import { ReactComponent as MistakeBanner } from "./mistake-banner.svg";
 import { ReactComponent as NoResultsBanner } from "./no-results.svg";
 import { ReactComponent as RegisterBanner } from "./register-banner.svg";
+import { ReactComponent as WarningBanner } from "./warning-banner.svg";
 import { ReactComponent as WelcomeBanner } from "./welcome-banner.svg";
 
 export const images = {
@@ -23,6 +24,7 @@ export const images = {
 		DeleteBanner,
 		MistakeBanner,
 		RegisterBanner,
+		WarningBanner,
 		WelcomeBanner,
 		NoResultsBanner,
 		...ImagesDark,

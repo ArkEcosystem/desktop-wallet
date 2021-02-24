@@ -128,7 +128,7 @@ describe("Use Ledger Scanner", () => {
 		);
 
 		const Component = () => {
-			const { scanMore, wallets, isSelected, isLoading, isFailed } = useLedgerScanner(
+			const { toggleSelect, wallets, scanMore, isFailed, isSelected } = useLedgerScanner(
 				wallet.coinId(),
 				wallet.networkId(),
 				profile,
@@ -137,79 +137,45 @@ describe("Use Ledger Scanner", () => {
 			return (
 				<div>
 					<ul>
-						{wallets.map((x) => (
+						{wallets.map((x, i) => (
 							<li key={x.path}>
 								<p>{`Path: ${x.path}`}</p>
 								<p>{`Address: ${x.address}`}</p>
 								<p>{`Failed: ${isFailed(x.path)}`}</p>
 								<p>{`Selected: ${isSelected(x.path)}`}</p>
-								<p>{`Balance: ${isLoading(x.path) ? "Loading" : x.balance?.toFixed()}`}</p>
+								<input
+									type="checkbox"
+									data-testid={`input--${i}`}
+									onChange={toggleSelect.bind(null, x.path)}
+								/>
 							</li>
 						))}
 					</ul>
-					<button onClick={scanMore}>Scan</button>
+					<button data-testid="scan" onClick={scanMore}>
+						Scan
+					</button>
 				</div>
 			);
 		};
 
-		const { container } = render(
+		const { container, getByTestId } = render(
 			<LedgerProvider transport={transport}>
 				<Component />
 			</LedgerProvider>,
 		);
 
 		act(() => {
-			fireEvent.click(screen.getByRole("button"));
+			fireEvent.click(getByTestId("scan"));
 		});
 
 		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(0));
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render with toggleSelect", async () => {
-		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
-			Promise.resolve(publicKeyPaths.get(path)!),
-		);
-
-		const Component = () => {
-			const { scanMore, toggleSelect, wallets, isSelected, isLoading, isFailed } = useLedgerScanner(
-				wallet.coinId(),
-				wallet.networkId(),
-				profile,
-			);
-
-			return (
-				<div>
-					<ul>
-						{wallets.map((x) => (
-							<li key={x.path}>
-								<p>{`Path: ${x.path}`}</p>
-								<p>{`Address: ${x.address}`}</p>
-								<p>{`Failed: ${isFailed(x.path)}`}</p>
-								<p>{`Selected: ${isSelected(x.path)}`}</p>
-								<p>{`toggleSelect: ${toggleSelect(x.path)}`}</p>
-								<p>{`Balance: ${isLoading(x.path) ? "Loading" : x.balance?.toFixed()}`}</p>
-							</li>
-						))}
-					</ul>
-					<button onClick={scanMore}>Scan</button>
-				</div>
-			);
-		};
-
-		const { container } = render(
-			<LedgerProvider transport={transport}>
-				<Component />
-			</LedgerProvider>,
-		);
-
 		act(() => {
-			fireEvent.click(screen.getByRole("button"));
+			fireEvent.click(getByTestId("input--0"));
 		});
 
-		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(0));
+		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(3));
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 
 		expect(container).toMatchSnapshot();
@@ -299,6 +265,49 @@ describe("Use Ledger Scanner", () => {
 
 		act(() => {
 			fireEvent.click(screen.getByRole("button"));
+		});
+
+		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(0));
+		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should dispatch failed", async () => {
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
+			Promise.resolve(publicKeyPaths.get(path)!),
+		);
+
+		const Component = () => {
+			const { scanMore, isFailed, wallets } = useLedgerScanner("null", wallet.networkId(), profile);
+
+			return (
+				<div>
+					<ul>
+						{wallets.map((x) => (
+							<li key={x.path}>
+								<p>{`Path: ${x.path}`}</p>
+								<p>{`Address: ${x.address}`}</p>
+								<p>{`Address: ${x.address}`}</p>
+								<p>{`Failed: ${isFailed(x.path)}`}</p>
+							</li>
+						))}
+					</ul>
+					<button data-testid="scan" onClick={scanMore}>
+						Scan
+					</button>
+				</div>
+			);
+		};
+
+		const { container, getByTestId } = render(
+			<LedgerProvider transport={transport}>
+				<Component />
+			</LedgerProvider>,
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("scan"));
 		});
 
 		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(0));
