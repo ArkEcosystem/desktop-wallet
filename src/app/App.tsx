@@ -46,6 +46,7 @@ const Main = () => {
 	useProfileSynchronizer({
 		onProfileRestoreError: () => history.push("/"),
 	});
+
 	useDeeplink();
 
 	useEffect(() => {
