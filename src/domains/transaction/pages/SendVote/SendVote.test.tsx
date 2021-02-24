@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { act, renderHook } from "@testing-library/react-hooks";
+import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -102,7 +102,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -121,7 +121,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Back to select a delegate page
 			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -144,7 +144,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -163,7 +163,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Back to select a delegate page
 			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -187,7 +187,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -206,7 +206,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Back to select a delegate page
 			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
 			fireEvent.click(getByTestId("SendVote__button--back"));
@@ -241,7 +241,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -260,7 +260,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
@@ -343,7 +343,7 @@ describe("SendVote", () => {
 			}),
 		);
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<FormProvider {...form.current}>
@@ -364,7 +364,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Step 2
 			fireEvent.click(getByTestId("SendVote__button--continue"));
 			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
@@ -411,7 +411,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -430,7 +430,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
@@ -473,7 +473,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -492,7 +492,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
@@ -529,6 +529,94 @@ describe("SendVote", () => {
 		});
 	});
 
+	it("should return to form step by cancelling fee warning", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<SendVote />
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		// Fee
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Fee warning
+		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
+
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toBeTruthy());
+	});
+
+	it("should proceed to authentication step by confirming fee warning", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<SendVote />
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		// Fee
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Fee warning
+		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__continue-button"));
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+	});
+
 	it("should show error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
@@ -544,7 +632,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -563,7 +651,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
@@ -613,7 +701,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -632,7 +720,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
@@ -664,7 +752,7 @@ describe("SendVote", () => {
 			await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 
-			act(() => {
+			hookAct(() => {
 				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 			});
 
@@ -694,7 +782,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -713,7 +801,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
@@ -793,7 +881,7 @@ describe("SendVote", () => {
 
 		let rendered: RenderResult;
 
-		await act(async () => {
+		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<SendVote />
@@ -812,7 +900,7 @@ describe("SendVote", () => {
 
 		const { getByTestId } = rendered!;
 
-		await act(async () => {
+		await hookAct(async () => {
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
