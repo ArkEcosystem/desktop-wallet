@@ -84,10 +84,10 @@ const directories = {
 		statements: 100,
 	},
 	"domains/transaction": {
-		branches: 99.5,
-		functions: 95.33,
-		lines: 85.05,
-		statements: 85.52,
+		branches: 100,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/vote": {
 		branches: 100,
