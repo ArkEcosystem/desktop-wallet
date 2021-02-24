@@ -138,7 +138,7 @@ export const App = () => {
 					// BTC,
 					// EOS,
 					// ETH,
-					// EGLD,
+					EGLD,
 					LSK,
 					// NEO,
 					// TRX,
