@@ -15,16 +15,8 @@ const StyledBackButton = styled.button<BackButtonProps>(getStyles);
 export const BackButton = ({ className, disabled }: BackButtonProps) => {
 	const history = useHistory();
 
-	const handleOnClick = () => {
-		if (disabled) {
-			return;
-		}
-
-		history.go(-1);
-	};
-
 	return (
-		<StyledBackButton onClick={handleOnClick} disabled={disabled} className={className}>
+		<StyledBackButton onClick={() => history.go(-1)} disabled={disabled} className={className}>
 			<Icon name="ArrowLeft" width={6} height={10} />
 		</StyledBackButton>
 	);
