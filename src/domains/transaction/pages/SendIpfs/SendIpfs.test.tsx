@@ -135,7 +135,7 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
@@ -201,7 +201,7 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
@@ -271,6 +271,96 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});
 
+	it("should return to form step by cancelling fee warning", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
+
+		history.push(ipfsURL);
+
+		const { getByTestId, container } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
+				<SendIpfs />
+			</Route>,
+			{
+				routes: [ipfsURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
+
+		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name());
+		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
+
+		// Hash
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+		});
+		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+		// Fee
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
+
+		await waitFor(() => expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		// Fee warning
+		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
+
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
+	});
+
+	it("should proceed to authentication step by confirming fee warning", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
+
+		history.push(ipfsURL);
+
+		const { getByTestId, container } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
+				<SendIpfs />
+			</Route>,
+			{
+				routes: [ipfsURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
+
+		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name());
+		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
+
+		// Hash
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+		});
+		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+		// Fee
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
+
+		await waitFor(() => expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		// Fee warning
+		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__continue-button"));
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+	});
+
 	it("should error if wrong mnemonic", async () => {
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
@@ -287,7 +377,7 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		// Hash
 		act(() => {
@@ -369,7 +459,7 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		// Hash
 		act(() => {
@@ -492,7 +582,7 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
@@ -593,7 +683,7 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));

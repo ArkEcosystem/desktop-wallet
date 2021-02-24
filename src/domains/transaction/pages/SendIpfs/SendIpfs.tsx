@@ -8,7 +8,8 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
-import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
+import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -32,8 +33,11 @@ export const SendIpfs = () => {
 	const { sendIpfs, common } = useValidation();
 
 	const form = useForm({ mode: "onChange" });
-	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
-	const { fees } = form.watch();
+
+	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { isValid, isSubmitting } = formState;
+
+	const { fee, fees } = watch();
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
@@ -55,6 +59,14 @@ export const SendIpfs = () => {
 			}
 		}
 	}, [activeWallet, networks, register, setValue, t, fees, sendIpfs, common]);
+
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
@@ -97,10 +109,15 @@ export const SendIpfs = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = async () => {
+	const handleNext = async (suppressWarning?: boolean) => {
 		abortRef.current = new AbortController();
 
 		const newIndex = activeTab + 1;
+
+		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
 		// Skip authorization step
@@ -159,7 +176,7 @@ export const SendIpfs = () => {
 									onBack={() =>
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
-									isRepeatDisabled={formState.isSubmitting}
+									isRepeatDisabled={isSubmitting}
 									onRepeat={form.handleSubmit(submitForm)}
 								/>
 							</TabPanel>
@@ -179,9 +196,9 @@ export const SendIpfs = () => {
 												</Button>
 												<Button
 													data-testid="SendIpfs__button--continue"
-													disabled={!formState.isValid || formState.isSubmitting}
-													isLoading={formState.isSubmitting}
-													onClick={handleNext}
+													disabled={!isValid || isSubmitting}
+													isLoading={isSubmitting}
+													onClick={async () => await handleNext()}
 												>
 													{t("COMMON.CONTINUE")}
 												</Button>
@@ -201,8 +218,8 @@ export const SendIpfs = () => {
 												<Button
 													type="submit"
 													data-testid="SendIpfs__button--submit"
-													disabled={!formState.isValid || formState.isSubmitting}
-													isLoading={formState.isSubmitting}
+													disabled={!isValid || isSubmitting}
+													isLoading={isSubmitting}
 													icon="Send"
 												>
 													<span>{t("COMMON.SEND")}</span>
@@ -227,6 +244,15 @@ export const SendIpfs = () => {
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) => dismissFeeWarning(handleBack, suppressWarning)}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(async () => await handleNext(true), suppressWarning)
+						}
+					/>
 				</Form>
 			</Section>
 		</Page>
