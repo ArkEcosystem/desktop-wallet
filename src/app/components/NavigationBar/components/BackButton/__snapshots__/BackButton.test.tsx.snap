@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackButton should render 1`] = `
+<div>
+  <button
+    class="BackButton__StyledBackButton-sc-1pe22tv-0 dzAFJh"
+  >
+    <div
+      class="sc-bdfBwQ iMKUsi"
+      height="10"
+      width="6"
+    >
+      <svg>
+        arrow-left.svg
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`BackButton should render when disabled 1`] = `
+<div>
+  <button
+    class="BackButton__StyledBackButton-sc-1pe22tv-0 dzAFJh"
+  >
+    <div
+      class="sc-bdfBwQ iMKUsi"
+      height="10"
+      width="6"
+    >
+      <svg>
+        arrow-left.svg
+      </svg>
+    </div>
+  </button>
+</div>
+`;

@@ -89,7 +89,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	};
 
 	return (
-		<Page profile={activeProfile}>
+		<Page profile={activeProfile} isBackDisabled={true}>
 			<Section>
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}

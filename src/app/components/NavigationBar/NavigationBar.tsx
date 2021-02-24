@@ -2,6 +2,7 @@ import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { MemoryPassword, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
+import { Amount } from "app/components/Amount";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
@@ -21,7 +22,7 @@ import tw, { css, styled } from "twin.macro";
 import { NavbarVariant } from "types";
 import { openExternal } from "utils/electron-utils";
 
-import { Amount } from "../Amount";
+import { BackButton } from "./components/BackButton";
 import { defaultStyle } from "./NavigationBar.styles";
 
 const { ARKLogo } = images.common;
@@ -33,6 +34,7 @@ type MenuItem = {
 
 type NavigationBarProps = {
 	title?: string;
+	isBackDisabled?: boolean;
 	profile?: Profile;
 	variant?: NavbarVariant;
 	menu?: MenuItem[];
@@ -124,7 +126,7 @@ const LogoContainer = styled.div`
 	${tw`flex items-center justify-center w-12 h-12 my-auto mr-4 text-white rounded bg-logo`};
 `;
 
-export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
+export const NavigationBar = ({ title, isBackDisabled, profile, variant, menu, userActions }: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -183,8 +185,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
-			<div className="px-4 sm:px-6 lg:px-10">
+			<div className="px-8">
 				<div className="flex relative justify-between h-20 md:h-24">
+					{variant === "full" && <BackButton className="-ml-8 mr-8" disabled={isBackDisabled} />}
+
 					<div className="flex items-center my-auto">
 						<LogoContainer>
 							<ARKLogo width={48} />

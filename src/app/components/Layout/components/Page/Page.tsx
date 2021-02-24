@@ -7,15 +7,16 @@ import { NavbarVariant } from "types";
 type PageProps = {
 	navbarVariant?: NavbarVariant;
 	title?: string;
+	isBackDisabled?: boolean;
 	profile?: Profile;
 	crumbs?: Crumb[];
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };
 
-export const Page = ({ navbarVariant, title, profile, crumbs, sidebar, children }: PageProps) => (
+export const Page = ({ navbarVariant, title, isBackDisabled, profile, crumbs, sidebar, children }: PageProps) => (
 	<div className="flex relative flex-col min-h-screen bg-theme-secondary-background">
-		{<NavigationBar variant={navbarVariant} title={title} profile={profile} />}
+		{<NavigationBar variant={navbarVariant} title={title} profile={profile} isBackDisabled={isBackDisabled} />}
 
 		{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 px-14 mx-auto font-semibold" />}
 
