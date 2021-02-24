@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeeWarning should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`FeeWarning should render a warning for a fee that is too HIGH 1`] = `
+<DocumentFragment>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+      >
+        <button
+          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Fee Warning
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="my-8 mx-auto"
+          >
+            warning-banner.svg
+          </svg>
+          <div
+            class="mt-8 mb-6 text-theme-secondary-text"
+          >
+            You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue anyway?
+          </div>
+          <fieldset
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+          >
+            <label
+              class="flex items-center space-x-2"
+            >
+              <input
+                class="Checkbox-sc-17gwqiq-0 iGvDni"
+                color="success"
+                data-testid="FeeWarning__suppressWarning-toggle"
+                name="suppressWarning"
+                type="checkbox"
+              />
+              <span
+                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                Don’t warn me about fees again
+              </span>
+            </label>
+          </fieldset>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              data-testid="FeeWarning__cancel-button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Cancel
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+              data-testid="FeeWarning__continue-button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Continue
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`FeeWarning should render a warning for a fee that is too LOW 1`] = `
+<DocumentFragment>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+      >
+        <button
+          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Fee Warning
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="my-8 mx-auto"
+          >
+            warning-banner.svg
+          </svg>
+          <div
+            class="mt-8 mb-6 text-theme-secondary-text"
+          >
+            You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue anyway?
+          </div>
+          <fieldset
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+          >
+            <label
+              class="flex items-center space-x-2"
+            >
+              <input
+                class="Checkbox-sc-17gwqiq-0 iGvDni"
+                color="success"
+                data-testid="FeeWarning__suppressWarning-toggle"
+                name="suppressWarning"
+                type="checkbox"
+              />
+              <span
+                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                Don’t warn me about fees again
+              </span>
+            </label>
+          </fieldset>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              data-testid="FeeWarning__cancel-button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Cancel
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+              data-testid="FeeWarning__continue-button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Continue
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

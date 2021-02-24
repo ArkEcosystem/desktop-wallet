@@ -10,8 +10,10 @@ import { useActiveProfile, useActiveWallet, useFees } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
+import { useFeeConfirmation } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -42,8 +44,11 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const activeWallet = useActiveWallet();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, setError } = form;
+
+	const { formState, register, setError, setValue, watch } = form;
 	const { isSubmitting, isValid } = formState;
+
+	const { fee, fees } = watch();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
 
@@ -64,6 +69,14 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 	}, [register]);
+
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
@@ -121,8 +134,14 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = (suppressWarning?: boolean) => {
+		const newIndex = activeTab + 1;
+
+		if (newIndex === stepCount - 1 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
+		setActiveTab(newIndex);
 	};
 
 	const baseCrumbs: Crumb[] = useMemo(
@@ -191,11 +210,11 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 								/>
 							</TabPanel>
 
-							{registrationForm && getValues("fees") && (
+							{registrationForm && fees && (
 								<>
 									<registrationForm.component
 										activeTab={activeTab}
-										fees={getValues("fees")}
+										fees={fees}
 										wallet={activeWallet}
 										profile={activeProfile}
 									/>
@@ -230,7 +249,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 									<Button
 										data-testid="Registration__continue-button"
 										disabled={!isValid}
-										onClick={handleNext}
+										onClick={() => handleNext()}
 									>
 										{t("COMMON.CONTINUE")}
 									</Button>
@@ -263,6 +282,17 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) =>
+							dismissFeeWarning(() => setActiveTab(1), suppressWarning)
+						}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(() => handleNext(true), suppressWarning)
+						}
+					/>
 				</Form>
 			</Section>
 		</Page>

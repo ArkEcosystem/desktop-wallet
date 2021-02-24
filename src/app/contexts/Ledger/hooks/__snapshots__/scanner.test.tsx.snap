@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Use Ledger Scanner should dispatch failed 1`] = `
+<div>
+  <div>
+    <ul />
+    <button
+      data-testid="scan"
+    >
+      Scan
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Use Ledger Scanner should render 1`] = `
 <div>
   <div>
@@ -89,11 +102,12 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
           Failed: false
         </p>
         <p>
-          Selected: true
+          Selected: false
         </p>
-        <p>
-          Balance: 2
-        </p>
+        <input
+          data-testid="input--0"
+          type="checkbox"
+        />
       </li>
       <li>
         <p>
@@ -108,9 +122,10 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
         <p>
           Selected: true
         </p>
-        <p>
-          Balance: 1
-        </p>
+        <input
+          data-testid="input--1"
+          type="checkbox"
+        />
       </li>
       <li>
         <p>
@@ -125,19 +140,20 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
         <p>
           Selected: true
         </p>
-        <p>
-          Balance: 3
-        </p>
+        <input
+          data-testid="input--2"
+          type="checkbox"
+        />
       </li>
     </ul>
-    <button>
+    <button
+      data-testid="scan"
+    >
       Scan
     </button>
   </div>
 </div>
 `;
-
-exports[`Use Ledger Scanner should render with toggleSelect 2`] = `<div />`;
 
 exports[`Use Ledger Scanner should render with toggleSelectAll 1`] = `
 <div>

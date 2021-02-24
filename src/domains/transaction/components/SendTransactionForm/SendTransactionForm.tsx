@@ -62,6 +62,7 @@ export const SendTransactionForm = ({
 	}, [findByType, getValues, network, profile, setValue, transactionType]);
 
 	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
+		/* istanbul ignore next */
 		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
 			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
 		}
