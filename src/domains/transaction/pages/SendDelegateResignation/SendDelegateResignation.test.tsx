@@ -156,6 +156,52 @@ describe("SendDelegateResignation", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 
+		it("should return to form step by cancelling fee warning", async () => {
+			const { asFragment, getByTestId } = renderPage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			// Fee
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
+			expect(getByTestId("InputCurrency")).toHaveValue("30");
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__continue-button")).not.toBeDisabled());
+			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+
+			// Review Step
+			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
+			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+
+			// Fee warning
+			expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+		});
+
+		it("should proceed to authentication step by confirming fee warning", async () => {
+			const { asFragment, getByTestId } = renderPage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			// Fee
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
+			expect(getByTestId("InputCurrency")).toHaveValue("30");
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__continue-button")).not.toBeDisabled());
+			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+
+			// Review Step
+			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
+			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+
+			// Fee warning
+			expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+		});
+
 		it("should show mnemonic authentication error", async () => {
 			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
 				throw new Error("Signatory should be");

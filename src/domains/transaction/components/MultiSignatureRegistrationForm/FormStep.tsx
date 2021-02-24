@@ -29,10 +29,7 @@ export const FormStep = ({
 	const { common, multiSignatureRegistration } = useValidation();
 
 	useEffect(() => {
-		register(
-			"fee",
-			common.fee(() => fees, wallet.balance(), wallet.network()),
-		);
+		register("fee", common.fee(wallet.balance(), wallet.network()));
 		register("participants", multiSignatureRegistration.participants());
 		register("minParticipants", multiSignatureRegistration.minParticipants(participants));
 	}, [register, participants, common, fees, multiSignatureRegistration, wallet]);

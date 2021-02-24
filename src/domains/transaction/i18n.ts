@@ -138,6 +138,17 @@ export const translations: { [key: string]: any } = {
 		BRIDGECHAIN_UPDATE: "Bridgechain Update",
 	},
 
+	MODAL_FEE_WARNING: {
+		TITLE: "Fee Warning",
+		DESCRIPTION: {
+			TOO_LOW:
+				"You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue anyway?",
+			TOO_HIGH:
+				"You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue anyway?",
+		},
+		DO_NOT_WARN: "Don’t warn me about fees again",
+	},
+
 	MODAL_TRANSFER_DETAIL: {
 		TITLE: "Transfer",
 	},
