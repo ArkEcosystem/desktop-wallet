@@ -78,7 +78,7 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 			{liveNetworks.length > 0 && (
 				<FilterNetwork
 					{...props}
-					title={t("COMMON.PUBLIC_NETWORK")}
+					title={t("COMMON.PUBLIC_NETWORKS")}
 					networks={liveNetworks}
 					onChange={(_, updated) => props.onChange?.(_, [...updated, ...testNetworks])}
 				/>
@@ -86,7 +86,7 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 			{props.useTestNetworks && testNetworks.length > 0 && (
 				<FilterNetwork
 					{...props}
-					title={t("COMMON.DEVELOPMENT_NETWORK")}
+					title={t("COMMON.DEVELOPMENT_NETWORKS")}
 					className="mt-6"
 					networks={testNetworks}
 					onChange={(_, updated) => props.onChange?.(_, [...updated, ...liveNetworks])}

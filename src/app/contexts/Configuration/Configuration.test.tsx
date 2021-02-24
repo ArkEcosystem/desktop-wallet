@@ -45,22 +45,23 @@ describe("Configuration Context", () => {
 			return (
 				<div
 					data-testid="Configuration__consumer"
-					onClick={() => setConfiguration({ dashboard: { showTransactions: true } })}
+					onClick={() => setConfiguration({ dashboard: { viewType: "list" } })}
 				>
 					Configuration content
-					{dashboard && dashboard.showTransactions && <div data-testid="Configuration__transactions" />}
+					{dashboard && dashboard.viewType === "list" && <div data-testid="Configuration__list" />}
 				</div>
 			);
 		};
+
 		const { getByTestId, asFragment } = renderWithRouter(<Test />);
 		expect(getByTestId("Configuration__consumer")).toBeInTheDocument();
-		await waitFor(() => expect(() => getByTestId("Configuration__transactions")).toThrowError(/Unable to find/));
+		await waitFor(() => expect(() => getByTestId("Configuration__list")).toThrowError(/Unable to find/));
 
 		act(() => {
 			fireEvent.click(getByTestId("Configuration__consumer"));
 		});
 
-		await waitFor(() => expect(getByTestId("Configuration__transactions")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("Configuration__list")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

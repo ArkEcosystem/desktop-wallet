@@ -69,43 +69,6 @@ exports[`FilterWallets should render 1`] = `
         Select the display of your wallets
       </div>
     </div>
-    <div
-      class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
-    />
-    <div
-      class="flex flex-col"
-    >
-      <div
-        class="flex justify-between items-center"
-      >
-        <div
-          class="font-semibold text-theme-secondary-text"
-        >
-          Transaction History
-        </div>
-        <label
-          class="flex"
-        >
-          <input
-            class="Toggle__Input-qyyifx-0 WGuGL"
-            data-testid="filter-wallets_toggle--transactions"
-            type="checkbox"
-          />
-          <div
-            class="Toggle__Handle-qyyifx-1 geejDn"
-          >
-            <span
-              class="Toggle__HandleInner-qyyifx-2 gufSfU"
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        class="pr-12 mt-1 text-sm text-theme-secondary-500"
-      >
-        You can hide this unit if you like
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -139,7 +102,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         <div
           class="mb-2 text-sm font-bold text-theme-secondary-400"
         >
-          Public Network
+          Public Networks
         </div>
         <ul
           class="inline-block"
@@ -247,43 +210,6 @@ exports[`FilterWallets should render with networks selection 1`] = `
         class="pr-12 mt-1 text-sm text-theme-secondary-500"
       >
         Select the display of your wallets
-      </div>
-    </div>
-    <div
-      class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
-    />
-    <div
-      class="flex flex-col"
-    >
-      <div
-        class="flex justify-between items-center"
-      >
-        <div
-          class="font-semibold text-theme-secondary-text"
-        >
-          Transaction History
-        </div>
-        <label
-          class="flex"
-        >
-          <input
-            class="Toggle__Input-qyyifx-0 WGuGL"
-            data-testid="filter-wallets_toggle--transactions"
-            type="checkbox"
-          />
-          <div
-            class="Toggle__Handle-qyyifx-1 geejDn"
-          >
-            <span
-              class="Toggle__HandleInner-qyyifx-2 gufSfU"
-            />
-          </div>
-        </label>
-      </div>
-      <div
-        class="pr-12 mt-1 text-sm text-theme-secondary-500"
-      >
-        You can hide this unit if you like
       </div>
     </div>
   </div>

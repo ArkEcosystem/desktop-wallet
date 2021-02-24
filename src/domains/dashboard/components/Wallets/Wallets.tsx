@@ -41,7 +41,11 @@ export const Wallets = ({
 	const activeProfile = useActiveProfile();
 
 	const filterProperties = useWalletFilters({ profile: activeProfile });
-	const { viewType, walletsDisplayType, selectedNetworkIds, showTransactions, update } = filterProperties;
+	const { viewType, walletsDisplayType, selectedNetworkIds, update } = filterProperties;
+
+	const showTransactions = useMemo(() => activeProfile.settings().get(ProfileSetting.DashboardTransactionHistory), [
+		activeProfile,
+	]);
 
 	const wallets = useMemo(() => {
 		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) {

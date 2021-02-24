@@ -46,23 +46,6 @@ describe("useWalletFilters", () => {
 		await waitFor(() => expect(result.current.viewType).toBe("list"));
 	});
 
-	it("should toggle transaction visibility", async () => {
-		const wrapper = ({ children }: any) => (
-			<EnvironmentProvider env={env}>
-				<ConfigurationProvider>{children}</ConfigurationProvider>
-			</EnvironmentProvider>
-		);
-
-		const { result } = renderHook(() => useWalletFilters({ profile }), { wrapper });
-
-		act(() => {
-			result.current.update("showTransactions", false);
-		});
-
-		expect(result.current.isFilterChanged).toBe(true);
-		await waitFor(() => expect(result.current.showTransactions).toBe(false));
-	});
-
 	it("should toggle network selection", async () => {
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
@@ -75,11 +58,10 @@ describe("useWalletFilters", () => {
 		act(() => {
 			result.current.update("viewType", "grid");
 			result.current.update("selectedNetworkIds", []);
-			result.current.update("showTransactions", true);
 		});
 
 		expect(result.current.isFilterChanged).toBe(true);
-		await waitFor(() => expect(result.current.showTransactions).toBe(true));
+		await waitFor(() => expect(result.current.viewType).toBe("grid"));
 	});
 
 	it("should toggle wallet display type filter", async () => {
@@ -92,11 +74,10 @@ describe("useWalletFilters", () => {
 		const { result } = renderHook(() => useWalletFilters({ profile }), { wrapper });
 
 		act(() => {
-			result.current.update("showTransactions", true);
-			result.current.update("walletsDisplayType", "list");
+			result.current.update("walletsDisplayType", "favorites");
 		});
 
 		expect(result.current.isFilterChanged).toBe(true);
-		await waitFor(() => expect(result.current.walletsDisplayType).toBe("list"));
+		await waitFor(() => expect(result.current.walletsDisplayType).toBe("favorites"));
 	});
 });

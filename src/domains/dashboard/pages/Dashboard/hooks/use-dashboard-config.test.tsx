@@ -37,7 +37,6 @@ describe("useWalletFilters", () => {
 		expect(current.selectedNetworkIds).toEqual(defaultNetworkIds);
 		expect(current.walletsDisplayType).toEqual("all");
 		expect(current.viewType).toEqual("grid");
-		expect(current.showTransactions).toEqual(true);
 	});
 
 	it("should render with ledger wallet display type", async () => {
