@@ -3,6 +3,7 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
+import { LedgerProvider } from "app/contexts";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -15,6 +16,7 @@ import {
 	act,
 	env,
 	fireEvent,
+	getDefaultLedgerTransport,
 	getDefaultProfileId,
 	getDefaultWalletId,
 	getDefaultWalletMnemonic,
@@ -218,7 +220,9 @@ describe("SendTransfer", () => {
 
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -241,7 +245,9 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-					<SendTransfer />
+					<LedgerProvider transport={getDefaultLedgerTransport()}>
+						<SendTransfer />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [transferURL],
@@ -263,7 +269,9 @@ describe("SendTransfer", () => {
 
 		const { getByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -284,7 +292,9 @@ describe("SendTransfer", () => {
 
 		const { getByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -318,7 +328,9 @@ describe("SendTransfer", () => {
 
 		const { getByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -353,7 +365,9 @@ describe("SendTransfer", () => {
 
 		const { getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -401,7 +415,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -464,7 +480,9 @@ describe("SendTransfer", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -516,7 +534,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -652,7 +672,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -739,6 +761,9 @@ describe("SendTransfer", () => {
 
 	it("should send a single transfer with a ledger wallet", async () => {
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
 		const signTransactionSpy = jest
 			.spyOn(wallet.coin().ledger(), "signTransaction")
 			.mockImplementation(
@@ -762,7 +787,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -823,6 +850,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
+		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();
@@ -836,7 +864,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -910,7 +940,9 @@ describe("SendTransfer", () => {
 
 			const { getAllByTestId, getByTestId, container } = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-					<SendTransfer />
+					<LedgerProvider transport={getDefaultLedgerTransport()}>
+						<SendTransfer />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [transferURL],
@@ -1002,7 +1034,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -1115,7 +1149,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -1205,7 +1241,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -1307,7 +1345,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -1431,7 +1471,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],
@@ -1515,7 +1557,9 @@ describe("SendTransfer", () => {
 
 		const { getAllByTestId, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-				<SendTransfer />
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [transferURL],

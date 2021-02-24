@@ -7,7 +7,7 @@ import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useEnvironmentContext } from "app/contexts";
+import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
@@ -58,6 +58,8 @@ export const SendTransfer = () => {
 
 	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected } = watch();
 	const { sendTransfer, common } = useValidation();
+
+	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
@@ -276,6 +278,8 @@ export const SendTransfer = () => {
 								<AuthenticationStep
 									wallet={wallet!}
 									ledgerDetails={<TransferLedgerReview wallet={wallet!} />}
+									ledgerIsAwaitingDevice={!hasDeviceAvailable}
+									ledgerIsAwaitingApp={!isConnected}
 								/>
 							</TabPanel>
 
