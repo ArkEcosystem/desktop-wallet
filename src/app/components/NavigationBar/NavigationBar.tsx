@@ -3,7 +3,6 @@ import { MemoryPassword, Profile, ProfileSetting } from "@arkecosystem/platform-
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
-import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -62,9 +61,9 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 		<Dropdown
 			onSelect={onUserAction}
 			options={userActions}
-			dropdownClass="mt-8 -mr-4"
+			dropdownClass="mt-8"
 			toggleContent={(isOpen: boolean) => (
-				<div className="my-0.5 ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
+				<div className="cursor-pointer my-0.5 ml-4 -space-x-2" data-testid="navbar__useractions">
 					<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
 						<span className="text-theme-secondary-text dark:text-theme-secondary-800">
 							{exchangeCurrency && (
@@ -96,15 +95,6 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 								/>
 							)}
 						</AvatarWrapper>
-
-						<Badge
-							className="bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-							position="right"
-							icon="ChevronDown"
-							iconClass={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-							iconWidth={8}
-							iconHeight={5}
-						/>
 					</div>
 				</div>
 			)}
@@ -239,7 +229,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 							</div>
 
-							<div className="flex items-center my-auto mr-4 ml-8">
+							<div className="flex items-center my-auto ml-8">
 								<div className="text-right">
 									<div className="text-xs font-semibold text-theme-secondary-700">
 										{t("COMMON.YOUR_BALANCE")}
