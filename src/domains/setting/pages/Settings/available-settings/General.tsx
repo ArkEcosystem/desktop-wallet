@@ -48,7 +48,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().get(ProfileSetting.UseTestNetworks) || false,
 	);
 
-	const formattedName = name.trim();
+	const formattedName = name?.trim?.();
 
 	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
