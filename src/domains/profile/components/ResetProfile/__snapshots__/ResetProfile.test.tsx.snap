@@ -55,7 +55,7 @@ exports[`ResetProfile should render 1`] = `
           <div
             class="mt-1 text-theme-secondary-text"
           >
-            Do you really want to reset this profile? Once reset, you will not be able to restore it.
+            By performing this action, all of your Profile settings, wallet data, and other Profile information will be lost. Do you really want to reset your Profile? This action cannot be undone.
           </div>
           <div
             class="flex justify-end mt-8 space-x-3"
@@ -72,7 +72,7 @@ exports[`ResetProfile should render 1`] = `
               </div>
             </button>
             <button
-              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+              class="Button__StyledButton-mdtvtf-0 jhEaCc"
               data-testid="ResetProfile__submit-button"
               type="submit"
             >
