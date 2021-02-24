@@ -219,7 +219,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	const filteredPackages = useMemo(
 		() => pluginPackages.filter((config) => config.hasCategory(currentView)).map(mapConfigToPluginData),
-		[currentView], // eslint-disable-line react-hooks/exhaustive-deps
+		[currentView, pluginPackages], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 
 	const installedPlugins = pluginManager
@@ -267,6 +267,8 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		setUninstallSelectedPlugin(undefined);
 		trigger();
 	};
+
+	console.log({ currentView });
 
 	return (
 		<>
