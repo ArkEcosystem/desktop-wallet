@@ -102,7 +102,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			iconName: "BTC",
 		},
 		"egld.testnet": {
-			displayName: "Elrond",
+			displayName: "Elrond Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "BTC",
@@ -294,6 +294,7 @@ export const availableNetworksMock: Coins.Network[] = [
 	new Coins.Network(ATOM.manifest.name, ATOM.manifest.networks["terra.testnet"]),
 	new Coins.Network(BTC.manifest.name, BTC.manifest.networks["btc.livenet"]),
 	new Coins.Network(BTC.manifest.name, BTC.manifest.networks["btc.testnet"]),
+	new Coins.Network(EGLD.manifest.name, EGLD.manifest.networks["egld.mainnet"]),
 	new Coins.Network(EGLD.manifest.name, EGLD.manifest.networks["egld.testnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["bos.mainnet"]),
 	new Coins.Network(EOS.manifest.name, EOS.manifest.networks["eos.mainnet"]),
