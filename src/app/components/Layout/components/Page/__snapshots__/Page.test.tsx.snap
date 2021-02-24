@@ -3,7 +3,7 @@
 exports[`Page should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
@@ -204,10 +204,10 @@ exports[`Page should render 1`] = `
       </span>
     </div>
     <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-1 bg-theme-background"
+        class="flex flex-1"
       >
         <div
           class="container flex mx-auto"
@@ -228,7 +228,7 @@ exports[`Page should render 1`] = `
 exports[`Page should render without crumbs 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
@@ -403,7 +403,7 @@ exports[`Page should render without crumbs 1`] = `
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 mt-5"
+      class="flex flex-col flex-1"
     />
   </div>
 </DocumentFragment>
