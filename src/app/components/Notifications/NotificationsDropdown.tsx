@@ -2,6 +2,7 @@ import { ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-pro
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { NavigationButtonWrapper } from "app/components/NavigationBar";
 import { Notifications } from "app/components/Notifications";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { WalletUpdate } from "domains/wallet/components/WalletUpdate";
@@ -31,13 +32,8 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 			<Dropdown
 				dropdownClass="mt-8"
 				toggleContent={
-					<div className="rounded-lg">
-						<Button
-							variant="transparent"
-							size="icon"
-							className="w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
-							data-testid="navbar__buttons--notifications"
-						>
+					<NavigationButtonWrapper>
+						<Button variant="transparent" size="icon" data-testid="navbar__buttons--notifications">
 							<Icon name="Notification" width={15} height={18} className="p-1" />
 							{hasUnread && (
 								<div className="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800">
@@ -45,7 +41,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 								</div>
 							)}
 						</Button>
-					</div>
+					</NavigationButtonWrapper>
 				}
 			>
 				<div className="mt-2">
