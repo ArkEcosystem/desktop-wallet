@@ -78,7 +78,6 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 		<Modal
 			title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")}
 			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
-			banner={<Image name="AddExchangeBanner" domain="exchange" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
@@ -89,7 +88,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 						<TableRow>
 							<TableCell variant="start" className="w-18">
 								<div className="w-12 h-12">
-									<Image name="ChangeNowLogo" domain="exchange" />
+									<Image name="ChangeNowLogo" />
 								</div>
 							</TableCell>
 

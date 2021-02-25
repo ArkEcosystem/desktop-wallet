@@ -49,7 +49,7 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 			<div className="flex items-center p-2 font-semibold text-theme-primary-600">
 				<div className="mr-4">
 					<div className="w-12 h-12">
-						<Image name="ChangeNowLogo" domain="exchange" />
+						<Image name="ChangeNowLogo" />
 					</div>
 				</div>
 

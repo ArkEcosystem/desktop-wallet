@@ -65,7 +65,7 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
-								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
+								<Image name="ChangeNowLogo" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>
