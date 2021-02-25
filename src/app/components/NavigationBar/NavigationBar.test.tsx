@@ -28,6 +28,13 @@ describe("NavigationBar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render as logo-only variant", () => {
+		const { container, asFragment } = renderWithRouter(<NavigationBar variant="logo-only" />);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render with title", () => {
 		const title = "Desktop Wallet";
 
