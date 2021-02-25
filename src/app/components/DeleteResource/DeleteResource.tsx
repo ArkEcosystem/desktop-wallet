@@ -42,7 +42,7 @@ export const DeleteResource = ({
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button type="submit" onClick={onDelete} data-testid="DeleteResource__submit-button">
+				<Button type="submit" onClick={onDelete} variant="danger" data-testid="DeleteResource__submit-button">
 					<Icon name="Trash" />
 					<span>{t("COMMON.DELETE")}</span>
 				</Button>
