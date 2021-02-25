@@ -1027,7 +1027,9 @@ exports[`Settings should render 1`] = `
                   <div
                     class="relative mt-8"
                   >
-                    <h2>
+                    <h2
+                      class="mb-3"
+                    >
                       Personal Details
                     </h2>
                     <div
@@ -1535,7 +1537,9 @@ exports[`Settings should render 1`] = `
                   <div
                     class="relative mt-10"
                   >
-                    <h2>
+                    <h2
+                      class="mb-3"
+                    >
                       Security
                     </h2>
                     <ul
@@ -1557,7 +1561,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -1583,7 +1587,7 @@ exports[`Settings should render 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
@@ -1606,7 +1610,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Advanced Mode
@@ -1632,7 +1636,7 @@ exports[`Settings should render 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
@@ -1655,6 +1659,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -1754,7 +1759,9 @@ exports[`Settings should render 1`] = `
                   <div
                     class="relative mt-10"
                   >
-                    <h2>
+                    <h2
+                      class="mb-3"
+                    >
                       Other
                     </h2>
                     <ul
@@ -1776,7 +1783,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development Networks
@@ -1803,7 +1810,7 @@ exports[`Settings should render 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, allows application to add development and test networks.
@@ -1826,7 +1833,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -1852,7 +1859,7 @@ exports[`Settings should render 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Automatically send reports to help to improve our products.
@@ -1875,7 +1882,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -1901,7 +1908,7 @@ exports[`Settings should render 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, changes to a dark, high contrast theme.
@@ -1924,7 +1931,7 @@ exports[`Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Update Ledger in Background
@@ -1950,7 +1957,7 @@ exports[`Settings should render 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Allows Ledger wallets to automatically update and sync data in the background.
@@ -3015,7 +3022,7 @@ exports[`Settings should render peer settings 1`] = `
                             class="flex justify-between items-center space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-secondary-text"
+                              class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                               data-testid="list-divided-item__label"
                             >
                               Broadcast to Multiple Peers
@@ -3043,7 +3050,7 @@ exports[`Settings should render peer settings 1`] = `
                             </span>
                           </div>
                           <span
-                            class="text-sm font-medium text-theme-secondary-500"
+                            class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
                             Toggle to send transactions to multiple network peers. (Recommended)
@@ -3066,7 +3073,7 @@ exports[`Settings should render peer settings 1`] = `
                             class="flex justify-between items-center space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-secondary-text"
+                              class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                               data-testid="list-divided-item__label"
                             >
                               Use Custom Peers
@@ -3092,7 +3099,7 @@ exports[`Settings should render peer settings 1`] = `
                             </span>
                           </div>
                           <span
-                            class="text-sm font-medium text-theme-secondary-500"
+                            class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
                             Customize your individual peers by network. 
@@ -3569,7 +3576,7 @@ exports[`Settings should render plugin settings 1`] = `
                     data-testid="list-divided__items"
                   >
                     <li
-                      class="flex flex-col w-full pt-6"
+                      class="flex flex-col w-full "
                       data-testid="list-divided-item__wrapper"
                     >
                       <div
@@ -3583,7 +3590,7 @@ exports[`Settings should render plugin settings 1`] = `
                             class="flex justify-between items-center space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-secondary-text"
+                              class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                               data-testid="list-divided-item__label"
                             >
                               Plugin Source
@@ -3607,7 +3614,7 @@ exports[`Settings should render plugin settings 1`] = `
                             </span>
                           </div>
                           <span
-                            class="text-sm font-medium text-theme-secondary-500"
+                            class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
                             Turn this feature on, you can upload plugins to your wallet from third-party sources.
@@ -5351,7 +5358,9 @@ exports[`Settings should update profile 1`] = `
                   <div
                     class="relative mt-8"
                   >
-                    <h2>
+                    <h2
+                      class="mb-3"
+                    >
                       Personal Details
                     </h2>
                     <div
@@ -5859,7 +5868,9 @@ exports[`Settings should update profile 1`] = `
                   <div
                     class="relative mt-10"
                   >
-                    <h2>
+                    <h2
+                      class="mb-3"
+                    >
                       Security
                     </h2>
                     <ul
@@ -5881,7 +5892,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -5908,7 +5919,7 @@ exports[`Settings should update profile 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
@@ -5931,7 +5942,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Advanced Mode
@@ -5957,7 +5968,7 @@ exports[`Settings should update profile 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
@@ -5980,6 +5991,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -6079,7 +6091,9 @@ exports[`Settings should update profile 1`] = `
                   <div
                     class="relative mt-10"
                   >
-                    <h2>
+                    <h2
+                      class="mb-3"
+                    >
                       Other
                     </h2>
                     <ul
@@ -6101,7 +6115,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development Networks
@@ -6128,7 +6142,7 @@ exports[`Settings should update profile 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, allows application to add development and test networks.
@@ -6151,7 +6165,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -6177,7 +6191,7 @@ exports[`Settings should update profile 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Automatically send reports to help to improve our products.
@@ -6200,7 +6214,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -6227,7 +6241,7 @@ exports[`Settings should update profile 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, changes to a dark, high contrast theme.
@@ -6250,7 +6264,7 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Update Ledger in Background
@@ -6277,7 +6291,7 @@ exports[`Settings should update profile 1`] = `
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Allows Ledger wallets to automatically update and sync data in the background.
