@@ -2,7 +2,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import React from "react";
 import { useTranslation } from "react-i18next";
-const { MistakeBanner } = images.common;
+const { ErrorBanner } = images.common;
 
 type ErroStepProps = {
 	title?: string;
@@ -19,7 +19,7 @@ export const ErrorStep = ({ title, subtitle, onBack, onRepeat, isRepeatDisabled 
 			<div>
 				<h1 className="mb-8 text-lg font-bold md:text-4xl">{title || t("TRANSACTION.ERROR.TITLE")}</h1>
 				<div className="my-4 mx-auto w-128">
-					<MistakeBanner />
+					<ErrorBanner />
 				</div>
 				<div className="my-8 text-md text-theme-secondary-text">
 					{subtitle || t("TRANSACTION.ERROR.SUBTITLE")}
