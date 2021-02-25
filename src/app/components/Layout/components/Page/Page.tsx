@@ -6,15 +6,24 @@ import { NavbarVariant } from "types";
 type PageProps = {
 	navbarVariant?: NavbarVariant;
 	title?: string;
+	backToUrl?: string;
 	isBackDisabled?: boolean;
 	profile?: Profile;
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };
 
-export const Page = ({ navbarVariant, title, isBackDisabled, profile, sidebar, children }: PageProps) => (
+export const Page = ({ navbarVariant, title, backToUrl, isBackDisabled, profile, sidebar, children }: PageProps) => (
 	<div className="flex relative flex-col min-h-screen">
-		{<NavigationBar variant={navbarVariant} title={title} profile={profile} isBackDisabled={isBackDisabled} />}
+		{
+			<NavigationBar
+				variant={navbarVariant}
+				title={title}
+				backToUrl={backToUrl}
+				profile={profile}
+				isBackDisabled={isBackDisabled}
+			/>
+		}
 
 		<div className="flex flex-col flex-1">
 			{sidebar ? (

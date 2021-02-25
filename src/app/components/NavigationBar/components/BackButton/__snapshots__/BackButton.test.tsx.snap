@@ -1,5 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BackButton should not redirect to given url when disabled 1`] = `
+<div>
+  <button
+    class="BackButton__StyledBackButton-sc-1pe22tv-0 eFqIrK"
+    disabled=""
+  >
+    <div
+      class="sc-bdfBwQ iMKUsi"
+      height="10"
+      width="6"
+    >
+      <svg>
+        arrow-left.svg
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`BackButton should not redirect to previous page when disabled 1`] = `
+<div>
+  <button
+    class="BackButton__StyledBackButton-sc-1pe22tv-0 eFqIrK"
+    disabled=""
+  >
+    <div
+      class="sc-bdfBwQ iMKUsi"
+      height="10"
+      width="6"
+    >
+      <svg>
+        arrow-left.svg
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`BackButton should redirect to given url 1`] = `
+<div>
+  <button
+    class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv"
+  >
+    <div
+      class="sc-bdfBwQ iMKUsi"
+      height="10"
+      width="6"
+    >
+      <svg>
+        arrow-left.svg
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`BackButton should redirect to previous page 1`] = `
+<div>
+  <button
+    class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv"
+  >
+    <div
+      class="sc-bdfBwQ iMKUsi"
+      height="10"
+      width="6"
+    >
+      <svg>
+        arrow-left.svg
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
 exports[`BackButton should render 1`] = `
 <div>
   <button

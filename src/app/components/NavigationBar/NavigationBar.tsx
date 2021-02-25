@@ -35,6 +35,7 @@ type MenuItem = {
 
 type NavigationBarProps = {
 	title?: string;
+	backToUrl?: string;
 	isBackDisabled?: boolean;
 	profile?: Profile;
 	variant?: NavbarVariant;
@@ -135,7 +136,15 @@ const LogoContainer = styled.div`
 	${tw`flex items-center justify-center w-11 h-11 my-auto mr-4 text-white rounded bg-logo`};
 `;
 
-export const NavigationBar = ({ title, isBackDisabled, profile, variant, menu, userActions }: NavigationBarProps) => {
+export const NavigationBar = ({
+	title,
+	backToUrl,
+	isBackDisabled,
+	profile,
+	variant,
+	menu,
+	userActions,
+}: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 

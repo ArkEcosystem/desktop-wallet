@@ -6,17 +6,26 @@ import { styled } from "twin.macro";
 import { getStyles } from "./BackButton.styles";
 
 type BackButtonProps = {
+	backToUrl?: string;
 	className?: string;
 	disabled?: boolean;
 };
 
 const StyledBackButton = styled.button<BackButtonProps>(getStyles);
 
-export const BackButton = ({ className, disabled }: BackButtonProps) => {
+export const BackButton = ({ backToUrl, className, disabled }: BackButtonProps) => {
 	const history = useHistory();
 
+	const handleOnClick = () => {
+		if (backToUrl) {
+			return history.push(backToUrl);
+		}
+
+		history.go(-1);
+	};
+
 	return (
-		<StyledBackButton onClick={() => history.go(-1)} disabled={disabled} className={className}>
+		<StyledBackButton onClick={handleOnClick} disabled={disabled} className={className}>
 			<Icon name="ArrowLeft" width={6} height={10} />
 		</StyledBackButton>
 	);
