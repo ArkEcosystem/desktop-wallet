@@ -6,7 +6,6 @@ import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { usePluginManagerContext } from "plugins";
 import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const PluginDetails = () => {
@@ -17,7 +16,6 @@ export const PluginDetails = () => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 
-	const { t } = useTranslation();
 	const { pluginPackages, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
@@ -47,18 +45,6 @@ export const PluginDetails = () => {
 
 	const pluginData = plugin?.toObject() || ({} as any);
 
-	const { title } = pluginData;
-
-	const crumbs = [
-		{
-			label: t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE"),
-			route: `/profiles/${activeProfile.id()}/plugins`,
-		},
-		{
-			label: title,
-		},
-	];
-
 	const handleReportPlugin = () => {
 		reportPlugin(plugin!);
 	};
@@ -76,7 +62,7 @@ export const PluginDetails = () => {
 	};
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section>
 				<PluginHeader
 					{...pluginData}

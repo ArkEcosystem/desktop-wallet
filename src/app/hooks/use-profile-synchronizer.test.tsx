@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { MemoryPassword } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
@@ -227,6 +228,35 @@ describe("useProfileSynchronizer", () => {
 
 		await waitFor(() => expect(getByTestId("ProfileRestored")).toBeInTheDocument(), { timeout: 4000 });
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+
+	it("should handle restoration error for password protected profile", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+
+		const passwordProtectedUrl = "/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard";
+		history.push(passwordProtectedUrl);
+
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		profile.wallets().flush();
+
+		const memoryPasswordMock = jest.spyOn(MemoryPassword, "get").mockImplementation(() => {
+			throw new Error("password not found");
+		});
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<div data-testid="Content">test</div>
+			</Route>,
+			{
+				routes: [passwordProtectedUrl],
+				history,
+				withProfileSynchronizer: true,
+			},
+		);
+
+		await waitFor(() => expect(() => getByTestId("Content")).toThrow());
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+		memoryPasswordMock.mockRestore();
 	});
 
 	it("should restore profile and reset test password for e2e", async () => {
