@@ -1,6 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
@@ -39,8 +38,6 @@ type PluginManagerHomeProps = {
 type PluginManagerProps = {
 	paths?: any;
 };
-
-const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({
 	onDelete,
@@ -312,21 +309,18 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						<div className="flex justify-between items-center" />
 
 						{currentView === "home" && (
-							<div>
-								<PluginManagerHomeBanner className="mb-8 w-full" height="auto" />
-								<PluginManagerHome
-									isLoading={isFetchingPackages}
-									paths={paths}
-									viewType={viewType}
-									plugins={homePackages}
-									onInstall={openInstallModalPlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onDelete={handleDeletePlugin}
-									onSelect={handleSelectPlugin}
-									onLaunch={handleLaunchPlugin}
-								/>
-							</div>
+							<PluginManagerHome
+								isLoading={isFetchingPackages}
+								paths={paths}
+								viewType={viewType}
+								plugins={homePackages}
+								onInstall={openInstallModalPlugin}
+								onEnable={handleEnablePlugin}
+								onDisable={handleDisablePlugin}
+								onDelete={handleDeletePlugin}
+								onSelect={handleSelectPlugin}
+								onLaunch={handleLaunchPlugin}
+							/>
 						)}
 
 						{currentView === "my-plugins" && viewType === "grid" && (
