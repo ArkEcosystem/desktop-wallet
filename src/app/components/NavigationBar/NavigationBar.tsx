@@ -67,28 +67,28 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
 	return (
-		<Dropdown
-			onSelect={onUserAction}
-			options={userActions}
-			dropdownClass="mt-8"
-			toggleContent={(isOpen: boolean) => (
-				<div className="cursor-pointer my-0.5 ml-4 -space-x-2" data-testid="navbar__useractions">
-					<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
-						<span className="text-theme-secondary-text dark:text-theme-secondary-800">
-							{exchangeCurrency && (
-								<Icon
-									name={exchangeCurrency}
-									fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
-								/>
-							)}
-						</span>
-					</Circle>
+		<div className="flex my-0.5 ml-4 -space-x-2">
+			<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
+				<span className="text-theme-secondary-text dark:text-theme-secondary-800">
+					{exchangeCurrency && (
+						<Icon
+							name={exchangeCurrency}
+							fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
+						/>
+					)}
+				</span>
+			</Circle>
 
+			<Dropdown
+				onSelect={onUserAction}
+				options={userActions}
+				dropdownClass="mt-8"
+				toggleContent={(isOpen: boolean) => (
 					<div
-						className="inline-flex relative justify-center items-center align-middle rounded-full"
-						data-testid="navbar__user--avatar"
+						className="cursor-pointer relative justify-center items-center align-middle rounded-full"
+						data-testid="navbar__useractions"
 					>
-						<AvatarWrapper size="lg">
+						<AvatarWrapper size="lg" highlight={isOpen}>
 							{avatarImage?.endsWith("</svg>") ? (
 								<>
 									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
@@ -105,9 +105,9 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							)}
 						</AvatarWrapper>
 					</div>
-				</div>
-			)}
-		/>
+				)}
+			/>
+		</div>
 	);
 };
 

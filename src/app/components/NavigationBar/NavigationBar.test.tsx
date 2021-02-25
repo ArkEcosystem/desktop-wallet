@@ -113,18 +113,9 @@ describe("NavigationBar", () => {
 			fireEvent.click(toggle);
 		});
 
-		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 		expect(getByText("Option 1")).toBeTruthy();
 		fireEvent.click(getByText("Option 1"));
 		expect(history.location.pathname).toMatch("/test");
-	});
-
-	it("should render the navbar with avatar image", () => {
-		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
-
-		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
-
-		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 	});
 
 	it("should render the navbar with exchange currency", () => {
