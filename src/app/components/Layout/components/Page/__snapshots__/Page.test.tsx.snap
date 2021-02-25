@@ -3,17 +3,17 @@
 exports[`Page should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -32,10 +32,10 @@ exports[`Page should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -47,7 +47,7 @@ exports[`Page should render 1`] = `
             </span>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           />
           <div
             class="flex items-center my-auto space-x-4"
@@ -59,7 +59,7 @@ exports[`Page should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 jJjuyu"
@@ -90,7 +90,7 @@ exports[`Page should render 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 jJjuyu"
@@ -169,7 +169,7 @@ exports[`Page should render 1`] = `
                       />
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -191,36 +191,10 @@ exports[`Page should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      />
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Crumb 2
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="flex flex-1 bg-theme-background"
+        class="flex flex-1"
       >
         <div
           class="container flex mx-auto"
@@ -238,20 +212,20 @@ exports[`Page should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Page should render without crumbs 1`] = `
+exports[`Page should render without sidebar 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -270,10 +244,10 @@ exports[`Page should render without crumbs 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -285,7 +259,7 @@ exports[`Page should render without crumbs 1`] = `
             </span>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           />
           <div
             class="flex items-center my-auto space-x-4"
@@ -297,7 +271,7 @@ exports[`Page should render without crumbs 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 jJjuyu"
@@ -328,7 +302,7 @@ exports[`Page should render without crumbs 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 jJjuyu"
@@ -407,7 +381,7 @@ exports[`Page should render without crumbs 1`] = `
                       />
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -429,7 +403,7 @@ exports[`Page should render without crumbs 1`] = `
       </div>
     </nav>
     <div
-      class="flex flex-col flex-1 mt-5"
+      class="flex flex-col flex-1"
     />
   </div>
 </DocumentFragment>

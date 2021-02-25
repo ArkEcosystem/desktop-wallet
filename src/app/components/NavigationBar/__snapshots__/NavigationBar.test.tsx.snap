@@ -4,13 +4,13 @@ exports[`NavigationBar should not render if no active profile 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
   >
     <div
       class="px-8"
     >
       <div
-        class="flex relative justify-between h-20 md:h-24"
+        class="flex relative justify-between h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -29,17 +29,17 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
           >
             <svg
-              width="48"
+              width="44"
             >
               ark-logo.svg
             </svg>
           </div>
         </div>
         <ul
-          class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          class="flex mr-auto ml-4 space-x-8 h-21"
         >
           <li
             class="flex"
@@ -75,10 +75,10 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="rounded-lg"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -114,7 +114,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -144,7 +144,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex overflow-hidden items-center rounded-lg"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -233,7 +233,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                     />
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-bdfBwQ kJrqvM transition-transform "
@@ -261,13 +261,13 @@ exports[`NavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
   >
     <div
       class="px-8"
     >
       <div
-        class="flex relative justify-between h-20 md:h-24"
+        class="flex relative justify-between h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -286,17 +286,17 @@ exports[`NavigationBar should render 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
           >
             <svg
-              width="48"
+              width="44"
             >
               ark-logo.svg
             </svg>
           </div>
         </div>
         <ul
-          class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          class="flex mr-auto ml-4 space-x-8 h-21"
         >
           <li
             class="flex"
@@ -354,10 +354,10 @@ exports[`NavigationBar should render 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="rounded-lg"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -393,7 +393,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -423,7 +423,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex overflow-hidden items-center rounded-lg"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -516,7 +516,7 @@ exports[`NavigationBar should render 1`] = `
                     </span>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-bdfBwQ kJrqvM transition-transform "
@@ -540,17 +540,48 @@ exports[`NavigationBar should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`NavigationBar should render with custom menu 1`] = `
+exports[`NavigationBar should render as logo-only variant 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
   >
     <div
       class="px-8"
     >
       <div
-        class="flex relative justify-between h-20 md:h-24"
+        class="flex relative justify-between h-21"
+      >
+        <div
+          class="flex items-center my-auto"
+        >
+          <div
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+          >
+            <svg
+              width="44"
+            >
+              ark-logo.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`NavigationBar should render with custom menu 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="main menu"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+  >
+    <div
+      class="px-8"
+    >
+      <div
+        class="flex relative justify-between h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -569,17 +600,17 @@ exports[`NavigationBar should render with custom menu 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
           >
             <svg
-              width="48"
+              width="44"
             >
               ark-logo.svg
             </svg>
           </div>
         </div>
         <ul
-          class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          class="flex mr-auto ml-4 space-x-8 h-21"
         >
           <li
             class="flex"
@@ -615,10 +646,10 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="rounded-lg"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -654,7 +685,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -684,7 +715,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex overflow-hidden items-center rounded-lg"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -777,7 +808,192 @@ exports[`NavigationBar should render with custom menu 1`] = `
                     </span>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-bdfBwQ kJrqvM transition-transform "
+                      height="5"
+                      width="8"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="main menu"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 jbQhFq"
+  >
+    <div
+      class="px-8"
+    >
+      <div
+        class="flex relative justify-between h-21"
+      >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
+        <div
+          class="flex items-center my-auto"
+        >
+          <div
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+          >
+            <svg
+              width="44"
+            >
+              ark-logo.svg
+            </svg>
+          </div>
+        </div>
+        <ul
+          class="flex mr-auto ml-4 space-x-8 h-21"
+        />
+        <div
+          class="flex items-center my-auto space-x-4"
+        >
+          <div
+            class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+          />
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+            >
+              <button
+                class="Button__StyledButton-mdtvtf-0 jJjuyu"
+                data-testid="navbar__buttons--send"
+                disabled=""
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  <div
+                    class="sc-bdfBwQ iNulIV p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+          />
+          <div
+            class="flex overflow-hidden items-center rounded-lg"
+          >
+            <div
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+            >
+              <button
+                class="Button__StyledButton-mdtvtf-0 jJjuyu"
+                data-testid="navbar__buttons--receive"
+                disabled=""
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  <div
+                    class="sc-bdfBwQ iSzUah p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+          />
+        </div>
+        <div
+          class="flex items-center my-auto mr-4 ml-8"
+        >
+          <div
+            class="text-right"
+          >
+            <div
+              class="text-xs font-semibold text-theme-secondary-700"
+            >
+              Your balance
+            </div>
+            <div
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+            >
+              <span
+                data-testid="Amount"
+              >
+                0 
+              </span>
+            </div>
+          </div>
+          <div
+            class="relative"
+          >
+            <span
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-secondary-800"
+                  />
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                    />
+                  </div>
+                  <span
+                    class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-bdfBwQ kJrqvM transition-transform "
@@ -805,13 +1021,13 @@ exports[`NavigationBar should render with title 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
   >
     <div
       class="px-8"
     >
       <div
-        class="flex relative justify-between h-20 md:h-24"
+        class="flex relative justify-between h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -830,10 +1046,10 @@ exports[`NavigationBar should render with title 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
           >
             <svg
-              width="48"
+              width="44"
             >
               ark-logo.svg
             </svg>
@@ -845,7 +1061,7 @@ exports[`NavigationBar should render with title 1`] = `
           </span>
         </div>
         <ul
-          class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          class="flex mr-auto ml-4 space-x-8 h-21"
         >
           <li
             class="flex"
@@ -903,10 +1119,10 @@ exports[`NavigationBar should render with title 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="rounded-lg"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -942,7 +1158,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -972,7 +1188,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex overflow-hidden items-center rounded-lg"
           >
             <div
-              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
                 class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -1065,7 +1281,7 @@ exports[`NavigationBar should render with title 1`] = `
                     </span>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                    class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-bdfBwQ kJrqvM transition-transform "

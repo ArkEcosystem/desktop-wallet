@@ -79,19 +79,9 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 	const [viewType, setViewType] = useState(initialViewType);
 	const [installPlugin, setInstallPlugin] = useState(false);
 
-	const crumbs = [
-		{
-			label: t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE"),
-			route: `/profiles/${activeProfile.id()}/plugins`,
-		},
-		{
-			label: title,
-		},
-	];
-
 	return (
 		<>
-			<Page profile={activeProfile} crumbs={crumbs}>
+			<Page profile={activeProfile}>
 				<Section>
 					<Header
 						title={title}

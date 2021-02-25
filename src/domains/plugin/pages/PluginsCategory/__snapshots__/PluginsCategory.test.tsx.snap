@@ -3,17 +3,17 @@
 exports[`PluginsCategory should cancel install plugin 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -32,17 +32,17 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -101,10 +101,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -140,7 +140,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -170,7 +170,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -263,7 +263,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -285,52 +285,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -392,7 +350,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -659,12 +617,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -672,12 +632,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -760,24 +731,28 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -788,12 +763,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -801,12 +778,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -889,24 +877,28 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -917,12 +909,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -930,12 +924,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -1018,24 +1023,28 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -1046,12 +1055,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1059,12 +1070,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -1156,12 +1178,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1169,12 +1193,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -1266,12 +1301,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1279,12 +1316,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -1376,12 +1424,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -1389,12 +1439,23 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -1501,17 +1562,17 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
 exports[`PluginsCategory should close install plugin modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -1530,17 +1591,17 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -1599,10 +1660,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1638,7 +1699,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -1668,7 +1729,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -1761,7 +1822,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -1783,52 +1844,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1890,7 +1909,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2157,12 +2176,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2170,12 +2191,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -2258,24 +2290,28 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -2286,12 +2322,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2299,12 +2337,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -2387,24 +2436,28 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -2415,12 +2468,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2428,12 +2483,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -2516,24 +2582,28 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -2544,12 +2614,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2557,12 +2629,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -2654,12 +2737,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2667,12 +2752,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -2764,12 +2860,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2777,12 +2875,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -2874,12 +2983,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -2887,12 +2998,23 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -2999,17 +3121,17 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
 exports[`PluginsCategory should delete plugin 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -3028,17 +3150,17 @@ exports[`PluginsCategory should delete plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -3097,10 +3219,10 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3136,7 +3258,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3166,7 +3288,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3259,7 +3381,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -3281,52 +3403,10 @@ exports[`PluginsCategory should delete plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3388,7 +3468,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3472,9 +3552,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3548,9 +3630,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3624,9 +3708,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3700,9 +3786,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3776,9 +3864,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3852,9 +3942,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -3928,9 +4020,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4010,17 +4104,17 @@ exports[`PluginsCategory should delete plugin 1`] = `
 exports[`PluginsCategory should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -4039,17 +4133,17 @@ exports[`PluginsCategory should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -4108,10 +4202,10 @@ exports[`PluginsCategory should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4147,7 +4241,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -4177,7 +4271,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -4270,7 +4364,7 @@ exports[`PluginsCategory should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -4292,52 +4386,10 @@ exports[`PluginsCategory should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -4399,7 +4451,7 @@ exports[`PluginsCategory should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -4483,9 +4535,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4559,9 +4613,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4635,9 +4691,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4711,9 +4769,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4787,9 +4847,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4863,9 +4925,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -4939,9 +5003,11 @@ exports[`PluginsCategory should render 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5021,17 +5087,17 @@ exports[`PluginsCategory should render 1`] = `
 exports[`PluginsCategory should search for plugin 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -5050,17 +5116,17 @@ exports[`PluginsCategory should search for plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -5119,10 +5185,10 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5158,7 +5224,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5188,7 +5254,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5281,7 +5347,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -5303,52 +5369,10 @@ exports[`PluginsCategory should search for plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -5461,7 +5485,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -5545,9 +5569,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5621,9 +5647,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5697,9 +5725,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5773,9 +5803,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5849,9 +5881,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -5925,9 +5959,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6001,9 +6037,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6083,17 +6121,17 @@ exports[`PluginsCategory should search for plugin 1`] = `
 exports[`PluginsCategory should select plugin on grid 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -6112,17 +6150,17 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -6181,10 +6219,10 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6220,7 +6258,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -6250,7 +6288,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -6343,7 +6381,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -6365,52 +6403,10 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -6472,7 +6468,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -6556,9 +6552,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6632,9 +6630,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6708,9 +6708,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6784,9 +6786,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6860,9 +6864,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -6936,9 +6942,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -7012,9 +7020,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         class="flex flex-col h-full items-between"
                       >
                         <div
-                          class="PluginCard__PluginImageContainer-ixmao2-0 esYkZW"
+                          data-testid="PluginImage__placeholder"
                         >
-                          <svg>
+                          <svg
+                            class="mb-4 mr-4 w-20 h-20"
+                          >
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>
@@ -7094,17 +7104,17 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
 exports[`PluginsCategory should toggle between grid and list 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-8"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 kEThdv -ml-8 mr-8"
@@ -7123,17 +7133,17 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -7192,10 +7202,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7231,7 +7241,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -7261,7 +7271,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -7354,7 +7364,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM transition-transform "
@@ -7376,52 +7386,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -7483,7 +7451,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -7750,12 +7718,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -7763,12 +7733,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -7851,24 +7832,28 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -7879,12 +7864,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -7892,12 +7879,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -7980,24 +7978,28 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -8008,12 +8010,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8021,12 +8025,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Avatars
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Avatars
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ eMktAO"
                               height="20"
@@ -8109,24 +8124,28 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 <span
                                   data-testid="dropdown__toggle"
                                 >
-                                  <button
-                                    class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                    type="button"
+                                  <div
+                                    class="relative"
                                   >
-                                    <div
-                                      class="flex relative items-center space-x-2"
+                                    <button
+                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                                      type="button"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iyevwF"
-                                        height="20"
-                                        width="20"
+                                        class="flex relative items-center space-x-2"
                                       >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
+                                        <div
+                                          class="sc-bdfBwQ iyevwF"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </button>
+                                    </button>
+                                  </div>
                                 </span>
                               </div>
                             </div>
@@ -8137,12 +8156,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8150,12 +8171,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -8247,12 +8279,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8260,12 +8294,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -8357,12 +8402,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8370,12 +8417,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
@@ -8467,12 +8525,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                         data-testid="TableRow"
                       >
-                        <td>
+                        <td
+                          class="w-20"
+                        >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
-                              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+                              data-testid="PluginImage__placeholder"
                             >
                               <svg
                                 class="w-14 h-14"
@@ -8480,12 +8540,23 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
-                            <a
-                              class="font-semibold link"
-                              href="/"
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
                             >
-                              ARK Explorer
-                            </a>
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
                             <div
                               class="sc-bdfBwQ iNulIV"
                               height="18"
