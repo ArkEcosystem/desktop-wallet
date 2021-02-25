@@ -28,16 +28,6 @@ export const CreateWallet = () => {
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: t("WALLETS.PAGE_CREATE_WALLET.TITLE"),
-		},
-	];
-
 	const form = useForm({ mode: "onChange" });
 	const { getValues, formState, register, setValue } = form;
 	const { isSubmitting, isValid } = formState;
@@ -89,7 +79,7 @@ export const CreateWallet = () => {
 	};
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
