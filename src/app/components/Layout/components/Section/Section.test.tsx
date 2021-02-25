@@ -9,4 +9,10 @@ describe("Section", () => {
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with margin top", () => {
+		const { container, asFragment } = render(<Section marginTop />);
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
