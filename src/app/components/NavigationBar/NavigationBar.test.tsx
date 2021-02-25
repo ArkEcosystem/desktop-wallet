@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import * as useScrollHook from "app/hooks/use-scroll";
 import electron from "electron";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -33,6 +34,17 @@ describe("NavigationBar", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with shadow if there is a scroll", () => {
+		const scrollSpy = jest.spyOn(useScrollHook, "useScroll").mockImplementation(() => 1);
+
+		const { container, asFragment } = renderWithRouter(<NavigationBar />);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		scrollSpy.mockRestore();
 	});
 
 	it("should render with title", () => {
