@@ -5,19 +5,19 @@ import { Size } from "types";
 
 type Props = {
 	address: string;
+	className?: string;
+	highlight?: boolean;
+	noShadow?: boolean;
+	shadowColor?: string;
 	size?: Size;
 	children?: React.ReactNode;
-	noShadow?: boolean;
-	highlight?: boolean;
-	className?: string;
-	shadowColor?: string;
 };
 
 export const AvatarWrapper = styled.div<{
+	highlight?: boolean;
+	noShadow?: boolean;
 	shadowColor?: string;
 	size?: string;
-	noShadow?: boolean;
-	highlight?: boolean;
 }>`
 	${tw`transition-all duration-100 relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
 	${({ size }) => {
@@ -50,7 +50,7 @@ export const AvatarWrapper = styled.div<{
 	}};
 `;
 
-export const Avatar = ({ address, size, noShadow, className, shadowColor, children }: Props) => {
+export const Avatar = ({ address, className, highlight, noShadow, shadowColor, size, children }: Props) => {
 	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
@@ -58,6 +58,7 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor, childr
 			data-testid="Avatar"
 			size={size}
 			noShadow={!!noShadow}
+			highlight={highlight}
 			className={className}
 			shadowColor={shadowColor}
 		>
