@@ -6,7 +6,6 @@ import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { usePluginManagerContext } from "plugins";
 import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const PluginDetails = () => {
@@ -17,7 +16,6 @@ export const PluginDetails = () => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 
-	const { t } = useTranslation();
 	const {
 		allPlugins,
 		pluginConfigurations,
