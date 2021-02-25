@@ -145,7 +145,7 @@ export const translations: { [key: string]: any } = {
 	REGISTER: "Register",
 	REGISTRATIONS: "Registrations",
 	REMOVE: "Remove",
-	RESET_DATA: "Reset Data",
+	RESET_SETTINGS: "Reset Settings",
 	RESIGN: "Resign",
 	RESIGNED: "Resigned",
 	RETRY: "Retry",
