@@ -9,23 +9,29 @@ type PluginListProps = {
 	className?: string;
 	itemsPerPage?: number;
 	onDelete: any;
+	onClick?: (plugin: any) => void;
 	onLaunch?: (plugin: any) => void;
 	onEnable?: (plugin: any) => void;
 	onDisable?: (plugin: any) => void;
+	onUpdate?: (plugin: any) => void;
 	onInstall: any;
 	plugins: any[];
+	updatingStats?: any;
 	withPagination?: boolean;
 };
 
 export const PluginList = ({
 	className,
 	itemsPerPage,
+	onClick,
 	onEnable,
 	onDisable,
 	onDelete,
 	onLaunch,
 	onInstall,
+	onUpdate,
 	plugins,
+	updatingStats,
 	withPagination,
 }: PluginListProps) => {
 	const { t } = useTranslation();
@@ -82,11 +88,15 @@ export const PluginList = ({
 				{(plugin: any) => (
 					<PluginListItem
 						plugin={plugin}
+						onClick={onClick}
 						onLaunch={onLaunch}
 						onInstall={onInstall}
 						onDelete={onDelete}
 						onEnable={onEnable}
 						onDisable={onDisable}
+						onUpdate={onUpdate}
+						isUpdating={updatingStats?.[plugin.name]?.percent !== undefined}
+						updatingProgress={updatingStats?.[plugin.name]?.percent}
 					/>
 				)}
 			</Table>

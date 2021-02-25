@@ -1,4 +1,11 @@
 export const translations: { [key: string]: any } = {
+	NEW_VERSION_AVAILABLE: "New version available",
+	UPDATE_ALL_NOTICE: "There are {{count}} updates available for your plugins. Would you like to update them all now?",
+	UPDATE_ALL: "Update All",
+
+	MINIMUM_VERSION_NOT_SATISFIED:
+		"In order to update this plugin please update Desktop Wallet to v{{minimumVersion}}+",
+
 	WARNING_DISCLAIMER:
 		"Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.",
 

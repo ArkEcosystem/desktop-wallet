@@ -34,7 +34,7 @@ export class PluginController {
 	}
 
 	isEnabled(profile: Profile) {
-		return profile
+		return !!profile
 			.plugins()
 			.values()
 			.find((item) => item.id === this.config().id());
