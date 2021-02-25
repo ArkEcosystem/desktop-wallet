@@ -4980,7 +4980,7 @@ exports[`SendTransfer should render summary step 1`] = `
     <svg
       class="w-full"
     >
-      transaction-successful.svg
+      transaction-success-banner.svg
     </svg>
     <p
       class="text-theme-secondary-text"
@@ -8068,7 +8068,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     <svg
                       class="w-full"
                     >
-                      transaction-successful.svg
+                      transaction-success-banner.svg
                     </svg>
                     <p
                       class="text-theme-secondary-text"
@@ -8696,7 +8696,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     <svg
                       class="w-full"
                     >
-                      transaction-successful.svg
+                      transaction-success-banner.svg
                     </svg>
                     <p
                       class="text-theme-secondary-text"
@@ -9324,7 +9324,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     <svg
                       class="w-full"
                     >
-                      transaction-successful.svg
+                      transaction-success-banner.svg
                     </svg>
                     <p
                       class="text-theme-secondary-text"
@@ -9952,7 +9952,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     <svg
                       class="w-full"
                     >
-                      transaction-successful.svg
+                      transaction-success-banner.svg
                     </svg>
                     <p
                       class="text-theme-secondary-text"
@@ -10562,27 +10562,31 @@ exports[`SendTransfer should show error step and go back 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="ErrorStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-8 text-lg font-bold md:text-4xl"
-                      >
-                        Transaction Error
-                      </h1>
-                      <div
-                        class="my-4 mx-auto w-128"
-                      >
-                        <svg>
-                          mistake-banner.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="my-8 text-md text-theme-secondary-text"
-                      >
-                        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
+                        >
+                          Transaction Error
+                        </h1>
                       </div>
                     </div>
+                    <svg
+                      class="w-full"
+                    >
+                      transaction-error-banner.svg
+                    </svg>
+                    <p
+                      class="text-theme-secondary-text"
+                    >
+                      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                    </p>
                     <div
                       class="flex justify-end space-x-3"
                     >
