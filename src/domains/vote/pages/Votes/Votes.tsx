@@ -51,16 +51,6 @@ export const Votes = () => {
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
 	const [selectedFilter, setSelectedFilter] = useState<FilterOption>(filter);
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: t("VOTE.VOTES_PAGE.TITLE"),
-		},
-	];
-
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
@@ -248,7 +238,7 @@ export const Votes = () => {
 		Object.keys(filteredWalletsByCoin).every((coin: string) => !filteredWalletsByCoin[coin].length);
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section>
 				<Header
 					title={t("VOTE.VOTES_PAGE.TITLE")}

@@ -61,16 +61,6 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: activeWallet.alias() || activeWallet.address(),
-		},
-	];
-
 	useEffect(() => {
 		const fetchAllData = async () => {
 			await fetchInit();
@@ -94,7 +84,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	/* istanbul ignore next */
 	return (
 		<>
-			<Page profile={activeProfile} crumbs={crumbs}>
+			<Page profile={activeProfile}>
 				<WalletHeader
 					profile={activeProfile}
 					wallet={activeWallet}
