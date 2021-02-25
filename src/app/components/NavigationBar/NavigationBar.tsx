@@ -11,6 +11,7 @@ import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
 import { Tooltip } from "app/components/Tooltip";
+import { useScroll } from "app/hooks";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
@@ -41,10 +42,18 @@ type NavigationBarProps = {
 	onUserAction?: any;
 };
 
-const NavWrapper = styled.nav<{ noShadow?: boolean }>`
+const NavWrapper = styled.nav<{ noShadow?: boolean; scroll?: number }>`
 	${defaultStyle}
-	${tw`sticky inset-x-0 top-0 bg-theme-background`}
-	${({ noShadow }) => !noShadow && tw`shadow-header-smooth dark:shadow-header-smooth-dark`};
+
+	${tw`sticky border-b border-theme-background inset-x-0 top-0 bg-theme-background transition-all duration-200`}
+
+	${({ noShadow, scroll }) => {
+		if (!noShadow) {
+			return scroll
+				? tw`shadow-header-smooth dark:shadow-header-smooth-dark`
+				: tw`border-theme-secondary-300 dark:border-theme-secondary-800`;
+		}
+	}};
 `;
 
 type UserInfoProps = {
@@ -181,8 +190,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 			.filter((wallet) => wallet.network().isLive());
 	}, [profile, profileWalletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
+	const scroll = useScroll();
+
 	return (
-		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
+		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"} scroll={scroll}>
 			<div className="px-4 sm:px-6 lg:px-10">
 				<div className="flex relative justify-between h-20 md:h-24">
 					<div className="flex items-center my-auto">
