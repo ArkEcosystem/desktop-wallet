@@ -15,7 +15,7 @@ export const PluginView = () => {
 
 	return (
 		<Page profile={profile}>
-			<div className="bg-theme-background px-4 sm:px-6 lg:px-10 py-4 -mt-5">
+			<div className="px-4 sm:px-6 lg:px-10 py-4">
 				<div className="flex justify-between items-center">
 					<div className="flex items-center space-x-3">
 						<PluginImage logoURL={plugin?.config()?.logo()} className="w-6 h-6" />
