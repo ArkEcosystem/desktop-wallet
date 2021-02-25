@@ -3,7 +3,7 @@
 exports[`SendTransfer should display disabled address selection input if selected cryptoasset has not available wallets 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -270,47 +270,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -902,7 +861,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
 exports[`SendTransfer should error if wrong mnemonic 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1169,66 +1128,6 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -1843,7 +1742,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
 exports[`SendTransfer should render form and use location state 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2110,66 +2009,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -2752,7 +2591,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
 exports[`SendTransfer should render form and use location state without memo 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3019,66 +2858,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -5482,7 +5261,7 @@ exports[`SendTransfer should render summary step 1`] = `
 exports[`SendTransfer should render transfer form without selected wallet 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -5749,47 +5528,6 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -6274,7 +6012,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
 exports[`SendTransfer should select a cryptoasset and select sender without wallet id param 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -6541,47 +6279,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -7191,7 +6888,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
 exports[`SendTransfer should select cryptoasset first and see select address input clickable 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -7458,47 +7155,6 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -8090,7 +7746,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
 exports[`SendTransfer should send a single transfer 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -8357,66 +8013,6 @@ exports[`SendTransfer should send a single transfer 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -8778,7 +8374,7 @@ exports[`SendTransfer should send a single transfer 2`] = `<div />`;
 exports[`SendTransfer should send a single transfer and show unconfirmed transactions modal 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -9045,66 +8641,6 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -9466,7 +9002,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
 exports[`SendTransfer should send a single transfer with a high fee by confirming the fee warning 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -9733,66 +9269,6 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -10154,7 +9630,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
 exports[`SendTransfer should send a single transfer with a low fee by confirming the fee warning 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -10421,66 +9897,6 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -10842,7 +10258,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
 exports[`SendTransfer should show error step and go back 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -11109,66 +10525,6 @@ exports[`SendTransfer should show error step and go back 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >

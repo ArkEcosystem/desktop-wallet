@@ -6,7 +6,7 @@ exports[`PluginDetails should render properly 1`] = `
     Fetch Packages
   </button>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -274,48 +274,6 @@ exports[`PluginDetails should render properly 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Test Plugin
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -576,7 +534,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
     Fetch Package
   </button>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -844,48 +802,6 @@ exports[`PluginDetails should render properly for remote package 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Remote Plugin
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -1138,7 +1054,7 @@ exports[`PluginDetails should report plugin 1`] = `
     Fetch Packages
   </button>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1406,48 +1322,6 @@ exports[`PluginDetails should report plugin 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Test Plugin
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -1708,7 +1582,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
     Fetch Packages
   </button>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1976,48 +1850,6 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          My Export Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >

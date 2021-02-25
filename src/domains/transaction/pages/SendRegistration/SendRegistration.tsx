@@ -1,5 +1,4 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -15,7 +14,7 @@ import { MultiSignatureRegistrationForm } from "domains/transaction/components/M
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import { useFeeConfirmation } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -34,7 +33,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
-	const [crumbs, setCrumbs] = useState<Crumb[]>([]);
 	const { findByType } = useFees();
 
 	const { registrationType } = useParams();
@@ -144,51 +142,8 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		setActiveTab(newIndex);
 	};
 
-	const baseCrumbs: Crumb[] = useMemo(
-		() => [
-			{
-				label: t("COMMON.PORTFOLIO"),
-				route: `/profiles/${activeProfile.id()}/dashboard`,
-			},
-			{
-				label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
-				route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-			},
-		],
-		[activeProfile, activeWallet, t],
-	);
-
-	useEffect(() => {
-		switch (registrationType) {
-			case "secondSignature": {
-				return setCrumbs([
-					...baseCrumbs,
-					{
-						label: t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE"),
-					},
-				]);
-			}
-			case "multiSignature": {
-				return setCrumbs([
-					...baseCrumbs,
-					{
-						label: t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE"),
-					},
-				]);
-			}
-			default: {
-				return setCrumbs([
-					...baseCrumbs,
-					{
-						label: t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE"),
-					},
-				]);
-			}
-		}
-	}, [baseCrumbs, registrationType, t]);
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"

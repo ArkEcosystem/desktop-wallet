@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -233,26 +232,8 @@ export const SendTransfer = () => {
 		setActiveTab(newIndex);
 	};
 
-	const crumbs: Crumb[] = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-	];
-
-	if (hasWalletId) {
-		crumbs.push({
-			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
-			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-		});
-	}
-
-	crumbs.push({
-		label: t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE"),
-	});
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>

@@ -9,7 +9,7 @@ exports[`SendVote should return to the select a delegate page to vote 1`] = `<di
 exports[`SendVote should send a unvote & vote transaction 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -276,66 +276,6 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Vote Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -787,7 +727,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
 exports[`SendVote should send a unvote transaction 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1054,66 +994,6 @@ exports[`SendVote should send a unvote transaction 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Vote Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -1500,7 +1380,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
 exports[`SendVote should send a vote transaction 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1767,66 +1647,6 @@ exports[`SendVote should send a vote transaction 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Vote Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -2213,7 +2033,7 @@ exports[`SendVote should send a vote transaction 1`] = `
 exports[`SendVote should send a vote transaction 2`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2480,66 +2300,6 @@ exports[`SendVote should send a vote transaction 2`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Vote Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -2926,7 +2686,7 @@ exports[`SendVote should send a vote transaction 2`] = `
 exports[`SendVote should show error if wrong mnemonic 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3193,66 +2953,6 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Vote Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
@@ -3428,7 +3128,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
 exports[`SendVote should show error step and go back 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3695,66 +3395,6 @@ exports[`SendVote should show error step and go back 1`] = `
         </div>
       </div>
     </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Vote Transaction
-        </span>
-      </span>
-    </div>
     <div
       class="flex flex-col flex-1"
     >
