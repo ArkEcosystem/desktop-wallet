@@ -44,7 +44,7 @@ export const Settings = () => {
 		{
 			itemKey: "Export",
 			label: t("SETTINGS.EXPORT.MENU_ITEM"),
-			icon: "Lock",
+			icon: "Export",
 		},
 	];
 
