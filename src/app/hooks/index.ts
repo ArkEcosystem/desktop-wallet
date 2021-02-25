@@ -13,6 +13,7 @@ export * from "./use-profile-synchronizer";
 export * from "./use-query-params";
 export * from "./use-random-number";
 export * from "./use-reload-path";
+export * from "./use-scroll";
 export * from "./use-synchronizer";
 export * from "./use-theme-name";
 export * from "./use-updater";
