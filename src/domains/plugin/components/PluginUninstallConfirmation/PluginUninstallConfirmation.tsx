@@ -43,7 +43,12 @@ export const PluginUninstallConfirmation = ({ isOpen, profile, plugin, onClose, 
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" onClick={handleDelete} data-testid="PluginUninstall__submit-button">
+					<Button
+						type="submit"
+						onClick={handleDelete}
+						variant="danger"
+						data-testid="PluginUninstall__submit-button"
+					>
 						<Icon name="Trash" />
 						<span>{t("COMMON.DELETE")}</span>
 					</Button>
