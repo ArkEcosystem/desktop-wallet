@@ -1,7 +1,7 @@
-import { ReactComponent as CannotConnectBannerDark } from "./cannot-connect-banner.svg";
-import { ReactComponent as ErrorBannerDark } from "./error-banner.svg";
+import { ReactComponent as ConnectionErrorDark } from "./connection-error.svg";
+import { ReactComponent as GenericErrorDark } from "./generic-error.svg";
 
 export const ImagesDark: any = {
-	CannotConnectBannerDark,
-	ErrorBannerDark,
+	ConnectionErrorDark,
+	GenericErrorDark,
 };
