@@ -60,16 +60,12 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 data-testid="dropdown__options"
               >
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--all-0"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      All
-                    </span>
-                  </div>
+                  <span>
+                    All
+                  </span>
                 </li>
               </ul>
             </ul>
@@ -81,13 +77,13 @@ exports[`FilterTransactions should open dropdown list with all transaction types
               class="mx-8 -my-2"
             >
               <div
-                class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-600"
                 type="horizontal"
               />
             </div>
             <ul>
               <li
-                class="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500"
+                class="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-600"
               >
                 CORE
               </li>
@@ -95,244 +91,164 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 data-testid="dropdown__options"
               >
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-0"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Bridgechain Registration
-                    </span>
-                  </div>
+                  <span>
+                    Bridgechain Registration
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-1"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Bridgechain Resignation
-                    </span>
-                  </div>
+                  <span>
+                    Bridgechain Resignation
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-2"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Bridgechain Update
-                    </span>
-                  </div>
+                  <span>
+                    Bridgechain Update
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-3"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Business Registration
-                    </span>
-                  </div>
+                  <span>
+                    Business Registration
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-4"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Business Resignation
-                    </span>
-                  </div>
+                  <span>
+                    Business Resignation
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-5"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Business Update
-                    </span>
-                  </div>
+                  <span>
+                    Business Update
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-6"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Delegate Registration
-                    </span>
-                  </div>
+                  <span>
+                    Delegate Registration
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-7"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Delegate Registration
-                    </span>
-                  </div>
+                  <span>
+                    Delegate Registration
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-8"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Entity Registration
-                    </span>
-                  </div>
+                  <span>
+                    Entity Registration
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-9"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Entity Resignation
-                    </span>
-                  </div>
+                  <span>
+                    Entity Resignation
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-10"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Entity Update
-                    </span>
-                  </div>
+                  <span>
+                    Entity Update
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-11"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Timelock Claim
-                    </span>
-                  </div>
+                  <span>
+                    Timelock Claim
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-12"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Timelock
-                    </span>
-                  </div>
+                  <span>
+                    Timelock
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-13"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Timelock Refund
-                    </span>
-                  </div>
+                  <span>
+                    Timelock Refund
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-14"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      IPFS
-                    </span>
-                  </div>
+                  <span>
+                    IPFS
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-15"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Multipayment
-                    </span>
-                  </div>
+                  <span>
+                    Multipayment
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-16"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Multisignature
-                    </span>
-                  </div>
+                  <span>
+                    Multisignature
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-17"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Second Signature
-                    </span>
-                  </div>
+                  <span>
+                    Second Signature
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-18"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Transfer
-                    </span>
-                  </div>
+                  <span>
+                    Transfer
+                  </span>
                 </li>
                 <li
-                  class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
                   data-testid="dropdown__option--core-19"
                 >
-                  <div
-                    class=""
-                  >
-                    <span>
-                      Vote
-                    </span>
-                  </div>
+                  <span>
+                    Vote
+                  </span>
                 </li>
               </ul>
             </ul>
