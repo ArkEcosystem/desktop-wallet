@@ -91,9 +91,9 @@ const directories = {
 	},
 	"domains/vote": {
 		branches: 100,
-		functions: 98.77,
-		lines: 95.16,
-		statements: 95.47,
+		functions: 100,
+		lines: 100,
+		statements: 100,
 	},
 	"domains/wallet": {
 		branches: 98.09,
