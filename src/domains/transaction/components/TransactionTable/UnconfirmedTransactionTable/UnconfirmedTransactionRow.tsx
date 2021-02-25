@@ -19,9 +19,7 @@ export const UnconfirmedTransactionRow = ({ transaction, walletName, iconSize, .
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 	return (
 		<TableRow
-			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
-			}
+			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
 			onMouseLeave={() => setShadowColor("")}
 			{...props}
 		>
