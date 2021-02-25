@@ -30,7 +30,6 @@ export const sendTransfer = (t: any, env: Environment) => ({
 				const address = addressValue ? addressValue.trim() : "";
 				const shouldRequire = !address && !recipients.length;
 				const hasAddedRecipients = !address && !isSingleRecipient && recipients.length > 0;
-
 				if (!network) {
 					return false;
 				}
@@ -47,6 +46,7 @@ export const sendTransfer = (t: any, env: Environment) => ({
 
 				const coin: Coins.Coin = await env.coin(network?.coin(), network?.id());
 				const isValidAddress: boolean = await coin.identity().address().validate(address);
+
 				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
 			},
 		},

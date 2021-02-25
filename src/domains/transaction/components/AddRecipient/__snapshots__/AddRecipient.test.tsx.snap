@@ -238,7 +238,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1"
+          class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
@@ -249,7 +249,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           </div>
         </button>
         <button
-          class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1 border-l-0"
+          class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -262,7 +262,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
     >
       <div
         class="space-y-8"
@@ -275,7 +275,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             data-testid="FormLabel"
             for="recipientAddress"
           >
-            Recipient #1
+            Recipient
             <div
               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
               data-testid="FormLabel__required"

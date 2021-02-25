@@ -3,9 +3,9 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
-import React from "react";
+import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, render, waitFor, within } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render, screen, waitFor, within } from "utils/testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
@@ -219,51 +219,81 @@ describe("AddRecipient", () => {
 		expect(queryByText(recipientLabel)).toBeFalsy();
 	});
 
-	it("should prevent adding invalid recipient address", async () => {
+	it("should prevent adding invalid recipient address in multiple tab", async () => {
 		const values = {
 			displayAmount: "1",
 			amount: "100000000",
 			recipientAddress: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 		};
 
-		const { getByTestId, form } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				isSingleRecipient={false}
-			/>,
-			values,
-		);
+		let form: ReturnType<typeof useForm>;
 
-		await act(async () => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), {
-				target: {
-					value: values.displayAmount,
-				},
+		const Component = () => {
+			form = useForm({
+				mode: "onChange",
+				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
 			});
-			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
-				target: {
-					value: values.recipientAddress,
-				},
-			});
+
+			useEffect(() => {
+				form.register("network");
+				form.register("senderAddress");
+			}, []);
+
+			return (
+				<FormProvider {...form}>
+					<AddRecipient
+						profile={profile}
+						assetSymbol="ARK"
+						maxAvailableAmount={BigNumber.make(80)}
+						recipients={[
+							{
+								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+								amount: BigNumber.ONE,
+							},
+							{
+								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ay",
+								amount: BigNumber.ONE,
+							},
+						]}
+					/>
+				</FormProvider>
+			);
+		};
+		render(<Component />);
+
+		fireEvent.input(screen.getByTestId("AddRecipient__amount"), {
+			target: {
+				value: values.displayAmount,
+			},
+		});
+
+		// Invalid address
+		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+			target: {
+				value: values.recipientAddress,
+			},
 		});
 
 		await waitFor(() => {
-			expect(form.current.getValues("amount")).toEqual(values.amount);
-			expect(form.current.getValues("displayAmount")).toEqual(values.displayAmount);
-
-			expect(getByTestId("AddRecipient__add-button")).toBeTruthy();
-			expect(getByTestId("AddRecipient__add-button")).not.toBeDisabled();
+			expect(form.getValues("amount")).toEqual(values.amount);
+			expect(form.getValues("displayAmount")).toEqual(values.displayAmount);
 		});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("AddRecipient__add-button"));
+		expect(screen.getByTestId("AddRecipient__add-button")).toBeTruthy();
+		expect(screen.getByTestId("AddRecipient__add-button")).toBeDisabled();
+
+		// Valid address
+		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+			target: {
+				value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			},
 		});
 
-		await waitFor(() =>
-			expect(() => getByTestId("recipient-list__recipient-list-item")).toThrow(/Unable to find an element by/),
-		);
+		await waitFor(() => expect(screen.getByTestId("AddRecipient__add-button")).not.toBeDisabled());
+
+		fireEvent.click(screen.getByTestId("AddRecipient__add-button"));
+
+		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(3));
 	});
 
 	it("should disable recipient fields if network is not filled", async () => {
@@ -409,134 +439,100 @@ describe("AddRecipient", () => {
 		await waitFor(() => expect(form.current.formState.errors.recipientAddress).toBeDefined());
 	});
 
-	it("should show add recipient button when recipient and amount are set in multipe tab", async () => {
+	it("should remove recipient in multiple tab", async () => {
 		const values = {
 			displayAmount: "1",
 			amount: "100000000",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
-		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				isSingleRecipient={false}
-			/>,
-			values,
-		);
+		let form: ReturnType<typeof useForm>;
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
-		});
-
-		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
-		});
-
-		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
-
-		await act(async () => {
-			fireEvent.click(firstAddress);
-		});
-
-		await act(async () => {
-			fireEvent.change(getByTestId("AddRecipient__amount"), {
-				target: {
-					value: "1",
-				},
+		const Component = () => {
+			form = useForm({
+				mode: "onChange",
+				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
 			});
-		});
 
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual(values.amount));
-		await waitFor(() => expect(form.current.getValues("displayAmount")).toEqual(values.displayAmount));
+			useEffect(() => {
+				form.register("network");
+				form.register("senderAddress");
+			}, []);
 
-		await act(async () => {
-			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
-				target: {
-					value: values.recipientAddress,
-				},
-			});
-		});
-
-		await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual(values.recipientAddress));
-
-		await waitFor(() => expect(getByTestId("AddRecipient__add-button")).toBeTruthy());
-	});
-
-	it("should add and remove recipient in multiple tab", async () => {
-		const values = {
-			displayAmount: "1",
-			amount: "100000000",
-			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+			return (
+				<FormProvider {...form}>
+					<AddRecipient
+						profile={profile}
+						assetSymbol="ARK"
+						maxAvailableAmount={BigNumber.make(80)}
+						recipients={[
+							{
+								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+								amount: BigNumber.ONE,
+							},
+							{
+								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ay",
+								amount: BigNumber.ONE,
+							},
+						]}
+					/>
+				</FormProvider>
+			);
 		};
+		render(<Component />);
 
-		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				isSingleRecipient={false}
-			/>,
-			values,
-		);
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
+		fireEvent.input(screen.getByTestId("AddRecipient__amount"), {
+			target: {
+				value: values.displayAmount,
+			},
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
-		});
+		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(2));
 
-		const firstAddress = getAllByTestId("RecipientListItem__select-button")[0];
-
-		await act(async () => {
-			fireEvent.click(firstAddress);
-		});
-
-		await act(async () => {
-			fireEvent.change(getByTestId("AddRecipient__amount"), {
-				target: {
-					value: "1",
-				},
-			});
-		});
-
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual(values.amount));
-		await waitFor(() => expect(form.current.getValues("displayAmount")).toEqual(values.displayAmount));
-
-		await act(async () => {
-			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
-				target: {
-					value: values.recipientAddress,
-				},
-			});
-		});
-
-		await act(async () => {
-			await waitFor(() => expect(getByTestId("AddRecipient__add-button")).toBeTruthy());
-			fireEvent.click(getByTestId("AddRecipient__add-button"));
-
-			await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual("" || undefined));
-			await waitFor(() => expect(form.current.getValues("amount")).toEqual(undefined));
-		});
-
-		const removeBtn = within(getAllByTestId("recipient-list__recipient-list-item")[0]).getAllByTestId(
+		const removeBtn = within(screen.getAllByTestId("recipient-list__recipient-list-item")[0]).getAllByTestId(
 			"recipient-list__remove-recipient",
 		);
 		expect(removeBtn[0]).toBeTruthy();
 
-		await act(async () => {
-			fireEvent.click(removeBtn[0]);
-		});
+		fireEvent.click(removeBtn[0]);
 
-		await waitFor(() =>
-			expect(() => getAllByTestId("recipient-list__recipient-list-item")).toThrow(/Unable to find an element by/),
-		);
+		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(1));
+	});
+
+	it("should not override default values in single tab", async () => {
+		const values = {
+			displayAmount: "1",
+			amount: "100000000",
+			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+		};
+
+		let form: ReturnType<typeof useForm>;
+
+		const Component = () => {
+			form = useForm({
+				mode: "onChange",
+				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0, ...values },
+			});
+
+			useEffect(() => {
+				form.register("network");
+				form.register("senderAddress");
+			}, []);
+
+			return (
+				<FormProvider {...form}>
+					<AddRecipient
+						profile={profile}
+						assetSymbol="ARK"
+						maxAvailableAmount={BigNumber.make(80)}
+						recipients={[]}
+					/>
+				</FormProvider>
+			);
+		};
+
+		render(<Component />);
+
+		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue("1"));
 	});
 });
