@@ -3,7 +3,7 @@
 exports[`Plugin View should render plugin content 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
@@ -275,7 +275,7 @@ exports[`Plugin View should render plugin content 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="bg-theme-background px-4 sm:px-6 lg:px-10 py-4 -mt-5"
+        class="px-4 sm:px-6 lg:px-10 py-4"
       >
         <div
           class="flex justify-between items-center"
@@ -317,7 +317,7 @@ exports[`Plugin View should render plugin content 1`] = `
 exports[`Plugin View should render plugin content with logo 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
@@ -589,7 +589,7 @@ exports[`Plugin View should render plugin content with logo 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="bg-theme-background px-4 sm:px-6 lg:px-10 py-4 -mt-5"
+        class="px-4 sm:px-6 lg:px-10 py-4"
       >
         <div
           class="flex justify-between items-center"
