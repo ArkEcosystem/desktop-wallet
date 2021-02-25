@@ -42,16 +42,6 @@ export const ImportWallet = () => {
 
 	const nameMaxLength = 42;
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: t("WALLETS.PAGE_IMPORT_WALLET.TITLE"),
-		},
-	];
-
 	const handleBack = () => {
 		if (activeTab === 1) {
 			return history.push(`/profiles/${activeProfile.id()}/dashboard`);
@@ -131,7 +121,7 @@ export const ImportWallet = () => {
 	};
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
 					className="mx-auto max-w-xl"

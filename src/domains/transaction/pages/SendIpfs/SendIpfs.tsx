@@ -133,22 +133,8 @@ export const SendIpfs = () => {
 		setActiveTab(newIndex);
 	};
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
-			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-		},
-		{
-			label: t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE"),
-		},
-	];
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
