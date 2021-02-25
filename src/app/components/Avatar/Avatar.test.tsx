@@ -10,8 +10,16 @@ describe("Avatar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with hightlight", () => {
+	it("should render with highlight", () => {
 		const { getByTestId, asFragment } = render(<Avatar address="abc" highlight />);
+		expect(getByTestId("Avatar")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with highlight and custom shadow color", () => {
+		const { getByTestId, asFragment } = render(
+			<Avatar address="abc" shadowColor="--theme-background-color" highlight />,
+		);
 		expect(getByTestId("Avatar")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
