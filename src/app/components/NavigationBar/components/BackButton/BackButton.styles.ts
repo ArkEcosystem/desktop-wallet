@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 
-const baseStyles = tw`flex items-center px-5 transition-colors duration-200 bg-theme-secondary-100 dark:bg-black`;
+const baseStyles = tw`flex items-center w-12 transition-colors duration-200 bg-theme-secondary-100 dark:bg-black`;
 
 const getVariant = (disabled?: boolean) =>
 	disabled

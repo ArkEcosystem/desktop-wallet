@@ -205,10 +205,10 @@ export const NavigationBar = ({
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"} scroll={scroll}>
-			<div className="px-8">
-				<div className="flex relative justify-between h-21">
-					{variant === "full" && <BackButton className="-ml-8 mr-8" disabled={isBackDisabled} />}
+			<div className="flex relative h-21">
+				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
 
+				<div className={`flex flex-1 px-8 ${variant !== "full" ? "ml-12" : ""}`}>
 					<div className="flex items-center my-auto">
 						<LogoContainer>
 							<ARKLogo width={44} />
