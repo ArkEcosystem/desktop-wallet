@@ -3,7 +3,7 @@
 exports[`WalletDetails should not fail if the votes have not yet been synchronized 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -271,52 +271,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
       </div>
     </nav>
     <div
-<<<<<<< HEAD
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D6SXKChbJsM8QPPmMi28ZwDinvfUjRM3EY
-        </span>
-      </span>
-    </div>
-    <div
       class="flex flex-col flex-1"
-=======
-      class="flex flex-col flex-1 mt-5"
->>>>>>> develop
     >
       <header
         data-testid="WalletHeader"
@@ -1046,7 +1001,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
 exports[`WalletDetails should open detail modal on transaction row click 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1314,52 +1269,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
       </div>
     </nav>
     <div
-<<<<<<< HEAD
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </span>
-    </div>
-    <div
       class="flex flex-col flex-1"
-=======
-      class="flex flex-col flex-1 mt-5"
->>>>>>> develop
     >
       <header
         data-testid="WalletHeader"
@@ -2093,7 +2003,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
 exports[`WalletDetails should remove wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2361,52 +2271,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
       </div>
     </nav>
     <div
-<<<<<<< HEAD
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </span>
-    </div>
-    <div
       class="flex flex-col flex-1"
-=======
-      class="flex flex-col flex-1 mt-5"
->>>>>>> develop
     >
       <header
         data-testid="WalletHeader"
@@ -3140,7 +3005,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
 exports[`WalletDetails should render when wallet not found for votes 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3408,52 +3273,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
       </div>
     </nav>
     <div
-<<<<<<< HEAD
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
-        </span>
-      </span>
-    </div>
-    <div
       class="flex flex-col flex-1"
-=======
-      class="flex flex-col flex-1 mt-5"
->>>>>>> develop
     >
       <header
         data-testid="WalletHeader"
@@ -4184,7 +4004,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
 exports[`WalletDetails should star and unstar a wallet 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -4452,52 +4272,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
       </div>
     </nav>
     <div
-<<<<<<< HEAD
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </span>
-    </div>
-    <div
       class="flex flex-col flex-1"
-=======
-      class="flex flex-col flex-1 mt-5"
->>>>>>> develop
     >
       <header
         data-testid="WalletHeader"
@@ -5231,7 +5006,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
 exports[`WalletDetails should update wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -5499,52 +5274,7 @@ exports[`WalletDetails should update wallet name 1`] = `
       </div>
     </nav>
     <div
-<<<<<<< HEAD
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Sample label name
-        </span>
-      </span>
-    </div>
-    <div
       class="flex flex-col flex-1"
-=======
-      class="flex flex-col flex-1 mt-5"
->>>>>>> develop
     >
       <header
         data-testid="WalletHeader"
