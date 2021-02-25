@@ -376,6 +376,7 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
@@ -411,6 +412,7 @@ describe("PluginManager", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
@@ -479,6 +481,35 @@ describe("PluginManager", () => {
 		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
 
 		await waitFor(() => expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should update plugin on my-plugins", async () => {
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockRejectedValue("Failed");
+
+		const plugin = new PluginController({ name: "@dated/transaction-export-plugin", version: "0.1" }, () => void 0);
+		pluginManager.plugins().push(plugin);
+
+		const { asFragment, getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginListItem__update-badge")).toBeInTheDocument());
+
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
+				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
+			}),
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
@@ -567,5 +598,20 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
 
 		historySpy.mockRestore();
+	});
+
+	it("should show update all banner", async () => {
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		pluginManager.plugins().push(plugin);
+
+		const { getByTestId } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
 	});
 });

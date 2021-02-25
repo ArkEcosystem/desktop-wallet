@@ -118,7 +118,7 @@ describe("PluginList", () => {
 
 		const { asFragment, getAllByTestId } = render(<PluginList plugins={plugins} onInstall={onInstall} />);
 
-		fireEvent.click(within(getAllByTestId("TableRow")[1]).getByRole("button"));
+		fireEvent.click(within(getAllByTestId("TableRow")[1]).getByTestId("PluginListItem__install"));
 
 		expect(onInstall).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
