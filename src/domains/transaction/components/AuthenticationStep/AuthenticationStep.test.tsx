@@ -206,6 +206,21 @@ describe("AuthenticationStep", () => {
 		);
 	});
 
+	it("should show ledger waiting device screen", () => {
+		jest.spyOn(wallet, "isLedger").mockReturnValueOnce(true);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
+		const { container, queryByTestId } = renderWithRouter(
+			<Form context={result.current} onSubmit={() => void 0}>
+				<AuthenticationStep wallet={wallet} ledgerIsAwaitingDevice={true} />
+			</Form>,
+		);
+
+		expect(queryByTestId("LedgerWaitingDevice-loading_message")).toBeInTheDocument();
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should show ledger waiting app screen", () => {
 		jest.spyOn(wallet, "isLedger").mockReturnValueOnce(true);
 

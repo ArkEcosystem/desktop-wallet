@@ -257,6 +257,62 @@ exports[`AuthenticationStep should show ledger waiting app screen 1`] = `
 </div>
 `;
 
+exports[`AuthenticationStep should show ledger waiting device screen 1`] = `
+<div>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div
+      class="space-y-8"
+      data-testid="AuthenticationStep"
+    >
+      <div
+        class="mt-8 space-y-8"
+      >
+        <div
+          class="flex justify-between items-end bg-theme-background"
+        >
+          <div>
+            <h1
+              class="mb-0 md:text-4xl"
+              data-testid="header__title"
+            >
+              Ledger Wallet
+            </h1>
+            <div
+              class="text-theme-secondary-text"
+              data-testid="header__subtitle"
+            >
+              Connect your Ledger to PC and confirm the input.
+            </div>
+          </div>
+        </div>
+        <svg
+          class="mx-auto"
+        >
+          waiting-ledger-device.svg
+        </svg>
+        <div
+          class="inline-flex items-center space-x-3 w-full"
+        >
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+          <span
+            class="font-semibold animate-pulse text-theme-secondary-text"
+            data-testid="LedgerWaitingDevice-loading_message"
+          >
+            Waiting for Ledger device...
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
 exports[`AuthenticationStep should show only ledger confirmation 1`] = `
 <DocumentFragment>
   <form
