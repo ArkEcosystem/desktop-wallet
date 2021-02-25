@@ -32,9 +32,18 @@ export const TransactionTable = memo(
 	}: Props) => {
 		const { t } = useTranslation();
 
+		const initialState = {
+			sortBy: [
+				{
+					id: "date",
+					desc: true,
+				},
+			],
+		};
 		const commonColumns: any = [
 			{
 				Header: t("COMMON.DATE"),
+				id: "date",
 				accessor: (transaction: ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 				sortDescFirst: true,
 				cellWidth: "w-50",
@@ -54,7 +63,9 @@ export const TransactionTable = memo(
 			},
 			{
 				Header: t("COMMON.AMOUNT"),
+				id: "amount",
 				accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
+				sortDescFirst: true,
 				className: "justify-end",
 			},
 		];
@@ -67,6 +78,7 @@ export const TransactionTable = memo(
 					},
 					{
 						Header: t("COMMON.AMOUNT"),
+						id: "amount",
 						accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
 						className: "justify-end",
 					},
@@ -101,7 +113,7 @@ export const TransactionTable = memo(
 
 		return (
 			<div data-testid="TransactionTable" className="relative">
-				<Table hideHeader={hideHeader} columns={columns} data={data}>
+				<Table hideHeader={hideHeader} columns={columns} data={data} initialState={initialState}>
 					{(row: ExtendedTransactionData) =>
 						isCompact ? (
 							<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />

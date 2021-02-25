@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -12,8 +11,8 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
-import { useTransaction } from "domains/transaction/hooks/use-transaction";
-import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
+import { useFeeConfirmation, useTransaction, useTransactionBuilder } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -68,15 +67,22 @@ export const SendTransfer = () => {
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
-		register(
-			"fee",
-			common.fee(() => fees, remainingBalance, wallet?.network?.()),
-		);
+		register("fee", common.fee(remainingBalance, wallet?.network?.()));
 		register("smartbridge", sendTransfer.smartbridge());
 
 		register("remainingBalance");
 		register("isSendAllSelected");
+
+		register("suppressWarning");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
+
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
 		if (!hasWalletId && senderAddress) {
@@ -202,10 +208,15 @@ export const SendTransfer = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = async () => {
+	const handleNext = async (suppressWarning?: boolean) => {
 		abortRef.current = new AbortController();
 
 		const newIndex = activeTab + 1;
+
+		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
 		// Skip authorization step
@@ -221,26 +232,8 @@ export const SendTransfer = () => {
 		setActiveTab(newIndex);
 	};
 
-	const crumbs: Crumb[] = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-	];
-
-	if (hasWalletId) {
-		crumbs.push({
-			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
-			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-		});
-	}
-
-	crumbs.push({
-		label: t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE"),
-	});
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
@@ -297,7 +290,7 @@ export const SendTransfer = () => {
 												<Button
 													data-testid="SendTransfer__button--continue"
 													disabled={!isValid || isSubmitting}
-													onClick={handleNext}
+													onClick={async () => await handleNext()}
 													isLoading={isSubmitting || isConfirming}
 												>
 													{t("COMMON.CONTINUE")}
@@ -358,6 +351,15 @@ export const SendTransfer = () => {
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) => dismissFeeWarning(handleBack, suppressWarning)}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(async () => await handleNext(true), suppressWarning)
+						}
+					/>
 
 					<ConfirmSendTransaction
 						unconfirmedTransactions={unconfirmedTransactions}

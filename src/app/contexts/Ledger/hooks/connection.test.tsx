@@ -146,7 +146,12 @@ describe("Use Ledger Connection", () => {
 			} = useLedgerConnection(transport);
 			const handleConnect = async () => {
 				try {
-					await connect(wallet.coinId(), wallet.networkId(), { retries, randomize: false, minTimeout: 10 });
+					await connect(wallet.coinId(), wallet.networkId(), {
+						retries,
+						factor: 1,
+						randomize: false,
+						minTimeout: 10,
+					});
 				} catch {
 					//
 				}
@@ -253,6 +258,59 @@ describe("Use Ledger Connection", () => {
 			await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
 
 			expect(getPublicKeySpy).toHaveBeenCalledTimes(5);
+
+			getPublicKeySpy.mockReset();
+		});
+	});
+
+	describe("Ledger Connection with options by default", () => {
+		const Component = () => {
+			const {
+				connect,
+				isConnected,
+				isAwaitingConnection,
+				error,
+				abortConnectionRetry,
+				disconnect,
+			} = useLedgerConnection(transport);
+			const handleConnect = async () => {
+				try {
+					await connect(wallet.coinId(), wallet.networkId());
+				} catch {
+					//
+				}
+			};
+
+			return (
+				<div>
+					{error && <span>{error}</span>}
+					{isAwaitingConnection && <span>Waiting Device</span>}
+					{isConnected && <span>Connected</span>}
+
+					<button onClick={abortConnectionRetry}>Abort</button>
+					<button onClick={handleConnect}>Connect</button>
+					<button onClick={() => disconnect(wallet.coin())}>Disconnect</button>
+				</div>
+			);
+		};
+
+		it("should succeed in connecting with options by default", async () => {
+			const getPublicKeySpy = jest
+				.spyOn(wallet.coin().ledger(), "getPublicKey")
+				.mockResolvedValue(publicKeyPaths.values().next().value);
+
+			render(<Component />);
+
+			act(() => {
+				fireEvent.click(screen.getByText("Connect"));
+			});
+
+			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
+
+			await waitFor(() => expect(screen.queryByText("Waiting Device")).not.toBeInTheDocument());
+			await waitFor(() => expect(screen.queryByText("Connected")).toBeInTheDocument());
+
+			expect(getPublicKeySpy).toHaveBeenCalledTimes(1);
 
 			getPublicKeySpy.mockReset();
 		});

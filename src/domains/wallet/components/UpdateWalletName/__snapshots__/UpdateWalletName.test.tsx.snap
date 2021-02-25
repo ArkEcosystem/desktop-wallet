@@ -69,7 +69,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -178,7 +178,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   aria-invalid="true"
@@ -187,7 +187,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                   name="name"
                 />
                 <div
-                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                 >
                   <span
                     data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
@@ -307,7 +307,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   aria-invalid="true"
@@ -316,7 +316,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                   name="name"
                 />
                 <div
-                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                 >
                   <span
                     data-errortext="A Wallet named 'ark wallet 2' already exists on this profile"
@@ -436,7 +436,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   aria-invalid="true"
@@ -445,7 +445,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                   name="name"
                 />
                 <div
-                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                 >
                   <span
                     data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
@@ -565,7 +565,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   aria-invalid="true"
@@ -574,7 +574,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                   name="name"
                 />
                 <div
-                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                 >
                   <span
                     data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
@@ -694,7 +694,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   aria-invalid="true"
@@ -703,7 +703,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                   name="name"
                 />
                 <div
-                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                 >
                   <span
                     data-errortext="'Name' is invalid"
@@ -823,7 +823,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                 Name
               </label>
               <div
-                class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
               >
                 <input
                   aria-invalid="true"
@@ -832,7 +832,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                   name="name"
                 />
                 <div
-                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                 >
                   <span
                     data-errortext="'Name' should have at most 42 characters"

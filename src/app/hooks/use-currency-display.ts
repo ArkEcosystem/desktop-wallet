@@ -9,10 +9,10 @@ type CurrencyInput = {
 };
 
 export const useCurrencyDisplay = () => {
-	const formatRange = useCallback((inputValues: any, maxNumber: string | number): number[] => {
-		const sanitized = !isNil(inputValues[0]?.display)
-			? BigNumber.make(inputValues[0]?.display)
-			: BigNumber.make(inputValues[0]);
+	const formatRange = useCallback((inputValue: any, maxNumber: string | number): number[] => {
+		const sanitized = !isNil(inputValue?.display)
+			? BigNumber.make(inputValue?.display)
+			: BigNumber.make(inputValue);
 		return [Math.min(sanitized.toNumber(), Number(maxNumber))];
 	}, []);
 

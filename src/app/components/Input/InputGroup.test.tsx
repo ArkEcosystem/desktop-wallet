@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "testing-library";
 
-import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "./index";
+import { Input, InputAddon, InputAddonEnd, InputAddonStart, InputGroup } from "./index";
 
 describe("InputGroup", () => {
 	it("should render with element on the left", () => {
@@ -35,9 +35,9 @@ describe("InputGroup", () => {
 	it("should render with both elements", () => {
 		const tree = (
 			<InputGroup className="max-w-xs">
-				<InputAddonStart>
+				<InputAddon>
 					<span data-testid="start">$</span>
-				</InputAddonStart>
+				</InputAddon>
 				<InputAddonEnd>
 					<span data-testid="end">$</span>
 				</InputAddonEnd>

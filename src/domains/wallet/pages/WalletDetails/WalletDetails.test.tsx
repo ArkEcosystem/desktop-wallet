@@ -317,7 +317,7 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(0),
+			() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
 			{ timeout: 4000 },
 		);
 	});

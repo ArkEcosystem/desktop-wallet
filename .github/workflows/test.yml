@@ -47,7 +47,7 @@ jobs:
                   --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
                   --coverage
                   --collectCoverageFrom='["src/app/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/app/":{"branches":94.14,"functions":97.7,"lines":98.05,"statements":97.85}}'
+                  --coverageThreshold='{"./src/app/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-contact:
         runs-on: ubuntu-latest
         strategy:
@@ -85,7 +85,7 @@ jobs:
                   src/domains/contact --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/contact/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/contact/":{"branches":100,"functions":69.86,"lines":38.29,"statements":38.71}}'
+                  --coverageThreshold='{"./src/domains/contact/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-dashboard:
         runs-on: ubuntu-latest
         strategy:
@@ -123,7 +123,7 @@ jobs:
                   src/domains/dashboard --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/dashboard/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/dashboard/":{"branches":100,"functions":88.89,"lines":82.87,"statements":83.27}}'
+                  --coverageThreshold='{"./src/domains/dashboard/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-error:
         runs-on: ubuntu-latest
         strategy:
@@ -199,7 +199,7 @@ jobs:
                   src/domains/exchange --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/exchange/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/exchange/":{"branches":100,"functions":100,"lines":97.96,"statements":97.96}}'
+                  --coverageThreshold='{"./src/domains/exchange/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-network:
         runs-on: ubuntu-latest
         strategy:
@@ -275,7 +275,7 @@ jobs:
                   src/domains/news --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/news/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":84.44,"lines":68.31,"statements":69.13}}'
+                  --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-plugin:
         runs-on: ubuntu-latest
         strategy:
@@ -351,7 +351,7 @@ jobs:
                   src/domains/profile --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/profile/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":80.25,"lines":67.57,"statements":68.04}}'
+                  --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-setting:
         runs-on: ubuntu-latest
         strategy:
@@ -389,7 +389,7 @@ jobs:
                   src/domains/setting --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/setting/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/setting/":{"branches":100,"functions":93.1,"lines":89.56,"statements":89.02}}'
+                  --coverageThreshold='{"./src/domains/setting/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-splash:
         runs-on: ubuntu-latest
         strategy:
@@ -427,7 +427,7 @@ jobs:
                   src/domains/splash --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/splash/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/splash/":{"branches":50,"functions":50,"lines":60,"statements":60}}'
+                  --coverageThreshold='{"./src/domains/splash/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-transaction:
         runs-on: ubuntu-latest
         strategy:
@@ -465,7 +465,7 @@ jobs:
                   src/domains/transaction --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/transaction/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/transaction/":{"branches":99.5,"functions":95.33,"lines":85.05,"statements":85.52}}'
+                  --coverageThreshold='{"./src/domains/transaction/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-vote:
         runs-on: ubuntu-latest
         strategy:
@@ -503,7 +503,7 @@ jobs:
                   src/domains/vote --forceExit --maxWorkers=50%
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/vote/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/domains/vote/":{"branches":100,"functions":98.77,"lines":95.16,"statements":95.47}}'
+                  --coverageThreshold='{"./src/domains/vote/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
     domains-wallet:
         runs-on: ubuntu-latest
         strategy:

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -134,6 +134,51 @@ describe("App", () => {
 		const profileDashboardUrl = `/profiles/${passwordProtectedProfile.id()}/dashboard`;
 		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
 	});
+
+	it("should redirect to root if profile restoration error occurs", async () => {
+		process.env.REACT_APP_IS_E2E = "1";
+
+		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		});
+
+		expect(history.location.pathname).toMatch("/");
+
+		await act(async () => {
+			fireEvent.click(getAllByTestId("Card")[1]);
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toBeInTheDocument();
+		});
+
+		await act(async () => {
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
+		});
+
+		const memoryPasswordMock = jest.spyOn(MemoryPassword, "get").mockImplementation(() => {
+			throw new Error("password not found");
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SignIn__submit-button"));
+		});
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 500));
+		});
+
+		await waitFor(() => expect(history.location.pathname).toMatch("/"));
+
+		memoryPasswordMock.mockRestore();
+	});
+
 	it("should close splash screen if not e2e", async () => {
 		process.env.REACT_APP_IS_E2E = "1";
 
@@ -234,6 +279,22 @@ describe("App", () => {
 			expect(getByText("John Doe")).toBeInTheDocument();
 			expect(getByText("Jane Doe")).toBeInTheDocument();
 
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("shouldn't migrate profiles", async () => {
+		process.env.REACT_APP_IS_E2E = undefined;
+
+		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		expect(getByTestId("Splash__text")).toBeInTheDocument();
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 2000));
+		});
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});

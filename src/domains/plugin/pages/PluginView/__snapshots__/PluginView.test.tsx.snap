@@ -7,29 +7,29 @@ exports[`Plugin View should render plugin content 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -88,10 +88,10 @@ exports[`Plugin View should render plugin content 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -127,7 +127,7 @@ exports[`Plugin View should render plugin content 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -157,7 +157,7 @@ exports[`Plugin View should render plugin content 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -272,174 +272,36 @@ exports[`Plugin View should render plugin content 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Test Plugin
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="bg-theme-background px-4 sm:px-6 lg:px-10 py-4 -mt-5"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="flex justify-between items-center"
         >
           <div
-            class="flex justify-between items-center"
+            class="flex items-center space-x-3"
           >
             <div
-              class="flex items-center space-x-3"
+              data-testid="PluginImage__placeholder"
             >
-              <div
-                data-testid="PluginImage__placeholder"
+              <svg
+                class="w-6 h-6"
               >
-                <svg
-                  class="w-12 h-12"
-                >
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-              <div
-                class="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700"
-              >
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Plugin
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    Test Plugin
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Category
-                  </dt>
-                  <dd
-                    class="font-bold capitalize text-theme-secondary-text dark:text-theme-text"
-                  >
-                    other
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Version
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    v
-                    0.0.0
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Size
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    0 B
-                  </dd>
-                </dl>
-              </div>
+                plugin-logo-placeholder.svg
+              </svg>
             </div>
             <div
-              class="flex items-center space-x-2"
+              class="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700"
             >
-              <button
-                class="Button__StyledButton-mdtvtf-0 cgAqkb"
-                data-testid="PluginView__report"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
+              <dl>
+                <dd
+                  class="font-semibold text-theme-secondary-text dark:text-theme-text"
                 >
-                  <div
-                    class="sc-bdfBwQ dUoICL"
-                    height="1.25rem"
-                    width="1.5rem"
-                  >
-                    <svg>
-                      alert-warning.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="Button__StyledButton-mdtvtf-0 cgAqkb"
-                data-testid="PluginView__uninstall"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ dUoICL"
-                    height="1.25rem"
-                    width="1.5rem"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
+                  Test Plugin
+                </dd>
+              </dl>
             </div>
           </div>
         </div>

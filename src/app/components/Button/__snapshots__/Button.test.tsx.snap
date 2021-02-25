@@ -55,7 +55,7 @@ exports[`Button should render an icon 1`] = `
 exports[`Button should render as danger button 1`] = `
 <div>
   <button
-    class="Button__StyledButton-mdtvtf-0 jhEaCc"
+    class="Button__StyledButton-mdtvtf-0 hrpPWq"
     type="button"
   >
     <div
@@ -119,6 +119,41 @@ exports[`Button should render if disabled 1`] = `
     </div>
   </button>
 </DocumentFragment>
+`;
+
+exports[`Button should render loading with icon 1`] = `
+<div>
+  <button
+    class="Button__StyledButton-mdtvtf-0 cgAqkb"
+    type="button"
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    >
+      <div
+        class="flex relative items-center"
+      >
+        <span
+          class="flex invisible items-center space-x-2"
+        >
+          <div
+            class="sc-bdfBwQ fzssDJ"
+            height="2"
+            width="2"
+          />
+        </span>
+        <div
+          class="absolute top-0 right-0 bottom-0 left-0"
+        >
+          <div
+            class="Spinner-sc-1tybciv-0 jaZOXR m-auto"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+  </button>
+</div>
 `;
 
 exports[`Button should render with icon 1`] = `

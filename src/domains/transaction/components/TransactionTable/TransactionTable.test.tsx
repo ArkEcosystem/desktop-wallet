@@ -1,18 +1,20 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { sortByDesc } from "@arkecosystem/utils";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import React from "react";
-import { fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { TransactionTable } from "./TransactionTable";
 
 // TODO: replace those with real transaction instances. These are highly fragile and make the tests brittle because every update requires them to be adjusted and they could have fake implementations.
-const transactions = [
+const transactions: ExtendedTransactionData[] = [
 	{
 		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
 		blockId: () => "71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9",
 		type: () => "transfer",
-		timestamp: () => DateTime.fromUnix(1596213281),
+		timestamp: () => DateTime.fromUnix(1596213282),
 		confirmations: () => BigNumber.make(10),
 		votes: () => ["10"],
 		unvotes: () => ["10"],
@@ -221,23 +223,28 @@ describe("TransactionTable", () => {
 
 	it("should emit action on the row click", () => {
 		const onClick = jest.fn();
+		const sortedByDateDesc = sortByDesc(transactions, (transaction) => transaction.timestamp());
 		const { getAllByTestId } = renderWithRouter(
 			// @ts-ignore - TODO: brittle fixtures
-			<TransactionTable transactions={transactions} onRowClick={onClick} />,
+			<TransactionTable transactions={sortedByDateDesc} onRowClick={onClick} />,
 		);
 		const rows = getAllByTestId("TableRow");
-		fireEvent.click(rows[0]);
-		expect(onClick).toHaveBeenCalledWith(transactions[0]);
+		act(() => {
+			fireEvent.click(rows[0]);
+		});
+		expect(onClick).toHaveBeenCalledWith(sortedByDateDesc[0]);
 	});
 
-	it("should emit action on the compact row click", () => {
+	it("should emit action on the compact row click", async () => {
 		const onClick = jest.fn();
 		const { getAllByTestId } = renderWithRouter(
 			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} onRowClick={onClick} isCompact />,
 		);
 		const rows = getAllByTestId("TableRow");
-		fireEvent.click(rows[0]);
-		expect(onClick).toHaveBeenCalledWith(transactions[0]);
+		act(() => {
+			fireEvent.click(rows[0]);
+		});
+		await waitFor(() => expect(onClick).toHaveBeenCalledWith(transactions[1]));
 	});
 });

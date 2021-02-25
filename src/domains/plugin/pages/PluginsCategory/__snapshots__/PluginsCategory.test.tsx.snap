@@ -7,29 +7,29 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -88,10 +88,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -127,7 +127,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -157,7 +157,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -272,49 +272,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -464,20 +422,6 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top hidden "
-                          >
-                            <div>
-                              Logo
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--1"
-                          role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
                         >
@@ -488,7 +432,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               Name
                             </div>
                             <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                              class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
                                 class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -506,7 +450,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--2"
+                          data-testid="table__th--1"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -536,7 +480,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--3"
+                          data-testid="table__th--2"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -566,7 +510,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--4"
+                          data-testid="table__th--3"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -596,7 +540,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--5"
+                          data-testid="table__th--4"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -626,7 +570,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--6"
+                          data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
@@ -640,7 +584,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--7"
+                          data-testid="table__th--6"
                           role="columnheader"
                         >
                           <div
@@ -689,498 +633,6 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               <div
                                 class="flex relative items-center space-x-2"
                               >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
                                 ARK Avatars
                               </div>
                             </button>
@@ -1583,6 +1035,498 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 </span>
                               </div>
                             </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -1609,29 +1553,29 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -1690,10 +1634,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1729,7 +1673,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -1759,7 +1703,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -1874,49 +1818,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -2066,20 +1968,6 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top hidden "
-                          >
-                            <div>
-                              Logo
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--1"
-                          role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
                         >
@@ -2090,7 +1978,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               Name
                             </div>
                             <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                              class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
                                 class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2108,7 +1996,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--2"
+                          data-testid="table__th--1"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -2138,7 +2026,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--3"
+                          data-testid="table__th--2"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -2168,7 +2056,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--4"
+                          data-testid="table__th--3"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -2198,7 +2086,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--5"
+                          data-testid="table__th--4"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -2228,7 +2116,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--6"
+                          data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
@@ -2242,7 +2130,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--7"
+                          data-testid="table__th--6"
                           role="columnheader"
                         >
                           <div
@@ -2291,498 +2179,6 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               <div
                                 class="flex relative items-center space-x-2"
                               >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
                                 ARK Avatars
                               </div>
                             </button>
@@ -3185,6 +2581,498 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 </span>
                               </div>
                             </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -3211,29 +3099,29 @@ exports[`PluginsCategory should delete plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -3292,10 +3180,10 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3331,7 +3219,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3361,7 +3249,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3476,49 +3364,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -4223,29 +4069,29 @@ exports[`PluginsCategory should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -4304,10 +4150,10 @@ exports[`PluginsCategory should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4343,7 +4189,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -4373,7 +4219,7 @@ exports[`PluginsCategory should render 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -4488,49 +4334,7 @@ exports[`PluginsCategory should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -5235,29 +5039,29 @@ exports[`PluginsCategory should search for plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -5316,10 +5120,10 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5355,7 +5159,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5385,7 +5189,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5500,49 +5304,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -6298,29 +6060,29 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -6379,10 +6141,10 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6418,7 +6180,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -6448,7 +6210,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -6563,49 +6325,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -7310,29 +7030,29 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -7391,10 +7111,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7430,7 +7150,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -7460,7 +7180,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -7575,49 +7295,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Top Rated plugins
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1 mt-5"
     >
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
@@ -7767,20 +7445,6 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top hidden "
-                          >
-                            <div>
-                              Logo
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                          colspan="1"
-                          data-testid="table__th--1"
-                          role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
                         >
@@ -7791,7 +7455,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               Name
                             </div>
                             <div
-                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                              class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
                                 class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7809,7 +7473,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--2"
+                          data-testid="table__th--1"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -7839,7 +7503,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--3"
+                          data-testid="table__th--2"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -7869,7 +7533,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--4"
+                          data-testid="table__th--3"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -7899,7 +7563,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--5"
+                          data-testid="table__th--4"
                           role="columnheader"
                           style="cursor: pointer;"
                           title="Toggle SortBy"
@@ -7929,7 +7593,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--6"
+                          data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
@@ -7943,7 +7607,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         <th
                           class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
-                          data-testid="table__th--7"
+                          data-testid="table__th--6"
                           role="columnheader"
                         >
                           <div
@@ -7992,498 +7656,6 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               <div
                                 class="flex relative items-center space-x-2"
                               >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                ARK Explorer
-                              </div>
-                            </button>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                official-ark-plugin.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
-                          >
-                            <span>
-                              ARK.io
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Utility
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.3.8
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              4.2 MB
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td
-                          class="w-20"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-                          >
-                            <div
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg
-                                class="w-14 h-14"
-                              >
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
-                              data-testid="PluginListItem__link"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
                                 ARK Avatars
                               </div>
                             </button>
@@ -8886,6 +8058,498 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 </span>
                               </div>
                             </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                        data-testid="TableRow"
+                      >
+                        <td
+                          class="w-20"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          >
+                            <div
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg
+                                class="w-14 h-14"
+                              >
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+                              data-testid="PluginListItem__link"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                ARK Explorer
+                              </div>
+                            </button>
+                            <div
+                              class="sc-bdfBwQ iNulIV"
+                              height="18"
+                              width="18"
+                            >
+                              <svg>
+                                official-ark-plugin.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+                          >
+                            <span>
+                              ARK.io
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              Utility
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v1.3.8
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              4.2 MB
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
                           </div>
                         </td>
                       </tr>

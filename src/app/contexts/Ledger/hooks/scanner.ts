@@ -33,6 +33,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 	const isLoading = useCallback((path: string) => loading.some((item) => path === item), [loading]);
 	const isSelected = useCallback((path: string) => selected.some((item) => path === item), [selected]);
+	/* istanbul ignore next */
 	const isFailed = useCallback((path: string) => failed.some((item) => path === item), [failed]);
 	const hasNewWallet = useMemo(() => wallets.some((item) => item.isNew), [wallets]);
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
@@ -76,7 +77,9 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 		if (!failed.length) {
 			return;
 		}
+		/* istanbul ignore next */
 		const failedIndexes = wallets.filter((wallet) => failed.includes(wallet.path)).map((wallet) => wallet.index);
+		/* istanbul ignore next */
 		await scan(failedIndexes);
 	}, [scan, failed, wallets]);
 

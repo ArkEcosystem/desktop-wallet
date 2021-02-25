@@ -8,29 +8,29 @@ exports[`PluginManager should cancel install plugin 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -89,10 +89,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -128,7 +128,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -158,7 +158,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -568,20 +568,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 colspan="1"
                                 data-testid="table__th--0"
                                 role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden "
-                                >
-                                  <div>
-                                    Logo
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
                               >
@@ -592,7 +578,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                     Name
                                   </div>
                                   <div
-                                    class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                    class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                                   >
                                     <div
                                       class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -610,7 +596,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--2"
+                                data-testid="table__th--1"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -640,7 +626,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--3"
+                                data-testid="table__th--2"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -670,7 +656,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--4"
+                                data-testid="table__th--3"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -700,7 +686,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--5"
+                                data-testid="table__th--4"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -730,7 +716,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--6"
+                                data-testid="table__th--5"
                                 role="columnheader"
                               >
                                 <div
@@ -744,7 +730,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--7"
+                                data-testid="table__th--6"
                                 role="columnheader"
                               >
                                 <div
@@ -920,20 +906,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 colspan="1"
                                 data-testid="table__th--0"
                                 role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden "
-                                >
-                                  <div>
-                                    Logo
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
                               >
@@ -944,7 +916,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                     Name
                                   </div>
                                   <div
-                                    class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                    class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                                   >
                                     <div
                                       class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -962,7 +934,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--2"
+                                data-testid="table__th--1"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -992,7 +964,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--3"
+                                data-testid="table__th--2"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1022,7 +994,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--4"
+                                data-testid="table__th--3"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1052,7 +1024,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--5"
+                                data-testid="table__th--4"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1082,7 +1054,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--6"
+                                data-testid="table__th--5"
                                 role="columnheader"
                               >
                                 <div
@@ -1096,7 +1068,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--7"
+                                data-testid="table__th--6"
                                 role="columnheader"
                               >
                                 <div
@@ -1271,20 +1243,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 colspan="1"
                                 data-testid="table__th--0"
                                 role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden "
-                                >
-                                  <div>
-                                    Logo
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
                               >
@@ -1295,7 +1253,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                     Name
                                   </div>
                                   <div
-                                    class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                    class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                                   >
                                     <div
                                       class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1313,7 +1271,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--2"
+                                data-testid="table__th--1"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1343,7 +1301,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--3"
+                                data-testid="table__th--2"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1373,7 +1331,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--4"
+                                data-testid="table__th--3"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1403,7 +1361,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--5"
+                                data-testid="table__th--4"
                                 role="columnheader"
                                 style="cursor: pointer;"
                                 title="Toggle SortBy"
@@ -1433,7 +1391,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--6"
+                                data-testid="table__th--5"
                                 role="columnheader"
                               >
                                 <div
@@ -1447,7 +1405,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <th
                                 class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                                 colspan="1"
-                                data-testid="table__th--7"
+                                data-testid="table__th--6"
                                 role="columnheader"
                               >
                                 <div
@@ -1601,29 +1559,29 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -1682,10 +1640,10 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -1721,7 +1679,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -1751,7 +1709,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -2148,20 +2106,6 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
-                          >
-                            <div
-                              class="flex flex-inline align-top hidden "
-                            >
-                              <div>
-                                Logo
-                              </div>
-                            </div>
-                          </th>
-                          <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--1"
-                            role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
                           >
@@ -2172,7 +2116,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                                 Name
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2190,7 +2134,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--2"
+                            data-testid="table__th--1"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -2220,7 +2164,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--3"
+                            data-testid="table__th--2"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -2250,7 +2194,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--4"
+                            data-testid="table__th--3"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -2280,7 +2224,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--5"
+                            data-testid="table__th--4"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -2310,7 +2254,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--6"
+                            data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
@@ -2324,7 +2268,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--7"
+                            data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
@@ -2502,29 +2446,29 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -2583,10 +2527,10 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -2622,7 +2566,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -2652,7 +2596,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3049,20 +2993,6 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
-                          >
-                            <div
-                              class="flex flex-inline align-top hidden "
-                            >
-                              <div>
-                                Logo
-                              </div>
-                            </div>
-                          </th>
-                          <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--1"
-                            role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
                           >
@@ -3073,7 +3003,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                                 Name
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -3091,7 +3021,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--2"
+                            data-testid="table__th--1"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -3121,7 +3051,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--3"
+                            data-testid="table__th--2"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -3151,7 +3081,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--4"
+                            data-testid="table__th--3"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -3181,7 +3111,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--5"
+                            data-testid="table__th--4"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -3211,7 +3141,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--6"
+                            data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
@@ -3225,7 +3155,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--7"
+                            data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
@@ -3403,29 +3333,29 @@ exports[`PluginManager should render 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -3484,10 +3414,10 @@ exports[`PluginManager should render 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -3523,7 +3453,7 @@ exports[`PluginManager should render 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3553,7 +3483,7 @@ exports[`PluginManager should render 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -3752,7 +3682,7 @@ exports[`PluginManager should render 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      0
                     </span>
                   </button>
                   <div
@@ -3836,7 +3766,7 @@ exports[`PluginManager should render 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      0
                     </span>
                   </button>
                 </li>
@@ -3947,79 +3877,667 @@ exports[`PluginManager should render 1`] = `
                     >
                       <div
                         class="grid grid-cols-4 gap-5 undefined"
-                      />
-                      <div
-                        class="grid grid-cols-4 gap-5 undefined"
                       >
                         <div
-                          data-testid="PluginCard--@dated/transaction-export-plugin"
+                          data-testid="PluginCardSkeleton"
                         >
                           <div
-                            class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
                             data-testid="Card"
                           >
                             <div
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                data-testid="PluginImage__placeholder"
+                                class="mr-4 mb-4"
                               >
-                                <svg
-                                  class="mb-4 mr-4 w-20 h-20"
-                                >
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
                               </div>
                               <div>
                                 <div
-                                  class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
                                 >
-                                  <div
-                                    class="truncate"
-                                  >
-                                    Transaction Export Plugin
-                                  </div>
-                                  <div />
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                 >
-                                  <div
-                                    class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
-                                  >
-                                    Edgar Goetzendorff
-                                  </div>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
                                 </div>
                               </div>
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="relative"
+                                class="mr-4 mb-4"
                               >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="flex overflow-hidden justify-center w-4"
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
                                   >
-                                    <div
-                                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                                      height="1em"
-                                      width="1em"
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
                                     >
-                                      <svg>
-                                        settings.svg
-                                      </svg>
-                                    </div>
-                                  </div>
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
                                 </span>
                               </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
                             </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
                           </div>
                         </div>
                       </div>
+                      <div
+                        class="grid grid-cols-4 gap-5 undefined"
+                      />
                       <div
                         class="flex justify-center mt-4"
                       />
@@ -4050,79 +4568,667 @@ exports[`PluginManager should render 1`] = `
                     >
                       <div
                         class="grid grid-cols-4 gap-5 undefined"
-                      />
-                      <div
-                        class="grid grid-cols-4 gap-5 undefined"
                       >
                         <div
-                          data-testid="PluginCard--@dated/transaction-export-plugin"
+                          data-testid="PluginCardSkeleton"
                         >
                           <div
-                            class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
                             data-testid="Card"
                           >
                             <div
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                data-testid="PluginImage__placeholder"
+                                class="mr-4 mb-4"
                               >
-                                <svg
-                                  class="mb-4 mr-4 w-20 h-20"
-                                >
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
                               </div>
                               <div>
                                 <div
-                                  class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
                                 >
-                                  <div
-                                    class="truncate"
-                                  >
-                                    Transaction Export Plugin
-                                  </div>
-                                  <div />
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                 >
-                                  <div
-                                    class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
-                                  >
-                                    Edgar Goetzendorff
-                                  </div>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
                                 </div>
                               </div>
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="relative"
+                                class="mr-4 mb-4"
                               >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="flex overflow-hidden justify-center w-4"
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
                                   >
-                                    <div
-                                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                                      height="1em"
-                                      width="1em"
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
                                     >
-                                      <svg>
-                                        settings.svg
-                                      </svg>
-                                    </div>
-                                  </div>
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
                                 </span>
                               </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
                             </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
                           </div>
                         </div>
                       </div>
+                      <div
+                        class="grid grid-cols-4 gap-5 undefined"
+                      />
                       <div
                         class="flex justify-center mt-4"
                       />
@@ -4152,79 +5258,667 @@ exports[`PluginManager should render 1`] = `
                     >
                       <div
                         class="grid grid-cols-4 gap-5 undefined"
-                      />
-                      <div
-                        class="grid grid-cols-4 gap-5 undefined"
                       >
                         <div
-                          data-testid="PluginCard--@dated/transaction-export-plugin"
+                          data-testid="PluginCardSkeleton"
                         >
                           <div
-                            class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
                             data-testid="Card"
                           >
                             <div
                               class="flex flex-col h-full items-between"
                             >
                               <div
-                                data-testid="PluginImage__placeholder"
+                                class="mr-4 mb-4"
                               >
-                                <svg
-                                  class="mb-4 mr-4 w-20 h-20"
-                                >
-                                  plugin-logo-placeholder.svg
-                                </svg>
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
                               </div>
                               <div>
                                 <div
-                                  class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
                                 >
-                                  <div
-                                    class="truncate"
-                                  >
-                                    Transaction Export Plugin
-                                  </div>
-                                  <div />
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                 >
-                                  <div
-                                    class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
-                                  >
-                                    Edgar Goetzendorff
-                                  </div>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
                                 </div>
                               </div>
                             </div>
                             <div
                               class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
                             >
                               <div
-                                class="relative"
+                                class="mr-4 mb-4"
                               >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="flex overflow-hidden justify-center w-4"
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
                                   >
-                                    <div
-                                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                                      height="1em"
-                                      width="1em"
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
                                     >
-                                      <svg>
-                                        settings.svg
-                                      </svg>
-                                    </div>
-                                  </div>
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
                                 </span>
                               </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
                             </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          data-testid="PluginCardSkeleton"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col h-full items-between"
+                            >
+                              <div
+                                class="mr-4 mb-4"
+                              >
+                                <span>
+                                  <span
+                                    class="flex items-center leading-none"
+                                  >
+                                    <span
+                                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                      style="width: 76px; height: 76px;"
+                                    >
+                                      ‌
+                                    </span>
+                                    ‌
+                                  </span>
+                                </span>
+                              </div>
+                              <div>
+                                <div
+                                  class="flex items-center mt-2 mb-4 space-x-2 text-lg font-semibold text-theme-primary-600"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 150px; height: 16px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                                <div
+                                  class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                >
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 30px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                  <span>
+                                    <span
+                                      class="flex items-center leading-none"
+                                    >
+                                      <span
+                                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                                        style="width: 89px; height: 12px;"
+                                      >
+                                        ‌
+                                      </span>
+                                      ‌
+                                    </span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
                           </div>
                         </div>
                       </div>
+                      <div
+                        class="grid grid-cols-4 gap-5 undefined"
+                      />
                       <div
                         class="flex justify-center mt-4"
                       />
@@ -4249,29 +5943,29 @@ exports[`PluginManager should search for plugin 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -4330,10 +6024,10 @@ exports[`PluginManager should search for plugin 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -4369,7 +6063,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -4399,7 +6093,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5148,29 +6842,29 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -5229,10 +6923,10 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -5268,7 +6962,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5298,7 +6992,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5696,29 +7390,29 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -5777,10 +7471,10 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -5816,7 +7510,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -5846,7 +7540,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -6542,29 +8236,29 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex relative justify-between h-21"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+              class="flex mr-auto ml-4 space-x-8 h-21"
             >
               <li
                 class="flex"
@@ -6623,10 +8317,10 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="rounded-lg"
+                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                     >
                       <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -6662,7 +8356,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -6692,7 +8386,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex overflow-hidden items-center rounded-lg"
               >
                 <div
-                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
                     class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -7112,20 +8806,6 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
-                          >
-                            <div
-                              class="flex flex-inline align-top hidden "
-                            >
-                              <div>
-                                Logo
-                              </div>
-                            </div>
-                          </th>
-                          <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--1"
-                            role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
                           >
@@ -7136,7 +8816,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                                 Name
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7154,7 +8834,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--2"
+                            data-testid="table__th--1"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -7184,7 +8864,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--3"
+                            data-testid="table__th--2"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -7214,7 +8894,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--4"
+                            data-testid="table__th--3"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -7244,7 +8924,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--5"
+                            data-testid="table__th--4"
                             role="columnheader"
                             style="cursor: pointer;"
                             title="Toggle SortBy"
@@ -7274,7 +8954,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--6"
+                            data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
@@ -7288,7 +8968,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           <th
                             class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                             colspan="1"
-                            data-testid="table__th--7"
+                            data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div

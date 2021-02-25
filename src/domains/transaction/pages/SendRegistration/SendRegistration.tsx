@@ -1,5 +1,4 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -10,10 +9,12 @@ import { useActiveProfile, useActiveWallet, useFees } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
+import { useFeeConfirmation } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -32,7 +33,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
-	const [crumbs, setCrumbs] = useState<Crumb[]>([]);
 	const { findByType } = useFees();
 
 	const { registrationType } = useParams();
@@ -42,8 +42,11 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const activeWallet = useActiveWallet();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, setError } = form;
+
+	const { formState, register, setError, setValue, watch } = form;
 	const { isSubmitting, isValid } = formState;
+
+	const { fee, fees } = watch();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
 
@@ -64,6 +67,14 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		register("network", { required: true });
 		register("senderAddress", { required: true });
 	}, [register]);
+
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
@@ -121,55 +132,18 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = (suppressWarning?: boolean) => {
+		const newIndex = activeTab + 1;
+
+		if (newIndex === stepCount - 1 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
+		setActiveTab(newIndex);
 	};
 
-	const baseCrumbs: Crumb[] = useMemo(
-		() => [
-			{
-				label: t("COMMON.PORTFOLIO"),
-				route: `/profiles/${activeProfile.id()}/dashboard`,
-			},
-			{
-				label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
-				route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-			},
-		],
-		[activeProfile, activeWallet, t],
-	);
-
-	useEffect(() => {
-		switch (registrationType) {
-			case "secondSignature": {
-				return setCrumbs([
-					...baseCrumbs,
-					{
-						label: t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE"),
-					},
-				]);
-			}
-			case "multiSignature": {
-				return setCrumbs([
-					...baseCrumbs,
-					{
-						label: t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE"),
-					},
-				]);
-			}
-			default: {
-				return setCrumbs([
-					...baseCrumbs,
-					{
-						label: t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE"),
-					},
-				]);
-			}
-		}
-	}, [baseCrumbs, registrationType, t]);
-
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
@@ -191,11 +165,11 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 								/>
 							</TabPanel>
 
-							{registrationForm && getValues("fees") && (
+							{registrationForm && fees && (
 								<>
 									<registrationForm.component
 										activeTab={activeTab}
-										fees={getValues("fees")}
+										fees={fees}
 										wallet={activeWallet}
 										profile={activeProfile}
 									/>
@@ -230,7 +204,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 									<Button
 										data-testid="Registration__continue-button"
 										disabled={!isValid}
-										onClick={handleNext}
+										onClick={() => handleNext()}
 									>
 										{t("COMMON.CONTINUE")}
 									</Button>
@@ -263,6 +237,17 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) =>
+							dismissFeeWarning(() => setActiveTab(1), suppressWarning)
+						}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(() => handleNext(true), suppressWarning)
+						}
+					/>
 				</Form>
 			</Section>
 		</Page>

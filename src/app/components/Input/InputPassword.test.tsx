@@ -22,19 +22,20 @@ describe("InputPassword", () => {
 		expect(input).toHaveAttribute("type", "password");
 	});
 
-	it("should render invalid", () => {
+	it("should render as a password isInvalid", () => {
 		const context = {
-			name: "password",
+			name: "test",
 			isInvalid: true,
-			errorMessage: "this password is invalid",
+			errorMessage: "Error message for password",
 		};
-
-		const { asFragment } = render(
+		const tree = (
 			<FormFieldProvider value={context}>
 				<InputPassword />
-			</FormFieldProvider>,
+			</FormFieldProvider>
 		);
-
+		const { asFragment, getByTestId } = render(tree);
+		const input = getByTestId("Input");
+		expect(input).toHaveAttribute("type", "password");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

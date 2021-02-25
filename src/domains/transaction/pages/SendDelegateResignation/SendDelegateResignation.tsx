@@ -8,6 +8,8 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { FeeWarning } from "domains/transaction/components/FeeWarning";
+import { useFeeConfirmation } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -26,10 +28,11 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 
-	const { common } = useValidation();
-
-	const { formState, getValues, register, setError, setValue } = form;
+	const { formState, getValues, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
+
+	const { fee, fees } = watch();
+	const { common } = useValidation();
 
 	const [activeTab, setActiveTab] = useState(1);
 
@@ -40,27 +43,18 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
-			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-		},
-		{
-			label: t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.TITLE"),
-		},
-	];
-
 	useEffect(() => {
 		register("fees");
-		register(
-			"fee",
-			common.fee(() => getValues("fees"), activeWallet?.balance?.(), activeWallet?.network?.()),
-		);
-	}, [activeWallet, common, getValues, register]);
+		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
+	}, [activeWallet, common, register]);
+
+	const {
+		dismissFeeWarning,
+		feeWarningVariant,
+		requireFeeConfirmation,
+		showFeeWarning,
+		setShowFeeWarning,
+	} = useFeeConfirmation(fee, fees);
 
 	const handleBack = () => {
 		if (activeTab === 1) {
@@ -70,8 +64,14 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = (suppressWarning?: boolean) => {
+		const newIndex = activeTab + 1;
+
+		if (newIndex === 3 && requireFeeConfirmation && !suppressWarning) {
+			return setShowFeeWarning(true);
+		}
+
+		setActiveTab(newIndex);
 	};
 
 	const handleSubmit = async () => {
@@ -106,7 +106,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	};
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={handleSubmit}>
 					<Tabs activeId={activeTab}>
@@ -155,7 +155,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 									<Button
 										data-testid="SendDelegateResignation__continue-button"
 										disabled={!isValid}
-										onClick={handleNext}
+										onClick={() => handleNext()}
 									>
 										{t("COMMON.CONTINUE")}
 									</Button>
@@ -190,6 +190,15 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 							</div>
 						</div>
 					</Tabs>
+
+					<FeeWarning
+						isOpen={showFeeWarning}
+						variant={feeWarningVariant}
+						onCancel={(suppressWarning: boolean) => dismissFeeWarning(handleBack, suppressWarning)}
+						onConfirm={(suppressWarning: boolean) =>
+							dismissFeeWarning(() => handleNext(true), suppressWarning)
+						}
+					/>
 				</Form>
 			</Section>
 		</Page>

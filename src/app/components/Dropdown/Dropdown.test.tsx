@@ -3,7 +3,12 @@ import { clickOutsideHandler } from "app/hooks/click-outside";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
-import { Dropdown } from "./Dropdown";
+import { Dropdown, DropdownOptionGroup } from "./Dropdown";
+
+const options = [
+	{ label: "Option 1", value: "1" },
+	{ label: "Option 2", value: "2" },
+];
 
 describe("Dropdown", () => {
 	it("should render", () => {
@@ -28,19 +33,11 @@ describe("Dropdown", () => {
 	});
 
 	it("should render with options", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: "2" },
-		];
 		const { container } = render(<Dropdown options={options} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should open dropdown options on icon click", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: -"2" },
-		];
 		const { getByTestId } = render(<Dropdown options={options} />);
 		const toggle = getByTestId("dropdown__toggle");
 
@@ -52,10 +49,6 @@ describe("Dropdown", () => {
 	});
 
 	it("should select option", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: "2" },
-		];
 		const onSelect = jest.fn();
 		const { getByTestId } = render(<Dropdown options={options} onSelect={onSelect} />);
 		const toggle = getByTestId("dropdown__toggle");
@@ -77,10 +70,6 @@ describe("Dropdown", () => {
 	});
 
 	it("should ignore triggering onSelect callback if not exists", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: "2" },
-		];
 		const { getByTestId, container } = render(<Dropdown options={options} />);
 		const toggle = getByTestId("dropdown__toggle");
 
@@ -100,11 +89,7 @@ describe("Dropdown", () => {
 		expect(container.querySelectorAll("ul").length).toEqual(0);
 	});
 
-	it("shoucd close dropdown content when click outside", () => {
-		const options = [
-			{ label: "Option 1", value: "1" },
-			{ label: "Option 2", value: "2" },
-		];
+	it("should close dropdown content when click outside", () => {
 		const onSelect = () => ({});
 		const { getByTestId, container } = render(
 			<div>
@@ -146,6 +131,145 @@ describe("Dropdown", () => {
 		const { container } = render(
 			<Dropdown toggleContent={(isOpen: boolean) => <div>Dropdown is open: {isOpen}</div>} />,
 		);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a bottom position", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} position="bottom" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a bottom-left position", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} position="bottom-left" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a left position", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} position="left" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a top-left position", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} position="top-left" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a top", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} position="top" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a top-right", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} position="top-right" />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render dropdown group options with divider, icon and secondary label", () => {
+		const primaryOptions: DropdownOptionGroup = {
+			key: "primary",
+			title: "Primary Options 1",
+			options: [
+				{
+					label: "Primary Options 1.1",
+					value: "value 1.1",
+				},
+				{
+					label: "Primary Options 1.2",
+					value: "value 1.2",
+				},
+			],
+		};
+
+		const secondaryOptions: DropdownOptionGroup = {
+			key: "secondary",
+			hasDivider: true,
+			title: "Secondary Options 1",
+			options: [
+				{
+					label: "Secondary Options 1.1",
+					value: "value 1.1",
+					icon: "icon-1",
+					iconPosition: "end",
+				},
+				{
+					label: "Secondary Options 1.2",
+					value: "value 1.2",
+					icon: "icon-2",
+					secondaryLabel: "secondary label",
+					iconPosition: "start",
+				},
+			],
+		};
+		const { getByTestId, container } = render(
+			<Dropdown options={[primaryOptions, secondaryOptions]} position="top-right" />,
+		);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render without options one", () => {
+		const primaryOptions: DropdownOptionGroup = {
+			key: "primary",
+			title: "Primary Options 1",
+			options: [],
+		};
+
+		const secondaryOptions: DropdownOptionGroup = {
+			key: "secondary",
+			hasDivider: true,
+			title: "Secondary Options 1",
+			options: [],
+		};
+		const { getByTestId, container } = render(
+			<Dropdown options={[primaryOptions, secondaryOptions]} position="top-right" />,
+		);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
 		expect(container).toMatchSnapshot();
 	});
 });

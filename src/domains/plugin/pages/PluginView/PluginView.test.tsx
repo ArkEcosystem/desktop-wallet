@@ -1,10 +1,9 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { ipcRenderer } from "electron";
 import { LaunchPluginService, PluginManagerProvider } from "plugins";
 import { PluginController, PluginManager } from "plugins/core";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { PluginView } from "./PluginView";
 
@@ -48,105 +47,5 @@ describe("Plugin View", () => {
 		expect(container).toMatchSnapshot();
 
 		manager.plugins().removeById(plugin.config().id(), profile);
-	});
-
-	it("should report plugin", async () => {
-		const ipcRendererMock = jest.spyOn(ipcRenderer, "send").mockImplementation();
-		const plugin = new PluginController(
-			{
-				name: "test-plugin",
-				version: "0.0.1",
-			},
-			() => void 0,
-		);
-
-		manager.plugins().push(plugin);
-		renderWithRouter(
-			<Route path="/profiles/:profileId/plugins/view">
-				<PluginManagerProvider manager={manager} services={[]}>
-					<PluginView />
-				</PluginManagerProvider>
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
-			},
-		);
-
-		await waitFor(() => expect(screen.queryAllByText("Test Plugin").length).toBeGreaterThan(0));
-
-		fireEvent.click(screen.getByTestId("PluginView__report"));
-
-		expect(ipcRendererMock).toHaveBeenCalledWith(
-			"open-external",
-			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=0.0.1",
-		);
-
-		ipcRendererMock.mockRestore();
-	});
-	it("should uninstall plugin", async () => {
-		const plugin = new PluginController(
-			{
-				name: "test-plugin",
-			},
-			() => void 0,
-		);
-
-		manager.plugins().push(plugin);
-
-		const { history } = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins/view">
-				<PluginManagerProvider manager={manager} services={[]}>
-					<PluginView />
-				</PluginManagerProvider>
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
-			},
-		);
-
-		fireEvent.click(screen.getByTestId("PluginView__uninstall"));
-
-		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
-
-		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
-		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
-
-		await waitFor(() => expect(manager.plugins().findById(plugin.config().id())).toBeUndefined());
-		await waitFor(() => expect(history.location.pathname).toBe(`/profiles/${profile.id()}/plugins`));
-
-		invokeMock.mockRestore();
-	});
-
-	it("should uninstall plugin", async () => {
-		const plugin = new PluginController(
-			{
-				name: "test-plugin",
-			},
-			() => void 0,
-		);
-
-		manager.plugins().push(plugin);
-
-		const { history } = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins/view">
-				<PluginManagerProvider manager={manager} services={[]}>
-					<PluginView />
-				</PluginManagerProvider>
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/plugins/view?pluginId=${plugin.config().id()}`],
-			},
-		);
-
-		fireEvent.click(screen.getByTestId("PluginView__uninstall"));
-
-		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
-
-		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
-		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));
-
-		await waitFor(() => expect(screen.queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
-
-		invokeMock.mockRestore();
 	});
 });

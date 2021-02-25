@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableRow should render with border 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        data-testid="TableRow"
+      />
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`TableRow should render without border 1`] = `
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        data-testid="TableRow"
+      />
+    </tbody>
+  </table>
+</div>
+`;

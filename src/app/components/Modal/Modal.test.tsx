@@ -123,4 +123,15 @@ describe("Modal", () => {
 		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
 		expect(topOffsetClass).toBe("top-0 my-20");
 	});
+
+	it("should render a modal with banner", () => {
+		const { asFragment, getByTestId } = render(
+			<Modal title="ark" isOpen={true} banner={true}>
+				This is the Modal content
+			</Modal>,
+		);
+
+		expect(getByTestId("modal__overlay")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

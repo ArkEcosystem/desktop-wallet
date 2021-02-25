@@ -129,8 +129,8 @@ describe("PluginList", () => {
 
 		const { asFragment, getAllByTestId } = render(<PluginList plugins={plugins} onDelete={onDelete} />);
 
-		fireEvent.click(within(getAllByTestId("TableRow")[1]).getByTestId("dropdown__toggle"));
-		fireEvent.click(within(getAllByTestId("TableRow")[1]).getByTestId("dropdown__option--0"));
+		fireEvent.click(within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle"));
+		fireEvent.click(within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0"));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();

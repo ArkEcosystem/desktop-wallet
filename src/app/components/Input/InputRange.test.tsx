@@ -62,4 +62,15 @@ describe("InputRange", () => {
 		waitFor(() => expect(input).toHaveValue("10"));
 		expect(getByTestId("Range__thumb")).not.toHaveAttribute("aria-valuenow", "11");
 	});
+
+	it("should track background min value", async () => {
+		const props = { ...properties, min: "4", value: 2, step: 3 };
+		const { getByTestId, asFragment } = render(<InputRange {...props} />);
+		await waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("2");
+			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "2");
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

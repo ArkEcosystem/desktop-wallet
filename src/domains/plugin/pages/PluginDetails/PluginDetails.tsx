@@ -56,18 +56,6 @@ export const PluginDetails = () => {
 
 	const pluginData = (plugin && mapConfigToPluginData(activeProfile, plugin)) || ({} as any);
 
-	const { title } = pluginData;
-
-	const crumbs = [
-		{
-			label: t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE"),
-			route: `/profiles/${activeProfile.id()}/plugins`,
-		},
-		{
-			label: title,
-		},
-	];
-
 	const handleReportPlugin = () => {
 		reportPlugin(plugin!);
 	};
@@ -85,7 +73,7 @@ export const PluginDetails = () => {
 	};
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section>
 				<PluginHeader
 					{...pluginData}

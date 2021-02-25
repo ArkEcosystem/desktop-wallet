@@ -118,8 +118,9 @@ describe("Transactions", () => {
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 	});
 
-	it("should filer by type and see empty screen", async () => {
+	it("should filter by type and see empty screen", async () => {
 		const emptyProfile = env.profiles().create("test");
+		await emptyProfile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
 		const emptyProfileURL = `/profiles/${emptyProfile.id()}/dashboard`;
 
 		const { getByRole, getByTestId } = renderWithRouter(

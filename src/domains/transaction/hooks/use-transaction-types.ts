@@ -1,4 +1,6 @@
-import { Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { uniq } from "@arkecosystem/utils";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 export enum TransactionTypeGroup {
@@ -33,18 +35,50 @@ export enum MagistrateTransactionType {
 	Entity = 6,
 }
 
-export const useTransactionTypes = () => {
+type TransactionTypeProps = {
+	wallets?: ReadWriteWallet[];
+};
+
+export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {}) => {
 	const { t } = useTranslation();
 
 	const allTransactionTypeLabels: Record<string, string> = {
+		// core
 		transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
-		secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
-		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
 		unvote: t("TRANSACTION.TRANSACTION_TYPES.UNVOTE"),
+
+		"second-signature": t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		"multi-signature": t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+
+		"multi-payment": t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
+		ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
+
+		"htlc-refund": t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
+		"htlc-lock": t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
+		"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
+
+		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+
+		// magistrate
+		"entity-registration": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
+		"entity-resignation": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_RESIGNATION"),
+		"entity-update": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_UPDATE"),
+
+		"business-registration": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
+		"business-resignation": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
+		"business-update": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE"),
+
+		"bridgechain-registration": t("TRANSACTION.TRANSACTION_TYPES.BRIDGECHAIN_REGISTRATION"),
+		"bridgechain-resignation": t("TRANSACTION.TRANSACTION_TYPES.BRIDGECHAIN_RESIGNATION"),
+		"bridgechain-update": t("TRANSACTION.TRANSACTION_TYPES.BRIDGECHAIN_UPDATE"),
+
+		// Labels in transaction type format as in ExtendedTransactionData
+		secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		voteCombination: t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION"),
 		multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
-		ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
 		multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
 		delegateResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
 		htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
@@ -81,51 +115,71 @@ export const useTransactionTypes = () => {
 			type: CoreTransactionType.Transfer,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		secondSignature: {
-			type: CoreTransactionType.SecondSignature,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		delegateRegistration: {
-			type: CoreTransactionType.DelegateRegistration,
-			typeGroup: TransactionTypeGroup.Core,
-		},
 		vote: {
 			type: CoreTransactionType.Vote,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		// TODO: adjust
-		voteCombination: {
-			type: CoreTransactionType.Vote,
+		"second-signature": {
+			type: CoreTransactionType.SecondSignature,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		multiSignature: {
+		"multi-signature": {
 			type: CoreTransactionType.MultiSignature,
+			typeGroup: TransactionTypeGroup.Core,
+		},
+		"multi-payment": {
+			type: CoreTransactionType.MultiPayment,
 			typeGroup: TransactionTypeGroup.Core,
 		},
 		ipfs: {
 			type: CoreTransactionType.Ipfs,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		multiPayment: {
-			type: CoreTransactionType.MultiPayment,
+		"htlc-refund": {
+			type: CoreTransactionType.HtlcRefund,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		htlcLock: {
+		"htlc-lock": {
 			type: CoreTransactionType.HtlcLock,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		htlcClaim: {
+		"htlc-claim": {
 			type: CoreTransactionType.HtlcClaim,
 			typeGroup: TransactionTypeGroup.Core,
 		},
-		htlcRefund: {
-			type: CoreTransactionType.HtlcRefund,
+		"delegate-registration": {
+			type: CoreTransactionType.DelegateRegistration,
+			typeGroup: TransactionTypeGroup.Core,
+		},
+		"delegate-resignation": {
+			type: CoreTransactionType.DelegateResignation,
 			typeGroup: TransactionTypeGroup.Core,
 		},
 	};
 
 	const magistrate: Record<string, any> = {
-		businessEntityRegistration: {
+		"entity-registration": {
+			type: MagistrateTransactionType.Entity,
+			typeGroup: TransactionTypeGroup.Magistrate,
+			asset: {
+				action: Enums.EntityAction.Register,
+			},
+		},
+		"entity-resignation": {
+			type: MagistrateTransactionType.Entity,
+			typeGroup: TransactionTypeGroup.Magistrate,
+			asset: {
+				action: Enums.EntityAction.Resign,
+			},
+		},
+		"entity-update": {
+			type: MagistrateTransactionType.Entity,
+			typeGroup: TransactionTypeGroup.Magistrate,
+			asset: {
+				action: Enums.EntityAction.Update,
+			},
+		},
+		"business-registration": {
 			type: MagistrateTransactionType.Entity,
 			typeGroup: TransactionTypeGroup.Magistrate,
 			asset: {
@@ -133,7 +187,7 @@ export const useTransactionTypes = () => {
 				action: Enums.EntityAction.Register,
 			},
 		},
-		businessEntityResignation: {
+		"business-resignation": {
 			type: MagistrateTransactionType.Entity,
 			typeGroup: TransactionTypeGroup.Magistrate,
 			asset: {
@@ -141,7 +195,7 @@ export const useTransactionTypes = () => {
 				action: Enums.EntityAction.Resign,
 			},
 		},
-		businessEntityUpdate: {
+		"business-update": {
 			type: MagistrateTransactionType.Entity,
 			typeGroup: TransactionTypeGroup.Magistrate,
 			asset: {
@@ -149,146 +203,17 @@ export const useTransactionTypes = () => {
 				action: Enums.EntityAction.Update,
 			},
 		},
-		delegateEntityRegistration: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Delegate,
-				action: Enums.EntityAction.Register,
-			},
-		},
-		delegateEntityResignation: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Delegate,
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		delegateEntityUpdate: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Delegate,
-				action: Enums.EntityAction.Update,
-			},
-		},
-		entityRegistration: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				action: Enums.EntityAction.Register,
-			},
-		},
-		entityResignation: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		entityUpdate: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				action: Enums.EntityAction.Update,
-			},
-		},
-		legacyBridgechainRegistration: {
+		"bridgechain-registration": {
 			type: MagistrateTransactionType.BridgechainRegistration,
 			typeGroup: TransactionTypeGroup.Magistrate,
 		},
-		legacyBridgechainResignation: {
+		"bridgechain-resignation": {
 			type: MagistrateTransactionType.BridgechainResignation,
 			typeGroup: TransactionTypeGroup.Magistrate,
 		},
-		legacyBridgechainUpdate: {
+		"bridgechain-update": {
 			type: MagistrateTransactionType.BridgechainUpdate,
 			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-		legacyBusinessRegistration: {
-			type: MagistrateTransactionType.BusinessResignation,
-			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-		legacyBusinessResignation: {
-			type: MagistrateTransactionType.BusinessResignation,
-			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-		legacyBusinessUpdate: {
-			type: MagistrateTransactionType.BusinessUpdate,
-			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-		moduleEntityRegistration: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Module,
-				action: Enums.EntityAction.Register,
-			},
-		},
-		moduleEntityResignation: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Module,
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		moduleEntityUpdate: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Module,
-				action: Enums.EntityAction.Update,
-			},
-		},
-		pluginEntityRegistration: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Plugin,
-				action: Enums.EntityAction.Register,
-			},
-		},
-		pluginEntityResignation: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Plugin,
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		pluginEntityUpdate: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Plugin,
-				action: Enums.EntityAction.Update,
-			},
-		},
-		productEntityRegistration: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Product,
-				action: Enums.EntityAction.Register,
-			},
-		},
-		productEntityResignation: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Product,
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		productEntityUpdate: {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Product,
-				action: Enums.EntityAction.Update,
-			},
 		},
 	};
 
@@ -296,10 +221,19 @@ export const useTransactionTypes = () => {
 
 	const getQueryParamsByType = (type: string) => core[type] || magistrate[type];
 
+	const availableTypes = useMemo(() => {
+		const allSupportedTypes = wallets.reduce(
+			(all: string[], wallet: ReadWriteWallet) => [...all, ...wallet.transactionTypes()],
+			[],
+		);
+
+		return uniq(allSupportedTypes);
+	}, [wallets]);
+
 	return {
 		getLabel,
 		types: {
-			core: Object.keys(core),
+			core: availableTypes,
 			magistrate: Object.keys(magistrate),
 		},
 		getQueryParamsByType,

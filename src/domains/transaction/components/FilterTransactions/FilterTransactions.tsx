@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { CollapseToggleButton } from "app/components/Collapse";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
@@ -7,12 +8,13 @@ import { useTranslation } from "react-i18next";
 type FilterTransactionsProps = {
 	className?: string;
 	defaultSelected?: DropdownOption;
+	wallets?: ReadWriteWallet[];
 	onSelect?: (selectedOption: DropdownOption, types: any) => void;
 };
 
-export const FilterTransactions = memo(({ className, onSelect, defaultSelected }: FilterTransactionsProps) => {
+export const FilterTransactions = memo(({ className, onSelect, defaultSelected, wallets }: FilterTransactionsProps) => {
 	const { t } = useTranslation();
-	const { types, getLabel, getQueryParamsByType } = useTransactionTypes();
+	const { types, getLabel, getQueryParamsByType } = useTransactionTypes({ wallets });
 
 	const allOptions: DropdownOptionGroup[] = [
 		{

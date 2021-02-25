@@ -1,17 +1,26 @@
+import React from "react";
 import tw, { styled } from "twin.macro";
 
-export const InputAddon = styled.div`
+const InputAddonStyle = styled.div`
 	${tw`absolute inset-y-0 flex items-center justify-center overflow-hidden`};
 `;
 
-export const InputAddonStart = styled(InputAddon)`
+const InputAddonStartStyle = styled(InputAddonStyle)`
 	${tw`left-0 border border-transparent rounded-l`}
 `;
 
-export const InputAddonEnd = styled(InputAddon)`
+const InputAddonEndStyle = styled(InputAddonStyle)`
 	${tw`right-0 border border-transparent rounded-r`}
 `;
 
-export const InputGroup = styled.div`
+const InputGroupStyle = styled.div`
 	${tw`relative flex`}
 `;
+
+export const InputAddon = (props: any) => <InputAddonStyle {...props} />;
+
+export const InputAddonStart = (props: any) => <InputAddonStartStyle {...props} />;
+
+export const InputAddonEnd = (props: any) => <InputAddonEndStyle {...props} />;
+
+export const InputGroup = (props: any) => <InputGroupStyle {...props} />;

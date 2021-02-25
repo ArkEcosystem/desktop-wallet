@@ -7,22 +7,22 @@ exports[`CreateProfile should fail password confirmation 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -92,7 +92,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -164,7 +164,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -175,7 +175,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
                       >
                         <span
                           data-errortext="'Password' should have at least 6 characters"
@@ -193,7 +193,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         </span>
                       </div>
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -228,7 +228,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -239,7 +239,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4 mr-12"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
                       >
                         <span
                           data-errortext="Passwords do not match"
@@ -257,7 +257,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         </span>
                       </div>
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -315,11 +315,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             id="downshift-125-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -581,7 +581,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -701,22 +701,22 @@ exports[`CreateProfile should not be able to create new profile if name already 
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -786,7 +786,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             aria-invalid="true"
@@ -795,7 +795,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             name="name"
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                           >
                             <span
                               data-errortext="A profile with this name already exists"
@@ -877,7 +877,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -887,7 +887,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -924,7 +924,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -934,7 +934,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -992,11 +992,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             id="downshift-47-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -1258,7 +1258,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -1378,22 +1378,22 @@ exports[`CreateProfile should not be able to create new profile if name is too l
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -1463,7 +1463,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             aria-invalid="true"
@@ -1472,7 +1472,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             name="name"
                           />
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                           >
                             <span
                               data-errortext="'Name' should have at most 42 characters"
@@ -1554,7 +1554,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -1564,7 +1564,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1601,7 +1601,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -1611,7 +1611,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1669,11 +1669,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             id="downshift-71-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -1935,7 +1935,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -2055,22 +2055,22 @@ exports[`CreateProfile should not upload avatar image 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -2140,7 +2140,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -2212,7 +2212,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -2222,7 +2222,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2259,7 +2259,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -2269,7 +2269,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2327,11 +2327,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             id="downshift-189-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -2593,7 +2593,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -2712,22 +2712,22 @@ exports[`CreateProfile should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -2797,7 +2797,7 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -2864,7 +2864,7 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -2874,7 +2874,7 @@ exports[`CreateProfile should render 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2911,7 +2911,7 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -2921,7 +2921,7 @@ exports[`CreateProfile should render 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2979,7 +2979,7 @@ exports[`CreateProfile should render 1`] = `
                             id="downshift-1-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <input
@@ -3003,7 +3003,7 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -3123,22 +3123,22 @@ exports[`CreateProfile should store profile 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -3208,7 +3208,7 @@ exports[`CreateProfile should store profile 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -3255,7 +3255,7 @@ exports[`CreateProfile should store profile 1`] = `
                             </div>
                           </div>
                           <button
-                            class="Button__StyledButton-mdtvtf-0 jCnXkX flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            class="Button__StyledButton-mdtvtf-0 cPeHIJ flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
@@ -3294,7 +3294,7 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -3304,7 +3304,7 @@ exports[`CreateProfile should store profile 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3341,7 +3341,7 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -3351,7 +3351,7 @@ exports[`CreateProfile should store profile 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3409,11 +3409,11 @@ exports[`CreateProfile should store profile 1`] = `
                             id="downshift-9-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -3675,7 +3675,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -3794,22 +3794,22 @@ exports[`CreateProfile should store profile with password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -3879,7 +3879,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -3951,7 +3951,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -3961,7 +3961,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3996,7 +3996,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -4006,7 +4006,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4064,11 +4064,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                             id="downshift-95-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -4330,7 +4330,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -4449,22 +4449,22 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex relative justify-between h-21"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
@@ -4534,7 +4534,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
@@ -4606,7 +4606,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -4616,7 +4616,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4653,7 +4653,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
@@ -4663,7 +4663,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         type="password"
                       />
                       <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4721,11 +4721,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             id="downshift-157-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -4987,7 +4987,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-secondary-500"
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
                         >
                           <div
                             class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"

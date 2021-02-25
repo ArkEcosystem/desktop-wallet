@@ -23,3 +23,16 @@ exports[`Collapse should render visible 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Collapse should render with custom scroll 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    class="custom-scroll"
+    data-testid="Collapse"
+    style="height: 0px; opacity: 0; overflow: hidden;"
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;

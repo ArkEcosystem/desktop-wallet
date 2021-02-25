@@ -193,6 +193,58 @@ describe("Registration", () => {
 		await waitFor(() => expect(feeInput).not.toHaveValue("0"));
 	});
 
+	it("should return to form step by cancelling fee warning", async () => {
+		const { asFragment, getByTestId, history } = await renderPage(wallet);
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
+
+		// Fee
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("Registration__continue-button"));
+
+		// Review Step
+		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("Registration__continue-button"));
+
+		// Fee warning
+		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+	});
+
+	it("should proceed to authentication step by confirming fee warning", async () => {
+		const { asFragment, getByTestId, history } = await renderPage(wallet);
+
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
+
+		// Fee
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		expect(getByTestId("InputCurrency")).toHaveValue("10");
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("Registration__continue-button"));
+
+		// Review Step
+		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("Registration__continue-button"));
+
+		// Fee warning
+		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+		fireEvent.click(getByTestId("FeeWarning__continue-button"));
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+	});
+
 	it("should show mnemonic error", async () => {
 		const { getByTestId, queryAllByTestId } = await renderPage(secondWallet);
 

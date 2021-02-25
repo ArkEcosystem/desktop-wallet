@@ -8,6 +8,7 @@ const data = [
 	{
 		col1: "column 1",
 		col2: "column 2",
+		col3: "column 3",
 	},
 ];
 
@@ -15,10 +16,18 @@ const columns = [
 	{
 		Header: "Header 1",
 		accessor: "col1",
+		minimumWidth: true,
+		className: "flex-row-reverse",
 	},
 	{
 		Header: "Header 2",
 		accessor: "col2",
+		className: "no-border",
+	},
+	{
+		Header: "Header 3",
+		accessor: "col3",
+		className: "justify-end",
 	},
 ];
 

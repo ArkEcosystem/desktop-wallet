@@ -11,10 +11,11 @@ import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
 import { Tooltip } from "app/components/Tooltip";
+import { useScroll } from "app/hooks";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { css, styled } from "twin.macro";
@@ -41,10 +42,18 @@ type NavigationBarProps = {
 	onUserAction?: any;
 };
 
-const NavWrapper = styled.nav<{ noShadow?: boolean }>`
+const NavWrapper = styled.nav<{ noShadow?: boolean; scroll?: number }>`
 	${defaultStyle}
-	${tw`sticky inset-x-0 top-0 bg-theme-background`}
-	${({ noShadow }) => !noShadow && tw`shadow-header-smooth dark:shadow-header-smooth-dark`};
+
+	${tw`sticky border-b border-theme-background inset-x-0 top-0 bg-theme-background transition-all duration-200`}
+
+	${({ noShadow, scroll }) => {
+		if (!noShadow) {
+			return scroll
+				? tw`shadow-header-smooth dark:shadow-header-smooth-dark`
+				: tw`border-theme-secondary-300 dark:border-theme-secondary-800`;
+		}
+	}};
 `;
 
 type UserInfoProps = {
@@ -112,16 +121,16 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 	);
 };
 
-const ButtonWrapper = styled.div`
+export const NavigationButtonWrapper = styled.div`
 	${css`
 		button {
-			${tw`w-12 h-12 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
+			${tw`w-11 h-11 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
 		}
 	`};
 `;
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center w-12 h-12 my-auto mr-4 text-white rounded bg-logo`};
+	${tw`flex items-center justify-center w-11 h-11 my-auto mr-4 text-white rounded bg-logo`};
 `;
 
 export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
@@ -129,18 +138,11 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 	const { t } = useTranslation();
 
 	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
-	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
 
-	useEffect(() => {
-		if (selectedWallet) {
-			setSearchWalletIsOpen(false);
-			setReceiveFundsIsOpen(true);
-		}
-	}, [selectedWallet]);
-
 	const handleSelectWallet = (wallet: SelectedWallet) => {
+		setSearchWalletIsOpen(false);
 		setSelectedWallet(wallet);
 	};
 
@@ -188,13 +190,15 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 			.filter((wallet) => wallet.network().isLive());
 	}, [profile, profileWalletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
+	const scroll = useScroll();
+
 	return (
-		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
+		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"} scroll={scroll}>
 			<div className="px-4 sm:px-6 lg:px-10">
-				<div className="flex relative justify-between h-20 md:h-24">
+				<div className="flex relative justify-between h-21">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
-							<ARKLogo width={48} />
+							<ARKLogo width={44} />
 						</LogoContainer>
 
 						{title && <span className="text-2xl font-bold">{title}</span>}
@@ -202,7 +206,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{variant === "full" && (
 						<>
-							<ul className="flex mr-auto ml-4 space-x-8 h-20 md:h-24">{renderMenu()}</ul>
+							<ul className="flex mr-auto ml-4 space-x-8 h-21">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
@@ -211,7 +215,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="flex items-center">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
-										<ButtonWrapper>
+										<NavigationButtonWrapper>
 											<Button
 												data-testid="navbar__buttons--send"
 												disabled={!wallets.length}
@@ -221,7 +225,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											>
 												<Icon name="Sent" width={18} height={18} className="p-1" />
 											</Button>
-										</ButtonWrapper>
+										</NavigationButtonWrapper>
 									</Tooltip>
 								</div>
 
@@ -229,7 +233,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="flex overflow-hidden items-center rounded-lg">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
-										<ButtonWrapper>
+										<NavigationButtonWrapper>
 											<Button
 												data-testid="navbar__buttons--receive"
 												disabled={!wallets.length}
@@ -239,7 +243,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											>
 												<Icon name="QrCode" width={22} height={22} className="p-1" />
 											</Button>
-										</ButtonWrapper>
+										</NavigationButtonWrapper>
 									</Tooltip>
 								</div>
 
@@ -300,7 +304,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{selectedWallet && (
 						<ReceiveFunds
-							isOpen={receiveFundsIsOpen}
+							isOpen={true}
 							address={selectedWallet.address}
 							icon={selectedWallet.coinName}
 							name={selectedWallet.name}
