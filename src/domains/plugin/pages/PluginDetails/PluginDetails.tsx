@@ -16,7 +16,16 @@ export const PluginDetails = () => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 
-	const { pluginPackages, pluginConfigurations, pluginManager, reportPlugin } = usePluginManagerContext();
+	const {
+		allPlugins,
+		pluginConfigurations,
+		pluginManager,
+		reportPlugin,
+		trigger,
+		mapConfigToPluginData,
+		updatePlugin,
+		updatingStats,
+	} = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
 	const repositoryURL = queryParams.get("repositoryURL");
@@ -29,8 +38,8 @@ export const PluginDetails = () => {
 		pluginConfigurations,
 		pluginId,
 	]);
-	const packageConfiguration = useMemo(() => pluginPackages.find((item) => item.id() === pluginId), [
-		pluginPackages,
+	const packageConfiguration = useMemo(() => allPlugins.find((item) => item.id() === pluginId), [
+		allPlugins,
 		pluginId,
 	]);
 
@@ -43,7 +52,7 @@ export const PluginDetails = () => {
 		return latestConfiguration || packageConfiguration;
 	}, [isInstalled, packageConfiguration, latestConfiguration]);
 
-	const pluginData = plugin?.toObject() || ({} as any);
+	const pluginData = (plugin && mapConfigToPluginData(activeProfile, plugin)) || ({} as any);
 
 	const handleReportPlugin = () => {
 		reportPlugin(plugin!);
@@ -67,16 +76,26 @@ export const PluginDetails = () => {
 				<PluginHeader
 					{...pluginData}
 					isInstalled={isInstalled}
-					onUninstall={() => setIsUninstallOpen(true)}
+					onDelete={() => setIsUninstallOpen(true)}
 					onReport={handleReportPlugin}
 					onInstall={() => setIsInstallOpen(true)}
+					onEnable={() => {
+						pluginCtrl?.enable(activeProfile, { autoRun: true });
+						trigger();
+					}}
+					onDisable={() => {
+						pluginCtrl?.disable(activeProfile);
+						trigger();
+					}}
+					onUpdate={() => updatePlugin(pluginData.name)}
+					updatingStats={updatingStats?.[pluginData.name]}
 					hasLaunch={hasLaunch}
 					onLaunch={handleLaunch}
 				/>
 			</Section>
 
 			<Section>
-				<PluginInfo {...pluginData} isInstalled={isInstalled} hasLaunch={hasLaunch} onLaunch={handleLaunch} />
+				<PluginInfo {...pluginData} />
 			</Section>
 
 			{plugin && (

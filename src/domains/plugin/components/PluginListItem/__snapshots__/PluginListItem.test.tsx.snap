@@ -8,12 +8,14 @@ exports[`PluginListItem should render 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-20"
+        >
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -21,12 +23,23 @@ exports[`PluginListItem should render 1`] = `
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+              data-testid="PluginListItem__link"
+              type="button"
             >
-              ARK Explorer
-            </a>
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                ARK Explorer
+              </div>
+            </button>
           </div>
         </td>
         <td>
@@ -118,12 +131,14 @@ exports[`PluginListItem should render grant icon 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-20"
+        >
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -131,12 +146,23 @@ exports[`PluginListItem should render grant icon 1`] = `
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+              data-testid="PluginListItem__link"
+              type="button"
             >
-              ARK Explorer
-            </a>
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                ARK Explorer
+              </div>
+            </button>
             <div
               class="sc-bdfBwQ eMktAO"
               height="20"
@@ -237,12 +263,14 @@ exports[`PluginListItem should render official icon 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-20"
+        >
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -250,12 +278,23 @@ exports[`PluginListItem should render official icon 1`] = `
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+              data-testid="PluginListItem__link"
+              type="button"
             >
-              ARK Explorer
-            </a>
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                ARK Explorer
+              </div>
+            </button>
             <div
               class="sc-bdfBwQ iNulIV"
               height="18"
@@ -356,12 +395,14 @@ exports[`PluginListItem should trigger install 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-20"
+        >
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
                 class="w-14 h-14"
@@ -369,12 +410,23 @@ exports[`PluginListItem should trigger install 1`] = `
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
+          </div>
+        </td>
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 lnzPxq font-semibold link important:px-0 flex items-center"
+              data-testid="PluginListItem__link"
+              type="button"
             >
-              ARK Explorer
-            </a>
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                ARK Explorer
+              </div>
+            </button>
           </div>
         </td>
         <td>

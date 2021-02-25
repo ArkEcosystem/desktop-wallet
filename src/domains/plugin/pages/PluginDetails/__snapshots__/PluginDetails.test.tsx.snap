@@ -276,9 +276,11 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex w-full"
             >
               <div
-                class="overflow-hidden w-40 h-full rounded-lg"
+                data-testid="PluginImage__placeholder"
               >
-                <svg>
+                <svg
+                  class="w-40"
+                >
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
@@ -303,44 +305,56 @@ exports[`PluginDetails should render properly 1`] = `
                   <div
                     class="flex"
                   >
-                    <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
-                      data-testid="PluginHeader__button--report"
-                      type="button"
+                    <div
+                      class="flex items-center space-x-3"
                     >
-                      <div
-                        class="flex relative items-center space-x-2"
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                        data-testid="PluginHeader__button--report"
+                        type="button"
                       >
                         <div
-                          class="sc-bdfBwQ iyevwF"
-                          height="20"
-                          width="20"
+                          class="flex relative items-center space-x-2"
                         >
-                          <svg>
-                            report.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              report.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                    </button>
-                    <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
-                      data-testid="PluginHeader__button--uninstall"
-                      type="button"
-                    >
+                      </button>
                       <div
-                        class="flex relative items-center space-x-2"
+                        class="relative"
                       >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                        <span
+                          data-testid="dropdown__toggle"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
-                        </div>
+                          <button
+                            class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                            data-testid="PluginHeader__dropdown-toggle"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                        </span>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -789,9 +803,11 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               class="flex w-full"
             >
               <div
-                class="overflow-hidden w-40 h-full rounded-lg"
+                data-testid="PluginImage__placeholder"
               >
-                <svg>
+                <svg
+                  class="w-40"
+                >
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
@@ -1294,9 +1310,11 @@ exports[`PluginDetails should report plugin 1`] = `
               class="flex w-full"
             >
               <div
-                class="overflow-hidden w-40 h-full rounded-lg"
+                data-testid="PluginImage__placeholder"
               >
-                <svg>
+                <svg
+                  class="w-40"
+                >
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
@@ -1321,44 +1339,56 @@ exports[`PluginDetails should report plugin 1`] = `
                   <div
                     class="flex"
                   >
-                    <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
-                      data-testid="PluginHeader__button--report"
-                      type="button"
+                    <div
+                      class="flex items-center space-x-3"
                     >
-                      <div
-                        class="flex relative items-center space-x-2"
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                        data-testid="PluginHeader__button--report"
+                        type="button"
                       >
                         <div
-                          class="sc-bdfBwQ iyevwF"
-                          height="20"
-                          width="20"
+                          class="flex relative items-center space-x-2"
                         >
-                          <svg>
-                            report.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              report.svg
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                    </button>
-                    <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
-                      data-testid="PluginHeader__button--uninstall"
-                      type="button"
-                    >
+                      </button>
                       <div
-                        class="flex relative items-center space-x-2"
+                        class="relative"
                       >
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                        <span
+                          data-testid="dropdown__toggle"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
-                        </div>
+                          <button
+                            class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                            data-testid="PluginHeader__dropdown-toggle"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                        </span>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -1807,9 +1837,11 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               class="flex w-full"
             >
               <div
-                class="overflow-hidden w-40 h-full rounded-lg"
+                data-testid="PluginImage__placeholder"
               >
-                <svg>
+                <svg
+                  class="w-40"
+                >
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
@@ -2003,6 +2035,553 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               data-testid="plugin-info__about"
             >
               Export your wallet transaction history
+            </p>
+          </div>
+          <div
+            class="mt-8"
+          >
+            <div
+              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+            >
+              <div
+                class="flex items-center justify-center text-theme-warning-600"
+              >
+                <div
+                  class="sc-bdfBwQ daKoZl"
+                  height="1.75em"
+                  width="1.75em"
+                >
+                  <svg>
+                    alert-warning.svg
+                  </svg>
+                </div>
+              </div>
+              <span
+                class="pointer-events-none border rounded-md border-theme-warning-600"
+              />
+              <div
+                class="flex flex-col space-y-2"
+              >
+                <p
+                  class="text-lg font-bold text-theme-warning-600"
+                  data-testid="alert__title"
+                >
+                  Disclaimer
+                </p>
+                <p
+                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                >
+                  The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PluginDetails should update package 1`] = `
+<div>
+  <button>
+    Fetch Packages
+  </button>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-21"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+            >
+              <svg
+                width="44"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-21"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                aria-current="page"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                  >
+                    <button
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
+                    >
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        <div
+                          class="sc-bdfBwQ liSwOQ p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              >
+                <button
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    <div
+                      class="sc-bdfBwQ iNulIV p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              >
+                <button
+                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    <div
+                      class="sc-bdfBwQ iSzUah p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-secondary-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex my-0.5 ml-4 -space-x-2"
+            >
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+              >
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      btc.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                    >
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1 mt-5"
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+      >
+        <div
+          class="container py-16 px-14 mx-auto "
+        >
+          <div
+            class="w-full bg-theme-background"
+            data-testid="plugin-details__header"
+          >
+            <div
+              class="flex w-full"
+            >
+              <div
+                data-testid="PluginImage__placeholder"
+              >
+                <svg
+                  class="w-40"
+                >
+                  plugin-logo-placeholder.svg
+                </svg>
+              </div>
+              <div
+                class="flex flex-col justify-between pl-8 space-y-3 w-full"
+              >
+                <div
+                  class="flex justify-between items-center"
+                >
+                  <div
+                    class="flex flex-col mr-2"
+                  >
+                    <span
+                      class="text-2xl font-bold"
+                    >
+                      Transaction Export Plugin
+                    </span>
+                    <span
+                      class="text-medium text-theme-secondary-500"
+                    />
+                  </div>
+                  <div
+                    class="flex"
+                  >
+                    <div
+                      class="flex items-center space-x-3"
+                    >
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                        data-testid="PluginHeader__button--report"
+                        type="button"
+                      >
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              report.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
+                      <div
+                        class="relative"
+                      >
+                        <span
+                          data-testid="dropdown__toggle"
+                        >
+                          <button
+                            class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
+                            data-testid="PluginHeader__dropdown-toggle"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                  type="horizontal"
+                />
+                <div
+                  class="flex justify-between space-4"
+                >
+                  <div
+                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                  >
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        class="flex flex-col pr-6"
+                      >
+                        <span
+                          class="font-bold text-theme-secondary-400"
+                        >
+                          Author
+                        </span>
+                        <div
+                          class="flex items-center"
+                        >
+                          <span
+                            class="font-bold text-theme-secondary-600"
+                          >
+                            Unknown
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex px-6"
+                    >
+                      <div
+                        class="flex flex-col undefined"
+                      >
+                        <span
+                          class="font-bold text-theme-secondary-400"
+                        >
+                          Category
+                        </span>
+                        <span
+                          class="font-bold text-theme-secondary-600"
+                        >
+                          Other
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex px-6"
+                    >
+                      <div
+                        class="flex flex-col undefined"
+                        data-testid="PluginSpecs__url"
+                      >
+                        <span
+                          class="font-bold text-theme-secondary-400"
+                        >
+                          URL
+                        </span>
+                        <span
+                          class="font-bold text-theme-secondary-600"
+                        >
+                          N/A
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                  >
+                    <div
+                      class="flex pl-6"
+                    >
+                      <div
+                        class="flex flex-col text-right"
+                        data-testid="PluginSpecs__version"
+                      >
+                        <span
+                          class="font-bold text-theme-secondary-400"
+                        >
+                          Version
+                        </span>
+                        <span
+                          class="font-bold text-theme-secondary-600"
+                        >
+                          1.0.0
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex pl-6"
+                    >
+                      <div
+                        class="flex flex-col text-right"
+                        data-testid="PluginSpecs__size"
+                      >
+                        <span
+                          class="font-bold text-theme-secondary-400"
+                        >
+                          Size
+                        </span>
+                        <span
+                          class="font-bold text-theme-secondary-600"
+                        >
+                          0 B
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+      >
+        <div
+          class="container py-16 px-14 mx-auto "
+        >
+          <div
+            class="mt-8"
+          >
+            <p
+              class="font-bold"
+            >
+              Requirements
+            </p>
+            <p
+              class="mt-3 text-theme-secondary-600"
+              data-testid="plugin-info__mininum-version"
+            >
+              <span>
+                Desktop Wallet Version
+                 v
+                4.0.0
+                +
+              </span>
             </p>
           </div>
           <div
