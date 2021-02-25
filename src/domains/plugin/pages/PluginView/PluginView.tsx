@@ -1,6 +1,6 @@
-import { Image } from "app/components/Image";
 import { Page } from "app/components/Layout";
 import { useActiveProfile, useQueryParams } from "app/hooks";
+import { PluginImage } from "domains/plugin/components/PluginImage";
 import { LaunchRender, usePluginManagerContext } from "plugins";
 import React from "react";
 
@@ -18,16 +18,7 @@ export const PluginView = () => {
 			<div className="px-4 sm:px-6 lg:px-10 py-4">
 				<div className="flex justify-between items-center">
 					<div className="flex items-center space-x-3">
-						{plugin?.config().logo() ? (
-							<img
-								data-testid="PluginView__logo"
-								src={plugin.config().logo()}
-								alt="Logo"
-								className="overflow-hidden w-6 h-6 rounded"
-							/>
-						) : (
-							<Image name="PluginLogoPlaceholder" domain="plugin" className="w-6 h-6" />
-						)}
+						<PluginImage logoURL={plugin?.config()?.logo()} className="w-6 h-6" />
 
 						<div className="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700">
 							<dl>
