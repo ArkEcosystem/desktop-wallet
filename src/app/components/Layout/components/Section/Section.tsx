@@ -28,5 +28,5 @@ export const Section = ({ children, hasBackground, marginTop, className, innerCl
 
 Section.defaultProps = {
 	hasBackground: true,
-	marginTop: true,
+	marginTop: false,
 };

@@ -16,4 +16,10 @@ describe("EmptyBlock", () => {
 
 		expect(getByText("I am a children")).toBeTruthy();
 	});
+
+	it("should render with size", () => {
+		const { container } = render(<EmptyBlock size="sm">I am a children</EmptyBlock>);
+
+		expect(container).toMatchSnapshot();
+	});
 });
