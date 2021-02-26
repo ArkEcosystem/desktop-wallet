@@ -4,6 +4,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
+import { useProfileExport } from "domains/setting/hooks/user-profile-export";
 import electron from "electron";
 import fs from "fs";
 import React from "react";
@@ -13,7 +14,11 @@ import { SettingsProps } from "../Settings.models";
 
 export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
+
+	const { register, context } = formConfig;
+
 	const profile = useActiveProfile();
+	const { formatExportData } = useProfileExport(profile);
 
 	const walletExportOptions = [
 		{
@@ -22,6 +27,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			labelClass: "text-lg text-theme-secondary-text",
 			labelAddon: (
 				<Toggle
+					ref={register}
 					name="excludeWalletsWithoutName"
 					defaultChecked={true}
 					data-testid="Plugin-settings__toggle--exclude-without-name"
@@ -35,6 +41,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			labelClass: "text-lg text-theme-secondary-text",
 			labelAddon: (
 				<Toggle
+					ref={register}
 					name="excludeEmptyWallets"
 					defaultChecked={false}
 					data-testid="Plugin-settings__toggle--exclude-empty-wallets"
@@ -48,6 +55,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			labelClass: "text-lg text-theme-secondary-text",
 			labelAddon: (
 				<Toggle
+					ref={register}
 					name="excludeLedgerWallets"
 					defaultChecked={true}
 					data-testid="Plugin-settings__toggle--exclude-ledger-wallets"
@@ -61,6 +69,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			labelClass: "text-lg text-theme-secondary-text",
 			labelAddon: (
 				<Toggle
+					ref={register}
 					name="addWalletNetworkInfo"
 					defaultChecked={false}
 					data-testid="Plugin-settings__toggle--add-wallet-network-info"
@@ -77,6 +86,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			labelClass: "text-lg text-theme-secondary-text",
 			labelAddon: (
 				<Toggle
+					ref={register}
 					name="saveGeneralCustomizations"
 					defaultChecked={true}
 					data-testid="Plugin-settings__toggle--save-general-customizations"
@@ -87,12 +97,13 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	];
 
 	const exportDataToFile = async () => {
-		// TODO: format data based on selected settings
-		const exportData = {
-			meta: {
-				count: 9,
-			},
-		};
+		const exportData = formatExportData({
+			excludeWalletsWithoutName: context.getValues("excludeWalletsWithoutName"),
+			excludeEmptyWallets: context.getValues("excludeEmptyWallets"),
+			excludeLedgerWallets: context.getValues("excludeLedgerWallets"),
+			addWalletNetworkInfo: context.getValues("addWalletNetworkInfo"),
+			saveGeneralCustomizations: context.getValues("saveGeneralCustomizations"),
+		});
 
 		const defaultPath = `${profile.name()}_wallets.json`;
 		const content = JSON.stringify(exportData, null, 2);
@@ -103,12 +114,12 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			return;
 		}
 
-		return fs.writeFileSync(filePath, content, "utf-8");
+		fs.writeFileSync(filePath, content, "utf-8");
+		return onSuccess(t("SETTINGS.EXPORT.SUCCESS"));
 	};
 
 	const handleSubmit = async () => {
 		await exportDataToFile();
-		onSuccess(t("SETTINGS.EXPORT.SUCCESS"));
 	};
 
 	return (
@@ -123,7 +134,6 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 				<ListDivided items={generalSettingsOptions} />
 
 				<div className="flex justify-end pt-2 w-full space-x-3">
-					<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
 					<Button data-testid="Export-settings__submit-button" type="submit">
 						{t("COMMON.EXPORT")}
 					</Button>
