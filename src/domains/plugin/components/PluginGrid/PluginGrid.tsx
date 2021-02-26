@@ -13,6 +13,7 @@ type PluginGridProps = {
 	onDisable?: (plugin: any) => void;
 	onInstall?: (plugin: any) => void;
 	onLaunch?: (plugin: any) => void;
+	onUpdate?: (plugin: any) => void;
 	onSelect: any;
 	plugins: any[];
 	isLoading?: boolean;
@@ -29,6 +30,7 @@ export const PluginGrid = ({
 	onDisable,
 	onLaunch,
 	onInstall,
+	onUpdate,
 	plugins,
 	withPagination,
 	isLoading,
@@ -48,12 +50,13 @@ export const PluginGrid = ({
 				<PluginCard
 					key={plugin.id}
 					plugin={plugin}
-					onClick={() => onSelect(plugin.id)}
+					onClick={() => onSelect(plugin)}
 					onDelete={() => onDelete(plugin)}
 					onEnable={() => onEnable?.(plugin)}
 					onDisable={() => onDisable?.(plugin)}
 					onLaunch={() => onLaunch?.(plugin)}
 					onInstall={() => onInstall?.(plugin)}
+					onUpdate={() => onUpdate?.(plugin)}
 				/>,
 			);
 		}

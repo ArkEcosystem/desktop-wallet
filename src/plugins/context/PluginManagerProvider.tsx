@@ -1,14 +1,15 @@
 import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
 import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
-import { uniqBy } from "@arkecosystem/utils";
+import { semver, uniqBy } from "@arkecosystem/utils";
 import { httpClient, toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
+import appPkg from "../../../package.json";
 import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
@@ -21,10 +22,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		configurations: [],
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
-
-	const defaultFilters: { categories: string[]; query?: string } = { categories: [], query: "" };
-	const [filters, setFilters] = useState(defaultFilters);
-
+	const [updatingStats, setUpdatingStats] = useState<Record<string, any>>({});
 	const [pluginRegistry] = useState(() => new PluginRegistry());
 
 	const [pluginManager] = useState(() => {
@@ -111,7 +109,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 					id: config.id(),
 					name: config.name(),
 					date: config.date(),
-					version: config.version(),
+					version: process.env.REACT_APP_PLUGIN_VERSION ?? config.version(),
 					description: config.description(),
 					author: config.author(),
 					sourceProvider: config.sourceProvider(),
@@ -126,47 +124,52 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				}),
 			);
 
+		setIsFetchingPackages(false);
+		setState((prev: any) => ({ ...prev, packages: configurations }));
+	}, [pluginRegistry]);
+
+	// Plugin configurations loaded from PSDK Plugin's Registry
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
+
+	// Plugin configurations loaded manually from URL
+	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
+
+	const allPlugins: PluginConfigurationData[] = useMemo(() => {
 		const localConfigurations = pluginManager
 			.plugins()
 			.all()
 			.map((item) => item.config());
 
-		const merged = uniqBy([...localConfigurations, ...configurations], (item) => item.id());
+		const merged = uniqBy([...localConfigurations, ...pluginPackages], (item) => item.id());
 
-		setIsFetchingPackages(false);
-		setState((prev: any) => ({ ...prev, packages: merged }));
-	}, [pluginManager, pluginRegistry]);
+		return merged;
+	}, [pluginManager, pluginPackages]);
 
-	const filterPackages = useCallback(
-		(allPackages: PluginConfigurationData[]) => {
-			const filteredPackages = allPackages.filter((pluginPackage) => {
-				let matchesQuery = true;
-				let matchesCategories = true;
+	const hasUpdateAvailable = useCallback(
+		(pluginId: string) => {
+			const localPlugin = pluginManager.plugins().findById(pluginId);
 
-				if (filters.query && filters.query !== defaultFilters.query) {
-					matchesQuery = !!pluginPackage.title()?.toLowerCase().includes(filters.query.toLowerCase());
-				}
+			if (!localPlugin) {
+				return false;
+			}
+			const remotePackage = pluginPackages.find((remote) => remote.id() === pluginId);
 
-				if (filters.categories.length !== defaultFilters.categories.length) {
-					matchesCategories = pluginPackage
-						.categories()
-						.some((category) => filters.categories.includes(category));
-				}
+			if (!remotePackage) {
+				return false;
+			}
 
-				return matchesQuery && matchesCategories;
-			});
-
-			return filteredPackages;
+			return semver.isGreaterThan(remotePackage.version()!, localPlugin.config().version()!);
 		},
-		[filters, defaultFilters],
+		[pluginManager, pluginPackages],
 	);
 
-	const pluginPackages: PluginConfigurationData[] = useMemo(() => filterPackages(state.packages), [
-		state,
-		filterPackages,
-	]);
+	const satisfiesMinimumVersion = (pluginMinimumVersion?: string) => {
+		if (!pluginMinimumVersion) {
+			return true;
+		}
 
-	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
+		return semver.isGreaterThanOrEqual(appPkg.version, pluginMinimumVersion);
+	};
 
 	const downloadPlugin = useCallback(
 		async (name: string, repositoryURL?: string) => {
@@ -186,7 +189,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
-			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl });
+			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
 
 			return savedDir;
 		},
@@ -194,8 +197,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const installPlugin = useCallback(
-		async (savedPath, pluginId) => {
-			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name: pluginId });
+		async (savedPath, name) => {
+			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name });
 
 			await loadPlugin(pluginPath);
 
@@ -221,12 +224,56 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		return configData.id();
 	}, []);
 
+	const mapConfigToPluginData = useCallback(
+		(profile: Profile, config: PluginConfigurationData) => {
+			const localPlugin = pluginManager.plugins().findById(config.id());
+			return {
+				...config.toObject(),
+				isInstalled: !!localPlugin,
+				isEnabled: !!localPlugin?.isEnabled(profile),
+				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
+				hasUpdateAvailable: hasUpdateAvailable(config.id()),
+				isMinimumVersionSatisfied: satisfiesMinimumVersion(config.minimumVersion()),
+			};
+		},
+		[hasUpdateAvailable, pluginManager],
+	);
+
+	const updatePlugin = useCallback(
+		async (name: string) => {
+			setUpdatingStats((prev) => ({ ...prev, [name]: { percent: 0.0 } }));
+
+			try {
+				const savedPath = await downloadPlugin(name);
+				await installPlugin(savedPath, name);
+				setTimeout(() => {
+					setUpdatingStats((prev) => ({ ...prev, [name]: { completed: true, failed: false } }));
+				}, 1500);
+			} catch (e) {
+				setUpdatingStats((prev) => ({ ...prev, [name]: { failed: true } }));
+			}
+		},
+		[downloadPlugin, installPlugin],
+	);
+
+	useEffect(() => {
+		// @ts-ignore
+		const listener = (_, value: any) => setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+		ipcRenderer.on("plugin:download-progress", listener);
+
+		return () => {
+			ipcRenderer.removeListener("plugin:download-progress", listener);
+		};
+	}, []);
+
 	return {
 		pluginRegistry,
 		fetchPluginPackages,
 		downloadPlugin,
 		installPlugin,
 		isFetchingPackages,
+		allPlugins,
+		hasUpdateAvailable,
 		pluginPackages,
 		pluginManager,
 		loadPlugins,
@@ -236,11 +283,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		deletePlugin,
 		fetchLatestPackageConfiguration,
 		pluginConfigurations,
-		filters,
-		filterBy: (appliedFilters: any) => {
-			setFilters({ ...filters, ...appliedFilters });
-		},
-		resetFilters: () => setFilters(defaultFilters),
+		mapConfigToPluginData,
+		updatePlugin,
+		updatingStats,
 	};
 };
 

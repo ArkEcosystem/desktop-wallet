@@ -190,6 +190,7 @@ export const translations: { [key: string]: any } = {
 	UPDATE: "Update",
 	UPDATE_LATER: "Update Later",
 	UPDATE_NOW: "Update Now",
+	UPDATING: "Updating...",
 	URL: "URL",
 	VERIFIED: "Verified Address: {{value}}",
 	VERSION: "Version",

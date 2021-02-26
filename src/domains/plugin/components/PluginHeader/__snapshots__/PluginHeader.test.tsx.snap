@@ -10,9 +10,11 @@ exports[`PluginHeader should render properly 1`] = `
       class="flex w-full"
     >
       <div
-        class="overflow-hidden w-40 h-full rounded-lg"
+        data-testid="PluginImage__placeholder"
       >
-        <svg>
+        <svg
+          class="w-40"
+        >
           plugin-logo-placeholder.svg
         </svg>
       </div>
@@ -189,7 +191,7 @@ exports[`PluginHeader should render properly 1`] = `
 </div>
 `;
 
-exports[`PluginHeader should render with logo 1`] = `
+exports[`PluginHeader should render updating plugin 1`] = `
 <div>
   <div
     class="w-full bg-theme-background"
@@ -199,14 +201,63 @@ exports[`PluginHeader should render with logo 1`] = `
       class="flex w-full"
     >
       <div
-        class="overflow-hidden w-40 h-full rounded-lg"
+        class="rounded-lg overflow-hidden bg-theme-success-100 flex flex-col space-y-3 items-center justify-center border border-theme-secondary-300 dark:border-theme-secondary-600 w-40"
+        data-testid="PluginImage__updating"
       >
-        <img
-          alt="Logo"
-          class="w-full rounded-lg"
-          data-testid="PluginCard__logo"
-          src="https://ark.io/logo.png"
-        />
+        <svg
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+        >
+          <circle
+            cx="20"
+            cy="20"
+            fill="transparent"
+            r="19"
+            stroke="var(--theme-color-success-200)"
+            stroke-width="2"
+          />
+          <circle
+            cx="20"
+            cy="20"
+            fill="transparent"
+            r="19"
+            stroke="var(--theme-color-success-600)"
+            stroke-dasharray="119.38052083641213"
+            stroke-dashoffset="95.50441666912971"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            transform="rotate(-90 20 20)"
+          />
+          <text
+            data-testid="CircularProgressBar__percentage"
+            dy="0.3em"
+            fill="var(--theme-color-success-600)"
+            font-size="0.8rem"
+            font-weight="600"
+            text-anchor="middle"
+            x="50%"
+            y="50%"
+          >
+            <tspan>
+              20
+              <tspan
+                dy="-0.6em"
+                font-size="0.4rem"
+                font-weight="bold"
+              >
+                %
+              </tspan>
+            </tspan>
+          </text>
+        </svg>
+        <p
+          class="text-theme-secondary-600 dark:text-theme-secondary-text text-sm font-medium"
+          data-testid="PluginImage__updating__label"
+        >
+          Updating...
+        </p>
       </div>
       <div
         class="flex flex-col justify-between pl-8 space-y-3 w-full"
@@ -231,13 +282,13 @@ exports[`PluginHeader should render with logo 1`] = `
           >
             <button
               class="Button__StyledButton-mdtvtf-0 ePkfgQ"
-              data-testid="PluginHeader__button--launch"
+              data-testid="PluginHeader__button--install"
               type="button"
             >
               <div
                 class="flex relative items-center space-x-2"
               >
-                Launch
+                Install
               </div>
             </button>
             <button
@@ -255,25 +306,6 @@ exports[`PluginHeader should render with logo 1`] = `
                 >
                   <svg>
                     report.svg
-                  </svg>
-                </div>
-              </div>
-            </button>
-            <button
-              class="Button__StyledButton-mdtvtf-0 iUSBMV ml-3"
-              data-testid="PluginHeader__button--uninstall"
-              type="button"
-            >
-              <div
-                class="flex relative items-center space-x-2"
-              >
-                <div
-                  class="sc-bdfBwQ fPrsah"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    trash.svg
                   </svg>
                 </div>
               </div>
