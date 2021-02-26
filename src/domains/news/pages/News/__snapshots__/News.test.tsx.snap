@@ -274,7 +274,7 @@ exports[`News should filter results based on category query and asset 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -314,494 +314,490 @@ exports[`News should filter results based on category query and asset 1`] = `
         </div>
       </div>
       <div
-        class="bg-theme-secondary-background"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iKhFyG"
+          class="container py-16 px-14 mx-auto "
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container flex space-x-8"
           >
             <div
-              class="container flex space-x-8"
+              class="flex-none w-4/6"
             >
               <div
-                class="flex-none w-4/6"
+                class="space-y-6"
               >
                 <div
-                  class="space-y-6"
+                  data-testid="NewsCard"
                 >
                   <div
-                    data-testid="NewsCard"
+                    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
+                    data-testid="Card"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
-                      data-testid="Card"
+                      class="flex flex-col p-4 space-y-8 bg-theme-background"
                     >
                       <div
-                        class="flex flex-col p-4 space-y-8 bg-theme-background"
+                        class="flex justify-between w-full"
                       >
                         <div
-                          class="flex justify-between w-full"
+                          class="flex items-center space-x-4"
                         >
                           <div
-                            class="flex items-center space-x-4"
-                          >
-                            <div
-                              class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
-                              data-testid="NetworkIcon__placeholder"
+                            class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                            data-testid="NetworkIcon__placeholder"
+                          />
+                          <div>
+                            <h4
+                              class="text-lg font-semibold"
+                              data-testid="NewsCard__asset-undefined"
                             />
-                            <div>
-                              <h4
-                                class="text-lg font-semibold"
-                                data-testid="NewsCard__asset-undefined"
-                              />
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <p
-                                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                                  data-testid="NewsCard__author"
-                                >
-                                  Travis Walker, Co-Founder
-                                </p>
-                                <div
-                                  class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-                                  type="vertical"
-                                />
-                                <p
-                                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                                  data-testid="NewsCard__date-created"
-                                >
-                                  <span
-                                    data-testid="timeago"
-                                  >
-                                    A few seconds ago
-                                  </span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="flex flex-col justify-end"
-                          >
                             <div
-                              class="Label-sc-1tj9hzr-0 ftOOah"
-                              color="warning"
+                              class="flex items-center space-x-4"
                             >
-                              <span
-                                class="text-sm"
-                                data-testid="NewsCard__category"
+                              <p
+                                class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                                data-testid="NewsCard__author"
                               >
-                                #Technical
-                              </span>
+                                Travis Walker, Co-Founder
+                              </p>
+                              <div
+                                class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
+                                type="vertical"
+                              />
+                              <p
+                                class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                                data-testid="NewsCard__date-created"
+                              >
+                                <span
+                                  data-testid="timeago"
+                                >
+                                  A few seconds ago
+                                </span>
+                              </p>
                             </div>
                           </div>
                         </div>
                         <div
-                          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-                          type="horizontal"
-                        />
-                        <div
-                          class="whitespace-pre-line text-theme-secondary-text"
-                          data-testid="NewsCard__content"
+                          class="flex flex-col justify-end"
                         >
-                          Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
-
-                          <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                            data-testid="Link"
-                            rel="noopener noreferrer"
-                            to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
+                          <div
+                            class="Label-sc-1tj9hzr-0 ftOOah"
+                            color="warning"
                           >
                             <span
-                              class="underline-dotted"
+                              class="text-sm"
+                              data-testid="NewsCard__category"
                             >
-                              https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
+                              #Technical
                             </span>
-                            <div
-                              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                              data-testid="Link__external"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                redirect.svg
-                              </svg>
-                            </div>
-                          </a>
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+                        type="horizontal"
                       />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="my-10"
-                >
-                  <div
-                    class="relative"
-                  >
-                    <div
-                      class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <span
-                        class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary-600"
+                      <div
+                        class="whitespace-pre-line text-theme-secondary-text"
+                        data-testid="NewsCard__content"
                       >
-                        Ad
-                      </span>
+                        Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
+
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
+                        >
+                          <span
+                            class="underline-dotted"
+                          >
+                            https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io
+                          </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                    <img
-                      alt="Blockfolio Banner"
-                      class="w-full rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-                      src="blockfolio-banner.png"
+                    <div
+                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                     />
-                    <div
-                      class="absolute left-10 top-16"
-                    >
-                      <div
-                        class="flex flex-col space-y-5 text-white"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://blockfolio.com/"
-                        >
-                          <span
-                            class="underline-dotted"
-                          >
-                            <svg
-                              class="-mx-8 text-white"
-                              height="47"
-                              width="238"
-                            >
-                              blockfolio.svg
-                            </svg>
-                          </span>
-                        </a>
-                        <p
-                          class="w-3/4 text-lg font-medium"
-                        >
-                          The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
-                        </p>
-                      </div>
-                      <div
-                        class="flex mt-12 space-x-2"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
-                        >
-                          <span
-                            class="underline-dotted"
-                          >
-                            <svg
-                              class="w-32 h-10 b-0"
-                            >
-                              download-app-store.svg
-                            </svg>
-                          </span>
-                        </a>
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
-                        >
-                          <span
-                            class="underline-dotted"
-                          >
-                            <svg
-                              class="w-32 h-10"
-                            >
-                              download-google-play.svg
-                            </svg>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-center w-full"
-                />
               </div>
               <div
-                class="flex-none w-2/6"
+                class="my-10"
               >
                 <div
-                  class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
-                  data-testid="NewsOptions"
+                  class="relative"
                 >
                   <div
-                    class="flex flex-col space-y-8"
+                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-100 dark:bg-theme-secondary-800"
+                  >
+                    <span
+                      class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary-600"
+                    >
+                      Ad
+                    </span>
+                  </div>
+                  <img
+                    alt="Blockfolio Banner"
+                    class="w-full rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+                    src="blockfolio-banner.png"
+                  />
+                  <div
+                    class="absolute left-10 top-16"
                   >
                     <div
-                      class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
+                      class="flex flex-col space-y-5 text-white"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures border-none shadow-none NewsOptions__search"
-                        data-testid="NewsOptions__search"
-                        maxlength="32"
-                        placeholder="Search"
-                      />
-                      <div
-                        class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
-                        height="18"
-                        width="18"
+                      <a
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://blockfolio.com/"
                       >
-                        <svg>
-                          search.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                      type="horizontal"
-                    />
-                    <div
-                      class="flex flex-col space-y-3"
-                    >
-                      <div
-                        class="flex justify-between items-center"
-                      >
-                        <h5
-                          class="font-semibold"
+                        <span
+                          class="underline-dotted"
                         >
-                          Category
-                        </h5>
-                        <button
-                          class="text-xs font-semibold focus:outline-none text-theme-secondary-800"
-                        >
-                          Select All
-                        </button>
-                      </div>
+                          <svg
+                            class="-mx-8 text-white"
+                            height="47"
+                            width="238"
+                          >
+                            blockfolio.svg
+                          </svg>
+                        </span>
+                      </a>
                       <p
-                        class="text-sm text-theme-secondary-500"
+                        class="w-3/4 text-lg font-medium"
                       >
-                        Select your categories
+                        The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
                       </p>
-                      <div
-                        class="flex flex-wrap -mx-1"
-                      >
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Technical"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Technical
-                          </div>
-                        </label>
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Marketing"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Marketing
-                          </div>
-                        </label>
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Community"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Community
-                          </div>
-                        </label>
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Emergency"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Emergency
-                          </div>
-                        </label>
-                      </div>
                     </div>
                     <div
-                      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                      type="horizontal"
+                      class="flex mt-12 space-x-2"
+                    >
+                      <a
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
+                      >
+                        <span
+                          class="underline-dotted"
+                        >
+                          <svg
+                            class="w-32 h-10 b-0"
+                          >
+                            download-app-store.svg
+                          </svg>
+                        </span>
+                      </a>
+                      <a
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
+                      >
+                        <span
+                          class="underline-dotted"
+                        >
+                          <svg
+                            class="w-32 h-10"
+                          >
+                            download-google-play.svg
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex justify-center w-full"
+              />
+            </div>
+            <div
+              class="flex-none w-2/6"
+            >
+              <div
+                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+                data-testid="NewsOptions"
+              >
+                <div
+                  class="flex flex-col space-y-8"
+                >
+                  <div
+                    class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures border-none shadow-none NewsOptions__search"
+                      data-testid="NewsOptions__search"
+                      maxlength="32"
+                      placeholder="Search"
                     />
                     <div
-                      class="flex flex-col space-y-3"
+                      class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                    type="horizontal"
+                  />
+                  <div
+                    class="flex flex-col space-y-3"
+                  >
+                    <div
+                      class="flex justify-between items-center"
                     >
                       <h5
                         class="font-semibold"
                       >
-                        Filter Assets
+                        Category
                       </h5>
-                      <p
-                        class="text-sm text-theme-secondary-500"
-                      >
-                        Your current selections
-                      </p>
-                      <div
-                        class="pb-4"
-                      >
-                        <div
-                          data-testid="FilterNetwork"
-                        >
-                          <ul
-                            class="inline-block"
-                            data-testid="NetworkOptions"
-                          >
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__ARK"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ fdfkzt"
-                                    height="12"
-                                    width="12"
-                                  >
-                                    <svg>
-                                      checkmark.svg
-                                    </svg>
-                                  </div>
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__ETH"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    eth.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
-                                >
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__BTC"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    btc.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
-                                >
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__LSK"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    lsk.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
-                                >
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
                       <button
-                        class="Button__StyledButton-mdtvtf-0 iUSBMV w-full"
-                        data-testid="NewsOptions__submit"
-                        type="button"
+                        class="text-xs font-semibold focus:outline-none text-theme-secondary-800"
                       >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          Update Filter
-                        </div>
+                        Select All
                       </button>
                     </div>
+                    <p
+                      class="text-sm text-theme-secondary-500"
+                    >
+                      Select your categories
+                    </p>
+                    <div
+                      class="flex flex-wrap -mx-1"
+                    >
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Technical"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Technical
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Marketing"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Marketing
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Community"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Community
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Emergency"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Emergency
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                    type="horizontal"
+                  />
+                  <div
+                    class="flex flex-col space-y-3"
+                  >
+                    <h5
+                      class="font-semibold"
+                    >
+                      Filter Assets
+                    </h5>
+                    <p
+                      class="text-sm text-theme-secondary-500"
+                    >
+                      Your current selections
+                    </p>
+                    <div
+                      class="pb-4"
+                    >
+                      <div
+                        data-testid="FilterNetwork"
+                      >
+                        <ul
+                          class="inline-block"
+                          data-testid="NetworkOptions"
+                        >
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__ARK"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                              >
+                                <div
+                                  class="sc-bdfBwQ fdfkzt"
+                                  height="12"
+                                  width="12"
+                                >
+                                  <svg>
+                                    checkmark.svg
+                                  </svg>
+                                </div>
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__ETH"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  eth.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                              >
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__BTC"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  btc.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                              >
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__LSK"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                              >
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button
+                      class="Button__StyledButton-mdtvtf-0 iUSBMV w-full"
+                      data-testid="NewsOptions__submit"
+                      type="button"
+                    >
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        Update Filter
+                      </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1088,7 +1084,7 @@ exports[`News should filter results based on category query and asset 2`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1128,47 +1124,490 @@ exports[`News should filter results based on category query and asset 2`] = `
         </div>
       </div>
       <div
-        class="bg-theme-secondary-background"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iKhFyG"
+          class="container py-16 px-14 mx-auto "
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container flex space-x-8"
           >
             <div
-              class="container flex space-x-8"
+              class="flex-none w-4/6"
             >
               <div
-                class="flex-none w-4/6"
+                class="space-y-6"
               >
                 <div
-                  class="space-y-6"
+                  data-testid="NewsCard"
                 >
                   <div
-                    data-testid="NewsCard"
+                    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
+                    data-testid="Card"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
-                      data-testid="Card"
+                      class="flex flex-col p-4 space-y-8 bg-theme-background"
                     >
                       <div
-                        class="flex flex-col p-4 space-y-8 bg-theme-background"
+                        class="flex justify-between w-full"
                       >
                         <div
-                          class="flex justify-between w-full"
+                          class="flex items-center space-x-4"
                         >
                           <div
-                            class="flex items-center space-x-4"
+                            aria-label="ARK"
+                            class="Circle-uw7h4j-0 hvqrfp border-theme-danger-200 text-theme-danger-400"
+                            data-testid="NetworkIcon-ARK-ark.mainnet"
                           >
                             <div
-                              aria-label="ARK"
-                              class="Circle-uw7h4j-0 hvqrfp border-theme-danger-200 text-theme-danger-400"
-                              data-testid="NetworkIcon-ARK-ark.mainnet"
+                              class="sc-bdfBwQ iyevwF"
+                              data-testid="NetworkIcon__icon"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div>
+                            <h4
+                              class="text-lg font-semibold"
+                              data-testid="NewsCard__asset-ARK Ecosystem"
+                            >
+                              ARK Ecosystem
+                            </h4>
+                            <div
+                              class="flex items-center space-x-4"
+                            >
+                              <p
+                                class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                                data-testid="NewsCard__author"
+                              >
+                                Travis Walker, Co-Founder
+                              </p>
+                              <div
+                                class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
+                                type="vertical"
+                              />
+                              <p
+                                class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                                data-testid="NewsCard__date-created"
+                              >
+                                <span
+                                  data-testid="timeago"
+                                >
+                                  A few seconds ago
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col justify-end"
+                        >
+                          <div
+                            class="Label-sc-1tj9hzr-0 ftOOah"
+                            color="warning"
+                          >
+                            <span
+                              class="text-sm"
+                              data-testid="NewsCard__category"
+                            >
+                              #Technical
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+                        type="horizontal"
+                      />
+                      <div
+                        class="whitespace-pre-line text-theme-secondary-text"
+                        data-testid="NewsCard__content"
+                      >
+                        Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
+                        >
+                          <span
+                            class="underline-dotted"
+                          >
+                            https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
+                          </span>
+                          <div
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="my-10"
+              >
+                <div
+                  class="relative"
+                >
+                  <div
+                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-100 dark:bg-theme-secondary-800"
+                  >
+                    <span
+                      class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary-600"
+                    >
+                      Ad
+                    </span>
+                  </div>
+                  <img
+                    alt="Blockfolio Banner"
+                    class="w-full rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+                    src="blockfolio-banner.png"
+                  />
+                  <div
+                    class="absolute left-10 top-16"
+                  >
+                    <div
+                      class="flex flex-col space-y-5 text-white"
+                    >
+                      <a
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://blockfolio.com/"
+                      >
+                        <span
+                          class="underline-dotted"
+                        >
+                          <svg
+                            class="-mx-8 text-white"
+                            height="47"
+                            width="238"
+                          >
+                            blockfolio.svg
+                          </svg>
+                        </span>
+                      </a>
+                      <p
+                        class="w-3/4 text-lg font-medium"
+                      >
+                        The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
+                      </p>
+                    </div>
+                    <div
+                      class="flex mt-12 space-x-2"
+                    >
+                      <a
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
+                      >
+                        <span
+                          class="underline-dotted"
+                        >
+                          <svg
+                            class="w-32 h-10 b-0"
+                          >
+                            download-app-store.svg
+                          </svg>
+                        </span>
+                      </a>
+                      <a
+                        class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                        data-testid="Link"
+                        rel="noopener noreferrer"
+                        to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
+                      >
+                        <span
+                          class="underline-dotted"
+                        >
+                          <svg
+                            class="w-32 h-10"
+                          >
+                            download-google-play.svg
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex justify-center w-full"
+              >
+                <div
+                  class="Pagination__Wrapper-x7juhx-0 klvluR"
+                  data-testid="Pagination"
+                >
+                  <div
+                    class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+                  >
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+                      data-testid="PaginationSearchButton"
+                    >
+                      <span
+                        data-testid="PaginationSearch__toggle"
+                      >
+                         
+                        <span>
+                          ...
+                        </span>
+                         
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                    data-testid="Pagination__next"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Next
+                      <div
+                        class="sc-bdfBwQ fdfkzt ml-2"
+                        height="12"
+                        width="12"
+                      >
+                        <svg>
+                          forward.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  <button
+                    class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                    data-testid="Pagination__last"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      <div
+                        class="sc-bdfBwQ fdfkzt"
+                        height="12"
+                        width="12"
+                      >
+                        <svg>
+                          pagination-last.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex-none w-2/6"
+            >
+              <div
+                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+                data-testid="NewsOptions"
+              >
+                <div
+                  class="flex flex-col space-y-8"
+                >
+                  <div
+                    class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures border-none shadow-none NewsOptions__search"
+                      data-testid="NewsOptions__search"
+                      maxlength="32"
+                      placeholder="Search"
+                    />
+                    <div
+                      class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                    type="horizontal"
+                  />
+                  <div
+                    class="flex flex-col space-y-3"
+                  >
+                    <div
+                      class="flex justify-between items-center"
+                    >
+                      <h5
+                        class="font-semibold"
+                      >
+                        Category
+                      </h5>
+                    </div>
+                    <p
+                      class="text-sm text-theme-secondary-500"
+                    >
+                      Select your categories
+                    </p>
+                    <div
+                      class="flex flex-wrap -mx-1"
+                    >
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Technical"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Technical
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Marketing"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Marketing
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Community"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Community
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+                        data-testid="NewsOptions__category-Emergency"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+                        >
+                          #Emergency
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+                    type="horizontal"
+                  />
+                  <div
+                    class="flex flex-col space-y-3"
+                  >
+                    <h5
+                      class="font-semibold"
+                    >
+                      Filter Assets
+                    </h5>
+                    <p
+                      class="text-sm text-theme-secondary-500"
+                    >
+                      Your current selections
+                    </p>
+                    <div
+                      class="pb-4"
+                    >
+                      <div
+                        data-testid="FilterNetwork"
+                      >
+                        <ul
+                          class="inline-block"
+                          data-testid="NetworkOptions"
+                        >
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__ARK"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF"
-                                data-testid="NetworkIcon__icon"
                                 height="20"
                                 width="20"
                               >
@@ -1176,552 +1615,105 @@ exports[`News should filter results based on category query and asset 2`] = `
                                   ark.svg
                                 </svg>
                               </div>
-                            </div>
-                            <div>
-                              <h4
-                                class="text-lg font-semibold"
-                                data-testid="NewsCard__asset-ARK Ecosystem"
-                              >
-                                ARK Ecosystem
-                              </h4>
-                              <div
-                                class="flex items-center space-x-4"
-                              >
-                                <p
-                                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                                  data-testid="NewsCard__author"
-                                >
-                                  Travis Walker, Co-Founder
-                                </p>
-                                <div
-                                  class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-                                  type="vertical"
-                                />
-                                <p
-                                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                                  data-testid="NewsCard__date-created"
-                                >
-                                  <span
-                                    data-testid="timeago"
-                                  >
-                                    A few seconds ago
-                                  </span>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="flex flex-col justify-end"
-                          >
-                            <div
-                              class="Label-sc-1tj9hzr-0 ftOOah"
-                              color="warning"
-                            >
                               <span
-                                class="text-sm"
-                                data-testid="NewsCard__category"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                               >
-                                #Technical
+                                <div
+                                  class="sc-bdfBwQ fdfkzt"
+                                  height="12"
+                                  width="12"
+                                >
+                                  <svg>
+                                    checkmark.svg
+                                  </svg>
+                                </div>
+                                <span />
                               </span>
                             </div>
-                          </div>
-                        </div>
-                        <div
-                          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-                          type="horizontal"
-                        />
-                        <div
-                          class="whitespace-pre-line text-theme-secondary-text"
-                          data-testid="NewsCard__content"
-                        >
-                          Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
-                          <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                            data-testid="Link"
-                            rel="noopener noreferrer"
-                            to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__ETH"
                           >
-                            <span
-                              class="underline-dotted"
-                            >
-                              https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
-                            </span>
                             <div
-                              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                              data-testid="Link__external"
-                              height="1em"
-                              width="1em"
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                             >
-                              <svg>
-                                redirect.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  eth.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                              >
+                                <span />
+                              </span>
                             </div>
-                          </a>
-                        </div>
-                      </div>
-                      <div
-                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="my-10"
-                >
-                  <div
-                    class="relative"
-                  >
-                    <div
-                      class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <span
-                        class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary-600"
-                      >
-                        Ad
-                      </span>
-                    </div>
-                    <img
-                      alt="Blockfolio Banner"
-                      class="w-full rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-                      src="blockfolio-banner.png"
-                    />
-                    <div
-                      class="absolute left-10 top-16"
-                    >
-                      <div
-                        class="flex flex-col space-y-5 text-white"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://blockfolio.com/"
-                        >
-                          <span
-                            class="underline-dotted"
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__BTC"
                           >
-                            <svg
-                              class="-mx-8 text-white"
-                              height="47"
-                              width="238"
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                             >
-                              blockfolio.svg
-                            </svg>
-                          </span>
-                        </a>
-                        <p
-                          class="w-3/4 text-lg font-medium"
-                        >
-                          The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
-                        </p>
-                      </div>
-                      <div
-                        class="flex mt-12 space-x-2"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
-                        >
-                          <span
-                            class="underline-dotted"
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  btc.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                              >
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="NetworkOption__LSK"
                           >
-                            <svg
-                              class="w-32 h-10 b-0"
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                             >
-                              download-app-store.svg
-                            </svg>
-                          </span>
-                        </a>
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                          data-testid="Link"
-                          rel="noopener noreferrer"
-                          to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
-                        >
-                          <span
-                            class="underline-dotted"
-                          >
-                            <svg
-                              class="w-32 h-10"
-                            >
-                              download-google-play.svg
-                            </svg>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex justify-center w-full"
-                >
-                  <div
-                    class="Pagination__Wrapper-x7juhx-0 klvluR"
-                    data-testid="Pagination"
-                  >
-                    <div
-                      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-                    >
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-                      >
-                        1
-                      </div>
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-                      >
-                        2
-                      </div>
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-                      >
-                        3
-                      </div>
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-                      >
-                        4
-                      </div>
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-                      >
-                        5
-                      </div>
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-                      >
-                        6
-                      </div>
-                      <div
-                        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-                      >
-                        7
-                      </div>
-                      <div
-                        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
-                        data-testid="PaginationSearchButton"
-                      >
-                        <span
-                          data-testid="PaginationSearch__toggle"
-                        >
-                           
-                          <span>
-                            ...
-                          </span>
-                           
-                        </span>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                              >
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                     <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                      data-testid="Pagination__next"
+                      class="Button__StyledButton-mdtvtf-0 iUSBMV w-full"
+                      data-testid="NewsOptions__submit"
                       type="button"
                     >
                       <div
                         class="flex relative items-center space-x-2"
                       >
-                        Next
-                        <div
-                          class="sc-bdfBwQ fdfkzt ml-2"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            forward.svg
-                          </svg>
-                        </div>
+                        Update Filter
                       </div>
                     </button>
-                    <button
-                      class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                      data-testid="Pagination__last"
-                      type="button"
-                    >
-                      <div
-                        class="flex relative items-center space-x-2"
-                      >
-                        <div
-                          class="sc-bdfBwQ fdfkzt"
-                          height="12"
-                          width="12"
-                        >
-                          <svg>
-                            pagination-last.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex-none w-2/6"
-              >
-                <div
-                  class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
-                  data-testid="NewsOptions"
-                >
-                  <div
-                    class="flex flex-col space-y-8"
-                  >
-                    <div
-                      class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
-                    >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures border-none shadow-none NewsOptions__search"
-                        data-testid="NewsOptions__search"
-                        maxlength="32"
-                        placeholder="Search"
-                      />
-                      <div
-                        class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
-                        height="18"
-                        width="18"
-                      >
-                        <svg>
-                          search.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                      type="horizontal"
-                    />
-                    <div
-                      class="flex flex-col space-y-3"
-                    >
-                      <div
-                        class="flex justify-between items-center"
-                      >
-                        <h5
-                          class="font-semibold"
-                        >
-                          Category
-                        </h5>
-                      </div>
-                      <p
-                        class="text-sm text-theme-secondary-500"
-                      >
-                        Select your categories
-                      </p>
-                      <div
-                        class="flex flex-wrap -mx-1"
-                      >
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Technical"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Technical
-                          </div>
-                        </label>
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Marketing"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Marketing
-                          </div>
-                        </label>
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Community"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Community
-                          </div>
-                        </label>
-                        <label
-                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-                          data-testid="NewsOptions__category-Emergency"
-                        >
-                          <input
-                            checked=""
-                            class="SelectCategory__Input-k7qbth-0 jXZdTM"
-                            data-testid="SelectCategory__undefined"
-                            type="checkbox"
-                            value=""
-                          />
-                          <div
-                            class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-                          >
-                            #Emergency
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                    <div
-                      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                      type="horizontal"
-                    />
-                    <div
-                      class="flex flex-col space-y-3"
-                    >
-                      <h5
-                        class="font-semibold"
-                      >
-                        Filter Assets
-                      </h5>
-                      <p
-                        class="text-sm text-theme-secondary-500"
-                      >
-                        Your current selections
-                      </p>
-                      <div
-                        class="pb-4"
-                      >
-                        <div
-                          data-testid="FilterNetwork"
-                        >
-                          <ul
-                            class="inline-block"
-                            data-testid="NetworkOptions"
-                          >
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__ARK"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ fdfkzt"
-                                    height="12"
-                                    width="12"
-                                  >
-                                    <svg>
-                                      checkmark.svg
-                                    </svg>
-                                  </div>
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__ETH"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    eth.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
-                                >
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__BTC"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    btc.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
-                                >
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block mr-5 cursor-pointer"
-                              data-testid="NetworkOption__LSK"
-                            >
-                              <div
-                                class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    lsk.svg
-                                  </svg>
-                                </div>
-                                <span
-                                  class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
-                                >
-                                  <span />
-                                </span>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <button
-                        class="Button__StyledButton-mdtvtf-0 iUSBMV w-full"
-                        data-testid="NewsOptions__submit"
-                        type="button"
-                      >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          Update Filter
-                        </div>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>

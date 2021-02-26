@@ -307,7 +307,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					installedPluginsCount={installedPlugins.length}
 				/>
 
-				<Section marginTop={false}>
+				<Section>
 					<div data-testid={`PluginManager__container--${currentView}`}>
 						<div className="flex justify-between items-center" />
 

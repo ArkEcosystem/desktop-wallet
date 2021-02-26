@@ -4,7 +4,7 @@ import React from "react";
 
 export const WalletVoteSkeleton = () => (
 	<div data-testid="WalletVote__skeleton" className="flex items-center w-full">
-		<Circle className="mr-4 border-transparent" size="lg">
+		<Circle size="lg" shadowColor="--theme-secondary-background-color" className="mr-4 border-transparent">
 			<Skeleton circle height={44} width={44} />
 		</Circle>
 
