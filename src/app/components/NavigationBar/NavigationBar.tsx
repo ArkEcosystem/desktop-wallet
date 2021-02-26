@@ -2,8 +2,8 @@ import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { MemoryPassword, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
+import { Amount } from "app/components/Amount";
 import { AvatarWrapper } from "app/components/Avatar";
-import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -22,7 +22,7 @@ import tw, { css, styled } from "twin.macro";
 import { NavbarVariant } from "types";
 import { openExternal } from "utils/electron-utils";
 
-import { Amount } from "../Amount";
+import { BackButton } from "./components/BackButton";
 import { defaultStyle } from "./NavigationBar.styles";
 
 const { ARKLogo } = images.common;
@@ -34,6 +34,8 @@ type MenuItem = {
 
 type NavigationBarProps = {
 	title?: string;
+	backToUrl?: string;
+	isBackDisabled?: boolean;
 	profile?: Profile;
 	variant?: NavbarVariant;
 	menu?: MenuItem[];
@@ -68,28 +70,28 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
 	return (
-		<Dropdown
-			onSelect={onUserAction}
-			options={userActions}
-			dropdownClass="mt-8 -mr-4"
-			toggleContent={(isOpen: boolean) => (
-				<div className="my-0.5 ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
-						<span className="text-theme-secondary-text dark:text-theme-secondary-800">
-							{exchangeCurrency && (
-								<Icon
-									name={exchangeCurrency}
-									fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
-								/>
-							)}
-						</span>
-					</Circle>
+		<div className="flex my-0.5 ml-4 -space-x-2">
+			<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
+				<span className="text-theme-secondary-text dark:text-theme-secondary-800">
+					{exchangeCurrency && (
+						<Icon
+							name={exchangeCurrency}
+							fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
+						/>
+					)}
+				</span>
+			</Circle>
 
+			<Dropdown
+				onSelect={onUserAction}
+				options={userActions}
+				dropdownClass="mt-8"
+				toggleContent={(isOpen: boolean) => (
 					<div
-						className="inline-flex relative justify-center items-center align-middle rounded-full"
-						data-testid="navbar__user--avatar"
+						className="cursor-pointer relative justify-center items-center align-middle rounded-full"
+						data-testid="navbar__useractions"
 					>
-						<AvatarWrapper size="lg">
+						<AvatarWrapper size="lg" highlight={isOpen}>
 							{avatarImage?.endsWith("</svg>") ? (
 								<>
 									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
@@ -105,19 +107,10 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 								/>
 							)}
 						</AvatarWrapper>
-
-						<Badge
-							className="bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-							position="right"
-							icon="ChevronDown"
-							iconClass={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-							iconWidth={8}
-							iconHeight={5}
-						/>
 					</div>
-				</div>
-			)}
-		/>
+				)}
+			/>
+		</div>
 	);
 };
 
@@ -133,7 +126,15 @@ const LogoContainer = styled.div`
 	${tw`flex items-center justify-center w-11 h-11 my-auto mr-4 text-white rounded bg-logo`};
 `;
 
-export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
+export const NavigationBar = ({
+	title,
+	backToUrl,
+	isBackDisabled,
+	profile,
+	variant,
+	menu,
+	userActions,
+}: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -194,8 +195,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"} scroll={scroll}>
-			<div className="px-4 sm:px-6 lg:px-10">
-				<div className="flex relative justify-between h-21">
+			<div className="flex relative h-21">
+				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
+
+				<div className={`flex flex-1 px-8 ${variant !== "full" ? "ml-12" : ""}`}>
 					<div className="flex items-center my-auto">
 						<LogoContainer>
 							<ARKLogo width={44} />
@@ -250,7 +253,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 							</div>
 
-							<div className="flex items-center my-auto mr-4 ml-8">
+							<div className="flex items-center my-auto ml-8">
 								<div className="text-right">
 									<div className="text-xs font-semibold text-theme-secondary-700">
 										{t("COMMON.YOUR_BALANCE")}
