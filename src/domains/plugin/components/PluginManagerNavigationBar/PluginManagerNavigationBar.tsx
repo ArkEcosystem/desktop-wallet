@@ -30,20 +30,20 @@ export const PluginManagerNavigationBar = ({
 	installedPluginsCount,
 }: PluginManagerNavigationBar) => {
 	const { t } = useTranslation();
-	const { pluginPackages } = usePluginManagerContext();
+	const { allPlugins } = usePluginManagerContext();
 	const countsByCategory = menu.reduce(
-		(acc, curr) => ({ ...acc, [curr.name]: pluginPackages.filter((pkg) => pkg.hasCategory(curr.name)).length }),
+		(acc, curr) => ({ ...acc, [curr.name]: allPlugins.filter((pkg) => pkg.hasCategory(curr.name)).length }),
 		{},
 	);
 
 	return (
 		<NavWrapper
 			data-testid="PluginManagerNavigationBar"
-			className="sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
+			className="sticky top-21 bg-theme-secondary-100 dark:bg-black"
 		>
 			<div className="container flex justify-between items-center px-14 mx-auto">
 				<div>
-					<ul className="flex h-24">
+					<ul className="flex h-18">
 						{menu &&
 							menu.map((menuItem: any, index: number) => (
 								<li key={index} className="flex">
@@ -59,7 +59,7 @@ export const PluginManagerNavigationBar = ({
 										{
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
 												{menuItem.name === "home"
-													? pluginPackages.length
+													? allPlugins.length
 													: countsByCategory[menuItem.name]}
 											</span>
 										}
@@ -73,7 +73,7 @@ export const PluginManagerNavigationBar = ({
 					</ul>
 				</div>
 
-				<div className="flex h-24">
+				<div className="flex h-18">
 					<button
 						data-testid="PluginManagerNavigationBar__my-plugins"
 						onClick={() => onChange("my-plugins")}

@@ -9,4 +9,10 @@ describe("Section", () => {
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with custom background color", () => {
+		const { container, asFragment } = render(<Section backgroundColor="--theme-secondary-background-color" />);
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

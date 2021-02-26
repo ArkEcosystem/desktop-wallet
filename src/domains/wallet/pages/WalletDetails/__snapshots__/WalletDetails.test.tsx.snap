@@ -3,17 +3,30 @@
 exports[`WalletDetails should not fail if the votes have not yet been synchronized 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -184,7 +197,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -205,35 +218,34 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -248,71 +260,16 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D6SXKChbJsM8QPPmMi28ZwDinvfUjRM3EY
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <header
         data-testid="WalletHeader"
@@ -513,20 +470,88 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
         </div>
       </header>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
           class="container py-16 px-14 mx-auto -my-10"
         >
           <div
-            class="flex"
+            class="flex items-center w-full"
+            data-testid="WalletVote"
           >
             <div
-              class="flex items-center w-full"
-              data-testid="WalletVote"
+              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+                class="sc-bdfBwQ fdjKgV"
+                height="17"
+                width="17"
+              >
+                <svg>
+                  vote.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 ml-4"
+            >
+              <div
+                class="flex flex-col justify-between"
+              >
+                <span
+                  class="font-semibold"
+                >
+                  My Vote
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    0/1
+                  </span>
+                </span>
+                <span
+                  class="leading-none"
+                >
+                  <span
+                    class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    You have not yet voted for a delegate
+                  </span>
+                  <a
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
+                  >
+                    <span
+                      class="underline-dotted"
+                    >
+                      <span
+                        class="text-sm"
+                      >
+                        Learn more
+                      </span>
+                    </span>
+                    <div
+                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      data-testid="Link__external"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        redirect.svg
+                      </svg>
+                    </div>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
+              data-testid="WalletVote__button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
                   class="sc-bdfBwQ fdjKgV"
@@ -537,88 +562,16 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     vote.svg
                   </svg>
                 </div>
+                <span>
+                  Vote
+                </span>
               </div>
-              <div
-                class="flex flex-1 ml-4"
-              >
-                <div
-                  class="flex flex-col justify-between"
-                >
-                  <span
-                    class="font-semibold"
-                  >
-                    My Vote
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0/1
-                    </span>
-                  </span>
-                  <span
-                    class="leading-none"
-                  >
-                    <span
-                      class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      You have not yet voted for a delegate
-                    </span>
-                    <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                      data-testid="Link"
-                      rel="noopener noreferrer"
-                      to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
-                    >
-                      <span
-                        class="underline-dotted"
-                      >
-                        <span
-                          class="text-sm"
-                        >
-                          Learn more
-                        </span>
-                      </span>
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </a>
-                  </span>
-                </div>
-              </div>
-              <button
-                class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
-                data-testid="WalletVote__button"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ fdjKgV"
-                    height="17"
-                    width="17"
-                  >
-                    <svg>
-                      vote.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Vote
-                  </span>
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -858,7 +811,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
                       data-testid="TableRow"
                     >
                       <td>
@@ -1042,17 +995,30 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
 exports[`WalletDetails should open detail modal on transaction row click 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -1223,7 +1189,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1244,35 +1210,34 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -1287,71 +1252,16 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <header
         data-testid="WalletHeader"
@@ -1552,20 +1462,92 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
         </div>
       </header>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
           class="container py-16 px-14 mx-auto -my-10"
         >
           <div
-            class="flex"
+            class="flex items-center w-full"
+            data-testid="WalletVote"
           >
             <div
-              class="flex items-center w-full"
-              data-testid="WalletVote"
+              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+                class="sc-bdfBwQ fdjKgV"
+                height="17"
+                width="17"
+              >
+                <svg>
+                  vote.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 ml-4"
+            >
+              <div
+                class="flex flex-col justify-between font-semibold"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Voting for
+                </span>
+                <span>
+                  arkx
+                </span>
+              </div>
+              <div
+                class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Rank
+                </span>
+                <span>
+                  N/A
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            >
+              <span
+                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
+              >
+                Delegate Status
+              </span>
+              <div
+                class="flex justify-end items-center space-x-2"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      information-circle.svg
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="font-semibold text-theme-warning-500"
+                >
+                  Standby
+                </span>
+              </div>
+            </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
+              data-testid="WalletVote__button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
                   class="sc-bdfBwQ fdjKgV"
@@ -1576,92 +1558,16 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     vote.svg
                   </svg>
                 </div>
-              </div>
-              <div
-                class="flex flex-1 ml-4"
-              >
-                <div
-                  class="flex flex-col justify-between font-semibold"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Voting for
-                  </span>
-                  <span>
-                    arkx
-                  </span>
-                </div>
-                <div
-                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Rank
-                  </span>
-                  <span>
-                    N/A
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              >
-                <span
-                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
-                >
-                  Delegate Status
+                <span>
+                  Vote
                 </span>
-                <div
-                  class="flex justify-end items-center space-x-2"
-                >
-                  <span>
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        information-circle.svg
-                      </svg>
-                    </div>
-                  </span>
-                  <span
-                    class="font-semibold text-theme-warning-500"
-                  >
-                    Standby
-                  </span>
-                </div>
               </div>
-              <button
-                class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
-                data-testid="WalletVote__button"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ fdjKgV"
-                    height="17"
-                    width="17"
-                  >
-                    <svg>
-                      vote.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Vote
-                  </span>
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1901,7 +1807,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
                       data-testid="TableRow"
                     >
                       <td>
@@ -2085,17 +1991,30 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
 exports[`WalletDetails should remove wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -2266,7 +2185,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -2287,35 +2206,34 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -2330,71 +2248,16 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <header
         data-testid="WalletHeader"
@@ -2595,20 +2458,92 @@ exports[`WalletDetails should remove wallet name 1`] = `
         </div>
       </header>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
           class="container py-16 px-14 mx-auto -my-10"
         >
           <div
-            class="flex"
+            class="flex items-center w-full"
+            data-testid="WalletVote"
           >
             <div
-              class="flex items-center w-full"
-              data-testid="WalletVote"
+              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+                class="sc-bdfBwQ fdjKgV"
+                height="17"
+                width="17"
+              >
+                <svg>
+                  vote.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 ml-4"
+            >
+              <div
+                class="flex flex-col justify-between font-semibold"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Voting for
+                </span>
+                <span>
+                  arkx
+                </span>
+              </div>
+              <div
+                class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Rank
+                </span>
+                <span>
+                  N/A
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            >
+              <span
+                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
+              >
+                Delegate Status
+              </span>
+              <div
+                class="flex justify-end items-center space-x-2"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      information-circle.svg
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="font-semibold text-theme-warning-500"
+                >
+                  Standby
+                </span>
+              </div>
+            </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
+              data-testid="WalletVote__button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
                   class="sc-bdfBwQ fdjKgV"
@@ -2619,92 +2554,16 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     vote.svg
                   </svg>
                 </div>
-              </div>
-              <div
-                class="flex flex-1 ml-4"
-              >
-                <div
-                  class="flex flex-col justify-between font-semibold"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Voting for
-                  </span>
-                  <span>
-                    arkx
-                  </span>
-                </div>
-                <div
-                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Rank
-                  </span>
-                  <span>
-                    N/A
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              >
-                <span
-                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
-                >
-                  Delegate Status
+                <span>
+                  Vote
                 </span>
-                <div
-                  class="flex justify-end items-center space-x-2"
-                >
-                  <span>
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        information-circle.svg
-                      </svg>
-                    </div>
-                  </span>
-                  <span
-                    class="font-semibold text-theme-warning-500"
-                  >
-                    Standby
-                  </span>
-                </div>
               </div>
-              <button
-                class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
-                data-testid="WalletVote__button"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ fdjKgV"
-                    height="17"
-                    width="17"
-                  >
-                    <svg>
-                      vote.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Vote
-                  </span>
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2944,7 +2803,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
                       data-testid="TableRow"
                     >
                       <td>
@@ -3128,17 +2987,30 @@ exports[`WalletDetails should remove wallet name 1`] = `
 exports[`WalletDetails should render when wallet not found for votes 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -3309,7 +3181,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -3330,35 +3202,34 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -3373,71 +3244,16 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <header
         data-testid="WalletHeader"
@@ -3639,20 +3455,88 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         </div>
       </header>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
           class="container py-16 px-14 mx-auto -my-10"
         >
           <div
-            class="flex"
+            class="flex items-center w-full"
+            data-testid="WalletVote"
           >
             <div
-              class="flex items-center w-full"
-              data-testid="WalletVote"
+              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+                class="sc-bdfBwQ fdjKgV"
+                height="17"
+                width="17"
+              >
+                <svg>
+                  vote.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 ml-4"
+            >
+              <div
+                class="flex flex-col justify-between"
+              >
+                <span
+                  class="font-semibold"
+                >
+                  My Vote
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    0/1
+                  </span>
+                </span>
+                <span
+                  class="leading-none"
+                >
+                  <span
+                    class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    You have not yet voted for a delegate
+                  </span>
+                  <a
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    data-testid="Link"
+                    rel="noopener noreferrer"
+                    to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
+                  >
+                    <span
+                      class="underline-dotted"
+                    >
+                      <span
+                        class="text-sm"
+                      >
+                        Learn more
+                      </span>
+                    </span>
+                    <div
+                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      data-testid="Link__external"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        redirect.svg
+                      </svg>
+                    </div>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
+              data-testid="WalletVote__button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
                   class="sc-bdfBwQ fdjKgV"
@@ -3663,88 +3547,16 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     vote.svg
                   </svg>
                 </div>
+                <span>
+                  Vote
+                </span>
               </div>
-              <div
-                class="flex flex-1 ml-4"
-              >
-                <div
-                  class="flex flex-col justify-between"
-                >
-                  <span
-                    class="font-semibold"
-                  >
-                    My Vote
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0/1
-                    </span>
-                  </span>
-                  <span
-                    class="leading-none"
-                  >
-                    <span
-                      class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      You have not yet voted for a delegate
-                    </span>
-                    <a
-                      class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
-                      data-testid="Link"
-                      rel="noopener noreferrer"
-                      to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
-                    >
-                      <span
-                        class="underline-dotted"
-                      >
-                        <span
-                          class="text-sm"
-                        >
-                          Learn more
-                        </span>
-                      </span>
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </a>
-                  </span>
-                </div>
-              </div>
-              <button
-                class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
-                data-testid="WalletVote__button"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ fdjKgV"
-                    height="17"
-                    width="17"
-                  >
-                    <svg>
-                      vote.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Vote
-                  </span>
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3984,7 +3796,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
                       data-testid="TableRow"
                     >
                       <td>
@@ -4168,17 +3980,30 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
 exports[`WalletDetails should star and unstar a wallet 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -4349,7 +4174,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -4370,35 +4195,34 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -4413,71 +4237,16 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <header
         data-testid="WalletHeader"
@@ -4678,20 +4447,92 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         </div>
       </header>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
           class="container py-16 px-14 mx-auto -my-10"
         >
           <div
-            class="flex"
+            class="flex items-center w-full"
+            data-testid="WalletVote"
           >
             <div
-              class="flex items-center w-full"
-              data-testid="WalletVote"
+              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+                class="sc-bdfBwQ fdjKgV"
+                height="17"
+                width="17"
+              >
+                <svg>
+                  vote.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 ml-4"
+            >
+              <div
+                class="flex flex-col justify-between font-semibold"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Voting for
+                </span>
+                <span>
+                  arkx
+                </span>
+              </div>
+              <div
+                class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Rank
+                </span>
+                <span>
+                  N/A
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            >
+              <span
+                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
+              >
+                Delegate Status
+              </span>
+              <div
+                class="flex justify-end items-center space-x-2"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      information-circle.svg
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="font-semibold text-theme-warning-500"
+                >
+                  Standby
+                </span>
+              </div>
+            </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
+              data-testid="WalletVote__button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
                   class="sc-bdfBwQ fdjKgV"
@@ -4702,92 +4543,16 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     vote.svg
                   </svg>
                 </div>
-              </div>
-              <div
-                class="flex flex-1 ml-4"
-              >
-                <div
-                  class="flex flex-col justify-between font-semibold"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Voting for
-                  </span>
-                  <span>
-                    arkx
-                  </span>
-                </div>
-                <div
-                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Rank
-                  </span>
-                  <span>
-                    N/A
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              >
-                <span
-                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
-                >
-                  Delegate Status
+                <span>
+                  Vote
                 </span>
-                <div
-                  class="flex justify-end items-center space-x-2"
-                >
-                  <span>
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        information-circle.svg
-                      </svg>
-                    </div>
-                  </span>
-                  <span
-                    class="font-semibold text-theme-warning-500"
-                  >
-                    Standby
-                  </span>
-                </div>
               </div>
-              <button
-                class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
-                data-testid="WalletVote__button"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ fdjKgV"
-                    height="17"
-                    width="17"
-                  >
-                    <svg>
-                      vote.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Vote
-                  </span>
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -5027,7 +4792,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
                       data-testid="TableRow"
                     >
                       <td>
@@ -5211,17 +4976,30 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
 exports[`WalletDetails should update wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -5392,7 +5170,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -5413,35 +5191,34 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -5456,71 +5233,16 @@ exports[`WalletDetails should update wallet name 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Sample label name
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
+      class="flex flex-col flex-1"
     >
       <header
         data-testid="WalletHeader"
@@ -5727,20 +5449,92 @@ exports[`WalletDetails should update wallet name 1`] = `
         </div>
       </header>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
       >
         <div
           class="container py-16 px-14 mx-auto -my-10"
         >
           <div
-            class="flex"
+            class="flex items-center w-full"
+            data-testid="WalletVote"
           >
             <div
-              class="flex items-center w-full"
-              data-testid="WalletVote"
+              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+                class="sc-bdfBwQ fdjKgV"
+                height="17"
+                width="17"
+              >
+                <svg>
+                  vote.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 ml-4"
+            >
+              <div
+                class="flex flex-col justify-between font-semibold"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Voting for
+                </span>
+                <span>
+                  arkx
+                </span>
+              </div>
+              <div
+                class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
+              >
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Rank
+                </span>
+                <span>
+                  N/A
+                </span>
+              </div>
+            </div>
+            <div
+              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            >
+              <span
+                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
+              >
+                Delegate Status
+              </span>
+              <div
+                class="flex justify-end items-center space-x-2"
+              >
+                <span>
+                  <div
+                    class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      information-circle.svg
+                    </svg>
+                  </div>
+                </span>
+                <span
+                  class="font-semibold text-theme-warning-500"
+                >
+                  Standby
+                </span>
+              </div>
+            </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
+              data-testid="WalletVote__button"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
                   class="sc-bdfBwQ fdjKgV"
@@ -5751,92 +5545,16 @@ exports[`WalletDetails should update wallet name 1`] = `
                     vote.svg
                   </svg>
                 </div>
-              </div>
-              <div
-                class="flex flex-1 ml-4"
-              >
-                <div
-                  class="flex flex-col justify-between font-semibold"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Voting for
-                  </span>
-                  <span>
-                    arkx
-                  </span>
-                </div>
-                <div
-                  class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
-                >
-                  <span
-                    class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    Rank
-                  </span>
-                  <span>
-                    N/A
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              >
-                <span
-                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
-                >
-                  Delegate Status
+                <span>
+                  Vote
                 </span>
-                <div
-                  class="flex justify-end items-center space-x-2"
-                >
-                  <span>
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        information-circle.svg
-                      </svg>
-                    </div>
-                  </span>
-                  <span
-                    class="font-semibold text-theme-warning-500"
-                  >
-                    Standby
-                  </span>
-                </div>
               </div>
-              <button
-                class="Button__StyledButton-mdtvtf-0 iUSBMV space-x-2"
-                data-testid="WalletVote__button"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ fdjKgV"
-                    height="17"
-                    width="17"
-                  >
-                    <svg>
-                      vote.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Vote
-                  </span>
-                </div>
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -6076,7 +5794,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
                       data-testid="TableRow"
                     >
                       <td>

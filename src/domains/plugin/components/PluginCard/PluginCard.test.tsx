@@ -42,6 +42,23 @@ describe("PluginCard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should trigger update", async () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		const onUpdate = jest.fn();
+
+		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onUpdate={onUpdate} />);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(await findByText(commonTranslations.UPDATE));
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger delete", async () => {
 		const plugin = {
 			...basePlugin,
@@ -89,18 +106,6 @@ describe("PluginCard", () => {
 		fireEvent.click(await findByText(commonTranslations.DISABLE));
 
 		expect(onDisable).toHaveBeenCalledTimes(1);
-	});
-
-	it("should render custom logo", () => {
-		const plugin = {
-			...basePlugin,
-			logo: "https://ark.io/logo",
-		};
-
-		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} />);
-
-		expect(getByTestId("PluginCard__logo")).toBeInTheDocument();
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render official icon", () => {

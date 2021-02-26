@@ -111,6 +111,7 @@ describe("InstallPlugin", () => {
 		await waitFor(() => expect(getByTestId("InstallPlugin__step--second")).toBeInTheDocument());
 
 		expect(invokeSpy).toHaveBeenLastCalledWith("plugin:download", {
+			name: "remote-plugin",
 			url: "https://github.com/my-plugin/archive/master.zip",
 		});
 

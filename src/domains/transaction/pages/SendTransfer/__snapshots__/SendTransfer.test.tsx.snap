@@ -3,17 +3,30 @@
 exports[`SendTransfer should display disabled address selection input if selected cryptoasset has not available wallets 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -184,7 +197,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -205,35 +218,34 @@ exports[`SendTransfer should display disabled address selection input if selecte
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -248,74 +260,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -902,17 +859,30 @@ exports[`SendTransfer should display disabled address selection input if selecte
 exports[`SendTransfer should error if wrong mnemonic 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -1083,7 +1053,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1104,35 +1074,34 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -1147,93 +1116,19 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1843,17 +1738,30 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
 exports[`SendTransfer should render form and use location state 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -2024,7 +1932,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -2045,35 +1953,34 @@ exports[`SendTransfer should render form and use location state 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -2088,93 +1995,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2752,17 +2585,30 @@ exports[`SendTransfer should render form and use location state 1`] = `
 exports[`SendTransfer should render form and use location state without memo 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -2933,7 +2779,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -2954,35 +2800,34 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -2997,93 +2842,19 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -5482,17 +5253,30 @@ exports[`SendTransfer should render summary step 1`] = `
 exports[`SendTransfer should render transfer form without selected wallet 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -5663,7 +5447,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -5684,35 +5468,34 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -5727,74 +5510,19 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -6274,17 +6002,30 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
 exports[`SendTransfer should select a cryptoasset and select sender without wallet id param 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -6455,7 +6196,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -6476,35 +6217,34 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -6519,74 +6259,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -7191,17 +6876,30 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
 exports[`SendTransfer should select cryptoasset first and see select address input clickable 1`] = `
 <DocumentFragment>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -7372,7 +7070,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -7393,35 +7091,34 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -7436,74 +7133,19 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -8090,17 +7732,30 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
 exports[`SendTransfer should send a single transfer 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -8271,7 +7926,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -8292,35 +7947,34 @@ exports[`SendTransfer should send a single transfer 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -8335,93 +7989,19 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -8778,17 +8358,30 @@ exports[`SendTransfer should send a single transfer 2`] = `<div />`;
 exports[`SendTransfer should send a single transfer and show unconfirmed transactions modal 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -8959,7 +8552,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -8980,35 +8573,34 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -9023,93 +8615,19 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -9466,17 +8984,30 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
 exports[`SendTransfer should send a single transfer with a high fee by confirming the fee warning 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -9647,7 +9178,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -9668,35 +9199,34 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -9711,93 +9241,19 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -10154,17 +9610,30 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
 exports[`SendTransfer should send a single transfer with a low fee by confirming the fee warning 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -10335,7 +9804,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -10356,35 +9825,34 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -10399,93 +9867,19 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -10842,17 +10236,30 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
 exports[`SendTransfer should show error step and go back 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -11023,7 +10430,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -11044,35 +10451,34 @@ exports[`SendTransfer should show error step and go back 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -11087,93 +10493,19 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          class="text-theme-secondary-500 hover:underline"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-        >
-          <span>
-            Portfolio
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
-        >
-          <span>
-            ARK Wallet 1
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Send
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "

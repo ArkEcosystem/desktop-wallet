@@ -74,16 +74,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: t("CONTACTS.CONTACTS_PAGE.TITLE"),
-		},
-	];
-
 	const listColumns = [
 		{
 			Header: t("COMMON.NAME"),
@@ -119,7 +109,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	return (
 		<>
-			<Page profile={activeProfile} crumbs={crumbs}>
+			<Page profile={activeProfile}>
 				<Section>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}

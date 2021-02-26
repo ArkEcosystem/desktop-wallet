@@ -1,14 +1,17 @@
 import tw, { css } from "twin.macro";
 import { Position, Size } from "types";
 
-const baseStyle = [
-	css`
-		& {
-			box-shadow: 0 0 0 5px var(--theme-background-color);
-		}
-	`,
-	tw`absolute transform`,
-];
+const baseStyle = (size?: Size) => {
+	const shadowSize = size === "sm" ? "3px" : "5px";
+	return [
+		css`
+			& {
+				box-shadow: 0 0 0 ${shadowSize} var(--theme-background-color);
+			}
+		`,
+		tw`absolute transform`,
+	];
+};
 
 const shape = "flex border-2 rounded-full justify-center items-center align-middle";
 const colors = "bg-theme-background border-transparent";
@@ -41,13 +44,15 @@ const getSize = (size?: Size) => {
 	switch (size) {
 		case "lg":
 			return tw`w-6 h-6`;
+		case "sm":
+			return tw`w-2 h-2`;
 		default:
 			return tw`w-5 h-5`;
 	}
 };
 
 export const getStyles = ({ position, size }: { position?: Position; size?: Size }) => [
-	...baseStyle,
+	...baseStyle(size),
 	getPosition(position),
 	getSize(size),
 ];

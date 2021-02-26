@@ -70,20 +70,9 @@ export const Settings = () => {
 		);
 	};
 
-	const crumbs = [
-		{
-			label: t("SETTINGS.TITLE"),
-			route: `/profiles/${activeProfile.id()}/settings`,
-		},
-		{
-			label: settingsItems.find((item) => item.itemKey === activeSettings)!.label,
-		},
-	];
-
 	return (
 		<Page
 			profile={activeProfile}
-			crumbs={crumbs}
 			sidebar={<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />}
 		>
 			<Section>{renderSettings()}</Section>
