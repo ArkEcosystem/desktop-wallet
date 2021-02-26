@@ -119,6 +119,13 @@ exports[`Settings should change a password 1`] = `
                             notification.svg
                           </svg>
                         </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -1976,7 +1983,7 @@ exports[`Settings should render 1`] = `
                           </svg>
                         </div>
                         <span>
-                          Reset Data
+                          Reset Settings
                         </span>
                       </div>
                     </button>
@@ -2135,6 +2142,13 @@ exports[`Settings should render password settings 1`] = `
                           <svg>
                             notification.svg
                           </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
                         </div>
                       </div>
                     </button>
@@ -2681,6 +2695,13 @@ exports[`Settings should render peer settings 1`] = `
                           <svg>
                             notification.svg
                           </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
                         </div>
                       </div>
                     </button>
@@ -3248,6 +3269,13 @@ exports[`Settings should render plugin settings 1`] = `
                             notification.svg
                           </svg>
                         </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
                       </div>
                     </button>
                   </div>
@@ -3641,12 +3669,12 @@ exports[`Settings should render plugin settings 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-1755-menu"
+                                  aria-owns="downshift-1753-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-1754-input"
-                                    id="downshift-1755-label"
+                                    for="downshift-1752-input"
+                                    id="downshift-1753-label"
                                   />
                                   <div
                                     class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -3654,21 +3682,21 @@ exports[`Settings should render plugin settings 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-1755-menu"
-                                      aria-labelledby="downshift-1755-label"
+                                      aria-controls="downshift-1753-menu"
+                                      aria-labelledby="downshift-1753-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-1754-input"
+                                      id="downshift-1752-input"
                                       name="load-plugins"
                                       placeholder="Select Plugin Source"
                                       value=""
                                     />
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-1755-label"
+                                    aria-labelledby="downshift-1753-label"
                                     class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                    id="downshift-1755-menu"
+                                    id="downshift-1753-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -3840,6 +3868,13 @@ exports[`Settings should set a password 1`] = `
                           <svg>
                             notification.svg
                           </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
                         </div>
                       </div>
                     </button>
@@ -4431,6 +4466,13 @@ exports[`Settings should show an error toast if the current password does not ma
                           <svg>
                             notification.svg
                           </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
                         </div>
                       </div>
                     </button>
@@ -6291,7 +6333,7 @@ exports[`Settings should update profile 1`] = `
                           </svg>
                         </div>
                         <span>
-                          Reset Data
+                          Reset Settings
                         </span>
                       </div>
                     </button>
