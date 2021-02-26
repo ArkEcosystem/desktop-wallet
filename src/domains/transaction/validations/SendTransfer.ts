@@ -46,7 +46,6 @@ export const sendTransfer = (t: any, env: Environment) => ({
 
 				const coin: Coins.Coin = await env.coin(network?.coin(), network?.id());
 				const isValidAddress: boolean = await coin.identity().address().validate(address);
-
 				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
 			},
 		},
