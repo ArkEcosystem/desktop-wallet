@@ -366,7 +366,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				<div className="flex justify-between pt-2 w-full">
 					<Button onClick={() => setIsResetProfileOpen(true)} variant="danger">
 						<Icon name="Reset" />
-						<span>{t("COMMON.RESET_DATA")}</span>
+						<span>{t("COMMON.RESET_SETTINGS")}</span>
 					</Button>
 
 					<div className="space-x-3">

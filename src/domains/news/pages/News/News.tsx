@@ -89,7 +89,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	};
 
 	return (
-		<Page profile={activeProfile}>
+		<Page profile={activeProfile} isBackDisabled={true}>
 			<Section>
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}
@@ -104,61 +104,59 @@ export const News = ({ itemsPerPage }: Props) => {
 				/>
 			</Section>
 
-			<div className="bg-theme-secondary-background">
-				<Section hasBackground={false}>
-					<div className="container flex space-x-8">
-						<div className="flex-none w-4/6">
-							{!isLoading && news.length === 0 && (
-								<EmptyResults
-									className="rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-									title={t("COMMON.EMPTY_RESULTS.TITLE")}
-									subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-								/>
-							)}
-
-							{isLoading && (
-								<div className="space-y-6">
-									{skeletonCards.map((_, key: number) => (
-										<NewsCardSkeleton key={key} />
-									))}
-								</div>
-							)}
-
-							{!isLoading && (
-								<div className="space-y-6">
-									{news?.map((data, index) => (
-										<NewsCard key={index} {...data} />
-									))}
-								</div>
-							)}
-
-							{!isLoading && news.length > 0 && (
-								<>
-									<div className="my-10">
-										<BlockfolioAd />
-									</div>
-
-									<div className="flex justify-center w-full">
-										<Pagination
-											totalCount={totalCount}
-											itemsPerPage={itemsPerPage}
-											onSelectPage={handleSelectPage}
-											currentPage={currentPage}
-										/>
-									</div>
-								</>
-							)}
-						</div>
-						<div className="flex-none w-2/6">
-							<NewsOptions
-								selectedCategories={categories}
-								selectedCoins={coins}
-								onSubmit={handleFilterSubmit}
+			<Section backgroundColor="--theme-secondary-background-color">
+				<div className="container flex space-x-8">
+					<div className="flex-none w-4/6">
+						{!isLoading && news.length === 0 && (
+							<EmptyResults
+								className="rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+								title={t("COMMON.EMPTY_RESULTS.TITLE")}
+								subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
 							/>
-						</div>
+						)}
+
+						{isLoading && (
+							<div className="space-y-6">
+								{skeletonCards.map((_, key: number) => (
+									<NewsCardSkeleton key={key} />
+								))}
+							</div>
+						)}
+
+						{!isLoading && (
+							<div className="space-y-6">
+								{news?.map((data, index) => (
+									<NewsCard key={index} {...data} />
+								))}
+							</div>
+						)}
+
+						{!isLoading && news.length > 0 && (
+							<>
+								<div className="my-10">
+									<BlockfolioAd />
+								</div>
+
+								<div className="flex justify-center w-full">
+									<Pagination
+										totalCount={totalCount}
+										itemsPerPage={itemsPerPage}
+										onSelectPage={handleSelectPage}
+										currentPage={currentPage}
+									/>
+								</div>
+							</>
+						)}
 					</div>
-				</Section>
-			</div>
+					<div className="flex-none w-2/6">
+						<NewsOptions
+							selectedCategories={categories}
+							selectedCoins={coins}
+							onSubmit={handleFilterSubmit}
+						/>
+					</div>
+				</div>
+			</Section>
 		</Page>
 	);
 };

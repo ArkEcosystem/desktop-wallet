@@ -267,7 +267,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	return (
 		<>
-			<Page profile={activeProfile}>
+			<Page profile={activeProfile} isBackDisabled={true}>
 				<Section>
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
@@ -307,7 +307,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					installedPluginsCount={installedPlugins.length}
 				/>
 
-				<Section marginTop={false}>
+				<Section>
 					<div data-testid={`PluginManager__container--${currentView}`}>
 						<div className="flex justify-between items-center" />
 
