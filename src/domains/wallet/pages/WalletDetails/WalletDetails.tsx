@@ -94,16 +94,8 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 				/>
 
 				{showWalletVote && (
-					<Section innerClassName="-my-10">
-						<div className="flex">
-							{showWalletVote && (
-								<WalletVote
-									wallet={activeWallet}
-									onButtonClick={handleVoteButton}
-									isLoading={isLoading}
-								/>
-							)}
-						</div>
+					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-10">
+						<WalletVote wallet={activeWallet} onButtonClick={handleVoteButton} isLoading={isLoading} />
 					</Section>
 				)}
 

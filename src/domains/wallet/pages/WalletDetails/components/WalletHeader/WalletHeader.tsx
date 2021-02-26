@@ -151,6 +151,8 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			{
 				icon: "Trash",
 				iconPosition: "start",
+				iconWidth: 18,
+				iconHeight: 18,
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"),
 				value: "delete-wallet",
 			},

@@ -14,7 +14,7 @@ const getHoverStyles = (isSelected?: boolean): any =>
 		&:hover td > div {
 			${isSelected
 				? tw`bg-theme-success-100 dark:bg-theme-success-900`
-				: tw`bg-theme-secondary-100 dark:bg-theme-secondary-800`}
+				: tw`bg-theme-secondary-100 dark:bg-black`}
 		}
 	`;
 
