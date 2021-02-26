@@ -34,9 +34,7 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 		<TableRow
 			isSelected={isSelected}
 			onClick={() => onClick?.(wallet.id())}
-			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
-			}
+			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
 			<TableCell variant="start" innerClassName="space-x-4">
