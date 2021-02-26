@@ -195,20 +195,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 			),
 			wrapperClass: "py-6",
 		},
-		{
-			label: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
-			labelDescription: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION"),
-			labelAddon: (
-				<Toggle
-					ref={register()}
-					name="isUpdateLedger"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.LedgerUpdateMethod)}
-					data-testid="General-settings__toggle--isUpdateLedger"
-				/>
-			),
-			wrapperClass: "pt-6",
-		},
 	];
 
 	const handleSubmit = async ({
@@ -222,7 +208,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		isScreenshotProtection,
 		isAdvancedMode,
 		isDarkMode,
-		isUpdateLedger,
 		useTestNetworks,
 		errorReporting,
 	}: any) => {
@@ -236,7 +221,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
 		activeProfile.settings().set(ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
 		activeProfile.settings().set(ProfileSetting.ErrorReporting, errorReporting);
 
