@@ -44,7 +44,9 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		const isInvalidValue = isInvalid || fieldContext?.isInvalid;
 
 		useEffect(() => {
-			setSelectedAddress(address);
+			if (address) {
+				setSelectedAddress(address);
+			}
 		}, [address]);
 
 		const { allAddresses } = useProfileAddresses({ profile, network });
