@@ -68,7 +68,7 @@ export const AddRecipient = ({
 }: AddRecipientProps) => {
 	const { t } = useTranslation();
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>([]);
-	const [isSingle, setIsSingle] = useState(recipients ? recipients.length <= 1 : false);
+	const [isSingle, setIsSingle] = useState(recipients!.length < 2);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 	const isMountedRef = useRef(false);
 
