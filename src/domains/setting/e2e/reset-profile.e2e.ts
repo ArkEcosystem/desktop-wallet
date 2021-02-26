@@ -12,7 +12,7 @@ test("should reset profile", async (t) => {
 	const name = await Selector("input[name=name]").value;
 	const automaticSignOutPeriod = await Selector("input[name=automaticSignOutPeriod]").value;
 
-	await t.click(Selector("button").withText(translations.COMMON.RESET_DATA));
+	await t.click(Selector("button").withText(translations.COMMON.RESET_SETTINGS));
 
 	// TODO: uncomment when rerender is implemented
 	// await t.expect(Selector("input[name=name]").value).eql(name);

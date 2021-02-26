@@ -102,7 +102,7 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 
 	return (
 		<>
-			<Page profile={activeProfile} data-testid="Exchange">
+			<Page profile={activeProfile} isBackDisabled={true} data-testid="Exchange">
 				<Section>
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 

@@ -10,10 +10,24 @@ exports[`Exchange should not render filler exchange cards 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -185,7 +199,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -206,35 +220,34 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -249,23 +262,9 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -275,7 +274,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -511,7 +510,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -542,10 +541,24 @@ exports[`Exchange should open & close add exchange modal 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -717,7 +730,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -738,35 +751,34 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -781,23 +793,9 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -807,7 +805,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1043,7 +1041,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1074,10 +1072,24 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -1249,7 +1261,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1270,35 +1282,34 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -1313,23 +1324,9 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1339,7 +1336,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1409,7 +1406,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1430,10 +1427,24 @@ exports[`Exchange should render 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -1605,7 +1616,7 @@ exports[`Exchange should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1626,35 +1637,34 @@ exports[`Exchange should render 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -1669,23 +1679,9 @@ exports[`Exchange should render 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1695,7 +1691,7 @@ exports[`Exchange should render 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1765,7 +1761,7 @@ exports[`Exchange should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -1786,10 +1782,24 @@ exports[`Exchange should render filler exchange cards 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -1961,7 +1971,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1982,35 +1992,34 @@ exports[`Exchange should render filler exchange cards 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -2025,23 +2034,9 @@ exports[`Exchange should render filler exchange cards 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2051,7 +2046,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2408,7 +2403,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2439,10 +2434,24 @@ exports[`Exchange should render with exchanges 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -2614,7 +2623,7 @@ exports[`Exchange should render with exchanges 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -2635,35 +2644,34 @@ exports[`Exchange should render with exchanges 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -2678,23 +2686,9 @@ exports[`Exchange should render with exchanges 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2704,7 +2698,7 @@ exports[`Exchange should render with exchanges 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2940,7 +2934,7 @@ exports[`Exchange should render with exchanges 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -2971,10 +2965,24 @@ exports[`Exchange should select exchange 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+          disabled=""
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -3146,7 +3154,7 @@ exports[`Exchange should select exchange 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -3167,35 +3175,34 @@ exports[`Exchange should select exchange 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -3210,23 +3217,9 @@ exports[`Exchange should select exchange 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -3236,7 +3229,7 @@ exports[`Exchange should select exchange 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
       >
         <div
           class="container py-16 px-14 mx-auto "
@@ -3472,7 +3465,7 @@ exports[`Exchange should select exchange 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 gFwrwb flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto "

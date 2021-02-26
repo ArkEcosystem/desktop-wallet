@@ -10,8 +10,8 @@ describe("Section", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with margin top", () => {
-		const { container, asFragment } = render(<Section marginTop />);
+	it("should render with custom background color", () => {
+		const { container, asFragment } = render(<Section backgroundColor="--theme-secondary-background-color" />);
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
