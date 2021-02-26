@@ -181,7 +181,15 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, allPlugins, isFetchingPackages, trigger, updatingStats } = usePluginManagerContext();
+	const {
+		fetchPluginPackages,
+		allPlugins,
+		isFetchingPackages,
+		trigger,
+		updatingStats,
+		filters,
+		filterBy,
+	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -263,8 +271,6 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		setUninstallSelectedPlugin(undefined);
 		trigger();
 	};
-
-	console.log({ currentView });
 
 	return (
 		<>
