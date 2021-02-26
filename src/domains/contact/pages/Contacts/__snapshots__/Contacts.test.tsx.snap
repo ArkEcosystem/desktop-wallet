@@ -10,10 +10,23 @@ exports[`Contacts with contacts should render with contacts 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -1017,10 +1030,23 @@ exports[`Contacts without contacts should render empty 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-21"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"

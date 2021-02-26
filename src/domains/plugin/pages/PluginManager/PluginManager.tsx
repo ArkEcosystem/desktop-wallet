@@ -267,7 +267,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	return (
 		<>
-			<Page profile={activeProfile}>
+			<Page profile={activeProfile} isBackDisabled={true}>
 				<Section>
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
