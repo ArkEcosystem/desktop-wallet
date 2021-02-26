@@ -184,7 +184,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -205,35 +205,34 @@ exports[`SendTransfer should display disabled address selection input if selecte
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -248,23 +247,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1042,7 +1027,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1063,35 +1048,34 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -1106,23 +1090,9 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1923,7 +1893,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -1944,35 +1914,34 @@ exports[`SendTransfer should render form and use location state 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -1987,23 +1956,9 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2772,7 +2727,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -2793,35 +2748,34 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -2836,23 +2790,9 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -5442,7 +5382,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -5463,35 +5403,34 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -5506,23 +5445,9 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -6193,7 +6118,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -6214,35 +6139,34 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -6257,23 +6181,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -7069,7 +6979,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -7090,35 +7000,34 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -7133,23 +7042,9 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -7927,7 +7822,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -7948,35 +7843,34 @@ exports[`SendTransfer should send a single transfer 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -7991,23 +7885,9 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -8555,7 +8435,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -8576,35 +8456,34 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -8619,23 +8498,9 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -9183,7 +9048,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -9204,35 +9069,34 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -9247,23 +9111,9 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -9811,7 +9661,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -9832,35 +9682,34 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -9875,23 +9724,9 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -10439,7 +10274,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -10460,35 +10295,34 @@ exports[`SendTransfer should show error step and go back 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -10503,23 +10337,9 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 hrjoVz flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
