@@ -102,7 +102,7 @@ yarn build:mac
 yarn build:linux
 
 # Build electron application for production (Windows - x32 and x64)
-yarn build:wind
+yarn build:win
 
 # Run the default test switch in default watch mode
 yarn test
