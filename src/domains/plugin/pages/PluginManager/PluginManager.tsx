@@ -1,5 +1,6 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
+import { chunk } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
@@ -265,6 +266,18 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		trigger();
 	};
 
+	const handleUpdateAll = async () => {
+		const availablePackages = allPlugins
+			.map(mapConfigToPluginData.bind(null, activeProfile))
+			.filter((pluginData) => pluginData.hasUpdateAvailable);
+
+		const entries = chunk(availablePackages, 2);
+
+		for (const packages of entries) {
+			await Promise.allSettled(packages.map((packageData) => updatePlugin(packageData.name)));
+		}
+	};
+
 	return (
 		<>
 			<Page profile={activeProfile} isBackDisabled={true}>
@@ -359,7 +372,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									<EmptyBlock size="sm" className="mt-4">
 										<div className="flex items-center w-full justify-between">
 											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-											<Button data-testid="PluginManager__update-all">
+											<Button data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
 												{t("PLUGINS.UPDATE_ALL")}
 											</Button>
 										</div>

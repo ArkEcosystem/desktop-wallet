@@ -76,7 +76,7 @@ export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
 export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.profiles)[0].wallets)[0];
 export const getDefaultWalletMnemonic = () => "master dizzy era math peanut crew run manage better flame tree prevent";
 
-const pluginNames: string[] = ["@dated/transaction-export-plugin"];
+const pluginNames: string[] = ["@dated/transaction-export-plugin", "@dated/delegate-calculator-plugin"];
 
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();
