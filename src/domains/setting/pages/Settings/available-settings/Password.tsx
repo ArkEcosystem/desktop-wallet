@@ -19,10 +19,9 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 	const { t } = useTranslation();
 
 	const { formState, register, reset, trigger, watch } = formConfig.context;
-	const { confirmPassword } = watch();
+	const { confirmPassword, password } = watch();
 
 	const handleSubmit = async ({ currentPassword, password }: any) => {
-		console.log("uses password", usesPassword, currentPassword, password);
 		try {
 			if (usesPassword) {
 				activeProfile.auth().changePassword(currentPassword, password);
@@ -86,7 +85,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				<FormField name="confirmPassword">
 					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_2")} />
 					<InputPassword
-						ref={register(settings.confirmPassword(watch("password")))}
+						ref={register(settings.confirmPassword(password))}
 						data-testid={`Password-settings__input--password_2`}
 					/>
 				</FormField>
