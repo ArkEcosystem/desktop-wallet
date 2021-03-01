@@ -33,7 +33,7 @@ export const BlankExchangeCard = () => {
 	);
 };
 
-export const ExchangeCard = ({ exchange, actions, onClick, onSelect }: ExchangeCardProps) => {
+export const ExchangeCard = ({ actions, exchange, onClick, onSelect }: ExchangeCardProps) => {
 	if (exchange === undefined) {
 		return <BlankExchangeCard />;
 	}
@@ -51,7 +51,7 @@ export const ExchangeCard = ({ exchange, actions, onClick, onSelect }: ExchangeC
 					</span>
 
 					<div className="text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200">
-						{exchange.name}
+						{exchange.title}
 					</div>
 				</div>
 			</div>

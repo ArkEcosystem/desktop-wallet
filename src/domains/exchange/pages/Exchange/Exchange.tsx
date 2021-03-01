@@ -1,10 +1,13 @@
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { AddExchange } from "domains/exchange/components/AddExchange";
+import { usePluginManagerContext } from "plugins";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { ExchangeGrid } from "../../components/ExchangeGrid";
 
@@ -24,28 +27,28 @@ const ExchangeHeaderExtra = ({ onAddExchange }: { onAddExchange: any }) => {
 	);
 };
 
-// export const Exchange = ({ exchanges }: ExchangeProps) => {
 export const Exchange = () => {
 	const activeProfile = useActiveProfile();
+	const history = useHistory();
 
-	const [modalIsOpen, setModalIsOpen] = useState(false);
-	const [selectedExchange, setSelectedExchange] = useState(null);
+	const [addExchangeIsOpen, setAddExchangeIsOpen] = useState(false);
+
+	const { pluginManager, mapConfigToPluginData } = usePluginManagerContext();
+	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
-	// @TODO replace test data with profile data
-	const exchanges = [
-		{
-			id: "changenow-plugin",
-			name: "ChangeNOW Plugin",
-			logo: "https://raw.githubusercontent.com/ChangeNow-io/ARKPlugin/master/logo.png",
-		},
-		{
-			id: "binance",
-			name: "Coinbase Pro",
-			author: "Coinbase",
-		},
-	];
+	const handleLaunchExchange = (exchange: any) => {
+		history.push(`/profiles/${activeProfile.id()}/exchange/view?pluginId=${exchange.id}`);
+	};
+
+	const installedPlugins = pluginManager
+		.plugins()
+		.all()
+		.map((item) => item.config())
+		.map(mapConfigToPluginData.bind(null, activeProfile));
+
+	const exchanges = installedPlugins.filter((plugin) => plugin.category === "exchange" && plugin.isEnabled);
 
 	if (!exchanges.length || exchanges.length < 3) {
 		exchanges.push(...new Array(3 - exchanges.length).fill(undefined));
@@ -58,16 +61,16 @@ export const Exchange = () => {
 					<Header
 						title={t("EXCHANGE.PAGE_EXCHANGES.TITLE")}
 						subtitle={t("EXCHANGE.PAGE_EXCHANGES.SUBTITLE")}
-						extra={<ExchangeHeaderExtra onAddExchange={() => setModalIsOpen(true)} />}
+						extra={<ExchangeHeaderExtra onAddExchange={() => setAddExchangeIsOpen(true)} />}
 					/>
 				</Section>
 
 				<Section>
-					<ExchangeGrid exchanges={exchanges} />
+					<ExchangeGrid exchanges={exchanges} onLaunch={handleLaunchExchange} />
 				</Section>
 			</Page>
 
-			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+			<AddExchange isOpen={addExchangeIsOpen} onClose={() => setAddExchangeIsOpen(false)} />
 		</>
 	);
 };

@@ -5,9 +5,10 @@ import { ExchangeCard } from "../ExchangeCard";
 
 type ExchangeGridProps = {
 	exchanges: any[];
+	onLaunch: any;
 };
 
-export const ExchangeGrid = ({ exchanges }: ExchangeGridProps) => {
+export const ExchangeGrid = ({ exchanges, onLaunch }: ExchangeGridProps) => {
 	const { t } = useTranslation();
 
 	const actions = [
@@ -19,7 +20,7 @@ export const ExchangeGrid = ({ exchanges }: ExchangeGridProps) => {
 	const handleExchangeAction = (exchange: any, action: any) => {
 		switch (action?.value) {
 			case "launch":
-				// @TODO report exchange
+				onLaunch(exchange);
 				break;
 			case "report":
 				// @TODO report exchange
@@ -37,7 +38,7 @@ export const ExchangeGrid = ({ exchanges }: ExchangeGridProps) => {
 					key={exchange?.id || `blank_${index}`}
 					actions={actions}
 					exchange={exchange}
-					onClick={() => handleExchangeAction(exchange, "launch")}
+					onClick={() => onLaunch(exchange)}
 					onSelect={(action: any) => handleExchangeAction(exchange, action)}
 				/>
 			))}
