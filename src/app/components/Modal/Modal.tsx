@@ -95,7 +95,7 @@ const ModalContent = (props: ModalContentProps) => {
 
 						<div className="absolute bottom-0 left-0 mb-10 ml-10">
 							<h2
-								className={`text-5xl font-extrabold leading-tight m-0 ${
+								className={`text-4xl font-extrabold leading-tight m-0 ${
 									props.titleClass || "text-theme-text"
 								}`}
 							>
