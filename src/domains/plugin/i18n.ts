@@ -1,4 +1,6 @@
 export const translations: { [key: string]: any } = {
+	REQUIRED_VERSION: "Required Version",
+
 	NEW_VERSION_AVAILABLE: "New version available",
 	UPDATE_ALL_NOTICE: "There are {{count}} updates available for your plugins. Would you like to update them all now?",
 	UPDATE_ALL: "Update All",
@@ -43,6 +45,10 @@ export const translations: { [key: string]: any } = {
 		WALLET_TABS: "Allows showing an additional tab/page on the Wallet screen",
 		WEBFRAME: "Allows showing remote URL pages within a frame",
 		WEBSOCKET: "Allows connections to websockets",
+	},
+
+	MODAL_UPDATES_CONFIRMATION: {
+		TITLE: "Plugin Updates",
 	},
 
 	MODAL_BEST_PLUGINS: {
