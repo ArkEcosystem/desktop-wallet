@@ -22,7 +22,7 @@ export const useProfileExport = (profile: Profile) => {
 					return false;
 				}
 
-				if (filters.excludeEmptyWallets && wallet.balance().isGreaterThan(0)) {
+				if (filters.excludeEmptyWallets && wallet.balance().isZero()) {
 					return false;
 				}
 
