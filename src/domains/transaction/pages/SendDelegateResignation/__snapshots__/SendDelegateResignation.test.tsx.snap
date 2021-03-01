@@ -311,9 +311,11 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Delegate Resignation
@@ -853,9 +855,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Delegate Resignation
@@ -1394,9 +1398,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Review
@@ -1947,9 +1953,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -3147,9 +3155,11 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -3636,9 +3646,11 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                       <div
                         class="flex justify-between items-end bg-theme-background"
                       >
-                        <div>
+                        <div
+                          class="space-y-4"
+                        >
                           <h1
-                            class="mb-0 md:text-4xl"
+                            class="mb-0 text-4xl"
                             data-testid="header__title"
                           >
                             Transaction Sent
