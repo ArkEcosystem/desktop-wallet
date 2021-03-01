@@ -37,7 +37,7 @@ export const Section = ({ children, backgroundColor, border, className, innerCla
 	<SectionWrapper
 		backgroundColor={backgroundColor}
 		border={border}
-		className={`${border ? "hasBorder" : ""} ${className ? className : ""}`}
+		className={`${border ? "hasBorder" : ""} ${className || ""}`}
 	>
 		<div className={`container px-10 mx-auto ${innerClassName || ""}`}>{children}</div>
 	</SectionWrapper>
