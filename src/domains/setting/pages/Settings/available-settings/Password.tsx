@@ -3,7 +3,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useValidation } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,19 +14,20 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 	const { env } = useEnvironmentContext();
 
 	const usesPassword = activeProfile.usesPassword();
+	const { settings } = useValidation();
 
 	const { t } = useTranslation();
 
-	const minLength = 6;
-
 	const { formState, register, reset, trigger, watch } = formConfig.context;
+	const { confirmPassword } = watch();
 
-	const handleSubmit = async ({ currentPassword, password_1 }: any) => {
+	const handleSubmit = async ({ currentPassword, password }: any) => {
+		console.log("uses password", usesPassword, currentPassword, password);
 		try {
 			if (usesPassword) {
-				activeProfile.auth().changePassword(currentPassword, password_1);
+				activeProfile.auth().changePassword(currentPassword, password);
 			} else {
-				activeProfile.auth().setPassword(password_1);
+				activeProfile.auth().setPassword(password);
 			}
 		} catch (error) {
 			return onError(t("SETTINGS.PASSWORD.ERROR.MISMATCH"));
@@ -69,42 +70,26 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 					</FormField>
 				)}
 
-				{[1, 2].map((password: number) => {
-					const otherPassword = `password_${password === 1 ? 2 : 1}`;
+				<FormField name="password">
+					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_1")} />
+					<InputPassword
+						ref={register(settings.password())}
+						onChange={() => {
+							if (confirmPassword) {
+								trigger("confirmPassword");
+							}
+						}}
+						data-testid={`Password-settings__input--password_1`}
+					/>
+				</FormField>
 
-					const validatePasswords = (password: string) =>
-						password === watch(otherPassword) ||
-						t("COMMON.VALIDATION.SUBJECT_MISMATCH", {
-							subject: t("COMMON.PASSWORDS"),
-						}).toString();
-
-					return (
-						<FormField key={`password_${password}`} name={`password_${password}`}>
-							<FormLabel label={t(`SETTINGS.PASSWORD.PASSWORD_${password}`)} />
-							<InputPassword
-								onChange={() => {
-									if (watch(otherPassword).length) {
-										trigger(otherPassword);
-									}
-								}}
-								ref={register({
-									required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-										field: t(`SETTINGS.PASSWORD.PASSWORD_${password}`),
-									}).toString(),
-									minLength: {
-										value: minLength,
-										message: t("COMMON.VALIDATION.MIN_LENGTH", {
-											field: t(`SETTINGS.PASSWORD.PASSWORD_${password}`),
-											minLength,
-										}),
-									},
-									validate: validatePasswords,
-								})}
-								data-testid={`Password-settings__input--password_${password}`}
-							/>
-						</FormField>
-					);
-				})}
+				<FormField name="confirmPassword">
+					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_2")} />
+					<InputPassword
+						ref={register(settings.confirmPassword(watch("password")))}
+						data-testid={`Password-settings__input--password_2`}
+					/>
+				</FormField>
 
 				<div className="flex justify-end mt-8 w-full">
 					<Button data-testid="Password-settings__submit-button" disabled={!formState.isValid} type="submit">
