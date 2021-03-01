@@ -44,7 +44,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		const isInvalidValue = isInvalid || fieldContext?.isInvalid;
 
 		useEffect(() => {
-			if (address) {
+			if (address !== undefined) {
 				setSelectedAddress(address);
 			}
 		}, [address, setSelectedAddress]);
@@ -85,6 +85,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						inputClassName={cn("pl-16", { "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
 						isInvalid={isInvalidValue}
 						disabled={disabled}
+						value={selectedAddress}
 						defaultValue={selectedAddress}
 						ref={ref}
 						options={recipientAddresses}
