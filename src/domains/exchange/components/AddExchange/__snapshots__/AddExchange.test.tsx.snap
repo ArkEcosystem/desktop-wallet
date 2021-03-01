@@ -137,7 +137,7 @@ exports[`AddExchange should render a modal 1`] = `
                         class="flex flex-inline align-top  "
                       >
                         <div>
-                          Category
+                          Version
                         </div>
                         <div
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -160,36 +160,6 @@ exports[`AddExchange should render a modal 1`] = `
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top  "
-                      >
-                        <div>
-                          Version
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
                     >
                       <div
                         class="flex flex-inline align-top hidden "
@@ -209,7 +179,7 @@ exports[`AddExchange should render a modal 1`] = `
                     data-testid="TableRow"
                   >
                     <td
-                      class="w-18"
+                      class="w-16"
                     >
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
@@ -246,15 +216,6 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
                         <span>
-                          Other
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
                           v 1.3.8
                         </span>
                       </div>
@@ -283,7 +244,7 @@ exports[`AddExchange should render a modal 1`] = `
                     data-testid="TableRow"
                   >
                     <td
-                      class="w-18"
+                      class="w-16"
                     >
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
@@ -320,15 +281,6 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
                         <span>
-                          Other
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
                           v 1.3.8
                         </span>
                       </div>
@@ -357,7 +309,7 @@ exports[`AddExchange should render a modal 1`] = `
                     data-testid="TableRow"
                   >
                     <td
-                      class="w-18"
+                      class="w-16"
                     >
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
@@ -394,15 +346,6 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
                         <span>
-                          Other
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
                           v 1.3.8
                         </span>
                       </div>
@@ -431,7 +374,7 @@ exports[`AddExchange should render a modal 1`] = `
                     data-testid="TableRow"
                   >
                     <td
-                      class="w-18"
+                      class="w-16"
                     >
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
@@ -461,15 +404,6 @@ exports[`AddExchange should render a modal 1`] = `
                             ARK Ecosystem
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Other
-                        </span>
                       </div>
                     </td>
                     <td>

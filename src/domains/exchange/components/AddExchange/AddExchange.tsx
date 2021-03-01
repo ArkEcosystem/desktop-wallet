@@ -55,10 +55,6 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			accessor: "name",
 		},
 		{
-			Header: t("COMMON.CATEGORY"),
-			accessor: "category",
-		},
-		{
 			Header: t("COMMON.VERSION"),
 			accessor: "version",
 		},
@@ -82,7 +78,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<TableRow>
-							<TableCell variant="start" className="w-18">
+							<TableCell variant="start" className="w-16">
 								<div className="w-12 h-12">
 									<Image name="ChangeNowLogo" domain="exchange" />
 								</div>
@@ -95,10 +91,6 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 									</div>
 									<div>{rowData.description}</div>
 								</div>
-							</TableCell>
-
-							<TableCell>
-								<span>{rowData.category}</span>
 							</TableCell>
 
 							<TableCell>
