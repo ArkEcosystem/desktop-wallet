@@ -195,7 +195,7 @@ export const requestMocks = {
 		),
 		mockRequest(
 			"https://raw.github.com/dated/delegate-calculator-plugin/master/package.json",
-			"plugins/registry/delegate-calculator-plugin",
+			"plugins/registry/@dated/delegate-calculator-plugin",
 		),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
