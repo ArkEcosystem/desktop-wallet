@@ -10,6 +10,8 @@ import { defaultClasses, getStyles } from "./Dropdown.styles";
 export type DropdownOption = {
 	icon?: string;
 	iconPosition?: "start" | "end";
+	iconWidth?: number;
+	iconHeight?: number;
 	label: string;
 	secondaryLabel?: string;
 	value: string | number;
@@ -45,12 +47,12 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 		<div key={key} className="mt-4 first:mt-0">
 			{hasDivider && (
 				<div className="mx-8 -my-2">
-					<Divider dashed />
+					<Divider className="border-theme-secondary-300 dark:border-theme-secondary-600" />
 				</div>
 			)}
 			<ul>
 				{title && (
-					<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500">
+					<li className="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-600">
 						{title}
 					</li>
 				)}
@@ -70,11 +72,20 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 		);
 	}
 
+	const renderIcon = ({ icon, iconWidth, iconHeight }: DropdownOption) => (
+		<Icon
+			name={icon!}
+			className="dark:text-theme-secondary-600 dark:group-hover:text-theme-secondary-200"
+			width={iconWidth}
+			height={iconHeight}
+		/>
+	);
+
 	return (
 		<ul data-testid="dropdown__options">
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<li
-					className="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+					className="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => {
@@ -83,16 +94,16 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 						e.stopPropagation();
 					}}
 				>
-					<div className={`${option?.icon ? "inline-flex space-x-2 items-center" : ""}`}>
-						{option?.icon && option?.iconPosition === "start" && <Icon name={option.icon} />}
-						<span>
-							{option.label}
-							{option.secondaryLabel && (
-								<span className="ml-1 text-theme-secondary-text">{option.secondaryLabel}</span>
-							)}
-						</span>
-						{option?.icon && option?.iconPosition !== "start" && <Icon name={option.icon} />}
-					</div>
+					{option?.icon && option?.iconPosition === "start" && renderIcon(option)}
+					<span>
+						{option.label}
+						{option.secondaryLabel && (
+							<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-600">
+								{option.secondaryLabel}
+							</span>
+						)}
+					</span>
+					{option?.icon && option?.iconPosition !== "start" && renderIcon(option)}
 				</li>
 			))}
 		</ul>

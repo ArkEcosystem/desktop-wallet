@@ -22,7 +22,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 	const { persist } = useEnvironmentContext();
 
 	const handleReset = async () => {
-		profile.flush();
+		profile.initializeSettings();
 
 		await persist();
 
@@ -34,7 +34,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 	return (
 		<Modal
 			title={t("PROFILE.MODAL_RESET_PROFILE.TITLE")}
-			image={<Image name="DeleteBanner" className="w-3/5 m-auto my-8" />}
+			image={<Image name="ResetSettingsWarning" domain="profile" className="w-3/5 m-auto my-8" />}
 			description={t("PROFILE.MODAL_RESET_PROFILE.DESCRIPTION")}
 			size="lg"
 			isOpen={isOpen}
@@ -45,9 +45,9 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button type="submit" onClick={handleReset} data-testid="ResetProfile__submit-button">
+				<Button type="submit" onClick={handleReset} data-testid="ResetProfile__submit-button" variant="danger">
 					<Icon name="Reset" />
-					<span>{t("COMMON.RESET_DATA")}</span>
+					<span>{t("COMMON.RESET")}</span>
 				</Button>
 			</div>
 		</Modal>

@@ -76,9 +76,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 	return (
 		<TableRow
-			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
-			}
+			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
 			<TableCell variant="start" innerClassName="space-x-4">

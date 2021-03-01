@@ -321,7 +321,7 @@ describe("Settings", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByText(translations.COMMON.RESET_DATA));
+			fireEvent.click(getByText(translations.COMMON.RESET_SETTINGS));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();
@@ -356,7 +356,7 @@ describe("Settings", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByText(translations.COMMON.RESET_DATA));
+			fireEvent.click(getByText(translations.COMMON.RESET_SETTINGS));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();

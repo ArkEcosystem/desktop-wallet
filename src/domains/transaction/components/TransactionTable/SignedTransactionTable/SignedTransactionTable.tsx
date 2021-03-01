@@ -135,9 +135,7 @@ const Row = ({
 
 	return (
 		<TableRow
-			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
-			}
+			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
 			onMouseLeave={() => setShadowColor("")}
 			onClick={() => onRowClick?.(transaction)}
 		>
