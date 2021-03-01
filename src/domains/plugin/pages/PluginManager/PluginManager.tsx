@@ -196,6 +196,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
+	const [isUpdatingAll, setIsUpdatingAll] = useState(false);
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 	const hasUpdateAvailableCount = allPlugins
@@ -267,6 +268,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	};
 
 	const handleUpdateAll = async () => {
+		setIsUpdatingAll(true);
 		const availablePackages = allPlugins
 			.map(mapConfigToPluginData.bind(null, activeProfile))
 			.filter((pluginData) => pluginData.hasUpdateAvailable);
@@ -276,6 +278,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		for (const packages of entries) {
 			await Promise.allSettled(packages.map((packageData) => updatePlugin(packageData.name)));
 		}
+		setIsUpdatingAll(false);
 	};
 
 	return (
@@ -372,8 +375,12 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									<EmptyBlock size="sm" className="mt-4">
 										<div className="flex items-center w-full justify-between">
 											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-											<Button data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
-												{t("PLUGINS.UPDATE_ALL")}
+											<Button
+												disabled={isUpdatingAll}
+												data-testid="PluginManager__update-all"
+												onClick={handleUpdateAll}
+											>
+												{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
 											</Button>
 										</div>
 									</EmptyBlock>
