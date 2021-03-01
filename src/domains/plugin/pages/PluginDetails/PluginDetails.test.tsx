@@ -1,4 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { ipcRenderer } from "electron";
 import nock from "nock";
 import {
@@ -215,6 +216,82 @@ describe("PluginDetails", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/plugins/view`);
 		expect(history.location.search).toEqual(`?pluginId=${plugin.config().id()}`);
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should enable package from header", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+
+		await waitFor(() => expect(plugin.isEnabled(profile)).toBe(true));
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should disable package from header", async () => {
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			() => void 0,
+		);
+
+		manager.plugins().push(plugin);
+		plugin.enable(profile, { autoRun: true });
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+
+		await waitFor(() => expect(plugin.isEnabled(profile)).toBe(false));
+		manager.plugins().removeById(plugin.config().id(), profile);
 	});
 
 	it("should remove package", async () => {
@@ -246,8 +323,8 @@ describe("PluginDetails", () => {
 
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
-		fireEvent.click(screen.getByTestId("PluginHeader__button--uninstall"));
-		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--0"));
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
 		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
@@ -287,8 +364,8 @@ describe("PluginDetails", () => {
 
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
-		fireEvent.click(screen.getByTestId("PluginHeader__button--uninstall"));
-		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")));
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByTestId("dropdown__option--0"));
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
 		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));
@@ -354,6 +431,7 @@ describe("PluginDetails", () => {
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "remote-plugin",
 				url: "https://github.com/arkecosystem/remote-plugin/archive/master.zip",
 			}),
 		);
@@ -408,5 +486,65 @@ describe("PluginDetails", () => {
 		const toastSpy = jest.spyOn(toasts, "error");
 
 		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+	});
+
+	it("should update package", async () => {
+		jest.useFakeTimers();
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockRejectedValue("Failed");
+
+		const plugin = new PluginController(
+			{
+				name: "@dated/transaction-export-plugin",
+				version: "1.0.0",
+				"desktop-wallet": { minimumVersion: "4.0.0" },
+			},
+			() => void 0,
+		);
+		manager.plugins().push(plugin);
+
+		nock("https://registry.npmjs.com")
+			.get("/-/v1/search")
+			.query((params) => params.from === "0")
+			.once()
+			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+			.get("/-/v1/search")
+			.query((params) => params.from === "250")
+			.once()
+			.reply(200, {})
+			.persist();
+
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.persist();
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=@dated/transaction-export-plugin`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+
+		await waitFor(() => expect(screen.getByText(commonTranslations.UPDATE)).toBeInTheDocument());
+		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
+
+		await waitFor(() => expect(ipcRendererSpy).toHaveBeenCalled());
+
+		expect(container).toMatchSnapshot();
+		jest.useRealTimers();
 	});
 });

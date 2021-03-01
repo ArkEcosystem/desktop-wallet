@@ -89,7 +89,7 @@ export class PluginControllerRepository {
 	}
 
 	fill(instances: PluginRawInstance[]) {
-		const plugins: PluginController[] = [];
+		const plugins: Record<string, PluginController> = {};
 
 		for (const entry of instances) {
 			try {
@@ -105,13 +105,22 @@ export class PluginControllerRepository {
 
 				plugin.config().validate();
 
-				plugins.push(plugin);
+				plugins[plugin.config().id()] = plugin;
 			} catch (e) {
 				console.error(`Failed to parse the plugin from "${entry.dir}".`, e.message);
 			}
 		}
 
-		this.#plugins.push(...plugins);
+		for (const [pluginId, plugin] of Object.entries(plugins)) {
+			const currentIndex = this.#plugins.findIndex((item) => item.config().id() === pluginId);
+			// Update existing plugin configuration
+			if (currentIndex >= 0) {
+				this.#plugins[currentIndex] = plugin;
+				delete plugins[pluginId];
+			}
+		}
+
+		this.#plugins.push(...Object.values(plugins));
 	}
 
 	// Helpers

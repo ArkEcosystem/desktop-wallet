@@ -51,9 +51,7 @@ describe("TransactionCompactRow", () => {
 		fireEvent.mouseEnter(getByTestId("TableRow"));
 		fireEvent.mouseLeave(getByTestId("TableRow"));
 
-		expect(setState).toHaveBeenCalledWith(
-			theme === "dark" ? "--theme-color-secondary-800" : "--theme-color-secondary-100",
-		);
+		expect(setState).toHaveBeenCalledWith(theme === "dark" ? "--theme-black" : "--theme-color-secondary-100");
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });

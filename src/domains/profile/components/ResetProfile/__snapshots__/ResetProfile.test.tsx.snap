@@ -42,7 +42,7 @@ exports[`ResetProfile should render 1`] = `
         <h2
           class="mb-0 text-3xl font-bold"
         >
-          Reset Profile Data
+          Reset Profile Settings
         </h2>
         <div
           class="flex-1"
@@ -50,12 +50,12 @@ exports[`ResetProfile should render 1`] = `
           <svg
             class="w-3/5 m-auto my-8"
           >
-            delete-banner.svg
+            reset-settings-warning.svg
           </svg>
           <div
             class="mt-1 text-theme-secondary-text"
           >
-            Do you really want to reset this profile? Once reset, you will not be able to restore it.
+            By performing this action, all of your Profile settings will be restored to default. This action won't delete your wallets or plugins. Do you want to reset settings? This action cannot be undone.
           </div>
           <div
             class="flex justify-end mt-8 space-x-3"
@@ -72,7 +72,7 @@ exports[`ResetProfile should render 1`] = `
               </div>
             </button>
             <button
-              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+              class="Button__StyledButton-mdtvtf-0 hrpPWq"
               data-testid="ResetProfile__submit-button"
               type="submit"
             >
@@ -89,7 +89,7 @@ exports[`ResetProfile should render 1`] = `
                   </svg>
                 </div>
                 <span>
-                  Reset Data
+                  Reset
                 </span>
               </div>
             </button>

@@ -54,6 +54,36 @@ describe("PluginListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should trigger update", () => {
+		const plugin = {
+			id: "ark-explorer",
+			title: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		const onUpdate = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onUpdate={onUpdate} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(getByTestId("dropdown__option--0"));
+
+		expect(getByTestId("PluginListItem__update-badge")).toBeInTheDocument();
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger delete", () => {
 		const plugin = {
 			id: "ark-explorer",
@@ -106,6 +136,31 @@ describe("PluginListItem", () => {
 		fireEvent.click(getByTestId("dropdown__option--1"));
 
 		expect(onEnable).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger click", () => {
+		const plugin = {
+			id: "ark-explorer",
+			title: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+		};
+
+		const onClick = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onClick={onClick} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("PluginListItem__link"));
+
+		expect(onClick).toHaveBeenCalledTimes(1);
 	});
 
 	it("should trigger disable", () => {
@@ -164,7 +219,7 @@ describe("PluginListItem", () => {
 		expect(onLaunch).toHaveBeenCalledTimes(1);
 	});
 
-	it("should render custom logo", () => {
+	it("should render minimum version warning", () => {
 		const plugin = {
 			id: "ark-explorer",
 			name: "ARK Explorer",
@@ -173,21 +228,19 @@ describe("PluginListItem", () => {
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: true,
-			isEnabled: true,
-			logo: "https://ark.io/logo",
+			hasUpdateAvailable: true,
+			isMinimumVersionSatisfied: false,
 		};
-
-		const onLaunch = jest.fn();
 
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<PluginListItem plugin={plugin} onLaunch={onLaunch} />
+					<PluginListItem plugin={plugin} />
 				</tbody>
 			</table>,
 		);
 
-		expect(getByTestId("PluginListItem__logo")).toBeInTheDocument();
+		expect(getByTestId("PluginListItem__minimum-version-warning")).toBeInTheDocument();
 	});
 
 	it("should render official icon", () => {
