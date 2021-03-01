@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Use Ledger Scanner should abort scanner 1`] = `
+<div>
+  <div>
+    <p>
+      Idle
+    </p>
+    <button
+      data-testid="scan"
+    >
+      Scan
+    </button>
+    <button
+      data-testid="abort"
+    >
+      Abort
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Use Ledger Scanner should dispatch failed 1`] = `
 <div>
   <div>
