@@ -20,6 +20,7 @@ export const translations: { [key: string]: any } = {
 	BACK_TO_WALLET: "Back to Wallet",
 	BACKGROUND: "Background",
 	REPEAT: "Repeat",
+	REPORT: "Report",
 	BALANCE: "Balance",
 	BEST: "Best",
 	BIP39_LANGUAGE: "Passphrase Language (BIP39)",
@@ -62,6 +63,7 @@ export const translations: { [key: string]: any } = {
 	ERRORS: {
 		INVALID_URL: "The link could not be opened: '{{url}}' is not a valid URL",
 	},
+	EXCHANGE: "Exchange",
 	EXPLORER: "Explorer",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reason: {{reason}}",
