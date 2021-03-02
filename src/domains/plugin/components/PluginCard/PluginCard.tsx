@@ -1,4 +1,5 @@
 import { Card } from "app/components/Card";
+import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -30,7 +31,11 @@ export const PluginCard = ({
 
 	const actions = useMemo(() => {
 		if (plugin.isInstalled) {
-			const result = [{ label: t("COMMON.DELETE"), value: "delete" }];
+			const result: DropdownOption[] = [];
+
+			if (plugin.hasLaunch) {
+				result.push({ label: t("COMMON.LAUNCH"), value: "launch" });
+			}
 
 			if (plugin.hasUpdateAvailable) {
 				result.push({
@@ -45,9 +50,7 @@ export const PluginCard = ({
 				result.push({ label: t("COMMON.ENABLE"), value: "enable" });
 			}
 
-			if (plugin.hasLaunch) {
-				result.push({ label: t("COMMON.LAUNCH"), value: "launch" });
-			}
+			result.push({ label: t("COMMON.DELETE"), value: "delete" });
 
 			return result;
 		}

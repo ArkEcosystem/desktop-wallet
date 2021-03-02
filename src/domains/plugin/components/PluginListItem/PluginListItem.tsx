@@ -1,10 +1,10 @@
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
@@ -39,6 +39,24 @@ export const PluginListItem = ({
 	const handleInstall = () => {
 		onInstall?.(plugin);
 	};
+
+	const actions = useMemo(() => {
+		const result: DropdownOption[] = [];
+
+		if (plugin.hasUpdateAvailable) {
+			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+		}
+
+		if (plugin.isEnabled) {
+			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
+		} else {
+			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+		}
+
+		result.push({ label: t("COMMON.DELETE"), value: "delete" });
+
+		return result;
+	}, [t, plugin]);
 
 	return (
 		<TableRow>
@@ -163,17 +181,7 @@ export const PluginListItem = ({
 									</Button>
 								</div>
 							}
-							options={[
-								plugin.hasUpdateAvailable && {
-									label: t("COMMON.UPDATE"),
-									value: "update",
-								},
-								{ label: t("COMMON.DELETE"), value: "delete" },
-								{
-									label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
-									value: plugin.isEnabled ? "disable" : "enable",
-								},
-							].filter(Boolean)}
+							options={actions}
 							onSelect={(option: any) => {
 								if (option.value === "delete") {
 									onDelete?.(plugin);

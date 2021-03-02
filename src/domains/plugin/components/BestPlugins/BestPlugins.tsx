@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
@@ -13,8 +12,6 @@ type BestPluginsProps = {
 	plugins: any;
 	onClose?: any;
 };
-
-const { BestPluginsBanner } = images.plugin.common;
 
 export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 	const { t } = useTranslation();
@@ -55,7 +52,6 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 		<Modal
 			title={t("PLUGINS.MODAL_BEST_PLUGINS.TITLE")}
 			description={t("PLUGINS.MODAL_BEST_PLUGINS.DESCRIPTION")}
-			banner={<BestPluginsBanner className="h-full" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
@@ -65,7 +61,7 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 					{(rowData: any) => (
 						<TableRow>
 							<TableCell className="w-16">
-								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
+								<Image name="ChangeNowLogo" className="w-12 h-12" />
 							</TableCell>
 
 							<TableCell>

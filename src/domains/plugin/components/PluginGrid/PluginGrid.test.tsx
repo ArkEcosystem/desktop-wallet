@@ -1,3 +1,4 @@
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { fireEvent, render, screen } from "utils/testing-library";
 
@@ -158,7 +159,7 @@ describe("PluginGrid", () => {
 		);
 
 		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
 
 		expect(onUpdate).toHaveBeenCalledTimes(1);
 	});
@@ -169,7 +170,7 @@ describe("PluginGrid", () => {
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onDelete={onDelete} />);
 
 		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[1]);
-		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+		fireEvent.click(screen.getByText(commonTranslations.DELETE));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
 	});
@@ -180,7 +181,7 @@ describe("PluginGrid", () => {
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onEnable={onEnable} />);
 
 		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[1]);
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.ENABLE));
 
 		expect(onEnable).toHaveBeenCalledTimes(1);
 	});
@@ -191,7 +192,7 @@ describe("PluginGrid", () => {
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onDisable={onDisable} />);
 
 		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[2]);
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.DISABLE));
 
 		expect(onDisable).toHaveBeenCalledTimes(1);
 	});
@@ -202,7 +203,7 @@ describe("PluginGrid", () => {
 		render(<PluginGrid plugins={plugins} onSelect={jest.fn()} onInstall={onInstall} />);
 
 		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
-		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+		fireEvent.click(screen.getByText(commonTranslations.INSTALL));
 
 		expect(onInstall).toHaveBeenCalledTimes(1);
 	});
@@ -219,7 +220,7 @@ describe("PluginGrid", () => {
 		);
 
 		fireEvent.click(screen.queryAllByTestId("dropdown__toggle")[0]);
-		fireEvent.click(screen.getByTestId("dropdown__option--2"));
+		fireEvent.click(screen.getByText(commonTranslations.LAUNCH));
 
 		expect(onLaunch).toHaveBeenCalledTimes(1);
 	});

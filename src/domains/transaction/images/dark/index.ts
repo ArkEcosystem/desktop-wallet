@@ -1,7 +1,9 @@
 import { ReactComponent as ConfirmTransactionLedgerBannerDark } from "./confirm-transaction-ledger-banner.svg";
-import { ReactComponent as TransactionSuccessfulBannerDark } from "./transaction-successful.svg";
+import { ReactComponent as TransactionErrorBannerDark } from "./transaction-error-banner.svg";
+import { ReactComponent as TransactionSuccessBannerDark } from "./transaction-success-banner.svg";
 
 export const ImagesDark = {
 	ConfirmTransactionLedgerBannerDark,
-	TransactionSuccessfulBannerDark,
+	TransactionErrorBannerDark,
+	TransactionSuccessBannerDark,
 };

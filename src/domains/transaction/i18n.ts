@@ -364,15 +364,15 @@ export const translations: { [key: string]: any } = {
 			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
 	},
 
+	ERROR: {
+		TITLE: "Transaction Error",
+		DESCRIPTION:
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
+	},
+
 	VALIDATION: {
 		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
 		FEE_BELOW_MINIMUM: "The selected fee is below the minimum  ({{min}} {{ coinId }}) and may not be forged",
 		FEE_ABOVE_MAXIMUM: "The selected fee is above the maximum ({{max}} {{ coinId }})",
-	},
-
-	ERROR: {
-		TITLE: "Transaction Error",
-		SUBTITLE:
-			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
 	},
 };
