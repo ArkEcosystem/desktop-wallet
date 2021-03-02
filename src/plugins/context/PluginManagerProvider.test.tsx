@@ -433,4 +433,103 @@ describe("PluginManagerProvider", () => {
 		onSpy.mockRestore();
 		jest.useRealTimers();
 	});
+
+	it("should filter packages", async () => {
+		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, allPlugins, filterBy } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					{allPlugins.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ query: "test" });
+							}}
+							data-testid="QueryByText"
+						/>
+					)}
+
+					<ul>
+						{allPlugins.map((pkg) => (
+							<li key={pkg.name()}>{pkg.name()}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByRole("button"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+
+		fireEvent.click(screen.getByTestId("QueryByText"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should reset filters", async () => {
+		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		manager.plugins().push(plugin);
+
+		const Component = () => {
+			const { fetchPluginPackages, pluginPackages, filterBy, resetFilters } = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Click</button>
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								filterBy({ query: "Transaction export" });
+							}}
+							data-testid="QueryByText"
+						/>
+					)}
+
+					{pluginPackages.length > 0 && (
+						<div
+							onClick={() => {
+								resetFilters();
+							}}
+							data-testid="ResetFilters"
+						/>
+					)}
+					<ul>
+						{pluginPackages.map((pkg) => (
+							<li key={pkg.name()}>{pkg.name()}</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByRole("button"));
+
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		fireEvent.click(screen.getByTestId("QueryByText"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		fireEvent.click(screen.getByTestId("ResetFilters"));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
 });

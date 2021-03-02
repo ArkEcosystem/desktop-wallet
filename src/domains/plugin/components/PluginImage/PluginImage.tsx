@@ -62,7 +62,7 @@ export const PluginImage = ({
 			data-testid="PluginImage__logo"
 			src={logoURL}
 			alt="Logo"
-			className={cs("overflow-hidden rounded", className)}
+			className={cs("overflow-hidden rounded-lg", className)}
 		/>
 	);
 };

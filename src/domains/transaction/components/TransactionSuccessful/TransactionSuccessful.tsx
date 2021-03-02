@@ -23,7 +23,7 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 		<section data-testid="TransactionSuccessful" className="space-y-8">
 			<Header title={t("TRANSACTION.SUCCESS.TITLE")} />
 
-			<Image name="TransactionSuccessfulBanner" domain="transaction" className="w-full" />
+			<Image name="TransactionSuccessBanner" domain="transaction" className="w-full" />
 
 			<p className="text-theme-secondary-text">{t("TRANSACTION.SUCCESS.DESCRIPTION")}</p>
 
