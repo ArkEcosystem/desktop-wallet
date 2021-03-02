@@ -97,9 +97,6 @@ describe("Settings", () => {
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
 
-		// Toggle Update Ledger in Background
-		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
-
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
 		});
@@ -351,10 +348,8 @@ describe("Settings", () => {
 		expect(container).toBeTruthy();
 
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
-		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).toBeChecked());
-		await waitFor(() => expect(getByTestId("General-settings__toggle--isUpdateLedger")).toBeChecked());
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
@@ -373,7 +368,6 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).not.toBeChecked());
-		await waitFor(() => expect(getByTestId("General-settings__toggle--isUpdateLedger")).not.toBeChecked());
 	});
 
 	it("should render peer settings", async () => {
