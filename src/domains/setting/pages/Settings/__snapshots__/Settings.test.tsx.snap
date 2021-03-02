@@ -1923,55 +1923,6 @@ exports[`Settings should render 1`] = `
                           </div>
                         </div>
                       </li>
-                      <li
-                        class="flex flex-col w-full pt-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Update Ledger in Background
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isUpdateLedger"
-                                    name="isUpdateLedger"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows Ledger wallets to automatically update and sync data in the background.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
                     </ul>
                   </div>
                   <div
@@ -6906,56 +6857,6 @@ exports[`Settings should update profile 1`] = `
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, changes to a dark, high contrast theme.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="flex flex-col w-full pt-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Update Ledger in Background
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    checked=""
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isUpdateLedger"
-                                    name="isUpdateLedger"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows Ledger wallets to automatically update and sync data in the background.
                             </span>
                           </div>
                         </div>
