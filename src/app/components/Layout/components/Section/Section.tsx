@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
@@ -34,11 +35,7 @@ const SectionWrapper = styled.div<{ backgroundColor?: string; border?: boolean }
 `;
 
 export const Section = ({ children, backgroundColor, border, className, innerClassName }: SectionProps) => (
-	<SectionWrapper
-		backgroundColor={backgroundColor}
-		border={border}
-		className={`${border ? "hasBorder" : ""} ${className || ""}`}
-	>
-		<div className={`container px-10 mx-auto ${innerClassName || ""}`}>{children}</div>
+	<SectionWrapper backgroundColor={backgroundColor} border={border} className={cn(className, { hasBorder: border })}>
+		<div className={cn("container px-10 mx-auto", innerClassName)}>{children}</div>
 	</SectionWrapper>
 );
