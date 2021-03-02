@@ -474,7 +474,7 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
@@ -526,13 +526,13 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
 
 		fireEvent.click(screen.getByTestId("ResetFilters"));
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});
