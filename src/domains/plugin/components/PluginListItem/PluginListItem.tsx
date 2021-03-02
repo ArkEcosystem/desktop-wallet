@@ -60,40 +60,41 @@ export const PluginListItem = ({
 
 	return (
 		<TableRow>
-			<TableCell variant="start" className="w-20">
+			<TableCell variant="start" innerClassName="space-x-5">
 				<PluginImage
 					logoURL={plugin.logo}
-					className="w-14 h-14"
+					className="min-w-15 w-15 h-15"
 					isUpdating={isUpdating}
 					updatingProgress={updatingProgress}
 				/>
-			</TableCell>
 
-			<TableCell innerClassName="space-x-2">
-				<Button
-					data-testid="PluginListItem__link"
-					variant="transparent"
-					onClick={() => onClick?.(plugin)}
-					className="font-semibold link important:px-0 flex items-center"
-				>
-					{plugin.title}
-				</Button>
-
-				{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
-				{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
-
-				{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
-					<Tooltip
-						content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", { minimumVersion: plugin.minimumVersion })}
+				<div className="flex items-center space-x-2 text-left">
+					<span
+						data-testid="PluginListItem__link"
+						onClick={() => onClick?.(plugin)}
+						className="font-semibold link flex items-center space-x-2"
 					>
-						<span data-testid="PluginListItem__minimum-version-warning" className="ml-3 text-xl">
-							<Icon name="AlertWarning" className="text-theme-warning-500" />
-						</span>
-					</Tooltip>
-				)}
+						{plugin.title}
+					</span>
+
+					{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
+					{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
+
+					{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
+						<Tooltip
+							content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
+								minimumVersion: plugin.minimumVersion,
+							})}
+						>
+							<span data-testid="PluginListItem__minimum-version-warning" className="ml-3 text-xl">
+								<Icon name="AlertWarning" className="text-theme-warning-500" />
+							</span>
+						</Tooltip>
+					)}
+				</div>
 			</TableCell>
 
-			<TableCell innerClassName="pr-16">
+			<TableCell>
 				<span>{plugin.author}</span>
 			</TableCell>
 
