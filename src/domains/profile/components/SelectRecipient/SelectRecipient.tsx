@@ -49,7 +49,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			}
 
 			setSelectedAddress(address);
-		}, [address, setSelectedAddress]);
+		}, [address, setSelectedAddress]); // eslint-disable-line react-hooks/exhaustive-deps
 
 		const { allAddresses } = useProfileAddresses({ profile, network });
 		const recipientAddresses = allAddresses.map(({ address }) => ({
