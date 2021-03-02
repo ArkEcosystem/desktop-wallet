@@ -16,6 +16,7 @@ import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
+import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -192,6 +193,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [currentView, setCurrentView] = useState("home");
 	const [viewType, setViewType] = useState("grid");
 
+	const [updatesConfirmationPlugins, setUpdatesConfirmationPlugins] = useState<any[] | undefined>(undefined);
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
@@ -263,6 +265,14 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const onDeletePlugin = () => {
 		setUninstallSelectedPlugin(undefined);
 		trigger();
+	};
+
+	const onUpdateAll = () => {
+		const notSatisfiedPlugins = allPlugins
+			.map(mapConfigToPluginData.bind(null, activeProfile))
+			.filter((item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied);
+
+		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
 
 	return (
@@ -359,7 +369,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									<EmptyBlock size="sm" className="mt-4">
 										<div className="flex items-center w-full justify-between">
 											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-											<Button data-testid="PluginManager__update-all">
+											<Button data-testid="PluginManager__update-all" onClick={onUpdateAll}>
 												{t("PLUGINS.UPDATE_ALL")}
 											</Button>
 										</div>
@@ -429,6 +439,13 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				isOpen={isManualInstallModalOpen}
 				onClose={() => setIsManualInstallModalOpen(false)}
 				onSuccess={handleManualInstall}
+			/>
+
+			<PluginUpdatesConfirmation
+				isOpen={!!updatesConfirmationPlugins}
+				plugins={updatesConfirmationPlugins!}
+				onClose={() => setUpdatesConfirmationPlugins(undefined)}
+				onContinue={() => setUpdatesConfirmationPlugins(undefined)}
 			/>
 
 			{uninstallSelectedPlugin && (

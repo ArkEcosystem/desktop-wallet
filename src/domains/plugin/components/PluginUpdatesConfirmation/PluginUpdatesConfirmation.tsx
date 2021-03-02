@@ -26,34 +26,41 @@ export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue
 		{
 			Header: t("PLUGINS.REQUIRED_VERSION"),
 			accessor: "minimumVersion",
+			className: "justify-end",
 		},
 	];
 
 	return (
 		<Modal
 			title={t("PLUGINS.MODAL_UPDATES_CONFIRMATION.TITLE")}
-			image={<Image name="DeleteBanner" className="w-3/5 m-auto my-8" />}
-			size="lg"
+			image={<Image name="ResetSettingsWarning" className="w-3/5 m-auto my-8" />}
+			description={t("PLUGINS.MODAL_UPDATES_CONFIRMATION.DESCRIPTION")}
+			size="xl"
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<div data-testid="PluginUpdatesConfirmation">
+			<div data-testid="PluginUpdatesConfirmation" className="mt-5">
 				<Table data={plugins} columns={columns}>
 					{(pluginData: any) => (
 						<TableRow>
-							<TableCell innerClassName="space-x-2">
+							<TableCell variant="start" innerClassName="space-x-4" style={{ width: "70%" }}>
 								<PluginImage logoURL={pluginData.logo} className="w-14 h-14" />
 
-								<span className="font-semibold link important:px-0 flex items-center">
-									{pluginData.title}
-								</span>
+								<div className="flex items-center space-x-2">
+									<span
+										data-testid="PluginUpdates__title"
+										className="font-semibold link important:px-0 flex items-center"
+									>
+										{pluginData.title}
+									</span>
 
-								{pluginData.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
-								{pluginData.isGrant && <Icon name="Grant" width={14} height={20} />}
+									{pluginData.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
+									{pluginData.isGrant && <Icon name="Grant" width={14} height={20} />}
+								</div>
 							</TableCell>
 
-							<TableCell>
-								<span>{pluginData.minimumVersion}</span>
+							<TableCell variant="end" innerClassName="justify-end">
+								<span data-testid="PluginUpdates__minimum-version">{pluginData.minimumVersion}</span>
 							</TableCell>
 						</TableRow>
 					)}

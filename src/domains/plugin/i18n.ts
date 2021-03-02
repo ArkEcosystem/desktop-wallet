@@ -49,6 +49,8 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_UPDATES_CONFIRMATION: {
 		TITLE: "Plugin Updates",
+		DESCRIPTION:
+			"Some of the plugins cannot be updated as they require a newer version of the Desktop Wallet. Pressing Continue will update plugins that can be updated.",
 	},
 
 	MODAL_BEST_PLUGINS: {
