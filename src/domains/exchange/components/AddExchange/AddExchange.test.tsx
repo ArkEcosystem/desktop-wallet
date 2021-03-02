@@ -17,7 +17,6 @@ describe("AddExchange", () => {
 		const { asFragment, getByTestId } = render(<AddExchange isOpen={true} />);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
