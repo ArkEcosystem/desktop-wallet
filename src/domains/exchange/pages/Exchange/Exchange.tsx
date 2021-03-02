@@ -4,7 +4,8 @@ import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { AddExchange } from "domains/exchange/components/AddExchange";
-import { usePluginManagerContext } from "plugins";
+import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
+import { PluginController, usePluginManagerContext } from "plugins";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -31,7 +32,8 @@ export const Exchange = () => {
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 
-	const [addExchangeIsOpen, setAddExchangeIsOpen] = useState(false);
+	const [isAddExchangeOpen, setIsAddExchangeOpen] = useState(false);
+	const [selectedExchange, setSelectedExchange] = useState<PluginController | undefined>(undefined);
 
 	const { pluginManager, mapConfigToPluginData } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
@@ -54,6 +56,10 @@ export const Exchange = () => {
 		exchanges.push(...new Array(3 - exchanges.length).fill(undefined));
 	}
 
+	const handleDeleteExchange = (exchange: any) => {
+		setSelectedExchange(pluginManager.plugins().findById(exchange.id));
+	};
+
 	return (
 		<>
 			<Page profile={activeProfile} isBackDisabled={true} data-testid="Exchange">
@@ -61,16 +67,30 @@ export const Exchange = () => {
 					<Header
 						title={t("EXCHANGE.PAGE_EXCHANGES.TITLE")}
 						subtitle={t("EXCHANGE.PAGE_EXCHANGES.SUBTITLE")}
-						extra={<ExchangeHeaderExtra onAddExchange={() => setAddExchangeIsOpen(true)} />}
+						extra={<ExchangeHeaderExtra onAddExchange={() => setIsAddExchangeOpen(true)} />}
 					/>
 				</Section>
 
 				<Section>
-					<ExchangeGrid exchanges={exchanges} onLaunch={handleLaunchExchange} />
+					<ExchangeGrid
+						exchanges={exchanges}
+						onDelete={handleDeleteExchange}
+						onLaunch={handleLaunchExchange}
+					/>
 				</Section>
 			</Page>
 
-			<AddExchange isOpen={addExchangeIsOpen} onClose={() => setAddExchangeIsOpen(false)} />
+			<AddExchange isOpen={isAddExchangeOpen} onClose={() => setIsAddExchangeOpen(false)} />
+
+			{selectedExchange && (
+				<PluginUninstallConfirmation
+					isOpen={true}
+					plugin={selectedExchange}
+					profile={activeProfile}
+					onClose={() => setSelectedExchange(undefined)}
+					onDelete={() => setSelectedExchange(undefined)}
+				/>
+			)}
 		</>
 	);
 };

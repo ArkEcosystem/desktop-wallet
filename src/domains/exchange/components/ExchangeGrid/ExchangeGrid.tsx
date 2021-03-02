@@ -5,10 +5,11 @@ import { ExchangeCard } from "../ExchangeCard";
 
 type ExchangeGridProps = {
 	exchanges: any[];
+	onDelete: any;
 	onLaunch: any;
 };
 
-export const ExchangeGrid = ({ exchanges, onLaunch }: ExchangeGridProps) => {
+export const ExchangeGrid = ({ exchanges, onDelete, onLaunch }: ExchangeGridProps) => {
 	const { t } = useTranslation();
 
 	const actions = [
@@ -26,7 +27,7 @@ export const ExchangeGrid = ({ exchanges, onLaunch }: ExchangeGridProps) => {
 				// @TODO report exchange
 				break;
 			case "delete":
-				// @TODO delete exchange
+				onDelete(exchange);
 				break;
 		}
 	};
