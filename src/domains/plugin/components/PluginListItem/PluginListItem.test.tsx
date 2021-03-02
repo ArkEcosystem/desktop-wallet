@@ -1,3 +1,4 @@
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
@@ -68,7 +69,7 @@ describe("PluginListItem", () => {
 
 		const onUpdate = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onUpdate={onUpdate} />
@@ -77,7 +78,7 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--0"));
+		fireEvent.click(getByText(commonTranslations.UPDATE));
 
 		expect(getByTestId("PluginListItem__update-badge")).toBeInTheDocument();
 
@@ -97,7 +98,7 @@ describe("PluginListItem", () => {
 
 		const onDelete = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onDelete={onDelete} />
@@ -106,7 +107,7 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--0"));
+		fireEvent.click(getByText(commonTranslations.DELETE));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
 	});
@@ -124,7 +125,7 @@ describe("PluginListItem", () => {
 
 		const onEnable = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onEnable={onEnable} />
@@ -133,7 +134,7 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--1"));
+		fireEvent.click(getByText(commonTranslations.ENABLE));
 
 		expect(onEnable).toHaveBeenCalledTimes(1);
 	});
@@ -177,7 +178,7 @@ describe("PluginListItem", () => {
 
 		const onDisable = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onDisable={onDisable} />
@@ -186,7 +187,7 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--1"));
+		fireEvent.click(getByText(commonTranslations.DISABLE));
 
 		expect(onDisable).toHaveBeenCalledTimes(1);
 	});

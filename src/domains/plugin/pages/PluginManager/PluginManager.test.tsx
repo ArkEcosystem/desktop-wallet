@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
@@ -14,7 +15,6 @@ import { env } from "utils/testing-library";
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
-let consoleSpy: any;
 let rendered: RenderResult;
 let profile: Profile;
 const history = createMemoryHistory();
@@ -23,10 +23,6 @@ const fixtureProfileId = getDefaultProfileId();
 const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
-	beforeAll(() => {
-		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-	});
-
 	beforeEach(async () => {
 		nock("https://registry.npmjs.com")
 			.get("/-/v1/search")
@@ -60,17 +56,11 @@ describe("PluginManager", () => {
 					history,
 				},
 			);
-
-			consoleSpy.mockReset();
 		});
 	});
 
-	afterAll(() => {
-		consoleSpy.mockRestore();
-	});
-
 	it("should render", async () => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
@@ -78,19 +68,20 @@ describe("PluginManager", () => {
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle between list and grid on home", async () => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
+		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
-		console.log("----finished test-----");
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -322,7 +313,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should search for plugin", async () => {
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -334,16 +325,22 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(within(getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy());
 
-		consoleSpy.mockReset();
-
 		act(() => {
 			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
-				target: { value: "test" },
+				target: { value: "Transaction Export" },
 			});
 		});
 
-		await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
-		expect(consoleSpy).toHaveBeenCalledWith("search");
+		await waitFor(() => expect(getAllByTestId("Card")).not.toHaveLength(0));
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "unknown search query" },
+			});
+		});
+
+		await waitFor(() => expect(() => getAllByTestId("Card")).toThrow());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -354,7 +351,7 @@ describe("PluginManager", () => {
 			}
 		});
 
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
+		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -382,6 +379,7 @@ describe("PluginManager", () => {
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
+		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
 
 		ipcRendererSpy.mockRestore();
 	});
@@ -390,7 +388,7 @@ describe("PluginManager", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockRejectedValue("Failed");
 		const toastSpy = jest.spyOn(toasts, "error");
 
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
+		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -426,9 +424,10 @@ describe("PluginManager", () => {
 	});
 
 	it("should select plugin on home grids", async () => {
-		const { getByTestId, getAllByText } = rendered;
+		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		act(() => {
 			fireEvent.click(
@@ -445,7 +444,10 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -455,7 +457,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginListItem__enabled")).toBeInTheDocument());
 
@@ -480,7 +484,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DISABLE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument());
 
@@ -504,7 +510,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.UPDATE),
+		);
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenCalledWith("plugin:download", {
@@ -530,7 +538,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
@@ -541,7 +551,7 @@ describe("PluginManager", () => {
 
 		invokeMock.mockRestore();
 	});
-	//
+
 	it("should delete plugin on my-plugins", async () => {
 		const onEnabled = jest.fn();
 		pluginManager.plugins().removeById("test-plugin", profile);
@@ -557,7 +567,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
@@ -615,6 +627,7 @@ describe("PluginManager", () => {
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
 	it("should handle update all", async () => {

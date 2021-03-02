@@ -10,8 +10,8 @@ describe("ErrorStep", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with custom title and subtitle", () => {
-		const { asFragment } = render(<ErrorStep title="Custom error title" subtitle="Custom error subtitle" />);
+	it("should render with custom title and description", () => {
+		const { asFragment } = render(<ErrorStep title="Custom error title" description="Custom error description" />);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -19,7 +19,7 @@ describe("ErrorStep", () => {
 	it("should emit onBack", async () => {
 		const onBack = jest.fn();
 		const { asFragment, getByTestId } = render(
-			<ErrorStep title="Custom error title" subtitle="Custom error subtitle" onBack={onBack} />,
+			<ErrorStep title="Custom error title" description="Custom error description" onBack={onBack} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -34,7 +34,7 @@ describe("ErrorStep", () => {
 	it("should emit onRepeat", async () => {
 		const onRepeat = jest.fn();
 		const { asFragment, getByTestId } = render(
-			<ErrorStep title="Custom error title" subtitle="Custom error subtitle" onRepeat={onRepeat} />,
+			<ErrorStep title="Custom error title" description="Custom error description" onRepeat={onRepeat} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();

@@ -1,3 +1,4 @@
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { fireEvent, render, within } from "testing-library";
 
@@ -130,7 +131,7 @@ describe("PluginList", () => {
 		const { asFragment, getAllByTestId } = render(<PluginList plugins={plugins} onDelete={onDelete} />);
 
 		fireEvent.click(within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__toggle"));
-		fireEvent.click(within(getAllByTestId("TableRow")[0]).getByTestId("dropdown__option--0"));
+		fireEvent.click(within(getAllByTestId("TableRow")[0]).getByText(commonTranslations.DELETE));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
