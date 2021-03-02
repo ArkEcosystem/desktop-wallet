@@ -1,7 +1,6 @@
 import { Button } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
-import { ReviewRating } from "app/components/ReviewRating";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -56,14 +55,6 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 			accessor: "name",
 		},
 		{
-			Header: t("COMMON.CATEGORY"),
-			accessor: "category",
-		},
-		{
-			Header: t("COMMON.RATING"),
-			accessor: "rating",
-		},
-		{
 			Header: t("COMMON.VERSION"),
 			accessor: "version",
 		},
@@ -86,7 +77,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 				<Table columns={columns} data={data}>
 					{(rowData: any) => (
 						<TableRow>
-							<TableCell variant="start" className="w-18">
+							<TableCell variant="start" className="w-16">
 								<div className="w-12 h-12">
 									<Image name="ChangeNowLogo" />
 								</div>
@@ -99,14 +90,6 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 									</div>
 									<div>{rowData.description}</div>
 								</div>
-							</TableCell>
-
-							<TableCell>
-								<span>{rowData.category}</span>
-							</TableCell>
-
-							<TableCell>
-								<ReviewRating rating={rowData.rating} />
 							</TableCell>
 
 							<TableCell>
