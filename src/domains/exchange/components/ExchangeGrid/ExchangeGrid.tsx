@@ -14,7 +14,6 @@ export const ExchangeGrid = ({ exchanges, onDelete, onLaunch }: ExchangeGridProp
 
 	const actions = [
 		{ label: t("COMMON.LAUNCH"), value: "launch" },
-		{ label: t("COMMON.REPORT"), value: "report" },
 		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
 
@@ -22,9 +21,6 @@ export const ExchangeGrid = ({ exchanges, onDelete, onLaunch }: ExchangeGridProp
 		switch (action?.value) {
 			case "launch":
 				onLaunch(exchange);
-				break;
-			case "report":
-				// @TODO report exchange
 				break;
 			case "delete":
 				onDelete(exchange);

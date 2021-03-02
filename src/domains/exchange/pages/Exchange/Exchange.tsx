@@ -35,7 +35,7 @@ export const Exchange = () => {
 	const [isAddExchangeOpen, setIsAddExchangeOpen] = useState(false);
 	const [selectedExchange, setSelectedExchange] = useState<PluginController | undefined>(undefined);
 
-	const { pluginManager, mapConfigToPluginData } = usePluginManagerContext();
+	const { mapConfigToPluginData, pluginManager } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
@@ -74,8 +74,8 @@ export const Exchange = () => {
 				<Section>
 					<ExchangeGrid
 						exchanges={exchanges}
-						onDelete={handleDeleteExchange}
 						onLaunch={handleLaunchExchange}
+						onDelete={handleDeleteExchange}
 					/>
 				</Section>
 			</Page>
