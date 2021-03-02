@@ -10,7 +10,7 @@ export const Offline = () => {
 		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col flex-1 justify-center text-center">
 				<div className="sm:mx-auto sm:w-full sm:max-w-md">
-					<Image name="CannotConnectBanner" domain="error" />
+					<Image name="ConnectionError" domain="error" />
 				</div>
 
 				<div data-testid="Offline__text" className="mt-8">

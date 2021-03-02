@@ -25,6 +25,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [updatingStats, setUpdatingStats] = useState<Record<string, any>>({});
 	const [pluginRegistry] = useState(() => new PluginRegistry());
 
+	const defaultFilters: { query?: string } = { query: "" };
+	const [filters, setFilters] = useState(defaultFilters);
+
 	const [pluginManager] = useState(() => {
 		manager.services().register(services);
 		manager.services().boot();
@@ -128,8 +131,28 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		setState((prev: any) => ({ ...prev, packages: configurations }));
 	}, [pluginRegistry]);
 
+	const filterPackages = useCallback(
+		(allPackages: PluginConfigurationData[]) => {
+			const filteredPackages = allPackages.filter((pluginPackage) => {
+				let matchesQuery = true;
+
+				if (filters.query && filters.query !== defaultFilters.query) {
+					matchesQuery = !!pluginPackage.title()?.toLowerCase().includes(filters.query.toLowerCase());
+				}
+
+				return matchesQuery;
+			});
+
+			return filteredPackages;
+		},
+		[filters, defaultFilters],
+	);
+
 	// Plugin configurations loaded from PSDK Plugin's Registry
-	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => filterPackages(state.packages), [
+		state,
+		filterPackages,
+	]);
 
 	// Plugin configurations loaded manually from URL
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
@@ -286,6 +309,11 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		mapConfigToPluginData,
 		updatePlugin,
 		updatingStats,
+		filters,
+		filterBy: (appliedFilters: any) => {
+			setFilters({ ...filters, ...appliedFilters });
+		},
+		resetFilters: () => setFilters(defaultFilters),
 	};
 };
 
