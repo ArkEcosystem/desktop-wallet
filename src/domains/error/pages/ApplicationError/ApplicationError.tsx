@@ -16,7 +16,7 @@ export const ApplicationError = ({ resetErrorBoundary }: Partial<FallbackProps>)
 			<Page navbarVariant="logo-only">
 				<Section className="flex flex-col flex-1 justify-center text-center">
 					<div className="mx-auto w-64 lg:w-128">
-						<Image name="ErrorBanner" domain="error" />
+						<Image name="GenericError" domain="error" />
 					</div>
 
 					<div data-testid="ApplicationError__text" className="mt-8">
