@@ -17,6 +17,7 @@ exports[`ListDividedItem should render an ListDividedItem 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           />
         </div>
@@ -43,6 +44,7 @@ exports[`ListDividedItem should render as floating label 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           />
         </div>
@@ -69,6 +71,7 @@ exports[`ListDividedItem should render the content 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           />
         </div>
@@ -101,6 +104,7 @@ exports[`ListDividedItem should render the label 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           >
             Label
@@ -129,11 +133,12 @@ exports[`ListDividedItem should render the labelDescription 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           />
         </div>
         <span
-          class="text-sm font-medium text-theme-secondary-500"
+          class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
           data-testid="list-divided-item__label--description"
         >
           Label Desc
@@ -161,6 +166,7 @@ exports[`ListDividedItem should render the value 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           />
         </div>
@@ -196,6 +202,7 @@ exports[`ListDividedItem should render with labelAddon 1`] = `
           class="flex justify-between items-center space-x-5"
         >
           <span
+            class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
             data-testid="list-divided-item__label"
           />
           <span>

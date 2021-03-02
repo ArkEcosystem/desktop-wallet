@@ -12,7 +12,7 @@ describe("Image", () => {
 	});
 
 	it("should render with domain", () => {
-		const { container, asFragment } = render(<Image name="ExchangeCardsBanner" domain="exchange" />);
+		const { container, asFragment } = render(<Image name="GenericError" domain="error" />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

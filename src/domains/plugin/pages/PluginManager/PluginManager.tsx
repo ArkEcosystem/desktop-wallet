@@ -1,13 +1,11 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
@@ -40,8 +38,6 @@ type PluginManagerHomeProps = {
 type PluginManagerProps = {
 	paths?: any;
 };
-
-const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({
 	onDelete,
@@ -183,7 +179,15 @@ const PluginManagerHome = ({
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
-	const { fetchPluginPackages, allPlugins, isFetchingPackages, trigger, updatingStats } = usePluginManagerContext();
+	const {
+		fetchPluginPackages,
+		allPlugins,
+		isFetchingPackages,
+		trigger,
+		updatingStats,
+		filters,
+		filterBy,
+	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -285,9 +289,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						extra={
 							<div className="flex justify-end items-top">
 								<HeaderSearchBar
-									label=""
-									onSearch={() => console.log("search")}
-									extra={<SearchBarPluginFilters />}
+									defaultQuery={filters.query}
+									label={t("COMMON.SEARCH")}
+									onSearch={(query) => {
+										filterBy({ query });
+									}}
 								/>
 								{isAdvancedMode ? (
 									<>
@@ -322,21 +328,18 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						<div className="flex justify-between items-center" />
 
 						{currentView === "home" && (
-							<div>
-								<PluginManagerHomeBanner className="mb-8 w-full" height="auto" />
-								<PluginManagerHome
-									isLoading={isFetchingPackages}
-									paths={paths}
-									viewType={viewType}
-									plugins={homePackages}
-									onInstall={openInstallModalPlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onDelete={handleDeletePlugin}
-									onSelect={handleSelectPlugin}
-									onLaunch={handleLaunchPlugin}
-								/>
-							</div>
+							<PluginManagerHome
+								isLoading={isFetchingPackages}
+								paths={paths}
+								viewType={viewType}
+								plugins={homePackages}
+								onInstall={openInstallModalPlugin}
+								onEnable={handleEnablePlugin}
+								onDisable={handleDisablePlugin}
+								onDelete={handleDeletePlugin}
+								onSelect={handleSelectPlugin}
+								onLaunch={handleLaunchPlugin}
+							/>
 						)}
 
 						{currentView === "my-plugins" && viewType === "grid" && (
