@@ -1,6 +1,7 @@
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { Input } from "app/components/Input";
+import { FormField, FormLabel } from "app/components/Form";
+import { Input, InputGroup } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { toasts } from "app/services";
 import { githubProvider } from "domains/transaction/entity/providers";
@@ -43,22 +44,34 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 		<Modal
 			title={t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.TITLE")}
 			description={t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.DESCRIPTION")}
-			size="lg"
+			size="xl"
 			isOpen={isOpen}
 			onClose={onClose}
 		>
 			<div data-testid="PluginManualInstallModal">
-				<div className="flex justify-center mt-8">
-					<Input
-						data-testid="PluginManualInstallModal__input"
-						placeholder={t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.PLACEHOLDER")}
-						value={url}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
-						isInvalid={isInvalid}
-					/>
+				<div className="flex mt-8">
+					<Alert size="sm" variant="warning">
+						{t("PLUGINS.WARNING_DISCLAIMER")}
+					</Alert>
 				</div>
 
-				<div className="flex justify-center my-8">
+				<FormField name="url" className="mt-8">
+					<FormLabel>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.PLACEHOLDER")}</FormLabel>
+					<InputGroup>
+						<Input
+							data-testid="PluginManualInstallModal__input"
+							value={url}
+							onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
+							isInvalid={isInvalid}
+						/>
+					</InputGroup>
+				</FormField>
+
+				<div className="flex space-x-3 justify-end mt-8">
+					<Button variant="secondary" onClick={onClose} data-testid="PluginManualInstallModal__cancel-button">
+						{t("COMMON.CANCEL")}
+					</Button>
+
 					<Button
 						type="submit"
 						onClick={handleInstall}
@@ -69,10 +82,6 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 						<span>{t("COMMON.CONFIRM")}</span>
 					</Button>
 				</div>
-
-				<Alert size="sm" variant="warning" title={t("COMMON.DISCLAIMER")}>
-					{t("PLUGINS.WARNING_DISCLAIMER")}
-				</Alert>
 			</div>
 		</Modal>
 	);
