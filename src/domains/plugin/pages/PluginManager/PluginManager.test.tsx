@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
@@ -453,7 +454,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginListItem__enabled")).toBeInTheDocument());
 
@@ -478,7 +481,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--1"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DISABLE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument());
 
@@ -502,7 +507,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.UPDATE),
+		);
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenCalledWith("plugin:download", {
@@ -528,7 +535,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
@@ -539,7 +548,7 @@ describe("PluginManager", () => {
 
 		invokeMock.mockRestore();
 	});
-	//
+
 	it("should delete plugin on my-plugins", async () => {
 		const onEnabled = jest.fn();
 		pluginManager.plugins().removeById("test-plugin", profile);
@@ -555,7 +564,9 @@ describe("PluginManager", () => {
 		fireEvent.click(
 			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
-		fireEvent.click(within(getByTestId("PluginManager__container--my-plugins")).getByTestId("dropdown__option--0"));
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
+		);
 
 		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
