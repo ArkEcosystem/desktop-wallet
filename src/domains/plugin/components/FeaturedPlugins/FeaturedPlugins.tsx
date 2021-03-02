@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
@@ -13,8 +12,6 @@ type FeaturedPluginsProps = {
 	plugins: any;
 	onClose?: any;
 };
-
-const { BestPluginsBanner } = images.plugin.common;
 
 export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsProps) => {
 	const { t } = useTranslation();
@@ -53,7 +50,6 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 		<Modal
 			title={t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
 			description={t("PLUGINS.MODAL_FEATURED_PLUGINS.DESCRIPTION")}
-			banner={<BestPluginsBanner className="h-full" />}
 			size="4xl"
 			isOpen={isOpen}
 			onClose={onClose}
@@ -63,7 +59,7 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 							<td className="w-16">
-								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
+								<Image name="ChangeNowLogo" className="w-12 h-12" />
 							</td>
 
 							<td>

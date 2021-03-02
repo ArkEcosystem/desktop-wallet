@@ -41,24 +41,11 @@ exports[`FeaturedPlugins should render a modal 1`] = `
       <div
         class="relative"
       >
-        <div
-          class="relative -mx-10 mb-10 -mt-10 h-56"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <svg
-            class="h-full"
-          >
-            best-plugins-banner.svg
-          </svg>
-          <div
-            class="absolute bottom-0 left-0 mb-10 ml-10"
-          >
-            <h2
-              class="text-4xl font-extrabold leading-tight m-0 text-theme-text"
-            >
-              Featured Plugins
-            </h2>
-          </div>
-        </div>
+          Featured Plugins
+        </h2>
         <div
           class="flex-1"
         >

@@ -10,17 +10,6 @@ describe("SearchBarPluginFilters", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render ratings", () => {
-		const ratings = [5, 4, 3, 2, 1];
-		const { asFragment, getByTestId } = render(<SearchBarPluginFilters ratings={ratings} />);
-		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
-		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
-		});
-		expect(getByTestId("SearchBarPluginFilters-rating-4")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render categories", () => {
 		const categories = [
 			{
@@ -28,15 +17,26 @@ describe("SearchBarPluginFilters", () => {
 				value: "game",
 			},
 		];
-		const ratings = [5, 4, 3, 2, 1];
-		const { asFragment, getByTestId } = render(
-			<SearchBarPluginFilters ratings={ratings} categories={categories} />,
-		);
+		const { asFragment, getByTestId } = render(<SearchBarPluginFilters categories={categories} />);
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render default categories", () => {
+		const { asFragment, getByTestId } = render(<SearchBarPluginFilters />);
+		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
+		expect(getByTestId("SearchBarPluginFilters-category-utility")).toBeTruthy();
+		expect(getByTestId("SearchBarPluginFilters-category-theme")).toBeTruthy();
+		expect(getByTestId("SearchBarPluginFilters-category-other")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -48,11 +48,7 @@ describe("SearchBarPluginFilters", () => {
 			},
 		];
 
-		const initialValues = {
-			rating: 1,
-			categories: ["game"],
-			claimed: true,
-		};
+		const initialValues = { categories: ["game"] };
 
 		const { asFragment, getByTestId } = render(
 			<SearchBarPluginFilters categories={categories} initialValues={initialValues} />,
@@ -103,44 +99,6 @@ describe("SearchBarPluginFilters", () => {
 		waitFor(() => expect(fn).toHaveBeenCalled());
 	});
 
-	it("should check rating", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<SearchBarPluginFilters onChange={fn} />);
-
-		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
-		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
-		});
-
-		const gameCheckbox = getByTestId("SearchBarPluginFilters-rating-2");
-		expect(gameCheckbox).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(gameCheckbox);
-		});
-
-		expect(fn).toBeCalledWith({ rating: 2, categories: [], claimed: false });
-	});
-
-	it("should check claimed checkbox", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<SearchBarPluginFilters onChange={fn} />);
-
-		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
-		act(() => {
-			fireEvent.click(getByTestId("dropdown__toggle"));
-		});
-
-		const gameCheckbox = getByTestId("SearchBarPluginFilters-claimed");
-		expect(gameCheckbox).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(gameCheckbox);
-		});
-
-		expect(fn).toBeCalledWith({ rating: null, categories: [], claimed: true });
-	});
-
 	it("should check category", () => {
 		const fn = jest.fn();
 		const categories = [
@@ -167,7 +125,7 @@ describe("SearchBarPluginFilters", () => {
 			fireEvent.click(gameCheckbox);
 		});
 
-		expect(fn).toBeCalledWith({ rating: null, categories: ["game"], claimed: false });
+		expect(fn).toBeCalledWith({ categories: ["game"] });
 	});
 
 	it("should uncheck category", () => {
@@ -184,9 +142,7 @@ describe("SearchBarPluginFilters", () => {
 		];
 
 		const initialValues = {
-			rating: 1,
 			categories: ["game"],
-			claimed: true,
 		};
 		const { getByTestId } = render(
 			<SearchBarPluginFilters onChange={fn} categories={categories} initialValues={initialValues} />,
@@ -204,7 +160,7 @@ describe("SearchBarPluginFilters", () => {
 			fireEvent.click(gameCheckbox);
 		});
 
-		expect(fn).toBeCalledWith({ rating: 1, categories: [], claimed: true });
+		expect(fn).toBeCalledWith({ categories: [] });
 	});
 
 	it("should not emit onChange event upon category change", () => {
@@ -221,9 +177,7 @@ describe("SearchBarPluginFilters", () => {
 		];
 
 		const initialValues = {
-			rating: 1,
 			categories: ["game"],
-			claimed: true,
 		};
 		const { getByTestId } = render(
 			<SearchBarPluginFilters categories={categories} initialValues={initialValues} />,
