@@ -15,13 +15,7 @@ type Props = {
 	onContinue?: () => void;
 };
 
-export const PluginUpdatesConfirmation = ({
-	isOpen,
-	plugins,
-	onClose,
-}: /** TODO: Update when the update all functionality is merged.
-	/* onContinue
-	**/ Props) => {
+export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue }: Props) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -77,7 +71,7 @@ export const PluginUpdatesConfirmation = ({
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button onClick={onClose} data-testid="PluginUpdates__continue-button">
+					<Button onClick={onContinue} data-testid="PluginUpdates__continue-button">
 						<span>{t("COMMON.CONTINUE")}</span>
 					</Button>
 				</div>
