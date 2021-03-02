@@ -57,22 +57,31 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			value: address,
 		}));
 
-		const handleSelectAddress = (address: string) => {
-			setSelectedAddress(address);
+		const handleSelectAddress = (changedAddress: string) => {
+			if (selectedAddress === changedAddress) {
+				return;
+			}
+
+			setSelectedAddress(changedAddress);
 			setIsRecipientSearchOpen(false);
-			onChange?.(address);
+			onChange?.(changedAddress);
 		};
 
 		const openRecipients = () => {
 			if (disabled) {
 				return;
 			}
+
 			setIsRecipientSearchOpen(true);
 		};
 
-		const onInputChange = (value: string) => {
-			setSelectedAddress(value);
-			onChange?.(value);
+		const onInputChange = (changedAddress: string) => {
+			if (selectedAddress === changedAddress) {
+				return;
+			}
+
+			setSelectedAddress(changedAddress);
+			onChange?.(changedAddress);
 		};
 
 		return (
@@ -87,7 +96,6 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						inputClassName={cn("pl-16", { "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
 						isInvalid={isInvalidValue}
 						disabled={disabled}
-						value={selectedAddress}
 						defaultValue={selectedAddress}
 						ref={ref}
 						options={recipientAddresses}
