@@ -300,7 +300,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
               class="mx-auto w-64 lg:w-128"
             >
               <svg>
-                error-banner.svg
+                generic-error.svg
               </svg>
             </div>
             <div
@@ -892,7 +892,7 @@ exports[`App should render the offline screen if there is no internet connection
                 class="sm:mx-auto sm:w-full sm:max-w-md"
               >
                 <svg>
-                  cannot-connect-banner.svg
+                  connection-error.svg
                 </svg>
               </div>
               <div

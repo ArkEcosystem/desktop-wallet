@@ -1,4 +1,5 @@
 import { act } from "@testing-library/react-hooks";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import { PluginManager, PluginManagerProvider } from "plugins";
 import React from "react";
@@ -158,7 +159,7 @@ describe("PluginsCategory", () => {
 
 		act(() => {
 			fireEvent.click(within(pluginsContainer).getAllByTestId("dropdown__toggle")[6]);
-			fireEvent.click(within(pluginsContainer).getByTestId("dropdown__option--0"));
+			fireEvent.click(within(pluginsContainer).getByText(commonTranslations.DELETE));
 		});
 
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");

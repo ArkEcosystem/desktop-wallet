@@ -1,5 +1,4 @@
 import { Header } from "app/components/Header";
-import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
 import { useActiveProfile } from "app/hooks";
@@ -120,16 +119,12 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 				</Section>
 
 				<Section>
-					{exchanges.length ? (
+					{exchanges.length > 0 && (
 						<div className="text-center">
-							<Image name="ExchangeCardsBanner" domain="exchange" className="mx-auto" />
-
 							<div className="mt-8 text-theme-secondary-text">
 								{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}
 							</div>
 						</div>
-					) : (
-						<Image name="NoExchangesBanner" domain="exchange" className="mx-auto" />
 					)}
 				</Section>
 			</Page>
