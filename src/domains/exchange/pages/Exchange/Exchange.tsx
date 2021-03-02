@@ -12,10 +12,6 @@ import { useHistory } from "react-router-dom";
 
 import { ExchangeGrid } from "../../components/ExchangeGrid";
 
-type ExchangeProps = {
-	exchanges: any[];
-};
-
 const ExchangeHeaderExtra = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
 
