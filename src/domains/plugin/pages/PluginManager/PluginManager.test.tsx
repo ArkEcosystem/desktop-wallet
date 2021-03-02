@@ -625,5 +625,35 @@ describe("PluginManager", () => {
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should show and close the update confirmation modal", async () => {
+		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = "100.0.0";
+
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		pluginManager.plugins().push(plugin);
+
+		const { getByTestId, queryByTestId, getByText } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+
+		fireEvent.click(getByTestId("PluginManager__update-all"));
+
+		await waitFor(() => expect(getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
+
+		expect(getByText("100.0.0")).toBeInTheDocument();
+
+		fireEvent.click(getByTestId("PluginUpdates__cancel-button"));
+
+		await waitFor(() => expect(queryByTestId("PluginUpdatesConfirmation")).not.toBeInTheDocument());
+
+		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = undefined;
 	});
 });
