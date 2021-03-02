@@ -906,4 +906,57 @@ describe("Settings", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should trigger password confirmation mismatch error", async () => {
+		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
+
+		const currentPasswordInput = "Password-settings__input--currentPassword";
+
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("new password"));
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+				target: { value: "new password 1" },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--password_2")).toHaveValue("new password 1"));
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "new password 2" },
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("Password-settings__input--password_2")).toHaveAttribute("aria-invalid"),
+		);
+		// wait for formState.isValid to be updated
+		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

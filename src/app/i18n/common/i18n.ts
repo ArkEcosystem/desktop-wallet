@@ -238,6 +238,7 @@ export const translations: { [key: string]: any } = {
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
 		PASSWORD_MISMATCH: "Passwords do not match",
+		CONFIRM_PASSWORD_REQUIRED: "Password confirmation is required",
 		MIN_RECIPIENTS: "At least one recipient is required",
 		RECIPIENT_INVALID: "Recipient address is invalid",
 	},
