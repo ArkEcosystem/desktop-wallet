@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ReadOnlyWallet, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { useConfiguration } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
 import nock from "nock";
-import React from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 import {
@@ -41,10 +42,20 @@ const passphrase2 = "power return attend drink piece found tragic fire liar page
 const renderPage = async (waitForTopSection = true) => {
 	let rendered: RenderResult;
 
+	const Page = () => {
+		const { setConfiguration } = useConfiguration();
+
+		useEffect(() => {
+			setConfiguration({ profileIsSyncing: false });
+		}, []);
+
+		return <WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />;
+	};
+
 	await act(async () => {
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />
+				<Page />
 			</Route>,
 			{
 				routes: [walletUrl],
