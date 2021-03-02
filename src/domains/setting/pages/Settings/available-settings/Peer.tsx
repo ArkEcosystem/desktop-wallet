@@ -135,7 +135,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -157,7 +156,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: (
 				<Trans i18nKey="SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION">
 					Customize your individual peers by network. <br /> Note: Only use trusted peers. Using an unknown

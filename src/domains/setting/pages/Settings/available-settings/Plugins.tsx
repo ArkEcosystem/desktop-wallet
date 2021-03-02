@@ -17,10 +17,8 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION"),
 			labelAddon: <Toggle />,
-			wrapperClass: "pt-6",
 			content: (
 				<div className="pt-6">
 					<FormField name="load-plugins">

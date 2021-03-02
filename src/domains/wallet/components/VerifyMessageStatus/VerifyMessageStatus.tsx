@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose }: Props) => {
-	const image = type === "success" ? "ConfirmedBanner" : "MistakeBanner";
+	const image = type === "success" ? "SuccessBanner" : "ErrorBanner";
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose}>

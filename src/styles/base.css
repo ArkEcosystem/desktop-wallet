@@ -7,7 +7,7 @@ main {
 }
 
 .link {
-	@apply text-theme-primary-600;
+	@apply cursor-pointer transition-colors duration-100 ease-linear text-theme-primary-600;
 }
 
 .link:hover {
