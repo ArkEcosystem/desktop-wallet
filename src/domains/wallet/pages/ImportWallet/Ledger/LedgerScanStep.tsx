@@ -173,7 +173,22 @@ export const LedgerScanStep = ({
 	const { isBusy, isConnected } = useLedgerContext();
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
-	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry, scanMore, isScanning } = ledgerScanner;
+	const {
+		scanUntilNewOrFail,
+		selectedWallets,
+		scanRetry,
+		canRetry,
+		scanMore,
+		isScanning,
+		abortScanner,
+	} = ledgerScanner;
+
+	// eslint-disable-next-line arrow-body-style
+	useEffect(() => {
+		return () => {
+			abortScanner();
+		};
+	}, [abortScanner]);
 
 	useEffect(() => {
 		setValue("isFinished", !isScanning, { shouldDirty: true, shouldValidate: true });

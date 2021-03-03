@@ -5,7 +5,7 @@ import nock from "nock";
 import React, { useEffect } from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
-import { LedgerProvider } from "../Ledger";
+import { LedgerProvider, useLedgerContext } from "../Ledger";
 import { useLedgerScanner } from "./scanner";
 
 describe("Use Ledger Scanner", () => {
@@ -312,6 +312,43 @@ describe("Use Ledger Scanner", () => {
 
 		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(0));
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should abort scanner", async () => {
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
+			Promise.resolve(publicKeyPaths.get(path)!),
+		);
+
+		const Component = () => {
+			const { isBusy } = useLedgerContext();
+			const { scanMore, abortScanner } = useLedgerScanner(wallet.coinId(), wallet.networkId(), profile);
+
+			return (
+				<div>
+					<p>{isBusy ? "Busy" : "Idle"}</p>
+					<button data-testid="scan" onClick={scanMore}>
+						Scan
+					</button>
+					<button data-testid="abort" onClick={abortScanner}>
+						Abort
+					</button>
+				</div>
+			);
+		};
+
+		const { container } = render(
+			<LedgerProvider transport={transport}>
+				<Component />
+			</LedgerProvider>,
+		);
+
+		fireEvent.click(screen.getByTestId("scan"));
+		fireEvent.click(screen.getByTestId("abort"));
+
+		await waitFor(() => expect(screen.getByText("Idle")).toBeInTheDocument());
+		await new Promise((resolve) => setTimeout(resolve, 3000));
 
 		expect(container).toMatchSnapshot();
 	});
