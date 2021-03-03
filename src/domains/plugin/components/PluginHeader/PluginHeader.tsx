@@ -1,8 +1,8 @@
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
@@ -45,6 +45,24 @@ export const PluginHeader = ({
 }: Props) => {
 	const { t } = useTranslation();
 
+	const actions = useMemo(() => {
+		const result: DropdownOption[] = [];
+
+		if (props.hasUpdateAvailable) {
+			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+		}
+
+		if (props.isEnabled) {
+			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
+		} else {
+			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+		}
+
+		result.push({ label: t("COMMON.DELETE"), value: "delete" });
+
+		return result;
+	}, [t, props]);
+
 	const getPluginButtons = () => {
 		if (props.isInstalled) {
 			return (
@@ -69,17 +87,7 @@ export const PluginHeader = ({
 								<Icon name="Settings" width={20} height={20} />
 							</Button>
 						}
-						options={[
-							props.hasUpdateAvailable && {
-								label: t("COMMON.UPDATE"),
-								value: "update",
-							},
-							{ label: t("COMMON.DELETE"), value: "delete" },
-							{
-								label: props.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
-								value: props.isEnabled ? "disable" : "enable",
-							},
-						].filter(Boolean)}
+						options={actions}
 						onSelect={(option: any) => {
 							if (option.value === "delete") {
 								onDelete?.();

@@ -11,8 +11,9 @@ describe("Send transfer validations", () => {
 	});
 
 	it("should falie validate recipientAddress", () => {
+		const translationMock = jest.fn((i18nString: string) => i18nString);
 		const network = env.profiles().first().wallets().first().network();
-		const validation = sendTransfer(jest.fn(), env).recipientAddress(network, [], false);
-		expect(validation.validate.valid(null)).resolves.toBe(true);
+		const validation = sendTransfer(translationMock, env).recipientAddress(network, [], false);
+		expect(validation.validate.valid(null)).resolves.not.toBeUndefined();
 	});
 });
