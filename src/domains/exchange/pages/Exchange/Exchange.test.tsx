@@ -115,12 +115,10 @@ describe("Exchange", () => {
 		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
 		await waitFor(() => expect(within(getByTestId("ExchangeGrid")).getByTestId("dropdown__toggle")).toBeTruthy());
 
-		fireEvent.click(within(getByTestId("ExchangeGrid")).getAllByTestId("dropdown__toggle")[0]);
-
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		act(() => {
-			fireEvent.click(getByText(commonTranslations.LAUNCH));
+			fireEvent.click(within(getByTestId("ExchangeGrid")).getAllByTestId("Card")[0]);
 		});
 
 		const redirectUrl = `/profiles/${profile.id()}/exchange/view?pluginId=test-exchange`;
@@ -160,7 +158,7 @@ describe("Exchange", () => {
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
-		fireEvent.click(within(getByTestId("ExchangeGrid")).getAllByTestId("Card")[0]);
+		fireEvent.click(within(getByTestId("ExchangeGrid")).getAllByTestId("dropdown__toggle")[0]);
 
 		act(() => {
 			fireEvent.click(getByText(commonTranslations.DETAILS));
@@ -330,6 +328,8 @@ describe("Exchange", () => {
 		fireEvent.click(getByTestId("modal__close-btn"));
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
 	it("should open & close add exchange modal", async () => {
@@ -348,7 +348,6 @@ describe("Exchange", () => {
 		fireEvent.click(await findByText(translations.PAGE_EXCHANGES.ADD_EXCHANGE));
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.DESCRIPTION);
 
 		fireEvent.click(getByTestId("modal__close-btn"));
 

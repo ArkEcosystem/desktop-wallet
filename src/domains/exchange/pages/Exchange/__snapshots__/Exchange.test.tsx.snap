@@ -275,17 +275,19 @@ exports[`Exchange should not render filler exchange cards 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Exchange
@@ -318,10 +320,10 @@ exports[`Exchange should not render filler exchange cards 1`] = `
           </div>
         </div>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="w-full grid grid-cols-3 gap-5"
@@ -788,17 +790,19 @@ exports[`Exchange should open & close add exchange modal 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Exchange
@@ -831,73 +835,43 @@ exports[`Exchange should open & close add exchange modal 1`] = `
           </div>
         </div>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="w-full grid grid-cols-3 gap-5"
               data-testid="ExchangeGrid"
             >
               <div
-                class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
                 data-testid="Card"
               >
                 <div
                   class="flex items-center space-x-4"
                 >
                   <div
-                    class="min-w-25 w-25 h-25 overflow-hidden rounded-lg"
-                  >
-                    <div
-                      data-testid="ExchangeImage__placeholder"
-                    >
-                      <svg>
-                        plugin-logo-placeholder.svg
-                      </svg>
-                    </div>
-                  </div>
+                    class="h-25 w-25 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+                  />
                   <div
                     class="flex flex-col space-y-1 truncate"
                   >
                     <span
-                      class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                      class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
                     >
-                      Unknown
+                      Author
                     </span>
                     <div
-                      class="text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                      class="text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
                     >
-                      Test Exchange
+                      Exchange
                     </div>
                   </div>
                 </div>
                 <div
                   class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                >
-                  <div
-                    class="relative"
-                  >
-                    <span
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="flex overflow-hidden justify-center w-4"
-                      >
-                        <div
-                          class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </span>
-                  </div>
-                </div>
+                />
               </div>
               <div
                 class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
@@ -1241,17 +1215,19 @@ exports[`Exchange should render 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Exchange
@@ -1284,10 +1260,10 @@ exports[`Exchange should render 1`] = `
           </div>
         </div>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="w-full grid grid-cols-3 gap-5"
@@ -1664,17 +1640,19 @@ exports[`Exchange should render filler exchange cards 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Exchange
@@ -1707,10 +1685,10 @@ exports[`Exchange should render filler exchange cards 1`] = `
           </div>
         </div>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="w-full grid grid-cols-3 gap-5"
@@ -2087,17 +2065,19 @@ exports[`Exchange should render with exchanges 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Exchange
@@ -2130,10 +2110,10 @@ exports[`Exchange should render with exchanges 1`] = `
           </div>
         </div>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="w-full grid grid-cols-3 gap-5"

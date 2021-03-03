@@ -2,6 +2,7 @@
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
+import { LedgerProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -22,7 +23,7 @@ import {
 import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
 import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
-import { getDefaultWalletMnemonic } from "utils/testing-library";
+import { getDefaultLedgerTransport, getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { SendVote } from "../SendVote";
 
@@ -54,6 +55,7 @@ const passphrase = getDefaultWalletMnemonic();
 let profile: Profile;
 let wallet: ReadWriteWallet;
 let votes: ReadOnlyWallet[];
+const transport = getDefaultLedgerTransport();
 
 describe("SendVote", () => {
 	beforeAll(async () => {
@@ -105,7 +107,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -147,7 +151,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -190,7 +196,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -244,7 +252,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -347,7 +357,9 @@ describe("SendVote", () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 					<FormProvider {...form.current}>
-						<SendVote />
+						<LedgerProvider transport={transport}>
+							<SendVote />
+						</LedgerProvider>
 					</FormProvider>
 				</Route>,
 				{
@@ -414,7 +426,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -476,7 +490,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -544,7 +560,9 @@ describe("SendVote", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-				<SendVote />
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [voteURL],
@@ -588,7 +606,9 @@ describe("SendVote", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-				<SendVote />
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [voteURL],
@@ -635,7 +655,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -704,7 +726,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -785,7 +809,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -851,6 +877,9 @@ describe("SendVote", () => {
 
 	it("should send a vote transaction with a ledger wallet", async () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
 		const signTransactionSpy = jest
 			.spyOn(wallet.coin().ledger(), "signTransaction")
@@ -884,7 +913,9 @@ describe("SendVote", () => {
 		await hookAct(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<SendVote />
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
 				</Route>,
 				{
 					routes: [voteURL],
@@ -925,6 +956,7 @@ describe("SendVote", () => {
 
 			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3…7ecc8339e430");
 		});
+		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();
 	});

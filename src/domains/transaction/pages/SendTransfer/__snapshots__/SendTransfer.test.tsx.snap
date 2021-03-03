@@ -272,10 +272,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -311,9 +311,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Send
@@ -594,12 +596,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-113-menu"
+                                          aria-owns="downshift-129-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-112-input"
-                                            id="downshift-113-label"
+                                            for="downshift-128-input"
+                                            id="downshift-129-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -607,22 +609,22 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-113-menu"
-                                              aria-labelledby="downshift-113-label"
+                                              aria-controls="downshift-129-menu"
+                                              aria-labelledby="downshift-129-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-112-input"
+                                              id="downshift-128-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-113-label"
+                                            aria-labelledby="downshift-129-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-113-menu"
+                                            id="downshift-129-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -1128,10 +1130,10 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1167,9 +1169,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -1321,9 +1325,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Send
@@ -2007,10 +2013,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2046,9 +2052,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Send
@@ -2322,12 +2330,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-41-menu"
+                                          aria-owns="downshift-45-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-40-input"
-                                            id="downshift-41-label"
+                                            for="downshift-44-input"
+                                            id="downshift-45-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -2335,21 +2343,21 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-41-menu"
-                                              aria-labelledby="downshift-41-label"
+                                              aria-controls="downshift-45-menu"
+                                              aria-labelledby="downshift-45-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-40-input"
+                                              id="downshift-44-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-41-label"
+                                            aria-labelledby="downshift-45-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-41-menu"
+                                            id="downshift-45-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -2854,10 +2862,10 @@ exports[`SendTransfer should render form and use location state without memo 1`]
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2893,9 +2901,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Send
@@ -3169,12 +3179,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-61-menu"
+                                          aria-owns="downshift-69-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-60-input"
-                                            id="downshift-61-label"
+                                            for="downshift-68-input"
+                                            id="downshift-69-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -3182,21 +3192,21 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-61-menu"
-                                              aria-labelledby="downshift-61-label"
+                                              aria-controls="downshift-69-menu"
+                                              aria-labelledby="downshift-69-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-60-input"
+                                              id="downshift-68-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-61-label"
+                                            aria-labelledby="downshift-69-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-61-menu"
+                                            id="downshift-69-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -3438,9 +3448,11 @@ exports[`SendTransfer should render form step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Send
@@ -3850,9 +3862,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Send
@@ -4273,9 +4287,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Send
@@ -4684,9 +4700,11 @@ exports[`SendTransfer should render review step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Transaction Review
@@ -4960,9 +4978,11 @@ exports[`SendTransfer should render summary step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Transaction Sent
@@ -5522,10 +5542,10 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -5561,9 +5581,11 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Send
@@ -6271,10 +6293,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -6310,9 +6332,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Send
@@ -6611,12 +6635,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-137-menu"
+                                          aria-owns="downshift-157-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-136-input"
-                                            id="downshift-137-label"
+                                            for="downshift-156-input"
+                                            id="downshift-157-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -6624,21 +6648,21 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-137-menu"
-                                              aria-labelledby="downshift-137-label"
+                                              aria-controls="downshift-157-menu"
+                                              aria-labelledby="downshift-157-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-136-input"
+                                              id="downshift-156-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-137-label"
+                                            aria-labelledby="downshift-157-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-137-menu"
+                                            id="downshift-157-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -7145,10 +7169,10 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -7184,9 +7208,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Send
@@ -7467,12 +7493,12 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-89-menu"
+                                          aria-owns="downshift-101-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-88-input"
-                                            id="downshift-89-label"
+                                            for="downshift-100-input"
+                                            id="downshift-101-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -7480,22 +7506,22 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-89-menu"
-                                              aria-labelledby="downshift-89-label"
+                                              aria-controls="downshift-101-menu"
+                                              aria-labelledby="downshift-101-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-88-input"
+                                              id="downshift-100-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-89-label"
+                                            aria-labelledby="downshift-101-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-89-menu"
+                                            id="downshift-101-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -8001,10 +8027,10 @@ exports[`SendTransfer should send a single transfer 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -8040,9 +8066,11 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -8627,10 +8655,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -8666,9 +8694,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -9253,10 +9283,10 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -9292,9 +9322,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -9879,10 +9911,10 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -9918,9 +9950,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -10505,10 +10539,10 @@ exports[`SendTransfer should show error step and go back 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -10544,9 +10578,11 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Error
