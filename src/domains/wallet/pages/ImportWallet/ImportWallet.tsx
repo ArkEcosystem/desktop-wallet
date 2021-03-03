@@ -36,7 +36,7 @@ export const ImportWallet = () => {
 
 	const { t } = useTranslation();
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({ mode: "onChange", defaultValues: { type: "mnemonic" } });
 	const { formState } = form;
 	const { isSubmitting, isValid } = formState;
 
@@ -84,29 +84,29 @@ export const ImportWallet = () => {
 
 	const handleSubmit = async ({
 		network,
-		passphrase,
-		address,
+		type,
+		value,
 		name,
 	}: {
 		network: Coins.Network;
-		passphrase: string;
-		address: string;
+		type: string;
+		value: string;
 		name: string;
 	}) => {
 		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
-			if (passphrase) {
-				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
-			} else {
-				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
+			if (type === "mnemonic") {
+				wallet = await activeProfile.wallets().importByMnemonic(value, network.coin(), network.id());
+			} else if (type === "address") {
+				wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
 			}
 
-			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
-			setWalletData(wallet);
+			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
+			setWalletData(wallet!);
 			await persist();
 
-			await syncNewWallet(network, wallet);
+			await syncNewWallet(network, wallet!);
 
 			setActiveTab(activeTab + 1);
 		} else {

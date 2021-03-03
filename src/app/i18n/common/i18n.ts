@@ -131,6 +131,7 @@ export const translations: { [key: string]: any } = {
 	PREVIOUS: "Previous",
 	PROFILE: "Profile",
 	PUBLIC_KEY: "Public Key",
+	PRIVATE_KEY: "Private Key",
 	QR_SHORT: "QR",
 	QR_CODE: "QR Code",
 	RECEIVE_FUNDS_SUBTITLE: "Enter the amount you wish to transfer to this address and confirm",
