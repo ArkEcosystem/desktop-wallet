@@ -89,7 +89,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	};
 
 	return (
-		<Page profile={activeProfile}>
+		<Page profile={activeProfile} isBackDisabled={true}>
 			<Section>
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}
@@ -104,7 +104,7 @@ export const News = ({ itemsPerPage }: Props) => {
 				/>
 			</Section>
 
-			<Section hasBackground={false}>
+			<Section backgroundColor="--theme-secondary-background-color">
 				<div className="container flex space-x-8">
 					<div className="flex-none w-4/6">
 						{!isLoading && news.length === 0 && (

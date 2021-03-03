@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PluginImage should render image logo 1`] = `
+<div>
+  <img
+    alt="Logo"
+    class="overflow-hidden rounded-lg"
+    data-testid="PluginImage__logo"
+    src="https://ark.io/logo.png"
+  />
+</div>
+`;
+
+exports[`PluginImage should render image placeholder 1`] = `
+<div>
+  <div
+    data-testid="PluginImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PluginImage should render updating element 1`] = `
+<div>
+  <div
+    class="rounded-lg overflow-hidden bg-theme-success-100 flex flex-col space-y-3 items-center justify-center border border-theme-secondary-300 dark:border-theme-secondary-600"
+    data-testid="PluginImage__updating"
+  >
+    <svg
+      height="40"
+      viewBox="0 0 40 40"
+      width="40"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        fill="transparent"
+        r="19"
+        stroke="var(--theme-color-success-200)"
+        stroke-width="2"
+      />
+      <circle
+        cx="20"
+        cy="20"
+        fill="transparent"
+        r="19"
+        stroke="var(--theme-color-success-600)"
+        stroke-dasharray="119.38052083641213"
+        stroke-dashoffset="-2865.1325000738916"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        transform="rotate(-90 20 20)"
+      />
+      <text
+        data-testid="CircularProgressBar__percentage"
+        dy="0.3em"
+        fill="var(--theme-color-success-600)"
+        font-size="0.8rem"
+        font-weight="600"
+        text-anchor="middle"
+        x="50%"
+        y="50%"
+      >
+        <tspan>
+          2500
+          <tspan
+            dy="-0.6em"
+            font-size="0.4rem"
+            font-weight="bold"
+          >
+            %
+          </tspan>
+        </tspan>
+      </text>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PluginImage should render updating with label 1`] = `
+<div>
+  <div
+    class="rounded-lg overflow-hidden bg-theme-success-100 flex flex-col space-y-3 items-center justify-center border border-theme-secondary-300 dark:border-theme-secondary-600"
+    data-testid="PluginImage__updating"
+  >
+    <svg
+      height="40"
+      viewBox="0 0 40 40"
+      width="40"
+    >
+      <circle
+        cx="20"
+        cy="20"
+        fill="transparent"
+        r="19"
+        stroke="var(--theme-color-success-200)"
+        stroke-width="2"
+      />
+      <circle
+        cx="20"
+        cy="20"
+        fill="transparent"
+        r="19"
+        stroke="var(--theme-color-success-600)"
+        stroke-dasharray="119.38052083641213"
+        stroke-dashoffset="-2865.1325000738916"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        transform="rotate(-90 20 20)"
+      />
+      <text
+        data-testid="CircularProgressBar__percentage"
+        dy="0.3em"
+        fill="var(--theme-color-success-600)"
+        font-size="0.8rem"
+        font-weight="600"
+        text-anchor="middle"
+        x="50%"
+        y="50%"
+      >
+        <tspan>
+          2500
+          <tspan
+            dy="-0.6em"
+            font-size="0.4rem"
+            font-weight="bold"
+          >
+            %
+          </tspan>
+        </tspan>
+      </text>
+    </svg>
+    <p
+      class="text-theme-secondary-600 dark:text-theme-secondary-text text-sm font-medium"
+      data-testid="PluginImage__updating__label"
+    >
+      Updating...
+    </p>
+  </div>
+</div>
+`;

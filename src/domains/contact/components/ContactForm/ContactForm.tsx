@@ -38,7 +38,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 			data-testid="contact-form__remove-address-btn"
 			size="icon"
 			className="flex items-center ml-auto"
-			variant="secondary"
+			variant="danger"
 			onClick={() => onRemove(address)}
 		>
 			<Icon name="Trash" />

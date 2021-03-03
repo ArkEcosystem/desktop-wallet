@@ -10,26 +10,26 @@ exports[`App should close splash screen if not e2e 1`] = `
         class="Toastify"
       />
       <div
-        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+        class="flex relative flex-col min-h-screen"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
         >
           <div
-            class="px-4 sm:px-6 lg:px-10"
+            class="flex relative h-21"
           >
             <div
-              class="flex relative justify-between h-20 md:h-24"
+              class="flex flex-1 px-8 ml-12"
             >
               <div
                 class="flex items-center my-auto"
               >
                 <div
-                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
                 >
                   <svg
-                    width="48"
+                    width="44"
                   >
                     ark-logo.svg
                   </svg>
@@ -44,10 +44,10 @@ exports[`App should close splash screen if not e2e 1`] = `
           </div>
         </nav>
         <div
-          class="flex flex-col flex-1 "
+          class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+            class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
           >
             <div
               class="container py-16 px-14 mx-auto "
@@ -162,7 +162,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                            class="Badge__Wrapper-sc-1d7juq8-0 bsbEur flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-bdfBwQ iwcOAK"
@@ -259,26 +259,26 @@ exports[`App should render application error if the app fails to boot 1`] = `
     data-testid="Main"
   >
     <div
-      class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+      class="flex relative flex-col min-h-screen"
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
       >
         <div
-          class="px-4 sm:px-6 lg:px-10"
+          class="flex relative h-21"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="flex flex-1 px-8 ml-12"
           >
             <div
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
               >
                 <svg
-                  width="48"
+                  width="44"
                 >
                   ark-logo.svg
                 </svg>
@@ -288,10 +288,10 @@ exports[`App should render application error if the app fails to boot 1`] = `
         </div>
       </nav>
       <div
-        class="flex flex-col flex-1 "
+        class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
         >
           <div
             class="container py-16 px-14 mx-auto "
@@ -300,7 +300,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
               class="mx-auto w-64 lg:w-128"
             >
               <svg>
-                error-banner.svg
+                generic-error.svg
               </svg>
             </div>
             <div
@@ -347,26 +347,26 @@ exports[`App should render mock 1`] = `
         class="Toastify"
       />
       <div
-        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+        class="flex relative flex-col min-h-screen"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
         >
           <div
-            class="px-4 sm:px-6 lg:px-10"
+            class="flex relative h-21"
           >
             <div
-              class="flex relative justify-between h-20 md:h-24"
+              class="flex flex-1 px-8 ml-12"
             >
               <div
                 class="flex items-center my-auto"
               >
                 <div
-                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
                 >
                   <svg
-                    width="48"
+                    width="44"
                   >
                     ark-logo.svg
                   </svg>
@@ -381,10 +381,10 @@ exports[`App should render mock 1`] = `
           </div>
         </nav>
         <div
-          class="flex flex-col flex-1 "
+          class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+            class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
           >
             <div
               class="container py-16 px-14 mx-auto "
@@ -499,7 +499,7 @@ exports[`App should render mock 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                            class="Badge__Wrapper-sc-1d7juq8-0 bsbEur flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-bdfBwQ iwcOAK"
@@ -599,26 +599,26 @@ exports[`App should render splash screen 1`] = `
         class="Toastify"
       />
       <div
-        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+        class="flex relative flex-col min-h-screen"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
         >
           <div
-            class="px-4 sm:px-6 lg:px-10"
+            class="flex relative h-21"
           >
             <div
-              class="flex relative justify-between h-20 md:h-24"
+              class="flex flex-1 px-8 ml-12"
             >
               <div
                 class="flex items-center my-auto"
               >
                 <div
-                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
                 >
                   <svg
-                    width="48"
+                    width="44"
                   >
                     ark-logo.svg
                   </svg>
@@ -633,10 +633,10 @@ exports[`App should render splash screen 1`] = `
           </div>
         </nav>
         <div
-          class="flex flex-col flex-1 "
+          class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+            class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
           >
             <div
               class="container py-16 px-14 mx-auto "
@@ -751,7 +751,7 @@ exports[`App should render splash screen 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                            class="Badge__Wrapper-sc-1d7juq8-0 bsbEur flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-bdfBwQ iwcOAK"
@@ -851,26 +851,26 @@ exports[`App should render the offline screen if there is no internet connection
         class="Toastify"
       />
       <div
-        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+        class="flex relative flex-col min-h-screen"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
         >
           <div
-            class="px-4 sm:px-6 lg:px-10"
+            class="flex relative h-21"
           >
             <div
-              class="flex relative justify-between h-20 md:h-24"
+              class="flex flex-1 px-8 ml-12"
             >
               <div
                 class="flex items-center my-auto"
               >
                 <div
-                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
                 >
                   <svg
-                    width="48"
+                    width="44"
                   >
                     ark-logo.svg
                   </svg>
@@ -880,10 +880,10 @@ exports[`App should render the offline screen if there is no internet connection
           </div>
         </nav>
         <div
-          class="flex flex-col flex-1 "
+          class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+            class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
           >
             <div
               class="container py-16 px-14 mx-auto "
@@ -892,7 +892,7 @@ exports[`App should render the offline screen if there is no internet connection
                 class="sm:mx-auto sm:w-full sm:max-w-md"
               >
                 <svg>
-                  cannot-connect-banner.svg
+                  connection-error.svg
                 </svg>
               </div>
               <div
@@ -929,26 +929,26 @@ exports[`App should render welcome screen after splash screen 1`] = `
         class="Toastify"
       />
       <div
-        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+        class="flex relative flex-col min-h-screen"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
         >
           <div
-            class="px-4 sm:px-6 lg:px-10"
+            class="flex relative h-21"
           >
             <div
-              class="flex relative justify-between h-20 md:h-24"
+              class="flex flex-1 px-8 ml-12"
             >
               <div
                 class="flex items-center my-auto"
               >
                 <div
-                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
                 >
                   <svg
-                    width="48"
+                    width="44"
                   >
                     ark-logo.svg
                   </svg>
@@ -963,10 +963,10 @@ exports[`App should render welcome screen after splash screen 1`] = `
           </div>
         </nav>
         <div
-          class="flex flex-col flex-1 "
+          class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+            class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
           >
             <div
               class="container py-16 px-14 mx-auto "
@@ -1081,7 +1081,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                             </span>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 iSAlVf flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                            class="Badge__Wrapper-sc-1d7juq8-0 bsbEur flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                           >
                             <div
                               class="sc-bdfBwQ iwcOAK"
@@ -1181,26 +1181,26 @@ exports[`App shouldn't migrate profiles 1`] = `
         class="Toastify"
       />
       <div
-        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+        class="flex relative flex-col min-h-screen"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
         >
           <div
-            class="px-4 sm:px-6 lg:px-10"
+            class="flex relative h-21"
           >
             <div
-              class="flex relative justify-between h-20 md:h-24"
+              class="flex flex-1 px-8 ml-12"
             >
               <div
                 class="flex items-center my-auto"
               >
                 <div
-                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
                 >
                   <svg
-                    width="48"
+                    width="44"
                   >
                     ark-logo.svg
                   </svg>
@@ -1215,10 +1215,10 @@ exports[`App shouldn't migrate profiles 1`] = `
           </div>
         </nav>
         <div
-          class="flex flex-col flex-1 "
+          class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+            class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex flex-col flex-1 justify-center text-center"
           >
             <div
               class="container py-16 px-14 mx-auto "

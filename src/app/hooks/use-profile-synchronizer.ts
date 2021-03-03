@@ -1,3 +1,4 @@
+import { MemoryPassword } from "@arkecosystem/platform-sdk-profiles";
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
@@ -199,7 +200,11 @@ export const useProfileRestore = () => {
 	};
 };
 
-export const useProfileSynchronizer = () => {
+type ProfileSynchronizerProps = {
+	onProfileRestoreError?: (error: any) => void;
+};
+
+export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
@@ -232,6 +237,15 @@ export const useProfileSynchronizer = () => {
 		const syncProfile = async (profile?: Profile) => {
 			if (!profile) {
 				return clearProfileSyncStatus();
+			}
+
+			if (profile.usesPassword()) {
+				try {
+					MemoryPassword.get(profile);
+				} catch (error) {
+					onProfileRestoreError?.(error);
+					return;
+				}
 			}
 
 			if (shouldRestore(profile)) {
@@ -271,6 +285,7 @@ export const useProfileSynchronizer = () => {
 		markAsRestored,
 		restoreProfile,
 		status,
+		onProfileRestoreError,
 		stop,
 		__E2E__,
 	]);

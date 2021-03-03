@@ -3,33 +3,46 @@
 exports[`Plugin View should render plugin content 1`] = `
 <div>
   <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10"
+        class="flex relative h-21"
       >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eLHRPW flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ iMKUsi mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
             >
               <svg
-                width="48"
+                width="44"
               >
                 ark-logo.svg
               </svg>
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
@@ -88,10 +101,10 @@ exports[`Plugin View should render plugin content 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="rounded-lg"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                   >
                     <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
+                      class="Button__StyledButton-mdtvtf-0 fHYGyx"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -127,7 +140,7 @@ exports[`Plugin View should render plugin content 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -157,7 +170,7 @@ exports[`Plugin View should render plugin content 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
                   class="Button__StyledButton-mdtvtf-0 fHYGyx"
@@ -185,7 +198,7 @@ exports[`Plugin View should render plugin content 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="flex items-center my-auto ml-8"
           >
             <div
               class="text-right"
@@ -206,35 +219,34 @@ exports[`Plugin View should render plugin content 1`] = `
               </div>
             </div>
             <div
-              class="relative"
+              class="flex my-0.5 ml-4 -space-x-2"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
               >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
+                <span
+                  class="text-theme-secondary-text dark:text-theme-secondary-800"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    <svg>
+                      btc.svg
+                    </svg>
                   </div>
+                </span>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
                   <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
+                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__useractions"
                   >
                     <div
                       class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
@@ -249,646 +261,45 @@ exports[`Plugin View should render plugin content 1`] = `
                         JO
                       </span>
                     </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
+      class="flex flex-col flex-1"
     >
       <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          Test Plugin
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="px-4 sm:px-6 lg:px-10 py-4"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="flex justify-between items-center"
         >
           <div
-            class="flex justify-between items-center"
+            class="flex items-center space-x-3"
           >
             <div
-              class="flex items-center space-x-3"
+              data-testid="PluginImage__placeholder"
             >
               <svg
-                class="w-12 h-12"
+                class="w-6 h-6"
               >
                 plugin-logo-placeholder.svg
               </svg>
-              <div
-                class="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700"
-              >
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Plugin
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    Test Plugin
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Category
-                  </dt>
-                  <dd
-                    class="font-bold capitalize text-theme-secondary-text dark:text-theme-text"
-                  >
-                    other
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Version
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    v
-                    0.0.0
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Size
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    0 B
-                  </dd>
-                </dl>
-              </div>
             </div>
             <div
-              class="flex items-center space-x-2"
+              class="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700"
             >
-              <button
-                class="Button__StyledButton-mdtvtf-0 cgAqkb"
-                data-testid="PluginView__report"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
+              <dl>
+                <dd
+                  class="font-semibold text-theme-secondary-text dark:text-theme-text"
                 >
-                  <div
-                    class="sc-bdfBwQ dUoICL"
-                    height="1.25rem"
-                    width="1.5rem"
-                  >
-                    <svg>
-                      alert-warning.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="Button__StyledButton-mdtvtf-0 cgAqkb"
-                data-testid="PluginView__uninstall"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ dUoICL"
-                    height="1.25rem"
-                    width="1.5rem"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex relative flex-1 w-full h-full"
-      >
-        <h1>
-          My Plugin View
-        </h1>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Plugin View should render plugin content with logo 1`] = `
-<div>
-  <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dqaNin"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
-      >
-        <div
-          class="flex relative justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center my-auto"
-          >
-            <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
-            >
-              <svg
-                width="48"
-              >
-                ark-logo.svg
-              </svg>
-            </div>
-          </div>
-          <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
-          >
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                title="Plugins"
-              >
-                Plugins
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                title="Exchange"
-              >
-                Exchange
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                title="News"
-              >
-                News
-              </a>
-            </li>
-          </ul>
-          <div
-            class="flex items-center my-auto space-x-4"
-          >
-            <div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="rounded-lg"
-                  >
-                    <button
-                      class="Button__StyledButton-mdtvtf-0 fHYGyx w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
-                      data-testid="navbar__buttons--notifications"
-                      type="button"
-                    >
-                      <div
-                        class="flex relative items-center space-x-2"
-                      >
-                        <div
-                          class="sc-bdfBwQ liSwOQ p-1"
-                          height="18"
-                          width="15"
-                        >
-                          <svg>
-                            notification.svg
-                          </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
-                        >
-                          <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-            />
-            <div
-              class="flex items-center"
-            >
-              <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
-              >
-                <button
-                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
-                  data-testid="navbar__buttons--send"
-                  type="button"
-                >
-                  <div
-                    class="flex relative items-center space-x-2"
-                  >
-                    <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
-                    >
-                      <svg>
-                        sent.svg
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-            />
-            <div
-              class="flex overflow-hidden items-center rounded-lg"
-            >
-              <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 jUYHeT"
-              >
-                <button
-                  class="Button__StyledButton-mdtvtf-0 fHYGyx"
-                  data-testid="navbar__buttons--receive"
-                  type="button"
-                >
-                  <div
-                    class="flex relative items-center space-x-2"
-                  >
-                    <div
-                      class="sc-bdfBwQ iSzUah p-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        qr-code.svg
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-            />
-          </div>
-          <div
-            class="flex items-center my-auto mr-4 ml-8"
-          >
-            <div
-              class="text-right"
-            >
-              <div
-                class="text-xs font-semibold text-theme-secondary-700"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  0 BTC
-                </span>
-              </div>
-            </div>
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
-                  >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-secondary-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
-                  >
-                    <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                    >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                      >
-                        JO
-                      </span>
-                    </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 jAXOXr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM transition-transform "
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-bdfBwQ imIpud text-theme-secondary-500"
-        height="24"
-        width="13"
-      >
-        <svg>
-          arrow-left.svg
-        </svg>
-      </div>
-      <span
-        class="space-x-3"
-      >
-        <a
-          aria-current="page"
-          class="text-theme-secondary-500 hover:underline active"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-        >
-          <span>
-            Plugin Manager
-          </span>
-        </a>
-        <span>
-          <div
-            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-            type="vertical"
-          />
-        </span>
-      </span>
-      <span
-        class="space-x-3"
-      >
-        <span
-          class="text-theme-secondary-700"
-        >
-          New Plugin
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col flex-1 "
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
-      >
-        <div
-          class="container py-16 px-14 mx-auto "
-        >
-          <div
-            class="flex justify-between items-center"
-          >
-            <div
-              class="flex items-center space-x-3"
-            >
-              <img
-                alt="Logo"
-                class="overflow-hidden w-12 h-12 rounded"
-                data-testid="PluginView__logo"
-                src="https://raw.githubusercontent.com/new-plugin/master/logo.png"
-              />
-              <div
-                class="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700"
-              >
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Plugin
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    New Plugin
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Category
-                  </dt>
-                  <dd
-                    class="font-bold capitalize text-theme-secondary-text dark:text-theme-text"
-                  >
-                    other
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Version
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    v
-                    0.0.0
-                  </dd>
-                </dl>
-                <dl
-                  class="pl-6 first:pl-0"
-                >
-                  <dt
-                    class="text-sm font-bold text-theme-secondary-500"
-                  >
-                    Size
-                  </dt>
-                  <dd
-                    class="font-bold text-theme-secondary-text dark:text-theme-text"
-                  >
-                    0 B
-                  </dd>
-                </dl>
-              </div>
-            </div>
-            <div
-              class="flex items-center space-x-2"
-            >
-              <button
-                class="Button__StyledButton-mdtvtf-0 cgAqkb"
-                data-testid="PluginView__report"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ dUoICL"
-                    height="1.25rem"
-                    width="1.5rem"
-                  >
-                    <svg>
-                      alert-warning.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="Button__StyledButton-mdtvtf-0 cgAqkb"
-                data-testid="PluginView__uninstall"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  <div
-                    class="sc-bdfBwQ dUoICL"
-                    height="1.25rem"
-                    width="1.5rem"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
+                  Test Plugin
+                </dd>
+              </dl>
             </div>
           </div>
         </div>

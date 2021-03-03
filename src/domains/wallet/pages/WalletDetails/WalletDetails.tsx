@@ -7,6 +7,7 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
+import { useConfiguration } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
@@ -40,6 +41,8 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
 	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 
+	const { profileIsSyncing } = useConfiguration();
+
 	const {
 		pendingMultiSignatureTransactions,
 		transactions,
@@ -60,16 +63,6 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	}, [activeWallet]);
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
-
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-		{
-			label: activeWallet.alias() || activeWallet.address(),
-		},
-	];
 
 	useEffect(() => {
 		const fetchAllData = async () => {
@@ -94,7 +87,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	/* istanbul ignore next */
 	return (
 		<>
-			<Page profile={activeProfile} crumbs={crumbs}>
+			<Page profile={activeProfile}>
 				<WalletHeader
 					profile={activeProfile}
 					wallet={activeWallet}
@@ -104,16 +97,13 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 				/>
 
 				{showWalletVote && (
-					<Section innerClassName="-my-10">
-						<div className="flex">
-							{showWalletVote && (
-								<WalletVote
-									wallet={activeWallet}
-									onButtonClick={handleVoteButton}
-									isLoading={isLoading}
-								/>
-							)}
-						</div>
+					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-10">
+						<WalletVote
+							wallet={activeWallet}
+							onButtonClick={handleVoteButton}
+							isLoadingDelegates={profileIsSyncing}
+							isLoading={isLoading}
+						/>
 					</Section>
 				)}
 

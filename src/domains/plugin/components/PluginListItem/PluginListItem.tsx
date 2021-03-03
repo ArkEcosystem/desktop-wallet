@@ -1,48 +1,100 @@
+import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Image } from "app/components/Image";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { PluginImage } from "../PluginImage";
+
 type PluginListItemProps = {
-	onDelete: any;
+	onDelete?: (plugin: any) => void;
 	onInstall: any;
 	onLaunch?: (plugin: any) => void;
 	onEnable?: (plugin: any) => void;
 	onDisable?: (plugin: any) => void;
+	onUpdate?: (plugin: any) => void;
+	onClick?: (plugin: any) => void;
+	isUpdating?: boolean;
+	updatingProgress?: any;
 	plugin: any;
 };
 
-export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLaunch, plugin }: PluginListItemProps) => {
+export const PluginListItem = ({
+	onDelete,
+	onInstall,
+	onEnable,
+	onDisable,
+	onLaunch,
+	onUpdate,
+	onClick,
+	isUpdating,
+	updatingProgress,
+	plugin,
+}: PluginListItemProps) => {
 	const { t } = useTranslation();
 
 	const handleInstall = () => {
 		onInstall?.(plugin);
 	};
 
+	const actions = useMemo(() => {
+		const result: DropdownOption[] = [];
+
+		if (plugin.hasUpdateAvailable) {
+			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+		}
+
+		if (plugin.isEnabled) {
+			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
+		} else {
+			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+		}
+
+		result.push({ label: t("COMMON.DELETE"), value: "delete" });
+
+		return result;
+	}, [t, plugin]);
+
 	return (
 		<TableRow>
 			<TableCell variant="start" innerClassName="space-x-5">
-				<div className="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg">
-					{plugin.logo ? (
-						<img data-testid="PluginListItem__logo" src={plugin.logo} alt="Logo" className="" />
-					) : (
-						<Image name="PluginLogoPlaceholder" domain="plugin" className="w-14 h-14" />
+				<PluginImage
+					logoURL={plugin.logo}
+					className="min-w-15 w-15 h-15"
+					isUpdating={isUpdating}
+					updatingProgress={updatingProgress}
+				/>
+
+				<div className="flex items-center space-x-2 text-left">
+					<span
+						data-testid="PluginListItem__link"
+						onClick={() => onClick?.(plugin)}
+						className="font-semibold link flex items-center space-x-2"
+					>
+						{plugin.title}
+					</span>
+
+					{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
+					{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
+
+					{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
+						<Tooltip
+							content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
+								minimumVersion: plugin.minimumVersion,
+							})}
+						>
+							<span data-testid="PluginListItem__minimum-version-warning" className="ml-3 text-xl">
+								<Icon name="AlertWarning" className="text-theme-warning-500" />
+							</span>
+						</Tooltip>
 					)}
 				</div>
-
-				<a href="/" className="font-semibold link">
-					{plugin.title}
-				</a>
-
-				{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
-				{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
 			</TableCell>
 
-			<TableCell innerClassName="pr-16">
+			<TableCell>
 				<span>{plugin.author}</span>
 			</TableCell>
 
@@ -113,20 +165,26 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 						)}
 						<Dropdown
 							toggleContent={
-								<Button variant="secondary" size="icon" className="text-left">
-									<Icon name="Settings" width={20} height={20} />
-								</Button>
+								<div className="relative">
+									{plugin.hasUpdateAvailable && (
+										<Tooltip content={t("PLUGINS.NEW_VERSION_AVAILABLE")}>
+											<Badge
+												data-testid="PluginListItem__update-badge"
+												size="sm"
+												className="bg-theme-danger-500"
+												position="top-right"
+											/>
+										</Tooltip>
+									)}
+									<Button variant="secondary" size="icon" className="text-left">
+										<Icon name="Settings" width={20} height={20} />
+									</Button>
+								</div>
 							}
-							options={[
-								{ label: t("COMMON.DELETE"), value: "delete" },
-								{
-									label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
-									value: plugin.isEnabled ? "disable" : "enable",
-								},
-							]}
+							options={actions}
 							onSelect={(option: any) => {
 								if (option.value === "delete") {
-									onDelete(plugin);
+									onDelete?.(plugin);
 								}
 
 								if (option.value === "enable") {
@@ -136,6 +194,10 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 								if (option.value === "disable") {
 									return onDisable?.(plugin);
 								}
+
+								if (option.value === "update") {
+									return onUpdate?.(plugin);
+								}
 							}}
 							dropdownClass="top-3 text-left"
 						/>
@@ -144,4 +206,8 @@ export const PluginListItem = ({ onDelete, onInstall, onEnable, onDisable, onLau
 			</TableCell>
 		</TableRow>
 	);
+};
+
+PluginListItem.defaultProps = {
+	updatingProgress: 0,
 };

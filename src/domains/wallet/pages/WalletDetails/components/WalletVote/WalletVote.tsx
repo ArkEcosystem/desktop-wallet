@@ -11,6 +11,7 @@ import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
 type WalletVoteProps = {
 	isLoading?: boolean;
+	isLoadingDelegates?: boolean;
 	wallet: ReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 };
@@ -28,7 +29,7 @@ const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
 	</Tooltip>
 );
 
-export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps) => {
+export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClick }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
 	if (isLoading) {
@@ -98,6 +99,7 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 			<>
 				<Circle
 					size="lg"
+					shadowColor="--theme-secondary-background-color"
 					className="border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
 				>
 					<Icon name="Vote" width={17} height={17} />
@@ -160,6 +162,7 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 				<>
 					<Circle
 						size="lg"
+						shadowColor="--theme-secondary-background-color"
 						className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
 					>
 						<Icon name="Vote" width={17} height={17} />
@@ -194,6 +197,8 @@ export const WalletVote = ({ isLoading, wallet, onButtonClick }: WalletVoteProps
 				variant="secondary"
 				className="space-x-2"
 				onClick={() => onButtonClick()}
+				isLoading={isLoadingDelegates}
+				disabled={isLoadingDelegates}
 			>
 				<Icon name="Vote" width={17} height={17} />
 				<span>{t("COMMON.VOTE")}</span>

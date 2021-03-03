@@ -1,3 +1,4 @@
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
@@ -54,6 +55,36 @@ describe("PluginListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should trigger update", () => {
+		const plugin = {
+			id: "ark-explorer",
+			title: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		const onUpdate = jest.fn();
+
+		const { getByTestId, getByText } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onUpdate={onUpdate} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("dropdown__toggle"));
+		fireEvent.click(getByText(commonTranslations.UPDATE));
+
+		expect(getByTestId("PluginListItem__update-badge")).toBeInTheDocument();
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+	});
+
 	it("should trigger delete", () => {
 		const plugin = {
 			id: "ark-explorer",
@@ -67,7 +98,7 @@ describe("PluginListItem", () => {
 
 		const onDelete = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onDelete={onDelete} />
@@ -76,7 +107,7 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--0"));
+		fireEvent.click(getByText(commonTranslations.DELETE));
 
 		expect(onDelete).toHaveBeenCalledTimes(1);
 	});
@@ -94,7 +125,7 @@ describe("PluginListItem", () => {
 
 		const onEnable = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onEnable={onEnable} />
@@ -103,9 +134,34 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--1"));
+		fireEvent.click(getByText(commonTranslations.ENABLE));
 
 		expect(onEnable).toHaveBeenCalledTimes(1);
+	});
+
+	it("should trigger click", () => {
+		const plugin = {
+			id: "ark-explorer",
+			title: "ARK Explorer",
+			author: "ARK.io",
+			category: "utility",
+			version: "1.3.8",
+			size: "4.2 MB",
+		};
+
+		const onClick = jest.fn();
+
+		const { getByTestId } = render(
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onClick={onClick} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getByTestId("PluginListItem__link"));
+
+		expect(onClick).toHaveBeenCalledTimes(1);
 	});
 
 	it("should trigger disable", () => {
@@ -122,7 +178,7 @@ describe("PluginListItem", () => {
 
 		const onDisable = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByTestId, getByText } = render(
 			<table>
 				<tbody>
 					<PluginListItem plugin={plugin} onDisable={onDisable} />
@@ -131,7 +187,7 @@ describe("PluginListItem", () => {
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(getByTestId("dropdown__option--1"));
+		fireEvent.click(getByText(commonTranslations.DISABLE));
 
 		expect(onDisable).toHaveBeenCalledTimes(1);
 	});
@@ -164,7 +220,7 @@ describe("PluginListItem", () => {
 		expect(onLaunch).toHaveBeenCalledTimes(1);
 	});
 
-	it("should render custom logo", () => {
+	it("should render minimum version warning", () => {
 		const plugin = {
 			id: "ark-explorer",
 			name: "ARK Explorer",
@@ -173,21 +229,19 @@ describe("PluginListItem", () => {
 			version: "1.3.8",
 			size: "4.2 MB",
 			isInstalled: true,
-			isEnabled: true,
-			logo: "https://ark.io/logo",
+			hasUpdateAvailable: true,
+			isMinimumVersionSatisfied: false,
 		};
-
-		const onLaunch = jest.fn();
 
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<PluginListItem plugin={plugin} onLaunch={onLaunch} />
+					<PluginListItem plugin={plugin} />
 				</tbody>
 			</table>,
 		);
 
-		expect(getByTestId("PluginListItem__logo")).toBeInTheDocument();
+		expect(getByTestId("PluginListItem__minimum-version-warning")).toBeInTheDocument();
 	});
 
 	it("should render official icon", () => {

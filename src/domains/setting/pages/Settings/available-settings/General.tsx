@@ -103,7 +103,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const securityItems = [
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -117,7 +116,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		},
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -154,7 +152,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const otherItems = [
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -169,7 +166,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -197,7 +193,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
@@ -208,20 +203,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				/>
 			),
 			wrapperClass: "py-6",
-		},
-		{
-			label: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
-			labelDescription: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION"),
-			labelAddon: (
-				<Toggle
-					ref={register()}
-					name="isUpdateLedger"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.LedgerUpdateMethod)}
-					data-testid="General-settings__toggle--isUpdateLedger"
-				/>
-			),
-			wrapperClass: "pt-6",
 		},
 	];
 
@@ -236,7 +217,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		isScreenshotProtection,
 		isAdvancedMode,
 		isDarkMode,
-		isUpdateLedger,
 		useTestNetworks,
 		errorReporting,
 		transactionHistory,
@@ -251,7 +231,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
 		activeProfile.settings().set(ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
 		activeProfile.settings().set(ProfileSetting.ErrorReporting, errorReporting);
 		activeProfile.settings().set(ProfileSetting.DashboardTransactionHistory, transactionHistory);
@@ -275,7 +254,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 			<Form data-testid="General-settings__form" context={context} onSubmit={handleSubmit}>
 				<div className="relative mt-8">
-					<h2>{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
+					<h2 className="mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
 					<SelectProfileImage value={avatarImage} name={formattedName} onSelect={setAvatarImage} />
 
@@ -376,19 +355,19 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				</div>
 
 				<div className="relative mt-10">
-					<h2>{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
+					<h2 className="mb-3">{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
 					<ListDivided items={securityItems} />
 				</div>
 
 				<div className="relative mt-10">
-					<h2>{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
+					<h2 className="mb-3">{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 					<ListDivided items={otherItems} />
 				</div>
 
 				<div className="flex justify-between pt-2 w-full">
 					<Button onClick={() => setIsResetProfileOpen(true)} variant="danger">
 						<Icon name="Reset" />
-						<span>{t("COMMON.RESET_DATA")}</span>
+						<span>{t("COMMON.RESET_SETTINGS")}</span>
 					</Button>
 
 					<div className="space-x-3">

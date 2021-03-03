@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import * as useScrollHook from "app/hooks/use-scroll";
 import electron from "electron";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -26,6 +27,24 @@ describe("NavigationBar", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render as logo-only variant", () => {
+		const { container, asFragment } = renderWithRouter(<NavigationBar variant="logo-only" />);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with shadow if there is a scroll", () => {
+		const scrollSpy = jest.spyOn(useScrollHook, "useScroll").mockImplementation(() => 1);
+
+		const { container, asFragment } = renderWithRouter(<NavigationBar />);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		scrollSpy.mockRestore();
 	});
 
 	it("should render with title", () => {
@@ -94,18 +113,9 @@ describe("NavigationBar", () => {
 			fireEvent.click(toggle);
 		});
 
-		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 		expect(getByText("Option 1")).toBeTruthy();
 		fireEvent.click(getByText("Option 1"));
 		expect(history.location.pathname).toMatch("/test");
-	});
-
-	it("should render the navbar with avatar image", () => {
-		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
-
-		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
-
-		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 	});
 
 	it("should render the navbar with exchange currency", () => {

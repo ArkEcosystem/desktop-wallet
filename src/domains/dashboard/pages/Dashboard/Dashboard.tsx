@@ -27,7 +27,7 @@ export const Dashboard = () => {
 
 	return (
 		<>
-			<Page profile={activeProfile}>
+			<Page profile={activeProfile} isBackDisabled={true}>
 				<Wallets
 					title={t("COMMON.WALLETS")}
 					walletsCount={profileWalletsCount}

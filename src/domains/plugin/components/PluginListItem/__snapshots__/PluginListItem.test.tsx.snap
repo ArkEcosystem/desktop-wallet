@@ -13,25 +13,29 @@ exports[`PluginListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
-                class="w-14 h-14"
+                class="min-w-15 w-15 h-15"
               >
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
+            <div
+              class="flex items-center space-x-2 text-left"
             >
-              ARK Explorer
-            </a>
+              <span
+                class="font-semibold link flex items-center space-x-2"
+                data-testid="PluginListItem__link"
+              >
+                ARK Explorer
+              </span>
+            </div>
           </div>
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
           >
             <span>
               ARK.io
@@ -123,34 +127,38 @@ exports[`PluginListItem should render grant icon 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
-                class="w-14 h-14"
+                class="min-w-15 w-15 h-15"
               >
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
-            >
-              ARK Explorer
-            </a>
             <div
-              class="sc-bdfBwQ eMktAO"
-              height="20"
-              width="14"
+              class="flex items-center space-x-2 text-left"
             >
-              <svg>
-                grant.svg
-              </svg>
+              <span
+                class="font-semibold link flex items-center space-x-2"
+                data-testid="PluginListItem__link"
+              >
+                ARK Explorer
+              </span>
+              <div
+                class="sc-bdfBwQ eMktAO"
+                height="20"
+                width="14"
+              >
+                <svg>
+                  grant.svg
+                </svg>
+              </div>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
           >
             <span>
               ARK.io
@@ -242,34 +250,38 @@ exports[`PluginListItem should render official icon 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
-                class="w-14 h-14"
+                class="min-w-15 w-15 h-15"
               >
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
-            >
-              ARK Explorer
-            </a>
             <div
-              class="sc-bdfBwQ iNulIV"
-              height="18"
-              width="18"
+              class="flex items-center space-x-2 text-left"
             >
-              <svg>
-                official-ark-plugin.svg
-              </svg>
+              <span
+                class="font-semibold link flex items-center space-x-2"
+                data-testid="PluginListItem__link"
+              >
+                ARK Explorer
+              </span>
+              <div
+                class="sc-bdfBwQ iNulIV"
+                height="18"
+                width="18"
+              >
+                <svg>
+                  official-ark-plugin.svg
+                </svg>
+              </div>
             </div>
           </div>
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
           >
             <span>
               ARK.io
@@ -361,25 +373,29 @@ exports[`PluginListItem should trigger install 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
           >
             <div
-              class="flex w-15 h-15 justify-center items-center overflow-hidden rounded-lg"
+              data-testid="PluginImage__placeholder"
             >
               <svg
-                class="w-14 h-14"
+                class="min-w-15 w-15 h-15"
               >
                 plugin-logo-placeholder.svg
               </svg>
             </div>
-            <a
-              class="font-semibold link"
-              href="/"
+            <div
+              class="flex items-center space-x-2 text-left"
             >
-              ARK Explorer
-            </a>
+              <span
+                class="font-semibold link flex items-center space-x-2"
+                data-testid="PluginListItem__link"
+              >
+                ARK Explorer
+              </span>
+            </div>
           </div>
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT pr-16"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
           >
             <span>
               ARK.io

@@ -7,7 +7,7 @@ main {
 }
 
 .link {
-	@apply text-theme-primary-600;
+	@apply cursor-pointer transition-colors duration-100 ease-linear text-theme-primary-600;
 }
 
 .link:hover {
@@ -20,6 +20,11 @@ main {
 
 .important\:z-0 {
 	z-index: 0 !important;
+}
+
+.important\:px-0 {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 .no-ligatures {
