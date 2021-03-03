@@ -100,7 +100,7 @@ export const AddRecipient = ({
 	const clearFields = useCallback(() => {
 		setValue("amount", undefined);
 		setValue("displayAmount", undefined);
-		setValue("recipientAddress", undefined);
+		setValue("recipientAddress", null);
 	}, [setValue]);
 
 	useEffect(() => {
