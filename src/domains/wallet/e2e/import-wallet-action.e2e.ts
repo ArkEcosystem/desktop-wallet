@@ -72,7 +72,7 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("input[name=isAddressOnly]").parent());
 
 	// Fill an address and advance to the third step
-	const addressInput = Selector("input[name=address]");
+	const addressInput = Selector("[data-testid=ImportWallet__address-input]");
 
 	await t.typeText(addressInput, "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P");
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -107,7 +107,7 @@ test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("input[name=isAddressOnly]").parent());
 
 	// Input address
-	const addressInput = Selector("input[name=address]");
+	const addressInput = Selector("[data-testid=ImportWallet__address-input]");
 	await t.typeText(addressInput, "123");
 
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));

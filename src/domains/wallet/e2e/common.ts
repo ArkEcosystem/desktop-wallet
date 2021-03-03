@@ -47,7 +47,7 @@ export const importWalletByAddress = async (t: any, address: string, alias = "Te
 	await t.click('[data-testid="SelectDropdownInput__input"]');
 	await t.click(Selector("#ImportWallet__select-item-1"));
 
-	await t.typeText(Selector("input[name=address]"), address);
+	await t.typeText(Selector("[data-testid=ImportWallet__address-input]"), address);
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
