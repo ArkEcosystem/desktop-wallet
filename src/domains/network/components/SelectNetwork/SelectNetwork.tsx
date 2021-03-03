@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { NetworkOption } from "domains/network/components/NetworkOption";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { useCombobox } from "downshift";
@@ -55,7 +55,6 @@ export const SelectNetwork = ({
 		getComboboxProps,
 		getLabelProps,
 		getInputProps,
-		getItemProps,
 		getMenuProps,
 		selectItem,
 		selectedItem,
@@ -77,7 +76,7 @@ export const SelectNetwork = ({
 
 	useEffect(() => {
 		selectItem(selected || null);
-	}, [selectItem, selected]);
+	}, [selectItem, selected, disabled]);
 
 	const toggleSelection = (item: Network) => {
 		if (item.id() === selectedItem?.id()) {
@@ -98,15 +97,16 @@ export const SelectNetwork = ({
 		}
 	}, [items, inputValue]);
 
-	const assetClassName = (network: Network) => {
-		// Selected is me. Show me with default colors
+	const optionClassName = (network: Network) => {
+		// Selected is me. Show me green
 		if (selectedItem && selectedItem.extra?.displayName === network.extra?.displayName) {
-			return undefined;
+			return "border-theme-success-400 bg-theme-success-100 text-theme-secondary-600";
 		}
+
 		// Selection is made but not me. Show me disabled
 		/* istanbul ignore next */
 		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName) {
-			return "text-theme-secondary-400";
+			return "text-theme-secondary-300";
 		}
 
 		// Initial state. Nothing entered, nothing selected
@@ -120,7 +120,7 @@ export const SelectNetwork = ({
 		}
 
 		// Disabled otherwise
-		return "text-theme-secondary-400";
+		return "text-theme-secondary-300";
 	};
 
 	return (
@@ -160,30 +160,15 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()} className={"grid grid-cols-6 gap-6 mt-6"}>
+			<ul {...getMenuProps()} className="grid grid-cols-6 gap-3 mt-6">
 				{items.map((item: Network, index: number) => (
-					<li
-						data-testid="SelectNetwork__NetworkIcon--container"
+					<NetworkOption
 						key={index}
-						className="inline-block cursor-pointer"
-						{...getItemProps({
-							item,
-							index,
-							disabled,
-							onMouseDown: () => {
-								toggleSelection(item);
-							},
-						})}
-					>
-						<NetworkIcon
-							coin={item.coin()}
-							network={item.id()}
-							size="xl"
-							iconSize={26}
-							className={assetClassName(item)}
-							noShadow
-						/>
-					</li>
+						network={item}
+						// disabled={disabled}
+						iconClassName={optionClassName(item)}
+						onClick={() => toggleSelection(item)}
+					/>
 				))}
 			</ul>
 		</div>
