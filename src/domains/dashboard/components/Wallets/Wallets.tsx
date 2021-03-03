@@ -78,7 +78,8 @@ export const Wallets = ({
 	return (
 		<Section className={!showTransactions ? "flex-1" : undefined}>
 			<div className="flex justify-between items-center mb-8">
-				<div className="-mt-1 text-4xl font-bold">{title}</div>
+				<div className="text-4xl font-bold">{title}</div>
+
 				<div className="text-right">
 					<WalletsControls
 						filterProperties={filterProperties}
@@ -92,24 +93,22 @@ export const Wallets = ({
 				</div>
 			</div>
 
-			<div className="mt-1">
-				<WalletsGrid
-					isVisible={viewType === "grid"}
-					isLoading={isLoading && walletsCount === 0}
-					wallets={gridWallets}
-					sliderOptions={sliderOptions}
-					onWalletAction={onWalletAction}
-				/>
+			<WalletsGrid
+				isVisible={viewType === "grid"}
+				isLoading={isLoading && walletsCount === 0}
+				wallets={gridWallets}
+				sliderOptions={sliderOptions}
+				onWalletAction={onWalletAction}
+			/>
 
-				<WalletsList
-					isLoading={isLoading && walletsCount === 0}
-					isVisible={viewType === "list"}
-					wallets={listWallets}
-					hasMore={listHasMore}
-					onRowClick={handleClick}
-					onViewMore={() => setViewMore(true)}
-				/>
-			</div>
+			<WalletsList
+				isLoading={isLoading && walletsCount === 0}
+				isVisible={viewType === "list"}
+				wallets={listWallets}
+				hasMore={listHasMore}
+				onRowClick={handleClick}
+				onViewMore={() => setViewMore(true)}
+			/>
 
 			{isWaitingLedger && (
 				<LedgerWaitingDevice

@@ -404,10 +404,10 @@ exports[`Settings should change a password 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="space-y-8"
@@ -415,9 +415,11 @@ exports[`Settings should change a password 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Profile Password
@@ -1000,17 +1002,19 @@ exports[`Settings should render 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="flex justify-between items-end bg-theme-background"
                 >
-                  <div>
+                  <div
+                    class="space-y-4"
+                  >
                     <h1
-                      class="mb-0 md:text-4xl"
+                      class="mb-0 text-4xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -2435,10 +2439,10 @@ exports[`Settings should render password settings 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="space-y-8"
@@ -2446,9 +2450,11 @@ exports[`Settings should render password settings 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Profile Password
@@ -2988,17 +2994,19 @@ exports[`Settings should render peer settings 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="flex justify-between items-end bg-theme-background"
                 >
-                  <div>
+                  <div
+                    class="space-y-4"
+                  >
                     <h1
-                      class="mb-0 md:text-4xl"
+                      class="mb-0 text-4xl"
                       data-testid="header__title"
                     >
                       Peer Settings
@@ -3561,17 +3569,19 @@ exports[`Settings should render plugin settings 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="flex justify-between items-end bg-theme-background"
                 >
-                  <div>
+                  <div
+                    class="space-y-4"
+                  >
                     <h1
-                      class="mb-0 md:text-4xl"
+                      class="mb-0 text-4xl"
                       data-testid="header__title"
                     >
                       Plugin Settings
@@ -4161,10 +4171,10 @@ exports[`Settings should set a password 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="space-y-8"
@@ -4172,9 +4182,11 @@ exports[`Settings should set a password 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Profile Password
@@ -4759,10 +4771,10 @@ exports[`Settings should show an error toast if the current password does not ma
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="space-y-8"
@@ -4770,9 +4782,11 @@ exports[`Settings should show an error toast if the current password does not ma
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Profile Password
@@ -5356,10 +5370,10 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="space-y-8"
@@ -5367,9 +5381,11 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Profile Password
@@ -5971,17 +5987,19 @@ exports[`Settings should update profile 1`] = `
             class="ml-16 w-full"
           >
             <div
-              class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+              class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
             >
               <div
-                class="container py-16 px-14 mx-auto "
+                class="container px-10 mx-auto"
               >
                 <div
                   class="flex justify-between items-end bg-theme-background"
                 >
-                  <div>
+                  <div
+                    class="space-y-4"
+                  >
                     <h1
-                      class="mb-0 md:text-4xl"
+                      class="mb-0 text-4xl"
                       data-testid="header__title"
                     >
                       Profile Settings
