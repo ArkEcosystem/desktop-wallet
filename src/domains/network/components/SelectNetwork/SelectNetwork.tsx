@@ -4,6 +4,7 @@ import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
 
@@ -31,6 +32,7 @@ export const SelectNetwork = ({
 	disabled,
 	selected,
 }: SelectNetworkProps) => {
+	const { t } = useTranslation();
 	const [items, setItems] = useState<Network[]>([]);
 
 	const extendedItems = useMemo(
@@ -89,6 +91,9 @@ export const SelectNetwork = ({
 		selectItem(item);
 		closeMenu();
 	};
+
+	const publicNetworks = items.filter((network) => network.isLive());
+	const developmentNetworks = items.filter((network) => !network.isLive());
 
 	const inputTypeAhead = React.useMemo(() => {
 		const matches = items.filter((network: Network) => isMatch(inputValue, network));
@@ -160,17 +165,50 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()} className="grid grid-cols-6 gap-3 mt-6">
-				{items.map((item: Network, index: number) => (
-					<NetworkOption
-						key={index}
-						network={item}
-						// disabled={disabled}
-						iconClassName={optionClassName(item)}
-						onClick={() => toggleSelection(item)}
-					/>
-				))}
-			</ul>
+
+			{publicNetworks.length > 0 && (
+				<div className="mt-8">
+					{developmentNetworks.length > 0 && (
+						<div className="font-bold text-sm text-theme-secondary-400 mb-4">
+							{t("COMMON.PUBLIC_NETWORK").toUpperCase()}
+						</div>
+					)}
+
+					<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
+						{publicNetworks.map((network: Network, index: number) => (
+							<NetworkOption
+								key={index}
+								network={network}
+								// disabled={disabled}
+								iconClassName={optionClassName(network)}
+								onClick={() => toggleSelection(network)}
+							/>
+						))}
+					</ul>
+				</div>
+			)}
+
+			{developmentNetworks.length > 0 && (
+				<div className="mt-8">
+					{publicNetworks.length > 0 && (
+						<div className="font-bold text-sm text-theme-secondary-400 mb-4">
+							{t("COMMON.DEVELOPMENT_NETWORK").toUpperCase()}
+						</div>
+					)}
+
+					<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
+						{developmentNetworks.map((network: Network, index: number) => (
+							<NetworkOption
+								key={index}
+								network={network}
+								// disabled={disabled}
+								iconClassName={optionClassName(network)}
+								onClick={() => toggleSelection(network)}
+							/>
+						))}
+					</ul>
+				</div>
+			)}
 		</div>
 	);
 };
