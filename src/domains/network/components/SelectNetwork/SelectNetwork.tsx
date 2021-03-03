@@ -50,7 +50,6 @@ export const SelectNetwork = ({
 		inputValue && network.extra?.displayName?.toLowerCase().startsWith(inputValue.toLowerCase());
 
 	const {
-		isOpen,
 		closeMenu,
 		openMenu,
 		getComboboxProps,
@@ -68,10 +67,6 @@ export const SelectNetwork = ({
 		itemToString,
 		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
 		onInputValueChange: ({ inputValue, selectedItem }) => {
-			setItems(
-				inputValue ? extendedItems.filter((network: Network) => isMatch(inputValue, network)) : extendedItems,
-			);
-
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
 			if (selectedItem && selectedItem.extra?.displayName !== inputValue) {
@@ -97,15 +92,21 @@ export const SelectNetwork = ({
 	};
 
 	const inputTypeAhead = React.useMemo(() => {
-		if (inputValue && items.length) {
-			return [inputValue, items[0].extra?.displayName?.slice(inputValue.length)].join("");
+		const matches = items.filter((network: Network) => isMatch(inputValue, network));
+		if (inputValue && matches.length > 0) {
+			return [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
 		}
 	}, [items, inputValue]);
 
 	const assetClassName = (network: Network) => {
-		// Selected is me. Show me green
+		// Selected is me. Show me with default colors
 		if (selectedItem && selectedItem.extra?.displayName === network.extra?.displayName) {
-			return "text-theme-success-500 border-theme-success-200";
+			return undefined;
+		}
+		// Selection is made but not me. Show me disabled
+		/* istanbul ignore next */
+		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName) {
+			return "text-theme-secondary-400";
 		}
 
 		// Initial state. Nothing entered, nothing selected
@@ -135,8 +136,9 @@ export const SelectNetwork = ({
 						placeholder,
 						onFocus: openMenu,
 						onBlur: () => {
-							if (inputValue && items.length > 0) {
-								selectItem(items[0]);
+							const firstMatch = items.find((network: Network) => isMatch(inputValue, network));
+							if (inputValue && firstMatch) {
+								selectItem(firstMatch);
 							} else {
 								reset();
 							}
@@ -144,8 +146,9 @@ export const SelectNetwork = ({
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
-								if (inputValue && items.length > 0) {
-									selectItem(items[0]);
+								const firstMatch = items.find((network: Network) => isMatch(inputValue, network));
+								if (inputValue && firstMatch) {
+									selectItem(firstMatch);
 									if (event.key === "Enter") {
 										closeMenu();
 									}
@@ -157,34 +160,31 @@ export const SelectNetwork = ({
 					})}
 				/>
 			</div>
-			<ul {...getMenuProps()} className={isOpen && items.length > 0 ? "grid grid-cols-6 gap-6 mt-6" : "hidden"}>
-				{isOpen &&
-					items
-						.filter((network: Network) => network.extra)
-						.map((item: Network, index: number) => (
-							<li
-								data-testid="SelectNetwork__NetworkIcon--container"
-								key={index}
-								className="inline-block cursor-pointer"
-								{...getItemProps({
-									item,
-									index,
-									disabled,
-									onMouseDown: () => {
-										toggleSelection(item);
-									},
-								})}
-							>
-								<NetworkIcon
-									coin={item.coin()}
-									network={item.id()}
-									size="xl"
-									iconSize={26}
-									className={assetClassName(item)}
-									noShadow
-								/>
-							</li>
-						))}
+			<ul {...getMenuProps()} className={"grid grid-cols-6 gap-6 mt-6"}>
+				{items.map((item: Network, index: number) => (
+					<li
+						data-testid="SelectNetwork__NetworkIcon--container"
+						key={index}
+						className="inline-block cursor-pointer"
+						{...getItemProps({
+							item,
+							index,
+							disabled,
+							onMouseDown: () => {
+								toggleSelection(item);
+							},
+						})}
+					>
+						<NetworkIcon
+							coin={item.coin()}
+							network={item.id()}
+							size="xl"
+							iconSize={26}
+							className={assetClassName(item)}
+							noShadow
+						/>
+					</li>
+				))}
 			</ul>
 		</div>
 	);
