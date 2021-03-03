@@ -131,13 +131,14 @@ describe("Exchange", () => {
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
-	it("should launch exchange by clicking on the card", async () => {
+	it("should go to plugin details", async () => {
+		const onEnabled = jest.fn();
+
 		const plugin = new PluginController(
-			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"], permissions: ["LAUNCH"] } },
-			(api) => api.launch().render(<h1>My Exchange View</h1>),
+			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"] } },
+			onEnabled,
 		);
 
-		pluginManager.services().register([new LaunchPluginService()]);
 		pluginManager.plugins().push(plugin);
 
 		plugin.enable(profile, { autoRun: true });
@@ -159,11 +160,13 @@ describe("Exchange", () => {
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
+		fireEvent.click(within(getByTestId("ExchangeGrid")).getAllByTestId("Card")[0]);
+
 		act(() => {
-			fireEvent.click(within(getByTestId("ExchangeGrid")).getAllByTestId("Card")[0]);
+			fireEvent.click(getByText(commonTranslations.DETAILS));
 		});
 
-		const redirectUrl = `/profiles/${profile.id()}/exchange/view?pluginId=test-exchange`;
+		const redirectUrl = `/profiles/${profile.id()}/plugins/details?pluginId=test-exchange`;
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
 
 		historySpy.mockRestore();

@@ -34,10 +34,6 @@ export const Exchange = () => {
 
 	const { t } = useTranslation();
 
-	const handleLaunchExchange = (exchange: any) => {
-		history.push(`/profiles/${activeProfile.id()}/exchange/view?pluginId=${exchange.id}`);
-	};
-
 	const installedPlugins = pluginManager
 		.plugins()
 		.all()
@@ -50,8 +46,16 @@ export const Exchange = () => {
 		exchanges.push(...new Array(3 - exchanges.length).fill(undefined));
 	}
 
+	const handleLaunchExchange = (exchange: any) => {
+		history.push(`/profiles/${activeProfile.id()}/exchange/view?pluginId=${exchange.id}`);
+	};
+
 	const handleDeleteExchange = (exchange: any) => {
 		setSelectedExchange(pluginManager.plugins().findById(exchange.id));
+	};
+
+	const handleOpenExchangeDetails = (exchange: any) => {
+		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${exchange.id}`);
 	};
 
 	return (
@@ -68,8 +72,9 @@ export const Exchange = () => {
 				<Section>
 					<ExchangeGrid
 						exchanges={exchanges}
-						onLaunch={handleLaunchExchange}
+						onClick={handleLaunchExchange}
 						onDelete={handleDeleteExchange}
+						onOpenDetails={handleOpenExchangeDetails}
 					/>
 				</Section>
 			</Page>

@@ -50,6 +50,7 @@ export const translations: { [key: string]: any } = {
 	DELEGATES: "Delegates",
 	DELETE: "Delete",
 	DESKTOP_WALLET: "Desktop Wallet",
+	DETAILS: "Details",
 	DISCLAIMER: "Disclaimer",
 	DISABLE: "Disable",
 	DONE: "Done",

@@ -5,25 +5,26 @@ import { ExchangeCard } from "../ExchangeCard";
 
 type ExchangeGridProps = {
 	exchanges: any[];
+	onClick: any;
 	onDelete: any;
-	onLaunch: any;
+	onOpenDetails: any;
 };
 
-export const ExchangeGrid = ({ exchanges, onDelete, onLaunch }: ExchangeGridProps) => {
+export const ExchangeGrid = ({ exchanges, onClick, onDelete, onOpenDetails }: ExchangeGridProps) => {
 	const { t } = useTranslation();
 
 	const actions = [
-		{ label: t("COMMON.LAUNCH"), value: "launch" },
+		{ label: t("COMMON.DETAILS"), value: "open-details" },
 		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
 
 	const handleExchangeAction = (exchange: any, action: any) => {
 		switch (action?.value) {
-			case "launch":
-				onLaunch(exchange);
-				break;
 			case "delete":
 				onDelete(exchange);
+				break;
+			case "open-details":
+				onOpenDetails(exchange);
 				break;
 		}
 	};
@@ -35,7 +36,7 @@ export const ExchangeGrid = ({ exchanges, onDelete, onLaunch }: ExchangeGridProp
 					key={exchange?.id || `blank_${index}`}
 					actions={actions}
 					exchange={exchange}
-					onClick={() => onLaunch(exchange)}
+					onClick={() => onClick(exchange)}
 					onSelect={(action: any) => handleExchangeAction(exchange, action)}
 				/>
 			))}
