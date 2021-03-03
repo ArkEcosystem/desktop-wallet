@@ -40,7 +40,7 @@ export const SendVote = () => {
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
