@@ -37,7 +37,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
 	// Fill a passphrase and advance to third step
-	const passphraseInput = Selector("input[name=passphrase]");
+	const passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
 	await t.typeText(passphraseInput, "buddy year cost vendor honey tonight viable nut female alarm duck symptom");
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -68,8 +68,8 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
-	// Use the address only
-	await t.click(Selector("input[name=isAddressOnly]").parent());
+	await t.click('[data-testid="SelectDropdownInput__input"]');
+	await t.click(Selector("#ImportWallet__select-item-1"));
 
 	// Fill an address and advance to the third step
 	const addressInput = Selector("[data-testid=ImportWallet__address-input]");
@@ -103,8 +103,8 @@ test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
-	// Use the address only
-	await t.click(Selector("input[name=isAddressOnly]").parent());
+	await t.click('[data-testid="SelectDropdownInput__input"]');
+	await t.click(Selector("#ImportWallet__select-item-1"));
 
 	// Input address
 	const addressInput = Selector("[data-testid=ImportWallet__address-input]");
@@ -137,7 +137,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
 	// Input passphrase
-	passphraseInput = Selector("input[name=passphrase]");
+	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -161,7 +161,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
 	// Input passphrase
-	passphraseInput = Selector("input[name=passphrase]");
+	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
