@@ -131,7 +131,6 @@ describe("Exchange", () => {
 		fireEvent.click(await findByText(translations.ADD_EXCHANGE));
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.DESCRIPTION);
 
 		fireEvent.click(getByTestId("modal__close-btn"));
 
@@ -154,7 +153,6 @@ describe("Exchange", () => {
 		fireEvent.click(await findByText(translations.ADD_EXCHANGE));
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADD_EXCHANGE.DESCRIPTION);
 
 		fireEvent.click(getByTestId("modal__close-btn"));
 
