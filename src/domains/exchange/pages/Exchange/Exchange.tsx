@@ -1,7 +1,6 @@
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
-import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
@@ -32,7 +31,6 @@ export const Exchange = () => {
 	const [selectedExchange, setSelectedExchange] = useState<PluginController | undefined>(undefined);
 
 	const { mapConfigToPluginData, pluginManager } = usePluginManagerContext();
-	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
