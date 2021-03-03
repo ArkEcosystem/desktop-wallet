@@ -198,7 +198,7 @@ export const SendVote = () => {
 				// concept of all those weird legacy constructs that exist within ARK.
 				/* istanbul ignore next */
 				if (senderWallet?.networkId() === "ark.mainnet") {
-					const unvoteTransaction = await transactionBuilder.build(
+					const unvoteResult = await transactionBuilder.build(
 						"vote",
 						{
 							...voteTransactionInput,
@@ -209,13 +209,13 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(unvoteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(unvoteResult.uuid, voteTransactionInput);
 
 					await env.persist();
 
 					await confirmSendVote("unvote");
 
-					const voteTransaction = await transactionBuilder.build(
+					const voteResult = await transactionBuilder.build(
 						"vote",
 						{
 							...voteTransactionInput,
@@ -226,11 +226,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(voteResult.uuid, voteTransactionInput);
 
 					await env.persist();
 
-					setTransaction(voteTransaction);
+					setTransaction(voteResult.transaction);
 
 					setActiveTab(4);
 
@@ -238,7 +238,7 @@ export const SendVote = () => {
 				} else {
 					// @README: If we are not interacting with ark.mainnet we can combine the
 					// votes and unvotes in a single transaction to save fees and processing time.
-					const voteTransaction = await transactionBuilder.build(
+					const { uuid, transaction } = await transactionBuilder.build(
 						"vote",
 						{
 							...voteTransactionInput,
@@ -250,11 +250,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(uuid, voteTransactionInput);
 
 					await env.persist();
 
-					setTransaction(voteTransaction);
+					setTransaction(transaction);
 
 					setActiveTab(4);
 
@@ -262,7 +262,7 @@ export const SendVote = () => {
 				}
 			} else {
 				const isUnvote = unvotes.length > 0;
-				const transaction = await transactionBuilder.build(
+				const { uuid, transaction } = await transactionBuilder.build(
 					"vote",
 					{
 						...voteTransactionInput,
@@ -277,7 +277,7 @@ export const SendVote = () => {
 					{ abortSignal },
 				);
 
-				await transactionBuilder.broadcast(transaction.id(), voteTransactionInput);
+				await transactionBuilder.broadcast(uuid, voteTransactionInput);
 
 				await env.persist();
 

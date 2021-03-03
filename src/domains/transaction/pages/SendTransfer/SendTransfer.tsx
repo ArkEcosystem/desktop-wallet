@@ -177,11 +177,11 @@ export const SendTransfer = () => {
 			transactionInput.data.expiration = parseInt(expiration!);
 
 			const abortSignal = abortRef.current?.signal;
-			const transaction = await transactionBuilder.build(transactionType, transactionInput, {
+			const { uuid, transaction } = await transactionBuilder.build(transactionType, transactionInput, {
 				abortSignal,
 			});
 
-			await transactionBuilder.broadcast(transaction.id(), transactionInput);
+			await transactionBuilder.broadcast(uuid, transactionInput);
 
 			await env.persist();
 

@@ -86,8 +86,8 @@ export const SendIpfs = () => {
 		try {
 			const abortSignal = abortRef.current?.signal;
 
-			const transaction = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
-			await transactionBuilder.broadcast(transaction.id(), transactionInput);
+			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
+			await transactionBuilder.broadcast(uuid, transactionInput);
 
 			await env.persist();
 

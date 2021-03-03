@@ -56,7 +56,7 @@ export const useTransactionBuilder = (profile: Profile) => {
 		options?: {
 			abortSignal?: AbortSignal;
 		},
-	): Promise<Contracts.SignedTransactionData> => {
+	): Promise<{ uuid: string; transaction: Contracts.SignedTransactionData }> => {
 		const wallet = profile.wallets().findByAddress(input.from)!;
 		const service = wallet.transaction();
 
@@ -72,8 +72,12 @@ export const useTransactionBuilder = (profile: Profile) => {
 			data = await withAbortPromise(options?.abortSignal)(prepareLedger(data, wallet, signFn));
 		}
 
-		const id = await signFn(data);
-		return wallet.transaction().transaction(id);
+		const uuid = await signFn(data);
+
+		return {
+			uuid,
+			transaction: wallet.transaction().transaction(uuid),
+		};
 	};
 
 	const broadcast = (id: string, input: Contracts.TransactionInputs) => {
