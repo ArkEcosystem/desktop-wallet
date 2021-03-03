@@ -19,3 +19,44 @@ exports[`InputCounter should render 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`InputCounter should render with invalid state 1`] = `
+<div>
+  <div
+    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+  >
+    <input
+      aria-invalid="true"
+      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-28"
+      data-testid="InputCounter__input"
+      maxlength="10"
+      name="vendorField"
+    />
+    <div
+      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+    >
+      <span
+        data-testid="Input-error"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF text-theme-danger-500"
+          height="20"
+          width="20"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
+      </span>
+    </div>
+    <div
+      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO pl-2 text-sm pointer-events-none text-theme-secondary-500 pr-12"
+      data-testid="InputCounter__counter"
+    >
+      0
+      /
+      10
+    </div>
+  </div>
+</div>
+`;
