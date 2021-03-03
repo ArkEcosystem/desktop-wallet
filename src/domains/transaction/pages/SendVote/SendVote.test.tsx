@@ -1,29 +1,29 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { act as hookAct, renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
+import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
+import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
 import {
+	act,
 	env,
 	fireEvent,
+	getDefaultLedgerTransport,
 	getDefaultProfileId,
 	getDefaultWalletId,
-	RenderResult,
+	getDefaultWalletMnemonic,
 	renderWithRouter,
 	syncDelegates,
 	syncFees,
 	waitFor,
-	within,
-} from "testing-library";
-import { data as delegateData } from "tests/fixtures/coins/ark/devnet/delegates.json";
-import unvoteFixture from "tests/fixtures/coins/ark/devnet/transactions/unvote.json";
-import voteFixture from "tests/fixtures/coins/ark/devnet/transactions/vote.json";
-import { getDefaultLedgerTransport, getDefaultWalletMnemonic } from "utils/testing-library";
+} from "utils/testing-library";
 
 import { SendVote } from "../SendVote";
 
@@ -102,35 +102,29 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
-			);
-		});
+		// Back to select a delegate page
+		await waitFor(() => expect(getByTestId("SendVote__button--back")).not.toBeDisabled());
 
-		const { getByTestId } = rendered!;
-
-		await hookAct(async () => {
-			// Back to select a delegate page
-			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
+		act(() => {
 			fireEvent.click(getByTestId("SendVote__button--back"));
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should return to the select a delegate page to unvote", async () => {
@@ -146,35 +140,29 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
-			);
-		});
+		// Back to select a delegate page
+		await waitFor(() => expect(getByTestId("SendVote__button--back")).not.toBeDisabled());
 
-		const { getByTestId } = rendered!;
-
-		await hookAct(async () => {
-			// Back to select a delegate page
-			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
+		act(() => {
 			fireEvent.click(getByTestId("SendVote__button--back"));
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should return to the select a delegate page to unvote/vote", async () => {
@@ -191,35 +179,29 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
-			);
-		});
+		// Back to select a delegate page
+		await waitFor(() => expect(getByTestId("SendVote__button--back")).not.toBeDisabled());
 
-		const { getByTestId } = rendered!;
-
-		await hookAct(async () => {
-			// Back to select a delegate page
-			await waitFor(() => expect(getByTestId("SendVote__button--back")).toBeTruthy());
+		act(() => {
 			fireEvent.click(getByTestId("SendVote__button--back"));
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should send a unvote & vote transaction", async () => {
@@ -247,87 +229,73 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
-			);
-		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
-		const { getByTestId } = rendered!;
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(feeOptions[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		const signUnvoteMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
+		const broadcastUnvoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionUnvoteMock = createVoteTransactionMock(wallet);
 
-			const signUnvoteMock = jest
-				.spyOn(wallet.transaction(), "signVote")
-				.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
-			const broadcastUnvoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-			const transactionUnvoteMock = createVoteTransactionMock(wallet);
+		const signVoteMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(voteFixture.data.id));
+		const broadcastVoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionVoteMock = createVoteTransactionMock(wallet);
 
-			const signVoteMock = jest
-				.spyOn(wallet.transaction(), "signVote")
-				.mockReturnValue(Promise.resolve(voteFixture.data.id));
-			const broadcastVoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-			const transactionVoteMock = createVoteTransactionMock(wallet);
+		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+		fireEvent.input(passwordInput, { target: { value: passphrase } });
+		expect(passwordInput).toHaveValue(passphrase);
 
-			jest.advanceTimersByTime(1000);
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
+
+		await act(async () => {
 			fireEvent.click(getByTestId("SendVote__button--submit"));
-
-			setTimeout(() => {
-				votesMock.mockRestore();
-			}, 3000);
-
-			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 4000 });
-			await waitFor(() => expect(setInterval).toHaveBeenCalledTimes(1));
-
-			jest.runOnlyPendingTimers();
-
-			signUnvoteMock.mockRestore();
-			broadcastUnvoteMock.mockRestore();
-			transactionUnvoteMock.mockRestore();
-
-			signVoteMock.mockRestore();
-			broadcastVoteMock.mockRestore();
-			transactionVoteMock.mockRestore();
-
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
-
-			// Go back to wallet
-			const historySpy = jest.spyOn(history, "push");
-			fireEvent.click(getByTestId("SendVote__button--back-to-wallet"));
-			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
-			historySpy.mockRestore();
 		});
+
+		act(() => jest.advanceTimersByTime(1000));
+
+		setTimeout(() => {
+			votesMock.mockRestore();
+		}, 3000);
+
+		act(() => jest.runOnlyPendingTimers());
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 4000 });
+		await waitFor(() => expect(setInterval).toHaveBeenCalledTimes(1));
+
+		signUnvoteMock.mockRestore();
+		broadcastUnvoteMock.mockRestore();
+		transactionUnvoteMock.mockRestore();
+
+		signVoteMock.mockRestore();
+		broadcastVoteMock.mockRestore();
+		transactionVoteMock.mockRestore();
 	});
 
 	it("should send a vote transaction", async () => {
@@ -343,8 +311,6 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
-
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -353,59 +319,59 @@ describe("SendVote", () => {
 			}),
 		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<FormProvider {...form.current}>
-						<LedgerProvider transport={transport}>
-							<SendVote />
-						</LedgerProvider>
-					</FormProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<FormProvider {...form.current}>
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
+				</FormProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
-			);
-		});
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-		const { getByTestId } = rendered!;
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
-		await hookAct(async () => {
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			const signMock = jest
-				.spyOn(wallet.transaction(), "signVote")
-				.mockReturnValue(Promise.resolve(voteFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-			const transactionMock = createVoteTransactionMock(wallet);
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 
-			jest.advanceTimersByTime(1000);
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(voteFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createVoteTransactionMock(wallet);
+
+		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+		fireEvent.input(passwordInput, { target: { value: passphrase } });
+		expect(passwordInput).toHaveValue(passphrase);
+
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
+
+		await act(async () => {
 			fireEvent.click(getByTestId("SendVote__button--submit"));
-
-			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
-
-			signMock.mockRestore();
-			broadcastMock.mockRestore();
-			transactionMock.mockRestore();
-
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+
+		act(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(container).toMatchSnapshot());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should move back and forth between steps", async () => {
@@ -421,55 +387,44 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
-			);
-		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
-		const { getByTestId } = rendered!;
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(feeOptions[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		// Authentication Step
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--back"));
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+		// Back to Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Back to Step 2
-			fireEvent.click(getByTestId("SendVote__button--back"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		// Back to AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
-		});
+		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+		fireEvent.input(passwordInput, { target: { value: passphrase } });
+		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 	});
 
 	it("should send a unvote transaction", async () => {
@@ -485,64 +440,57 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
-			);
-		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
-		const { getByTestId } = rendered!;
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(feeOptions[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createUnvoteTransactionMock(wallet);
 
-			const signMock = jest
-				.spyOn(wallet.transaction(), "signVote")
-				.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-			const transactionMock = createUnvoteTransactionMock(wallet);
+		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+		fireEvent.input(passwordInput, { target: { value: passphrase } });
+		expect(passwordInput).toHaveValue(passphrase);
 
-			jest.advanceTimersByTime(1000);
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
+
+		await act(async () => {
 			fireEvent.click(getByTestId("SendVote__button--submit"));
-
-			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
-
-			signMock.mockRestore();
-			broadcastMock.mockRestore();
-			transactionMock.mockRestore();
-
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
 		});
+
+		act(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
+		await waitFor(() => expect(container).toMatchSnapshot());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should return to form step by cancelling fee warning", async () => {
@@ -650,62 +598,45 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
-			);
-		});
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-		const { getByTestId } = rendered!;
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 
-			const signMock = jest.spyOn(wallet.transaction(), "signVote").mockImplementation(() => {
-				throw new Error("Signatory should be");
-			});
+		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+		fireEvent.input(passwordInput, { target: { value: "wrong passphrase" } });
+		await waitFor(() => expect(passwordInput).toHaveValue("wrong passphrase"));
 
-			fireEvent.click(getByTestId("SendVote__button--submit"));
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).toBeDisabled());
 
-			await waitFor(() => expect(passwordInput).toHaveValue(""));
-			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
-			});
+		expect(getByTestId("Input-error")).toBeTruthy();
 
-			signMock.mockRestore();
-
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
-		});
+		await waitFor(() => expect(container).toMatchSnapshot());
 	});
 
 	it("should show error step and go back", async () => {
@@ -721,69 +652,67 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
+		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
+			throw new Error();
 		});
 
-		const { getByTestId } = rendered!;
+		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+		fireEvent.input(passwordInput, { target: { value: passphrase } });
+		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+		const historyMock = jest.spyOn(history, "push").mockReturnValue();
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
 
-			// Step 3
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
-
-			// Step 5 (skip step 4 for now - ledger confirmation)
-			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
-				throw new Error();
-			});
-
-			const historyMock = jest.spyOn(history, "push").mockReturnValue();
-
-			jest.advanceTimersByTime(1000);
+		await act(async () => {
 			fireEvent.click(getByTestId("SendVote__button--submit"));
-
-			await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument(), { timeout: 3000 });
-			await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
-			await waitFor(() => expect(rendered.container).toMatchSnapshot());
-
-			hookAct(() => {
-				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
-			});
-
-			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
-			await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
-			signMock.mockRestore();
 		});
+
+		act(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
+
+		await waitFor(() => expect(container).toMatchSnapshot());
+
+		act(() => {
+			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+		});
+
+		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
+		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+
+		signMock.mockRestore();
 	});
 
 	it("should send a unvote transaction with a multisignature wallet", async () => {
@@ -804,73 +733,67 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
-			);
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createUnvoteTransactionMock(wallet);
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendVote__button--continue"));
 		});
 
-		const { getByTestId } = rendered!;
+		act(() => jest.advanceTimersByTime(1000));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(feeOptions[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
-
-			const signMock = jest
-				.spyOn(wallet.transaction(), "signVote")
-				.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
-			const transactionMock = createUnvoteTransactionMock(wallet);
-
-			jest.advanceTimersByTime(1000);
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-
-			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
-
-			expect(signMock).toHaveBeenCalledWith(
-				expect.objectContaining({
-					data: expect.anything(),
-					fee: expect.any(String),
-					from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-					nonce: expect.any(String),
-					sign: {
-						multiSignature: {
-							min: 2,
-							publicKeys: [
-								"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-								"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-							],
-						},
+		expect(signMock).toHaveBeenCalledWith(
+			expect.objectContaining({
+				data: expect.anything(),
+				fee: expect.any(String),
+				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+				nonce: expect.any(String),
+				sign: {
+					multiSignature: {
+						min: 2,
+						publicKeys: [
+							"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+							"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+						],
 					},
-				}),
-			);
+				},
+			}),
+		);
 
-			signMock.mockRestore();
-			broadcastMock.mockRestore();
-			transactionMock.mockRestore();
-		});
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+
 		isMultiSignatureSpy.mockRestore();
 		multisignatureSpy.mockRestore();
 	});
@@ -908,54 +831,42 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		let rendered: RenderResult;
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<LedgerProvider transport={transport}>
+					<SendVote />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
 
-		await hookAct(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
-					<LedgerProvider transport={transport}>
-						<SendVote />
-					</LedgerProvider>
-				</Route>,
-				{
-					routes: [voteURL],
-					history,
-				},
-			);
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
-			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
-			);
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendVote__button--continue"));
 		});
 
-		const { getByTestId } = rendered!;
+		act(() => jest.advanceTimersByTime(1000));
 
-		await hookAct(async () => {
-			// Fee
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(feeOptions[1]);
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
 
-			// Step 2
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3…7ecc8339e430");
 
-			// Step 3
-			expect(getByTestId("SendVote__button--continue")).not.toBeDisabled();
-
-			jest.advanceTimersByTime(1000);
-			fireEvent.click(getByTestId("SendVote__button--continue"));
-
-			// Auto broadcast
-			await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument(), {
-				timeout: 3000,
-			});
-			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
-
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3…7ecc8339e430");
-		});
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();
