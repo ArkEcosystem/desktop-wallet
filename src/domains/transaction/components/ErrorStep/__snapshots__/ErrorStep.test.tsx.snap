@@ -9,9 +9,11 @@ exports[`ErrorStep should emit onBack 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Custom error title
@@ -67,9 +69,11 @@ exports[`ErrorStep should emit onRepeat 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Custom error title
@@ -125,9 +129,11 @@ exports[`ErrorStep should render with custom title and description 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Custom error title
@@ -183,9 +189,11 @@ exports[`ErrorStep should render with default texts 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Transaction Error

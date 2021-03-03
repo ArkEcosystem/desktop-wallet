@@ -274,10 +274,10 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -310,9 +310,11 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -695,10 +697,10 @@ exports[`ImportWallet should go to previous step 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -731,9 +733,11 @@ exports[`ImportWallet should go to previous step 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -1116,10 +1120,10 @@ exports[`ImportWallet should import by address 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1152,9 +1156,11 @@ exports[`ImportWallet should import by address 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -1537,10 +1543,10 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1573,9 +1579,11 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -1958,10 +1966,10 @@ exports[`ImportWallet should import by mnemonic 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1994,9 +2002,11 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -2116,9 +2126,11 @@ exports[`ImportWallet should render 1st step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Select a Cryptoasset
@@ -2203,9 +2215,11 @@ exports[`ImportWallet should render 1st step without test networks 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Select a Cryptoasset
@@ -2339,9 +2353,11 @@ exports[`ImportWallet should render 2st step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Import Wallet
@@ -2498,9 +2514,11 @@ exports[`ImportWallet should render 3st step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Completed
@@ -2919,10 +2937,10 @@ exports[`ImportWallet should render as ledger import 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2959,9 +2977,11 @@ exports[`ImportWallet should render as ledger import 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -3348,10 +3368,10 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -3384,9 +3404,11 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -3769,10 +3791,10 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -3805,9 +3827,11 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -4190,10 +4214,10 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -4226,9 +4250,11 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
