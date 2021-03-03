@@ -51,7 +51,7 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 			<div data-testid="PluginManualInstallModal">
 				<div className="flex mt-8">
 					<Alert size="sm" variant="warning">
-						{t("PLUGINS.WARNING_DISCLAIMER")}
+						<span className="text-sm">{t("PLUGINS.WARNING_DISCLAIMER")}</span>
 					</Alert>
 				</div>
 

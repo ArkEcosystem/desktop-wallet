@@ -83,7 +83,11 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                   <p
                     class="leading-relaxed break-words dark:text-theme-secondary-500"
                   >
-                    Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
+                    <span
+                      class="text-sm"
+                    >
+                      Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
+                    </span>
                   </p>
                 </div>
               </div>
