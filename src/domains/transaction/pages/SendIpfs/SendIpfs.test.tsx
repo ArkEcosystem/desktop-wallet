@@ -2,6 +2,7 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
+import { LedgerProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -20,7 +21,7 @@ import {
 	within,
 } from "testing-library";
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
-import { getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
+import { getDefaultLedgerTransport, getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
 
@@ -40,6 +41,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
+const transport = getDefaultLedgerTransport();
 
 describe("SendIpfs", () => {
 	beforeAll(async () => {
@@ -64,7 +66,9 @@ describe("SendIpfs", () => {
 		hookAct(() => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
-					<FormStep networks={[]} profile={profile} />
+					<LedgerProvider transport={transport}>
+						<FormStep networks={[]} profile={profile} />
+					</LedgerProvider>
 				</FormProvider>,
 			);
 
@@ -87,7 +91,9 @@ describe("SendIpfs", () => {
 		hookAct(() => {
 			const { asFragment, container, getByTestId } = render(
 				<FormProvider {...form.current}>
-					<ReviewStep wallet={wallet} />
+					<LedgerProvider transport={transport}>
+						<ReviewStep wallet={wallet} />
+					</LedgerProvider>
 				</FormProvider>,
 			);
 
@@ -110,7 +116,9 @@ describe("SendIpfs", () => {
 		hookAct(() => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
-					<SummaryStep transaction={transaction!} />
+					<LedgerProvider transport={transport}>
+						<SummaryStep transaction={transaction!} />
+					</LedgerProvider>
 				</FormProvider>,
 			);
 
@@ -127,7 +135,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -193,7 +203,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -279,7 +291,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -324,7 +338,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -369,7 +385,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -451,7 +469,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -538,7 +558,9 @@ describe("SendIpfs", () => {
 
 		const { container, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -574,7 +596,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -650,6 +674,9 @@ describe("SendIpfs", () => {
 
 	it("should send a ipfs transfer with a ledger wallet", async () => {
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
 		const signTransactionSpy = jest
 			.spyOn(wallet.coin().ledger(), "signTransaction")
 			.mockImplementation(
@@ -675,7 +702,9 @@ describe("SendIpfs", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
-				<SendIpfs />
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
 			</Route>,
 			{
 				routes: [ipfsURL],
@@ -720,7 +749,7 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("81cb2fb05740c…8e896e9daff35");
-
+		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();

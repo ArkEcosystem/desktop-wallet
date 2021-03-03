@@ -1230,20 +1230,31 @@ exports[`Wallets should open and close ledger import modal 1`] = `
           >
             <h2
               class="mb-0 text-3xl font-bold"
-            >
-              Ledger Wallet
-            </h2>
+            />
             <div
               class="flex-1"
             >
               <div
-                class="mt-1 text-theme-secondary-text"
-              >
-                Connect your Ledger to PC and confirm the input.
-              </div>
-              <div
                 class="mt-8 space-y-8"
               >
+                <div
+                  class="flex justify-between items-end bg-theme-background"
+                >
+                  <div>
+                    <h1
+                      class="mb-0 md:text-4xl"
+                      data-testid="header__title"
+                    >
+                      Ledger Wallet
+                    </h1>
+                    <div
+                      class="text-theme-secondary-text"
+                      data-testid="header__subtitle"
+                    >
+                      Connect your Ledger to PC and confirm the input.
+                    </div>
+                  </div>
+                </div>
                 <svg
                   class="mx-auto"
                 >
