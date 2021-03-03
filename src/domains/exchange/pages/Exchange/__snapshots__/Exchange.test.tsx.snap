@@ -841,33 +841,63 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               data-testid="ExchangeGrid"
             >
               <div
-                class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
+                class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                 data-testid="Card"
               >
                 <div
                   class="flex items-center space-x-4"
                 >
                   <div
-                    class="h-25 w-25 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-                  />
+                    class="min-w-25 w-25 h-25 overflow-hidden rounded-lg"
+                  >
+                    <div
+                      data-testid="ExchangeImage__placeholder"
+                    >
+                      <svg>
+                        plugin-logo-placeholder.svg
+                      </svg>
+                    </div>
+                  </div>
                   <div
                     class="flex flex-col space-y-1 truncate"
                   >
                     <span
-                      class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+                      class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      Author
+                      Unknown
                     </span>
                     <div
-                      class="text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+                      class="text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                     >
-                      Exchange
+                      Test Exchange
                     </div>
                   </div>
                 </div>
                 <div
                   class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                />
+                >
+                  <div
+                    class="relative"
+                  >
+                    <span
+                      data-testid="dropdown__toggle"
+                    >
+                      <div
+                        class="flex overflow-hidden justify-center w-4"
+                      >
+                        <div
+                          class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            settings.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
               </div>
               <div
                 class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"

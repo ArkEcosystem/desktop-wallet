@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExchangeImage should render exchange logo 1`] = `
+<div>
+  <img
+    alt="Exchange Logo"
+    data-testid="ExchangeImage__logo"
+    height="100"
+    src="https://ark.io/logo.png"
+    width="100"
+  />
+</div>
+`;
+
+exports[`ExchangeImage should render image placeholder 1`] = `
+<div>
+  <div
+    data-testid="ExchangeImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
+  </div>
+</div>
+`;
