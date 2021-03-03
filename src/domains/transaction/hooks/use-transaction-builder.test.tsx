@@ -30,7 +30,7 @@ describe("Use Transaction Builder Hook", () => {
 			},
 		};
 
-		const transaction = await result.current.build("transfer", input);
+		const { transaction } = await result.current.build("transfer", input);
 		expect(transaction.id()).toBe("98e5294a2cdd0f93fc94e8eb85ba707fdb798090b89503cebc33756b48a101c2");
 	});
 
@@ -54,7 +54,7 @@ describe("Use Transaction Builder Hook", () => {
 			sign: {},
 		};
 
-		const transaction = await result.current.build("transfer", input);
+		const { transaction } = await result.current.build("transfer", input);
 		expect(transaction.id()).toBe("4f42da4b1e0428d49993a3dccc7ab52d43b9426074d754dbf353fb79cd9a5db9");
 
 		jest.clearAllMocks();
@@ -79,7 +79,7 @@ describe("Use Transaction Builder Hook", () => {
 			sign: {},
 		};
 
-		const transaction = await result.current.build("transfer", input);
+		const { transaction } = await result.current.build("transfer", input);
 		expect(transaction.id()).toBe("5ef0e7225bed4cb4c3c763ac4d3bd37f8c8d1b93e5edf540b8cc444bce4cdca5");
 
 		jest.clearAllMocks();
@@ -108,7 +108,7 @@ describe("Use Transaction Builder Hook", () => {
 			sign: {},
 		};
 
-		const transaction = await result.current.build("transfer", input);
+		const { transaction } = await result.current.build("transfer", input);
 		expect(transaction.id()).toBe("50f6046de032ea49b5d2894c5f027527564764c7d84633c146babada1707dd9f");
 
 		jest.clearAllMocks();
