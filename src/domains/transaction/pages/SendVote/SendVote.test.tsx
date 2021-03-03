@@ -289,6 +289,17 @@ describe("SendVote", () => {
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 4000 });
 		await waitFor(() => expect(setInterval).toHaveBeenCalledTimes(1));
 
+		const historySpy = jest.spyOn(history, "push");
+
+		// Go back to wallet
+		act(() => {
+			fireEvent.click(getByTestId("SendVote__button--back-to-wallet"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
+		historySpy.mockRestore();
+
 		signUnvoteMock.mockRestore();
 		broadcastUnvoteMock.mockRestore();
 		transactionUnvoteMock.mockRestore();
