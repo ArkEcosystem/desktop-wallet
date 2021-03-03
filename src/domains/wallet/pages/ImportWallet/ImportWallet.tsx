@@ -11,7 +11,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import { useDashboardConfig } from "domains/dashboard/pages";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -37,10 +37,14 @@ export const ImportWallet = () => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange", defaultValues: { type: "mnemonic" } });
-	const { formState } = form;
+	const { formState, register } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const nameMaxLength = 42;
+
+	useEffect(() => {
+		register({ name: "type", type: "custom" });
+	}, [register]);
 
 	const handleBack = () => {
 		if (activeTab === 1) {

@@ -6,7 +6,7 @@ import { Header } from "app/components/Header";
 import { InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useEnvironmentContext } from "app/contexts";
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -82,17 +82,21 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 
 export const SecondStep = ({ profile }: { profile: Profile }) => {
 	const { t } = useTranslation();
-	const { getValues, watch, register, setValue, clearErrors } = useFormContext();
+	const { getValues, watch, setValue, clearErrors } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
-	const type = watch("type");
+	const options = useMemo(
+		() => [
+			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
+			{ label: t("COMMON.ADDRESS"), value: "address" },
+		],
+		[t],
+	);
 
-	useEffect(() => {
-		register("type");
-	});
+	const type = watch("type", "mnemonic");
 
 	return (
 		<section data-testid="ImportWallet__second-step" className="space-y-8">
@@ -105,10 +109,10 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 				<FormField name="">
 					<FormLabel>{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TYPE")}</FormLabel>
 					<Select
-						options={[
-							{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
-							{ label: t("COMMON.ADDRESS"), value: "address" },
-						]}
+						id="ImportWallet__select"
+						data-testid="ImportWallet__type"
+						defaultValue={type}
+						options={options}
 						onChange={(option: any) => {
 							setValue("type", option.value, { shouldDirty: true, shouldValidate: true });
 							setValue("value", undefined);
