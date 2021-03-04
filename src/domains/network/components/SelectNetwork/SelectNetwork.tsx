@@ -166,9 +166,9 @@ export const SelectNetwork = ({
 				/>
 			</div>
 
-			<div className={publicNetworks.length > 0 ? "mt-8" : ""}>
+			<div className={publicNetworks.length > 0 ? "mt-6" : ""}>
 				{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
-					<div className="font-bold text-sm text-theme-secondary-400 mb-4">
+					<div className="font-bold text-sm text-theme-secondary-400 mb-3">
 						{t("COMMON.PUBLIC_NETWORK").toUpperCase()}
 					</div>
 				)}
@@ -187,9 +187,9 @@ export const SelectNetwork = ({
 			</div>
 
 			{developmentNetworks.length > 0 && (
-				<div className="mt-8">
+				<div className="mt-6">
 					{publicNetworks.length > 0 && (
-						<div className="font-bold text-sm text-theme-secondary-400 mb-4">
+						<div className="font-bold text-sm text-theme-secondary-400 mb-3">
 							{t("COMMON.DEVELOPMENT_NETWORK").toUpperCase()}
 						</div>
 					)}

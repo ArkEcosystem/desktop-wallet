@@ -2,7 +2,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
-import { env, getDefaultProfileId,render } from "utils/testing-library";
+import { env, getDefaultProfileId, render } from "utils/testing-library";
 
 import { NetworkOption } from "./NetworkOption";
 

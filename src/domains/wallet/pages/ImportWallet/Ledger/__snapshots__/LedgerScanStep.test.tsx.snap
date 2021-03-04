@@ -88,12 +88,16 @@ exports[`LedgerScanStep should render 1`] = `
             />
           </div>
         </div>
-        <ul
-          aria-labelledby="ImportWallet__network-label"
-          class="hidden"
-          id="ImportWallet__network-menu"
-          role="listbox"
-        />
+        <div
+          class=""
+        >
+          <ul
+            aria-labelledby="ImportWallet__network-label"
+            class="grid grid-cols-6 gap-3"
+            id="ImportWallet__network-menu"
+            role="listbox"
+          />
+        </div>
       </div>
     </fieldset>
     <div

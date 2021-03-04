@@ -39,12 +39,16 @@ exports[`SelectNetwork should render 1`] = `
         />
       </div>
     </div>
-    <ul
-      aria-labelledby="downshift-1-label"
-      class="hidden"
-      id="downshift-1-menu"
-      role="listbox"
-    />
+    <div
+      class=""
+    >
+      <ul
+        aria-labelledby="downshift-1-label"
+        class="grid grid-cols-6 gap-3"
+        id="downshift-1-menu"
+        role="listbox"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -88,12 +92,185 @@ exports[`SelectNetwork should render with networks 1`] = `
         />
       </div>
     </div>
-    <ul
-      aria-labelledby="downshift-5-label"
-      class="hidden"
-      id="downshift-5-menu"
-      role="listbox"
-    />
+    <div
+      class="mt-6"
+    >
+      <div
+        class="font-bold text-sm text-theme-secondary-400 mb-3"
+      >
+        PUBLIC NETWORK
+      </div>
+      <ul
+        aria-labelledby="downshift-5-label"
+        class="grid grid-cols-6 gap-3"
+        id="downshift-5-menu"
+        role="listbox"
+      >
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="ARK"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+            data-testid="NetworkIcon-ARK-ark.mainnet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="Compendia"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+            data-testid="NetworkIcon-ARK-compendia.mainnet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                bind.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="Bitcoin"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+            data-testid="NetworkIcon-BTC-btc.livenet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                btc.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="Ethereum"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+            data-testid="NetworkIcon-ETH-eth.mainnet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                eth.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="Lisk"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+            data-testid="NetworkIcon-LSK-lsk.mainnet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                lsk.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="mt-6"
+    >
+      <div
+        class="font-bold text-sm text-theme-secondary-400 mb-3"
+      >
+        DEVELOPMENT NETWORK
+      </div>
+      <ul
+        aria-labelledby="downshift-5-label"
+        class="grid grid-cols-6 gap-3"
+        id="downshift-5-menu"
+        role="listbox"
+      >
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="ARK Devnet"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-primary-300"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+        <li
+          class="inline-block cursor-pointer h-21"
+          data-testid="SelectNetwork__NetworkIcon--container"
+        >
+          <div
+            aria-label="Lisk Testnet"
+            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-primary-300"
+            data-testid="NetworkIcon-LSK-lsk.testnet"
+          >
+            <div
+              class="sc-bdfBwQ caqoGN"
+              data-testid="NetworkIcon__icon"
+              height="30"
+              width="30"
+            >
+              <svg>
+                lsk.svg
+              </svg>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
