@@ -41,6 +41,7 @@ export const PluginCard = ({
 				result.push({
 					label: t("COMMON.UPDATE"),
 					value: "update",
+					disabled: plugin.isMinimumVersionSatisfied === false,
 				});
 			}
 

@@ -21,6 +21,7 @@ type Props = {
 	isOfficial?: boolean;
 	isEnabled?: boolean;
 	hasUpdateAvailable?: boolean;
+	isMinimumVersionSatisfied?: boolean;
 	onReport?: () => void;
 	onInstall?: () => void;
 	hasLaunch?: boolean;
@@ -73,6 +74,7 @@ export const PluginHeader = ({
 							props.hasUpdateAvailable && {
 								label: t("COMMON.UPDATE"),
 								value: "update",
+								disabled: props.isMinimumVersionSatisfied === false,
 							},
 							{ label: t("COMMON.DELETE"), value: "delete" },
 							{
