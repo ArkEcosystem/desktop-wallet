@@ -228,6 +228,69 @@ describe("CreateProfile", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should update the avatar when removing focus from name input", async () => {
+		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
+
+		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
+
+		act(() => getAllByTestId("Input")[0].focus());
+
+		await act(async () => {
+			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+		});
+
+		act(() => getAllByTestId("Input")[1].focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		act(() => getAllByTestId("Input")[0].focus());
+
+		await act(async () => {
+			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
+		});
+
+		act(() => getAllByTestId("Input")[1].focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => getAllByTestId("Input")[0].focus());
+
+		await act(async () => {
+			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
+		});
+
+		act(() => getAllByTestId("Input")[1].focus());
+
+		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not update the uploaded avatar when removing focus from name input", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
+
+		// Upload avatar image
+		await act(async () => {
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+
+		act(() => getAllByTestId("Input")[0].focus());
+
+		await act(async () => {
+			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
+		});
+
+		act(() => getAllByTestId("Input")[1].focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should upload and remove avatar image", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
