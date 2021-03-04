@@ -1,5 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { useCallback, useMemo, useReducer, useState } from "react";
+import { useCallback, useMemo, useReducer, useRef, useState } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
 import { useLedgerContext } from "../Ledger";
@@ -39,10 +39,12 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
 	const canRetry = useMemo(() => failed.length > 0, [failed]);
 	const [isScanning, setIsScanning] = useState(false);
+	const abortRetryRef = useRef<boolean>(false);
 
 	const scan = useCallback(
 		async (indexes: number[]) => {
 			setBusy();
+			abortRetryRef.current = false;
 
 			try {
 				const instance = await env.coin(coin, network);
@@ -59,6 +61,10 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 				const wallets = await searchWallets(addressMap, instance);
 
+				if (abortRetryRef.current) {
+					return;
+				}
+
 				dispatch({ type: "success", payload: wallets });
 			} catch {
 				dispatch({ type: "failed" });
@@ -68,6 +74,11 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 		},
 		[coin, network, env, profile, setBusy, setIdle, derivationModes, currentDerivationModeIndex],
 	);
+
+	const abortScanner = useCallback(() => {
+		abortRetryRef.current = true;
+		setIdle();
+	}, [setIdle]);
 
 	// Actions - Scan
 
@@ -115,5 +126,6 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 		toggleSelect,
 		wallets,
 		selectedWallets,
+		abortScanner,
 	};
 };

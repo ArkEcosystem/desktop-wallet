@@ -103,7 +103,7 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 	return (
 		<>
 			<Page profile={activeProfile} isBackDisabled={true} data-testid="Exchange">
-				<Section>
+				<Section border>
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
 					{exchanges.length ? (
@@ -118,7 +118,7 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 					)}
 				</Section>
 
-				<Section className="flex-1">
+				<Section>
 					{exchanges.length > 0 && (
 						<div className="text-center">
 							<div className="mt-8 text-theme-secondary-text">

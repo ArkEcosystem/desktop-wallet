@@ -88,16 +88,18 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	return (
 		<>
 			<Page profile={activeProfile}>
-				<WalletHeader
-					profile={activeProfile}
-					wallet={activeWallet}
-					onSend={() =>
-						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
-					}
-				/>
+				<Section backgroundColor="--theme-color-secondary-900">
+					<WalletHeader
+						profile={activeProfile}
+						wallet={activeWallet}
+						onSend={() =>
+							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
+						}
+					/>
+				</Section>
 
 				{showWalletVote && (
-					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-10">
+					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-2">
 						<WalletVote
 							wallet={activeWallet}
 							onButtonClick={handleVoteButton}

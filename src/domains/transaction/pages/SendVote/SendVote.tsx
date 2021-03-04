@@ -5,7 +5,7 @@ import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useEnvironmentContext } from "app/contexts";
+import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
@@ -40,6 +40,7 @@ export const SendVote = () => {
 
 	const form = useForm({ mode: "onChange" });
 
+	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
@@ -327,6 +328,8 @@ export const SendVote = () => {
 									ledgerDetails={
 										<VoteLedgerReview wallet={activeWallet} votes={votes} unvotes={unvotes} />
 									}
+									ledgerIsAwaitingDevice={!hasDeviceAvailable}
+									ledgerIsAwaitingApp={hasDeviceAvailable && !isConnected}
 								/>
 							</TabPanel>
 							<TabPanel tabId={4}>

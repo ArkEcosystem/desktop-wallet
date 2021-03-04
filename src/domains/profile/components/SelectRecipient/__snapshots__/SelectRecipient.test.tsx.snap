@@ -270,6 +270,86 @@ exports[`SelectRecipient should render with preselected address 1`] = `
         class="absolute left-1 z-20"
       >
         <div
+          class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+        />
+      </div>
+      <div
+        class="relative w-full"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+          data-testid="select-list__input"
+          readonly=""
+          value=""
+        />
+        <div
+          class="relative w-full"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="downshift-13-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-12-input"
+              id="downshift-13-label"
+            />
+            <div
+              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              data-testid="SelectDropdownInput"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="downshift-13-menu"
+                aria-labelledby="downshift-13-label"
+                autocomplete="off"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined pl-16 pr-11"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-12-input"
+                placeholder="Select option"
+                value=""
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-13-label"
+              class="styles__SelectOptionsList-b2falt-1 cGgIup"
+              id="downshift-13-menu"
+              role="listbox"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
+        data-testid="SelectRecipient__select-recipient"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
+        >
+          <svg>
+            user.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectRecipient should update internal state when prop changes 1`] = `
+<div>
+  <div>
+    <div
+      class="flex relative items-center w-full text-left"
+      data-testid="SelectRecipient__wrapper"
+    >
+      <div
+        class="absolute left-1 z-20"
+      >
+        <div
           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
           data-testid="Avatar"
         >
@@ -299,12 +379,12 @@ exports[`SelectRecipient should render with preselected address 1`] = `
           <div
             aria-expanded="false"
             aria-haspopup="listbox"
-            aria-owns="downshift-13-menu"
+            aria-owns="downshift-17-menu"
             role="combobox"
           >
             <label
-              for="downshift-12-input"
-              id="downshift-13-label"
+              for="downshift-16-input"
+              id="downshift-17-label"
             />
             <div
               class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -312,20 +392,20 @@ exports[`SelectRecipient should render with preselected address 1`] = `
             >
               <input
                 aria-autocomplete="list"
-                aria-controls="downshift-13-menu"
-                aria-labelledby="downshift-13-label"
+                aria-controls="downshift-17-menu"
+                aria-labelledby="downshift-17-label"
                 autocomplete="off"
                 class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined pl-16 pr-11"
                 data-testid="SelectDropdownInput__input"
-                id="downshift-12-input"
+                id="downshift-16-input"
                 placeholder="Select option"
                 value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
               />
             </div>
             <ul
-              aria-labelledby="downshift-13-label"
+              aria-labelledby="downshift-17-label"
               class="styles__SelectOptionsList-b2falt-1 cGgIup"
-              id="downshift-13-menu"
+              id="downshift-17-menu"
               role="listbox"
             />
           </div>
