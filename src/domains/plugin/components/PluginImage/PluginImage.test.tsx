@@ -27,4 +27,10 @@ describe("PluginImage", () => {
 		expect(screen.getByTestId("PluginImage__updating__label")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
+
+	it.each(["xs", "sm", "md", "lg"])("should render with size '%s'", (size) => {
+		const { container } = render(<PluginImage />);
+		expect(screen.getByTestId("PluginImage__placeholder")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
+	});
 });

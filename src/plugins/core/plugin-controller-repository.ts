@@ -24,7 +24,7 @@ export class PluginControllerRepository {
 			.plugins()
 			.values()
 			.filter((item) => item.isEnabled)
-			.map((item) => this.findById(item.id));
+			.map((item) => this.findById(item.name));
 	}
 
 	removeById(id: string, profile: Profile) {

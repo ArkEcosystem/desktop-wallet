@@ -87,8 +87,8 @@ export const SendIpfs = () => {
 		try {
 			const abortSignal = abortRef.current?.signal;
 
-			const transaction = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
-			await transactionBuilder.broadcast(transaction.id(), transactionInput);
+			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
+			await transactionBuilder.broadcast(uuid, transactionInput);
 
 			await env.persist();
 
@@ -107,6 +107,11 @@ export const SendIpfs = () => {
 	const handleBack = () => {
 		// Abort any existing listener
 		abortRef.current.abort();
+
+		if (activeTab === 1) {
+			return history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -176,7 +181,7 @@ export const SendIpfs = () => {
 										{activeTab < 3 && (
 											<>
 												<Button
-													disabled={activeTab === 1}
+													disabled={isSubmitting}
 													data-testid="SendIpfs__button--back"
 													variant="secondary"
 													onClick={handleBack}
