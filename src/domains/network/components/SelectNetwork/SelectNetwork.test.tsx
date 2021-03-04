@@ -33,11 +33,8 @@ describe("SelectNetwork", () => {
 			fireEvent.change(input, { target: { value } });
 		});
 
-		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(
-			availableNetworksMock.filter((network) =>
-				network.extra?.displayName?.toLowerCase().startsWith(value.toLowerCase()),
-			).length,
-		);
+		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeInTheDocument();
+		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
 
 		act(() => {
 			fireEvent.change(input, { target: { value: "" } });
@@ -197,10 +194,19 @@ describe("SelectNetwork", () => {
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"));
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+		await waitFor(() =>
+			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
+		);
 	});
 
 	it("should toggle selection by clicking on network icon", async () => {
@@ -213,7 +219,7 @@ describe("SelectNetwork", () => {
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"));
@@ -225,7 +231,7 @@ describe("SelectNetwork", () => {
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).not.toHaveAttribute("aria-label"));

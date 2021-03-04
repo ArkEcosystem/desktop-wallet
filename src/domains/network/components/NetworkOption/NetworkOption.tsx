@@ -13,7 +13,7 @@ type Props = {
 	iconClassName?: string;
 	iconSize?: number;
 	shadowColor?: string;
-	onClick: () => void;
+	onClick?: () => void;
 };
 
 export const NetworkOption = memo(({ network, iconSize = 30, iconClassName, onClick, ...props }: Props) => {

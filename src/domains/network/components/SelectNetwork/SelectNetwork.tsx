@@ -166,27 +166,25 @@ export const SelectNetwork = ({
 				/>
 			</div>
 
-			{publicNetworks.length > 0 && (
-				<div className="mt-8">
-					{developmentNetworks.length > 0 && (
-						<div className="font-bold text-sm text-theme-secondary-400 mb-4">
-							{t("COMMON.PUBLIC_NETWORK").toUpperCase()}
-						</div>
-					)}
+			<div className={publicNetworks.length > 0 ? "mt-8" : ""}>
+				{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
+					<div className="font-bold text-sm text-theme-secondary-400 mb-4">
+						{t("COMMON.PUBLIC_NETWORK").toUpperCase()}
+					</div>
+				)}
 
-					<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-						{publicNetworks.map((network: Network, index: number) => (
-							<NetworkOption
-								key={index}
-								network={network}
-								// disabled={disabled}
-								iconClassName={optionClassName(network)}
-								onClick={() => toggleSelection(network)}
-							/>
-						))}
-					</ul>
-				</div>
-			)}
+				<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
+					{publicNetworks.map((network: Network, index: number) => (
+						<NetworkOption
+							key={index}
+							network={network}
+							// disabled={disabled}
+							iconClassName={optionClassName(network)}
+							onClick={() => toggleSelection(network)}
+						/>
+					))}
+				</ul>
+			</div>
 
 			{developmentNetworks.length > 0 && (
 				<div className="mt-8">
