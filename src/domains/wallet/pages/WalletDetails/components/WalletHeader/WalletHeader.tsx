@@ -185,10 +185,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	return (
 		<>
-			<header
-				data-testid="WalletHeader"
-				className="flex items-center border-b border-theme-secondary-900 dark:border-theme-secondary-800"
-			>
+			<header className="flex items-center" data-testid="WalletHeader">
 				<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800">
 					<div className="flex -space-x-1">
 						<NetworkIcon

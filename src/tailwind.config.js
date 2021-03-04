@@ -121,13 +121,21 @@ module.exports = {
 				"-56": "-14rem",
 				"-64": "-16rem",
 			},
+			minHeight: {
+				6: "1.5rem",
+				15: "3.75rem",
+				25: "6.25rem",
+				44: "11rem",
+			},
 			minWidth: {
 				"200px": "200px",
 				1: "1%",
+				6: "1.5rem",
 				15: "3.75rem",
 				24: "6rem",
 				25: "6.25rem",
 				32: "8rem",
+				44: "11rem",
 				50: "12.5rem",
 				96: "24rem",
 			},
@@ -184,7 +192,7 @@ module.exports = {
 				20: "20px",
 			},
 			borderRadius: {
-				xl: "1rem",
+				"3xl": "1.25rem",
 			},
 			fontFamily: {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
