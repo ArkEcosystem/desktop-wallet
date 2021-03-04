@@ -21,6 +21,7 @@ import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
 import { TransferLedgerReview } from "./LedgerReview";
+import { NetworkStep } from "./NetworkStep";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -29,7 +30,10 @@ export const SendTransfer = () => {
 	const { walletId: hasWalletId } = useParams();
 	const { state } = location;
 
-	const [activeTab, setActiveTab] = useState(1);
+	const showNetworkStep = !state && !hasWalletId;
+	const firstTabIndex = showNetworkStep ? 0 : 1;
+
+	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
 	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -55,7 +59,7 @@ export const SendTransfer = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected } = watch();
+	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
 	const { sendTransfer, common } = useValidation();
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
@@ -203,7 +207,7 @@ export const SendTransfer = () => {
 		// Abort any existing listener
 		abortRef.current.abort();
 
-		if (activeTab === 1) {
+		if (firstTabIndex) {
 			return history.go(-1);
 		}
 
@@ -239,9 +243,16 @@ export const SendTransfer = () => {
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+						<StepIndicator
+							size={showNetworkStep ? 5 : 4}
+							activeIndex={showNetworkStep ? activeTab + 1 : activeTab}
+						/>
 
 						<div className="mt-8">
+							<TabPanel tabId={0}>
+								<NetworkStep profile={activeProfile} networks={networks} />
+							</TabPanel>
+
 							<TabPanel tabId={1}>
 								<FormStep
 									networks={networks}
@@ -293,7 +304,9 @@ export const SendTransfer = () => {
 												</Button>
 												<Button
 													data-testid="SendTransfer__button--continue"
-													disabled={!isValid || isSubmitting}
+													disabled={
+														activeTab === 0 && network ? false : !isValid || isSubmitting
+													}
 													onClick={async () => await handleNext()}
 													isLoading={isSubmitting || isConfirming}
 												>
