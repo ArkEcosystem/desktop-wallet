@@ -1904,7 +1904,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="text-lg font-semibold text-theme-secondary-text"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -1914,6 +1914,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   class="flex"
                                 >
                                   <input
+                                    checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
                                     data-testid="General-settings__toggle--transactionHistory"
                                     name="transactionHistory"
@@ -1930,7 +1931,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Enables transaction history on Portfolio page
@@ -1953,7 +1954,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -3321,6 +3322,56 @@ exports[`Settings should render 1`] = `
                               data-testid="list-divided-item__label--description"
                             >
                               Automatically send reports to help to improve our products.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-text"
+                                data-testid="list-divided-item__label"
+                              >
+                                Portfolio Transaction History
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--transactionHistory"
+                                    name="transactionHistory"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 gufSfU"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables transaction history on Portfolio page
                             </span>
                           </div>
                         </div>
@@ -8272,6 +8323,55 @@ exports[`Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
+                                class="text-lg font-semibold text-theme-secondary-text"
+                                data-testid="list-divided-item__label"
+                              >
+                                Portfolio Transaction History
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--transactionHistory"
+                                    name="transactionHistory"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 gufSfU"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables transaction history on Portfolio page
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
@@ -9641,6 +9741,56 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               data-testid="list-divided-item__label--description"
                             >
                               Automatically send reports to help to improve our products.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-text"
+                                data-testid="list-divided-item__label"
+                              >
+                                Portfolio Transaction History
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--transactionHistory"
+                                    name="transactionHistory"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 gufSfU"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables transaction history on Portfolio page
                             </span>
                           </div>
                         </div>
@@ -11060,7 +11210,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="text-lg font-semibold text-theme-secondary-text"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -11087,7 +11237,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               </span>
                             </div>
                             <span
-                              class="text-sm font-medium text-theme-secondary-500"
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
                               Enables transaction history on Portfolio page
@@ -11110,7 +11260,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-text"
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
