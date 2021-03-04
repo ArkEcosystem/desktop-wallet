@@ -461,6 +461,39 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});
 
+	it("should go back to wallet details", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
+
+		history.push(ipfsURL);
+
+		const { getByTestId, container } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [ipfsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
+
+		const historySpy = jest.spyOn(history, "push").mockImplementation();
+
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("SendIpfs__button--back"));
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
+		historySpy.mockRestore();
+	});
+
 	it("should show error step and go back", async () => {
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
