@@ -72,7 +72,7 @@ export const PluginDetails = () => {
 
 	return (
 		<Page profile={activeProfile}>
-			<Section>
+			<Section border>
 				<PluginHeader
 					{...pluginData}
 					isInstalled={isInstalled}

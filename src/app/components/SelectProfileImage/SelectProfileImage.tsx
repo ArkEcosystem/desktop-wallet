@@ -76,6 +76,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 						<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
 							<ProfileImageStyled>
 								<img
+									data-testid="SelectProfileImage__avatar"
 									src={isSvg ? `data:image/svg+xml;utf8,${value}` : value}
 									className="object-cover min-h-full"
 									alt="Avatar"

@@ -15,4 +15,10 @@ describe("Section", () => {
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with border", () => {
+		const { container, asFragment } = render(<Section border />);
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

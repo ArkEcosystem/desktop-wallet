@@ -1,17 +1,15 @@
-import { ReactComponent as ConfirmedBannerDark } from "./confirmed-banner.svg";
 import { ReactComponent as DeleteBannerDark } from "./delete-banner.svg";
-import { ReactComponent as MistakeBannerDark } from "./mistake-banner.svg";
-import { ReactComponent as NoResultsBannerDark } from "./no-results.svg";
-import { ReactComponent as RegisterBannerDark } from "./register-banner.svg";
+import { ReactComponent as ErrorBannerDark } from "./error-banner.svg";
+import { ReactComponent as NoResultsBannerDark } from "./no-results-banner.svg";
+import { ReactComponent as SuccessBannerDark } from "./success-banner.svg";
 import { ReactComponent as WarningBannerDark } from "./warning-banner.svg";
 import { ReactComponent as WelcomeBannerDark } from "./welcome-banner.svg";
 
 export const ImagesDark = {
-	ConfirmedBannerDark,
+	SuccessBannerDark,
 	DeleteBannerDark,
-	MistakeBannerDark,
+	ErrorBannerDark,
 	NoResultsBannerDark,
-	RegisterBannerDark,
 	WarningBannerDark,
 	WelcomeBannerDark,
 };

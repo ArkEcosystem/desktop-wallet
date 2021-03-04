@@ -13,6 +13,7 @@ type HeaderSearchBarProps = {
 	onReset?: () => void;
 	extra?: React.ReactNode;
 	debounceTimeout?: number;
+	defaultQuery?: string;
 };
 
 const SearchBarInputWrapper = styled.div`
@@ -27,16 +28,17 @@ export const HeaderSearchBar = ({
 	onSearch,
 	extra,
 	onReset,
+	defaultQuery = "",
 	debounceTimeout = 500,
 }: HeaderSearchBarProps) => {
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
-	const [query, setQuery] = useState("");
+	const [query, setQuery] = useState(defaultQuery);
 
 	const ref = useRef(null);
 	useEffect(() => clickOutsideHandler(ref, () => setSearchbarVisible(false)), [ref]);
 
 	const debouncedQuery = useDebounce(query, debounceTimeout);
-	useEffect(() => onSearch?.(debouncedQuery), [onSearch, debouncedQuery]);
+	useEffect(() => onSearch?.(debouncedQuery), [debouncedQuery]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const handleQueryReset = () => {
 		setQuery("");

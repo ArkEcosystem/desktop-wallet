@@ -53,6 +53,95 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should update the avatar when removing focus from name input", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "t" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not update the uploaded avatar when removing focus from name input", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		// Upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: ["filePath"],
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "t" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should update profile", async () => {
 		const profilesCount = env.profiles().count();
 
@@ -96,9 +185,6 @@ describe("Settings", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
-
-		// Toggle Update Ledger in Background
-		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
@@ -351,10 +437,8 @@ describe("Settings", () => {
 		expect(container).toBeTruthy();
 
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
-		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).toBeChecked());
-		await waitFor(() => expect(getByTestId("General-settings__toggle--isUpdateLedger")).toBeChecked());
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
@@ -373,7 +457,6 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).not.toBeChecked());
-		await waitFor(() => expect(getByTestId("General-settings__toggle--isUpdateLedger")).not.toBeChecked());
 	});
 
 	it("should render peer settings", async () => {
@@ -903,6 +986,59 @@ describe("Settings", () => {
 		expect(toastSpy).toHaveBeenCalledWith(
 			`${translations.COMMON.ERROR}: ${translations.SETTINGS.PASSWORD.ERROR.MISMATCH}`,
 		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should trigger password confirmation mismatch error", async () => {
+		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
+
+		const currentPasswordInput = "Password-settings__input--currentPassword";
+
+		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("new password"));
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+				target: { value: "new password 1" },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--password_2")).toHaveValue("new password 1"));
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "new password 2" },
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("Password-settings__input--password_2")).toHaveAttribute("aria-invalid"),
+		);
+		// wait for formState.isValid to be updated
+		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
 
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -17,9 +17,11 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
           <div
             class="flex justify-between items-end bg-theme-background"
           >
-            <div>
+            <div
+              class="space-y-4"
+            >
               <h1
-                class="mb-0 md:text-4xl"
+                class="mb-0 text-4xl"
                 data-testid="header__title"
               >
                 Multisignature Registration
@@ -442,9 +444,11 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
           <div
             class="flex justify-between items-end bg-theme-background"
           >
-            <div>
+            <div
+              class="space-y-4"
+            >
               <h1
-                class="mb-0 md:text-4xl"
+                class="mb-0 text-4xl"
                 data-testid="header__title"
               >
                 Transaction Review

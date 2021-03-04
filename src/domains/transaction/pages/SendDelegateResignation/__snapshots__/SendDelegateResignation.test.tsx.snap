@@ -272,10 +272,10 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -311,9 +311,11 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Delegate Resignation
@@ -814,10 +816,10 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -853,9 +855,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Delegate Resignation
@@ -1356,10 +1360,10 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1394,9 +1398,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Transaction Review
@@ -1908,10 +1914,10 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1947,9 +1953,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -2374,10 +2382,10 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2407,27 +2415,33 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="ErrorStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-8 text-lg font-bold md:text-4xl"
-                      >
-                        Transaction Error
-                      </h1>
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
                       <div
-                        class="my-4 mx-auto w-128"
+                        class="space-y-4"
                       >
-                        <svg>
-                          mistake-banner.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="my-8 text-md text-theme-secondary-text"
-                      >
-                        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                        <h1
+                          class="mb-0 text-4xl"
+                          data-testid="header__title"
+                        >
+                          Transaction Error
+                        </h1>
                       </div>
                     </div>
+                    <svg
+                      class="w-full"
+                    >
+                      transaction-error-banner.svg
+                    </svg>
+                    <p
+                      class="text-theme-secondary-text"
+                    >
+                      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                    </p>
                     <div
                       class="flex justify-end space-x-3"
                     >
@@ -2741,10 +2755,10 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2774,27 +2788,33 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
+                    class="space-y-8"
                     data-testid="ErrorStep"
                   >
-                    <div>
-                      <h1
-                        class="mb-8 text-lg font-bold md:text-4xl"
-                      >
-                        Transaction Error
-                      </h1>
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
                       <div
-                        class="my-4 mx-auto w-128"
+                        class="space-y-4"
                       >
-                        <svg>
-                          mistake-banner.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="my-8 text-md text-theme-secondary-text"
-                      >
-                        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                        <h1
+                          class="mb-0 text-4xl"
+                          data-testid="header__title"
+                        >
+                          Transaction Error
+                        </h1>
                       </div>
                     </div>
+                    <svg
+                      class="w-full"
+                    >
+                      transaction-error-banner.svg
+                    </svg>
+                    <p
+                      class="text-theme-secondary-text"
+                    >
+                      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                    </p>
                     <div
                       class="flex justify-end space-x-3"
                     >
@@ -3108,10 +3128,10 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -3147,9 +3167,11 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -3593,10 +3615,10 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -3636,9 +3658,11 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                       <div
                         class="flex justify-between items-end bg-theme-background"
                       >
-                        <div>
+                        <div
+                          class="space-y-4"
+                        >
                           <h1
-                            class="mb-0 md:text-4xl"
+                            class="mb-0 text-4xl"
                             data-testid="header__title"
                           >
                             Transaction Sent
@@ -3648,7 +3672,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                       <svg
                         class="w-full"
                       >
-                        transaction-successful.svg
+                        transaction-success-banner.svg
                       </svg>
                       <p
                         class="text-theme-secondary-text"

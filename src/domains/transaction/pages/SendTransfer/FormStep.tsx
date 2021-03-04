@@ -79,13 +79,11 @@ export const FormStep = ({
 							data-testid="Input__smartbridge"
 							type="text"
 							placeholder=" "
-							className="pr-25"
 							maxLengthLabel="255"
 							defaultValue={smartbridge}
 							onChange={(event: ChangeEvent<HTMLInputElement>) =>
 								setValue("smartbridge", event.target.value, { shouldDirty: true, shouldValidate: true })
 							}
-							errorClassName="mr-18"
 						/>
 					</FormField>
 				</>

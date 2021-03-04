@@ -33,9 +33,11 @@ exports[`LedgerTabs should render connection step 1`] = `
           <div
             class="flex justify-between items-end bg-theme-background"
           >
-            <div>
+            <div
+              class="space-y-4"
+            >
               <h1
-                class="mb-0 md:text-4xl"
+                class="mb-0 text-4xl"
                 data-testid="header__title"
               >
                 Select a Cryptoasset
@@ -179,9 +181,11 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           <div
             class="flex justify-between items-end bg-theme-background"
           >
-            <div>
+            <div
+              class="space-y-4"
+            >
               <h1
-                class="mb-0 md:text-4xl"
+                class="mb-0 text-4xl"
                 data-testid="header__title"
               >
                 Accounts

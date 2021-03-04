@@ -1,7 +1,6 @@
 import { Button } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
-import { ReviewRating } from "app/components/ReviewRating";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -16,98 +15,78 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 
 	const data = [
 		{
-			name: "ChangeNOW Plugin",
-			description: "ChangeNOW",
+			title: "ChangeNOW Plugin",
+			author: "ChangeNOW",
 			category: "Other",
-			rating: 4.6,
 			version: "1.3.8",
 		},
 		{
-			name: "Binance",
-			description: "Binance",
+			title: "Binance",
+			author: "Binance",
 			category: "Other",
-			rating: 4.6,
 			version: "1.3.8",
 		},
 		{
-			name: "Atomars",
-			description: "Atomars",
+			title: "Atomars",
+			author: "Atomars",
 			category: "Other",
-			rating: 4.8,
 			version: "1.3.8",
 		},
 		{
-			name: "OKEx",
-			description: "ARK Ecosystem",
+			title: "OKEx",
+			author: "ARK Ecosystem",
 			category: "Other",
-			rating: 2.6,
 			version: "1.3.8",
 		},
 	];
 
+	const initialState = {
+		sortBy: [
+			{
+				id: "title",
+				// desc: false,
+			},
+		],
+	};
+
 	const columns = [
 		{
-			Header: "Logo",
-			disableSortBy: true,
-			className: "hidden",
-		},
-		{
 			Header: t("COMMON.NAME"),
-			accessor: "name",
+			accessor: "title",
 		},
 		{
-			Header: t("COMMON.CATEGORY"),
-			accessor: "category",
-		},
-		{
-			Header: t("COMMON.RATING"),
-			accessor: "rating",
+			Header: t("COMMON.AUTHOR"),
+			accessor: "author",
 		},
 		{
 			Header: t("COMMON.VERSION"),
 			accessor: "version",
+			className: "no-border",
+			disableSortBy: true,
 		},
 		{
 			Header: "Actions",
-			disableSortBy: true,
 			className: "hidden",
+			disableSortBy: true,
 		},
 	];
 
 	return (
-		<Modal
-			title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")}
-			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
-			banner={<Image name="AddExchangeBanner" domain="exchange" />}
-			size="4xl"
-			isOpen={isOpen}
-			onClose={onClose}
-		>
+		<Modal title={t("EXCHANGE.MODAL_ADD_EXCHANGE.TITLE")} size="4xl" isOpen={isOpen} onClose={onClose}>
 			<div className="mt-8 -mb-6">
-				<Table columns={columns} data={data}>
+				<Table columns={columns} data={data} initialState={initialState}>
 					{(rowData: any) => (
 						<TableRow>
-							<TableCell variant="start" className="w-18">
-								<div className="w-12 h-12">
-									<Image name="ChangeNowLogo" domain="exchange" />
+							<TableCell variant="start" innerClassName="space-x-5">
+								<div className="w-11 h-11">
+									<Image name="ChangeNowLogo" />
 								</div>
+
+								<span className="cursor-pointer font-semibold link">{rowData.title}</span>
 							</TableCell>
 
 							<TableCell>
-								<div className="flex flex-col">
-									<div className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
-										{rowData.name}
-									</div>
-									<div>{rowData.description}</div>
-								</div>
-							</TableCell>
-
-							<TableCell>
-								<span>{rowData.category}</span>
-							</TableCell>
-
-							<TableCell>
-								<ReviewRating rating={rowData.rating} />
+								<span>{rowData.author}</span>
 							</TableCell>
 
 							<TableCell>

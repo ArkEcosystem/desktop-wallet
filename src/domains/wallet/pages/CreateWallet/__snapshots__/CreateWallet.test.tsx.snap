@@ -9,9 +9,11 @@ exports[`CreateWallet 1st step should render 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Select a Cryptoasset
@@ -96,9 +98,11 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Select a Cryptoasset
@@ -232,9 +236,11 @@ exports[`CreateWallet 2nd step should render 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Your Passphrase
@@ -674,10 +680,10 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -713,9 +719,11 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -1098,10 +1106,10 @@ exports[`CreateWallet should create a wallet with alias 2`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1137,9 +1145,11 @@ exports[`CreateWallet should create a wallet with alias 2`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Completed
@@ -1569,10 +1579,10 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -1608,9 +1618,11 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -1993,10 +2005,10 @@ exports[`CreateWallet should create a wallet without alias 2`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2032,9 +2044,11 @@ exports[`CreateWallet should create a wallet without alias 2`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Completed
@@ -2466,10 +2480,10 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -2505,9 +2519,11 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -2629,9 +2645,11 @@ exports[`CreateWallet should render 4th step 1`] = `
     <div
       class="flex justify-between items-end bg-theme-background"
     >
-      <div>
+      <div
+        class="space-y-4"
+      >
         <h1
-          class="mb-0 md:text-4xl"
+          class="mb-0 text-4xl"
           data-testid="header__title"
         >
           Completed
@@ -3025,10 +3043,10 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <form
             class="mx-auto max-w-xl"
@@ -3064,9 +3082,11 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                     <div
                       class="flex justify-between items-end bg-theme-background"
                     >
-                      <div>
+                      <div
+                        class="space-y-4"
+                      >
                         <h1
-                          class="mb-0 md:text-4xl"
+                          class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset

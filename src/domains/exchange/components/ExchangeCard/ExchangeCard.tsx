@@ -1,30 +1,15 @@
 import { Card } from "app/components/Card";
-import { Icon } from "app/components/Icon";
-import { Image } from "app/components/Image";
+import { DropdownOption } from "app/components/Dropdown";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { ExchangeImage } from "../ExchangeImage";
+
 type ExchangeCardProps = {
+	actions?: DropdownOption[];
 	exchange: any;
-	isSelected?: boolean;
 	onClick: any;
-};
-
-export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
-	const { t } = useTranslation();
-
-	return (
-		<Card className="flex col-span-2" onClick={onAddExchange}>
-			<div className="flex items-center p-2 font-semibold text-theme-primary-600">
-				<Icon
-					name="Plus"
-					className="p-4 mr-4 rounded-lg bg-theme-primary-100 dark:border-theme-secondary-800"
-				/>
-
-				{t("EXCHANGE.ADD_EXCHANGE")}
-			</div>
-		</Card>
-	);
+	onSelect: any;
 };
 
 export const BlankExchangeCard = () => {
@@ -32,28 +17,43 @@ export const BlankExchangeCard = () => {
 
 	return (
 		<Card>
-			<div className="flex items-center p-2 font-semibold text-theme-primary-100 dark:text-theme-secondary-800">
-				<div className="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800" />
+			<div className="flex items-center space-x-4">
+				<div className="h-25 w-25 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800" />
+				<div className="flex flex-col space-y-1 truncate">
+					<span className="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
+						{t("COMMON.AUTHOR")}
+					</span>
 
-				{t("EXCHANGE.EXCHANGE_NAME")}
+					<div className="text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
+						{t("COMMON.EXCHANGE")}
+					</div>
+				</div>
 			</div>
 		</Card>
 	);
 };
 
-export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProps) => {
-	const options = [{ label: "Option 1", value: "1" }];
+export const ExchangeCard = ({ actions, exchange, onClick, onSelect }: ExchangeCardProps) => {
+	if (exchange === undefined) {
+		return <BlankExchangeCard />;
+	}
 
 	return (
-		<Card isSelected={isSelected} onClick={onClick} actions={options}>
-			<div className="flex items-center p-2 font-semibold text-theme-primary-600">
-				<div className="mr-4">
-					<div className="w-12 h-12">
-						<Image name="ChangeNowLogo" domain="exchange" />
-					</div>
+		<Card actions={actions} onClick={onClick} onSelect={onSelect}>
+			<div className="flex items-center space-x-4">
+				<div className="min-w-25 w-25 h-25 overflow-hidden rounded-lg">
+					<ExchangeImage logoURL={exchange.logo} />
 				</div>
 
-				<div className="truncate">{exchange.name}</div>
+				<div className="flex flex-col space-y-1 truncate">
+					<span className="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700">
+						{exchange.author}
+					</span>
+
+					<div className="text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200">
+						{exchange.title}
+					</div>
+				</div>
 			</div>
 		</Card>
 	);

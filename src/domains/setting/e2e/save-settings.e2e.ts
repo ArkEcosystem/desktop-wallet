@@ -26,7 +26,6 @@ test("should save settings", async (t) => {
 	await t.click('[data-testid="select-list__toggle-option-2"]');
 
 	await t.click(Selector("input[name=isDarkMode]").parent());
-	await t.click(Selector("input[name=isUpdateLedger]").parent());
 
 	await t.click(Selector("button").withText(translations.COMMON.SAVE));
 });

@@ -12,7 +12,7 @@ exports[`AddExchange should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dWPpQp absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dWPpQp absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -41,30 +41,14 @@ exports[`AddExchange should render a modal 1`] = `
       <div
         class="relative"
       >
-        <div
-          class="relative -mx-10 mb-10 -mt-10 h-56"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <svg>
-            add-exchange-banner.svg
-          </svg>
-          <div
-            class="absolute bottom-0 left-0 mb-10 ml-10"
-          >
-            <h2
-              class="text-5xl font-extrabold leading-tight m-0 text-theme-text"
-            >
-              Exchange
-            </h2>
-          </div>
-        </div>
+          Exchange
+        </h2>
         <div
           class="flex-1"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
-          >
-            Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.
-          </div>
           <div
             class="mt-8 -mb-6"
           >
@@ -86,12 +70,28 @@ exports[`AddExchange should render a modal 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top hidden "
+                        class="flex flex-inline align-top  "
                       >
                         <div>
-                          Logo
+                          Name
+                        </div>
+                        <div
+                          class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </th>
@@ -107,7 +107,7 @@ exports[`AddExchange should render a modal 1`] = `
                         class="flex flex-inline align-top  "
                       >
                         <div>
-                          Name
+                          Author
                         </div>
                         <div
                           class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
@@ -126,32 +126,16 @@ exports[`AddExchange should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex flex-inline align-top no-border "
                       >
                         <div>
-                          Category
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Version
                         </div>
                       </div>
                     </th>
@@ -159,66 +143,6 @@ exports[`AddExchange should render a modal 1`] = `
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top  "
-                      >
-                        <div>
-                          Rating
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top  "
-                      >
-                        <div>
-                          Version
-                        </div>
-                        <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -238,45 +162,21 @@ exports[`AddExchange should render a modal 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-18"
-                    >
+                    <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                       >
                         <div
-                          class="w-12 h-12"
+                          class="w-11 h-11"
                         >
                           <svg>
                             changenow-logo.svg
                           </svg>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <div
-                          class="flex flex-col"
+                        <span
+                          class="cursor-pointer font-semibold link"
                         >
-                          <div
-                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                          >
-                            ChangeNOW Plugin
-                          </div>
-                          <div>
-                            ChangeNOW
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Other
+                          Atomars
                         </span>
                       </div>
                     </td>
@@ -284,35 +184,9 @@ exports[`AddExchange should render a modal 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
-                        <div
-                          class="flex items-center"
-                          data-testid="ReviewRating"
-                        >
-                          <div
-                            class="relative"
-                          >
-                            <div
-                              class="overflow-hidden absolute"
-                              style="width: 89.99999999999999%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="ml-1"
-                          >
-                            4.6
-                          </span>
-                        </div>
+                        <span>
+                          Atomars
+                        </span>
                       </div>
                     </td>
                     <td>
@@ -347,45 +221,21 @@ exports[`AddExchange should render a modal 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-18"
-                    >
+                    <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                       >
                         <div
-                          class="w-12 h-12"
+                          class="w-11 h-11"
                         >
                           <svg>
                             changenow-logo.svg
                           </svg>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <div
-                          class="flex flex-col"
+                        <span
+                          class="cursor-pointer font-semibold link"
                         >
-                          <div
-                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                          >
-                            Binance
-                          </div>
-                          <div>
-                            Binance
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Other
+                          Binance
                         </span>
                       </div>
                     </td>
@@ -393,35 +243,9 @@ exports[`AddExchange should render a modal 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
-                        <div
-                          class="flex items-center"
-                          data-testid="ReviewRating"
-                        >
-                          <div
-                            class="relative"
-                          >
-                            <div
-                              class="overflow-hidden absolute"
-                              style="width: 89.99999999999999%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="ml-1"
-                          >
-                            4.6
-                          </span>
-                        </div>
+                        <span>
+                          Binance
+                        </span>
                       </div>
                     </td>
                     <td>
@@ -456,45 +280,21 @@ exports[`AddExchange should render a modal 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-18"
-                    >
+                    <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                       >
                         <div
-                          class="w-12 h-12"
+                          class="w-11 h-11"
                         >
                           <svg>
                             changenow-logo.svg
                           </svg>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <div
-                          class="flex flex-col"
+                        <span
+                          class="cursor-pointer font-semibold link"
                         >
-                          <div
-                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                          >
-                            Atomars
-                          </div>
-                          <div>
-                            Atomars
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Other
+                          ChangeNOW Plugin
                         </span>
                       </div>
                     </td>
@@ -502,35 +302,9 @@ exports[`AddExchange should render a modal 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
-                        <div
-                          class="flex items-center"
-                          data-testid="ReviewRating"
-                        >
-                          <div
-                            class="relative"
-                          >
-                            <div
-                              class="overflow-hidden absolute"
-                              style="width: 95%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="ml-1"
-                          >
-                            4.8
-                          </span>
-                        </div>
+                        <span>
+                          ChangeNOW
+                        </span>
                       </div>
                     </td>
                     <td>
@@ -565,45 +339,21 @@ exports[`AddExchange should render a modal 1`] = `
                     class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
-                    <td
-                      class="w-18"
-                    >
+                    <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                       >
                         <div
-                          class="w-12 h-12"
+                          class="w-11 h-11"
                         >
                           <svg>
                             changenow-logo.svg
                           </svg>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <div
-                          class="flex flex-col"
+                        <span
+                          class="cursor-pointer font-semibold link"
                         >
-                          <div
-                            class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                          >
-                            OKEx
-                          </div>
-                          <div>
-                            ARK Ecosystem
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Other
+                          OKEx
                         </span>
                       </div>
                     </td>
@@ -611,35 +361,9 @@ exports[`AddExchange should render a modal 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
                       >
-                        <div
-                          class="flex items-center"
-                          data-testid="ReviewRating"
-                        >
-                          <div
-                            class="relative"
-                          >
-                            <div
-                              class="overflow-hidden absolute"
-                              style="width: 40%;"
-                            >
-                              <svg
-                                class="text-theme-warning-400 w-4"
-                              >
-                                star.svg
-                              </svg>
-                            </div>
-                            <svg
-                              class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-4"
-                            >
-                              star.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="ml-1"
-                          >
-                            2.6
-                          </span>
-                        </div>
+                        <span>
+                          ARK Ecosystem
+                        </span>
                       </div>
                     </td>
                     <td>
