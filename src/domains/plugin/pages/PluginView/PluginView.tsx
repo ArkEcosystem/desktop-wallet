@@ -18,7 +18,7 @@ export const PluginView = () => {
 			<div className="px-4 sm:px-6 lg:px-10 py-4">
 				<div className="flex justify-between items-center">
 					<div className="flex items-center space-x-3">
-						<PluginImage logoURL={plugin?.config()?.logo()} className="w-6 h-6" />
+						<PluginImage size="xs" logoURL={plugin?.config()?.logo()} />
 
 						<div className="flex space-x-10 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-700">
 							<dl>

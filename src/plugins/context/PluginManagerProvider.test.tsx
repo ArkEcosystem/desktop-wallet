@@ -114,6 +114,8 @@ describe("PluginManagerProvider", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
 		manager.plugins().push(plugin);
 
+		plugin.enable(profile);
+
 		const Component = () => {
 			const { fetchPluginPackages, allPlugins } = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();

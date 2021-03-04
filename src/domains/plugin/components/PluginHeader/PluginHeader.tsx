@@ -132,22 +132,25 @@ export const PluginHeader = ({
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
 				<PluginImage
+					size="lg"
 					logoURL={props.logo}
-					className="w-40"
+					isEnabled={props.isEnabled}
 					isUpdating={updatingStats?.percent !== undefined}
 					updatingProgress={updatingStats?.percent}
 					showUpdatingLabel
 				/>
 
-				<div className="flex flex-col justify-between pl-8 space-y-3 w-full">
-					<div className="flex justify-between items-center">
-						<div className="flex flex-col mr-2">
+				<div className="flex flex-col justify-between pl-8 w-full">
+					<div className="flex justify-between items-end">
+						<div className="flex flex-col space-y-2 mr-2 leading-tight">
 							<span className="text-2xl font-bold">{props.title}</span>
 							<span className="text-medium text-theme-secondary-500">{props.description}</span>
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>
+
 					<Divider dashed />
+
 					<PluginSpecs {...props} />
 				</div>
 			</div>

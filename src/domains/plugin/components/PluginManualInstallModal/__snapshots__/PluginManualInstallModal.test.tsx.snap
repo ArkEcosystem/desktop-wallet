@@ -10,7 +10,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -56,19 +56,82 @@ exports[`PluginManualInstallModal should render properly 1`] = `
             data-testid="PluginManualInstallModal"
           >
             <div
-              class="flex justify-center mt-8"
+              class="flex mt-8"
             >
-              <input
-                aria-invalid="false"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                data-testid="PluginManualInstallModal__input"
-                placeholder="Github Repository URL"
-                value="https://github.com/arkecosystem/test-plugin"
-              />
+              <div
+                class="Alert__AlertWrapper-sc-1rcd7no-0 ifLGhi flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              >
+                <div
+                  class="flex items-center justify-center text-theme-warning-600"
+                >
+                  <div
+                    class="sc-bdfBwQ daKoZl"
+                    height="1.75em"
+                    width="1.75em"
+                  >
+                    <svg>
+                      alert-warning.svg
+                    </svg>
+                  </div>
+                </div>
+                <span
+                  class="pointer-events-none border rounded-md border-theme-warning-600"
+                />
+                <div
+                  class="flex flex-col space-y-2"
+                >
+                  <p
+                    class="leading-relaxed break-words dark:text-theme-secondary-500"
+                  >
+                    <span
+                      class="text-sm"
+                    >
+                      Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div
-              class="flex justify-center my-8"
+            <fieldset
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
             >
+              <label
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                data-testid="FormLabel"
+                for="url"
+              >
+                Github Repository URL
+                <div
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                  data-testid="FormLabel__required"
+                />
+              </label>
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  aria-invalid="false"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                  data-testid="PluginManualInstallModal__input"
+                  name="url"
+                  value="https://github.com/arkecosystem/test-plugin"
+                />
+              </div>
+            </fieldset>
+            <div
+              class="flex space-x-3 justify-end mt-8"
+            >
+              <button
+                class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                data-testid="PluginManualInstallModal__cancel-button"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Cancel
+                </div>
+              </button>
               <button
                 class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                 data-testid="PluginManualInstallModal__submit-button"
@@ -82,41 +145,6 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                   </span>
                 </div>
               </button>
-            </div>
-            <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 ifLGhi flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
-            >
-              <div
-                class="flex items-center justify-center text-theme-warning-600"
-              >
-                <div
-                  class="sc-bdfBwQ daKoZl"
-                  height="1.75em"
-                  width="1.75em"
-                >
-                  <svg>
-                    alert-warning.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
-              />
-              <div
-                class="flex flex-col space-y-2"
-              >
-                <p
-                  class="text-lg font-bold text-theme-warning-600"
-                  data-testid="alert__title"
-                >
-                  Disclaimer
-                </p>
-                <p
-                  class="leading-relaxed break-words dark:text-theme-secondary-500"
-                >
-                  Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
-                </p>
-              </div>
             </div>
           </div>
         </div>
