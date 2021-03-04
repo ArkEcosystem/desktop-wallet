@@ -55,10 +55,6 @@ export const translations: { [key: string]: any } = {
 				TITLE: "Portfolio Transaction History",
 				DESCRIPTION: "Enables transaction history on Portfolio page",
 			},
-			UPDATE_LEDGER: {
-				TITLE: "Update Ledger in Background",
-				DESCRIPTION: "Allows Ledger wallets to automatically update and sync data in the background.",
-			},
 		},
 		SUCCESS: "Your profile settings have been updated",
 		ERROR: "Your profile settings could not be updated",
