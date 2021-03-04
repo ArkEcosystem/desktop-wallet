@@ -13,7 +13,7 @@ exports[`BlankExchangeCard should render when blank 1`] = `
         class="h-25 w-25 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
       />
       <div
-        class="flex flex-col space-y-1 truncate"
+        class="flex flex-col truncate"
       >
         <span
           class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
@@ -21,7 +21,7 @@ exports[`BlankExchangeCard should render when blank 1`] = `
           Author
         </span>
         <div
-          class="text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
         >
           Exchange
         </div>
@@ -37,39 +37,49 @@ exports[`BlankExchangeCard should render when blank 1`] = `
 exports[`ExchangeCard should render 1`] = `
 <div>
   <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-    data-testid="Card"
+    data-testid="PluginCard--test-exchange"
   >
     <div
-      class="flex items-center space-x-4"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
+      data-testid="Card"
     >
       <div
-        class="min-w-25 w-25 h-25 overflow-hidden rounded-lg"
+        class="flex items-center space-x-4"
       >
         <div
-          data-testid="ExchangeImage__placeholder"
+          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
         >
-          <svg>
-            plugin-logo-placeholder.svg
-          </svg>
+          <div
+            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+            data-testid="PluginImage__placeholder"
+          >
+            <svg>
+              plugin-logo-placeholder.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col truncate"
+        >
+          <span
+            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+          />
+          <div
+            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+          >
+            <div
+              class="truncate"
+            >
+              Test Exchange
+            </div>
+            <span />
+          </div>
         </div>
       </div>
       <div
-        class="flex flex-col space-y-1 truncate"
-      >
-        <span
-          class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-        />
-        <div
-          class="text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
-        >
-          Test Exchange
-        </div>
-      </div>
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
     </div>
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
   </div>
 </div>
 `;
