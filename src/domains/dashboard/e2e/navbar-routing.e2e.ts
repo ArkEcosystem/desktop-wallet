@@ -22,9 +22,9 @@ test("should navigate to plugins", async (t) => {
 
 test("should navigate to exchange", async (t) => {
 	await t.click(Selector("span").withText("John Doe"));
-	await t.click(Selector("a").withExactText(translations.EXCHANGE.PAGE_EXCHANGE.TITLE));
+	await t.click(Selector("a").withExactText(translations.EXCHANGE.PAGE_EXCHANGES.TITLE));
 	await t.expect(getLocation()).contains("/exchange");
-	await t.expect(Selector("h1").withExactText(translations.EXCHANGE.PAGE_EXCHANGE.TITLE).exists).ok();
+	await t.expect(Selector("h1").withExactText(translations.EXCHANGE.PAGE_EXCHANGES.TITLE).exists).ok();
 });
 
 test("should navigate to news", async (t) => {
