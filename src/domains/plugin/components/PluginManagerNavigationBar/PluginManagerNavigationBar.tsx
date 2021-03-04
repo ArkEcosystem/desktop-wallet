@@ -41,7 +41,7 @@ export const PluginManagerNavigationBar = ({
 			data-testid="PluginManagerNavigationBar"
 			className="sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
 		>
-			<div className="container flex justify-between items-center px-14 mx-auto">
+			<div className="container flex justify-between items-center px-10 mx-auto">
 				<div>
 					<ul className="flex h-18">
 						{menu &&

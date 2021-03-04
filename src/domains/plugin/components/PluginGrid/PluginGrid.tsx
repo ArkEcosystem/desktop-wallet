@@ -1,7 +1,9 @@
 import { chunk } from "@arkecosystem/utils";
+import { DropdownOption } from "app/components/Dropdown";
 import { Pagination } from "app/components/Pagination";
 import { PluginCard } from "domains/plugin/components/PluginCard";
-import React from "react";
+import React, { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
 
@@ -34,9 +36,12 @@ export const PluginGrid = ({
 	plugins,
 	withPagination,
 	isLoading,
-	skeletonsLimit = 8,
+	skeletonsLimit = 6,
 }: PluginGridProps) => {
+	const { t } = useTranslation();
+
 	const [currentPage, setCurrentPage] = React.useState(1);
+
 	const entries = [];
 	let skeletons = [];
 
@@ -44,19 +49,75 @@ export const PluginGrid = ({
 		skeletons = new Array(skeletonsLimit).fill({});
 	}
 
+	const getActions = useCallback(
+		(plugin: any) => {
+			if (plugin.isInstalled) {
+				const result: DropdownOption[] = [];
+
+				if (plugin.hasLaunch) {
+					result.push({ label: t("COMMON.LAUNCH"), value: "launch" });
+				}
+
+				if (plugin.hasUpdateAvailable) {
+					result.push({
+						label: t("COMMON.UPDATE"),
+						value: "update",
+					});
+				}
+
+				if (plugin.isEnabled) {
+					result.push({ label: t("COMMON.DISABLE"), value: "disable" });
+				} else {
+					result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+				}
+
+				result.push({ label: t("COMMON.DELETE"), value: "delete" });
+
+				return result;
+			}
+
+			return [
+				{
+					label: t("COMMON.INSTALL"),
+					value: "install",
+				},
+			];
+		},
+		[t],
+	);
+
+	const handlePluginAction = (plugin: any, action: any) => {
+		switch (action?.value) {
+			case "delete":
+				onDelete(plugin);
+				break;
+			case "enable":
+				onEnable?.(plugin);
+				break;
+			case "disable":
+				onDisable?.(plugin);
+				break;
+			case "launch":
+				onLaunch?.(plugin);
+				break;
+			case "install":
+				onInstall?.(plugin);
+				break;
+			case "update":
+				onUpdate?.(plugin);
+				break;
+		}
+	};
+
 	if (!isLoading) {
 		for (const plugin of plugins) {
 			entries.push(
 				<PluginCard
 					key={plugin.id}
+					actions={getActions(plugin)}
 					plugin={plugin}
 					onClick={() => onSelect(plugin)}
-					onDelete={() => onDelete(plugin)}
-					onEnable={() => onEnable?.(plugin)}
-					onDisable={() => onDisable?.(plugin)}
-					onLaunch={() => onLaunch?.(plugin)}
-					onInstall={() => onInstall?.(plugin)}
-					onUpdate={() => onUpdate?.(plugin)}
+					onSelect={(action: any) => handlePluginAction(plugin, action)}
 				/>,
 			);
 		}
@@ -66,13 +127,13 @@ export const PluginGrid = ({
 
 	return (
 		<div data-testid="PluginGrid">
-			<div className={`grid grid-cols-4 gap-5 ${className}`}>
+			<div className={`grid grid-cols-3 gap-5 ${className}`}>
 				{skeletons.map((_, index) => (
 					<PluginCardSkeleton key={index} />
 				))}
 			</div>
 
-			<div className={`grid grid-cols-4 gap-5 ${className}`}>{pageEntries}</div>
+			<div className={`grid grid-cols-3 gap-5 ${className}`}>{pageEntries}</div>
 
 			<div className="flex justify-center mt-4">
 				{withPagination && (

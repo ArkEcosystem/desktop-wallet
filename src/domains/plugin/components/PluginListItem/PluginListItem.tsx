@@ -147,7 +147,12 @@ export const PluginListItem = ({
 
 			<TableCell variant="end" className="w-16" innerClassName="justify-end">
 				{!plugin.isInstalled && (
-					<Button variant="secondary" onClick={handleInstall} data-testid="PluginListItem__install">
+					<Button
+						variant="secondary"
+						onClick={handleInstall}
+						data-testid="PluginListItem__install"
+						className="flex-1"
+					>
 						{t("COMMON.INSTALL")}
 					</Button>
 				)}

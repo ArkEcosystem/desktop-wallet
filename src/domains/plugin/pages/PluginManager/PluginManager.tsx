@@ -315,8 +315,6 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 				<Section>
 					<div data-testid={`PluginManager__container--${currentView}`}>
-						<div className="flex justify-between items-center" />
-
 						{currentView === "home" && (
 							<PluginManagerHome
 								isLoading={isFetchingPackages}
@@ -332,34 +330,14 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							/>
 						)}
 
-						{currentView === "my-plugins" && viewType === "grid" && (
-							<div>
-								<h2 className="font-bold">
-									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-								</h2>
-								<PluginGrid
-									plugins={installedPlugins}
-									onSelect={handleSelectPlugin}
-									onDelete={handleDeletePlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onInstall={openInstallModalPlugin}
-									onLaunch={handleLaunchPlugin}
-									onUpdate={handleUpdate}
-									className="mt-6"
-									isLoading={isFetchingPackages}
-								/>
-							</div>
-						)}
-
-						{currentView === "my-plugins" && viewType === "list" && (
-							<div className="flex flex-col">
-								<h2 className="font-bold">
+						{currentView !== "home" && (
+							<>
+								<h2 className="font-bold mb-6">
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
 
-								{hasUpdateAvailableCount > 0 && (
-									<EmptyBlock size="sm" className="mt-4">
+								{currentView === "my-plugins" && hasUpdateAvailableCount > 0 && (
+									<EmptyBlock size="sm" className="my-4">
 										<div className="flex items-center w-full justify-between">
 											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
 											<Button data-testid="PluginManager__update-all">
@@ -369,51 +347,34 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									</EmptyBlock>
 								)}
 
-								<PluginList
-									plugins={installedPlugins}
-									onClick={handleSelectPlugin}
-									onInstall={openInstallModalPlugin}
-									onDelete={handleDeletePlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onLaunch={handleLaunchPlugin}
-									onUpdate={handleUpdate}
-									updatingStats={updatingStats}
-									className="mt-6"
-								/>
-							</div>
-						)}
+								{viewType === "grid" && (
+									<PluginGrid
+										plugins={currentView === "my-plugins" ? installedPlugins : filteredPackages}
+										onSelect={handleSelectPlugin}
+										onDelete={handleDeletePlugin}
+										onEnable={handleEnablePlugin}
+										onDisable={handleDisablePlugin}
+										onInstall={openInstallModalPlugin}
+										onLaunch={handleLaunchPlugin}
+										onUpdate={currentView === "my-plugins" ? handleUpdate : undefined}
+										isLoading={isFetchingPackages}
+									/>
+								)}
 
-						{!["home", "my-plugins"].includes(currentView) && viewType === "grid" && (
-							<div>
-								<h2 className="font-bold">
-									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-								</h2>
-								<PluginGrid
-									plugins={filteredPackages}
-									onSelect={handleSelectPlugin}
-									onDelete={handleDeletePlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onInstall={openInstallModalPlugin}
-									onLaunch={handleLaunchPlugin}
-									className="mt-6"
-									isLoading={isFetchingPackages}
-								/>
-							</div>
-						)}
-
-						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
-							<PluginList
-								plugins={filteredPackages}
-								onClick={handleSelectPlugin}
-								onInstall={openInstallModalPlugin}
-								onDelete={handleDeletePlugin}
-								onEnable={handleEnablePlugin}
-								onDisable={handleDisablePlugin}
-								onLaunch={handleLaunchPlugin}
-								className="mt-6"
-							/>
+								{viewType === "list" && (
+									<PluginList
+										plugins={currentView === "my-plugins" ? installedPlugins : filteredPackages}
+										onClick={handleSelectPlugin}
+										onInstall={openInstallModalPlugin}
+										onDelete={handleDeletePlugin}
+										onEnable={handleEnablePlugin}
+										onDisable={handleDisablePlugin}
+										onLaunch={handleLaunchPlugin}
+										onUpdate={currentView === "my-plugins" ? handleUpdate : undefined}
+										updatingStats={currentView === "my-plugins" ? updatingStats : undefined}
+									/>
+								)}
+							</>
 						)}
 					</div>
 				</Section>
