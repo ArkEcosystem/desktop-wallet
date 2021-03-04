@@ -76,7 +76,7 @@ export const Wallets = ({
 	};
 
 	return (
-		<Section className={!showTransactions ? "flex-1" : undefined}>
+		<Section>
 			<div className="flex justify-between items-center mb-8">
 				<div className="text-4xl font-bold">{title}</div>
 
