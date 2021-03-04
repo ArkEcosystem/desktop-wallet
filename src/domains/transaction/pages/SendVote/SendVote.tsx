@@ -11,7 +11,6 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
-import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -41,7 +40,7 @@ export const SendVote = () => {
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
@@ -166,6 +165,7 @@ export const SendVote = () => {
 					isConfirmed = voteConfirmed && unvoteConfirmed;
 				}
 
+				/* istanbul ignore else */
 				if (isConfirmed) {
 					clearInterval(interval);
 					resolve();
@@ -199,7 +199,7 @@ export const SendVote = () => {
 				// concept of all those weird legacy constructs that exist within ARK.
 				/* istanbul ignore next */
 				if (senderWallet?.networkId() === "ark.mainnet") {
-					const unvoteTransaction = await transactionBuilder.build(
+					const unvoteResult = await transactionBuilder.build(
 						"vote",
 						{
 							...voteTransactionInput,
@@ -210,13 +210,13 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(unvoteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(unvoteResult.uuid, voteTransactionInput);
 
 					await env.persist();
 
 					await confirmSendVote("unvote");
 
-					const voteTransaction = await transactionBuilder.build(
+					const voteResult = await transactionBuilder.build(
 						"vote",
 						{
 							...voteTransactionInput,
@@ -227,11 +227,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(voteResult.uuid, voteTransactionInput);
 
 					await env.persist();
 
-					setTransaction(voteTransaction);
+					setTransaction(voteResult.transaction);
 
 					setActiveTab(4);
 
@@ -239,7 +239,7 @@ export const SendVote = () => {
 				} else {
 					// @README: If we are not interacting with ark.mainnet we can combine the
 					// votes and unvotes in a single transaction to save fees and processing time.
-					const voteTransaction = await transactionBuilder.build(
+					const { uuid, transaction } = await transactionBuilder.build(
 						"vote",
 						{
 							...voteTransactionInput,
@@ -251,11 +251,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
+					await transactionBuilder.broadcast(uuid, voteTransactionInput);
 
 					await env.persist();
 
-					setTransaction(voteTransaction);
+					setTransaction(transaction);
 
 					setActiveTab(4);
 
@@ -263,7 +263,7 @@ export const SendVote = () => {
 				}
 			} else {
 				const isUnvote = unvotes.length > 0;
-				const transaction = await transactionBuilder.build(
+				const { uuid, transaction } = await transactionBuilder.build(
 					"vote",
 					{
 						...voteTransactionInput,
@@ -278,7 +278,7 @@ export const SendVote = () => {
 					{ abortSignal },
 				);
 
-				await transactionBuilder.broadcast(transaction.id(), voteTransactionInput);
+				await transactionBuilder.broadcast(uuid, voteTransactionInput);
 
 				await env.persist();
 
@@ -289,11 +289,6 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
-			if (isMnemonicError(error)) {
-				setValue("mnemonic", "");
-				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
-			}
-
 			setActiveTab(5);
 		}
 	};
@@ -347,7 +342,7 @@ export const SendVote = () => {
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
 									isRepeatDisabled={isSubmitting}
-									onRepeat={form.handleSubmit(submitForm)}
+									onRepeat={handleSubmit(submitForm)}
 								/>
 							</TabPanel>
 
