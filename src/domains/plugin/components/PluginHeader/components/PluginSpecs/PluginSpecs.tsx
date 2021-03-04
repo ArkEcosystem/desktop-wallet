@@ -22,15 +22,14 @@ type GridColProps = {
 
 type GridItemProps = {
 	label: string;
-	value: string;
+	children: React.ReactNode;
 	textDirection?: string;
-	iconName?: string;
-} & React.HTMLProps<any>;
+};
 
-const GridItem = ({ label, value, textDirection, ...props }: GridItemProps) => (
-	<div className={`flex flex-col ${textDirection && `text-${textDirection}`}`} {...props}>
-		<span className="font-bold text-theme-secondary-400">{label}</span>
-		<span className="font-bold text-theme-secondary-600">{value}</span>
+const GridItem = ({ label, children, textDirection }: GridItemProps) => (
+	<div className={`flex flex-col ${textDirection && `text-${textDirection}`}`}>
+		<span className="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">{label}</span>
+		<span className="font-semibold text-theme-secondary-text">{children}</span>
 	</div>
 );
 
@@ -54,59 +53,55 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size }
 
 	return (
 		<div className="flex justify-between space-4">
-			<div className="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800">
+			<div className="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800">
 				<GridCol>
-					<div className="flex flex-col pr-6">
-						<span className="font-bold text-theme-secondary-400">{t("COMMON.AUTHOR")}</span>
+					<GridItem label={t("COMMON.AUTHOR")}>
 						<div className="flex items-center">
-							<span className="font-bold text-theme-secondary-600">{author}</span>
+							<span className="font-semibold text-theme-secondary-text">{author}</span>
 							{isOfficial && (
 								<div data-testid="PluginSpecss__official" className="ml-2">
 									<Icon name="OfficialArkPlugin" />
 								</div>
 							)}
 						</div>
-					</div>
+					</GridItem>
 				</GridCol>
-				<GridCol padding="px-6">
-					<GridItem label={t("COMMON.CATEGORY")} value={t(`PLUGINS.CATEGORIES.${category?.toUpperCase()}`)} />
+
+				<GridCol padding="pl-8">
+					<GridItem label={t("COMMON.CATEGORY")}>
+						{t(`PLUGINS.CATEGORIES.${category?.toUpperCase()}`)}
+					</GridItem>
 				</GridCol>
-				<GridCol padding="px-6">
-					{domain ? (
-						<div className="flex flex-col">
-							<div className="font-bold text-theme-secondary-400">{t("COMMON.URL")}</div>
+
+				<GridCol padding="pl-8">
+					<GridItem label={t("COMMON.URL")}>
+						{domain ? (
 							<a
 								data-testid="PluginSpecs__url"
 								href="/"
 								onClick={() => openExternal(url!)}
-								className="font-bold text-theme-primary-600"
+								className="link"
 							>
 								{domain}
 							</a>
-						</div>
-					) : (
-						<GridItem data-testid="PluginSpecs__url" label={t("COMMON.URL")} value="N/A" />
-					)}
+						) : (
+							"N/A"
+						)}
+					</GridItem>
 				</GridCol>
 			</div>
 
-			<div className="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800">
-				<GridCol padding="pl-6">
-					<GridItem
-						data-testid="PluginSpecs__version"
-						label={t("COMMON.VERSION")}
-						value={version!}
-						textDirection="right"
-					/>
+			<div className="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800">
+				<GridCol padding="pl-8">
+					<GridItem label={t("COMMON.VERSION")} textDirection="right">
+						{version!}
+					</GridItem>
 				</GridCol>
 
-				<GridCol padding="pl-6">
-					<GridItem
-						data-testid="PluginSpecs__size"
-						label={t("COMMON.SIZE")}
-						value={size || "N/A"}
-						textDirection="right"
-					/>
+				<GridCol padding="pl-8">
+					<GridItem label={t("COMMON.SIZE")} textDirection="right">
+						{size || "N/A"}
+					</GridItem>
 				</GridCol>
 			</div>
 		</div>
