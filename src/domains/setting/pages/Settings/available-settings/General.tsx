@@ -185,7 +185,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="transactionHistory"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.DashboardTransactionHistory)}
+					defaultChecked={activeProfile.settings().get(ProfileSetting.DashboardTransactionHistory, true)}
 					data-testid="General-settings__toggle--transactionHistory"
 				/>
 			),

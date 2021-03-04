@@ -21,7 +21,7 @@ export const Dashboard = () => {
 
 	const profileWalletsCount = activeProfile.wallets().count();
 	const showTransactions = useMemo(
-		() => activeProfile.settings().get<boolean>(ProfileSetting.DashboardTransactionHistory),
+		() => activeProfile.settings().get<boolean>(ProfileSetting.DashboardTransactionHistory, true),
 		[activeProfile],
 	);
 
