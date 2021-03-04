@@ -33,9 +33,13 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 	const name = context.watch("name", activeProfile.settings().get(ProfileSetting.Name));
 
+	const formattedName = name.trim();
+
 	const { settings } = useValidation();
 
-	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
+	const [avatarImage, setAvatarImage] = useState(
+		activeProfile.settings().get(ProfileSetting.Avatar) || AvatarSDK.make(formattedName),
+	);
 
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
 	const [isOpenDevelopmentNetworkModal, setIsOpenDevelopmentNetworkModal] = useState(false);
@@ -48,19 +52,13 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().get(ProfileSetting.UseTestNetworks) || false,
 	);
 
-	const formattedName = name.trim();
-
-	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
+	const isSvg = useMemo(() => avatarImage.endsWith("</svg>"), [avatarImage]);
 
 	useEffect(() => {
-		if ((!avatarImage || isSvg) && formattedName) {
-			setAvatarImage(AvatarSDK.make(formattedName));
-		} else {
-			if (isSvg && !formattedName) {
-				setAvatarImage("");
-			}
+		if (!formattedName && isSvg) {
+			setAvatarImage("");
 		}
-	}, [formattedName, avatarImage, isSvg, setAvatarImage]);
+	}, [formattedName, isSvg, setAvatarImage]);
 
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -265,6 +263,11 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 								<InputDefault
 									ref={register(settings.name(activeProfile.id()))}
 									defaultValue={activeProfile.settings().get(ProfileSetting.Name)}
+									onBlur={() => {
+										if (!avatarImage || isSvg) {
+											setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
+										}
+									}}
 									data-testid="General-settings__input--name"
 								/>
 							</FormField>
