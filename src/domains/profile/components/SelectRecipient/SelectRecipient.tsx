@@ -44,10 +44,12 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		const isInvalidValue = isInvalid || fieldContext?.isInvalid;
 
 		useEffect(() => {
-			if (address) {
-				setSelectedAddress(address);
+			if (address === selectedAddress) {
+				return;
 			}
-		}, [address, setSelectedAddress]);
+
+			setSelectedAddress(address);
+		}, [address, setSelectedAddress]); // eslint-disable-line react-hooks/exhaustive-deps
 
 		const { allAddresses } = useProfileAddresses({ profile, network });
 		const recipientAddresses = allAddresses.map(({ address }) => ({
@@ -55,22 +57,31 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			value: address,
 		}));
 
-		const handleSelectAddress = (address: string) => {
-			setSelectedAddress(address);
+		const handleSelectAddress = (changedAddress: string) => {
+			if (selectedAddress === changedAddress) {
+				return;
+			}
+
+			setSelectedAddress(changedAddress);
 			setIsRecipientSearchOpen(false);
-			onChange?.(address);
+			onChange?.(changedAddress);
 		};
 
 		const openRecipients = () => {
 			if (disabled) {
 				return;
 			}
+
 			setIsRecipientSearchOpen(true);
 		};
 
-		const onInputChange = (value: string) => {
-			setSelectedAddress(value);
-			onChange?.(value);
+		const onInputChange = (changedAddress: string) => {
+			if (selectedAddress === changedAddress) {
+				return;
+			}
+
+			setSelectedAddress(changedAddress);
+			onChange?.(changedAddress);
 		};
 
 		return (

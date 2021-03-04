@@ -10,7 +10,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -57,9 +57,11 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Transfer
@@ -439,7 +441,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -486,9 +488,11 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Transfer
@@ -853,7 +857,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -900,9 +904,11 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         IPFS
@@ -1214,7 +1220,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -1261,9 +1267,11 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Multipayment
@@ -1785,7 +1793,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -1832,9 +1840,11 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Multisignature
@@ -2116,7 +2126,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -2163,9 +2173,11 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Transfer
@@ -2530,7 +2542,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -2577,9 +2589,11 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Unvote
@@ -2958,7 +2972,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -3005,9 +3019,11 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Vote
@@ -3386,7 +3402,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -3433,9 +3449,11 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Transfer
@@ -3826,7 +3844,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -3873,9 +3891,11 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Transfer
@@ -4255,7 +4275,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -4302,9 +4322,11 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                   <div
                     class="flex justify-between items-end bg-theme-background"
                   >
-                    <div>
+                    <div
+                      class="space-y-4"
+                    >
                       <h1
-                        class="mb-0 md:text-4xl"
+                        class="mb-0 text-4xl"
                         data-testid="header__title"
                       >
                         Transaction Sent

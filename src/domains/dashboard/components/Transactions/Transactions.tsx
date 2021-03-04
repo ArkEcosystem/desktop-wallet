@@ -95,7 +95,7 @@ export const Transactions = memo(
 		}
 
 		return (
-			<Section className="flex-1" data-testid="dashboard__transactions-view">
+			<Section data-testid="dashboard__transactions-view">
 				<div className="flex relative justify-between">
 					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 					<FilterTransactions

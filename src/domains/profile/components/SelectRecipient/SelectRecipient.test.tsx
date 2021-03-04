@@ -28,9 +28,14 @@ describe("SelectRecipient", () => {
 	});
 
 	it("should render with preselected address", () => {
-		const { container } = render(
-			<SelectRecipient profile={profile} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
-		);
+		const { container } = render(<SelectRecipient profile={profile} />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should update internal state when prop changes", () => {
+		const { container, rerender } = render(<SelectRecipient profile={profile} />);
+
+		rerender(<SelectRecipient profile={profile} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -148,6 +153,37 @@ describe("SelectRecipient", () => {
 
 		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
 		expect(fn).toBeCalledWith(selectedAddressValue);
+	});
+
+	it("should call onChange prop only when values change", async () => {
+		const fn = jest.fn();
+
+		const { getByTestId, getAllByTestId } = render(
+			<SelectRecipient profile={profile} onChange={fn} address="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" />,
+		);
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
+
+		const firstAddress = getAllByTestId("RecipientListItem__select-button")[profile.wallets().values().length];
+
+		act(() => {
+			fireEvent.click(firstAddress);
+		});
+
+		waitFor(() => expect(getByTestId("modal__inner")).toBeFalsy());
+
+		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
+
+		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
+		expect(fn).not.toBeCalled();
 	});
 
 	it("should filter recipients list by network if provided", async () => {

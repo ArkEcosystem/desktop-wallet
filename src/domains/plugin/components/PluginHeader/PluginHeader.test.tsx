@@ -1,3 +1,4 @@
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { fireEvent, render, screen } from "utils/testing-library";
 
@@ -42,7 +43,7 @@ describe("PluginHeader", () => {
 		);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
 
 		expect(onUpdate).toHaveBeenCalled();
 	});
@@ -53,7 +54,7 @@ describe("PluginHeader", () => {
 		const { container } = render(<PluginHeader {...pluginDataFixture} isInstalled onDelete={onDelete} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+		fireEvent.click(screen.getByText(commonTranslations.DELETE));
 
 		expect(onDelete).toHaveBeenCalled();
 	});
@@ -64,7 +65,7 @@ describe("PluginHeader", () => {
 		const { container } = render(<PluginHeader {...pluginDataFixture} isInstalled onEnable={onEnable} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.ENABLE));
 
 		expect(onEnable).toHaveBeenCalled();
 	});
@@ -77,7 +78,7 @@ describe("PluginHeader", () => {
 		);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.DISABLE));
 
 		expect(onDisable).toHaveBeenCalled();
 	});

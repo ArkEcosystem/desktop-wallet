@@ -3,10 +3,22 @@
 exports[`Section should render 1`] = `
 <DocumentFragment>
   <div
-    class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+    class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
   >
     <div
-      class="container py-16 px-14 mx-auto "
+      class="container px-10 mx-auto"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Section should render with border 1`] = `
+<DocumentFragment>
+  <div
+    class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
+  >
+    <div
+      class="container px-10 mx-auto"
     />
   </div>
 </DocumentFragment>
@@ -15,10 +27,10 @@ exports[`Section should render 1`] = `
 exports[`Section should render with custom background color 1`] = `
 <DocumentFragment>
   <div
-    class="Section__SectionWrapper-sc-8cjvre-0 kXEPyr"
+    class="Section__SectionWrapper-sc-8cjvre-0 dgHHTG"
   >
     <div
-      class="container py-16 px-14 mx-auto "
+      class="container px-10 mx-auto"
     />
   </div>
 </DocumentFragment>

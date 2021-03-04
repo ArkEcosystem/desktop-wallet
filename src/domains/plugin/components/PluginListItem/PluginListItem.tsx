@@ -62,8 +62,8 @@ export const PluginListItem = ({
 		<TableRow>
 			<TableCell variant="start" innerClassName="space-x-5">
 				<PluginImage
+					size="sm"
 					logoURL={plugin.logo}
-					className="min-w-15 w-15 h-15"
 					isUpdating={isUpdating}
 					updatingProgress={updatingProgress}
 				/>

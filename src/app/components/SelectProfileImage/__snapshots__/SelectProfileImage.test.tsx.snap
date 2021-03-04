@@ -22,6 +22,7 @@ exports[`SelectProfileImage should handle upload file 1`] = `
           <img
             alt="Avatar"
             class="object-cover min-h-full"
+            data-testid="SelectProfileImage__avatar"
             src="test"
           />
           <div
@@ -139,6 +140,7 @@ exports[`SelectProfileImage should render with value svg 1`] = `
           <img
             alt="Avatar"
             class="object-cover min-h-full"
+            data-testid="SelectProfileImage__avatar"
             src="data:image/svg+xml;utf8,<svg>test</svg>"
           />
           <span
@@ -191,6 +193,7 @@ exports[`SelectProfileImage should render without value svg 1`] = `
           <img
             alt="Avatar"
             class="object-cover min-h-full"
+            data-testid="SelectProfileImage__avatar"
             src="test"
           />
           <div
@@ -259,6 +262,7 @@ exports[`SelectProfileImage shouldn't handle upload file 1`] = `
           <img
             alt="Avatar"
             class="object-cover min-h-full"
+            data-testid="SelectProfileImage__avatar"
             src="test"
           />
           <div

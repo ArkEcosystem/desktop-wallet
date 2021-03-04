@@ -522,7 +522,7 @@ describe("AddRecipient", () => {
 			await waitFor(() => expect(getByTestId("AddRecipient__add-button")).toBeTruthy());
 			fireEvent.click(getByTestId("AddRecipient__add-button"));
 
-			await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual("" || undefined));
+			await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual("" || undefined || null));
 			await waitFor(() => expect(form.current.getValues("amount")).toEqual(undefined));
 		});
 
