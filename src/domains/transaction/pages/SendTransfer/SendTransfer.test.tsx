@@ -212,7 +212,7 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render transfer form without selected wallet", async () => {
+	it("should render network selection without selected wallet", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
 
 		const history = createMemoryHistory();
@@ -230,7 +230,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -302,7 +302,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -338,7 +338,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -349,6 +349,14 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
+
+		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		});
+
+		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		await waitFor(() =>
 			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
@@ -375,7 +383,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		// Select cryptoasset
 		act(() => {
@@ -386,6 +394,12 @@ describe("SendTransfer", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
 
 		await waitFor(() =>
@@ -602,6 +616,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back"));
 		});
+
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		// Step 2

@@ -207,7 +207,7 @@ export const SendTransfer = () => {
 		// Abort any existing listener
 		abortRef.current.abort();
 
-		if (firstTabIndex) {
+		if (activeTab === firstTabIndex) {
 			return history.go(-1);
 		}
 
