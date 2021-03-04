@@ -52,7 +52,6 @@ export const SelectNetwork = ({
 		inputValue && network.extra?.displayName?.toLowerCase().startsWith(inputValue.toLowerCase());
 
 	const {
-		closeMenu,
 		openMenu,
 		getComboboxProps,
 		getLabelProps,
@@ -89,7 +88,6 @@ export const SelectNetwork = ({
 			return;
 		}
 		selectItem(item);
-		closeMenu();
 	};
 
 	const publicNetworks = items.filter((network) => network.isLive());
@@ -150,14 +148,11 @@ export const SelectNetwork = ({
 						},
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
-								// Select first match
 								const firstMatch = items.find((network: Network) => isMatch(inputValue, network));
 								if (inputValue && firstMatch) {
 									selectItem(firstMatch);
-									if (event.key === "Enter") {
-										closeMenu();
-									}
 								}
+
 								event.preventDefault();
 								return;
 							}
