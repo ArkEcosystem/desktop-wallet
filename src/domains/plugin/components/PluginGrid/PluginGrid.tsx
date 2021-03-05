@@ -135,17 +135,16 @@ export const PluginGrid = ({
 
 			<div className={`grid grid-cols-3 gap-5 ${className}`}>{pageEntries}</div>
 
-			<div className="flex justify-center mt-4">
-				{withPagination && (
+			{withPagination && (
+				<div className="flex justify-center w-full mt-10">
 					<Pagination
 						currentPage={currentPage}
 						itemsPerPage={itemsPerPage}
 						totalCount={entries.length}
 						onSelectPage={setCurrentPage}
-						className="mt-5"
 					/>
-				)}
-			</div>
+				</div>
+			)}
 		</div>
 	);
 };

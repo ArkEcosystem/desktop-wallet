@@ -1108,7 +1108,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1221,7 +1221,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1334,7 +1334,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1447,7 +1447,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2584,7 +2584,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2697,7 +2697,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2810,7 +2810,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2923,7 +2923,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -3357,39 +3357,50 @@ exports[`PluginsCategory should delete plugin 1`] = `
                 data-testid="PluginGrid"
               >
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 />
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 >
                   <div
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -3399,16 +3410,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3443,30 +3463,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -3476,16 +3507,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3520,30 +3560,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -3553,16 +3604,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3597,30 +3657,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -3630,16 +3701,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3674,30 +3754,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -3707,16 +3798,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3751,30 +3851,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -3784,16 +3895,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3828,30 +3948,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -3861,16 +3992,25 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -3902,9 +4042,6 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-center mt-4"
-                />
               </div>
             </div>
           </div>
@@ -4320,39 +4457,50 @@ exports[`PluginsCategory should render 1`] = `
                 data-testid="PluginGrid"
               >
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 />
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 >
                   <div
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -4362,16 +4510,25 @@ exports[`PluginsCategory should render 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4406,30 +4563,41 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -4439,16 +4607,25 @@ exports[`PluginsCategory should render 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4483,30 +4660,41 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -4516,16 +4704,25 @@ exports[`PluginsCategory should render 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4560,30 +4757,41 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -4593,16 +4801,25 @@ exports[`PluginsCategory should render 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4637,30 +4854,41 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -4670,16 +4898,25 @@ exports[`PluginsCategory should render 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4714,30 +4951,41 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -4747,16 +4995,25 @@ exports[`PluginsCategory should render 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4791,30 +5048,41 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -4824,16 +5092,25 @@ exports[`PluginsCategory should render 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4865,9 +5142,6 @@ exports[`PluginsCategory should render 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-center mt-4"
-                />
               </div>
             </div>
           </div>
@@ -5334,39 +5608,50 @@ exports[`PluginsCategory should search for plugin 1`] = `
                 data-testid="PluginGrid"
               >
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 />
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 >
                   <div
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -5376,16 +5661,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5420,30 +5714,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -5453,16 +5758,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5497,30 +5811,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -5530,16 +5855,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5574,30 +5908,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -5607,16 +5952,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5651,30 +6005,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -5684,16 +6049,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5728,30 +6102,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -5761,16 +6146,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5805,30 +6199,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -5838,16 +6243,25 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -5879,9 +6293,6 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-center mt-4"
-                />
               </div>
             </div>
           </div>
@@ -6297,39 +6708,50 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                 data-testid="PluginGrid"
               >
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 />
                 <div
-                  class="grid grid-cols-4 gap-5 undefined"
+                  class="grid grid-cols-3 gap-5 undefined"
                 >
                   <div
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -6339,16 +6761,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6383,30 +6814,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -6416,16 +6858,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6460,30 +6911,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -6493,16 +6955,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6537,30 +7008,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Explorer
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ fpbFeh"
                                 height="16"
@@ -6570,16 +7052,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   official-ark-plugin.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6614,30 +7105,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -6647,16 +7149,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6691,30 +7202,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -6724,16 +7246,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6768,30 +7299,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col h-full items-between"
+                        class="flex items-center space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-                          data-testid="PluginImage__placeholder"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
-                          <svg>
-                            plugin-logo-placeholder.svg
-                          </svg>
-                        </div>
-                        <div>
                           <div
-                            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+                            data-testid="PluginImage__placeholder"
+                          >
+                            <svg>
+                              plugin-logo-placeholder.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK.io
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
                           >
                             <div
                               class="truncate"
                             >
                               ARK Avatars
                             </div>
-                            <div>
+                            <span>
                               <div
                                 class="sc-bdfBwQ iyevwF"
                                 height="20"
@@ -6801,16 +7343,25 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                   grant.svg
                                 </svg>
                               </div>
-                            </div>
+                            </span>
                           </div>
                           <div
-                            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center space-x-2 mt-4"
                           >
                             <div
-                              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
                             >
-                              ARK.io
+                              <svg>
+                                category.svg
+                              </svg>
                             </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Other
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -6842,9 +7393,6 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-center mt-4"
-                />
               </div>
             </div>
           </div>
@@ -7963,7 +8511,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -8076,7 +8624,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -8189,7 +8737,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -8302,7 +8850,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >

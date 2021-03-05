@@ -429,7 +429,7 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(
-				within(getByTestId("PluginManager__home__top-rated")).getAllByText("Transaction Export Plugin")[0],
+				within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export Plugin")[0],
 			);
 		});
 
