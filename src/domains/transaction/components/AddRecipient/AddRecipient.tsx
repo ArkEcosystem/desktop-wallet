@@ -68,7 +68,7 @@ export const AddRecipient = ({
 }: AddRecipientProps) => {
 	const { t } = useTranslation();
 	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>([]);
-	const [isSingle, setIsSingle] = useState(recipients!.length < 2);
+	const [isSingle, setIsSingle] = useState(recipients!.length === 0);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 	const isMountedRef = useRef(false);
 
@@ -140,6 +140,12 @@ export const AddRecipient = ({
 	useEffect(() => {
 		clearErrors();
 
+		if (isSingle && addedRecipients.length === 1) {
+			setValue("amount", addedRecipients[0].amount);
+			setValue("displayAmount", addedRecipients[0].amount?.toHuman());
+			setValue("recipientAddress", addedRecipients[0].address);
+		}
+
 		// Clear the recipient inputs when moving back to multiple tab with
 		// added recipients.
 		if (!isSingle && addedRecipients.length > 0) {
@@ -162,7 +168,7 @@ export const AddRecipient = ({
 			return;
 		}
 
-		if (recipients.length > 1) {
+		if (recipients.length > 0) {
 			setAddressRecipients(recipients);
 			return;
 		}

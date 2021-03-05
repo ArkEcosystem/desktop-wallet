@@ -535,4 +535,44 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue("1"));
 	});
+
+	it("should fill inputs in the single tab if one recipient is added in the multiple tab", async () => {
+		const values = {
+			amount: BigNumber.ONE,
+			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+		};
+
+		let form: ReturnType<typeof useForm>;
+
+		const Component = () => {
+			form = useForm({
+				mode: "onChange",
+				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
+			});
+
+			useEffect(() => {
+				form.register("network");
+				form.register("senderAddress");
+			}, []);
+
+			return (
+				<FormProvider {...form}>
+					<AddRecipient
+						profile={profile}
+						assetSymbol="ARK"
+						maxAvailableAmount={BigNumber.make(80)}
+						recipients={[{ address: values.recipientAddress, amount: BigNumber.ONE }]}
+					/>
+				</FormProvider>
+			);
+		};
+
+		render(<Component />);
+
+		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(1));
+
+		fireEvent.click(screen.getByTestId("AddRecipient__single"));
+
+		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue("0.00000001"));
+	});
 });
