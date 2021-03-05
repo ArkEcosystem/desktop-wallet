@@ -19,8 +19,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { paths } from "../../data";
-
 type PluginManagerHomeProps = {
 	onCurrentViewChange: (view: string) => void;
 	onDelete: any;
@@ -30,13 +28,8 @@ type PluginManagerHomeProps = {
 	onInstall: any;
 	onLaunch: (plugin: any) => void;
 	viewType: string;
-	paths?: any;
 	isLoading?: boolean;
 	plugins: any[];
-};
-
-type PluginManagerProps = {
-	paths?: any;
 };
 
 const PluginManagerHome = ({
@@ -46,7 +39,6 @@ const PluginManagerHome = ({
 	onInstall,
 	onLaunch,
 	viewType,
-	paths,
 	plugins,
 	onEnable,
 	onDisable,
@@ -94,30 +86,30 @@ const PluginManagerHome = ({
 			</Section>
 
 			{categories.map((category: string) => (
-					<Section key={category}>
-						<div data-testid={`PluginManager__home__${category}`}>
-							<div className="flex justify-between items-center mb-6">
-								<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
+				<Section key={category}>
+					<div data-testid={`PluginManager__home__${category}`}>
+						<div className="flex justify-between items-center mb-6">
+							<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
 
-								<span
-									className="flex items-center font-semibold link space-x-2"
-									data-testid={`PluginManager__home__${category}__view-more`}
-									onClick={() => onCurrentViewChange(category)}
-								>
-									<span>{t("COMMON.VIEW_MORE")}</span>
-									<Icon name="ChevronRight" width={8} height={8} />
-								</span>
-							</div>
-
-							{viewType === "grid" ? renderGrid() : renderList()}
+							<span
+								className="flex items-center font-semibold link space-x-2"
+								data-testid={`PluginManager__home__${category}__view-more`}
+								onClick={() => onCurrentViewChange(category)}
+							>
+								<span>{t("COMMON.VIEW_MORE")}</span>
+								<Icon name="ChevronRight" width={8} height={8} />
+							</span>
 						</div>
-					</Section>
-				))}
+
+						{viewType === "grid" ? renderGrid() : renderList()}
+					</div>
+				</Section>
+			))}
 		</>
 	);
 };
 
-export const PluginManager = ({ paths }: PluginManagerProps) => {
+export const PluginManager = () => {
 	const { t } = useTranslation();
 	const {
 		fetchPluginPackages,
@@ -318,7 +310,6 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				{currentView === "home" && (
 					<PluginManagerHome
 						isLoading={isFetchingPackages}
-						paths={paths}
 						viewType={viewType}
 						plugins={homePackages}
 						onCurrentViewChange={setCurrentView}
@@ -383,8 +374,4 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			)}
 		</>
 	);
-};
-
-PluginManager.defaultProps = {
-	paths,
 };
