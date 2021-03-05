@@ -29,6 +29,7 @@ import {
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
+import { NetworkStep } from "./NetworkStep";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
@@ -110,6 +111,29 @@ describe("SendTransfer", () => {
 		const { getByTestId, asFragment } = rendered;
 
 		expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		useNetworksMock.mockRestore();
+	});
+
+	it("should render network step without test networks", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+
+		let rendered: RenderResult;
+
+		await hookAct(async () => {
+			rendered = render(
+				<FormProvider {...form.current}>
+					<NetworkStep networks={env.availableNetworks()} profile={profile} />
+				</FormProvider>,
+			);
+		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(getByTestId("SendTransfer__network-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		useNetworksMock.mockRestore();

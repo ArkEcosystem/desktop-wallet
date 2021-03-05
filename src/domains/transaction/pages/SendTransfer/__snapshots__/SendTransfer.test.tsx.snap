@@ -5092,6 +5092,95 @@ exports[`SendTransfer should render network selection without selected wallet 1`
 </DocumentFragment>
 `;
 
+exports[`SendTransfer should render network step without test networks 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="SendTransfer__network-step"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Select a Cryptoasset
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Select a cryptoasset to create your new wallet address
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransfer__network-step__select-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="SendTransfer__network-step__select-input"
+            id="SendTransfer__network-step__select-label"
+          />
+          <div
+            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
+            >
+              <div
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransfer__network-step__select-menu"
+              aria-labelledby="SendTransfer__network-step__select-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransfer__network-step__select-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="SendTransfer__network-step__select-label"
+          class="hidden"
+          id="SendTransfer__network-step__select-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;
+
 exports[`SendTransfer should render review step 1`] = `
 <DocumentFragment>
   <section
