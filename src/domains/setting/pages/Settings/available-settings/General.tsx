@@ -176,6 +176,20 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 			wrapperClass: "py-6",
 		},
 		{
+			label: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.TITLE"),
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
+			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="transactionHistory"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.DashboardTransactionHistory, true)}
+					data-testid="General-settings__toggle--transactionHistory"
+				/>
+			),
+			wrapperClass: "py-6",
+		},
+		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: (
@@ -203,6 +217,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		isDarkMode,
 		useTestNetworks,
 		errorReporting,
+		transactionHistory,
 	}: any) => {
 		activeProfile.settings().set(ProfileSetting.Name, name.trim());
 		activeProfile.settings().set(ProfileSetting.Locale, language);
@@ -216,6 +231,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
 		activeProfile.settings().set(ProfileSetting.ErrorReporting, errorReporting);
+		activeProfile.settings().set(ProfileSetting.DashboardTransactionHistory, transactionHistory);
 
 		if (!avatarImage || isSvg) {
 			activeProfile.settings().forget(ProfileSetting.Avatar);

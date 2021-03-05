@@ -51,6 +51,10 @@ export const translations: { [key: string]: any } = {
 				TITLE: "Error Reporting",
 				DESCRIPTION: "Automatically send reports to help to improve our products.",
 			},
+			TRANSACTION_HISTORY: {
+				TITLE: "Portfolio Transaction History",
+				DESCRIPTION: "Enables transaction history on Portfolio page",
+			},
 		},
 		SUCCESS: "Your profile settings have been updated",
 		ERROR: "Your profile settings could not be updated",
