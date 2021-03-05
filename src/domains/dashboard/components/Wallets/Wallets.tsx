@@ -41,7 +41,7 @@ export const Wallets = ({
 	const activeProfile = useActiveProfile();
 
 	const filterProperties = useWalletFilters({ profile: activeProfile });
-	const { viewType, walletsDisplayType, selectedNetworkIds, showTransactions, update } = filterProperties;
+	const { viewType, walletsDisplayType, selectedNetworkIds, update } = filterProperties;
 
 	const wallets = useMemo(() => {
 		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) {
@@ -72,7 +72,7 @@ export const Wallets = ({
 	};
 
 	return (
-		<Section className={!showTransactions ? "flex-1" : undefined}>
+		<Section>
 			<div className="flex justify-between items-center mb-8">
 				<div className="text-4xl font-bold">{title}</div>
 
