@@ -4,7 +4,6 @@ import { PluginCard } from "domains/plugin/components/PluginCard";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-
 type ExchangeCardProps = {
 	actions?: DropdownOption[];
 	exchange: any;
