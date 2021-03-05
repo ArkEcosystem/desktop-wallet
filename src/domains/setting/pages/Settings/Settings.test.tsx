@@ -53,6 +53,95 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should update the avatar when removing focus from name input", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "t" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not update the uploaded avatar when removing focus from name input", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		// Upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: ["filePath"],
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		act(() => getByTestId("General-settings__input--name").focus());
+
+		await act(async () => {
+			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "t" } });
+		});
+
+		act(() => getByTestId("General-settings__submit-button").focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should update profile", async () => {
 		const profilesCount = env.profiles().count();
 
@@ -114,6 +203,9 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
+
+		// Toggle Portfolio Transaction History
+		fireEvent.click(getByTestId("General-settings__toggle--transactionHistory"));
 
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
