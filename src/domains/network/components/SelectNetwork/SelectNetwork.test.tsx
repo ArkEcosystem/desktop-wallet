@@ -138,52 +138,6 @@ describe("SelectNetwork", () => {
 		expect(within(getByTestId("SelectNetworkInput__network")).queryByTestId("CoinIcon")).toBeNull();
 	});
 
-	it("should select match on blur if available", async () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
-		const input = getByTestId("SelectNetworkInput__input");
-
-		act(() => {
-			fireEvent.change(input, { target: { value: "ARK Dev" } });
-		});
-
-		act(() => {
-			fireEvent.blur(input);
-		});
-
-		await waitFor(() => expect(input).toHaveValue("ARK Devnet"));
-	});
-
-	it("should clear input on blur if there is no match", async () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
-		const input = getByTestId("SelectNetworkInput__input");
-
-		act(() => {
-			fireEvent.change(input, { target: { value: "Foobar" } });
-		});
-
-		act(() => {
-			fireEvent.blur(input);
-		});
-
-		await waitFor(() => expect(input).toHaveValue(""));
-	});
-
-	it("should not clear input on blur if selected", () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
-		const input = getByTestId("SelectNetworkInput__input");
-		act(() => {
-			fireEvent.change(input, { target: { value: "Bitco" } });
-		});
-		act(() => {
-			fireEvent.keyDown(input, { key: "Enter", code: 13 });
-		});
-		expect(input).toHaveValue("Bitcoin");
-		act(() => {
-			fireEvent.blur(input);
-		});
-		expect(input).toHaveValue("Bitcoin");
-	});
-
 	it("should select an item by clicking on it", async () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 

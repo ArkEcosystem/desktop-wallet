@@ -163,7 +163,6 @@ export const SelectNetwork = ({
 						<NetworkOption
 							key={index}
 							network={network}
-							// disabled={disabled}
 							iconClassName={optionClassName(network)}
 							onClick={() => toggleSelection(network)}
 						/>
@@ -184,7 +183,6 @@ export const SelectNetwork = ({
 							<NetworkOption
 								key={index}
 								network={network}
-								// disabled={disabled}
 								iconClassName={optionClassName(network)}
 								onClick={() => toggleSelection(network)}
 							/>
