@@ -53,30 +53,6 @@ describe("FilterWallets", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should emit onChange for transactions view toggle", () => {
-		const onChange = jest.fn();
-
-		const { getByTestId } = render(<FilterWallets networks={networks} onChange={onChange} />);
-
-		act(() => {
-			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-		});
-
-		expect(onChange).toBeCalled();
-	});
-
-	it("should not emit onChange for transactions view toggle", () => {
-		const onChange = jest.fn();
-
-		const { getByTestId } = render(<FilterWallets networks={networks} />);
-
-		act(() => {
-			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-		});
-
-		expect(onChange).not.toBeCalled();
-	});
-
 	it("should emit onChange for network selection", () => {
 		const onChange = jest.fn();
 

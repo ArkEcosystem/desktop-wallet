@@ -204,6 +204,9 @@ describe("Settings", () => {
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 
+		// Toggle Portfolio Transaction History
+		fireEvent.click(getByTestId("General-settings__toggle--transactionHistory"));
+
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
 
