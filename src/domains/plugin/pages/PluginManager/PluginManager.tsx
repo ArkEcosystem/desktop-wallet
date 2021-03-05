@@ -15,7 +15,7 @@ import { PluginManagerNavigationBar } from "domains/plugin/components/PluginMana
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -138,7 +138,7 @@ export const PluginManager = () => {
 		.map(mapConfigToPluginData.bind(null, activeProfile))
 		.filter((item) => item.hasUpdateAvailable).length;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		fetchPluginPackages();
 	}, [fetchPluginPackages]);
 
