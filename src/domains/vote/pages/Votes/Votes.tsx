@@ -263,7 +263,7 @@ export const Votes = () => {
 										}
 									>
 										<div className="py-7 px-10 w-128">
-											<FilterWallets {...filterProperties} showToggleViews={false} />
+											<FilterWallets {...filterProperties} />
 										</div>
 									</Dropdown>
 								</div>
