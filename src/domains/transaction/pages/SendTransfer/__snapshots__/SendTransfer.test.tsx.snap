@@ -347,7 +347,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         </label>
                         <div>
                           <div
-                            aria-expanded="false"
+                            aria-expanded="true"
                             aria-haspopup="listbox"
                             aria-owns="SendTransactionForm__network-menu"
                             data-testid="SelectNetwork"
@@ -6502,7 +6502,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         </label>
                         <div>
                           <div
-                            aria-expanded="false"
+                            aria-expanded="true"
                             aria-haspopup="listbox"
                             aria-owns="SendTransactionForm__network-menu"
                             data-testid="SelectNetwork"
@@ -7388,7 +7388,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         </label>
                         <div>
                           <div
-                            aria-expanded="false"
+                            aria-expanded="true"
                             aria-haspopup="listbox"
                             aria-owns="SendTransactionForm__network-menu"
                             data-testid="SelectNetwork"
