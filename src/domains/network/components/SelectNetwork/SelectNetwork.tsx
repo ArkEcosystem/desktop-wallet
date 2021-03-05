@@ -81,10 +81,8 @@ export const SelectNetwork = ({
 
 	const toggleSelection = (item: Network) => {
 		if (item.id() === selectedItem?.id()) {
-			setTimeout(() => {
-				reset();
-				openMenu();
-			}, 0);
+			reset();
+			openMenu();
 			return;
 		}
 		selectItem(item);
@@ -138,14 +136,6 @@ export const SelectNetwork = ({
 						name,
 						placeholder,
 						onFocus: openMenu,
-						onBlur: () => {
-							const firstMatch = items.find((network: Network) => isMatch(inputValue, network));
-							if (inputValue && firstMatch) {
-								selectItem(firstMatch);
-							} else {
-								reset();
-							}
-						},
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								const firstMatch = items.find((network: Network) => isMatch(inputValue, network));
