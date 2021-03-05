@@ -168,10 +168,7 @@ export const AddRecipient = ({
 			return;
 		}
 
-		if (recipients.length > 0) {
-			setAddressRecipients(recipients);
-			return;
-		}
+		setAddressRecipients(recipients);
 	}, [recipients, setValue, getValues]);
 
 	useEffect(() => {
