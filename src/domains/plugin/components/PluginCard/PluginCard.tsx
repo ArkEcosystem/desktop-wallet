@@ -21,7 +21,7 @@ export const BlankPluginCard = ({ name, category }: { name?: string; category?: 
 	return (
 		<Card>
 			<div className="flex items-center space-x-4">
-				<div className="h-25 w-25 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800" />
+				<div className="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800" />
 				<div className="flex flex-col truncate">
 					<span className="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
 						{t("COMMON.AUTHOR")}
@@ -76,7 +76,7 @@ export const PluginCard = ({ actions, category, plugin, onClick, onSelect, showC
 						</div>
 
 						{showCategory && (
-							<div className="flex items-center space-x-2 mt-4">
+							<div className="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600">
 								<Icon name="Category" width={20} height={20} />
 
 								<span className="text-sm font-semibold">
