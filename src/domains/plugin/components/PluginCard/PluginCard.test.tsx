@@ -1,7 +1,9 @@
+import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render } from "utils/testing-library";
 
-import { PluginCard } from "./PluginCard";
+import { BlankPluginCard, PluginCard } from "./PluginCard";
 
 const basePlugin = {
 	id: "ark-explorer",
@@ -77,5 +79,34 @@ describe("PluginCard", () => {
 
 		expect(container).toHaveTextContent("grant.svg");
 		expect(asFragment()).toMatchSnapshot();
+	});
+});
+
+describe("BlankPluginCard", () => {
+	it("should render", async () => {
+		const { container, findByText } = render(<BlankPluginCard />);
+
+		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(await findByText(commonTranslations.NAME)).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with name", async () => {
+		const { container, findByText } = render(<BlankPluginCard name="test-name" />);
+
+		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(await findByText("test-name")).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with category", async () => {
+		const { container, findByText } = render(<BlankPluginCard category="exchange" />);
+
+		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(await findByText(pluginTranslations.CATEGORIES.EXCHANGE)).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
 	});
 });

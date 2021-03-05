@@ -14,6 +14,37 @@ type PluginCardProps = {
 	showCategory?: boolean;
 };
 
+export const BlankPluginCard = ({ name, category }: { name?: string; category?: string }) => {
+	const { t } = useTranslation();
+
+	return (
+		<Card>
+			<div className="flex items-center space-x-4">
+				<div className="h-25 w-25 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800" />
+				<div className="flex flex-col truncate">
+					<span className="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
+						{t("COMMON.AUTHOR")}
+					</span>
+
+					<div className="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
+						{name || t("COMMON.NAME")}
+					</div>
+
+					{category && (
+						<div className="flex items-center space-x-2 mt-4 text-theme-primary-100 dark:text-theme-secondary-800">
+							<Icon name="Category" width={20} height={20} />
+
+							<span className="text-sm font-semibold">
+								{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}
+							</span>
+						</div>
+					)}
+				</div>
+			</div>
+		</Card>
+	);
+};
+
 export const PluginCard = ({ actions, plugin, onClick, onSelect, showCategory }: PluginCardProps) => {
 	const { t } = useTranslation();
 
