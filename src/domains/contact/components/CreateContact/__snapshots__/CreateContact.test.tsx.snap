@@ -146,7 +146,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                       <div
                         class="font-bold text-sm text-theme-secondary-400 mb-3"
                       >
-                        PUBLIC NETWORK
+                        COMMON.PUBLIC_NETWORK
                       </div>
                       <ul
                         aria-labelledby="ContactForm__network-label"
@@ -160,7 +160,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="ARK"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
                             data-testid="NetworkIcon-ARK-ark.mainnet"
                           >
                             <div
@@ -181,7 +181,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="Compendia"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
                             data-testid="NetworkIcon-ARK-compendia.mainnet"
                           >
                             <div
@@ -202,7 +202,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="Bitcoin"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
                             data-testid="NetworkIcon-BTC-btc.livenet"
                           >
                             <div
@@ -223,7 +223,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="Ethereum"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
                             data-testid="NetworkIcon-ETH-eth.mainnet"
                           >
                             <div
@@ -244,7 +244,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="Lisk"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-secondary-600"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
                             data-testid="NetworkIcon-LSK-lsk.mainnet"
                           >
                             <div
@@ -267,7 +267,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                       <div
                         class="font-bold text-sm text-theme-secondary-400 mb-3"
                       >
-                        DEVELOPMENT NETWORK
+                        COMMON.DEVELOPMENT_NETWORK
                       </div>
                       <ul
                         aria-labelledby="ContactForm__network-label"
@@ -281,7 +281,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-primary-300"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -302,7 +302,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         >
                           <div
                             aria-label="Lisk Testnet"
-                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 text-theme-primary-300"
+                            class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
                             data-testid="NetworkIcon-LSK-lsk.testnet"
                           >
                             <div
