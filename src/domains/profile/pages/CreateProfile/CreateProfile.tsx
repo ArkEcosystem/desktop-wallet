@@ -11,7 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useThemeName, useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -33,11 +33,13 @@ export const CreateProfile = () => {
 
 	const formattedName = name.trim();
 
+	const isSvg = useMemo(() => avatarImage.endsWith("</svg>"), [avatarImage]);
+
 	useEffect(() => {
-		if (!avatarImage || avatarImage.endsWith("</svg>")) {
-			setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
+		if (!formattedName && isSvg) {
+			setAvatarImage("");
 		}
-	}, [formattedName, avatarImage, setAvatarImage]);
+	}, [formattedName, isSvg, setAvatarImage]);
 
 	useLayoutEffect(() => {
 		if (theme === "dark") {
@@ -102,7 +104,16 @@ export const CreateProfile = () => {
 									<div className="mr-6 w-full">
 										<FormField name="name">
 											<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-											<InputDefault ref={register(createProfile.name())} />
+											<InputDefault
+												ref={register(createProfile.name())}
+												onBlur={() => {
+													if (!avatarImage || isSvg) {
+														setAvatarImage(
+															formattedName ? AvatarSDK.make(formattedName) : "",
+														);
+													}
+												}}
+											/>
 										</FormField>
 									</div>
 

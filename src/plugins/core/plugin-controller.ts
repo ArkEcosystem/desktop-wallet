@@ -34,26 +34,27 @@ export class PluginController {
 	}
 
 	isEnabled(profile: Profile) {
-		return !!profile
-			.plugins()
-			.values()
-			.find((item) => item.id === this.config().id());
+		return !!this.pluginData(profile);
 	}
 
 	// TODO: Better integration with SDK
 	enable(profile: Profile, options?: { autoRun?: true }) {
 		// @ts-ignore
-		profile.plugins().push({ id: this.config().id(), isEnabled: true });
+		const { id } = profile.plugins().push({ name: this.config().name(), isEnabled: true });
 
 		/* istanbul ignore next */
 		if (options?.autoRun) {
 			this.run(profile);
 		}
+
+		return id;
 	}
 
 	disable(profile: Profile) {
-		profile.plugins().forget(this.config().id());
-		this.dispose();
+		if (this.isEnabled(profile)) {
+			profile.plugins().forget(this.pluginData(profile)!.id);
+			this.dispose();
+		}
 	}
 
 	run(profile: Profile) {
@@ -73,5 +74,12 @@ export class PluginController {
 	dispose() {
 		this.#hooks.clearAll();
 		this.#hooks.emit("deactivated");
+	}
+
+	private pluginData(profile: Profile) {
+		return profile
+			.plugins()
+			.values()
+			.find((item) => item.name === this.config().name());
 	}
 }

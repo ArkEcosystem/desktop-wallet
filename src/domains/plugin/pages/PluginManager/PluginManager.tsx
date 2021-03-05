@@ -218,7 +218,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			allPlugins
 				.filter((config) => config.hasCategory(currentView))
 				.map(mapConfigToPluginData.bind(null, activeProfile)),
-		[currentView], // eslint-disable-line react-hooks/exhaustive-deps
+		[currentView, filters], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 
 	const installedPlugins = pluginManager

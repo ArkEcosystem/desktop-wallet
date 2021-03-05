@@ -1,6 +1,7 @@
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
+import { FormFieldProvider } from "../Form/useFormField";
 import { InputCounter } from "./InputCounter";
 
 describe("InputCounter", () => {
@@ -20,5 +21,14 @@ describe("InputCounter", () => {
 		const { getByTestId } = render(<InputCounter maxLength={10} maxLengthLabel="10" />);
 		fireEvent.input(getByTestId("InputCounter__input"), { target: { value: "Test" } });
 		expect(getByTestId("InputCounter__counter")).toHaveTextContent("4/10");
+	});
+
+	it("should render with invalid state", () => {
+		const { container } = render(
+			<FormFieldProvider value={{ isInvalid: true, name: "vendorField" }}>
+				<InputCounter maxLength={10} maxLengthLabel="10" />
+			</FormFieldProvider>,
+		);
+		expect(container).toMatchSnapshot();
 	});
 });

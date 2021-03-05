@@ -10,7 +10,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -149,12 +149,16 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
-                        <img
-                          alt="Logo"
-                          class="overflow-hidden rounded-lg w-14 h-14"
+                        <div
+                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
                           data-testid="PluginImage__logo"
-                          src="https://ark.io/logo.png"
-                        />
+                        >
+                          <img
+                            alt="Logo"
+                            class="object-cover w-full h-full"
+                            src="https://ark.io/logo.png"
+                          />
+                        </div>
                         <div
                           class="flex items-center space-x-2"
                         >
@@ -199,11 +203,10 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
+                          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl w-14 h-14"
                           data-testid="PluginImage__placeholder"
                         >
-                          <svg
-                            class="w-14 h-14"
-                          >
+                          <svg>
                             plugin-logo-placeholder.svg
                           </svg>
                         </div>

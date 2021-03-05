@@ -92,7 +92,7 @@ export const PluginCard = ({
 				}}
 			>
 				<div className="flex flex-col h-full items-between">
-					<PluginImage logoURL={plugin.logo} className="mb-4 mr-4 w-20 h-20" />
+					<PluginImage logoURL={plugin.logo} className="mb-4 mr-4" />
 
 					<div>
 						<div className="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600">

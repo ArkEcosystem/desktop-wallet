@@ -276,10 +276,10 @@ exports[`PluginDetails should render properly 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="w-full bg-theme-background"
@@ -289,22 +289,21 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex w-full"
             >
               <div
+                class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt filter-grayscale"
                 data-testid="PluginImage__placeholder"
               >
-                <svg
-                  class="w-40"
-                >
+                <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 space-y-3 w-full"
+                class="flex flex-col justify-between pl-8 w-full"
               >
                 <div
-                  class="flex justify-between items-center"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col mr-2"
+                    class="flex flex-col space-y-2 mr-2 leading-tight"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -378,62 +377,65 @@ exports[`PluginDetails should render properly 1`] = `
                   class="flex justify-between space-4"
                 >
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
                       class="flex"
                     >
                       <div
-                        class="flex flex-col pr-6"
+                        class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Author
                         </span>
-                        <div
-                          class="flex items-center"
+                        <span
+                          class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            class="font-bold text-theme-secondary-600"
+                          <div
+                            class="flex items-center"
                           >
-                            Unknown
-                          </span>
-                        </div>
+                            <span
+                              class="font-semibold text-theme-secondary-text"
+                            >
+                              Unknown
+                            </span>
+                          </div>
+                        </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Category
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           Exchange
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
-                        data-testid="PluginSpecs__url"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           URL
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           N/A
                         </span>
@@ -441,41 +443,39 @@ exports[`PluginDetails should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__version"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Version
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0.0.0
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__size"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Size
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0 B
                         </span>
@@ -489,10 +489,10 @@ exports[`PluginDetails should render properly 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="mt-8"
@@ -816,10 +816,10 @@ exports[`PluginDetails should render properly for remote package 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="w-full bg-theme-background"
@@ -829,22 +829,21 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               class="flex w-full"
             >
               <div
+                class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt filter-grayscale"
                 data-testid="PluginImage__placeholder"
               >
-                <svg
-                  class="w-40"
-                >
+                <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 space-y-3 w-full"
+                class="flex flex-col justify-between pl-8 w-full"
               >
                 <div
-                  class="flex justify-between items-center"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col mr-2"
+                    class="flex flex-col space-y-2 mr-2 leading-tight"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -898,62 +897,65 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                   class="flex justify-between space-4"
                 >
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
                       class="flex"
                     >
                       <div
-                        class="flex flex-col pr-6"
+                        class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Author
                         </span>
-                        <div
-                          class="flex items-center"
+                        <span
+                          class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            class="font-bold text-theme-secondary-600"
+                          <div
+                            class="flex items-center"
                           >
-                            Unknown
-                          </span>
-                        </div>
+                            <span
+                              class="font-semibold text-theme-secondary-text"
+                            >
+                              Unknown
+                            </span>
+                          </div>
+                        </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Category
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           Other
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
-                        data-testid="PluginSpecs__url"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           URL
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           N/A
                         </span>
@@ -961,41 +963,39 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__version"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Version
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0.0.0
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__size"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Size
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0 B
                         </span>
@@ -1009,10 +1009,10 @@ exports[`PluginDetails should render properly for remote package 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="mt-8"
@@ -1336,10 +1336,10 @@ exports[`PluginDetails should report plugin 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="w-full bg-theme-background"
@@ -1349,22 +1349,21 @@ exports[`PluginDetails should report plugin 1`] = `
               class="flex w-full"
             >
               <div
+                class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt filter-grayscale"
                 data-testid="PluginImage__placeholder"
               >
-                <svg
-                  class="w-40"
-                >
+                <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 space-y-3 w-full"
+                class="flex flex-col justify-between pl-8 w-full"
               >
                 <div
-                  class="flex justify-between items-center"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col mr-2"
+                    class="flex flex-col space-y-2 mr-2 leading-tight"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -1438,62 +1437,65 @@ exports[`PluginDetails should report plugin 1`] = `
                   class="flex justify-between space-4"
                 >
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
                       class="flex"
                     >
                       <div
-                        class="flex flex-col pr-6"
+                        class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Author
                         </span>
-                        <div
-                          class="flex items-center"
+                        <span
+                          class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            class="font-bold text-theme-secondary-600"
+                          <div
+                            class="flex items-center"
                           >
-                            Unknown
-                          </span>
-                        </div>
+                            <span
+                              class="font-semibold text-theme-secondary-text"
+                            >
+                              Unknown
+                            </span>
+                          </div>
+                        </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Category
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           Exchange
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
-                        data-testid="PluginSpecs__url"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           URL
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           N/A
                         </span>
@@ -1501,41 +1503,39 @@ exports[`PluginDetails should report plugin 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__version"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Version
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0.0.0
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__size"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Size
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0 B
                         </span>
@@ -1549,10 +1549,10 @@ exports[`PluginDetails should report plugin 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="mt-8"
@@ -1876,10 +1876,10 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="w-full bg-theme-background"
@@ -1889,22 +1889,21 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               class="flex w-full"
             >
               <div
+                class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt filter-grayscale"
                 data-testid="PluginImage__placeholder"
               >
-                <svg
-                  class="w-40"
-                >
+                <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 space-y-3 w-full"
+                class="flex flex-col justify-between pl-8 w-full"
               >
                 <div
-                  class="flex justify-between items-center"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col mr-2"
+                    class="flex flex-col space-y-2 mr-2 leading-tight"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -1960,62 +1959,65 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                   class="flex justify-between space-4"
                 >
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
                       class="flex"
                     >
                       <div
-                        class="flex flex-col pr-6"
+                        class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Author
                         </span>
-                        <div
-                          class="flex items-center"
+                        <span
+                          class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            class="font-bold text-theme-secondary-600"
+                          <div
+                            class="flex items-center"
                           >
-                            Edgar Goetzendorff
-                          </span>
-                        </div>
+                            <span
+                              class="font-semibold text-theme-secondary-text"
+                            >
+                              Edgar Goetzendorff
+                            </span>
+                          </div>
+                        </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Category
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           Other
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
-                        data-testid="PluginSpecs__url"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           URL
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           N/A
                         </span>
@@ -2023,41 +2025,39 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__version"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Version
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           1.0.3
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__size"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Size
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0 B
                         </span>
@@ -2071,10 +2071,10 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div>
             <p
@@ -2411,10 +2411,10 @@ exports[`PluginDetails should update package 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="w-full bg-theme-background"
@@ -2424,22 +2424,21 @@ exports[`PluginDetails should update package 1`] = `
               class="flex w-full"
             >
               <div
+                class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt filter-grayscale"
                 data-testid="PluginImage__placeholder"
               >
-                <svg
-                  class="w-40"
-                >
+                <svg>
                   plugin-logo-placeholder.svg
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 space-y-3 w-full"
+                class="flex flex-col justify-between pl-8 w-full"
               >
                 <div
-                  class="flex justify-between items-center"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col mr-2"
+                    class="flex flex-col space-y-2 mr-2 leading-tight"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -2523,7 +2522,7 @@ exports[`PluginDetails should update package 1`] = `
                               data-testid="dropdown__option--1"
                             >
                               <span>
-                                Delete
+                                Enable
                               </span>
                             </li>
                             <li
@@ -2531,7 +2530,7 @@ exports[`PluginDetails should update package 1`] = `
                               data-testid="dropdown__option--2"
                             >
                               <span>
-                                Enable
+                                Delete
                               </span>
                             </li>
                           </ul>
@@ -2548,62 +2547,65 @@ exports[`PluginDetails should update package 1`] = `
                   class="flex justify-between space-4"
                 >
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
                       class="flex"
                     >
                       <div
-                        class="flex flex-col pr-6"
+                        class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Author
                         </span>
-                        <div
-                          class="flex items-center"
+                        <span
+                          class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            class="font-bold text-theme-secondary-600"
+                          <div
+                            class="flex items-center"
                           >
-                            Unknown
-                          </span>
-                        </div>
+                            <span
+                              class="font-semibold text-theme-secondary-text"
+                            >
+                              Unknown
+                            </span>
+                          </div>
+                        </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Category
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           Other
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex px-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col undefined"
-                        data-testid="PluginSpecs__url"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           URL
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           N/A
                         </span>
@@ -2611,41 +2613,39 @@ exports[`PluginDetails should update package 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex space-x-4 text-sm divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                   >
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__version"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Version
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           1.0.0
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex pl-6"
+                      class="flex pl-8"
                     >
                       <div
                         class="flex flex-col text-right"
-                        data-testid="PluginSpecs__size"
                       >
                         <span
-                          class="font-bold text-theme-secondary-400"
+                          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           Size
                         </span>
                         <span
-                          class="font-bold text-theme-secondary-600"
+                          class="font-semibold text-theme-secondary-text"
                         >
                           0 B
                         </span>
@@ -2659,10 +2659,10 @@ exports[`PluginDetails should update package 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
-          class="container py-16 px-14 mx-auto "
+          class="container px-10 mx-auto"
         >
           <div
             class="mt-8"
