@@ -2,7 +2,7 @@ import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
-import { ControlButton,LayoutControls } from "./LayoutControls";
+import { ControlButton, LayoutControls } from "./LayoutControls";
 
 describe("LayoutControls", () => {
 	it("should render", () => {
