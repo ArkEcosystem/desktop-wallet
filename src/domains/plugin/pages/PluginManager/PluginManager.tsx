@@ -29,7 +29,7 @@ type PluginManagerHomeProps = {
 	onLaunch: (plugin: any) => void;
 	viewType: string;
 	isLoading?: boolean;
-	plugins: any[];
+	plugins: Record<string, any[]>;
 };
 
 const PluginManagerHome = ({
@@ -46,7 +46,7 @@ const PluginManagerHome = ({
 }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
 
-	const renderGrid = () => (
+	const renderGrid = (plugins: any[]) => (
 		<PluginGrid
 			plugins={plugins}
 			onSelect={onSelect}
@@ -60,7 +60,7 @@ const PluginManagerHome = ({
 		/>
 	);
 
-	const renderList = () => (
+	const renderList = (plugins: any[]) => (
 		<PluginList
 			plugins={plugins}
 			onClick={onSelect}
@@ -73,30 +73,34 @@ const PluginManagerHome = ({
 		/>
 	);
 
-	const categories = ["gaming", "utility"];
+	const categories = ["gaming", "utility", "theme", "other"];
 
 	return (
 		<>
-			{categories.map((category: string) => (
-				<Section key={category}>
-					<div data-testid={`PluginManager__home__${category}`}>
-						<div className="flex justify-between items-center mb-6">
-							<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
+			{categories.map((category: string) => {
+				const viewPlugins: any[] = plugins[category] || [];
 
-							<span
-								className="flex items-center font-semibold link space-x-2"
-								data-testid={`PluginManager__home__${category}__view-more`}
-								onClick={() => onCurrentViewChange(category)}
-							>
-								<span>{t("COMMON.VIEW_MORE")}</span>
-								<Icon name="ChevronRight" width={8} height={8} />
-							</span>
+				return (
+					<Section key={category}>
+						<div data-testid={`PluginManager__home__${category}`}>
+							<div className="flex justify-between items-center mb-6">
+								<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
+
+								<span
+									className="flex items-center font-semibold link space-x-2"
+									data-testid={`PluginManager__home__${category}__view-more`}
+									onClick={() => onCurrentViewChange(category)}
+								>
+									<span>{t("COMMON.VIEW_MORE")}</span>
+									<Icon name="ChevronRight" width={8} height={8} />
+								</span>
+							</div>
+
+							{viewType === "grid" ? renderGrid(viewPlugins) : renderList(viewPlugins)}
 						</div>
-
-						{viewType === "grid" ? renderGrid() : renderList()}
-					</div>
-				</Section>
-			))}
+					</Section>
+				);
+			})}
 		</>
 	);
 };
@@ -125,24 +129,30 @@ export const PluginManager = () => {
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 
+	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
+
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
-	const hasUpdateAvailableCount = allPlugins
-		.map(mapConfigToPluginData.bind(null, activeProfile))
-		.filter((item) => item.hasUpdateAvailable).length;
+	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
 
 	useLayoutEffect(() => {
 		fetchPluginPackages();
 	}, [fetchPluginPackages]);
 
-	const homePackages = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
+	const pluginsByCategory = useMemo(() => {
+		const result: Record<string, any[]> = {};
 
-	const filteredPackages = useMemo(
-		() =>
-			allPlugins
-				.filter((config) => config.hasCategory(currentView))
-				.map(mapConfigToPluginData.bind(null, activeProfile)),
-		[currentView, filters], // eslint-disable-line react-hooks/exhaustive-deps
-	);
+		for (const plugin of plugins) {
+			if (!result[plugin.category]) {
+				result[plugin.category] = [];
+			}
+
+			result[plugin.category].push(plugin);
+		}
+
+		return result;
+	}, [plugins]);
+
+	const filteredPackages = useMemo(() => pluginsByCategory[currentView] || [], [currentView]);
 
 	const installedPlugins = pluginManager
 		.plugins()
@@ -303,7 +313,7 @@ export const PluginManager = () => {
 					<PluginManagerHome
 						isLoading={isFetchingPackages}
 						viewType={viewType}
-						plugins={homePackages}
+						plugins={pluginsByCategory}
 						onCurrentViewChange={setCurrentView}
 						onInstall={openInstallModalPlugin}
 						onEnable={handleEnablePlugin}

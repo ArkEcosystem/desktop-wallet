@@ -743,112 +743,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     </thead>
                     <tbody
                       role="rowgroup"
-                    >
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
-                          >
-                            <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fycWmV"
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg>
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                            <div
-                              class="flex items-center space-x-2 text-left"
-                            >
-                              <span
-                                class="font-semibold link flex items-center space-x-2"
-                                data-testid="PluginListItem__link"
-                              >
-                                Transaction Export Plugin
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Edgar Goetzendorff
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Other
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v1.0.3
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              0 B
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
-                              data-testid="PluginListItem__not-installed"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  dash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 iUSBMV flex-1"
-                              data-testid="PluginListItem__install"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                Install
-                              </div>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
+                    />
                   </table>
                 </div>
               </div>
@@ -875,6 +770,486 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 <span
                   class="flex items-center font-semibold link space-x-2"
                   data-testid="PluginManager__home__utility__view-more"
+                >
+                  <span>
+                    View More
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                data-testid="PluginList"
+              >
+                <div
+                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                  role="table"
+                >
+                  <table
+                    cellpadding="0"
+                    class="table-auto"
+                  >
+                    <thead>
+                      <tr
+                        class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                        role="row"
+                      >
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--0"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Name
+                            </div>
+                            <div
+                              class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--1"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Author
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--2"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Category
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--3"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Version
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--4"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Size
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--5"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top justify-center "
+                          >
+                            <div>
+                              Status
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--6"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top hidden "
+                          >
+                            <div>
+                              Actions
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      role="rowgroup"
+                    />
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        >
+          <div
+            class="container px-10 mx-auto"
+          >
+            <div
+              data-testid="PluginManager__home__theme"
+            >
+              <div
+                class="flex justify-between items-center mb-6"
+              >
+                <h2
+                  class="font-bold mb-0"
+                >
+                  Theme
+                </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__home__theme__view-more"
+                >
+                  <span>
+                    View More
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                data-testid="PluginList"
+              >
+                <div
+                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                  role="table"
+                >
+                  <table
+                    cellpadding="0"
+                    class="table-auto"
+                  >
+                    <thead>
+                      <tr
+                        class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                        role="row"
+                      >
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--0"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Name
+                            </div>
+                            <div
+                              class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--1"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Author
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--2"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Category
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--3"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Version
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--4"
+                          role="columnheader"
+                          style="cursor: pointer;"
+                          title="Toggle SortBy"
+                        >
+                          <div
+                            class="flex flex-inline align-top  "
+                          >
+                            <div>
+                              Size
+                            </div>
+                            <div
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            >
+                              <div
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                height="5"
+                                role="img"
+                                width="8"
+                              >
+                                <svg>
+                                  chevron-down.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--5"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top justify-center "
+                          >
+                            <div>
+                              Status
+                            </div>
+                          </div>
+                        </th>
+                        <th
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          colspan="1"
+                          data-testid="table__th--6"
+                          role="columnheader"
+                        >
+                          <div
+                            class="flex flex-inline align-top hidden "
+                          >
+                            <div>
+                              Actions
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      role="rowgroup"
+                    />
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        >
+          <div
+            class="container px-10 mx-auto"
+          >
+            <div
+              data-testid="PluginManager__home__other"
+            >
+              <div
+                class="flex justify-between items-center mb-6"
+              >
+                <h2
+                  class="font-bold mb-0"
+                >
+                  Other
+                </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__home__other__view-more"
                 >
                   <span>
                     View More
@@ -4321,95 +4696,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 />
                 <div
                   class="grid grid-cols-3 gap-5 undefined"
-                >
-                  <div
-                    data-testid="PluginCard--@dated/transaction-export-plugin"
-                  >
-                    <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-                      data-testid="Card"
-                    >
-                      <div
-                        class="flex items-center space-x-4"
-                      >
-                        <div
-                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
-                        >
-                          <div
-                            class="PluginImage__PluginImageWrapper-iwox49-0 dwbpbe"
-                            data-testid="PluginImage__placeholder"
-                          >
-                            <svg>
-                              plugin-logo-placeholder.svg
-                            </svg>
-                          </div>
-                        </div>
-                        <div
-                          class="flex flex-col truncate"
-                        >
-                          <span
-                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-                          >
-                            Edgar Goetzendorff
-                          </span>
-                          <div
-                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
-                          >
-                            <div
-                              class="truncate"
-                            >
-                              Transaction Export Plugin
-                            </div>
-                            <span />
-                          </div>
-                          <div
-                            class="flex items-center space-x-2 mt-4"
-                          >
-                            <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                category.svg
-                              </svg>
-                            </div>
-                            <span
-                              class="text-sm font-semibold"
-                            >
-                              Other
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                      >
-                        <div
-                          class="relative"
-                        >
-                          <span
-                            data-testid="dropdown__toggle"
-                          >
-                            <div
-                              class="flex overflow-hidden justify-center w-4"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  settings.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                />
               </div>
             </div>
           </div>
@@ -4434,6 +4721,102 @@ exports[`PluginManager should search for plugin 1`] = `
                 <span
                   class="flex items-center font-semibold link space-x-2"
                   data-testid="PluginManager__home__utility__view-more"
+                >
+                  <span>
+                    View More
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                data-testid="PluginGrid"
+              >
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        >
+          <div
+            class="container px-10 mx-auto"
+          >
+            <div
+              data-testid="PluginManager__home__theme"
+            >
+              <div
+                class="flex justify-between items-center mb-6"
+              >
+                <h2
+                  class="font-bold mb-0"
+                >
+                  Theme
+                </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__home__theme__view-more"
+                >
+                  <span>
+                    View More
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                data-testid="PluginGrid"
+              >
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        >
+          <div
+            class="container px-10 mx-auto"
+          >
+            <div
+              data-testid="PluginManager__home__other"
+            >
+              <div
+                class="flex justify-between items-center mb-6"
+              >
+                <h2
+                  class="font-bold mb-0"
+                >
+                  Other
+                </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__home__other__view-more"
                 >
                   <span>
                     View More
@@ -5157,6 +5540,102 @@ exports[`PluginManager should search for plugin 2`] = `
                 <span
                   class="flex items-center font-semibold link space-x-2"
                   data-testid="PluginManager__home__utility__view-more"
+                >
+                  <span>
+                    View More
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                data-testid="PluginGrid"
+              >
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        >
+          <div
+            class="container px-10 mx-auto"
+          >
+            <div
+              data-testid="PluginManager__home__theme"
+            >
+              <div
+                class="flex justify-between items-center mb-6"
+              >
+                <h2
+                  class="font-bold mb-0"
+                >
+                  Theme
+                </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__home__theme__view-more"
+                >
+                  <span>
+                    View More
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+              <div
+                data-testid="PluginGrid"
+              >
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+                <div
+                  class="grid grid-cols-3 gap-5 undefined"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        >
+          <div
+            class="container px-10 mx-auto"
+          >
+            <div
+              data-testid="PluginManager__home__other"
+            >
+              <div
+                class="flex justify-between items-center mb-6"
+              >
+                <h2
+                  class="font-bold mb-0"
+                >
+                  Other
+                </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__home__other__view-more"
                 >
                   <span>
                     View More
