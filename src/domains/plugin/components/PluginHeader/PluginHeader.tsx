@@ -1,8 +1,8 @@
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
@@ -45,6 +45,24 @@ export const PluginHeader = ({
 }: Props) => {
 	const { t } = useTranslation();
 
+	const actions = useMemo(() => {
+		const result: DropdownOption[] = [];
+
+		if (props.hasUpdateAvailable) {
+			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+		}
+
+		if (props.isEnabled) {
+			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
+		} else {
+			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+		}
+
+		result.push({ label: t("COMMON.DELETE"), value: "delete" });
+
+		return result;
+	}, [t, props]);
+
 	const getPluginButtons = () => {
 		if (props.isInstalled) {
 			return (
@@ -69,17 +87,7 @@ export const PluginHeader = ({
 								<Icon name="Settings" width={20} height={20} />
 							</Button>
 						}
-						options={[
-							props.hasUpdateAvailable && {
-								label: t("COMMON.UPDATE"),
-								value: "update",
-							},
-							{ label: t("COMMON.DELETE"), value: "delete" },
-							{
-								label: props.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
-								value: props.isEnabled ? "disable" : "enable",
-							},
-						].filter(Boolean)}
+						options={actions}
 						onSelect={(option: any) => {
 							if (option.value === "delete") {
 								onDelete?.();
@@ -124,22 +132,25 @@ export const PluginHeader = ({
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
 				<PluginImage
+					size="lg"
 					logoURL={props.logo}
-					className="w-40"
+					isEnabled={props.isEnabled}
 					isUpdating={updatingStats?.percent !== undefined}
 					updatingProgress={updatingStats?.percent}
 					showUpdatingLabel
 				/>
 
-				<div className="flex flex-col justify-between pl-8 space-y-3 w-full">
-					<div className="flex justify-between items-center">
-						<div className="flex flex-col mr-2">
+				<div className="flex flex-col justify-between pl-8 w-full">
+					<div className="flex justify-between items-end">
+						<div className="flex flex-col space-y-2 mr-2 leading-tight">
 							<span className="text-2xl font-bold">{props.title}</span>
 							<span className="text-medium text-theme-secondary-500">{props.description}</span>
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>
+
 					<Divider dashed />
+
 					<PluginSpecs {...props} />
 				</div>
 			</div>

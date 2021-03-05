@@ -2,18 +2,23 @@
 
 exports[`PluginImage should render image logo 1`] = `
 <div>
-  <img
-    alt="Logo"
-    class="overflow-hidden rounded-lg"
+  <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
     data-testid="PluginImage__logo"
-    src="https://ark.io/logo.png"
-  />
+  >
+    <img
+      alt="Logo"
+      class="object-cover w-full h-full"
+      src="https://ark.io/logo.png"
+    />
+  </div>
 </div>
 `;
 
 exports[`PluginImage should render image placeholder 1`] = `
 <div>
   <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
     data-testid="PluginImage__placeholder"
   >
     <svg>
@@ -26,7 +31,7 @@ exports[`PluginImage should render image placeholder 1`] = `
 exports[`PluginImage should render updating element 1`] = `
 <div>
   <div
-    class="rounded-lg overflow-hidden bg-theme-success-100 flex flex-col space-y-3 items-center justify-center border border-theme-secondary-300 dark:border-theme-secondary-600"
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
     data-testid="PluginImage__updating"
   >
     <svg
@@ -84,7 +89,7 @@ exports[`PluginImage should render updating element 1`] = `
 exports[`PluginImage should render updating with label 1`] = `
 <div>
   <div
-    class="rounded-lg overflow-hidden bg-theme-success-100 flex flex-col space-y-3 items-center justify-center border border-theme-secondary-300 dark:border-theme-secondary-600"
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
     data-testid="PluginImage__updating"
   >
     <svg
@@ -141,6 +146,58 @@ exports[`PluginImage should render updating with label 1`] = `
     >
       Updating...
     </p>
+  </div>
+</div>
+`;
+
+exports[`PluginImage should render with size 'lg' 1`] = `
+<div>
+  <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+    data-testid="PluginImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PluginImage should render with size 'md' 1`] = `
+<div>
+  <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+    data-testid="PluginImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PluginImage should render with size 'sm' 1`] = `
+<div>
+  <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+    data-testid="PluginImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PluginImage should render with size 'xs' 1`] = `
+<div>
+  <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl"
+    data-testid="PluginImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
   </div>
 </div>
 `;
