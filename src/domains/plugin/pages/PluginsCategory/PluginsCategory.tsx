@@ -61,11 +61,11 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 						plugins={plugins}
 						onSelect={() => console.log("selected")}
 						onDelete={onDelete}
-						withPagination={false}
+						showPagination={false}
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} showPagination={true} />
 				)}
 			</div>
 		</div>

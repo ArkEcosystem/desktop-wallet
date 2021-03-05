@@ -46,44 +46,54 @@ const PluginManagerHome = ({
 }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
 
-	const renderGrid = (plugins: any[], category: string) => (
-		<PluginGrid
-			category={category}
-			plugins={plugins}
-			onSelect={onSelect}
-			onEnable={onEnable}
-			onDisable={onDisable}
-			onDelete={onDelete}
-			onInstall={onInstall}
-			onLaunch={onLaunch}
-			withPagination={false}
-			isLoading={isLoading}
-		/>
-	);
+	const renderPlugins = (plugins: any[], category: string) => {
+		if (!plugins.length) {
+			return <EmptyBlock size="sm">no no no</EmptyBlock>;
+		}
 
-	const renderList = (plugins: any[]) => (
-		<PluginList
-			plugins={plugins}
-			onClick={onSelect}
-			onLaunch={onLaunch}
-			onInstall={onInstall}
-			onEnable={onEnable}
-			onDisable={onDisable}
-			onDelete={onDelete}
-			withPagination={false}
-		/>
-	);
+		if (viewType === "grid") {
+			return (
+				<PluginGrid
+					category={category}
+					plugins={plugins}
+					onSelect={onSelect}
+					onEnable={onEnable}
+					onDisable={onDisable}
+					onDelete={onDelete}
+					onInstall={onInstall}
+					onLaunch={onLaunch}
+					showPagination={false}
+					isLoading={isLoading}
+				/>
+			);
+		}
+
+		return (
+			<PluginList
+				plugins={plugins}
+				onClick={onSelect}
+				onLaunch={onLaunch}
+				onInstall={onInstall}
+				onEnable={onEnable}
+				onDisable={onDisable}
+				onDelete={onDelete}
+				showPagination={false}
+			/>
+		);
+	};
 
 	const categories = ["gaming", "utility", "exchange", "other"];
 
 	return (
 		<>
 			{categories.map((category: string) => {
-				const plugins: any[] = pluginsByCategory[category] || [];
+				let plugins: any[] = pluginsByCategory[category] || [];
 
-				if (!plugins.length || plugins.length < 3) {
+				if (viewType === "grid" && plugins.length < 3) {
 					plugins.push(...new Array(3 - plugins.length).fill(undefined));
 				}
+
+				plugins = plugins.slice(0, 3);
 
 				return (
 					<Section key={category}>
@@ -101,9 +111,7 @@ const PluginManagerHome = ({
 								</span>
 							</div>
 
-							{viewType === "grid"
-								? renderGrid(plugins.slice(0, 3), category)
-								: renderList(plugins.slice(0, 3))}
+							{renderPlugins(plugins, category)}
 						</div>
 					</Section>
 				);
@@ -255,6 +263,7 @@ export const PluginManager = () => {
 					onLaunch={handleLaunchPlugin}
 					onUpdate={handleUpdate}
 					updatingStats={updatingStats}
+					showCategory={true}
 				/>
 			);
 		}

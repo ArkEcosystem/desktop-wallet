@@ -122,7 +122,7 @@ describe("PluginGrid", () => {
 	});
 
 	it("should render without pagination", async () => {
-		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} withPagination={false} />);
+		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} showPagination={false} />);
 
 		for (const plugin of plugins) {
 			expect(await findByText(plugin.title)).toBeTruthy();

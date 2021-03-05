@@ -22,7 +22,7 @@ type PluginGridProps = {
 	plugins: any[];
 	isLoading?: boolean;
 	skeletonsLimit?: number;
-	withPagination?: boolean;
+	showPagination?: boolean;
 };
 
 export const PluginGrid = ({
@@ -37,7 +37,7 @@ export const PluginGrid = ({
 	onInstall,
 	onUpdate,
 	plugins,
-	withPagination,
+	showPagination,
 	isLoading,
 	skeletonsLimit = 3,
 }: PluginGridProps) => {
@@ -131,12 +131,12 @@ export const PluginGrid = ({
 		return <EmptyBlock size="sm">no no no</EmptyBlock>;
 	}
 
-	const pageEntries = chunk(plugins, itemsPerPage!)[currentPage - 1];
+	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginGrid">
 			<div className={`grid grid-cols-3 gap-5 ${className}`}>
-				{pageEntries?.map((plugin: any, index: number) => (
+				{pagePlugins?.map((plugin: any, index: number) => (
 					<PluginCard
 						key={plugin?.id || `blank_${index}`}
 						actions={getActions(plugin)}
@@ -148,7 +148,7 @@ export const PluginGrid = ({
 				))}
 			</div>
 
-			{withPagination && (
+			{showPagination && (
 				<div className="flex justify-center w-full mt-10">
 					<Pagination
 						currentPage={currentPage}
@@ -164,5 +164,5 @@ export const PluginGrid = ({
 
 PluginGrid.defaultProps = {
 	itemsPerPage: 20,
-	withPagination: true,
+	showPagination: true,
 };

@@ -20,6 +20,7 @@ type PluginListItemProps = {
 	isUpdating?: boolean;
 	updatingProgress?: any;
 	plugin: any;
+	showCategory?: boolean;
 };
 
 export const PluginListItem = ({
@@ -33,6 +34,7 @@ export const PluginListItem = ({
 	isUpdating,
 	updatingProgress,
 	plugin,
+	showCategory,
 }: PluginListItemProps) => {
 	const { t } = useTranslation();
 
@@ -98,9 +100,11 @@ export const PluginListItem = ({
 				<span>{plugin.author}</span>
 			</TableCell>
 
-			<TableCell>
-				<span>{t(`PLUGINS.CATEGORIES.${plugin.category.toUpperCase()}`)}</span>
-			</TableCell>
+			{showCategory && (
+				<TableCell>
+					<span>{t(`PLUGINS.CATEGORIES.${plugin.category.toUpperCase()}`)}</span>
+				</TableCell>
+			)}
 
 			<TableCell>
 				<span>v{plugin.version}</span>
