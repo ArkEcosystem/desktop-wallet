@@ -10,9 +10,7 @@ describe("WalletsControls", () => {
 		viewType: "list",
 		walletsDisplayType: "all",
 		selectedNetworkIds: [],
-		showTransactions: true,
 		useTestNetworks: true,
-		showToggleViews: true,
 		isFilterChanged: false,
 	};
 
