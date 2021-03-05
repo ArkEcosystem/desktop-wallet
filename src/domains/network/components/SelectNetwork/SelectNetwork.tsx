@@ -107,7 +107,7 @@ export const SelectNetwork = ({
 		// Selection is made but not me. Show me disabled
 		/* istanbul ignore next */
 		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName) {
-			return "text-theme-secondary-300";
+			return "text-theme-secondary-300 dark:border-theme-secondary-800";
 		}
 
 		// Initial state. Nothing entered, nothing selected
@@ -121,7 +121,7 @@ export const SelectNetwork = ({
 		}
 
 		// Disabled otherwise
-		return "text-theme-secondary-300";
+		return "text-theme-secondary-300 dark:border-theme-secondary-800";
 	};
 
 	return (

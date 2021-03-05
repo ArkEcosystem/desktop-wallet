@@ -32,7 +32,7 @@ export const NetworkOption = memo(({ network, iconSize = 30, iconClassName, onCl
 			<Tooltip content={network.extra.displayName}>
 				<div
 					className={`w-full h-full flex justify-center items-center border-2 rounded-xl ${
-						iconClassName || `border-theme-secondary-200 ${iconColorClass}`
+						iconClassName || `border-theme-secondary-200 dark:border-theme-secondary-800 ${iconColorClass}`
 					}`}
 					aria-label={network.extra.displayName}
 					data-testid={`NetworkIcon-${network?.coin()}-${network?.id()}`}
