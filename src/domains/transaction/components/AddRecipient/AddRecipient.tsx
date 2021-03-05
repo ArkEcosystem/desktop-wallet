@@ -172,12 +172,6 @@ export const AddRecipient = ({
 			setAddressRecipients(recipients);
 			return;
 		}
-
-		if (recipients.length === 1 && !getValues("displayAmount")) {
-			setValue("amount", recipients[0].amount);
-			setValue("displayAmount", recipients[0].amount?.toHuman());
-			setValue("recipientAddress", recipients[0].address);
-		}
 	}, [recipients, setValue, getValues]);
 
 	useEffect(() => {
