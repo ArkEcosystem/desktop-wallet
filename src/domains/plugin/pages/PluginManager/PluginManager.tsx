@@ -77,14 +77,6 @@ const PluginManagerHome = ({
 
 	return (
 		<>
-			<Section>
-				<div data-testid="PluginManager__home__featured">
-					<h2 className="font-bold mb-6">{t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED")}</h2>
-
-					{viewType === "grid" ? renderGrid() : renderList()}
-				</div>
-			</Section>
-
 			{categories.map((category: string) => (
 				<Section key={category}>
 					<div data-testid={`PluginManager__home__${category}`}>

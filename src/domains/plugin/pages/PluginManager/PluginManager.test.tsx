@@ -64,9 +64,9 @@ describe("PluginManager", () => {
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -75,23 +75,23 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginList")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginList")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -101,7 +101,7 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -129,7 +129,7 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -145,7 +145,7 @@ describe("PluginManager", () => {
 		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -236,7 +236,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -279,7 +279,7 @@ describe("PluginManager", () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -304,7 +304,7 @@ describe("PluginManager", () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -331,7 +331,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -369,7 +369,7 @@ describe("PluginManager", () => {
 		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -406,7 +406,7 @@ describe("PluginManager", () => {
 		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -442,7 +442,7 @@ describe("PluginManager", () => {
 		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
 
 		act(() => {
 			fireEvent.click(
@@ -462,7 +462,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
