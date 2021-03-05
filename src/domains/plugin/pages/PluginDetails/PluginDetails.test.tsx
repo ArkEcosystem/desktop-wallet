@@ -496,7 +496,6 @@ describe("PluginDetails", () => {
 			{
 				name: "@dated/transaction-export-plugin",
 				version: "1.0.0",
-				"desktop-wallet": { minimumVersion: "4.0.0" },
 			},
 			() => void 0,
 		);
@@ -542,7 +541,12 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getByText(commonTranslations.UPDATE)).toBeInTheDocument());
 		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
 
-		await waitFor(() => expect(ipcRendererSpy).toHaveBeenCalled());
+		await waitFor(() =>
+			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
+				name: "@dated/transaction-export-plugin",
+				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
+			}),
+		);
 
 		expect(container).toMatchSnapshot();
 		jest.useRealTimers();
