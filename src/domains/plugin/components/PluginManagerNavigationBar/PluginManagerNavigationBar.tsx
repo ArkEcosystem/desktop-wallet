@@ -121,8 +121,8 @@ PluginManagerNavigationBar.defaultProps = {
 			name: "utility",
 		},
 		{
-			title: "Theme",
-			name: "theme",
+			title: "Exchange",
+			name: "exchange",
 		},
 		{
 			title: "Other",

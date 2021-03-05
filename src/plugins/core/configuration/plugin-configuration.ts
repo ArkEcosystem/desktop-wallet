@@ -86,7 +86,7 @@ export class PluginConfigurationData {
 	}
 
 	categories() {
-		const validCategories = ["gaming", "theme", "language", "utility", "exchange", "other"];
+		const validCategories = ["gaming", "language", "utility", "exchange", "other"];
 		// @ts-ignore
 		const categories: string[] = this.manifest().get("categories", ["other"]);
 

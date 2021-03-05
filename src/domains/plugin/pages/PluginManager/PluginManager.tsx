@@ -74,7 +74,7 @@ const PluginManagerHome = ({
 		/>
 	);
 
-	const categories = ["gaming", "utility", "theme", "other"];
+	const categories = ["gaming", "utility", "exchange", "other"];
 
 	return (
 		<>
