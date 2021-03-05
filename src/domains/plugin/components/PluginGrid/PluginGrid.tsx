@@ -1,5 +1,6 @@
 import { chunk } from "@arkecosystem/utils";
 import { DropdownOption } from "app/components/Dropdown";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Pagination } from "app/components/Pagination";
 import { PluginCard } from "domains/plugin/components/PluginCard";
 import React, { useCallback } from "react";
@@ -8,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
 
 type PluginGridProps = {
+	category?: string;
 	className?: string;
 	itemsPerPage?: number;
 	onDelete: any;
@@ -24,6 +26,7 @@ type PluginGridProps = {
 };
 
 export const PluginGrid = ({
+	category,
 	className,
 	itemsPerPage,
 	onDelete,
@@ -36,13 +39,12 @@ export const PluginGrid = ({
 	plugins,
 	withPagination,
 	isLoading,
-	skeletonsLimit = 6,
+	skeletonsLimit = 3,
 }: PluginGridProps) => {
 	const { t } = useTranslation();
 
 	const [currentPage, setCurrentPage] = React.useState(1);
 
-	const entries = [];
 	let skeletons = [];
 
 	if (isLoading) {
@@ -51,6 +53,10 @@ export const PluginGrid = ({
 
 	const getActions = useCallback(
 		(plugin: any) => {
+			if (!plugin) {
+				return;
+			}
+
 			if (plugin.isInstalled) {
 				const result: DropdownOption[] = [];
 
@@ -109,38 +115,45 @@ export const PluginGrid = ({
 		}
 	};
 
-	if (!isLoading) {
-		for (const plugin of plugins) {
-			entries.push(
-				<PluginCard
-					key={plugin.id}
-					actions={getActions(plugin)}
-					plugin={plugin}
-					onClick={() => onSelect(plugin)}
-					onSelect={(action: any) => handlePluginAction(plugin, action)}
-				/>,
-			);
-		}
+	if (isLoading) {
+		return (
+			<div data-testid="PluginGrid">
+				<div className={`grid grid-cols-3 gap-5 ${className}`}>
+					{skeletons.map((_, index) => (
+						<PluginCardSkeleton key={index} />
+					))}
+				</div>
+			</div>
+		);
 	}
 
-	const pageEntries = chunk(entries, itemsPerPage!)[currentPage - 1];
+	if (!plugins?.length) {
+		return <EmptyBlock size="sm">no no no</EmptyBlock>;
+	}
+
+	const pageEntries = chunk(plugins, itemsPerPage!)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginGrid">
 			<div className={`grid grid-cols-3 gap-5 ${className}`}>
-				{skeletons.map((_, index) => (
-					<PluginCardSkeleton key={index} />
+				{pageEntries?.map((plugin: any, index: number) => (
+					<PluginCard
+						key={plugin?.id || `blank_${index}`}
+						actions={getActions(plugin)}
+						category={category}
+						plugin={plugin}
+						onClick={() => onSelect(plugin)}
+						onSelect={(action: any) => handlePluginAction(plugin, action)}
+					/>
 				))}
 			</div>
-
-			<div className={`grid grid-cols-3 gap-5 ${className}`}>{pageEntries}</div>
 
 			{withPagination && (
 				<div className="flex justify-center w-full mt-10">
 					<Pagination
 						currentPage={currentPage}
 						itemsPerPage={itemsPerPage}
-						totalCount={entries.length}
+						totalCount={plugins.length}
 						onSelectPage={setCurrentPage}
 					/>
 				</div>

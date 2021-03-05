@@ -29,7 +29,7 @@ type PluginManagerHomeProps = {
 	onLaunch: (plugin: any) => void;
 	viewType: string;
 	isLoading?: boolean;
-	plugins: Record<string, any[]>;
+	pluginsByCategory: Record<string, any[]>;
 };
 
 const PluginManagerHome = ({
@@ -39,15 +39,16 @@ const PluginManagerHome = ({
 	onInstall,
 	onLaunch,
 	viewType,
-	plugins,
+	pluginsByCategory,
 	onEnable,
 	onDisable,
 	isLoading,
 }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
 
-	const renderGrid = (plugins: any[]) => (
+	const renderGrid = (plugins: any[], category: string) => (
 		<PluginGrid
+			category={category}
 			plugins={plugins}
 			onSelect={onSelect}
 			onEnable={onEnable}
@@ -78,7 +79,11 @@ const PluginManagerHome = ({
 	return (
 		<>
 			{categories.map((category: string) => {
-				const viewPlugins: any[] = plugins[category] || [];
+				const plugins: any[] = pluginsByCategory[category] || [];
+
+				if (!plugins.length || plugins.length < 3) {
+					plugins.push(...new Array(3 - plugins.length).fill(undefined));
+				}
 
 				return (
 					<Section key={category}>
@@ -96,7 +101,9 @@ const PluginManagerHome = ({
 								</span>
 							</div>
 
-							{viewType === "grid" ? renderGrid(viewPlugins) : renderList(viewPlugins)}
+							{viewType === "grid"
+								? renderGrid(plugins.slice(0, 3), category)
+								: renderList(plugins.slice(0, 3))}
 						</div>
 					</Section>
 				);
@@ -313,7 +320,7 @@ export const PluginManager = () => {
 					<PluginManagerHome
 						isLoading={isFetchingPackages}
 						viewType={viewType}
-						plugins={pluginsByCategory}
+						pluginsByCategory={pluginsByCategory}
 						onCurrentViewChange={setCurrentView}
 						onInstall={openInstallModalPlugin}
 						onEnable={handleEnablePlugin}

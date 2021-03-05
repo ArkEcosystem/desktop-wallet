@@ -8,6 +8,7 @@ import { PluginImage } from "../PluginImage";
 
 type PluginCardProps = {
 	actions?: DropdownOption[];
+	category?: string;
 	plugin: any;
 	onClick?: () => void;
 	onSelect?: (action: any) => void;
@@ -45,8 +46,12 @@ export const BlankPluginCard = ({ name, category }: { name?: string; category?: 
 	);
 };
 
-export const PluginCard = ({ actions, plugin, onClick, onSelect, showCategory }: PluginCardProps) => {
+export const PluginCard = ({ actions, category, plugin, onClick, onSelect, showCategory }: PluginCardProps) => {
 	const { t } = useTranslation();
+
+	if (plugin === undefined) {
+		return <BlankPluginCard category={category} />;
+	}
 
 	return (
 		<div data-testid={`PluginCard--${plugin.id}`}>
