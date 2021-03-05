@@ -56,13 +56,11 @@ export const PluginManagerNavigationBar = ({
 										}`}
 									>
 										<span>{menuItem.title}</span>
-										{
+										{menuItem.name !== "home" && (
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
-												{menuItem.name === "home"
-													? allPlugins.length
-													: countsByCategory[menuItem.name]}
+												{countsByCategory[menuItem.name]}
 											</span>
-										}
+										)}
 									</button>
 
 									{index < menu.length - 1 && (
