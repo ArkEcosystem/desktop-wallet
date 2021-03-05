@@ -124,6 +124,23 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should switch to game category by clicking on view more link", async () => {
+		const { asFragment, getByTestId, getAllByText } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager__home__gaming__view-more"));
+		});
+
+		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginGrid")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it.skip("should download & install plugin on home", async () => {
 		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
 
