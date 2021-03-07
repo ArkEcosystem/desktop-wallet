@@ -36,7 +36,7 @@ describe("PluginManager", () => {
 
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
-			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.reply(200, require("tests/fixtures/plugins/github/@dated/transaction-export-plugin/package.json"))
 			.persist();
 
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -64,9 +64,12 @@ describe("PluginManager", () => {
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export")).toHaveLength(
+				1,
+			),
 		);
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
+
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -74,72 +77,78 @@ describe("PluginManager", () => {
 	it("should toggle between list and grid on home", async () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
-		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
+		await waitFor(() =>
+			expect(within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export")).toHaveLength(
+				1,
+			),
+		);
+
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__home__utility")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginList")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__home__utility")).getByTestId("PluginList")).toBeTruthy(),
+			act(() => {
+				fireEvent.click(getByTestId("LayoutControls__grid--icon"));
+			});
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
-		});
-
-		expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__home__utility")).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle between list and grid on game", async () => {
+	it.each(["utility"])("should toggle between list and grid on %s tab", async (category) => {
 		const { asFragment, getByTestId, getAllByText } = rendered;
 
-		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId(`PluginManager__home__${category}`)).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__gaming"));
+			fireEvent.click(getByTestId(`PluginManagerNavigationBar__${category}`));
 		});
 
-		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginList")).toBeTruthy();
+		expect(within(getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginList")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginGrid")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should switch to game category by clicking on view more link", async () => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
-
-		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__home__gaming__view-more"));
-		});
-
-		expect(within(getByTestId("PluginManager__container--gaming")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it.each(["gaming", "utility", "exchange", "other"])(
+		"should switch to %s category by clicking on view more link",
+		async (category) => {
+			const { asFragment, getByTestId, getAllByText } = rendered;
+
+			await waitFor(() =>
+				expect(within(getByTestId(`PluginManager__home__${category}`)).getByTestId("PluginGrid")).toBeTruthy(),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId(`PluginManager__home__${category}__view-more`));
+			});
+
+			expect(getByTestId(`PluginManager__container--${category}`)).toBeTruthy();
+
+			expect(asFragment()).toMatchSnapshot();
+		},
+	);
 
 	it.skip("should download & install plugin on home", async () => {
 		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
@@ -328,7 +337,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should search for plugin", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = rendered;
+		const { asFragment, getByTestId, getAllByTestId, getAllByText } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -346,7 +355,8 @@ describe("PluginManager", () => {
 			});
 		});
 
-		await waitFor(() => expect(getAllByTestId("Card")).not.toHaveLength(0));
+		await waitFor(() => expect(getAllByText(commonTranslations.AUTHOR)).toHaveLength(11));
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -355,7 +365,8 @@ describe("PluginManager", () => {
 			});
 		});
 
-		await waitFor(() => expect(() => getAllByTestId("Card")).toThrow());
+		await waitFor(() => expect(getAllByText(commonTranslations.AUTHOR)).toHaveLength(12));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -441,13 +452,11 @@ describe("PluginManager", () => {
 	it("should select plugin on home grids", async () => {
 		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
-		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
+		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
 
 		act(() => {
-			fireEvent.click(
-				within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export Plugin")[0],
-			);
+			fireEvent.click(within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export")[0]);
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
@@ -461,8 +470,8 @@ describe("PluginManager", () => {
 
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
-		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(2));
+		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));

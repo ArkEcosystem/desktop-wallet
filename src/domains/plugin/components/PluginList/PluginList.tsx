@@ -86,8 +86,8 @@ export const PluginList = ({
 		});
 	}
 
-	if (!plugins?.length) {
-		return <EmptyBlock size="sm">no no no</EmptyBlock>;
+	if (!plugins.length) {
+		return <EmptyBlock>{t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
 	}
 
 	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];

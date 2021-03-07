@@ -47,10 +47,6 @@ const PluginManagerHome = ({
 	const { t } = useTranslation();
 
 	const renderPlugins = (plugins: any[], category: string) => {
-		if (!plugins.length) {
-			return <EmptyBlock size="sm">no no no</EmptyBlock>;
-		}
-
 		if (viewType === "grid") {
 			return (
 				<PluginGrid
@@ -89,13 +85,13 @@ const PluginManagerHome = ({
 			{categories.map((category: string) => {
 				let plugins: any[] = pluginsByCategory[category] || [];
 
-				if (viewType === "grid" && plugins.length < 3) {
+				if (plugins.length < 3 && viewType === "grid") {
 					plugins.push(...new Array(3 - plugins.length).fill(undefined));
 				}
 
 				plugins = plugins.slice(0, 3);
 
-				return (
+				return plugins.length ? (
 					<Section key={category}>
 						<div data-testid={`PluginManager__home__${category}`}>
 							<div className="flex justify-between items-center mb-6">
@@ -114,7 +110,7 @@ const PluginManagerHome = ({
 							{renderPlugins(plugins, category)}
 						</div>
 					</Section>
-				);
+				) : null;
 			})}
 		</>
 	);
@@ -167,7 +163,11 @@ export const PluginManager = () => {
 		return result;
 	}, [plugins]);
 
-	const filteredPackages = useMemo(() => pluginsByCategory[currentView] || [], [currentView]);
+	const filteredPackages = useMemo(() => pluginsByCategory[currentView] || [], [
+		currentView,
+		filters,
+		pluginsByCategory,
+	]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const installedPlugins = pluginManager
 		.plugins()

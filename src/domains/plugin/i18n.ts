@@ -73,6 +73,8 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",
 
+		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
+
 		VIEW: {
 			HOME: "Home",
 			GAMING: "Gaming",
@@ -89,11 +91,6 @@ export const translations: { [key: string]: any } = {
 		SCREENSHOTS: "Screenshots",
 		REQUIREMENTS: "Requirements",
 		DESKTOP_WALLET_VERSION: "Desktop Wallet Version",
-	},
-
-	REVIEW_BOX: {
-		AVERAGE_RATING: "Avg. Rating",
-		OUT_OF_X_REVIEWS: "Out of {{count}} reviews",
 	},
 
 	CATEGORIES: {
