@@ -163,11 +163,12 @@ export const PluginManager = () => {
 		return result;
 	}, [plugins]);
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const filteredPackages = useMemo(() => pluginsByCategory[currentView] || [], [
 		currentView,
 		filters,
 		pluginsByCategory,
-	]); // eslint-disable-line react-hooks/exhaustive-deps
+	]);
 
 	const installedPlugins = pluginManager
 		.plugins()
