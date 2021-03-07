@@ -19,7 +19,7 @@ exports[`PluginGrid should render custom number of skeletons 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
             >
               <span>
                 <span
@@ -120,7 +120,7 @@ exports[`PluginGrid should render custom number of skeletons 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
             >
               <span>
                 <span
@@ -221,7 +221,7 @@ exports[`PluginGrid should render custom number of skeletons 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
             >
               <span>
                 <span
@@ -312,12 +312,6 @@ exports[`PluginGrid should render custom number of skeletons 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="grid grid-cols-3 gap-5 undefined"
-    />
-    <div
-      class="flex justify-center w-full mt-10"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -327,9 +321,6 @@ exports[`PluginGrid should render pagination 1`] = `
   <div
     data-testid="PluginGrid"
   >
-    <div
-      class="grid grid-cols-3 gap-5 undefined"
-    />
     <div
       class="grid grid-cols-3 gap-5 undefined"
     >
@@ -384,7 +375,7 @@ exports[`PluginGrid should render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -481,7 +472,7 @@ exports[`PluginGrid should render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -578,7 +569,7 @@ exports[`PluginGrid should render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -675,7 +666,7 @@ exports[`PluginGrid should render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -788,7 +779,7 @@ exports[`PluginGrid should render skeletons 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
             >
               <span>
                 <span
@@ -889,7 +880,7 @@ exports[`PluginGrid should render skeletons 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
             >
               <span>
                 <span
@@ -990,310 +981,7 @@ exports[`PluginGrid should render skeletons 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
-            >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
-        </div>
-      </div>
-      <div
-        data-testid="PluginCardSkeleton"
-      >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
-          >
-            <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
-            >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
-        </div>
-      </div>
-      <div
-        data-testid="PluginCardSkeleton"
-      >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
-          >
-            <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
-            >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
-              </span>
-            </div>
-            <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
-        </div>
-      </div>
-      <div
-        data-testid="PluginCardSkeleton"
-      >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
-          >
-            <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
             >
               <span>
                 <span
@@ -1384,12 +1072,6 @@ exports[`PluginGrid should render skeletons 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="grid grid-cols-3 gap-5 undefined"
-    />
-    <div
-      class="flex justify-center w-full mt-10"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -1399,9 +1081,6 @@ exports[`PluginGrid should render without pagination 1`] = `
   <div
     data-testid="PluginGrid"
   >
-    <div
-      class="grid grid-cols-3 gap-5 undefined"
-    />
     <div
       class="grid grid-cols-3 gap-5 undefined"
     >
@@ -1456,7 +1135,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -1553,7 +1232,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -1650,7 +1329,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -1708,9 +1387,6 @@ exports[`PluginGrid should split by page 1`] = `
   >
     <div
       class="grid grid-cols-3 gap-5 undefined"
-    />
-    <div
-      class="grid grid-cols-3 gap-5 undefined"
     >
       <div
         data-testid="PluginCard--ark-avatars"
@@ -1763,7 +1439,7 @@ exports[`PluginGrid should split by page 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -1889,9 +1565,6 @@ exports[`PluginGrid shouldn't render pagination 1`] = `
   >
     <div
       class="grid grid-cols-3 gap-5 undefined"
-    />
-    <div
-      class="grid grid-cols-3 gap-5 undefined"
     >
       <div
         data-testid="PluginCard--ark-explorer"
@@ -1944,7 +1617,7 @@ exports[`PluginGrid shouldn't render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -2041,7 +1714,7 @@ exports[`PluginGrid shouldn't render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"
@@ -2138,7 +1811,7 @@ exports[`PluginGrid shouldn't render pagination 1`] = `
                 </span>
               </div>
               <div
-                class="flex items-center space-x-2 mt-4"
+                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ iyevwF"

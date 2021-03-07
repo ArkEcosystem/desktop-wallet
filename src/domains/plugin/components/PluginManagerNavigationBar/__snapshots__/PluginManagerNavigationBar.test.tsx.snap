@@ -25,11 +25,6 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 <span>
                   Home
                 </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                >
-                  0
-                </span>
               </button>
               <div
                 class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -82,11 +77,11 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__theme"
-                title="Theme"
+                data-testid="PluginManagerNavigationBar__exchange"
+                title="Exchange"
               >
                 <span>
-                  Theme
+                  Exchange
                 </span>
                 <span
                   class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -207,11 +202,6 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 <span>
                   Home
                 </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                >
-                  0
-                </span>
               </button>
               <div
                 class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -264,11 +254,11 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__theme"
-                title="Theme"
+                data-testid="PluginManagerNavigationBar__exchange"
+                title="Exchange"
               >
                 <span>
-                  Theme
+                  Exchange
                 </span>
                 <span
                   class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
