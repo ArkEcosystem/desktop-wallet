@@ -225,65 +225,6 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should open and accept advanced mode disclaimer", () => {
-		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(
-			translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("AdvancedMode__accept-button"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-		expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
-	});
-
-	it.each([
-		["close", "modal__close-btn"],
-		["decline", "AdvancedMode__decline-button"],
-	])("should open and %s advanced mode disclaimer", (_, buttonId) => {
-		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(
-			translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId(buttonId));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-		expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
-	});
-
 	it("should not update profile if profile name exists", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
@@ -500,6 +441,73 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).not.toBeChecked());
+	});
+
+	describe("advanced mode", () => {
+		it("should open and accept advanced mode disclaimer", () => {
+			const { getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/settings">
+					<Settings />
+				</Route>,
+				{
+					routes: [`/profiles/${profile.id()}/settings`],
+				},
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("AdvancedMode__accept-button"));
+			});
+
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+		});
+
+		it.each([
+			["close", "modal__close-btn"],
+			["decline", "AdvancedMode__decline-button"],
+		])("should open and %s advanced mode disclaimer", (_, buttonId) => {
+			const { getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/settings">
+					<Settings />
+				</Route>,
+				{
+					routes: [`/profiles/${profile.id()}/settings`],
+				},
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId(buttonId));
+			});
+
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+		});
 	});
 
 	it("should render peer settings", async () => {
