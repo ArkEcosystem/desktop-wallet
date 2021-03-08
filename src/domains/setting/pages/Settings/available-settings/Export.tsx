@@ -63,37 +63,6 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			),
 			wrapperClass: "py-4",
 		},
-		{
-			isFloatingLabel: true,
-			label: t("SETTINGS.EXPORT.ADD_INFORMATION_ABOUT_THE_NETWORK"),
-			labelClass: "text-lg text-theme-secondary-text",
-			labelAddon: (
-				<Toggle
-					ref={register}
-					name="addWalletNetworkInfo"
-					defaultChecked={false}
-					data-testid="Plugin-settings__toggle--add-wallet-network-info"
-				/>
-			),
-			wrapperClass: "py-4",
-		},
-	];
-
-	const generalSettingsOptions = [
-		{
-			isFloatingLabel: true,
-			label: t("SETTINGS.EXPORT.SAVE_GENERAL_CUSTOMIZATIONS"),
-			labelClass: "text-lg text-theme-secondary-text",
-			labelAddon: (
-				<Toggle
-					ref={register}
-					name="saveGeneralCustomizations"
-					defaultChecked={true}
-					data-testid="Plugin-settings__toggle--save-general-customizations"
-				/>
-			),
-			wrapperClass: "py-4",
-		},
 	];
 
 	const exportDataToFile = async () => {
@@ -101,8 +70,6 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			excludeWalletsWithoutName: context.getValues("excludeWalletsWithoutName"),
 			excludeEmptyWallets: context.getValues("excludeEmptyWallets"),
 			excludeLedgerWallets: context.getValues("excludeLedgerWallets"),
-			addWalletNetworkInfo: context.getValues("addWalletNetworkInfo"),
-			saveGeneralCustomizations: context.getValues("saveGeneralCustomizations"),
 		});
 
 		const defaultPath = `${profile.name()}_wallets.json`;
@@ -129,9 +96,6 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			<Form id="export-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
 				<h2 className="mt-8 mb-0">{t("COMMON.WALLETS")}</h2>
 				<ListDivided items={walletExportOptions} />
-
-				<h2 className="mt-8 mb-0">{t("COMMON.SETTINGS")}</h2>
-				<ListDivided items={generalSettingsOptions} />
 
 				<div className="flex justify-end pt-2 w-full space-x-3">
 					<Button data-testid="Export-settings__submit-button" type="submit">
