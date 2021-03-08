@@ -1,4 +1,4 @@
-import { MemoryPassword,Profile } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
 
 interface ProfileExportOptions {
 	excludeWalletsWithoutName: boolean;
