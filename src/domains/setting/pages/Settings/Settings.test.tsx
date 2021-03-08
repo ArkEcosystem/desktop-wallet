@@ -1067,14 +1067,17 @@ describe("Settings", () => {
 	});
 
 	it("should export data", async () => {
-		jest.spyOn(electron.remote.dialog, "showSaveDialog").mockResolvedValue({ filePath: ["/test.txt"] });
+		const exportingProfile = env.profiles().create("Exporting Profile");
+
+		jest.spyOn(electron.remote.dialog, "showSaveDialog").mockResolvedValue({ filePath: ["/test.json"] });
 
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
 			{
-				routes: [`/profiles/${profile.id()}/settings`],
+				withProfileSynchronizer: true,
+				routes: [`/profiles/${exportingProfile.id()}/settings`],
 			},
 		);
 
