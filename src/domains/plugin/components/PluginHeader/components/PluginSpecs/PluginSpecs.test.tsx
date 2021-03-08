@@ -33,14 +33,13 @@ describe("PluginSpecs", () => {
 	});
 
 	it("should render without url and size", async () => {
-		const { asFragment, findByText, findByTestId } = render(
+		const { asFragment, findAllByText, findByText } = render(
 			<PluginSpecs author="ARK Ecosystem" category="Utility" version="1.3.8" isOfficial />,
 		);
 
 		expect(await findByText("ARK Ecosystem")).toBeTruthy();
 		expect(await findByText("Utility")).toBeTruthy();
-		expect(await findByTestId("PluginSpecs__url")).toHaveTextContent("N/A");
-		expect(await findByTestId("PluginSpecs__size")).toHaveTextContent("N/A");
+		expect(await findAllByText("N/A")).toHaveLength(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

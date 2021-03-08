@@ -1,19 +1,30 @@
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Image } from "app/components/Image";
-import cs from "classnames";
+import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { styled } from "twin.macro";
+import { Size } from "types";
+
+import { getStyles } from "./PluginImage.styles";
 
 type Props = {
+	size?: Size;
 	logoURL?: string;
+	isEnabled?: boolean;
 	isUpdating?: boolean;
 	updatingProgress?: number;
 	progressSize?: number;
+	className?: string;
 	showUpdatingLabel?: boolean;
-} & React.HTMLProps<any>;
+};
+
+const PluginImageWrapper = styled.div<Props>(getStyles);
 
 export const PluginImage = ({
+	size,
 	logoURL,
+	isEnabled,
 	isUpdating,
 	updatingProgress,
 	progressSize,
@@ -24,13 +35,7 @@ export const PluginImage = ({
 
 	if (isUpdating) {
 		return (
-			<div
-				data-testid="PluginImage__updating"
-				className={cs(
-					"rounded-lg overflow-hidden bg-theme-success-100 flex flex-col space-y-3 items-center justify-center border border-theme-secondary-300 dark:border-theme-secondary-600",
-					className,
-				)}
-			>
+			<PluginImageWrapper size={size} className={className} data-testid="PluginImage__updating">
 				<CircularProgressBar
 					value={+(updatingProgress! * 100).toFixed(0)}
 					size={progressSize}
@@ -45,29 +50,35 @@ export const PluginImage = ({
 						{t("COMMON.UPDATING")}
 					</p>
 				)}
-			</div>
+			</PluginImageWrapper>
 		);
 	}
 
 	if (!logoURL) {
 		return (
-			<div data-testid="PluginImage__placeholder">
-				<Image name="PluginLogoPlaceholder" domain="plugin" className={className} />
-			</div>
+			<PluginImageWrapper
+				size={size}
+				className={cn(className, { "filter-grayscale": !isEnabled })}
+				data-testid="PluginImage__placeholder"
+			>
+				<Image name="PluginLogoPlaceholder" domain="plugin" />
+			</PluginImageWrapper>
 		);
 	}
 
 	return (
-		<img
+		<PluginImageWrapper
+			size={size}
+			className={cn({ "filter-grayscale": !isEnabled })}
 			data-testid="PluginImage__logo"
-			src={logoURL}
-			alt="Logo"
-			className={cs("overflow-hidden rounded", className)}
-		/>
+		>
+			<img src={logoURL} alt="Logo" className="object-cover w-full h-full" />
+		</PluginImageWrapper>
 	);
 };
 
 PluginImage.defaultProps = {
+	isEnabled: true,
 	progressSize: 40,
 	updatingProgress: 0,
 };

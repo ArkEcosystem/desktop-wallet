@@ -90,7 +90,7 @@ export const News = ({ itemsPerPage }: Props) => {
 
 	return (
 		<Page profile={activeProfile} isBackDisabled={true}>
-			<Section>
+			<Section backgroundColor="--theme-background-color">
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}
 					subtitle={

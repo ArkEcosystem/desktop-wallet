@@ -73,7 +73,7 @@ const ModalContent = (props: ModalContentProps) => {
 		<ModalContainer
 			ref={modalRef}
 			size={props.size}
-			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl ${offsetClass}`}
+			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl ${offsetClass}`}
 			data-testid="modal__inner"
 		>
 			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400">
@@ -95,7 +95,7 @@ const ModalContent = (props: ModalContentProps) => {
 
 						<div className="absolute bottom-0 left-0 mb-10 ml-10">
 							<h2
-								className={`text-5xl font-extrabold leading-tight m-0 ${
+								className={`text-4xl font-extrabold leading-tight m-0 ${
 									props.titleClass || "text-theme-text"
 								}`}
 							>

@@ -78,6 +78,9 @@ describe("useProfileExport", () => {
 		            "wallet": true,
 		            "wallets": true,
 		          },
+		          "Derivation": Object {
+		            "bip39": true,
+		          },
 		          "Fee": Object {
 		            "all": true,
 		          },
@@ -215,6 +218,9 @@ describe("useProfileExport", () => {
 		            "votes": true,
 		            "wallet": true,
 		            "wallets": true,
+		          },
+		          "Derivation": Object {
+		            "bip39": true,
 		          },
 		          "Fee": Object {
 		            "all": true,
@@ -419,6 +425,9 @@ describe("useProfileExport", () => {
 		            "wallet": true,
 		            "wallets": true,
 		          },
+		          "Derivation": Object {
+		            "bip39": true,
+		          },
 		          "Fee": Object {
 		            "all": true,
 		          },
@@ -556,6 +565,9 @@ describe("useProfileExport", () => {
 		            "votes": true,
 		            "wallet": true,
 		            "wallets": true,
+		          },
+		          "Derivation": Object {
+		            "bip39": true,
 		          },
 		          "Fee": Object {
 		            "all": true,

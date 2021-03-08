@@ -10,7 +10,7 @@ exports[`VerifyMessageStatus should render verify message error 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -55,7 +55,7 @@ exports[`VerifyMessageStatus should render verify message error 1`] = `
           <svg
             class="mt-8 w-full"
           >
-            mistake-banner.svg
+            error-banner.svg
           </svg>
         </div>
       </div>
@@ -74,7 +74,7 @@ exports[`VerifyMessageStatus should render verify message success 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -119,7 +119,7 @@ exports[`VerifyMessageStatus should render verify message success 1`] = `
           <svg
             class="mt-8 w-full"
           >
-            confirmed-banner.svg
+            success-banner.svg
           </svg>
         </div>
       </div>

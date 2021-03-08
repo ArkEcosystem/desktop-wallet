@@ -185,179 +185,169 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	return (
 		<>
-			<header data-testid="WalletHeader">
-				<div className="py-8 border-b bg-theme-secondary-900 border-theme-secondary-900 dark:border-theme-secondary-800">
-					<div className="container flex items-center px-14 mx-auto">
-						<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800">
-							<div className="flex -space-x-1">
-								<NetworkIcon
-									coin={wallet.coinId()}
-									network={wallet.networkId()}
-									size="lg"
-									className="border-theme-secondary-700 text-theme-secondary-text"
-									noShadow
-								/>
-								<Avatar
-									size="lg"
-									address={wallet.address()}
-									shadowColor="--theme-color-secondary-900"
-								/>
-							</div>
+			<header className="flex items-center" data-testid="WalletHeader">
+				<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800">
+					<div className="flex -space-x-1">
+						<NetworkIcon
+							coin={wallet.coinId()}
+							network={wallet.networkId()}
+							size="lg"
+							className="border-theme-secondary-700 text-theme-secondary-text"
+							noShadow
+						/>
+						<Avatar size="lg" address={wallet.address()} shadowColor="--theme-color-secondary-900" />
+					</div>
 
-							<div className="flex overflow-hidden flex-col">
-								<div className="flex items-center space-x-5 text-theme-secondary-text">
-									{wallet.alias() && (
-										<span data-testid="WalletHeader__name" className="text-sm font-semibold">
-											{wallet.alias()}
-										</span>
-									)}
+					<div className="flex overflow-hidden flex-col">
+						<div className="flex items-center space-x-5 text-theme-secondary-text">
+							{wallet.alias() && (
+								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
+									{wallet.alias()}
+								</span>
+							)}
 
-									<div className="flex items-center space-x-3">
-										{wallet.isLedger() && (
-											<Tooltip content={t("COMMON.LEDGER")}>
-												<span data-testid="WalletHeader__ledger">
-													<Icon
-														name="Ledger"
-														className="hover:text-theme-secondary-500"
-														width={16}
-														height={16}
-													/>
-												</span>
-											</Tooltip>
-										)}
-
-										{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
-											<Tooltip content={t("COMMON.MULTISIGNATURE")}>
-												<span data-testid="WalletHeader__multisig">
-													<Icon
-														name="Multisig"
-														className="hover:text-theme-secondary-500"
-														width={20}
-														height={20}
-													/>
-												</span>
-											</Tooltip>
-										)}
-									</div>
-								</div>
-
-								<div className="flex items-center space-x-5">
-									<span className="text-lg font-semibold text-white truncate">
-										{wallet.address()}
-									</span>
-
-									<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
-										<Clipboard
-											data={wallet.address()}
-											tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}
-										>
+							<div className="flex items-center space-x-3">
+								{wallet.isLedger() && (
+									<Tooltip content={t("COMMON.LEDGER")}>
+										<span data-testid="WalletHeader__ledger">
 											<Icon
-												name="CopyAddress"
+												name="Ledger"
 												className="hover:text-theme-secondary-500"
-												width={13}
-												height={21}
+												width={16}
+												height={16}
 											/>
-										</Clipboard>
-
-										<Clipboard
-											data={wallet.publicKey()}
-											tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_PUBLIC_KEY")}
-										>
-											<Icon
-												name="CopyKey"
-												className="hover:text-theme-secondary-500"
-												width={17}
-												height={21}
-											/>
-										</Clipboard>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div className="flex items-center w-1/2 pl-12 space-x-2 h-13">
-							<div className="flex flex-col mr-auto">
-								<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
-									<span>{t("COMMON.BALANCE")}:</span>
-
-									{wallet.convertedBalance() && (
-										<Amount
-											value={wallet.convertedBalance()}
-											ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency)!}
-											data-testid="WalletHeader__currency-balance"
-											className="ml-1"
-											normalize={false}
-										/>
-									)}
-
-									{!!currencyDelta && (
-										<span
-											className={`inline-flex items-center ml-2 ${
-												currencyDelta > 0 ? "text-theme-success-600" : "text-theme-danger-500"
-											}`}
-										>
-											<Icon
-												name="ChevronUp"
-												className={currencyDelta < 0 ? "rotate-180" : ""}
-												width={10}
-											/>
-											<span className="ml-1">{currencyDelta}%</span>
-										</span>
-									)}
-								</div>
-
-								<Amount
-									value={wallet.balance()}
-									ticker={wallet.currency()}
-									data-testid="WalletHeader__balance"
-									className="text-lg font-semibold text-white"
-								/>
-							</div>
-
-							<div className="my-auto">
-								<Button
-									size="icon"
-									variant="transparent"
-									className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
-									data-testid="WalletHeader__star-button"
-									onClick={handleStar}
-								>
-									<Tooltip
-										content={
-											wallet.isStarred()
-												? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
-												: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
-										}
-									>
-										<span className={wallet.isStarred() ? "text-theme-warning-400" : ""}>
-											<Icon name={wallet.isStarred() ? "Star" : "StarOutline"} />
 										</span>
 									</Tooltip>
-								</Button>
-							</div>
+								)}
 
-							<Button
-								data-testid="WalletHeader__send-button"
-								disabled={wallet.balance().isZero()}
-								className="my-auto"
-								onClick={onSend}
-							>
-								{t("COMMON.SEND")}
-							</Button>
-
-							<div data-testid="WalletHeader__more-button" className="my-auto">
-								<Dropdown
-									toggleContent={
-										<Button variant="secondary" size="icon" className="text-left">
-											<Icon name="Settings" width={20} height={20} />
-										</Button>
-									}
-									onSelect={handleSelect}
-									options={[primaryOptions, registrationOptions, additionalOptions, secondaryOptions]}
-									dropdownClass="top-5 right-3 text-left"
-								/>
+								{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+									<Tooltip content={t("COMMON.MULTISIGNATURE")}>
+										<span data-testid="WalletHeader__multisig">
+											<Icon
+												name="Multisig"
+												className="hover:text-theme-secondary-500"
+												width={20}
+												height={20}
+											/>
+										</span>
+									</Tooltip>
+								)}
 							</div>
 						</div>
+
+						<div className="flex items-center space-x-5">
+							<span className="text-lg font-semibold text-white truncate">{wallet.address()}</span>
+
+							<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
+								<Clipboard
+									data={wallet.address()}
+									tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}
+								>
+									<Icon
+										name="CopyAddress"
+										className="hover:text-theme-secondary-500"
+										width={13}
+										height={21}
+									/>
+								</Clipboard>
+
+								<Clipboard
+									data={wallet.publicKey()}
+									tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_PUBLIC_KEY")}
+								>
+									<Icon
+										name="CopyKey"
+										className="hover:text-theme-secondary-500"
+										width={17}
+										height={21}
+									/>
+								</Clipboard>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div className="flex items-center w-1/2 pl-12 space-x-2 h-13">
+					<div className="flex flex-col mr-auto">
+						<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
+							<span>{t("COMMON.BALANCE")}:</span>
+
+							{wallet.convertedBalance() && (
+								<Amount
+									value={wallet.convertedBalance()}
+									ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency)!}
+									data-testid="WalletHeader__currency-balance"
+									className="ml-1"
+									normalize={false}
+								/>
+							)}
+
+							{!!currencyDelta && (
+								<span
+									className={`inline-flex items-center ml-2 ${
+										currencyDelta > 0 ? "text-theme-success-600" : "text-theme-danger-500"
+									}`}
+								>
+									<Icon
+										name="ChevronUp"
+										className={currencyDelta < 0 ? "rotate-180" : ""}
+										width={10}
+									/>
+									<span className="ml-1">{currencyDelta}%</span>
+								</span>
+							)}
+						</div>
+
+						<Amount
+							value={wallet.balance()}
+							ticker={wallet.currency()}
+							data-testid="WalletHeader__balance"
+							className="text-lg font-semibold text-white"
+						/>
+					</div>
+
+					<div className="my-auto">
+						<Button
+							size="icon"
+							variant="transparent"
+							className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+							data-testid="WalletHeader__star-button"
+							onClick={handleStar}
+						>
+							<Tooltip
+								content={
+									wallet.isStarred()
+										? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
+										: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
+								}
+							>
+								<span className={wallet.isStarred() ? "text-theme-warning-400" : ""}>
+									<Icon name={wallet.isStarred() ? "Star" : "StarOutline"} />
+								</span>
+							</Tooltip>
+						</Button>
+					</div>
+
+					<Button
+						data-testid="WalletHeader__send-button"
+						disabled={wallet.balance().isZero()}
+						className="my-auto"
+						onClick={onSend}
+					>
+						{t("COMMON.SEND")}
+					</Button>
+
+					<div data-testid="WalletHeader__more-button" className="my-auto">
+						<Dropdown
+							toggleContent={
+								<Button variant="secondary" size="icon" className="text-left">
+									<Icon name="Settings" width={20} height={20} />
+								</Button>
+							}
+							onSelect={handleSelect}
+							options={[primaryOptions, registrationOptions, additionalOptions, secondaryOptions]}
+							dropdownClass="top-5 right-3 text-left"
+						/>
 					</div>
 				</div>
 			</header>

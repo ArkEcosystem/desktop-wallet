@@ -4,7 +4,7 @@ import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useEnvironmentContext } from "app/contexts";
+import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
@@ -34,6 +34,7 @@ export const SendIpfs = () => {
 
 	const form = useForm({ mode: "onChange" });
 
+	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
@@ -86,8 +87,8 @@ export const SendIpfs = () => {
 		try {
 			const abortSignal = abortRef.current?.signal;
 
-			const transaction = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
-			await transactionBuilder.broadcast(transaction.id(), transactionInput);
+			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
+			await transactionBuilder.broadcast(uuid, transactionInput);
 
 			await env.persist();
 
@@ -106,6 +107,11 @@ export const SendIpfs = () => {
 	const handleBack = () => {
 		// Abort any existing listener
 		abortRef.current.abort();
+
+		if (activeTab === 1) {
+			return history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -151,6 +157,8 @@ export const SendIpfs = () => {
 								<AuthenticationStep
 									wallet={activeWallet}
 									ledgerDetails={<IpfsLedgerReview wallet={activeWallet} />}
+									ledgerIsAwaitingDevice={!hasDeviceAvailable}
+									ledgerIsAwaitingApp={hasDeviceAvailable && !isConnected}
 								/>
 							</TabPanel>
 							<TabPanel tabId={4}>
@@ -173,7 +181,7 @@ export const SendIpfs = () => {
 										{activeTab < 3 && (
 											<>
 												<Button
-													disabled={activeTab === 1}
+													disabled={isSubmitting}
 													data-testid="SendIpfs__button--back"
 													variant="secondary"
 													onClick={handleBack}

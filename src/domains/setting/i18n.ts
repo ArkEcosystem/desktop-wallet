@@ -47,13 +47,13 @@ export const translations: { [key: string]: any } = {
 				TITLE: "Development Networks",
 				DESCRIPTION: "When enabled, allows application to add development and test networks.",
 			},
-			UPDATE_LEDGER: {
-				TITLE: "Update Ledger in Background",
-				DESCRIPTION: "Allows Ledger wallets to automatically update and sync data in the background.",
-			},
 			ERROR_REPORTING: {
 				TITLE: "Error Reporting",
 				DESCRIPTION: "Automatically send reports to help to improve our products.",
+			},
+			TRANSACTION_HISTORY: {
+				TITLE: "Portfolio Transaction History",
+				DESCRIPTION: "Enables transaction history on Portfolio page",
 			},
 		},
 		SUCCESS: "Your profile settings have been updated",

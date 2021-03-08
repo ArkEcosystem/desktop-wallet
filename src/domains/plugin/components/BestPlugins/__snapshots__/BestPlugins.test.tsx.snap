@@ -12,7 +12,7 @@ exports[`BestPlugins should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dWPpQp absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dWPpQp absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -41,24 +41,11 @@ exports[`BestPlugins should render a modal 1`] = `
       <div
         class="relative"
       >
-        <div
-          class="relative -mx-10 mb-10 -mt-10 h-56"
+        <h2
+          class="mb-0 text-3xl font-bold"
         >
-          <svg
-            class="h-full"
-          >
-            best-plugins-banner.svg
-          </svg>
-          <div
-            class="absolute bottom-0 left-0 mb-10 ml-10"
-          >
-            <h2
-              class="text-5xl font-extrabold leading-tight m-0 text-theme-text"
-            >
-              Best Applications of the Month
-            </h2>
-          </div>
-        </div>
+          Best Applications of the Month
+        </h2>
         <div
           class="flex-1"
         >
