@@ -252,7 +252,7 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.ENABLE));
 
 		await waitFor(() => expect(plugin.isEnabled(profile)).toBe(true));
 
@@ -290,7 +290,7 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--1"));
+		fireEvent.click(screen.getByText(commonTranslations.DISABLE));
 
 		await waitFor(() => expect(plugin.isEnabled(profile)).toBe(false));
 		manager.plugins().removeById(plugin.config().id(), profile);
@@ -326,7 +326,7 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+		fireEvent.click(screen.getByText(commonTranslations.DELETE));
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
 		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
@@ -367,7 +367,7 @@ describe("PluginDetails", () => {
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
-		fireEvent.click(screen.getByTestId("dropdown__option--0"));
+		fireEvent.click(screen.getByText(commonTranslations.DELETE));
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
 		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));

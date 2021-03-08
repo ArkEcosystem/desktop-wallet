@@ -239,7 +239,7 @@ export const Votes = () => {
 
 	return (
 		<Page profile={activeProfile}>
-			<Section>
+			<Section border>
 				<Header
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
@@ -263,7 +263,7 @@ export const Votes = () => {
 										}
 									>
 										<div className="py-7 px-10 w-128">
-											<FilterWallets {...filterProperties} showToggleViews={false} />
+											<FilterWallets {...filterProperties} />
 										</div>
 									</Dropdown>
 								</div>
@@ -280,7 +280,7 @@ export const Votes = () => {
 			</Section>
 
 			{isEmptyObject(walletsByCoin) ? (
-				<Section className="flex-1">
+				<Section>
 					<EmptyBlock>
 						<div className="flex justify-between items-center">
 							<Trans
@@ -319,7 +319,7 @@ export const Votes = () => {
 				</Section>
 			) : !selectedAddress ? (
 				isEmptyWalletsByCoin ? (
-					<Section className="flex-1">
+					<Section>
 						<EmptyResults
 							className="mt-16"
 							title={t("COMMON.EMPTY_RESULTS.TITLE")}
@@ -330,7 +330,7 @@ export const Votes = () => {
 					Object.keys(filteredWalletsByCoin).map(
 						(coin, index) =>
 							filteredWalletsByCoin[coin].length > 0 && (
-								<Section className="flex-1" key={index}>
+								<Section key={index}>
 									<AddressTable
 										wallets={filteredWalletsByCoin[coin]}
 										onSelect={handleSelectAddress}
@@ -340,7 +340,7 @@ export const Votes = () => {
 					)
 				)
 			) : (
-				<Section className="flex-1">
+				<Section>
 					<DelegateTable
 						delegates={filteredDelegates}
 						emptyText={t("VOTE.DELEGATE_TABLE.DELEGATES_NOT_FOUND")}

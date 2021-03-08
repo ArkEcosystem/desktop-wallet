@@ -1,20 +1,12 @@
 import { Dropdown } from "app/components/Dropdown";
 import { FilterNetworks } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
-import { Toggle } from "app/components/Toggle";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { FilterWalletsProps } from "./";
 
-export const FilterWallets = ({
-	networks,
-	walletsDisplayType,
-	showTransactions,
-	useTestNetworks,
-	showToggleViews,
-	onChange,
-}: FilterWalletsProps) => {
+export const FilterWallets = ({ networks, walletsDisplayType, useTestNetworks, onChange }: FilterWalletsProps) => {
 	const { t } = useTranslation();
 
 	const walletDisplayOptions = [
@@ -80,34 +72,6 @@ export const FilterWallets = ({
 					{t("DASHBOARD.FILTER_WALLETS.WALLETS.DESCRIPTION")}
 				</div>
 			</div>
-
-			{showToggleViews && (
-				<>
-					<div className="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800" />
-
-					<div className="flex flex-col">
-						<div className="flex justify-between items-center">
-							<div className="font-semibold text-theme-secondary-text">
-								{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.TITLE")}
-							</div>
-
-							<Toggle
-								checked={showTransactions}
-								data-testid="filter-wallets_toggle--transactions"
-								onChange={(event) => onChange?.("showTransactions", event.target.checked)}
-							/>
-						</div>
-
-						<div className="pr-12 mt-1 text-sm text-theme-secondary-500">
-							{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.DESCRIPTION")}
-						</div>
-					</div>
-				</>
-			)}
 		</div>
 	);
-};
-
-FilterWallets.defaultProps = {
-	showToggleViews: true,
 };

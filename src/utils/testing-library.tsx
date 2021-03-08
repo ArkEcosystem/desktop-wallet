@@ -1,5 +1,7 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+// @ts-ignore
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { render } from "@testing-library/react";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { useProfileSynchronizer } from "app/hooks/use-profile-synchronizer";
@@ -28,7 +30,7 @@ const ProfileSynchronizer = ({ children }: { children?: React.ReactNode }) => {
 	return <>{children}</>;
 };
 
-const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
+export const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
 		<EnvironmentProvider env={env}>
 			<ConfigurationProvider>{children}</ConfigurationProvider>
@@ -75,6 +77,7 @@ export { customRender as render, renderWithRouter };
 export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
 export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.profiles)[0].wallets)[0];
 export const getDefaultWalletMnemonic = () => "master dizzy era math peanut crew run manage better flame tree prevent";
+export const getDefaultLedgerTransport = () => createTransportReplayer(RecordStore.fromString(""));
 
 const pluginNames: string[] = ["@dated/transaction-export-plugin", "@dated/delegate-calculator-plugin"];
 

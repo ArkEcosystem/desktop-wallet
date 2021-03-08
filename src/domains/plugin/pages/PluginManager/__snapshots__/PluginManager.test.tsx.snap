@@ -275,17 +275,19 @@ exports[`PluginManager should cancel install plugin 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -334,7 +336,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -513,10 +515,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--home"
@@ -753,11 +755,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                               >
                                 <div
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
                                   data-testid="PluginImage__placeholder"
                                 >
-                                  <svg
-                                    class="min-w-15 w-15 h-15"
-                                  >
+                                  <svg>
                                     plugin-logo-placeholder.svg
                                   </svg>
                                 </div>
@@ -1187,11 +1188,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                               >
                                 <div
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
                                   data-testid="PluginImage__placeholder"
                                 >
-                                  <svg
-                                    class="min-w-15 w-15 h-15"
-                                  >
+                                  <svg>
                                     plugin-logo-placeholder.svg
                                   </svg>
                                 </div>
@@ -1620,11 +1620,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                               >
                                 <div
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
                                   data-testid="PluginImage__placeholder"
                                 >
-                                  <svg
-                                    class="min-w-15 w-15 h-15"
-                                  >
+                                  <svg>
                                     plugin-logo-placeholder.svg
                                   </svg>
                                 </div>
@@ -2111,17 +2110,19 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -2170,7 +2171,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -2355,10 +2356,10 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--my-plugins"
@@ -2583,11 +2584,10 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
+                                class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
                                 data-testid="PluginImage__placeholder"
                               >
-                                <svg
-                                  class="min-w-15 w-15 h-15"
-                                >
+                                <svg>
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -2994,17 +2994,19 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -3053,7 +3055,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -3238,10 +3240,10 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--my-plugins"
@@ -3466,11 +3468,10 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
+                                class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
                                 data-testid="PluginImage__placeholder"
                               >
-                                <svg
-                                  class="min-w-15 w-15 h-15"
-                                >
+                                <svg>
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
@@ -3877,17 +3878,19 @@ exports[`PluginManager should handle update all 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -3936,7 +3939,7 @@ exports[`PluginManager should handle update all 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -4127,10 +4130,10 @@ exports[`PluginManager should handle update all 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--my-plugins"
@@ -5600,11 +5603,10 @@ exports[`PluginManager should render 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -5702,11 +5704,10 @@ exports[`PluginManager should render 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -5770,11 +5771,10 @@ exports[`PluginManager should render 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -6118,17 +6118,19 @@ exports[`PluginManager should search for plugin 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -6193,7 +6195,7 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -6372,10 +6374,10 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--home"
@@ -6424,11 +6426,10 @@ exports[`PluginManager should search for plugin 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -6595,11 +6596,10 @@ exports[`PluginManager should search for plugin 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -6833,11 +6833,10 @@ exports[`PluginManager should search for plugin 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -7181,17 +7180,19 @@ exports[`PluginManager should search for plugin 2`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -7256,7 +7257,7 @@ exports[`PluginManager should search for plugin 2`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -7435,10 +7436,10 @@ exports[`PluginManager should search for plugin 2`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--home"
@@ -7833,17 +7834,19 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -7892,7 +7895,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -8071,10 +8074,10 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--gaming"
@@ -8386,17 +8389,19 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -8445,7 +8450,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -8624,10 +8629,10 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--home"
@@ -8676,11 +8681,10 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -8847,11 +8851,10 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -9017,11 +9020,10 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
-                              <svg
-                                class="mb-4 mr-4 w-20 h-20"
-                              >
+                              <svg>
                                 plugin-logo-placeholder.svg
                               </svg>
                             </div>
@@ -9433,17 +9435,19 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
             >
-              <div>
+              <div
+                class="space-y-4"
+              >
                 <h1
-                  class="mb-0 md:text-4xl"
+                  class="mb-0 text-4xl"
                   data-testid="header__title"
                 >
                   Plugin Manager
@@ -9492,7 +9496,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -9683,10 +9687,10 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
           </div>
         </nav>
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 iWOAFi"
+          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
-            class="container py-16 px-14 mx-auto "
+            class="container px-10 mx-auto"
           >
             <div
               data-testid="PluginManager__container--my-plugins"
@@ -9934,11 +9938,10 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
+                                class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
                                 data-testid="PluginImage__placeholder"
                               >
-                                <svg
-                                  class="min-w-15 w-15 h-15"
-                                >
+                                <svg>
                                   plugin-logo-placeholder.svg
                                 </svg>
                               </div>
