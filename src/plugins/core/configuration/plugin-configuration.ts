@@ -99,6 +99,10 @@ export class PluginConfigurationData {
 		return this.categories().includes(categoryName);
 	}
 
+	date() {
+		return this.get("date");
+	}
+
 	description() {
 		return this.get("description");
 	}
@@ -204,6 +208,7 @@ export class PluginConfigurationData {
 			logo: this.logo(),
 			size: this.size(),
 			homepage: this.homepage(),
+			date: this.date(),
 			description: this.description(),
 			isOfficial: this.isOfficial(),
 			minimumVersion: this.minimumVersion(),

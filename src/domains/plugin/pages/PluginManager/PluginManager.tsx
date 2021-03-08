@@ -1,4 +1,6 @@
+import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
@@ -89,7 +91,7 @@ const PluginManagerHome = ({
 					plugins.push(...new Array(3 - plugins.length).fill(undefined));
 				}
 
-				plugins = plugins.slice(0, 3);
+				plugins = sortByDesc(plugins, (plugin: any) => DateTime.make(plugin.date).toUNIX()).slice(0, 3);
 
 				return plugins.length ? (
 					<Section key={category}>
