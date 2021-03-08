@@ -177,6 +177,33 @@ const PluginManagerHome = ({
 	);
 };
 
+const UpdateAllBanner = ({
+	hasUpdateAvailableCount,
+	isUpdatingAll,
+	handleUpdateAll,
+}: {
+	hasUpdateAvailableCount: number;
+	isUpdatingAll: boolean;
+	handleUpdateAll: () => void;
+}) => {
+	const { t } = useTranslation();
+
+	if (hasUpdateAvailableCount === 0) {
+		return null;
+	}
+
+	return (
+		<EmptyBlock size="sm" className="mt-4">
+			<div className="flex items-center w-full justify-between">
+				{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
+				<Button disabled={isUpdatingAll} data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
+					{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
+				</Button>
+			</div>
+		</EmptyBlock>
+	);
+};
+
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
 	const {
@@ -327,6 +354,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					onSelectGridView={() => setViewType("grid")}
 					onSelectListView={() => setViewType("list")}
 					installedPluginsCount={installedPlugins.length}
+					hasUpdatesAvailable={hasUpdateAvailableCount > 0}
 				/>
 
 				<Section>
@@ -353,6 +381,13 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								<h2 className="font-bold">
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
+
+								<UpdateAllBanner
+									hasUpdateAvailableCount={hasUpdateAvailableCount}
+									isUpdatingAll={isUpdatingAll}
+									handleUpdateAll={handleUpdateAll}
+								/>
+
 								<PluginGrid
 									plugins={installedPlugins}
 									onSelect={handleSelectPlugin}
@@ -374,20 +409,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
 
-								{hasUpdateAvailableCount > 0 && (
-									<EmptyBlock size="sm" className="mt-4">
-										<div className="flex items-center w-full justify-between">
-											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-											<Button
-												disabled={isUpdatingAll}
-												data-testid="PluginManager__update-all"
-												onClick={handleUpdateAll}
-											>
-												{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
-											</Button>
-										</div>
-									</EmptyBlock>
-								)}
+								<UpdateAllBanner
+									hasUpdateAvailableCount={hasUpdateAvailableCount}
+									isUpdatingAll={isUpdatingAll}
+									handleUpdateAll={handleUpdateAll}
+								/>
 
 								<PluginList
 									plugins={installedPlugins}

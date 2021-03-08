@@ -1,4 +1,6 @@
+import { Badge } from "app/components/Badge";
 import { LayoutControls } from "app/components/LayoutControls";
+import { Tooltip } from "app/components/Tooltip";
 import { usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -14,6 +16,7 @@ type PluginManagerNavigationBar = {
 	selected: any;
 	onChange?: any;
 	installedPluginsCount?: number;
+	hasUpdatesAvailable?: boolean;
 };
 
 const NavWrapper = styled.nav`
@@ -28,6 +31,7 @@ export const PluginManagerNavigationBar = ({
 	onSelectListView,
 	selectedViewType,
 	installedPluginsCount,
+	hasUpdatesAvailable,
 }: PluginManagerNavigationBar) => {
 	const { t } = useTranslation();
 	const { allPlugins } = usePluginManagerContext();
@@ -74,24 +78,36 @@ export const PluginManagerNavigationBar = ({
 				</div>
 
 				<div className="flex h-18">
-					<button
-						data-testid="PluginManagerNavigationBar__my-plugins"
-						onClick={() => onChange("my-plugins")}
-						title="My Plugins"
-						className={`PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
-							selected === "my-plugins" ? "active" : ""
-						}`}
-					>
-						<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
-						{installedPluginsCount ? (
-							<span
-								data-testid="PluginManagerNavigationBar__my-plugins__count"
-								className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-							>
-								{installedPluginsCount}
-							</span>
-						) : null}
-					</button>
+					<div className="relative">
+						<button
+							data-testid="PluginManagerNavigationBar__my-plugins"
+							onClick={() => onChange("my-plugins")}
+							title="My Plugins"
+							className={`PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
+								selected === "my-plugins" ? "active" : ""
+							}`}
+						>
+							<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
+							{installedPluginsCount ? (
+								<span
+									data-testid="PluginManagerNavigationBar__my-plugins__count"
+									className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+								>
+									{installedPluginsCount}
+								</span>
+							) : null}
+							{hasUpdatesAvailable ? (
+								<Tooltip content={t("PLUGINS.NEW_UPDATES_AVAILABLE")}>
+									<Badge
+										data-testid="PluginManagerNavigationBar_update-badge"
+										size="sm"
+										className="bg-theme-danger-500"
+										position="right"
+									/>
+								</Tooltip>
+							) : null}
+						</button>
+					</div>
 
 					<div className="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 

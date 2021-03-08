@@ -451,15 +451,19 @@ exports[`PluginManager should cancel install plugin 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -2283,21 +2287,25 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  1
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    1
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -3162,21 +3170,25 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  1
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    1
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -4041,21 +4053,31 @@ exports[`PluginManager should handle update all 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  3
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    3
+                  </span>
+                  <span
+                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
+                    data-testid="PluginManagerNavigationBar_update-badge"
+                  >
+                    <span />
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -5225,15 +5247,19 @@ exports[`PluginManager should render 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -6284,15 +6310,19 @@ exports[`PluginManager should search for plugin 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -7343,15 +7373,19 @@ exports[`PluginManager should search for plugin 2`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -7975,15 +8009,19 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -8524,15 +8562,19 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -9567,21 +9609,31 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  1
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    1
+                  </span>
+                  <span
+                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
+                    data-testid="PluginManagerNavigationBar_update-badge"
+                  >
+                    <span />
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -9658,7 +9710,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     <div
                       class="flex items-center w-full justify-between"
                     >
-                      There are 1 updates available for your plugins. Would you like to update them all now?
+                      There is 1 update available for your plugins. Would you like to update it?
                       <button
                         class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                         data-testid="PluginManager__update-all"

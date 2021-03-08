@@ -1,6 +1,10 @@
 export const translations: { [key: string]: any } = {
+	NEW_UPDATES_AVAILABLE: "New updates available",
 	NEW_VERSION_AVAILABLE: "New version available",
-	UPDATE_ALL_NOTICE: "There are {{count}} updates available for your plugins. Would you like to update them all now?",
+
+	UPDATE_ALL_NOTICE: "There is {{count}} update available for your plugins. Would you like to update it?",
+	UPDATE_ALL_NOTICE_plural:
+		"There are {{count}} updates available for your plugins. Would you like to update them all now?",
 	UPDATE_ALL: "Update All",
 
 	MINIMUM_VERSION_NOT_SATISFIED:
