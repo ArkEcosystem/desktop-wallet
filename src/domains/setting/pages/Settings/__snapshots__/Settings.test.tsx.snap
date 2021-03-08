@@ -676,7 +676,7 @@ exports[`Settings should export data 1`] = `
             >
               <a
                 class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                href="/profiles/353ab91d-651f-45e8-9b5d-e61cdca38fa6/dashboard"
                 title="Portfolio"
               >
                 Portfolio
@@ -687,7 +687,7 @@ exports[`Settings should export data 1`] = `
             >
               <a
                 class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                href="/profiles/353ab91d-651f-45e8-9b5d-e61cdca38fa6/plugins"
                 title="Plugins"
               >
                 Plugins
@@ -698,7 +698,7 @@ exports[`Settings should export data 1`] = `
             >
               <a
                 class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                href="/profiles/353ab91d-651f-45e8-9b5d-e61cdca38fa6/exchange"
                 title="Exchange"
               >
                 Exchange
@@ -709,7 +709,7 @@ exports[`Settings should export data 1`] = `
             >
               <a
                 class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                href="/profiles/353ab91d-651f-45e8-9b5d-e61cdca38fa6/news"
                 title="News"
               >
                 News
@@ -745,13 +745,6 @@ exports[`Settings should export data 1`] = `
                           <svg>
                             notification.svg
                           </svg>
-                        </div>
-                        <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
-                        >
-                          <div
-                            class="w-2 h-2 rounded-full bg-theme-danger-500"
-                          />
                         </div>
                       </div>
                     </button>
@@ -881,12 +874,12 @@ exports[`Settings should export data 1`] = `
                     >
                       <img
                         alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"45\\" cx=\\"90\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                       />
                       <span
                         class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        TE
+                        EX
                       </span>
                     </div>
                   </div>
@@ -1213,103 +1206,6 @@ exports[`Settings should export data 1`] = `
                                   class="Toggle__Input-qyyifx-0 WGuGL"
                                   data-testid="Plugin-settings__toggle--exclude-ledger-wallets"
                                   name="excludeLedgerWallets"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="Toggle__Handle-qyyifx-1 geejDn"
-                                >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                                  />
-                                </div>
-                              </label>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="flex flex-col w-full py-4"
-                      data-testid="list-divided-item__wrapper"
-                    >
-                      <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
-                      >
-                        <div
-                          class="flex flex-col space-y-2 w-full"
-                        >
-                          <div
-                            class="flex justify-between items-center space-x-5"
-                          >
-                            <span
-                              class="text-lg text-theme-secondary-text"
-                              data-testid="list-divided-item__label"
-                            >
-                              Add information about the network
-                            </span>
-                            <span>
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="Toggle__Input-qyyifx-0 WGuGL"
-                                  data-testid="Plugin-settings__toggle--add-wallet-network-info"
-                                  name="addWalletNetworkInfo"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="Toggle__Handle-qyyifx-1 geejDn"
-                                >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                                  />
-                                </div>
-                              </label>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <h2
-                    class="mt-8 mb-0"
-                  >
-                    Settings
-                  </h2>
-                  <ul
-                    class="sc-dlfnbm cOiGXi"
-                    data-testid="list-divided__items"
-                  >
-                    <li
-                      class="flex flex-col w-full py-4"
-                      data-testid="list-divided-item__wrapper"
-                    >
-                      <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
-                      >
-                        <div
-                          class="flex flex-col space-y-2 w-full"
-                        >
-                          <div
-                            class="flex justify-between items-center space-x-5"
-                          >
-                            <span
-                              class="text-lg text-theme-secondary-text"
-                              data-testid="list-divided-item__label"
-                            >
-                              Save general settings customizations
-                            </span>
-                            <span>
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  checked=""
-                                  class="Toggle__Input-qyyifx-0 WGuGL"
-                                  data-testid="Plugin-settings__toggle--save-general-customizations"
-                                  name="saveGeneralCustomizations"
                                   type="checkbox"
                                 />
                                 <div
@@ -4880,103 +4776,6 @@ exports[`Settings should render export settings 1`] = `
                                   class="Toggle__Input-qyyifx-0 WGuGL"
                                   data-testid="Plugin-settings__toggle--exclude-ledger-wallets"
                                   name="excludeLedgerWallets"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="Toggle__Handle-qyyifx-1 geejDn"
-                                >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                                  />
-                                </div>
-                              </label>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="flex flex-col w-full py-4"
-                      data-testid="list-divided-item__wrapper"
-                    >
-                      <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
-                      >
-                        <div
-                          class="flex flex-col space-y-2 w-full"
-                        >
-                          <div
-                            class="flex justify-between items-center space-x-5"
-                          >
-                            <span
-                              class="text-lg text-theme-secondary-text"
-                              data-testid="list-divided-item__label"
-                            >
-                              Add information about the network
-                            </span>
-                            <span>
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  class="Toggle__Input-qyyifx-0 WGuGL"
-                                  data-testid="Plugin-settings__toggle--add-wallet-network-info"
-                                  name="addWalletNetworkInfo"
-                                  type="checkbox"
-                                />
-                                <div
-                                  class="Toggle__Handle-qyyifx-1 geejDn"
-                                >
-                                  <span
-                                    class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                                  />
-                                </div>
-                              </label>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <h2
-                    class="mt-8 mb-0"
-                  >
-                    Settings
-                  </h2>
-                  <ul
-                    class="sc-dlfnbm cOiGXi"
-                    data-testid="list-divided__items"
-                  >
-                    <li
-                      class="flex flex-col w-full py-4"
-                      data-testid="list-divided-item__wrapper"
-                    >
-                      <div
-                        class="flex justify-between flex-col items-start"
-                        data-testid="list-divided-item__inner-wrapper"
-                      >
-                        <div
-                          class="flex flex-col space-y-2 w-full"
-                        >
-                          <div
-                            class="flex justify-between items-center space-x-5"
-                          >
-                            <span
-                              class="text-lg text-theme-secondary-text"
-                              data-testid="list-divided-item__label"
-                            >
-                              Save general settings customizations
-                            </span>
-                            <span>
-                              <label
-                                class="flex"
-                              >
-                                <input
-                                  checked=""
-                                  class="Toggle__Input-qyyifx-0 WGuGL"
-                                  data-testid="Plugin-settings__toggle--save-general-customizations"
-                                  name="saveGeneralCustomizations"
                                   type="checkbox"
                                 />
                                 <div
