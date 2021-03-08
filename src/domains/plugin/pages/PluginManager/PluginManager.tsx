@@ -153,6 +153,7 @@ export const PluginManager = () => {
 		const result: Record<string, any[]> = {};
 
 		for (const plugin of plugins) {
+			/* istanbul ignore else */
 			if (!result[plugin.category]) {
 				result[plugin.category] = [];
 			}

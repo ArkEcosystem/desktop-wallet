@@ -36,7 +36,7 @@ describe("PluginManager", () => {
 
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
-			.reply(200, require("tests/fixtures/plugins/github/@dated/transaction-export-plugin/package.json"))
+			.reply(200, require("tests/fixtures/plugins/github-response.json"))
 			.persist();
 
 		profile = env.profiles().findById(getDefaultProfileId());
