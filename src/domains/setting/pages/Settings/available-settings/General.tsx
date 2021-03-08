@@ -38,7 +38,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { settings } = useValidation();
 
 	const [avatarImage, setAvatarImage] = useState(
-		activeProfile.settings().get(ProfileSetting.Avatar) || AvatarSDK.make(formattedName),
+		activeProfile.settings().get(ProfileSetting.Avatar) || AvatarSDK.make(formattedName || ""),
 	);
 
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
