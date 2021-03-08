@@ -1069,9 +1069,12 @@ describe("Settings", () => {
 	it("should export data", async () => {
 		const exportingProfile = env.profiles().create("Exporting Profile");
 
-		jest.spyOn(electron.remote.dialog, "showSaveDialog").mockResolvedValue({ filePath: ["/test.json"] });
+		const dialogMock = jest
+			.spyOn(electron.remote.dialog, "showSaveDialog")
+			//@ts-ignore
+			.mockResolvedValue({ filePath: ["/test.dwe"] });
 
-		const { container, asFragment, findByTestId } = renderWithRouter(
+		const { container, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -1090,6 +1093,8 @@ describe("Settings", () => {
 		await act(async () => {
 			fireEvent.click(await findByTestId("Export-settings__submit-button"));
 		});
-		expect(asFragment()).toMatchSnapshot();
+
+		expect(dialogMock).toHaveBeenCalled();
+		dialogMock.mockRestore();
 	});
 });
