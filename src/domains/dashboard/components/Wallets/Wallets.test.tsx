@@ -3,6 +3,7 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as dashboardTranslations } from "domains/dashboard/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
@@ -222,19 +223,31 @@ describe("Wallets", () => {
 			},
 		);
 
-		const dropdown = getByTestId("dropdown__toggle");
 		act(() => {
-			fireEvent.click(dropdown);
+			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
-		await findByTestId("filter-wallets_toggle--transactions");
-
-		const toggle = getByTestId("filter-wallets_toggle--transactions");
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getByTestId("filter-wallets__wallets"));
 		});
 
-		await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toHaveAttribute("checked"));
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--1"));
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("filter-wallets__wallets")).toHaveTextContent(commonTranslations.FAVORITES),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("filter-wallets__wallets"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
+		await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toHaveTextContent(commonTranslations.ALL));
 	});
 
 	it("should open and close ledger import modal", async () => {
