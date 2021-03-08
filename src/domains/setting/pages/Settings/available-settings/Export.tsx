@@ -72,8 +72,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			excludeLedgerWallets: context.getValues("excludeLedgerWallets"),
 		});
 
-		const defaultPath = `${profile.name()}_wallets.json`;
-		const content = JSON.stringify(exportData, null, 2);
+		const defaultPath = `profile-${profile.id()}.dwe`;
 		const { filePath } = await electron.remote.dialog.showSaveDialog({ defaultPath });
 
 		/* istanbul ignore next */
@@ -81,7 +80,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			return;
 		}
 
-		fs.writeFileSync(filePath, content, "utf-8");
+		fs.writeFileSync(filePath, exportData, "utf-8");
 		return onSuccess(t("SETTINGS.EXPORT.SUCCESS"));
 	};
 
