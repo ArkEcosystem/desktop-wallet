@@ -1,47 +1,24 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword,Profile } from "@arkecosystem/platform-sdk-profiles";
 
-type ExportFilters = {
-	excludeWalletsWithoutName?: boolean;
-	excludeEmptyWallets?: boolean;
-	excludeLedgerWallets?: boolean;
-	addWalletNetworkInfo?: boolean;
-	saveGeneralCustomizations?: boolean;
-};
+interface ProfileExportOptions {
+	excludeWalletsWithoutName: boolean;
+	excludeEmptyWallets: boolean;
+	excludeLedgerWallets: boolean;
+}
 
 export const useProfileExport = (profile: Profile) => {
-	const formatExportData = (filters: ExportFilters) => {
-		const wallets = profile
-			.wallets()
-			.values()
-			.filter((wallet: ReadWriteWallet) => {
-				if (filters.excludeLedgerWallets && wallet.isLedger()) {
-					return false;
-				}
+	const formatExportData = (filters: ProfileExportOptions) => {
+		let password;
 
-				if (filters.excludeWalletsWithoutName && !wallet.alias()) {
-					return false;
-				}
+		if (profile.usesPassword()) {
+			password = MemoryPassword.get(profile);
+		}
 
-				if (filters.excludeEmptyWallets && wallet.balance().isZero()) {
-					return false;
-				}
-
-				return true;
-			})
-			.map((wallet) => ({
-				address: wallet.address(),
-				publicKey: wallet.publicKey(),
-				balance: wallet.balance().toHuman(),
-				...(filters.addWalletNetworkInfo && { network: wallet.network().toObject() }),
-			}));
-
-		return {
-			meta: {
-				walletsCount: wallets.length,
-			},
-			...(filters.saveGeneralCustomizations && { settings: profile.settings().all() }),
-			wallets,
-		};
+		return profile.export(password, {
+			...filters,
+			addNetworkInformation: true,
+			saveGeneralSettings: true,
+		});
 	};
 
 	return { formatExportData };
