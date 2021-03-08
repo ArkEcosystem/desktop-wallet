@@ -6,7 +6,6 @@ import { useMemo } from "react";
 
 export const useDashboardConfig = ({ profile, defaults }: { profile: Profile; defaults?: DashboardConfiguration }) => {
 	const defaultConfiguration: DashboardConfiguration = {
-		showTransactions: true,
 		walletsDisplayType: "all",
 		viewType: "grid",
 		selectedNetworkIds: uniq(

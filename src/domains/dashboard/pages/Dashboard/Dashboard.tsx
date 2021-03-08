@@ -1,9 +1,10 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page } from "app/components/Layout";
 import { useConfiguration } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -16,8 +17,13 @@ export const Dashboard = () => {
 
 	const { profileIsSyncing } = useConfiguration();
 
-	const { showTransactions, selectedWallets } = useDashboardConfig({ profile: activeProfile });
+	const { selectedWallets } = useDashboardConfig({ profile: activeProfile });
+
 	const profileWalletsCount = activeProfile.wallets().count();
+	const showTransactions = useMemo(
+		() => activeProfile.settings().get<boolean>(ProfileSetting.DashboardTransactionHistory, true),
+		[activeProfile],
+	);
 
 	return (
 		<>
