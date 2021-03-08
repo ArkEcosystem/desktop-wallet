@@ -1,4 +1,3 @@
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
@@ -85,15 +84,13 @@ const PluginManagerHome = ({
 	return (
 		<>
 			{categories.map((category: string) => {
-				let plugins: any[] = pluginsByCategory[category] || [];
+				const plugins: any[] = sortByDesc(pluginsByCategory[category] || [], "date").slice(0, 3);
 
 				if (plugins.length < 3 && viewType === "grid") {
 					plugins.push(...new Array(3 - plugins.length).fill(undefined));
 				}
 
-				plugins = sortByDesc(plugins, (plugin: any) => DateTime.make(plugin.date).toUNIX()).slice(0, 3);
-
-				return plugins.length ? (
+				return (
 					<Section key={category}>
 						<div data-testid={`PluginManager__home__${category}`}>
 							<div className="flex justify-between items-center mb-6">
@@ -112,7 +109,7 @@ const PluginManagerHome = ({
 							{renderPlugins(plugins, category)}
 						</div>
 					</Section>
-				) : null;
+				);
 			})}
 		</>
 	);
