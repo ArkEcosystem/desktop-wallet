@@ -63,16 +63,20 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
 
-		if (checked) {
-			setIsOpenAdvancedModeModal(checked);
+		if (checked && !activeProfile.settings().get(ProfileSetting.DoNotShowAdvancedModeDisclaimer, false)) {
+			setIsOpenAdvancedModeModal(true);
 		} else {
-			setIsAdvancedMode(false);
+			setIsAdvancedMode(checked);
 		}
 	};
 
-	const handleAdvancedMode = (isAccepted: boolean) => {
+	const handleAdvancedMode = (isAccepted: boolean, rememberChoice?: boolean) => {
 		setIsOpenAdvancedModeModal(false);
 		setIsAdvancedMode(isAccepted);
+
+		if (isAccepted && rememberChoice) {
+			activeProfile.settings().set(ProfileSetting.DoNotShowAdvancedModeDisclaimer, true);
+		}
 	};
 
 	const handleOpenDevelopmentNetworkModal = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -390,7 +394,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				isOpen={isOpenAdvancedModeModal}
 				onClose={() => handleAdvancedMode(false)}
 				onDecline={() => handleAdvancedMode(false)}
-				onAccept={() => handleAdvancedMode(true)}
+				onAccept={(rememberChoice) => handleAdvancedMode(true, rememberChoice)}
 			/>
 
 			<DevelopmentNetwork
