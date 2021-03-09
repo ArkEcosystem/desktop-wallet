@@ -101,12 +101,101 @@ exports[`LedgerTabs should render connection step 1`] = `
                   />
                 </div>
               </div>
-              <ul
-                aria-labelledby="ImportWallet__network-label"
-                class="hidden"
-                id="ImportWallet__network-menu"
-                role="listbox"
-              />
+              <div
+                class="mt-6"
+              >
+                <div
+                  class="font-bold text-sm text-theme-secondary-400 mb-3"
+                >
+                  PUBLIC NETWORKS
+                </div>
+                <ul
+                  aria-labelledby="ImportWallet__network-label"
+                  class="grid grid-cols-6 gap-3"
+                  id="ImportWallet__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    class="inline-block cursor-pointer h-21"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                  >
+                    <div
+                      aria-label="ARK"
+                      class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                      data-testid="NetworkIcon-ARK-ark.mainnet"
+                    >
+                      <div
+                        class="sc-bdfBwQ caqoGN"
+                        data-testid="NetworkIcon__icon"
+                        height="30"
+                        width="30"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="inline-block cursor-pointer h-21"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                  >
+                    <div
+                      aria-label="Compendia"
+                      class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                      data-testid="NetworkIcon-ARK-compendia.mainnet"
+                    >
+                      <div
+                        class="sc-bdfBwQ caqoGN"
+                        data-testid="NetworkIcon__icon"
+                        height="30"
+                        width="30"
+                      >
+                        <svg>
+                          bind.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="mt-6"
+              >
+                <div
+                  class="font-bold text-sm text-theme-secondary-400 mb-3"
+                >
+                  DEVELOPMENT NETWORKS
+                </div>
+                <ul
+                  aria-labelledby="ImportWallet__network-label"
+                  class="grid grid-cols-6 gap-3"
+                  id="ImportWallet__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    class="inline-block cursor-pointer h-21"
+                    data-testid="SelectNetwork__NetworkIcon--container"
+                  >
+                    <div
+                      aria-label="ARK Devnet"
+                      class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                      data-testid="NetworkIcon-ARK-ark.devnet"
+                    >
+                      <div
+                        class="sc-bdfBwQ caqoGN"
+                        data-testid="NetworkIcon__icon"
+                        height="30"
+                        width="30"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </fieldset>
         </section>
@@ -262,12 +351,16 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   />
                 </div>
               </div>
-              <ul
-                aria-labelledby="ImportWallet__network-label"
-                class="hidden"
-                id="ImportWallet__network-menu"
-                role="listbox"
-              />
+              <div
+                class=""
+              >
+                <ul
+                  aria-labelledby="ImportWallet__network-label"
+                  class="grid grid-cols-6 gap-3"
+                  id="ImportWallet__network-menu"
+                  role="listbox"
+                />
+              </div>
             </div>
           </fieldset>
           <div
@@ -284,7 +377,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   role="row"
                 >
                   <th
-                    class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -292,13 +385,13 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  "
+                      class="flex flex-inline align-top"
                     >
                       <div>
                         Wallet
                       </div>
                       <div
-                        class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                       >
                         <div
                           class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -314,7 +407,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     </div>
                   </th>
                   <th
-                    class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -328,7 +421,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                         Balance
                       </div>
                       <div
-                        class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                        class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                       >
                         <div
                           class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -350,7 +443,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top justify-center "
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         <input
