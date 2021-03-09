@@ -28,6 +28,8 @@ describe("PluginManagerProvider", () => {
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.get("/dated/delegate-calculator-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
 			.persist();
 	});
 
@@ -139,7 +141,7 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});
@@ -188,9 +190,9 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByText("Fetch"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 
-		fireEvent.click(screen.getByText("Install"));
+		fireEvent.click(screen.getAllByText("Install")[0]);
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:install", {
@@ -370,7 +372,7 @@ describe("PluginManagerProvider", () => {
 				return {
 					config: {
 						name: "@dated/transaction-export-plugin",
-						version: "0.0.1",
+						version: "1.0.1",
 						keywords: ["@arkecosystem", "desktop-wallet"],
 					},
 					source: () => void 0,
@@ -429,7 +431,9 @@ describe("PluginManagerProvider", () => {
 			}),
 		);
 
-		await waitFor(() => expect(manager.plugins().findById("@dated/transaction-export-plugin")).toBeTruthy());
+		await waitFor(() =>
+			expect(manager.plugins().findById("@dated/transaction-export-plugin")?.config().version()).toBe("1.0.1"),
+		);
 
 		ipcRendererSpy.mockRestore();
 		onSpy.mockRestore();
@@ -472,7 +476,7 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
@@ -524,13 +528,13 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
 
 		fireEvent.click(screen.getByTestId("ResetFilters"));
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});

@@ -51,6 +51,7 @@ const SelectDropdown = ({
 	allowFreeInput = false,
 	showCaret = true,
 	errorClassName = "mr-8",
+	id,
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
 
@@ -80,6 +81,7 @@ const SelectDropdown = ({
 		highlightedIndex,
 		reset,
 	} = useCombobox<Option | null>({
+		id,
 		items: options,
 		itemToString,
 		onSelectedItemChange: ({ selectedItem }) => {
@@ -247,6 +249,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			disabled,
 			onChange,
 			errorClassName,
+			id,
 		}: SelectProps,
 		ref,
 	) => {
@@ -274,6 +277,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					readOnly
 				/>
 				<SelectDropdown
+					id={id}
 					errorClassName={errorClassName}
 					allowFreeInput={allowFreeInput}
 					showCaret={showCaret}
