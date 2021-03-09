@@ -606,12 +606,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-129-menu"
+                                          aria-owns="downshift-121-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-128-input"
-                                            id="downshift-129-label"
+                                            for="downshift-120-input"
+                                            id="downshift-121-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -619,22 +619,22 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-129-menu"
-                                              aria-labelledby="downshift-129-label"
+                                              aria-controls="downshift-121-menu"
+                                              aria-labelledby="downshift-121-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-128-input"
+                                              id="downshift-120-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-129-label"
+                                            aria-labelledby="downshift-121-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-129-menu"
+                                            id="downshift-121-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -1508,7 +1508,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1"
+                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
@@ -1519,7 +1519,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 </div>
               </button>
               <button
-                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
+                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -1532,7 +1532,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs mt-6"
           >
             <div
               class="space-y-8"
@@ -1545,7 +1545,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
-                  Recipient
+                  Recipient #2
                   <div
                     class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -1560,19 +1560,8 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                       class="absolute left-1 z-20"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                            title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                          />
-                        </div>
-                      </div>
+                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                      />
                     </div>
                     <div
                       class="relative w-full"
@@ -1583,7 +1572,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                         data-testid="select-list__input"
                         name="recipientAddress"
                         readonly=""
-                        value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                        value=""
                       />
                       <div
                         class="relative w-full"
@@ -1591,12 +1580,12 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="downshift-19-menu"
+                          aria-owns="downshift-15-menu"
                           role="combobox"
                         >
                           <label
-                            for="downshift-18-input"
-                            id="downshift-19-label"
+                            for="downshift-14-input"
+                            id="downshift-15-label"
                           />
                           <div
                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -1604,22 +1593,22 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                           >
                             <input
                               aria-autocomplete="list"
-                              aria-controls="downshift-19-menu"
-                              aria-labelledby="downshift-19-label"
+                              aria-controls="downshift-15-menu"
+                              aria-labelledby="downshift-15-label"
                               autocomplete="off"
                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                               data-testid="SelectDropdownInput__input"
                               disabled=""
-                              id="downshift-18-input"
+                              id="downshift-14-input"
                               name="recipientAddress"
                               placeholder="Select option"
-                              value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                              value=""
                             />
                           </div>
                           <ul
-                            aria-labelledby="downshift-19-label"
+                            aria-labelledby="downshift-15-label"
                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                            id="downshift-19-menu"
+                            id="downshift-15-menu"
                             role="listbox"
                           />
                         </div>
@@ -1681,6 +1670,186 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   </div>
                 </div>
               </fieldset>
+            </div>
+          </div>
+          <div
+            class="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          >
+            <div
+              class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
+            >
+              <div
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
+              >
+                <table
+                  cellpadding="0"
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                      role="row"
+                    >
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Avatar
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Address
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Amount
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Action
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                      data-testid="recipient-list__recipient-list-item"
+                    >
+                      <td
+                        class="py-6 w-14"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                              title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="py-6"
+                      >
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
+                        >
+                          <span>
+                            Recipient #1
+                          </span>
+                        </div>
+                        <div
+                          class="max-w-sm"
+                        >
+                          <div
+                            class="inline-flex items-center no-ligatures"
+                          >
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DNjuJE…M8Jtc9
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="py-6"
+                      >
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
+                        >
+                          <span>
+                            Amount
+                          </span>
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-secondary-800"
+                        >
+                          <span
+                            data-testid="Amount"
+                          >
+                            + 0.00000001 ARK
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-6 w-20 text-right"
+                      >
+                        <button
+                          class="Button__StyledButton-mdtvtf-0 hrpPWq"
+                          data-testid="recipient-list__remove-recipient"
+                          type="button"
+                        >
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            <div
+                              class="py-1"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  trash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -2380,12 +2549,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-45-menu"
+                                          aria-owns="downshift-37-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-44-input"
-                                            id="downshift-45-label"
+                                            for="downshift-36-input"
+                                            id="downshift-37-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -2393,21 +2562,21 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-45-menu"
-                                              aria-labelledby="downshift-45-label"
+                                              aria-controls="downshift-37-menu"
+                                              aria-labelledby="downshift-37-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-44-input"
+                                              id="downshift-36-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-45-label"
+                                            aria-labelledby="downshift-37-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-45-menu"
+                                            id="downshift-37-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -3265,12 +3434,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-69-menu"
+                                          aria-owns="downshift-61-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-68-input"
-                                            id="downshift-69-label"
+                                            for="downshift-60-input"
+                                            id="downshift-61-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -3278,21 +3447,21 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-69-menu"
-                                              aria-labelledby="downshift-69-label"
+                                              aria-controls="downshift-61-menu"
+                                              aria-labelledby="downshift-61-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-68-input"
+                                              id="downshift-60-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-69-label"
+                                            aria-labelledby="downshift-61-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-69-menu"
+                                            id="downshift-61-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -4125,7 +4294,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1"
+                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
@@ -4136,7 +4305,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 </div>
               </button>
               <button
-                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
+                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -4149,7 +4318,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs mt-6"
           >
             <div
               class="space-y-8"
@@ -4162,7 +4331,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
-                  Recipient
+                  Recipient #2
                   <div
                     class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -4177,19 +4346,8 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                       class="absolute left-1 z-20"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-3"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                            title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                          />
-                        </div>
-                      </div>
+                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                      />
                     </div>
                     <div
                       class="relative w-full"
@@ -4200,7 +4358,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         data-testid="select-list__input"
                         name="recipientAddress"
                         readonly=""
-                        value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                        value=""
                       />
                       <div
                         class="relative w-full"
@@ -4230,7 +4388,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                               id="downshift-8-input"
                               name="recipientAddress"
                               placeholder="Select option"
-                              value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                              value=""
                             />
                           </div>
                           <ul
@@ -4298,6 +4456,186 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   </div>
                 </div>
               </fieldset>
+            </div>
+          </div>
+          <div
+            class="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          >
+            <div
+              class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
+            >
+              <div
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
+              >
+                <table
+                  cellpadding="0"
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                      role="row"
+                    >
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Avatar
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Address
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Amount
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top hidden"
+                        >
+                          <div>
+                            Action
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                      data-testid="recipient-list__recipient-list-item"
+                    >
+                      <td
+                        class="py-6 w-14"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                              title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="py-6"
+                      >
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
+                        >
+                          <span>
+                            Recipient #1
+                          </span>
+                        </div>
+                        <div
+                          class="max-w-sm"
+                        >
+                          <div
+                            class="inline-flex items-center no-ligatures"
+                          >
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DNjuJE…M8Jtc9
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="py-6"
+                      >
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
+                        >
+                          <span>
+                            Amount
+                          </span>
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-secondary-800"
+                        >
+                          <span
+                            data-testid="Amount"
+                          >
+                            + 0.00000001 ARK
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-6 w-20 text-right"
+                      >
+                        <button
+                          class="Button__StyledButton-mdtvtf-0 hrpPWq"
+                          data-testid="recipient-list__remove-recipient"
+                          type="button"
+                        >
+                          <div
+                            class="flex relative items-center space-x-2"
+                          >
+                            <div
+                              class="py-1"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  trash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -5956,12 +6294,12 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-29-menu"
+                                          aria-owns="downshift-21-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-28-input"
-                                            id="downshift-29-label"
+                                            for="downshift-20-input"
+                                            id="downshift-21-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -5969,22 +6307,22 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-29-menu"
-                                              aria-labelledby="downshift-29-label"
+                                              aria-controls="downshift-21-menu"
+                                              aria-labelledby="downshift-21-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-28-input"
+                                              id="downshift-20-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-29-label"
+                                            aria-labelledby="downshift-21-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-29-menu"
+                                            id="downshift-21-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -6779,12 +7117,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-157-menu"
+                                          aria-owns="downshift-149-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-156-input"
-                                            id="downshift-157-label"
+                                            for="downshift-148-input"
+                                            id="downshift-149-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -6792,21 +7130,21 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-157-menu"
-                                              aria-labelledby="downshift-157-label"
+                                              aria-controls="downshift-149-menu"
+                                              aria-labelledby="downshift-149-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
-                                              id="downshift-156-input"
+                                              id="downshift-148-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-157-label"
+                                            aria-labelledby="downshift-149-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-157-menu"
+                                            id="downshift-149-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -7647,12 +7985,12 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-101-menu"
+                                          aria-owns="downshift-93-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-100-input"
-                                            id="downshift-101-label"
+                                            for="downshift-92-input"
+                                            id="downshift-93-label"
                                           />
                                           <div
                                             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
@@ -7660,22 +7998,22 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                           >
                                             <input
                                               aria-autocomplete="list"
-                                              aria-controls="downshift-101-menu"
-                                              aria-labelledby="downshift-101-label"
+                                              aria-controls="downshift-93-menu"
+                                              aria-labelledby="downshift-93-label"
                                               autocomplete="off"
                                               class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default false pl-16 pr-11"
                                               data-testid="SelectDropdownInput__input"
                                               disabled=""
-                                              id="downshift-100-input"
+                                              id="downshift-92-input"
                                               name="recipientAddress"
                                               placeholder="Select option"
                                               value=""
                                             />
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-101-label"
+                                            aria-labelledby="downshift-93-label"
                                             class="styles__SelectOptionsList-b2falt-1 cGgIup"
-                                            id="downshift-101-menu"
+                                            id="downshift-93-menu"
                                             role="listbox"
                                           />
                                         </div>

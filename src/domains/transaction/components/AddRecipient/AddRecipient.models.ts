@@ -5,7 +5,6 @@ import { RecipientListItem } from "domains/transaction/components/RecipientList/
 export type AddRecipientProps = {
 	maxAvailableAmount: BigNumber;
 	assetSymbol: string;
-	isSingleRecipient?: boolean;
 	singleLabel?: string;
 	multipleLabel?: string;
 	recipients?: RecipientListItem[];
