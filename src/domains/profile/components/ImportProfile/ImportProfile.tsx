@@ -1,7 +1,7 @@
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
 import { useProfileImport } from "domains/profile/hooks/use-profile-import";
-import React, { useRef,useState } from "react";
+import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PasswordModal } from "../PasswordModal";

@@ -1,4 +1,4 @@
-import { Environment, Profile,ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import electron from "electron";
 import fs from "fs";
 import path from "path";
