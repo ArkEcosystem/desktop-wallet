@@ -33,7 +33,7 @@ export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue
 	return (
 		<Modal
 			title={t("PLUGINS.MODAL_UPDATES_CONFIRMATION.TITLE")}
-			image={<Image name="ResetSettingsWarning" className="w-3/5 m-auto my-8" />}
+			image={<Image name="GenericWarning" className="w-3/5 m-auto my-8" />}
 			description={t("PLUGINS.MODAL_UPDATES_CONFIRMATION.DESCRIPTION")}
 			size="xl"
 			isOpen={isOpen}

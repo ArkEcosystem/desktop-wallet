@@ -50,10 +50,10 @@ exports[`Plugin Updates Confirmation should render 1`] = `
           <svg
             class="w-3/5 m-auto my-8"
           >
-            reset-settings-warning.svg
+            generic-warning.svg
           </svg>
           <div
-            class="mt-1 text-theme-secondary-text"
+            class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
             Some of the plugins cannot be updated as they require a newer version of the Desktop Wallet. Pressing Continue will update plugins that can be updated.
           </div>
@@ -75,7 +75,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -83,13 +83,13 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex flex-inline align-top"
                       >
                         <div>
                           Name
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                         >
                           <div
                             class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -105,7 +105,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -119,7 +119,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                           Required Version
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                         >
                           <div
                             class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -150,7 +150,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                          class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                           data-testid="PluginImage__logo"
                         >
                           <img
@@ -203,7 +203,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                          class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                           data-testid="PluginImage__placeholder"
                         >
                           <svg>

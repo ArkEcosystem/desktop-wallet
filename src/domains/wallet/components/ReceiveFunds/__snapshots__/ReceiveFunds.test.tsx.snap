@@ -48,7 +48,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-secondary-text"
+            class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
             Enter the amount you wish to transfer to this address and confirm
           </div>
@@ -204,7 +204,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-secondary-text"
+            class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
             Enter the amount you wish to transfer to this address and confirm
           </div>
@@ -397,7 +397,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-1 text-theme-secondary-text"
+            class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
             Enter the amount you wish to transfer to this address and confirm
           </div>
