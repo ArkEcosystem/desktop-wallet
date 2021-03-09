@@ -18,7 +18,7 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__passphrase-input]"), passphrase);
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -41,7 +41,7 @@ export const importWalletByAddress = async (t: any, address: string, alias = "Te
 		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
 		.ok();
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.click(Selector("input[name=isAddressOnly]").parent());
 	await t.typeText(Selector("input[name=address]"), address);

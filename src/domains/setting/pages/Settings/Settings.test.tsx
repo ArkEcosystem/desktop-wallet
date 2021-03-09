@@ -614,7 +614,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {
@@ -640,7 +640,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
@@ -654,7 +654,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {
