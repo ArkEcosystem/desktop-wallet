@@ -130,12 +130,8 @@ export const translations: { [key: string]: any } = {
 
 		METHOD_STEP: {
 			TITLE: "Import Wallet",
-			SUBTITLE:
-				"Enter your wallet password in order to get full access to your money. Or you can choose an address for viewing only.",
-			ADDRESS_ONLY: {
-				TITLE: "Use the address only",
-				DESCRIPTION: "You can only view your wallet but not send money.",
-			},
+			SUBTITLE: "Select the import method by which you want to import the address to your Profile",
+			TYPE: "Import Type",
 		},
 
 		PASSPHRASE_CONFIRMATION_STEP: {

@@ -11,7 +11,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import { useDashboardConfig } from "domains/dashboard/pages";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -36,11 +36,15 @@ export const ImportWallet = () => {
 
 	const { t } = useTranslation();
 
-	const form = useForm({ mode: "onChange" });
-	const { formState } = form;
+	const form = useForm({ mode: "onChange", defaultValues: { type: "mnemonic" } });
+	const { formState, register } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const nameMaxLength = 42;
+
+	useEffect(() => {
+		register({ name: "type", type: "custom" });
+	}, [register]);
 
 	const handleBack = () => {
 		if (activeTab === 1) {
@@ -84,29 +88,29 @@ export const ImportWallet = () => {
 
 	const handleSubmit = async ({
 		network,
-		passphrase,
-		address,
+		type,
+		value,
 		name,
 	}: {
 		network: Coins.Network;
-		passphrase: string;
-		address: string;
+		type: string;
+		value: string;
 		name: string;
 	}) => {
 		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
-			if (passphrase) {
-				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
-			} else {
-				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
+			if (type === "mnemonic") {
+				wallet = await activeProfile.wallets().importByMnemonic(value, network.coin(), network.id());
+			} else if (type === "address") {
+				wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
 			}
 
-			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
-			setWalletData(wallet);
+			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
+			setWalletData(wallet!);
 			await persist();
 
-			await syncNewWallet(network, wallet);
+			await syncNewWallet(network, wallet!);
 
 			setActiveTab(activeTab + 1);
 		} else {
