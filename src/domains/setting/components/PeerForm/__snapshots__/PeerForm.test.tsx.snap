@@ -61,7 +61,7 @@ exports[`PeerForm should render 1`] = `
           class="mt-6"
         >
           <div
-            class="font-bold text-sm text-theme-secondary-400 mb-3"
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
           >
             PUBLIC NETWORKS
           </div>
@@ -182,7 +182,7 @@ exports[`PeerForm should render 1`] = `
           class="mt-6"
         >
           <div
-            class="font-bold text-sm text-theme-secondary-400 mb-3"
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
           >
             DEVELOPMENT NETWORKS
           </div>
@@ -421,7 +421,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
           class="mt-6"
         >
           <div
-            class="font-bold text-sm text-theme-secondary-400 mb-3"
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
           >
             PUBLIC NETWORKS
           </div>
@@ -542,7 +542,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
           class="mt-6"
         >
           <div
-            class="font-bold text-sm text-theme-secondary-400 mb-3"
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
           >
             DEVELOPMENT NETWORKS
           </div>
@@ -558,7 +558,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
             >
               <div
                 aria-label="ARK Devnet"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 bg-theme-success-100 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div

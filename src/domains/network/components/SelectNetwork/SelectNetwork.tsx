@@ -101,7 +101,7 @@ export const SelectNetwork = ({
 	const optionClassName = (network: Network) => {
 		// Selected is me. Show me green
 		if (selectedItem && selectedItem.extra?.displayName === network.extra?.displayName) {
-			return "border-theme-success-400 bg-theme-success-100 text-theme-secondary-600";
+			return "border-theme-success-400 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200";
 		}
 
 		// Selection is made but not me. Show me disabled
@@ -153,7 +153,7 @@ export const SelectNetwork = ({
 
 			<div className={publicNetworks.length > 0 ? "mt-6" : ""}>
 				{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
-					<div className="font-bold text-sm text-theme-secondary-400 mb-3">
+					<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
 						{t("COMMON.PUBLIC_NETWORKS").toUpperCase()}
 					</div>
 				)}
@@ -173,7 +173,7 @@ export const SelectNetwork = ({
 			{developmentNetworks.length > 0 && (
 				<div className="mt-6">
 					{publicNetworks.length > 0 && (
-						<div className="font-bold text-sm text-theme-secondary-400 mb-3">
+						<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
 							{t("COMMON.DEVELOPMENT_NETWORKS").toUpperCase()}
 						</div>
 					)}
