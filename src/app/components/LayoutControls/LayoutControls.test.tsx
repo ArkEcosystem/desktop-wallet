@@ -2,7 +2,7 @@ import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
-import { LayoutControls } from "./LayoutControls";
+import { ControlButton, LayoutControls } from "./LayoutControls";
 
 describe("LayoutControls", () => {
 	it("should render", () => {
@@ -41,5 +41,22 @@ describe("LayoutControls", () => {
 		});
 
 		expect(fn).not.toBeCalled();
+	});
+});
+
+describe("ControlButton", () => {
+	it("should render", () => {
+		const { asFragment } = render(<ControlButton />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render active", () => {
+		const { asFragment } = render(<ControlButton isActive />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render changed with dot", () => {
+		const { asFragment } = render(<ControlButton isChanged />);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
