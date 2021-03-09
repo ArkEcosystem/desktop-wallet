@@ -11,6 +11,7 @@ import { ReactComponent as ChangeNowLogo } from "./changenow-logo.svg";
 import { ImagesDark } from "./dark";
 import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
 import { ReactComponent as ErrorBanner } from "./error-banner.svg";
+import { ReactComponent as GenericWarning } from "./generic-warning.svg";
 import { ReactComponent as NoResultsBanner } from "./no-results-banner.svg";
 import { ReactComponent as SuccessBanner } from "./success-banner.svg";
 import { ReactComponent as WarningBanner } from "./warning-banner.svg";
@@ -20,12 +21,13 @@ export const images = {
 	common: {
 		ARKLogo,
 		ChangeNowLogo,
-		SuccessBanner,
 		DeleteBanner,
 		ErrorBanner,
+		GenericWarning,
+		NoResultsBanner,
+		SuccessBanner,
 		WarningBanner,
 		WelcomeBanner,
-		NoResultsBanner,
 		...ImagesDark,
 	},
 	contacts,

@@ -14,7 +14,7 @@ export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: docume
 
 export const BASEURL = "https://dwallets.ark.io/api/";
 
-const pluginNames: string[] = ["@dated/transaction-export-plugin"];
+const pluginNames: string[] = ["@dated/transaction-export-plugin", "@dated/delegate-calculator-plugin"];
 const repositoryNames: string[] = [""];
 
 const knownWallets: any[] = [];
@@ -192,6 +192,10 @@ export const requestMocks = {
 		mockRequest(
 			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
 			"plugins/registry/@dated/transaction-export-plugin",
+		),
+		mockRequest(
+			"https://raw.github.com/dated/delegate-calculator-plugin/master/package.json",
+			"plugins/registry/@dated/delegate-calculator-plugin",
 		),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),

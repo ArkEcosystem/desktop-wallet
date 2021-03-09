@@ -1,6 +1,7 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
+import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
@@ -115,6 +116,33 @@ const PluginManagerHome = ({
 	);
 };
 
+const UpdateAllBanner = ({
+	hasUpdateAvailableCount,
+	isUpdatingAll,
+	handleUpdateAll,
+}: {
+	hasUpdateAvailableCount: number;
+	isUpdatingAll: boolean;
+	handleUpdateAll: () => void;
+}) => {
+	const { t } = useTranslation();
+
+	if (hasUpdateAvailableCount === 0) {
+		return null;
+	}
+
+	return (
+		<EmptyBlock size="sm" className="mt-4">
+			<div className="flex items-center w-full justify-between">
+				{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
+				<Button disabled={isUpdatingAll} data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
+					{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
+				</Button>
+			</div>
+		</EmptyBlock>
+	);
+};
+
 export const PluginManager = () => {
 	const { t } = useTranslation();
 	const {
@@ -138,6 +166,7 @@ export const PluginManager = () => {
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
+	const [isUpdatingAll, setIsUpdatingAll] = useState(false);
 
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
@@ -282,6 +311,20 @@ export const PluginManager = () => {
 		);
 	};
 
+	const handleUpdateAll = async () => {
+		setIsUpdatingAll(true);
+		const availablePackages = allPlugins
+			.map(mapConfigToPluginData.bind(null, activeProfile))
+			.filter((pluginData) => pluginData.hasUpdateAvailable);
+
+		const entries = chunk(availablePackages, 2);
+
+		for (const packages of entries) {
+			await Promise.allSettled(packages.map((packageData) => updatePlugin(packageData.name)));
+		}
+		setIsUpdatingAll(false);
+	};
+
 	return (
 		<>
 			<Page profile={activeProfile} isBackDisabled={true}>
@@ -324,6 +367,7 @@ export const PluginManager = () => {
 					onSelectGridView={() => setViewType("grid")}
 					onSelectListView={() => setViewType("list")}
 					installedPluginsCount={installedPlugins.length}
+					hasUpdatesAvailable={hasUpdateAvailableCount > 0}
 				/>
 
 				{currentView === "home" && (
@@ -348,15 +392,12 @@ export const PluginManager = () => {
 								{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 							</h2>
 
-							{currentView === "my-plugins" && hasUpdateAvailableCount > 0 && (
-								<EmptyBlock size="sm" className="my-6">
-									<div className="flex items-center w-full justify-between">
-										{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-										<Button variant="secondary" data-testid="PluginManager__update-all">
-											{t("PLUGINS.UPDATE_ALL")}
-										</Button>
-									</div>
-								</EmptyBlock>
+							{currentView === "my-plugins" && (
+								<UpdateAllBanner
+									hasUpdateAvailableCount={hasUpdateAvailableCount}
+									isUpdatingAll={isUpdatingAll}
+									handleUpdateAll={handleUpdateAll}
+								/>
 							)}
 
 							<div data-testid={`PluginManager__container--${currentView}`}>

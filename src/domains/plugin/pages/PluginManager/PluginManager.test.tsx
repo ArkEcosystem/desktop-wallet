@@ -36,7 +36,9 @@ describe("PluginManager", () => {
 
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
-			.reply(200, require("tests/fixtures/plugins/github-response.json"))
+			.reply(200, require("tests/fixtures/plugins/github/@dated/transaction-export-plugin/package.json"))
+			.get("/dated/delegate-calculator-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/github/@dated/delegate-calculator-plugin/package.json"))
 			.persist();
 
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -388,7 +390,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
 		});
 
 		await waitFor(() =>
@@ -425,7 +427,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
 		});
 
 		await waitFor(() =>
@@ -651,5 +653,50 @@ describe("PluginManager", () => {
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should handle update all", async () => {
+		let downloadsCount = 0;
+		let installCount = 0;
+
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:download") {
+				downloadsCount++;
+				return "/plugins/new-plugin";
+			}
+
+			if (channel === "plugin:install") {
+				installCount++;
+				return "/plugins/test-plugin";
+			}
+		});
+
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		const plugin2 = new PluginController(
+			{ name: "@dated/delegate-calculator-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		pluginManager.plugins().push(plugin);
+		pluginManager.plugins().push(plugin2);
+
+		const { getByTestId, container } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager__update-all"));
+		});
+
+		await waitFor(() => expect(downloadsCount).toBe(2));
+		await waitFor(() => expect(installCount).toBe(2));
+
+		expect(container).toMatchSnapshot();
 	});
 });

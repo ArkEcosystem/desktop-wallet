@@ -113,7 +113,9 @@ describe("PluginDetails", () => {
 			.reply(200, {
 				name: "@dated/transaction-export-plugin",
 				"desktop-wallet": { title: "My Export Transaction" },
-			});
+			})
+			.get("/dated/delegate-calculator-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"));
 
 		const FetchComponent = () => {
 			const { fetchPluginPackages } = usePluginManagerContext();

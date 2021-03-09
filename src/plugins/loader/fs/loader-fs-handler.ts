@@ -18,7 +18,7 @@ export const injectHandler = () => {
 	}
 
 	if (isDev || isE2E) {
-		paths.push(path.resolve("src/tests/fixtures/plugins"));
+		paths.push(path.resolve("src/tests/fixtures/plugins/packages"));
 	}
 
 	paths.push(path.resolve(os.homedir(), ".ark-desktop-v3", "plugins"));

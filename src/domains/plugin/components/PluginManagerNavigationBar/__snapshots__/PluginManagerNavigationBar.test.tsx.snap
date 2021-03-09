@@ -116,15 +116,19 @@ exports[`PluginManagerNavigationBar should render 1`] = `
         <div
           class="flex h-18"
         >
-          <button
-            class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-            data-testid="PluginManagerNavigationBar__my-plugins"
-            title="My Plugins"
+          <div
+            class="relative"
           >
-            <span>
-              My Plugins
-            </span>
-          </button>
+            <button
+              class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__my-plugins"
+              title="My Plugins"
+            >
+              <span>
+                My Plugins
+              </span>
+            </button>
+          </div>
           <div
             class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
@@ -136,7 +140,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               data-testid="LayoutControls__grid"
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                 data-testid="LayoutControls__grid--icon"
               >
                 <div
@@ -155,7 +159,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               data-testid="LayoutControls__list"
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                 data-testid="LayoutControls__list--icon"
               >
                 <div
@@ -293,15 +297,19 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
         <div
           class="flex h-18"
         >
-          <button
-            class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-            data-testid="PluginManagerNavigationBar__my-plugins"
-            title="My Plugins"
+          <div
+            class="relative"
           >
-            <span>
-              My Plugins
-            </span>
-          </button>
+            <button
+              class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__my-plugins"
+              title="My Plugins"
+            >
+              <span>
+                My Plugins
+              </span>
+            </button>
+          </div>
           <div
             class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
@@ -313,7 +321,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               data-testid="LayoutControls__grid"
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                 data-testid="LayoutControls__grid--icon"
               >
                 <div
@@ -332,7 +340,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               data-testid="LayoutControls__list"
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                 data-testid="LayoutControls__list--icon"
               >
                 <div
