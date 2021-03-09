@@ -166,15 +166,10 @@ describe("Settings", () => {
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
+
 		// Toggle Screenshot Protection
 		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
-		// Toggle Advanced Mode
-		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		// Open Advanced Mode Modal
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
-		fireEvent.click(getByTestId("AdvancedMode__accept-button"));
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE);
@@ -183,6 +178,7 @@ describe("Settings", () => {
 		);
 		fireEvent.click(getByTestId("DevelopmentNetwork__continue-button"));
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
 
@@ -210,15 +206,6 @@ describe("Settings", () => {
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
 
-		// Toggle Advanced Mode
-		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-
-		// Open Advanced Mode Modal
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
-		fireEvent.click(getByTestId("AdvancedMode__decline-button"));
-
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
 		});
@@ -233,12 +220,6 @@ describe("Settings", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
-
-		// Open & close Advanced Mode Modal
-		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
-		fireEvent.click(getByTestId("modal__close-btn"));
 
 		expect(env.profiles().count()).toEqual(profilesCount);
 		expect(asFragment()).toMatchSnapshot();
@@ -462,6 +443,73 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).not.toBeChecked());
 	});
 
+	describe("advanced mode", () => {
+		it("should open and accept advanced mode disclaimer", () => {
+			const { getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/settings">
+					<Settings />
+				</Route>,
+				{
+					routes: [`/profiles/${profile.id()}/settings`],
+				},
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("AdvancedMode__accept-button"));
+			});
+
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+		});
+
+		it.each([
+			["close", "modal__close-btn"],
+			["decline", "AdvancedMode__decline-button"],
+		])("should open and %s advanced mode disclaimer", (_, buttonId) => {
+			const { getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/settings">
+					<Settings />
+				</Route>,
+				{
+					routes: [`/profiles/${profile.id()}/settings`],
+				},
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId(buttonId));
+			});
+
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+		});
+	});
+
 	it("should render peer settings", async () => {
 		// Import a wallet after the profile reset test
 		await profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet");
@@ -614,7 +662,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {
@@ -640,7 +688,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
@@ -654,7 +702,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {

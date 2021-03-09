@@ -133,7 +133,6 @@ export const SearchWallet = ({
 				{
 					Header: (
 						<HeaderSearchBar
-							offsetClassName="-bottom-4"
 							placeholder={searchPlaceholder}
 							onSearch={setQuery}
 							onReset={() => setQuery("")}
@@ -141,7 +140,7 @@ export const SearchWallet = ({
 						/>
 					),
 					accessor: "search",
-					className: "justify-end no-border",
+					className: "justify-end",
 					disableSortBy: true,
 				},
 			];
@@ -159,7 +158,7 @@ export const SearchWallet = ({
 					/>
 				),
 				accessor: "search",
-				className: "justify-end no-border",
+				className: "justify-end",
 				disableSortBy: true,
 			},
 		];

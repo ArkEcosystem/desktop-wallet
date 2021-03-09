@@ -29,7 +29,7 @@ test("should import a wallet by mnemonic", async (t) => {
 
 	// Select a cryptoasset and advance to second step
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Cryptoasset selected", { timeout: 5000 });
@@ -37,7 +37,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
 	// Fill a passphrase and advance to third step
-	const passphraseInput = Selector("input[name=passphrase]");
+	const passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
 	await t.typeText(passphraseInput, "buddy year cost vendor honey tonight viable nut female alarm duck symptom");
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -61,18 +61,18 @@ test("should import a wallet by address", async (t) => {
 
 	// Select a cryptoasset and advance to the step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
-	// Use the address only
-	await t.click(Selector("input[name=isAddressOnly]").parent());
+	await t.click('[data-testid="SelectDropdownInput__input"]');
+	await t.click(Selector("#ImportWallet__select-item-1"));
 
 	// Fill an address and advance to the third step
-	const addressInput = Selector("input[name=address]");
+	const addressInput = Selector("[data-testid=ImportWallet__address-input]");
 
 	await t.typeText(addressInput, "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P");
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -96,18 +96,18 @@ test("should show an error message for invalid address", async (t) => {
 
 	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Cryptoasset selected", { timeout: 5000 });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
-	// Use the address only
-	await t.click(Selector("input[name=isAddressOnly]").parent());
+	await t.click('[data-testid="SelectDropdownInput__input"]');
+	await t.click(Selector("#ImportWallet__select-item-1"));
 
 	// Input address
-	const addressInput = Selector("input[name=address]");
+	const addressInput = Selector("[data-testid=ImportWallet__address-input]");
 	await t.typeText(addressInput, "123");
 
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -129,7 +129,7 @@ test("should show an error message for duplicate address", async (t) => {
 
 	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Cryptoasset selected", { timeout: 5000 });
@@ -137,7 +137,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
 	// Input passphrase
-	passphraseInput = Selector("input[name=passphrase]");
+	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
@@ -153,7 +153,7 @@ test("should show an error message for duplicate address", async (t) => {
 
 	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ImportWallet__network-item-1"));
+	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
 	await t
 		.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Cryptoasset selected", { timeout: 5000 });
@@ -161,7 +161,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
 	// Input passphrase
-	passphraseInput = Selector("input[name=passphrase]");
+	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));

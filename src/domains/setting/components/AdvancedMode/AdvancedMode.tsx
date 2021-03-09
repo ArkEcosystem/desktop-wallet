@@ -1,4 +1,5 @@
 import { Button } from "app/components/Button";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -16,6 +17,7 @@ export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedM
 	return (
 		<Modal
 			title={t("SETTINGS.MODAL_ADVANCED_MODE.TITLE")}
+			image={<Image name="GenericWarning" className="w-3/5 m-auto my-8" />}
 			description={t("SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER")}
 			size="xl"
 			isOpen={isOpen}
