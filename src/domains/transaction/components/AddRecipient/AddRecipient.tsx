@@ -9,7 +9,7 @@ import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { InputAmount } from "domains/transaction/components/InputAmount";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -60,7 +60,6 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 
 export const AddRecipient = ({
 	assetSymbol,
-	isSingleRecipient = true,
 	profile,
 	recipients,
 	showMultiPaymentOption,
@@ -68,10 +67,10 @@ export const AddRecipient = ({
 	onChange,
 }: AddRecipientProps) => {
 	const { t } = useTranslation();
-
-	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>(recipients!);
-	const [isSingle, setIsSingle] = useState(isSingleRecipient);
+	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>([]);
+	const [isSingle, setIsSingle] = useState(recipients!.length === 0);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
+	const isMountedRef = useRef(false);
 
 	const {
 		getValues,
@@ -141,14 +140,10 @@ export const AddRecipient = ({
 	useEffect(() => {
 		clearErrors();
 
-		// Case: user added a single recipient (in multiple tab)
-		// and switched to single. Copy the values to input fields
-		// when it's only 1 recipient.
 		if (isSingle && addedRecipients.length === 1) {
 			setValue("amount", addedRecipients[0].amount);
-			setValue("displayAmount", addedRecipients[0].displayAmount);
+			setValue("displayAmount", addedRecipients[0].amount?.toHuman());
 			setValue("recipientAddress", addedRecipients[0].address);
-			return;
 		}
 
 		// Clear the recipient inputs when moving back to multiple tab with
@@ -163,6 +158,22 @@ export const AddRecipient = ({
 			setValue("isSendAllSelected", false);
 		}
 	}, [isSingle, setValue]);
+
+	useEffect(() => {
+		if (isMountedRef.current) {
+			return;
+		}
+
+		if (!recipients?.length) {
+			return;
+		}
+
+		setAddressRecipients(recipients);
+	}, [recipients, setValue, getValues]);
+
+	useEffect(() => {
+		isMountedRef.current = true;
+	}, []);
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) {
@@ -181,12 +192,7 @@ export const AddRecipient = ({
 		]);
 	};
 
-	const handleAddRecipient = async (address: string, amount: number, displayAmount: string) => {
-		const isValid = await trigger(["recipientAddress", "amount"]);
-		if (!isValid) {
-			return;
-		}
-
+	const handleAddRecipient = (address: string, amount: number, displayAmount: string) => {
 		const newRecipients = [
 			...addedRecipients,
 			{
@@ -206,7 +212,7 @@ export const AddRecipient = ({
 		const newRecipients = addedRecipients.concat();
 		newRecipients.splice(index, 1);
 		setAddressRecipients(newRecipients);
-		onChange?.(addedRecipients);
+		onChange?.(newRecipients);
 	};
 
 	return (

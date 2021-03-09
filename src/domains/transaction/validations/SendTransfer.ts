@@ -30,7 +30,6 @@ export const sendTransfer = (t: any, env: Environment) => ({
 				const address = addressValue ? addressValue.trim() : "";
 				const shouldRequire = !address && !recipients.length;
 				const hasAddedRecipients = !address && !isSingleRecipient && recipients.length > 0;
-
 				if (!network) {
 					return false;
 				}
