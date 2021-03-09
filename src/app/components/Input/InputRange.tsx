@@ -49,6 +49,10 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			onChange?.(amount);
 		};
 
+		const backgroundColor = !fieldContext?.isInvalid
+			? "rgba(var(--theme-color-primary-rgb), 0.1)"
+			: "rgba(var(--theme-color-danger-rgb), 0.1)";
+
 		return (
 			<InputCurrency
 				disabled={disabled}
@@ -58,7 +62,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						: {
 								background: getTrackBackground({
 									values: [trackBackgroundMinValue],
-									colors: ["rgba(var(--theme-color-primary-rgb), 0.1)", "transparent"],
+									colors: [backgroundColor, "transparent"],
 									min: minValue,
 									max: Number(max),
 								}),
@@ -73,8 +77,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				{!disabled && Number(min) < Number(max) && (
 					<div className="absolute bottom-0 px-1 w-full">
 						<Range
-							colors={["var(--theme-color-primary-600)", "transparent"]}
 							step={sanitizeStep({ min: Number(minValue), max: Number(max), step })}
+							isInvalid={fieldContext?.isInvalid}
 							min={minValue}
 							max={Number(max)}
 							onChange={handleRange}

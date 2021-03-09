@@ -831,7 +831,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/update-contact.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1200x16" yarn test:e2e src/domains/contact/e2e/update-contact.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -943,7 +943,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/create-contact.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1200x16" yarn test:e2e src/domains/contact/e2e/create-contact.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}

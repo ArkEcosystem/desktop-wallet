@@ -58,7 +58,7 @@ describe("CreateWallet", () => {
 	});
 
 	describe("1st step", () => {
-		it("should render", async () => {
+		it("should render", () => {
 			const { result: form } = renderHook(() => useForm());
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
@@ -71,20 +71,6 @@ describe("CreateWallet", () => {
 
 			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 			expect(selectNetworkInput).toBeTruthy();
-
-			act(() => {
-				fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			});
-
-			act(() => {
-				fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-			});
-
-			expect(selectNetworkInput).toHaveAttribute("disabled");
-
-			expect(selectNetworkInput).toHaveValue("ARK Devnet");
-
-			await waitFor(() => expect(selectNetworkInput).not.toHaveAttribute("disabled"));
 		});
 
 		it("should render without test networks", async () => {
