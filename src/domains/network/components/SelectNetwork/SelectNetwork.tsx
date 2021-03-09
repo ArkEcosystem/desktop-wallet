@@ -101,7 +101,7 @@ export const SelectNetwork = ({
 	const optionClassName = (network: Network) => {
 		// Selected is me. Show me green
 		if (selectedItem && selectedItem.extra?.displayName === network.extra?.displayName) {
-			return "border-theme-success-400 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200";
+			return "border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200";
 		}
 
 		// Selection is made but not me. Show me disabled
