@@ -7,6 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useProfileRestore } from "app/hooks";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
+import { ImportProfile } from "domains/profile/components/ImportProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import React, { useEffect, useMemo, useState } from "react";
@@ -135,6 +136,8 @@ export const Welcome = () => {
 								</Card>
 							</div>
 						</div>
+
+						<ImportProfile {...context} />
 					</div>
 				</Section>
 			</Page>
