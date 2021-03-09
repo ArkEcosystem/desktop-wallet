@@ -1,4 +1,4 @@
-import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile,ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import electron from "electron";
 import fs from "fs";
 import path from "path";
@@ -20,14 +20,27 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 		return { fileExtension, fileContent: fileContent.toString() };
 	};
 
-	const importProfileFromDwe = async (profileData: string) => {
-		const profile = await env.profiles().import(profileData);
+	const importProfileFromDwe = async (profileData: string, password?: string) => {
+		let profile: Profile;
+
+		try {
+			profile = await env.profiles().import(profileData, password);
+		} catch (error) {
+			if (error.message.includes("Reason: Unexpected token")) {
+				throw new Error("Is encrypted");
+			}
+			throw error;
+		}
 
 		if (env.profiles().findByName(profile.name())) {
 			throw new Error(`Profile with name ${profile.name()} already exists`);
 		}
 
 		env.profiles().fill({ [profile.id()]: profile.dump() });
+
+		if (password) {
+			env.profiles().findById(profile.id()).auth().setPassword(password);
+		}
 	};
 
 	const importLegacyProfile = async (profileData: string) => {
@@ -45,25 +58,35 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 
 		const profile = env.profiles().create("V2 Import");
 
-		for (const wallet of data.wallets) {
-			if (wallet?.address && wallet?.balance.ARK) {
-				await profile.wallets().importByAddress(wallet.address, "ARK", "ark.mainnet");
-			}
+		return Promise.all(
+			data.wallets.map((wallet: Record<string, any>) => {
+				if (wallet?.address && wallet?.balance.ARK) {
+					return profile.wallets().importByAddress(wallet.address, "ARK", "ark.mainnet");
+				}
 
-			if (wallet?.address && wallet?.balance.DARK) {
-				await profile.wallets().importByAddress(wallet.address, "DARK", "ark.devnet");
-				profile.settings().set(ProfileSetting.UseTestNetworks, true);
-			}
-		}
+				if (wallet?.address && wallet?.balance.DARK) {
+					profile.settings().set(ProfileSetting.UseTestNetworks, true);
+					return profile.wallets().importByAddress(wallet.address, "DARK", "ark.devnet");
+				}
+			}),
+		);
 	};
 
-	const importProfile = async ({ fileContent, fileExtension }: { fileContent?: string; fileExtension?: string }) => {
+	const importProfile = async ({
+		fileContent,
+		fileExtension,
+		password,
+	}: {
+		fileContent?: string;
+		fileExtension?: string;
+		password?: string;
+	}) => {
 		if (!fileContent || !fileExtension) {
 			return;
 		}
 
 		if (fileExtension === ".dwe") {
-			await importProfileFromDwe(fileContent);
+			await importProfileFromDwe(fileContent, password);
 		}
 
 		if (fileExtension === ".json") {

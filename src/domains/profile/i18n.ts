@@ -51,4 +51,8 @@ export const translations: { [key: string]: any } = {
 		IMPORT_PROFILE_TITLE: "Import Profile",
 		IMPORT_PROFILE: "Import it here.",
 	},
+	IMPORT: {
+		PASSWORD_TITLE: "Profile Password",
+		PASSWORD_DESCRIPTION: "Enter password to import the profile",
+	},
 };
