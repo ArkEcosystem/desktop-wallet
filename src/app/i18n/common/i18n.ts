@@ -28,6 +28,7 @@ export const translations: { [key: string]: any } = {
 	BUSINESS: "Business",
 	BUSINESS_COUNT_plural: "{{count}} Businesses",
 	CANCEL: "Cancel",
+	SUBMIT: "Submit",
 	CATEGORY: "Category",
 	CHOOSE: "Choose",
 	COMING_SOON: "Coming soon",
