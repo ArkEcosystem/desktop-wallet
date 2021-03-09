@@ -24,44 +24,50 @@ type Props = {
 	min?: number;
 	max?: number;
 	step?: number;
-	colors?: string[];
+	isInvalid?: boolean;
 };
 
-export const Range = ({ values, min, max, step, onChange, colors }: Props) => (
-	<div data-testid="Range" className="flex flex-wrap justify-center">
-		<ReactRange
-			values={values}
-			step={step}
-			min={min}
-			max={max}
-			onChange={onChange}
-			renderTrack={({ props: track, children }) => (
-				<Track
-					data-testid="Range__track"
-					onMouseDown={track.onMouseDown}
-					onTouchStart={track.onTouchStart}
-					style={track.style}
-				>
-					<TrackFilled
-						data-testid="Range__track__filled"
-						style={{
-							background: getTrackBackground({
-								values,
-								colors: colors!,
-								min: min!,
-								max: max!,
-							}),
-						}}
-						ref={track.ref}
+export const Range = ({ values, min, max, step, onChange, isInvalid }: Props) => {
+	const color = !isInvalid ? "var(--theme-color-primary-600)" : "var(--theme-color-danger-700)";
+
+	return (
+		<div data-testid="Range" className="flex flex-wrap justify-center">
+			<ReactRange
+				values={values}
+				step={step}
+				min={min}
+				max={max}
+				onChange={onChange}
+				renderTrack={({ props: track, children }) => (
+					<Track
+						data-testid="Range__track"
+						onMouseDown={track.onMouseDown}
+						onTouchStart={track.onTouchStart}
+						style={track.style}
 					>
-						{children}
-					</TrackFilled>
-				</Track>
-			)}
-			renderThumb={({ props: thumb }) => <Thumb data-testid="Range__thumb" {...thumb} />}
-		/>
-	</div>
-);
+						<TrackFilled
+							data-testid="Range__track__filled"
+							style={{
+								background: getTrackBackground({
+									values,
+									colors: [color, "transparent"],
+									min: min!,
+									max: max!,
+								}),
+							}}
+							ref={track.ref}
+						>
+							{children}
+						</TrackFilled>
+					</Track>
+				)}
+				renderThumb={({ props: thumb }) => (
+					<Thumb data-testid="Range__thumb" {...thumb} style={{ ...thumb.style, borderColor: color }} />
+				)}
+			/>
+		</div>
+	);
+};
 
 Range.defaultProps = {
 	min: 1,

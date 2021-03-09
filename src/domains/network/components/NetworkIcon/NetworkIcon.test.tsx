@@ -14,4 +14,10 @@ describe("NetworkIcon", () => {
 		const { queryByTestId } = render(<NetworkIcon coin="TEST" />, {});
 		expect(queryByTestId("NetworkIcon__placeholder")).toBeTruthy();
 	});
+
+	it("should render network with custom classname", () => {
+		const { getByTestId } = render(<NetworkIcon coin="ARK" network="ark.devnet" className="test" />, {});
+		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveAttribute("aria-label", "ARK Devnet");
+		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
+	});
 });
