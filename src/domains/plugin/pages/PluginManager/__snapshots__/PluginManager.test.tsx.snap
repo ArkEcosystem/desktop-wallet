@@ -360,7 +360,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -444,7 +444,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -453,15 +453,19 @@ exports[`PluginManager should cancel install plugin 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -473,7 +477,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -492,7 +496,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -560,7 +564,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                             role="row"
                           >
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -568,13 +572,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Name
                                 </div>
                                 <div
-                                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -590,7 +594,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -598,13 +602,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Author
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -620,7 +624,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"
@@ -628,13 +632,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Category
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -650,7 +654,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--3"
                               role="columnheader"
@@ -658,13 +662,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Version
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -680,7 +684,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--4"
                               role="columnheader"
@@ -688,13 +692,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Size
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -710,13 +714,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--5"
                               role="columnheader"
                             >
                               <div
-                                class="flex flex-inline align-top justify-center "
+                                class="flex flex-inline align-top justify-center"
                               >
                                 <div>
                                   Status
@@ -724,13 +728,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--6"
                               role="columnheader"
                             >
                               <div
-                                class="flex flex-inline align-top hidden "
+                                class="flex flex-inline align-top hidden"
                               >
                                 <div>
                                   Actions
@@ -751,7 +755,111 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                               >
                                 <div
-                                  class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
+                                  data-testid="PluginImage__placeholder"
+                                >
+                                  <svg>
+                                    plugin-logo-placeholder.svg
+                                  </svg>
+                                </div>
+                                <div
+                                  class="flex items-center space-x-2 text-left"
+                                >
+                                  <span
+                                    class="font-semibold link flex items-center space-x-2"
+                                    data-testid="PluginListItem__link"
+                                  >
+                                    Delegate Calculator Plugin
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  Edgar Goetzendorff
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  Other
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  v1.0.4
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  0 B
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <div
+                                  class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                                  data-testid="PluginListItem__not-installed"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      dash.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="w-16"
+                            >
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                              >
+                                <button
+                                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                                  data-testid="PluginListItem__install"
+                                  type="button"
+                                >
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Install
+                                  </div>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                            data-testid="TableRow"
+                          >
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                              >
+                                <div
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                                   data-testid="PluginImage__placeholder"
                                 >
                                   <svg>
@@ -888,7 +996,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                             role="row"
                           >
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -896,13 +1004,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Name
                                 </div>
                                 <div
-                                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -918,7 +1026,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -926,13 +1034,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Author
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -948,7 +1056,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"
@@ -956,13 +1064,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Category
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -978,7 +1086,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--3"
                               role="columnheader"
@@ -986,13 +1094,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Version
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1008,7 +1116,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--4"
                               role="columnheader"
@@ -1016,13 +1124,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Size
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1038,13 +1146,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--5"
                               role="columnheader"
                             >
                               <div
-                                class="flex flex-inline align-top justify-center "
+                                class="flex flex-inline align-top justify-center"
                               >
                                 <div>
                                   Status
@@ -1052,13 +1160,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--6"
                               role="columnheader"
                             >
                               <div
-                                class="flex flex-inline align-top hidden "
+                                class="flex flex-inline align-top hidden"
                               >
                                 <div>
                                   Actions
@@ -1079,7 +1187,111 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                               >
                                 <div
-                                  class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
+                                  data-testid="PluginImage__placeholder"
+                                >
+                                  <svg>
+                                    plugin-logo-placeholder.svg
+                                  </svg>
+                                </div>
+                                <div
+                                  class="flex items-center space-x-2 text-left"
+                                >
+                                  <span
+                                    class="font-semibold link flex items-center space-x-2"
+                                    data-testid="PluginListItem__link"
+                                  >
+                                    Delegate Calculator Plugin
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  Edgar Goetzendorff
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  Other
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  v1.0.4
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  0 B
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <div
+                                  class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                                  data-testid="PluginListItem__not-installed"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      dash.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="w-16"
+                            >
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                              >
+                                <button
+                                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                                  data-testid="PluginListItem__install"
+                                  type="button"
+                                >
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Install
+                                  </div>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                            data-testid="TableRow"
+                          >
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                              >
+                                <div
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                                   data-testid="PluginImage__placeholder"
                                 >
                                   <svg>
@@ -1215,7 +1427,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                             role="row"
                           >
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--0"
                               role="columnheader"
@@ -1223,13 +1435,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Name
                                 </div>
                                 <div
-                                  class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1245,7 +1457,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--1"
                               role="columnheader"
@@ -1253,13 +1465,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Author
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1275,7 +1487,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--2"
                               role="columnheader"
@@ -1283,13 +1495,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Category
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1305,7 +1517,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--3"
                               role="columnheader"
@@ -1313,13 +1525,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Version
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1335,7 +1547,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--4"
                               role="columnheader"
@@ -1343,13 +1555,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               title="Toggle SortBy"
                             >
                               <div
-                                class="flex flex-inline align-top  "
+                                class="flex flex-inline align-top"
                               >
                                 <div>
                                   Size
                                 </div>
                                 <div
-                                  class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                                 >
                                   <div
                                     class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -1365,13 +1577,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--5"
                               role="columnheader"
                             >
                               <div
-                                class="flex flex-inline align-top justify-center "
+                                class="flex flex-inline align-top justify-center"
                               >
                                 <div>
                                   Status
@@ -1379,13 +1591,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               </div>
                             </th>
                             <th
-                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                               colspan="1"
                               data-testid="table__th--6"
                               role="columnheader"
                             >
                               <div
-                                class="flex flex-inline align-top hidden "
+                                class="flex flex-inline align-top hidden"
                               >
                                 <div>
                                   Actions
@@ -1406,7 +1618,111 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                               >
                                 <div
-                                  class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
+                                  data-testid="PluginImage__placeholder"
+                                >
+                                  <svg>
+                                    plugin-logo-placeholder.svg
+                                  </svg>
+                                </div>
+                                <div
+                                  class="flex items-center space-x-2 text-left"
+                                >
+                                  <span
+                                    class="font-semibold link flex items-center space-x-2"
+                                    data-testid="PluginListItem__link"
+                                  >
+                                    Delegate Calculator Plugin
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  Edgar Goetzendorff
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  Other
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  v1.0.4
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <span>
+                                  0 B
+                                </span>
+                              </div>
+                            </td>
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                              >
+                                <div
+                                  class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                                  data-testid="PluginListItem__not-installed"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      dash.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="w-16"
+                            >
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                              >
+                                <button
+                                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                                  data-testid="PluginListItem__install"
+                                  type="button"
+                                >
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Install
+                                  </div>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr
+                            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                            data-testid="TableRow"
+                          >
+                            <td>
+                              <div
+                                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                              >
+                                <div
+                                  class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                                   data-testid="PluginImage__placeholder"
                                 >
                                   <svg>
@@ -1876,7 +2192,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -1960,7 +2276,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -1969,21 +2285,25 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  1
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    1
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -1995,7 +2315,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -2014,7 +2334,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -2070,7 +2390,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           role="row"
                         >
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
@@ -2078,13 +2398,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Name
                               </div>
                               <div
-                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2100,7 +2420,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--1"
                             role="columnheader"
@@ -2108,13 +2428,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Author
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2130,7 +2450,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--2"
                             role="columnheader"
@@ -2138,13 +2458,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Category
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2160,7 +2480,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--3"
                             role="columnheader"
@@ -2168,13 +2488,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Version
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2190,7 +2510,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--4"
                             role="columnheader"
@@ -2198,13 +2518,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Size
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2220,13 +2540,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
-                              class="flex flex-inline align-top justify-center "
+                              class="flex flex-inline align-top justify-center"
                             >
                               <div>
                                 Status
@@ -2234,13 +2554,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
-                              class="flex flex-inline align-top hidden "
+                              class="flex flex-inline align-top hidden"
                             >
                               <div>
                                 Actions
@@ -2261,7 +2581,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
-                                class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                                class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                                 data-testid="PluginImage__placeholder"
                               >
                                 <svg>
@@ -2756,7 +3076,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -2840,7 +3160,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -2849,21 +3169,25 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  1
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    1
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -2875,7 +3199,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -2894,7 +3218,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -2950,7 +3274,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           role="row"
                         >
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
@@ -2958,13 +3282,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Name
                               </div>
                               <div
-                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -2980,7 +3304,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--1"
                             role="columnheader"
@@ -2988,13 +3312,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Author
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -3010,7 +3334,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--2"
                             role="columnheader"
@@ -3018,13 +3342,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Category
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -3040,7 +3364,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--3"
                             role="columnheader"
@@ -3048,13 +3372,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Version
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -3070,7 +3394,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--4"
                             role="columnheader"
@@ -3078,13 +3402,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Size
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -3100,13 +3424,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
-                              class="flex flex-inline align-top justify-center "
+                              class="flex flex-inline align-top justify-center"
                             >
                               <div>
                                 Status
@@ -3114,13 +3438,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
-                              class="flex flex-inline align-top hidden "
+                              class="flex flex-inline align-top hidden"
                             >
                               <div>
                                 Actions
@@ -3141,7 +3465,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
-                                class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                                class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                                 data-testid="PluginImage__placeholder"
                               >
                                 <svg>
@@ -3636,7 +3960,7 @@ exports[`PluginManager should render 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -3720,7 +4044,7 @@ exports[`PluginManager should render 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -3729,15 +4053,19 @@ exports[`PluginManager should render 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -3749,7 +4077,7 @@ exports[`PluginManager should render 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -3768,7 +4096,7 @@ exports[`PluginManager should render 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -3839,7 +4167,7 @@ exports[`PluginManager should render 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -3854,6 +4182,73 @@ exports[`PluginManager should render 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -3941,7 +4336,7 @@ exports[`PluginManager should render 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -3956,6 +4351,73 @@ exports[`PluginManager should render 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -4042,7 +4504,7 @@ exports[`PluginManager should render 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -4057,6 +4519,73 @@ exports[`PluginManager should render 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -4490,7 +5019,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -4574,7 +5103,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -4583,15 +5112,19 @@ exports[`PluginManager should search for plugin 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -4603,7 +5136,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -4622,7 +5155,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -4693,7 +5226,7 @@ exports[`PluginManager should search for plugin 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -4708,6 +5241,73 @@ exports[`PluginManager should search for plugin 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -4795,7 +5395,7 @@ exports[`PluginManager should search for plugin 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -4810,6 +5410,73 @@ exports[`PluginManager should search for plugin 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -4896,7 +5563,7 @@ exports[`PluginManager should search for plugin 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -4911,6 +5578,73 @@ exports[`PluginManager should search for plugin 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -5437,15 +6171,19 @@ exports[`PluginManager should search for plugin 2`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -5457,7 +6195,7 @@ exports[`PluginManager should search for plugin 2`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -5476,7 +6214,7 @@ exports[`PluginManager should search for plugin 2`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -5978,7 +6716,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -6062,7 +6800,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -6071,15 +6809,19 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -6091,7 +6833,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -6110,7 +6852,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -6529,7 +7271,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -6613,7 +7355,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -6622,15 +7364,19 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-              </button>
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
+                >
+                  <span>
+                    My Plugins
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -6642,7 +7388,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -6661,7 +7407,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -6732,7 +7478,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -6747,6 +7493,73 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -6834,7 +7647,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -6849,6 +7662,73 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -6935,7 +7815,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                             class="flex flex-col h-full items-between"
                           >
                             <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
                               data-testid="PluginImage__placeholder"
                             >
                               <svg>
@@ -6950,6 +7830,73 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                                   class="truncate"
                                 >
                                   Transaction Export Plugin
+                                </div>
+                                <div />
+                              </div>
+                              <div
+                                class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                              >
+                                <div
+                                  class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+                                >
+                                  Edgar Goetzendorff
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <div
+                                  class="flex overflow-hidden justify-center w-4"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      settings.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-testid="PluginCard--@dated/delegate-calculator-plugin"
+                      >
+                        <div
+                          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+                          data-testid="Card"
+                        >
+                          <div
+                            class="flex flex-col h-full items-between"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 emLkFt mb-4 mr-4"
+                              data-testid="PluginImage__placeholder"
+                            >
+                              <svg>
+                                plugin-logo-placeholder.svg
+                              </svg>
+                            </div>
+                            <div>
+                              <div
+                                class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+                              >
+                                <div
+                                  class="truncate"
+                                >
+                                  Delegate Calculator Plugin
                                 </div>
                                 <div />
                               </div>
@@ -7367,7 +8314,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                   <div
@@ -7451,7 +8398,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      2
                     </span>
                   </button>
                 </li>
@@ -7460,21 +8407,31 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
             <div
               class="flex h-18"
             >
-              <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__my-plugins"
-                title="My Plugins"
+              <div
+                class="relative"
               >
-                <span>
-                  My Plugins
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="PluginManagerNavigationBar__my-plugins__count"
+                <button
+                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  data-testid="PluginManagerNavigationBar__my-plugins"
+                  title="My Plugins"
                 >
-                  1
-                </span>
-              </button>
+                  <span>
+                    My Plugins
+                  </span>
+                  <span
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                  >
+                    1
+                  </span>
+                  <span
+                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
+                    data-testid="PluginManagerNavigationBar_update-badge"
+                  >
+                    <span />
+                  </span>
+                </button>
+              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -7486,7 +8443,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -7505,7 +8462,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   data-testid="LayoutControls__list"
                 >
                   <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                     data-testid="LayoutControls__list--icon"
                   >
                     <div
@@ -7551,7 +8508,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     <div
                       class="flex items-center w-full justify-between"
                     >
-                      There are 1 updates available for your plugins. Would you like to update them all now?
+                      There is 1 update available for your plugins. Would you like to update it?
                       <button
                         class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                         data-testid="PluginManager__update-all"
@@ -7584,7 +8541,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           role="row"
                         >
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--0"
                             role="columnheader"
@@ -7592,13 +8549,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Name
                               </div>
                               <div
-                                class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7614,7 +8571,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--1"
                             role="columnheader"
@@ -7622,13 +8579,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Author
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7644,7 +8601,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--2"
                             role="columnheader"
@@ -7652,13 +8609,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Category
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7674,7 +8631,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--3"
                             role="columnheader"
@@ -7682,13 +8639,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Version
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7704,7 +8661,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--4"
                             role="columnheader"
@@ -7712,13 +8669,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             title="Toggle SortBy"
                           >
                             <div
-                              class="flex flex-inline align-top  "
+                              class="flex flex-inline align-top"
                             >
                               <div>
                                 Size
                               </div>
                               <div
-                                class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                               >
                                 <div
                                   class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
@@ -7734,13 +8691,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--5"
                             role="columnheader"
                           >
                             <div
-                              class="flex flex-inline align-top justify-center "
+                              class="flex flex-inline align-top justify-center"
                             >
                               <div>
                                 Status
@@ -7748,13 +8705,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                             </div>
                           </th>
                           <th
-                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                             colspan="1"
                             data-testid="table__th--6"
                             role="columnheader"
                           >
                             <div
-                              class="flex flex-inline align-top hidden "
+                              class="flex flex-inline align-top hidden"
                             >
                               <div>
                                 Actions
@@ -7775,7 +8732,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                             >
                               <div
-                                class="PluginImage__PluginImageWrapper-iwox49-0 cdDjcq"
+                                class="PluginImage__PluginImageWrapper-iwox49-0 iBHdbK"
                                 data-testid="PluginImage__placeholder"
                               >
                                 <svg>

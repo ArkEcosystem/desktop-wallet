@@ -35,7 +35,14 @@ export const PluginImage = ({
 
 	if (isUpdating) {
 		return (
-			<PluginImageWrapper size={size} className={className} data-testid="PluginImage__updating">
+			<PluginImageWrapper
+				size={size}
+				className={cn(
+					"bg-theme-success-100 flex flex-col space-y-3 border border-theme-secondary-300 dark:border-theme-secondary-600 overflow-hidden",
+					className,
+				)}
+				data-testid="PluginImage__updating"
+			>
 				<CircularProgressBar
 					value={+(updatingProgress! * 100).toFixed(0)}
 					size={progressSize}

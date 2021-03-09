@@ -33,11 +33,8 @@ describe("SelectNetwork", () => {
 			fireEvent.change(input, { target: { value } });
 		});
 
-		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(
-			availableNetworksMock.filter((network) =>
-				network.extra?.displayName?.toLowerCase().startsWith(value.toLowerCase()),
-			).length,
-		);
+		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeInTheDocument();
+		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
 
 		act(() => {
 			fireEvent.change(input, { target: { value: "" } });
@@ -141,52 +138,6 @@ describe("SelectNetwork", () => {
 		expect(within(getByTestId("SelectNetworkInput__network")).queryByTestId("CoinIcon")).toBeNull();
 	});
 
-	it("should select match on blur if available", async () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
-		const input = getByTestId("SelectNetworkInput__input");
-
-		act(() => {
-			fireEvent.change(input, { target: { value: "ARK Dev" } });
-		});
-
-		act(() => {
-			fireEvent.blur(input);
-		});
-
-		await waitFor(() => expect(input).toHaveValue("ARK Devnet"));
-	});
-
-	it("should clear input on blur if there is no match", async () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
-		const input = getByTestId("SelectNetworkInput__input");
-
-		act(() => {
-			fireEvent.change(input, { target: { value: "Foobar" } });
-		});
-
-		act(() => {
-			fireEvent.blur(input);
-		});
-
-		await waitFor(() => expect(input).toHaveValue(""));
-	});
-
-	it("should not clear input on blur if selected", () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
-		const input = getByTestId("SelectNetworkInput__input");
-		act(() => {
-			fireEvent.change(input, { target: { value: "Bitco" } });
-		});
-		act(() => {
-			fireEvent.keyDown(input, { key: "Enter", code: 13 });
-		});
-		expect(input).toHaveValue("Bitcoin");
-		act(() => {
-			fireEvent.blur(input);
-		});
-		expect(input).toHaveValue("Bitcoin");
-	});
-
 	it("should select an item by clicking on it", async () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 
@@ -197,10 +148,19 @@ describe("SelectNetwork", () => {
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"));
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+		await waitFor(() =>
+			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
+		);
 	});
 
 	it("should toggle selection by clicking on network icon", async () => {
@@ -213,7 +173,7 @@ describe("SelectNetwork", () => {
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"));
@@ -225,7 +185,7 @@ describe("SelectNetwork", () => {
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).not.toHaveAttribute("aria-label"));

@@ -311,7 +311,7 @@ exports[`Dashboard should render 1`] = `
                       data-testid="LayoutControls__grid"
                     >
                       <div
-                        class="LayoutControls__ControlButton-j2iwgi-0 jQrgSV"
+                        class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
                         data-testid="LayoutControls__grid--icon"
                       >
                         <div
@@ -330,7 +330,7 @@ exports[`Dashboard should render 1`] = `
                       data-testid="LayoutControls__list"
                     >
                       <div
-                        class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                        class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                         data-testid="LayoutControls__list--icon"
                       >
                         <div
@@ -359,7 +359,7 @@ exports[`Dashboard should render 1`] = `
                         class="group"
                       >
                         <div
-                          class="LayoutControls__ControlButton-j2iwgi-0 hcJMgX"
+                          class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
                         >
                           <div
                             class="sc-bdfBwQ eBdiJn"
@@ -719,7 +719,7 @@ exports[`Dashboard should render 1`] = `
             <div
               class="mb-8 text-4xl font-bold"
             >
-              Transactions History
+              Transaction History
             </div>
             <div
               class="mt-6"
@@ -818,7 +818,7 @@ exports[`Dashboard should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex flex-inline align-top"
                       >
                         <div>
                           ID
@@ -834,16 +834,16 @@ exports[`Dashboard should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex flex-inline align-top"
                       >
                         <div>
                           Date
                         </div>
                         <div
-                          class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform "
+                            class="sc-bdfBwQ kJrqvM transition-transform"
                             height="5"
                             role="img"
                             width="8"
@@ -862,7 +862,7 @@ exports[`Dashboard should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  "
+                        class="flex flex-inline align-top"
                       >
                         <div>
                           Recipient
@@ -870,13 +870,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Info
@@ -890,7 +890,7 @@ exports[`Dashboard should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center "
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Status
@@ -898,7 +898,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -912,10 +912,10 @@ exports[`Dashboard should render 1`] = `
                           Amount
                         </div>
                         <div
-                          class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                         >
                           <div
-                            class="sc-bdfBwQ kJrqvM transition-transform "
+                            class="sc-bdfBwQ kJrqvM transition-transform"
                             height="5"
                             role="img"
                             width="8"

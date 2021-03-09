@@ -1,7 +1,7 @@
 import tw from "twin.macro";
 import { Size } from "types";
 
-const baseStyle = tw`transition-all duration-200 overflow-hidden`;
+const baseStyle = tw`transition-all duration-200 overflow-hidden flex items-center justify-center`;
 
 const getSize = (size?: Size): any => {
 	switch (size) {

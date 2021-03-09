@@ -1,5 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`InputRange should render invalid 1`] = `
+<DocumentFragment>
+  <fieldset
+    class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+  >
+    <div
+      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+    >
+      <input
+        aria-invalid="true"
+        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+        data-testid="InputCurrency"
+        name="test"
+        type="text"
+        value="2"
+      />
+      <div
+        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+      >
+        <span
+          data-errortext="test"
+          data-testid="Input-error"
+        >
+          <div
+            class="sc-bdfBwQ iyevwF text-theme-danger-500"
+            height="20"
+            width="20"
+          >
+            <svg>
+              alert-warning.svg
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div
+        class="absolute bottom-0 px-1 w-full"
+      >
+        <div
+          class="flex flex-wrap justify-center"
+          data-testid="Range"
+        >
+          <div
+            class="Range__Track-sc-10itqc2-0 sgjTD"
+            data-testid="Range__track"
+            style="transform: scale(1); cursor: pointer;"
+          >
+            <div
+              class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+              data-testid="Range__track__filled"
+            >
+              <div
+                aria-valuemax="10"
+                aria-valuemin="2"
+                aria-valuenow="2"
+                class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                data-testid="Range__thumb"
+                draggable="false"
+                role="slider"
+                style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                tabindex="0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</DocumentFragment>
+`;
+
 exports[`InputRange should render when disabled 1`] = `
 <DocumentFragment>
   <div

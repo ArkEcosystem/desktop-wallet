@@ -1,5 +1,6 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { snakeCase } from "@arkecosystem/utils";
+import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
@@ -177,6 +178,33 @@ const PluginManagerHome = ({
 	);
 };
 
+const UpdateAllBanner = ({
+	hasUpdateAvailableCount,
+	isUpdatingAll,
+	handleUpdateAll,
+}: {
+	hasUpdateAvailableCount: number;
+	isUpdatingAll: boolean;
+	handleUpdateAll: () => void;
+}) => {
+	const { t } = useTranslation();
+
+	if (hasUpdateAvailableCount === 0) {
+		return null;
+	}
+
+	return (
+		<EmptyBlock size="sm" className="mt-4">
+			<div className="flex items-center w-full justify-between">
+				{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
+				<Button disabled={isUpdatingAll} data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
+					{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
+				</Button>
+			</div>
+		</EmptyBlock>
+	);
+};
+
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
 	const {
@@ -201,6 +229,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
+	const [isUpdatingAll, setIsUpdatingAll] = useState(false);
 
 	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
 	const hasUpdateAvailableCount = allPlugins
@@ -279,6 +308,22 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
 
+	const handleUpdateAll = async () => {
+		setUpdatesConfirmationPlugins(undefined);
+
+		setIsUpdatingAll(true);
+		const availablePackages = allPlugins
+			.map(mapConfigToPluginData.bind(null, activeProfile))
+			.filter((pluginData) => pluginData.hasUpdateAvailable);
+
+		const entries = chunk(availablePackages, 2);
+
+		for (const packages of entries) {
+			await Promise.allSettled(packages.map((packageData) => updatePlugin(packageData.name)));
+		}
+		setIsUpdatingAll(false);
+	};
+
 	return (
 		<>
 			<Page profile={activeProfile} isBackDisabled={true}>
@@ -321,6 +366,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					onSelectGridView={() => setViewType("grid")}
 					onSelectListView={() => setViewType("list")}
 					installedPluginsCount={installedPlugins.length}
+					hasUpdatesAvailable={hasUpdateAvailableCount > 0}
 				/>
 
 				<Section>
@@ -347,6 +393,13 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 								<h2 className="font-bold">
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
+
+								<UpdateAllBanner
+									hasUpdateAvailableCount={hasUpdateAvailableCount}
+									isUpdatingAll={isUpdatingAll}
+									handleUpdateAll={onUpdateAll}
+								/>
+
 								<PluginGrid
 									plugins={installedPlugins}
 									onSelect={handleSelectPlugin}
@@ -368,16 +421,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 								</h2>
 
-								{hasUpdateAvailableCount > 0 && (
-									<EmptyBlock size="sm" className="mt-4">
-										<div className="flex items-center w-full justify-between">
-											{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-											<Button data-testid="PluginManager__update-all" onClick={onUpdateAll}>
-												{t("PLUGINS.UPDATE_ALL")}
-											</Button>
-										</div>
-									</EmptyBlock>
-								)}
+								<UpdateAllBanner
+									hasUpdateAvailableCount={hasUpdateAvailableCount}
+									isUpdatingAll={isUpdatingAll}
+									handleUpdateAll={onUpdateAll}
+								/>
 
 								<PluginList
 									plugins={installedPlugins}
@@ -448,7 +496,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				isOpen={!!updatesConfirmationPlugins}
 				plugins={updatesConfirmationPlugins!}
 				onClose={() => setUpdatesConfirmationPlugins(undefined)}
-				onContinue={() => setUpdatesConfirmationPlugins(undefined)}
+				onContinue={handleUpdateAll}
 			/>
 
 			{uninstallSelectedPlugin && (

@@ -6,14 +6,9 @@ import { useMemo } from "react";
 import { FilterWalletsHookProps } from "./";
 
 export const useWalletFilters = ({ profile }: { profile: Profile }) => {
-	const {
-		defaultConfiguration,
-		setValue,
-		walletsDisplayType,
-		selectedNetworkIds,
-		showTransactions,
-		viewType,
-	} = useDashboardConfig({ profile });
+	const { defaultConfiguration, setValue, walletsDisplayType, selectedNetworkIds, viewType } = useDashboardConfig({
+		profile,
+	});
 
 	const allWalletsLength = profile.wallets().values().length;
 	const networks = useMemo(() => {
@@ -32,10 +27,6 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 	}, [profile, selectedNetworkIds, allWalletsLength]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const isFilterChanged = useMemo(() => {
-		if (showTransactions !== defaultConfiguration.showTransactions) {
-			return true;
-		}
-
 		if (walletsDisplayType !== defaultConfiguration.walletsDisplayType) {
 			return true;
 		}
@@ -45,7 +36,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		}
 
 		return false;
-	}, [walletsDisplayType, selectedNetworkIds, showTransactions, defaultConfiguration]);
+	}, [walletsDisplayType, selectedNetworkIds, defaultConfiguration]);
 
 	return useMemo<FilterWalletsHookProps & { update: (key: string, value: any) => void }>(
 		() => ({
@@ -53,20 +44,10 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			useTestNetworks: profile.settings().get(ProfileSetting.UseTestNetworks),
 			walletsDisplayType,
 			selectedNetworkIds,
-			showTransactions,
 			isFilterChanged,
 			viewType,
 			update: setValue,
 		}),
-		[
-			walletsDisplayType,
-			selectedNetworkIds,
-			showTransactions,
-			viewType,
-			isFilterChanged,
-			networks,
-			profile,
-			setValue,
-		],
+		[walletsDisplayType, selectedNetworkIds, viewType, isFilterChanged, networks, profile, setValue],
 	);
 };

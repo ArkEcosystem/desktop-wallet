@@ -204,6 +204,9 @@ describe("Settings", () => {
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 
+		// Toggle Portfolio Transaction History
+		fireEvent.click(getByTestId("General-settings__toggle--transactionHistory"));
+
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
 
@@ -611,7 +614,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {
@@ -637,7 +640,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
@@ -651,7 +654,7 @@ describe("Settings", () => {
 		);
 
 		act(() => {
-			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {

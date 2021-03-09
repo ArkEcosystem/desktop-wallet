@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React, { useMemo } from "react";
 import { useSortBy, useTable } from "react-table";
 import { styled } from "twin.macro";
@@ -41,7 +42,7 @@ export const Table = ({ children, data, columns, hideHeader, className, initialS
 	};
 
 	return (
-		<TableWrapper {...getTableProps({ className })} className={!hideHeader ? "-mt-3" : ""}>
+		<TableWrapper {...getTableProps({ className })} className={cn({ "-mt-3": !hideHeader })}>
 			<table cellPadding={0} className="table-auto">
 				{!hideHeader && (
 					<thead>
@@ -54,42 +55,44 @@ export const Table = ({ children, data, columns, hideHeader, className, initialS
 								{headerGroup.headers.map((column: any, thIndex: number) => (
 									<th
 										key={thIndex}
-										className={`group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
-											column.className?.includes("no-border") ? "" : "hasBorder"
-										} ${
-											column.minimumWidth
-												? "w-1"
-												: (column.cellWidth && `${column.cellWidth} min-${column.cellWidth}`) ||
-												  ""
-										}`}
+										className={cn(
+											"group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold",
+											{ hasBorder: !column.className?.includes("no-border") },
+											{ "w-1": column.minimumWidth },
+											{
+												[`${column.cellWidth} min-${column.cellWidth}`]:
+													!column.minimumWidth && column.cellWidth,
+											},
+										)}
 										data-testid={`table__th--${thIndex}`}
 										{...column.getHeaderProps(column.getSortByToggleProps())}
 									>
 										<div
-											className={`flex flex-inline align-top ${column.className || ""} ${
-												column.className?.includes("justify-end") ? "flex-row-reverse" : ""
-											}`}
+											className={cn("flex flex-inline align-top", column.className, {
+												"flex-row-reverse":
+													column.className?.includes("justify-end") && !column.disableSortBy,
+											})}
 										>
 											<div>{column.render("Header")}</div>
 											{column.canSort && (
 												<div
-													className={`${
-														column.isSorted ? "" : "opacity-0 group-hover:opacity-100"
-													} ${
-														column.className?.includes("justify-end")
-															? "ml-auto mr-2"
-															: "ml-2"
-													} flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity`}
+													className={cn(
+														"flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity",
+														{ "opacity-0 group-hover:opacity-100": !column.isSorted },
+														{
+															"ml-auto mr-2": column.className?.includes("justify-end"),
+															"ml-2": !column.className?.includes("justify-end"),
+														},
+													)}
 												>
 													<Icon
 														role="img"
 														name="ChevronDown"
-														className={`transition-transform ${
-															(column.isSorted && !column.isSortedDesc) ||
-															(!column.isSorted && !column.sortDescFirst)
-																? "transform rotate-180"
-																: ""
-														}`}
+														className={cn("transition-transform", {
+															"transform rotate-180":
+																(column.isSorted && !column.isSortedDesc) ||
+																(!column.isSorted && !column.sortDescFirst),
+														})}
 														width={8}
 														height={5}
 													/>

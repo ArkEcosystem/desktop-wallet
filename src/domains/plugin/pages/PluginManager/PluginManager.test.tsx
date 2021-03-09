@@ -37,6 +37,8 @@ describe("PluginManager", () => {
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.get("/dated/delegate-calculator-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
 			.persist();
 
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -66,7 +68,7 @@ describe("PluginManager", () => {
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -75,7 +77,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -360,7 +362,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
 		});
 
 		await waitFor(() =>
@@ -397,7 +399,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
 		});
 
 		await waitFor(() =>
@@ -425,7 +427,7 @@ describe("PluginManager", () => {
 		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		act(() => {
 			fireEvent.click(
@@ -445,7 +447,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -655,18 +657,39 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(queryByTestId("PluginUpdatesConfirmation")).not.toBeInTheDocument());
 
 		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = undefined;
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
 	it("should show and continue the update confirmation modal", async () => {
 		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = "100.0.0";
 
+		let downloadsCount = 0;
+		let installCount = 0;
+
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:download") {
+				downloadsCount++;
+				return "/plugins/new-plugin";
+			}
+
+			if (channel === "plugin:install") {
+				installCount++;
+				return "/plugins/test-plugin";
+			}
+		});
+
 		const plugin = new PluginController(
 			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
 			() => void 0,
 		);
+		const plugin2 = new PluginController(
+			{ name: "@dated/delegate-calculator-plugin", version: "1.0.0" },
+			() => void 0,
+		);
 		pluginManager.plugins().push(plugin);
+		pluginManager.plugins().push(plugin2);
 
-		const { getByTestId, queryByTestId, getByText } = rendered;
+		const { getByTestId, getAllByText, getByText } = rendered;
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -677,11 +700,12 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
 
-		expect(getByText("100.0.0")).toBeInTheDocument();
+		expect(getAllByText("100.0.0").length).toBeGreaterThan(0);
 
 		fireEvent.click(getByTestId("PluginUpdates__continue-button"));
 
-		await waitFor(() => expect(queryByTestId("PluginUpdatesConfirmation")).not.toBeInTheDocument());
+		await waitFor(() => expect(downloadsCount).toBe(2));
+		await waitFor(() => expect(installCount).toBe(2));
 
 		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = undefined;
 	});

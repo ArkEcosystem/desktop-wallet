@@ -1,6 +1,9 @@
+import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import { act, fireEvent, render, waitFor } from "testing-library";
 
+import { FormField } from "../Form";
 import { InputRange } from "./InputRange";
 
 const properties = {
@@ -66,6 +69,29 @@ describe("InputRange", () => {
 	it("should track background min value", async () => {
 		const props = { ...properties, min: "4", value: 2, step: 3 };
 		const { getByTestId, asFragment } = render(<InputRange {...props} />);
+		await waitFor(() => {
+			expect(getByTestId("InputCurrency")).toHaveValue("2");
+			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "2");
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render invalid", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const props = { ...properties, min: "4", value: 2, step: 3 };
+		hookAct(() => {
+			form.current.setError("test", { type: "fail", message: "test" });
+		});
+
+		const { getByTestId, asFragment } = render(
+			<FormProvider {...form.current}>
+				<FormField name="test">
+					<InputRange {...props} />
+				</FormField>
+			</FormProvider>,
+		);
+
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("2");
 			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "2");
