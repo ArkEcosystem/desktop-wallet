@@ -683,7 +683,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             ID
@@ -699,16 +699,16 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Date
                           </div>
                           <div
-                            class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -727,7 +727,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Recipient
@@ -735,13 +735,13 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -755,7 +755,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Status
@@ -763,7 +763,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -777,10 +777,10 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                             Amount
                           </div>
                           <div
-                            class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -1680,7 +1680,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             ID
@@ -1696,16 +1696,16 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Date
                           </div>
                           <div
-                            class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -1724,7 +1724,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Recipient
@@ -1732,13 +1732,13 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -1752,7 +1752,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Status
@@ -1760,7 +1760,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -1774,10 +1774,10 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                             Amount
                           </div>
                           <div
-                            class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -2677,7 +2677,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             ID
@@ -2693,16 +2693,16 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Date
                           </div>
                           <div
-                            class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -2721,7 +2721,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Recipient
@@ -2729,13 +2729,13 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -2749,7 +2749,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Status
@@ -2757,7 +2757,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -2771,10 +2771,10 @@ exports[`WalletDetails should remove wallet name 1`] = `
                             Amount
                           </div>
                           <div
-                            class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -3671,7 +3671,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             ID
@@ -3687,16 +3687,16 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Date
                           </div>
                           <div
-                            class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -3715,7 +3715,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Recipient
@@ -3723,13 +3723,13 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -3743,7 +3743,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Status
@@ -3751,7 +3751,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -3765,10 +3765,10 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             Amount
                           </div>
                           <div
-                            class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -4668,7 +4668,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             ID
@@ -4684,16 +4684,16 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Date
                           </div>
                           <div
-                            class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -4712,7 +4712,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Recipient
@@ -4720,13 +4720,13 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -4740,7 +4740,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Status
@@ -4748,7 +4748,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -4762,10 +4762,10 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                             Amount
                           </div>
                           <div
-                            class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -5671,7 +5671,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             ID
@@ -5687,16 +5687,16 @@ exports[`WalletDetails should update wallet name 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Date
                           </div>
                           <div
-                            class=" ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
@@ -5715,7 +5715,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top  "
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Recipient
@@ -5723,13 +5723,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -5743,7 +5743,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-center "
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Status
@@ -5751,7 +5751,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--5"
                         role="columnheader"
@@ -5765,10 +5765,10 @@ exports[`WalletDetails should update wallet name 1`] = `
                             Amount
                           </div>
                           <div
-                            class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform "
+                              class="sc-bdfBwQ kJrqvM transition-transform"
                               height="5"
                               role="img"
                               width="8"
