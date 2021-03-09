@@ -138,7 +138,7 @@ describe("UpdatePeer", () => {
 			await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
 
 			act(() => {
-				fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.devnet"));
+				fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 			});
 
 			await waitFor(() =>

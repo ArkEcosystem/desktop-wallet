@@ -44,6 +44,7 @@ test("should open and cancel contact update modal", async (t) => {
 			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
 		)
 		.ok();
+	await t.hover(Selector('[data-testid="contact-form__cancel-btn"]'));
 	await t.click(Selector('[data-testid="contact-form__cancel-btn"]'));
 	await t
 		.expect(
@@ -77,6 +78,7 @@ test("should successfully update contact", async (t) => {
 
 	// Save
 	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
+	await t.hover(Selector('[data-testid="contact-form__save-btn"]'));
 	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
 
 	await t
@@ -109,13 +111,15 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
-	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ContactForm__network-item-1"));
+	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
+	await t.pressKey("enter");
+
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "invalid address");
 	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
 
 	// Add address
+	await t.hover(Selector('[data-testid="contact-form__add-address-btn"]'));
 	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
 	await t.expect(Selector('[data-testid="Input-error"]').exists).ok();
 
@@ -146,8 +150,9 @@ test("should error on duplicate address addition", async (t) => {
 		)
 		.ok();
 
-	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ContactForm__network-item-1"));
+	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
+	await t.pressKey("enter");
+
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
 	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
@@ -176,8 +181,8 @@ test("should error if contact name is already taken", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, newContact);
 
-	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#ContactForm__network-item-1"));
+	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
+	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
