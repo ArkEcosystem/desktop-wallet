@@ -67,7 +67,7 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 
 							<TableCell className={borderClasses()} innerClassName="space-x-4 justify-center">
 								<Clipboard data={address.address()}>
-									<div className="text-theme-primary-300">
+									<div className="text-theme-primary-300 dark:text-theme-secondary-700">
 										<Icon name="Copy" />
 									</div>
 								</Clipboard>
