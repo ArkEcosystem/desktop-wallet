@@ -54,9 +54,8 @@ exports[`UpdateWalletName should render a modal 1`] = `
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -69,9 +68,10 @@ exports[`UpdateWalletName should render a modal 1`] = `
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
+                  aria-invalid="false"
                   class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
@@ -94,7 +94,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
               <button
                 class="Button__StyledButton-mdtvtf-0 ePkfgQ"
                 data-testid="UpdateWalletName__submit"
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -103,7 +103,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -163,12 +163,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
                 class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -178,11 +177,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
@@ -223,7 +222,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -232,7 +231,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -292,12 +291,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
                 class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -307,11 +305,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
@@ -352,7 +350,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -361,7 +359,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -421,12 +419,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
                 class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -436,11 +433,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
@@ -481,7 +478,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -490,7 +487,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -550,12 +547,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
                 class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -565,11 +561,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
@@ -610,7 +606,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -619,7 +615,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -679,12 +675,11 @@ exports[`UpdateWalletName should show error message when name consists only of w
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
                 class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -694,11 +689,11 @@ exports[`UpdateWalletName should show error message when name consists only of w
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
@@ -739,7 +734,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -748,7 +743,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -808,12 +803,11 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
           >
             You can enter the name of your wallet for a quick search in your wallet.
           </div>
-          <form
+          <div
             class="mt-8"
-            data-testid="Form"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
                 class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -823,11 +817,11 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                 Name
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="relative"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
                   data-testid="UpdateWalletName__input"
                   name="name"
                 />
@@ -868,7 +862,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                 class="Button__StyledButton-mdtvtf-0 kwcZQn"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
-                type="submit"
+                type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
@@ -877,7 +871,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                 </div>
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

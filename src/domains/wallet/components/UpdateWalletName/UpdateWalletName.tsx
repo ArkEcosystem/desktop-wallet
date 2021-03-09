@@ -1,35 +1,47 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel } from "app/components/Form";
-import { InputDefault } from "app/components/Input";
+import { FormField, FormLabel } from "app/components/Form";
+import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Validate } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type UpdateWalletNameProps = {
-	wallet: ReadWriteWallet;
+	currentAlias?: string;
+	walletId?: string;
 	profile: Profile;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onSave: any;
+	validation?: Validate;
 };
 
-export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, onSave }: UpdateWalletNameProps) => {
-	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name: wallet.alias() } });
+export const UpdateWalletName = ({
+	currentAlias,
+	walletId,
+	profile,
+	isOpen,
+	onClose,
+	onCancel,
+	onSave,
+	validation,
+}: UpdateWalletNameProps) => {
+	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name: currentAlias } });
 	const { formState, register, setValue } = methods;
+	const { isValid, errors } = formState;
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
 
 	useEffect(() => {
 		if (isOpen) {
-			setValue("name", wallet.alias() as string);
+			setValue("name", currentAlias);
 		}
-	}, [wallet, isOpen, setValue]);
+	}, [currentAlias, isOpen, setValue]);
 
-	const handleSubmit = ({ name }: any) => {
+	const onSubmit = ({ name }: any) => {
 		onSave(name.trim().substring(0, nameMaxLength));
 	};
 
@@ -41,49 +53,54 @@ export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, o
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
+			<div className="mt-8">
 				<FormField name="name">
 					<FormLabel required={false}>{t("COMMON.NAME")}</FormLabel>
-					<InputDefault
-						data-testid="UpdateWalletName__input"
-						ref={register({
-							validate: {
-								whitespaceOnly: (alias) => {
-									if (alias.length) {
-										return (
-											!!alias.trim().length ||
-											t("COMMON.VALIDATION.FIELD_INVALID", {
-												field: t("COMMON.NAME"),
-											}).toString()
-										);
-									}
+					<div className="relative">
+						<Input
+							errorMessage={errors["name"]?.message}
+							isInvalid={!isValid}
+							data-testid="UpdateWalletName__input"
+							ref={register({
+								validate: {
+									whitespaceOnly: (alias) => {
+										if (alias.length) {
+											return (
+												!!alias.trim().length ||
+												t("COMMON.VALIDATION.FIELD_INVALID", {
+													field: t("COMMON.NAME"),
+												}).toString()
+											);
+										}
 
-									return true;
+										return true;
+									},
+									duplicateAlias: (alias) =>
+										!alias ||
+										!profile
+											.wallets()
+											.values()
+											.filter(
+												(item: ReadWriteWallet) =>
+													item.id() !== walletId &&
+													item.alias() &&
+													item.alias()!.trim().toLowerCase() === alias.trim().toLowerCase(),
+											).length ||
+										t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
+											alias: alias.trim(),
+										}).toString(),
+									validation: validation!,
 								},
-								duplicateAlias: (alias) =>
-									!alias ||
-									!profile
-										.wallets()
-										.values()
-										.filter(
-											(item: ReadWriteWallet) =>
-												item.id() !== wallet.id() &&
-												item.alias() &&
-												item.alias()!.trim().toLowerCase() === alias.trim().toLowerCase(),
-										).length ||
-									t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
-										alias: alias.trim(),
-									}).toString(),
-							},
-							maxLength: {
-								value: nameMaxLength,
-								message: t("COMMON.VALIDATION.MAX_LENGTH", {
-									field: t("COMMON.NAME"),
-									maxLength: nameMaxLength,
-								}),
-							},
-						})}
-					/>
+								maxLength: {
+									value: nameMaxLength,
+									message: t("COMMON.VALIDATION.MAX_LENGTH", {
+										field: t("COMMON.NAME"),
+										maxLength: nameMaxLength,
+									}),
+								},
+							})}
+						/>
+					</div>
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
@@ -91,17 +108,23 @@ export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, o
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!formState.isValid}>
+					<Button
+						type="button"
+						data-testid="UpdateWalletName__submit"
+						disabled={!isValid}
+						onClick={methods.handleSubmit(onSubmit)}
+					>
 						{t("COMMON.SAVE")}
 					</Button>
 				</div>
-			</Form>
+			</div>
 		</Modal>
 	);
 };
 
 UpdateWalletName.defaultProps = {
 	isOpen: false,
+	validation: () => true,
 };
 
 UpdateWalletName.displayName = "UpdateWalletName";

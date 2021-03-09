@@ -11,6 +11,7 @@ type InputProps = {
 	as?: React.ElementType;
 	isInvalid?: boolean;
 	isFocused?: boolean;
+	errorMessage?: string;
 	errorClassName?: string;
 } & React.HTMLProps<any>;
 
@@ -39,10 +40,11 @@ const InputStyled = styled.input`
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
-	({ isInvalid, className, isFocused, errorClassName, ...props }: InputProps, ref) => {
+	({ isInvalid, className, isFocused, errorClassName, errorMessage, ...props }: InputProps, ref) => {
 		const fieldContext = useFormField();
 
 		const isInvalidValue = fieldContext?.isInvalid || isInvalid;
+		const errorMessageValue = fieldContext?.errorMessage || errorMessage;
 
 		const focusRef = useRef<InputElement>(null);
 		ref = isFocused ? focusRef : ref;
@@ -68,8 +70,8 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 
 				{isInvalidValue && (
 					<InputAddonEnd className={cn("my-px mr-4", errorClassName)}>
-						<Tooltip content={fieldContext?.errorMessage} variant="sm">
-							<span data-errortext={fieldContext?.errorMessage} data-testid="Input-error">
+						<Tooltip content={errorMessageValue} variant="sm">
+							<span data-errortext={errorMessageValue} data-testid="Input-error">
 								<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
 							</span>
 						</Tooltip>
