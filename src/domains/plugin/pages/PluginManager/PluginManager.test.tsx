@@ -37,6 +37,8 @@ describe("PluginManager", () => {
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.get("/dated/delegate-calculator-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
 			.persist();
 
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -66,7 +68,7 @@ describe("PluginManager", () => {
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -75,7 +77,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -360,7 +362,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
 		});
 
 		await waitFor(() =>
@@ -397,7 +399,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
 		});
 
 		await waitFor(() =>
@@ -425,7 +427,7 @@ describe("PluginManager", () => {
 		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		act(() => {
 			fireEvent.click(
@@ -445,7 +447,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export Plugin").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(6));
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -625,5 +627,50 @@ describe("PluginManager", () => {
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should handle update all", async () => {
+		let downloadsCount = 0;
+		let installCount = 0;
+
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:download") {
+				downloadsCount++;
+				return "/plugins/new-plugin";
+			}
+
+			if (channel === "plugin:install") {
+				installCount++;
+				return "/plugins/test-plugin";
+			}
+		});
+
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		const plugin2 = new PluginController(
+			{ name: "@dated/delegate-calculator-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		pluginManager.plugins().push(plugin);
+		pluginManager.plugins().push(plugin2);
+
+		const { getByTestId, container } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager__update-all"));
+		});
+
+		await waitFor(() => expect(downloadsCount).toBe(2));
+		await waitFor(() => expect(installCount).toBe(2));
+
+		expect(container).toMatchSnapshot();
 	});
 });
