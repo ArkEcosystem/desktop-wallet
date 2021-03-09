@@ -69,7 +69,7 @@ export const PluginImage = ({
 	return (
 		<PluginImageWrapper
 			size={size}
-			className={cn({ "filter-grayscale": !isEnabled })}
+			className={cn({ "filter-grayscale": !isEnabled }, className)}
 			data-testid="PluginImage__logo"
 		>
 			<img src={logoURL} alt="Logo" className="object-cover w-full h-full" />
