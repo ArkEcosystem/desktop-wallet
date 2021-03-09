@@ -232,6 +232,7 @@ describe("LedgerTabs", () => {
 			const { register } = form;
 
 			useEffect(() => {
+				register("names");
 				register("network");
 			}, [register]);
 
@@ -258,13 +259,22 @@ describe("LedgerTabs", () => {
 		// Import wallets before entering the last step
 		expect(profile.wallets().values()).toHaveLength(4);
 
-		act(() => {
-			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[1], {
-				target: {
-					value: "Custom Name",
-				},
-			});
+		// First address
+		fireEvent.click(screen.getAllByTestId("LedgerImportStep__edit-alias")[1]);
+
+		await waitFor(() => expect(screen.getByTestId("UpdateWalletName__input")).toBeInTheDocument());
+
+		fireEvent.input(screen.getByTestId("UpdateWalletName__input"), {
+			target: {
+				value: "Custom Name",
+			},
 		});
+
+		await waitFor(() => expect(screen.getByTestId("UpdateWalletName__submit")).not.toBeDisabled());
+
+		fireEvent.click(screen.getByTestId("UpdateWalletName__submit"));
+
+		await waitFor(() => expect(screen.queryByTestId("UpdateWalletName__input")).not.toBeInTheDocument());
 
 		act(() => {
 			fireEvent.click(submitSelector());

@@ -104,7 +104,7 @@ export const UpdateWalletName = ({
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
-					<Button variant="secondary" onClick={onCancel}>
+					<Button data-testid="UpdateWalletName__cancel" variant="secondary" onClick={onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 

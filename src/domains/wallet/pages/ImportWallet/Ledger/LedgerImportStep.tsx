@@ -37,6 +37,10 @@ const MultipleImport = ({
 		setSelectedAddress(undefined);
 	};
 
+	const closeUpdateNameModal = () => {
+		setSelectedAddress(undefined);
+	};
+
 	useEffect(() => {
 		for (const wallet of wallets) {
 			register({ name: `names.${wallet.address}`, type: "custom" });
@@ -46,19 +50,17 @@ const MultipleImport = ({
 	return (
 		<>
 			<ul>
-				{wallets.map((wallet, index) => (
+				{wallets.map((wallet) => (
 					<li key={wallet.address}>
 						<TransactionDetail
 							borderPosition="bottom"
 							extra={
 								<Tooltip content={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")}>
 									<Button
+										data-testid="LedgerImportStep__edit-alias"
 										type="button"
 										variant="secondary"
-										onClick={(evt) => {
-											evt.preventDefault();
-											setSelectedAddress(wallet.address);
-										}}
+										onClick={() => setSelectedAddress(wallet.address)}
 									>
 										<Icon name="Edit" />
 									</Button>
@@ -92,8 +94,8 @@ const MultipleImport = ({
 				currentAlias={getValues(`names.${selectedAddress}`)}
 				profile={profile}
 				isOpen={!!selectedAddress}
-				onClose={() => setSelectedAddress(undefined)}
-				onCancel={() => setSelectedAddress(undefined)}
+				onClose={closeUpdateNameModal}
+				onCancel={closeUpdateNameModal}
 				onSave={handleUpdateName}
 				validation={validation}
 			/>
