@@ -16,7 +16,9 @@ describe("AdvancedMode", () => {
 		const { asFragment, getByTestId } = render(<AdvancedMode isOpen={true} />);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

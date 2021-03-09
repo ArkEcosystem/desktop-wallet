@@ -1,0 +1,109 @@
+{
+	"_id": "@dated/delegate-calculator-plugin",
+	"_rev": "5-e27e2e6114a02d9131e51d0e0707efc7",
+	"time": {
+		"1.0.0": "2020-03-26T20:01:57.329Z",
+		"created": "2020-03-26T20:07:27.399Z",
+		"1.0.1": "2020-03-26T20:07:27.789Z",
+		"modified": "2020-11-26T21:18:47.528Z",
+		"1.0.2": "2020-03-26T20:48:24.434Z",
+		"1.0.3": "2020-11-26T21:18:44.681Z"
+	},
+	"name": "@dated/delegate-calculator-plugin",
+	"dist-tags": {
+		"latest": "1.0.4"
+	},
+	"versions": {
+		"1.0.4": {
+			"name": "@dated/delegate-calculator-plugin",
+			"version": "1.0.4",
+			"description": "Compare delegate payouts and get an overview of your potential staking rewards directly in the ARK Desktop Wallet",
+			"main": "src/index.js",
+			"author": {
+				"name": "Edgar Goetzendorff",
+				"email": "hello@dated.fun"
+			},
+			"license": "MIT",
+			"desktop-wallet": {
+				"title": "ARK Delegate Calculator",
+				"images": [],
+				"categories": ["utility"],
+				"permissions": [
+					"COMPONENTS",
+					"ROUTES",
+					"MENU_ITEMS",
+					"UI_COMPONENTS",
+					"PROFILE_CURRENT",
+					"PEER_ALL",
+					"HTTP",
+					"UTILS",
+					"STORAGE",
+					"ALERTS",
+					"DIALOGS"
+				],
+				"urls": ["^"],
+				"minimumVersion": "2.9.1"
+			},
+			"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+			"bugs": {
+				"url": "https://github.com/@dated/delegate-calculator-plugin/issues"
+			},
+			"homepage": "https://github.com/@dated/delegate-calculator-plugin",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/@dated/delegate-calculator-plugin.git"
+			},
+			"gitHead": "55f050be0a784e49ec3bf2a3f8cc50f31b4bef30",
+			"_id": "@dated/delegate-calculator-plugin@1.0.3",
+			"_nodeVersion": "12.18.1",
+			"_npmVersion": "6.14.5",
+			"dist": {
+				"integrity": "sha512-Dv4u8RJSJpeXbD4PEShKZOEqIAMOhGLHIZ19Q21KKGON2tp5+mDyG2RxJndFJsup4rDHURT9txkzrf1VuRnGzA==",
+				"shasum": "c7c8b910cffe54e3f1f311628c287399c87cbdb1",
+				"tarball": "https://registry.npmjs.org/@dated/delegate-calculator-plugin/-/transaction-export-plugin-1.0.3.tgz",
+				"fileCount": 23,
+				"unpackedSize": 304275,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfwBu1CRA9TVsSAnZWagAAItcP/2Xa1Bqw0MBWGQSCRQDq\nocu11ihUa5fWxbY9ziZx2AIdqffmRbWBXE1oME0yfjsK37RPFhog2ceYyE2+\nuqfumuwKR2cgJznUFL8+Z5goJ5/YQ2Ln/BsqtAouD+HSFgnSR5eX8sE6XbAH\nffYq0Y1vIFoCwWRUjKGtLeO+kFUpK4YC7sOvnAJ2f+x2+At8nwXXNe/VCUfE\nug/KxiIkCSNaKe8WpmqMq39w0mAfWooWjWxcHwvNeY+rH85WAaUndFUYEeyx\nNhRtdHYiHNHBdHCZMY6e/1J5j/lP1illunfjnLsvaXo0gW42OZq/9HL9YF92\nubwIFNSTQwMBFDsnJcNNcJ6+lQDw92Iq2IIxhNlrwzh5nxYUCs0mV83fmE9s\nJ9MZCQKO5MXksFHCYRKJHI9f0wwH0upP4oqM1c8AOw8Z0OukPlb2eyosZjgv\n94xl1WpzZRRtzZIUm146meZk4REOFxDFibgWXqhadO+jrTNEj6J6tIqM9Fxu\nB5B9KvkN0s4VrbSY8RjNKNWjg1vLymbqOtRvj6c3Ex32+i3XyfcTAgzb6t+6\nMS+Ei3gVNhItbY+g5eZ4mA6t5gfA4fgNE4sHprasgjVXJfLh/Ty33xJDgxuu\neuzlvQXIGG1C88mIh112PACAQYIYjG+bf7W5nHhnQ1Yn1fidDRf2+1ToTKp+\nH93G\r\n=RUaz\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"_npmUser": {
+				"name": "dated",
+				"email": "hello@dated.fun"
+			},
+			"directories": {},
+			"maintainers": [
+				{
+					"name": "dated",
+					"email": "hello@dated.fun"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/transaction-export-plugin_1.0.3_1606425524549_0.6222308179434641"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"maintainers": [
+		{
+			"name": "dated",
+			"email": "hello@dated.fun"
+		}
+	],
+	"description": "Export your wallet transaction history",
+	"homepage": "https://github.com/@dated/delegate-calculator-plugin",
+	"keywords": ["utility", "export", "transactions", "taxes", "@arkecosystem", "desktop-wallet", "plugin"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/@dated/delegate-calculator-plugin.git"
+	},
+	"author": {
+		"name": "Edgar Goetzendorff",
+		"email": "hello@dated.fun"
+	},
+	"bugs": {
+		"url": "https://github.com/@dated/delegate-calculator-plugin/issues"
+	},
+	"license": "MIT",
+	"readme": "# ARK Delegate Calculator Plugin\n\n> Compare delegate payouts and get an overview of your potential staking rewards directly in the ARK Desktop Wallet.\n\n## Installation\n\nInstall this plugin directly through the Plugins Manager of the Desktop Wallet. Alternatively you can clone or [download it](https://github.com/dated/delegate-calculator-plugin/archive/master.zip) this repository and unzip it into `~/.ark-desktop/plugins/`.\n\n## Credits\n\n- [Edgar Goetzendorff](https://github.com/dated)\n- [All Contributors](../../contributors)\n\n## License\n\n[MIT](LICENSE) © [Edgar Goetzendorff]",
+	"readmeFilename": "README.md"
+}

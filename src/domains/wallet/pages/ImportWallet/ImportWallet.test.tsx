@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/await-thenable */
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
@@ -19,8 +20,9 @@ import {
 	render,
 	RenderResult,
 	renderWithRouter,
+	screen,
 	waitFor,
-} from "testing-library";
+} from "utils/testing-library";
 
 import { ImportWallet } from "./ImportWallet";
 import { FirstStep } from "./Step1";
@@ -109,71 +111,84 @@ describe("ImportWallet", () => {
 	});
 
 	it("should render 2st step", async () => {
-		const { result: form } = renderHook(() =>
-			useForm({
+		let form: ReturnType<typeof useForm>;
+
+		const Component = () => {
+			form = useForm({
 				defaultValues: {
 					network: {
 						id: () => "ark.devnet",
 						coin: () => "ARK",
 					},
+					type: "mnemonic",
 				},
-			}),
-		);
-		const { getByTestId, asFragment } = render(
-			<FormProvider {...form.current}>
-				<SecondStep profile={profile} />
-			</FormProvider>,
-		);
+			});
+			form.register("type");
+			form.register("network");
+			return (
+				<FormProvider {...form}>
+					<SecondStep profile={profile} />
+				</FormProvider>
+			);
+		};
 
-		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		const { container } = render(<Component />);
 
-		const addressToggle = getByTestId("ImportWallet__address-toggle");
-		expect(addressToggle).toBeTruthy();
+		expect(screen.getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+		await waitFor(() => expect(screen.getByTestId("ImportWallet__mnemonic-input")));
+
+		const passphraseInput = screen.getByTestId("ImportWallet__mnemonic-input");
 		expect(passphraseInput).toBeTruthy();
 
-		act(() => {
-			fireEvent.change(passphraseInput, { target: { value: mnemonic } });
-		});
+		fireEvent.change(passphraseInput, { target: { value: mnemonic } });
 
 		await waitFor(() => {
-			expect(form.current.getValues()).toEqual({ passphrase: mnemonic });
+			expect(form.getValues()).toMatchObject({ type: "mnemonic", value: mnemonic });
 		});
 
 		act(() => {
-			fireEvent.click(addressToggle);
+			fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
 		});
 
-		await waitFor(() => {
-			const addressInput = getByTestId("ImportWallet__address-input");
-			expect(addressInput).toBeTruthy();
+		await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
 		});
+
+		await waitFor(() => expect(screen.getByTestId("ImportWallet__address-input")).toBeInTheDocument());
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should render 3st step", async () => {
-		const { result: form } = renderHook(() =>
-			useForm({
+		let form: ReturnType<typeof useForm>;
+		const Component = () => {
+			form = useForm({
 				defaultValues: {
 					network: {
 						id: () => "ark.devnet",
 						coin: () => "ARK",
 						ticker: () => "DARK",
 					},
+					type: "mnemonic",
 				},
-			}),
-		);
-		const { getByTestId, getByText, asFragment } = render(
-			<FormProvider {...form.current}>
-				<ThirdStep
-					address={identityAddress}
-					balance={BigNumber.make(80)}
-					nameMaxLength={42}
-					profile={profile}
-				/>
-			</FormProvider>,
-		);
+			});
+
+			return (
+				<FormProvider {...form}>
+					<ThirdStep
+						address={identityAddress}
+						balance={BigNumber.make(80)}
+						nameMaxLength={42}
+						profile={profile}
+					/>
+				</FormProvider>
+			);
+		};
+
+		const { getByTestId, getByText, asFragment } = render(<Component />);
 
 		expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -187,7 +202,7 @@ describe("ImportWallet", () => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });
 		});
 
-		expect(form.current.getValues()).toEqual({ name: "Test" });
+		expect(form.getValues()).toEqual({ name: "Test" });
 	});
 
 	it("should go back to dashboard", async () => {
@@ -317,7 +332,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
 			expect(passphraseInput).toBeTruthy();
 
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
@@ -370,7 +385,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { getByTestId, asFragment } = rendered;
+		const { getByTestId, queryByTestId, asFragment } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -394,11 +409,17 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
 
-			await fireEvent.click(addressToggle);
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
 
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
+			});
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__address-input")).toBeInTheDocument());
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
@@ -465,7 +486,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { getByTestId, asFragment } = rendered;
+		const { getByTestId, asFragment, queryByTestId } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -489,11 +510,16 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
 
-			await fireEvent.click(addressToggle);
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
 
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
+			});
+			await waitFor(() => expect(queryByTestId("ImportWallet__address-input")).toBeInTheDocument());
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
@@ -554,7 +580,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { getByTestId, asFragment, getByText } = rendered;
+		const { getByTestId, asFragment, queryByTestId } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -578,10 +604,16 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
 
-			await fireEvent.click(addressToggle);
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
+			});
+			await waitFor(() => expect(queryByTestId("ImportWallet__address-input")).toBeInTheDocument());
 
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
@@ -622,7 +654,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { getByTestId, asFragment, getByText } = rendered;
+		const { getByTestId, asFragment, queryByTestId } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -646,7 +678,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
 			expect(passphraseInput).toBeTruthy();
 
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
@@ -655,10 +687,16 @@ describe("ImportWallet", () => {
 				expect(getByTestId("Input-error")).toBeVisible();
 			});
 
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
 
-			await fireEvent.click(addressToggle);
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
+			});
+			await waitFor(() => expect(queryByTestId("ImportWallet__address-input")).toBeInTheDocument());
 
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
@@ -723,7 +761,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
 			expect(passphraseInput).toBeTruthy();
 
 			await fireEvent.input(passphraseInput, { target: { value: "this is a top secret passphrase" } });
@@ -778,7 +816,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { getByTestId, asFragment } = rendered;
+		const { getByTestId, asFragment, queryByTestId } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -802,10 +840,16 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 			});
 
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
 
-			await fireEvent.click(addressToggle);
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
+			});
+			await waitFor(() => expect(queryByTestId("ImportWallet__address-input")).toBeInTheDocument());
 
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
