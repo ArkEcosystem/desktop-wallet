@@ -108,13 +108,8 @@ export const SelectNetwork = ({
 			return undefined;
 		}
 
-		// no input, no selection
-		if (!inputValue) {
-			return undefined;
-		}
-
-		// input matches `network`
-		if (isMatch(inputValue, network)) {
+		// no input or input matches `network`
+		if (!inputValue || isMatch(inputValue, network)) {
 			return undefined;
 		}
 
