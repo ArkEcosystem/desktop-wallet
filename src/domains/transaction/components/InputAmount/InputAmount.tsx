@@ -11,11 +11,7 @@ export const InputAmount = ({ children, className, ...props }: InputAmountProps)
 	const fieldContext = useFormField();
 
 	return (
-		<InputCurrency
-			className={cn({ "pr-20": !fieldContext?.isInvalid, "pr-32": fieldContext?.isInvalid })}
-			errorClassName="mr-25"
-			{...props}
-		>
+		<InputCurrency className={cn({ "pr-1/2": !fieldContext?.isInvalid })} {...props}>
 			{children}
 		</InputCurrency>
 	);
