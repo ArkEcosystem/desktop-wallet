@@ -4,10 +4,10 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
+import { Link } from "app/components/Link";
 import { useEnvironmentContext } from "app/contexts";
 import { useProfileRestore } from "app/hooks";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
-import { ImportProfile } from "domains/profile/components/ImportProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
 import React, { useEffect, useMemo, useState } from "react";
@@ -137,7 +137,12 @@ export const Welcome = () => {
 							</div>
 						</div>
 
-						<ImportProfile {...context} />
+						<p className="text-sm text-theme-secondary-text md:text-base mt-16">
+							<span>{t("PROFILE.PAGE_WELCOME.HAS_EXPORTED_PROFILES")} </span>
+							<Link to="/profiles/import" title={t("PROFILE.PAGE_WELCOME.IMPORT_PROFILE_TITLE")}>
+								{t("PROFILE.PAGE_WELCOME.IMPORT_PROFILE")}
+							</Link>
+						</p>
 					</div>
 				</Section>
 			</Page>
