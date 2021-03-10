@@ -177,7 +177,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.TITLE"),
-			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
