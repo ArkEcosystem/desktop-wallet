@@ -236,7 +236,7 @@ export default {
     model: {
       required,
       isValid (value) {
-        return WalletService.validatePassphrase(value, this.pubKeyHash)
+        return WalletService.validatePassphrase(value)
       },
       matchAddress (value) {
         if (this.address) {

@@ -28,17 +28,18 @@
     >
       {{ $t("TRANSACTION.TYPE.DELEGATE_REGISTRATION") }}
     </span>
-    <span
+    <div
       v-else-if="transaction_isVote(type, group)"
-      v-tooltip="{
-        content: votedDelegateAddress,
-        container: tooltipContainer,
-        delay: { show: 300, hide: 0 },
-        show: showTooltip,
-        trigger: 'manual'
-      }"
     >
       <a
+        v-if="!hasMultipleVotes"
+        v-tooltip="{
+          content: votedDelegateAddress,
+          container: tooltipContainer,
+          delay: { show: 300, hide: 0 },
+          show: showTooltip,
+          trigger: 'manual'
+        }"
         :class="[isUnvote ? 'text-red' : 'text-green']"
         @click.stop="onClick"
         @mouseover="onMouseOver"
@@ -52,7 +53,40 @@
           ({{ votedDelegateUsername }})
         </span>
       </a>
-    </span>
+
+      <div
+        v-else
+        class="flex items-center truncate"
+        @click.stop="onClick"
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+      >
+        <a
+          v-tooltip="{
+            content: votedDelegateAddress,
+            container: tooltipContainer,
+            delay: { show: 300, hide: 0 },
+            show: showTooltip,
+            trigger: 'manual'
+          }"
+          class="text-green"
+          @click.stop="onClick"
+          @mouseover="onMouseOver"
+          @mouseout="onMouseOut"
+        >
+          {{ $t("TRANSACTION.TYPE.VOTE") }}
+          <span
+            v-if="votedDelegate"
+            class="italic"
+          >
+            ({{ votedDelegateUsername }})
+          </span>
+        </a>
+        <span class="ml-1">
+          / {{ $t("TRANSACTION.TYPE.UNVOTE") }}
+        </span>
+      </div>
+    </div>
     <span
       v-else-if="transaction_isMultiSignature(type, group)"
       v-tooltip="{
@@ -569,17 +603,17 @@ export default {
   }),
 
   computed: {
+    hasMultipleVotes () {
+      return this.asset && this.asset.votes && this.asset.votes.length > 1
+    },
+
     isUnvote () {
-      if (this.asset && this.asset.votes) {
-        const vote = this.asset.votes[0]
-        return vote.charAt(0) === '-'
-      }
-      return false
+      return this.asset && this.asset.votes && this.asset.votes[0].charAt(0) === '-'
     },
 
     votePublicKey () {
       if (this.asset && this.asset.votes) {
-        const vote = this.asset.votes[0]
+        const vote = this.hasMultipleVotes ? this.asset.votes.find(vote => vote.charAt(0) === '+') : this.asset.votes[0]
         return vote.substr(1)
       }
       return ''

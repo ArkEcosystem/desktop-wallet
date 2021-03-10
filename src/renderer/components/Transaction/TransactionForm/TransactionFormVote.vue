@@ -256,11 +256,15 @@ export default {
     },
 
     showVoteUnvoteButton () {
-      if (this.currentWallet.isContact || (!!this.votedDelegate && !this.isVoter) || (this.delegate.isResigned && !this.isVoter)) {
+      if (this.currentWallet.isContact) {
         return false
       }
 
-      return !this.votedDelegate || (!!this.votedDelegate && this.isVoter)
+      if (this.isVoter === false && this.delegate.isResigned) {
+        return false
+      }
+
+      return true
     },
 
     showCurrentlyVoting () {
@@ -305,6 +309,10 @@ export default {
 
       if (this.currentWallet.secondPublicKey) {
         transactionData.secondPassphrase = this.form.secondPassphrase
+      }
+
+      if (this.isVoter === false && !!this.votedDelegate && this.$client.satisfiesCoreVersion('>=3')) {
+        transactionData.votes.unshift(`-${this.votedDelegate.publicKey}`)
       }
 
       return transactionData
