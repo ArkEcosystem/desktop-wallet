@@ -3,7 +3,7 @@
 exports[`Alert should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
   >
     <div
       class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -28,7 +28,7 @@ exports[`Alert should render 1`] = `
 exports[`Alert should render as danger alert 1`] = `
 <DocumentFragment>
   <div
-    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-danger-50 dark:bg-transparent border border-transparent dark:border-theme-danger-400 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-danger-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
   >
     <div
       class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-danger-400"
@@ -53,7 +53,7 @@ exports[`Alert should render as danger alert 1`] = `
 exports[`Alert should render as hint alert 1`] = `
 <DocumentFragment>
   <div
-    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-hint-50 dark:bg-transparent border border-transparent dark:border-theme-hint-500 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-hint-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
   >
     <div
       class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-hint-500"
@@ -78,7 +78,7 @@ exports[`Alert should render as hint alert 1`] = `
 exports[`Alert should render as info alert 1`] = `
 <DocumentFragment>
   <div
-    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-primary-50 dark:bg-transparent border border-transparent dark:border-theme-primary-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-primary-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
   >
     <div
       class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-primary-600"
@@ -103,7 +103,7 @@ exports[`Alert should render as info alert 1`] = `
 exports[`Alert should render as success alert 1`] = `
 <DocumentFragment>
   <div
-    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-success-50 dark:bg-transparent border border-transparent dark:border-theme-success-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-success-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
   >
     <div
       class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-success-600"
@@ -128,7 +128,7 @@ exports[`Alert should render as success alert 1`] = `
 exports[`Alert should render as warning alert 1`] = `
 <DocumentFragment>
   <div
-    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
   >
     <div
       class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"

@@ -41,9 +41,7 @@ export const Alert = ({ variant, title, size, children }: AlertProps) => (
 	<div
 		className={`flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-${
 			variant === "info" ? "primary" : variant
-		}-50 dark:bg-transparent border border-transparent dark:border-theme-${getColorVariant(
-			variant,
-		)} sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center`}
+		}-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center`}
 	>
 		<div
 			className={`h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-${getColorVariant(
