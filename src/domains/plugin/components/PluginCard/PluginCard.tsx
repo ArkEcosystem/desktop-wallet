@@ -1,6 +1,7 @@
 import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -70,6 +71,21 @@ export const PluginCard = ({
 				onClick={onClick}
 				actions={actions}
 				className="h-52"
+				addonIcons={
+					<div className="flex items-center">
+						{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
+							<Tooltip
+								content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
+									minimumVersion: plugin.minimumVersion,
+								})}
+							>
+								<span data-testid="PluginCard__minimum-version-warning" className="ml-3 text-xl">
+									<Icon name="AlertWarning" className="text-theme-warning-500" />
+								</span>
+							</Tooltip>
+						)}
+					</div>
+				}
 				onSelect={(action: any) => {
 					if (action.value === "delete") {
 						onDelete?.();
