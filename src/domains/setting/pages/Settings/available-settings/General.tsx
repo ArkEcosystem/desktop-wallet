@@ -63,7 +63,11 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
 
-		if (checked && !activeProfile.settings().get(ProfileSetting.DoNotShowAdvancedModeDisclaimer, false)) {
+		const shouldShowDisclaimer = !activeProfile
+			.settings()
+			.get(ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+
+		if (checked && shouldShowDisclaimer) {
 			setIsOpenAdvancedModeModal(true);
 		} else {
 			setIsAdvancedMode(checked);
