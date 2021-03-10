@@ -173,21 +173,40 @@ exports[`AddRecipient should render 1`] = `
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                    33.75089801
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -238,7 +257,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1"
+          class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
@@ -249,7 +268,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           </div>
         </button>
         <button
-          class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1 border-l-0"
+          class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -262,7 +281,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
     >
       <div
         class="space-y-8"
@@ -275,7 +294,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             data-testid="FormLabel"
             for="recipientAddress"
           >
-            Recipient #1
+            Recipient
             <div
               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
               data-testid="FormLabel__required"
@@ -375,21 +394,40 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                    33.75089801
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -588,21 +626,40 @@ exports[`AddRecipient should render with single recipient data 1`] = `
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value="1"
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value="1"
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                    33.75089801
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -790,21 +847,40 @@ exports[`AddRecipient should render without recipients 1`] = `
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                    33.75089801
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -938,21 +1014,40 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                    33.75089801
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -1140,21 +1235,40 @@ exports[`AddRecipient should set available amount 1`] = `
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                    33.75089801
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -1342,21 +1456,39 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
             />
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="flex space-x-2"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="AddRecipient__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+              class="flex-1"
+            >
+              <div
+                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                  data-testid="AddRecipient__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                >
+                  <span
+                    class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  >
+                    Max
+                     
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex"
             >
               <button
-                class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
