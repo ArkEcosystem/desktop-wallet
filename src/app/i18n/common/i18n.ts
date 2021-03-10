@@ -96,6 +96,7 @@ export const translations: { [key: string]: any } = {
 	LOAD: "Load",
 	LOADING: "Loading ...",
 	LOADING_LEDGER: "Loading Ledger...",
+	MAX: "Max",
 	MESSAGE: "Message",
 	MY_ADDRESS: "My Address",
 	MY_WALLET: "My Wallet",
