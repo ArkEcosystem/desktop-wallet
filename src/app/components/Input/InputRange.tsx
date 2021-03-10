@@ -10,7 +10,7 @@ import { sanitizeStep } from "./utils";
 
 type CurrencyInput = {
 	display: string;
-	value: string;
+	value?: string;
 };
 
 type Props = {
@@ -74,7 +74,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				ref={ref}
 				onChange={handleInput}
 			>
-				{!disabled && Number(min) < Number(max) && (
+				{!disabled && inputValue.display && Number(min) < Number(max) && (
 					<div className="absolute bottom-0 px-1 w-full">
 						<Range
 							step={sanitizeStep({ min: Number(minValue), max: Number(max), step })}
