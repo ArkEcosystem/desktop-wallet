@@ -112,8 +112,8 @@ export class PluginConfigurationData {
 	}
 
 	permissions() {
-		const permissions = this.manifest().get<string[]>("permissions", []);
-		return uniq(permissions!.map((permission: string) => permission.toUpperCase()));
+		const permissions = this.manifest().get<string[]>("permissions") || [];
+		return uniq(permissions.map((permission: string) => permission.toUpperCase()));
 	}
 
 	urls() {
