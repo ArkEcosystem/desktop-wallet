@@ -4,7 +4,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
-import { useProfileExport } from "domains/setting/hooks/user-profile-export";
+import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import electron from "electron";
 import fs from "fs";
 import React from "react";

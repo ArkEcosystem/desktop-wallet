@@ -1,6 +1,6 @@
 import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
-import { useProfileExport } from "domains/setting/hooks/user-profile-export";
+import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 describe("useProfileExport", () => {
