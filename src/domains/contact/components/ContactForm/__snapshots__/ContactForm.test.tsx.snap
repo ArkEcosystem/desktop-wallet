@@ -89,7 +89,7 @@ exports[`ContactForm should select 1`] = `
             class="mt-6"
           >
             <div
-              class="font-bold text-sm text-theme-secondary-400 mb-3"
+              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
             >
               PUBLIC NETWORKS
             </div>
@@ -105,7 +105,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="ARK"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-ARK-ark.mainnet"
                 >
                   <div
@@ -126,7 +126,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="Compendia"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-ARK-compendia.mainnet"
                 >
                   <div
@@ -147,7 +147,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="Bitcoin"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-BTC-btc.livenet"
                 >
                   <div
@@ -168,7 +168,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="Ethereum"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-ETH-eth.mainnet"
                 >
                   <div
@@ -189,7 +189,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="Lisk"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-LSK-lsk.mainnet"
                 >
                   <div
@@ -210,7 +210,7 @@ exports[`ContactForm should select 1`] = `
             class="mt-6"
           >
             <div
-              class="font-bold text-sm text-theme-secondary-400 mb-3"
+              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
             >
               DEVELOPMENT NETWORKS
             </div>
@@ -226,7 +226,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -247,7 +247,7 @@ exports[`ContactForm should select 1`] = `
               >
                 <div
                   aria-label="Lisk Testnet"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                   data-testid="NetworkIcon-LSK-lsk.testnet"
                 >
                   <div
@@ -471,7 +471,7 @@ exports[`ContactForm should select with errors 1`] = `
             class="mt-6"
           >
             <div
-              class="font-bold text-sm text-theme-secondary-400 mb-3"
+              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
             >
               PUBLIC NETWORKS
             </div>
@@ -487,7 +487,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="ARK"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-ARK-ark.mainnet"
                 >
                   <div
@@ -508,7 +508,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="Compendia"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-ARK-compendia.mainnet"
                 >
                   <div
@@ -529,7 +529,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="Bitcoin"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-BTC-btc.livenet"
                 >
                   <div
@@ -550,7 +550,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="Ethereum"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-ETH-eth.mainnet"
                 >
                   <div
@@ -571,7 +571,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="Lisk"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                   data-testid="NetworkIcon-LSK-lsk.mainnet"
                 >
                   <div
@@ -592,7 +592,7 @@ exports[`ContactForm should select with errors 1`] = `
             class="mt-6"
           >
             <div
-              class="font-bold text-sm text-theme-secondary-400 mb-3"
+              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
             >
               DEVELOPMENT NETWORKS
             </div>
@@ -608,7 +608,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -629,7 +629,7 @@ exports[`ContactForm should select with errors 1`] = `
               >
                 <div
                   aria-label="Lisk Testnet"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                   data-testid="NetworkIcon-LSK-lsk.testnet"
                 >
                   <div

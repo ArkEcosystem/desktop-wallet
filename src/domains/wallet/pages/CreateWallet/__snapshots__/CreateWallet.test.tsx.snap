@@ -81,7 +81,7 @@ exports[`CreateWallet 1st step should render 1`] = `
           class="mt-6"
         >
           <div
-            class="font-bold text-sm text-theme-secondary-400 mb-3"
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
           >
             PUBLIC NETWORKS
           </div>
@@ -97,7 +97,7 @@ exports[`CreateWallet 1st step should render 1`] = `
             >
               <div
                 aria-label="ARK"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                 data-testid="NetworkIcon-ARK-ark.mainnet"
               >
                 <div
@@ -118,7 +118,7 @@ exports[`CreateWallet 1st step should render 1`] = `
             >
               <div
                 aria-label="Compendia"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                 data-testid="NetworkIcon-ARK-compendia.mainnet"
               >
                 <div
@@ -139,7 +139,7 @@ exports[`CreateWallet 1st step should render 1`] = `
           class="mt-6"
         >
           <div
-            class="font-bold text-sm text-theme-secondary-400 mb-3"
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
           >
             DEVELOPMENT NETWORKS
           </div>
@@ -155,7 +155,7 @@ exports[`CreateWallet 1st step should render 1`] = `
             >
               <div
                 aria-label="ARK Devnet"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
@@ -270,7 +270,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
             >
               <div
                 aria-label="ARK"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                 data-testid="NetworkIcon-ARK-ark.mainnet"
               >
                 <div
@@ -291,7 +291,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
             >
               <div
                 aria-label="Compendia"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                 data-testid="NetworkIcon-ARK-compendia.mainnet"
               >
                 <div
@@ -875,7 +875,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             PUBLIC NETWORKS
                           </div>
@@ -891,7 +891,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             >
                               <div
                                 aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
@@ -912,7 +912,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             >
                               <div
                                 aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-compendia.mainnet"
                               >
                                 <div
@@ -933,7 +933,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             DEVELOPMENT NETWORKS
                           </div>
@@ -949,7 +949,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -1863,7 +1863,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             PUBLIC NETWORKS
                           </div>
@@ -1879,7 +1879,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             >
                               <div
                                 aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
@@ -1900,7 +1900,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             >
                               <div
                                 aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-compendia.mainnet"
                               >
                                 <div
@@ -1921,7 +1921,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             DEVELOPMENT NETWORKS
                           </div>
@@ -1937,7 +1937,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -2853,7 +2853,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             PUBLIC NETWORKS
                           </div>
@@ -2869,7 +2869,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             >
                               <div
                                 aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
@@ -2890,7 +2890,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             >
                               <div
                                 aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-compendia.mainnet"
                               >
                                 <div
@@ -2911,7 +2911,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             DEVELOPMENT NETWORKS
                           </div>
@@ -2927,7 +2927,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -3505,7 +3505,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             PUBLIC NETWORKS
                           </div>
@@ -3521,7 +3521,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             >
                               <div
                                 aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
@@ -3542,7 +3542,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             >
                               <div
                                 aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                                 data-testid="NetworkIcon-ARK-compendia.mainnet"
                               >
                                 <div
@@ -3563,7 +3563,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                           class="mt-6"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 mb-3"
+                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                           >
                             DEVELOPMENT NETWORKS
                           </div>
@@ -3579,7 +3579,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
