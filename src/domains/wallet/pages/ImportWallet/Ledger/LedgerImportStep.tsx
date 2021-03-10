@@ -53,6 +53,8 @@ const MultipleImport = ({
 				{wallets.map((wallet) => (
 					<li key={wallet.address}>
 						<TransactionDetail
+							className="py-4"
+							paddingPosition="none"
 							borderPosition="bottom"
 							extra={
 								<Tooltip content={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")}>
@@ -73,14 +75,14 @@ const MultipleImport = ({
 									<Address
 										maxNameChars={8}
 										addressClass={`font-bold ${
-											getValues(`names.${wallet.address}`) ? "text-theme-secondary-text" : ""
+											getValues(`names.${wallet.address}`) ? "text-theme-secondary-400" : ""
 										}`}
 										walletNameClass="font-bold"
 										walletName={getValues(`names.${wallet.address}`)}
 										address={wallet.address}
 										maxChars={0}
 									/>
-									<p className="text-theme-secondary-text">
+									<p className="text-theme-secondary-500 text-sm mt-1 font-medium">
 										<Amount value={wallet.balance!} ticker={network.ticker()} />
 									</p>
 								</div>

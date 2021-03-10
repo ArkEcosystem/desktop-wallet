@@ -10,7 +10,7 @@ export type TransactionDetailProps = {
 	border?: boolean;
 	borderPosition?: "top" | "bottom" | "both";
 	padding?: boolean;
-	paddingPosition?: "top" | "bottom" | "both";
+	paddingPosition?: "top" | "bottom" | "both" | "none";
 	className?: string;
 };
 
