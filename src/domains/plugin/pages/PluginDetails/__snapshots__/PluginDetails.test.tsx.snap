@@ -498,35 +498,32 @@ exports[`PluginDetails should render properly 1`] = `
             class="mt-8"
           >
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
               >
                 <div
-                  class="sc-bdfBwQ daKoZl"
-                  height="1.75em"
-                  width="1.75em"
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
                 >
                   <svg>
                     alert-warning.svg
                   </svg>
                 </div>
               </div>
-              <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
-              />
               <div
-                class="flex flex-col space-y-2"
+                class="flex flex-col"
               >
                 <p
-                  class="text-lg font-bold text-theme-warning-600"
-                  data-testid="alert__title"
+                  class="font-semibold dark:text-theme-secondary-500"
+                  data-testid="Alert__title"
                 >
                   Disclaimer
                 </p>
                 <p
-                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
                 </p>
@@ -1018,35 +1015,32 @@ exports[`PluginDetails should render properly for remote package 1`] = `
             class="mt-8"
           >
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
               >
                 <div
-                  class="sc-bdfBwQ daKoZl"
-                  height="1.75em"
-                  width="1.75em"
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
                 >
                   <svg>
                     alert-warning.svg
                   </svg>
                 </div>
               </div>
-              <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
-              />
               <div
-                class="flex flex-col space-y-2"
+                class="flex flex-col"
               >
                 <p
-                  class="text-lg font-bold text-theme-warning-600"
-                  data-testid="alert__title"
+                  class="font-semibold dark:text-theme-secondary-500"
+                  data-testid="Alert__title"
                 >
                   Disclaimer
                 </p>
                 <p
-                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
                 </p>
@@ -1558,35 +1552,32 @@ exports[`PluginDetails should report plugin 1`] = `
             class="mt-8"
           >
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
               >
                 <div
-                  class="sc-bdfBwQ daKoZl"
-                  height="1.75em"
-                  width="1.75em"
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
                 >
                   <svg>
                     alert-warning.svg
                   </svg>
                 </div>
               </div>
-              <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
-              />
               <div
-                class="flex flex-col space-y-2"
+                class="flex flex-col"
               >
                 <p
-                  class="text-lg font-bold text-theme-warning-600"
-                  data-testid="alert__title"
+                  class="font-semibold dark:text-theme-secondary-500"
+                  data-testid="Alert__title"
                 >
                   Disclaimer
                 </p>
                 <p
-                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
                 </p>
@@ -2093,35 +2084,32 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
             class="mt-8"
           >
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
               >
                 <div
-                  class="sc-bdfBwQ daKoZl"
-                  height="1.75em"
-                  width="1.75em"
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
                 >
                   <svg>
                     alert-warning.svg
                   </svg>
                 </div>
               </div>
-              <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
-              />
               <div
-                class="flex flex-col space-y-2"
+                class="flex flex-col"
               >
                 <p
-                  class="text-lg font-bold text-theme-warning-600"
-                  data-testid="alert__title"
+                  class="font-semibold dark:text-theme-secondary-500"
+                  data-testid="Alert__title"
                 >
                   Disclaimer
                 </p>
                 <p
-                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
                 </p>
@@ -2653,35 +2641,32 @@ exports[`PluginDetails should update package 1`] = `
             class="mt-8"
           >
             <div
-              class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-transparent border border-transparent dark:border-theme-warning-600 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
             >
               <div
-                class="flex items-center justify-center text-theme-warning-600"
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
               >
                 <div
-                  class="sc-bdfBwQ daKoZl"
-                  height="1.75em"
-                  width="1.75em"
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
                 >
                   <svg>
                     alert-warning.svg
                   </svg>
                 </div>
               </div>
-              <span
-                class="pointer-events-none border rounded-md border-theme-warning-600"
-              />
               <div
-                class="flex flex-col space-y-2"
+                class="flex flex-col"
               >
                 <p
-                  class="text-lg font-bold text-theme-warning-600"
-                  data-testid="alert__title"
+                  class="font-semibold dark:text-theme-secondary-500"
+                  data-testid="Alert__title"
                 >
                   Disclaimer
                 </p>
                 <p
-                  class="leading-relaxed break-words dark:text-theme-secondary-500"
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
                 </p>
