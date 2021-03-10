@@ -6,7 +6,7 @@
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
-> Lead Maintainer: [Alex Barnsley](https://github.com/alexbarnsley)
+> Lead Maintainer: [Lúcio Rubens](https://github.com/luciorubeens)
 
 ## Download
 

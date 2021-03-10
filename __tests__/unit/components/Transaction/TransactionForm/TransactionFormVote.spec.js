@@ -234,7 +234,7 @@ describe('TransactionFormVote', () => {
         expect(wrapper.vm.showVoteUnvoteButton).toBe(false)
       })
 
-      it('should return false if wallet is voting but not for delegate', () => {
+      it('should return true if wallet is voting but not for delegate', () => {
         wrapper.setProps({
           isVoter: false,
           votedDelegate: {
@@ -254,7 +254,7 @@ describe('TransactionFormVote', () => {
           }
         })
 
-        expect(wrapper.vm.showVoteUnvoteButton).toBe(false)
+        expect(wrapper.vm.showVoteUnvoteButton).toBe(true)
       })
 
       it('should return true if not voting', () => {

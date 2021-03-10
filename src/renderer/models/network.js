@@ -15,7 +15,7 @@ export default new BaseModel({
       type: ['string', 'number']
     },
     apiVersion: {
-      type: 'number'
+      type: ['string', 'number']
     },
     market: {
       type: 'object'
