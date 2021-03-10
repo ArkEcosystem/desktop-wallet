@@ -56,7 +56,7 @@ export default new BaseModule(NetworkModel, {
         // Update API server on existing networks
         const servers = {
           'ark.devnet': 'https://dwallets.ark.io',
-          'ark.mainnet': 'http://wallets.ark.io'
+          'ark.mainnet': 'https://wallets.ark.io'
         }
         const sanitizedAll = all.map(network => {
           const server = servers[network.id] || network.server
