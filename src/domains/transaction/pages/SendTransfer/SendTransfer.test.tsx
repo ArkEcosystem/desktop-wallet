@@ -487,6 +487,9 @@ describe("SendTransfer", () => {
 			fireEvent.click(sendAll);
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
+		act(() => {
+			fireEvent.click(sendAll);
+		});
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));

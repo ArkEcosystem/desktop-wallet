@@ -31,29 +31,26 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
         >
           <div
-            class="flex items-center justify-center text-theme-warning-600"
+            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
           >
             <div
-              class="sc-bdfBwQ daKoZl"
-              height="1.75em"
-              width="1.75em"
+              class="sc-bdfBwQ hteSKx"
+              height="1.25em"
+              width="1.25em"
             >
               <svg>
                 alert-warning.svg
               </svg>
             </div>
           </div>
-          <span
-            class="pointer-events-none border rounded-md border-theme-warning-600"
-          />
           <div
-            class="flex flex-col space-y-2"
+            class="flex flex-col"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-secondary-500"
+              class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
@@ -234,7 +231,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   disabled=""
                   role="radio"
@@ -244,7 +241,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -253,7 +250,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -301,29 +298,26 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
         >
           <div
-            class="flex items-center justify-center text-theme-warning-600"
+            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
           >
             <div
-              class="sc-bdfBwQ daKoZl"
-              height="1.75em"
-              width="1.75em"
+              class="sc-bdfBwQ hteSKx"
+              height="1.25em"
+              width="1.25em"
             >
               <svg>
                 alert-warning.svg
               </svg>
             </div>
           </div>
-          <span
-            class="pointer-events-none border rounded-md border-theme-warning-600"
-          />
           <div
-            class="flex flex-col space-y-2"
+            class="flex flex-col"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-secondary-500"
+              class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
@@ -485,7 +479,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   disabled=""
                   role="radio"
@@ -495,7 +489,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -504,7 +498,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -774,29 +768,26 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
         >
           <div
-            class="flex items-center justify-center text-theme-warning-600"
+            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
           >
             <div
-              class="sc-bdfBwQ daKoZl"
-              height="1.75em"
-              width="1.75em"
+              class="sc-bdfBwQ hteSKx"
+              height="1.25em"
+              width="1.25em"
             >
               <svg>
                 alert-warning.svg
               </svg>
             </div>
           </div>
-          <span
-            class="pointer-events-none border rounded-md border-theme-warning-600"
-          />
           <div
-            class="flex flex-col space-y-2"
+            class="flex flex-col"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-secondary-500"
+              class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
@@ -958,7 +949,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   disabled=""
                   role="radio"
@@ -968,7 +959,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -977,7 +968,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </button>
                 <button
                   aria-checked="true"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -1025,29 +1016,26 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
         >
           <div
-            class="flex items-center justify-center text-theme-warning-600"
+            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
           >
             <div
-              class="sc-bdfBwQ daKoZl"
-              height="1.75em"
-              width="1.75em"
+              class="sc-bdfBwQ hteSKx"
+              height="1.25em"
+              width="1.25em"
             >
               <svg>
                 alert-warning.svg
               </svg>
             </div>
           </div>
-          <span
-            class="pointer-events-none border rounded-md border-theme-warning-600"
-          />
           <div
-            class="flex flex-col space-y-2"
+            class="flex flex-col"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-secondary-500"
+              class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
@@ -1209,7 +1197,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   disabled=""
                   role="radio"
@@ -1219,7 +1207,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -1228,7 +1216,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -1276,29 +1264,26 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
         >
           <div
-            class="flex items-center justify-center text-theme-warning-600"
+            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
           >
             <div
-              class="sc-bdfBwQ daKoZl"
-              height="1.75em"
-              width="1.75em"
+              class="sc-bdfBwQ hteSKx"
+              height="1.25em"
+              width="1.25em"
             >
               <svg>
                 alert-warning.svg
               </svg>
             </div>
           </div>
-          <span
-            class="pointer-events-none border rounded-md border-theme-warning-600"
-          />
           <div
-            class="flex flex-col space-y-2"
+            class="flex flex-col"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-secondary-500"
+              class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
@@ -1479,7 +1464,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
               >
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   disabled=""
                   role="radio"
@@ -1489,7 +1474,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -1498,7 +1483,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -1546,29 +1531,26 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
         >
           <div
-            class="flex items-center justify-center text-theme-warning-600"
+            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
           >
             <div
-              class="sc-bdfBwQ daKoZl"
-              height="1.75em"
-              width="1.75em"
+              class="sc-bdfBwQ hteSKx"
+              height="1.25em"
+              width="1.25em"
             >
               <svg>
                 alert-warning.svg
               </svg>
             </div>
           </div>
-          <span
-            class="pointer-events-none border rounded-md border-theme-warning-600"
-          />
           <div
-            class="flex flex-col space-y-2"
+            class="flex flex-col"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-secondary-500"
+              class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
@@ -1749,7 +1731,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
               >
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   disabled=""
                   role="radio"
@@ -1759,7 +1741,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"
@@ -1768,7 +1750,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </button>
                 <button
                   aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                   data-testid="ButtonGroupOption"
                   role="radio"
                   type="button"

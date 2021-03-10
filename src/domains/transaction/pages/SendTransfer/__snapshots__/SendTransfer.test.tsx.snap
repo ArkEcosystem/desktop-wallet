@@ -428,7 +428,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 bg-theme-success-100 text-theme-secondary-600"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -675,23 +675,32 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                  class="flex space-x-2"
                                 >
-                                  <input
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                                    data-testid="AddRecipient__amount"
-                                    disabled=""
-                                    name="amount"
-                                    placeholder="Amount"
-                                    type="text"
-                                    value=""
-                                  />
                                   <div
-                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                    class="flex-1"
+                                  >
+                                    <div
+                                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                    >
+                                      <input
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                                        data-testid="AddRecipient__amount"
+                                        disabled=""
+                                        name="amount"
+                                        placeholder="Amount"
+                                        type="text"
+                                        value=""
+                                      />
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex"
                                   >
                                     <button
-                                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                                       data-testid="AddRecipient__send-all"
+                                      disabled=""
                                       type="button"
                                     >
                                       Send All
@@ -803,7 +812,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -812,7 +821,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -821,7 +830,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -1649,27 +1658,24 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   />
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="flex space-x-2"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                    data-testid="AddRecipient__amount"
-                    disabled=""
-                    name="amount"
-                    placeholder="Amount"
-                    type="text"
-                    value="1.2"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                    class="flex-1"
                   >
-                    <button
-                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
-                      data-testid="AddRecipient__send-all"
-                      type="button"
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                     >
-                      Send All
-                    </button>
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                        data-testid="AddRecipient__amount"
+                        disabled=""
+                        name="amount"
+                        placeholder="Amount"
+                        type="text"
+                        value="1.2"
+                      />
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -2353,7 +2359,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 bg-theme-success-100 text-theme-secondary-600"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -2617,21 +2623,38 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                  class="flex space-x-2"
                                 >
-                                  <input
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                                    data-testid="AddRecipient__amount"
-                                    name="amount"
-                                    placeholder="Amount"
-                                    type="text"
-                                    value=""
-                                  />
                                   <div
-                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                    class="flex-1"
+                                  >
+                                    <div
+                                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                    >
+                                      <input
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                                        data-testid="AddRecipient__amount"
+                                        name="amount"
+                                        placeholder="Amount"
+                                        type="text"
+                                        value=""
+                                      />
+                                      <div
+                                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                      >
+                                        <span
+                                          class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                        >
+                                          Max 33.67769203
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex"
                                   >
                                     <button
-                                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -2744,7 +2767,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -2753,7 +2776,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -2762,7 +2785,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3238,7 +3261,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 bg-theme-success-100 text-theme-secondary-600"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -3502,21 +3525,38 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                  class="flex space-x-2"
                                 >
-                                  <input
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                                    data-testid="AddRecipient__amount"
-                                    name="amount"
-                                    placeholder="Amount"
-                                    type="text"
-                                    value=""
-                                  />
                                   <div
-                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                    class="flex-1"
+                                  >
+                                    <div
+                                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                    >
+                                      <input
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                                        data-testid="AddRecipient__amount"
+                                        name="amount"
+                                        placeholder="Amount"
+                                        type="text"
+                                        value=""
+                                      />
+                                      <div
+                                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                      >
+                                        <span
+                                          class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                        >
+                                          Max 33.67769203
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex"
                                   >
                                     <button
-                                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -3629,7 +3669,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3638,7 +3678,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3647,7 +3687,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -4017,23 +4057,32 @@ exports[`SendTransfer should render form step 1`] = `
                   />
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="flex space-x-2"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                    data-testid="AddRecipient__amount"
-                    disabled=""
-                    name="amount"
-                    placeholder="Amount"
-                    type="text"
-                    value=""
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                    class="flex-1"
+                  >
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                        data-testid="AddRecipient__amount"
+                        disabled=""
+                        name="amount"
+                        placeholder="Amount"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="inline-flex"
                   >
                     <button
-                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                       data-testid="AddRecipient__send-all"
+                      disabled=""
                       type="button"
                     >
                       Send All
@@ -4435,27 +4484,24 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   />
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="flex space-x-2"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                    data-testid="AddRecipient__amount"
-                    disabled=""
-                    name="amount"
-                    placeholder="Amount"
-                    type="text"
-                    value="1.2"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                    class="flex-1"
                   >
-                    <button
-                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
-                      data-testid="AddRecipient__send-all"
-                      type="button"
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
                     >
-                      Send All
-                    </button>
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                        data-testid="AddRecipient__amount"
+                        disabled=""
+                        name="amount"
+                        placeholder="Amount"
+                        type="text"
+                        value="1.2"
+                      />
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -5033,23 +5079,32 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                   />
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="flex space-x-2"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                    data-testid="AddRecipient__amount"
-                    disabled=""
-                    name="amount"
-                    placeholder="Amount"
-                    type="text"
-                    value=""
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                    class="flex-1"
+                  >
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                        data-testid="AddRecipient__amount"
+                        disabled=""
+                        name="amount"
+                        placeholder="Amount"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="inline-flex"
                   >
                     <button
-                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                       data-testid="AddRecipient__send-all"
+                      disabled=""
                       type="button"
                     >
                       Send All
@@ -5538,7 +5593,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-primary-300"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -5688,7 +5743,7 @@ exports[`SendTransfer should render network step without test networks 1`] = `
             >
               <div
                 aria-label="ARK"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                 data-testid="NetworkIcon-ARK-ark.mainnet"
               >
                 <div
@@ -5709,7 +5764,7 @@ exports[`SendTransfer should render network step without test networks 1`] = `
             >
               <div
                 aria-label="Compendia"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-secondary-200 dark:border-theme-secondary-800 text-theme-secondary-600"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
                 data-testid="NetworkIcon-ARK-compendia.mainnet"
               >
                 <div
@@ -6738,7 +6793,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 bg-theme-success-100 text-theme-secondary-600"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -7002,21 +7057,40 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   />
                                 </label>
                                 <div
-                                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                  class="flex space-x-2"
                                 >
-                                  <input
-                                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-                                    data-testid="AddRecipient__amount"
-                                    name="amount"
-                                    placeholder="Amount"
-                                    type="text"
-                                    value=""
-                                  />
                                   <div
-                                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                    class="flex-1"
+                                  >
+                                    <div
+                                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                                    >
+                                      <input
+                                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-1/2"
+                                        data-testid="AddRecipient__amount"
+                                        name="amount"
+                                        placeholder="Amount"
+                                        type="text"
+                                        value=""
+                                      />
+                                      <div
+                                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO"
+                                      >
+                                        <span
+                                          class="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                        >
+                                          Max
+                                           
+                                          57.60679402
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-flex"
                                   >
                                     <button
-                                      class="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -7131,7 +7205,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -7140,7 +7214,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -7149,7 +7223,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 hYHoXN"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -7624,7 +7698,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-400 bg-theme-success-100 text-theme-secondary-600"
+                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
