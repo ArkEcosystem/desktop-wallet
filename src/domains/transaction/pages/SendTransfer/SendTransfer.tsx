@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -27,6 +27,7 @@ export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const location = useLocation();
+	const profile = useActiveProfile();
 	const { walletId: hasWalletId } = useParams();
 	const { state } = location;
 
@@ -43,7 +44,14 @@ export const SendTransfer = () => {
 	const activeWallet = useActiveWallet();
 
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
-	const networks = useMemo(() => env.availableNetworks(), [env]);
+
+	const networks = useMemo(() => {
+		const results: Record<string, Coins.Network> = {};
+		for (const wallet of profile.wallets().values()) {
+			results[wallet.networkId()] = wallet.network();
+		}
+		return Object.values(results);
+	}, [profile]);
 
 	const form = useForm({
 		mode: "onChange",
