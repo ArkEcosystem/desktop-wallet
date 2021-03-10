@@ -15,6 +15,6 @@ export * from "./use-random-number";
 export * from "./use-reload-path";
 export * from "./use-scroll";
 export * from "./use-synchronizer";
-export * from "./use-theme-name";
+export * from "./use-theme";
 export * from "./use-updater";
 export * from "./use-validation";
