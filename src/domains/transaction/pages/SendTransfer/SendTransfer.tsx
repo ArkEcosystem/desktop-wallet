@@ -128,6 +128,7 @@ export const SendTransfer = () => {
 		setValue("senderAddress", wallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
+			/* istanbul ignore else */
 			if (network.coin() === wallet.coinId() && network.id() === wallet.networkId()) {
 				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
