@@ -29,7 +29,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register}
 					name="excludeWalletsWithoutName"
-					defaultChecked={true}
+					defaultChecked={false}
 					data-testid="Plugin-settings__toggle--exclude-without-name"
 				/>
 			),
@@ -57,7 +57,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register}
 					name="excludeLedgerWallets"
-					defaultChecked={true}
+					defaultChecked={false}
 					data-testid="Plugin-settings__toggle--exclude-ledger-wallets"
 				/>
 			),
