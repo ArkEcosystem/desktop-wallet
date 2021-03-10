@@ -1,29 +1,17 @@
 import React from "react";
-import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
 import { Icon } from "../Icon";
+
+export type AlertVariant = "info" | "success" | "warning" | "danger" | "hint";
 
 type AlertProps = {
 	children: React.ReactNode;
 	className?: string;
 	title?: string;
-	variant: "info" | "success" | "warning" | "danger" | "hint";
+	variant: AlertVariant;
 	size?: Size;
 };
-
-const AlertWrapper = styled.div<{ size?: Size }>`
-	${({ size }) => {
-		switch (size) {
-			case "sm":
-				return tw`p-4`;
-			case "lg":
-				return tw`p-8`;
-			default:
-				return tw`p-6`;
-		}
-	}}
-`;
 
 const AlertIcon = ({ variant }: { variant: string }) => {
 	const iconVariant: Record<string, string> = {
@@ -34,7 +22,7 @@ const AlertIcon = ({ variant }: { variant: string }) => {
 		hint: "AlertHint",
 	};
 
-	return <Icon name={iconVariant[variant]} width="1.75em" height="1.75em" />;
+	return <Icon name={iconVariant[variant]} width="1.25em" height="1.25em" />;
 };
 
 const getColorVariant = (variant: string) => {
@@ -50,23 +38,29 @@ const getColorVariant = (variant: string) => {
 };
 
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
-	<AlertWrapper
-		size={size}
-		className="flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+	<div
+		className={`flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-${
+			variant === "info" ? "primary" : variant
+		}-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center`}
 	>
-		<div className={`flex items-center justify-center text-theme-${getColorVariant(variant)}`}>
+		<div
+			className={`h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-${getColorVariant(
+				variant,
+			)}`}
+		>
 			<AlertIcon variant={variant} />
 		</div>
-		<span className={`pointer-events-none border rounded-md border-theme-${getColorVariant(variant)}`} />
-		<div className="flex flex-col space-y-2">
+		<div className="flex flex-col">
 			{title && (
-				<p className={`text-lg font-bold text-theme-${getColorVariant(variant)}`} data-testid="alert__title">
+				<p className="font-semibold dark:text-theme-secondary-500" data-testid="Alert__title">
 					{title}
 				</p>
 			)}
-			{children && <p className="leading-relaxed break-words dark:text-theme-secondary-500">{children}</p>}
+			{children && (
+				<p className="text-sm leading-relaxed break-words dark:text-theme-secondary-500">{children}</p>
+			)}
 		</div>
-	</AlertWrapper>
+	</div>
 );
 
 Alert.defaultProps = {

@@ -38,7 +38,7 @@ const transactionDetails = ({ transaction, translations, wallet }: SendRegistrat
 			{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
 		</TransactionDetail>
 
-		<TransactionDetail label="TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATED_ADDRESS">
+		<TransactionDetail label={translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATED_ADDRESS")}>
 			{transaction.generatedAddress}
 		</TransactionDetail>
 
