@@ -99,29 +99,22 @@ export const SelectNetwork = ({
 	}, [items, inputValue]);
 
 	const optionClassName = (network: Network) => {
-		// Selected is me. Show me green
-		if (selectedItem && selectedItem.extra?.displayName === network.extra?.displayName) {
-			return "border-theme-success-400 bg-theme-success-100 text-theme-secondary-600";
-		}
+		if (selectedItem) {
+			// `network` is the selected item
+			if (selectedItem.extra?.displayName === network.extra?.displayName) {
+				return "border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200";
+			}
 
-		// Selection is made but not me. Show me disabled
-		/* istanbul ignore next */
-		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName) {
-			return "text-theme-secondary-300 dark:border-theme-secondary-800";
-		}
-
-		// Initial state. Nothing entered, nothing selected
-		if (!inputValue) {
 			return undefined;
 		}
 
-		// Input entered, matching with input. Show normal colors
-		if (isMatch(inputValue, network)) {
+		// no input or input matches `network`
+		if (!inputValue || isMatch(inputValue, network)) {
 			return undefined;
 		}
 
-		// Disabled otherwise
-		return "text-theme-secondary-300 dark:border-theme-secondary-800";
+		// input does not match `network`
+		return "text-theme-secondary-500 dark:text-theme-secondary-800 border-theme-primary-100 dark:border-theme-secondary-800";
 	};
 
 	return (
@@ -153,7 +146,7 @@ export const SelectNetwork = ({
 
 			<div className={publicNetworks.length > 0 ? "mt-6" : ""}>
 				{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
-					<div className="font-bold text-sm text-theme-secondary-400 mb-3">
+					<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
 						{t("COMMON.PUBLIC_NETWORKS").toUpperCase()}
 					</div>
 				)}
@@ -173,7 +166,7 @@ export const SelectNetwork = ({
 			{developmentNetworks.length > 0 && (
 				<div className="mt-6">
 					{publicNetworks.length > 0 && (
-						<div className="font-bold text-sm text-theme-secondary-400 mb-3">
+						<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
 							{t("COMMON.DEVELOPMENT_NETWORKS").toUpperCase()}
 						</div>
 					)}
