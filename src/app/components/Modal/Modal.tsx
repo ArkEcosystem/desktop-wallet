@@ -110,7 +110,9 @@ const ModalContent = (props: ModalContentProps) => {
 				<div className="flex-1">
 					{props.image}
 
-					{props.description && <div className="mt-1 text-theme-secondary-text">{props.description}</div>}
+					{props.description && (
+						<div className="mt-1 text-theme-secondary-text whitespace-pre-line">{props.description}</div>
+					)}
 
 					{props.children}
 				</div>

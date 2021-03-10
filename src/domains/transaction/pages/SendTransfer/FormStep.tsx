@@ -67,8 +67,8 @@ export const FormStep = ({
 								!senderWallet?.isLedger() && network?.can(Coins.FeatureFlag.TransactionMultiPayment)
 							}
 							withDeeplink={!!deeplinkProps?.recipient}
-							onChange={(recipients: RecipientListItem[]) =>
-								setValue("recipients", recipients, { shouldValidate: true, shouldDirty: true })
+							onChange={(value: RecipientListItem[]) =>
+								setValue("recipients", value, { shouldValidate: true, shouldDirty: true })
 							}
 						/>
 					</div>
