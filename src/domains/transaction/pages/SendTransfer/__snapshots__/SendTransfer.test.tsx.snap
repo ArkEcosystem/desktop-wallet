@@ -1517,7 +1517,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1"
+                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
@@ -1528,7 +1528,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 </div>
               </button>
               <button
-                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1 border-l-0"
+                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -1541,7 +1541,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
           >
             <div
               class="space-y-8"
@@ -1554,7 +1554,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
-                  Recipient #2
+                  Recipient
                   <div
                     class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -1674,188 +1674,20 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                       />
                     </div>
                   </div>
+                  <div
+                    class="inline-flex"
+                  >
+                    <button
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                      data-testid="AddRecipient__send-all"
+                      disabled=""
+                      type="button"
+                    >
+                      Send All
+                    </button>
+                  </div>
                 </div>
               </fieldset>
-            </div>
-          </div>
-          <div
-            class="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
-          >
-            <div
-              class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
-            >
-              <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-                role="table"
-              >
-                <table
-                  cellpadding="0"
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                      role="row"
-                    >
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Avatar
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Address
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Amount
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Action
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
-                  >
-                    <tr
-                      class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-                      data-testid="recipient-list__recipient-list-item"
-                    >
-                      <td
-                        class="py-6 w-14"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                              title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6"
-                      >
-                        <div
-                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
-                        >
-                          <span>
-                            Recipient #1
-                          </span>
-                        </div>
-                        <div
-                          class="max-w-sm"
-                        >
-                          <div
-                            class="inline-flex items-center no-ligatures"
-                          >
-                            <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                              data-testid="address__wallet-address"
-                            >
-                              DNjuJE…M8Jtc9
-                            </span>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6"
-                      >
-                        <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
-                        >
-                          <span>
-                            Amount
-                          </span>
-                        </div>
-                        <div
-                          class="font-bold text-right text-theme-secondary-800"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            + 0.00000001 ARK
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6 w-20 text-right"
-                      >
-                        <button
-                          class="Button__StyledButton-mdtvtf-0 hrpPWq"
-                          data-testid="recipient-list__remove-recipient"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            <div
-                              class="py-1"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  trash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
         </div>
@@ -4343,7 +4175,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1"
+                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
@@ -4354,7 +4186,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 </div>
               </button>
               <button
-                class="Button__StyledButton-mdtvtf-0 dznQvQ flex-1 border-l-0"
+                class="Button__StyledButton-mdtvtf-0 eJuaWR flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -4367,7 +4199,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 dgWSWs mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 egmaum mt-6"
           >
             <div
               class="space-y-8"
@@ -4380,7 +4212,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
-                  Recipient #2
+                  Recipient
                   <div
                     class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
@@ -4500,188 +4332,20 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                       />
                     </div>
                   </div>
+                  <div
+                    class="inline-flex"
+                  >
+                    <button
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                      data-testid="AddRecipient__send-all"
+                      disabled=""
+                      type="button"
+                    >
+                      Send All
+                    </button>
+                  </div>
                 </div>
               </fieldset>
-            </div>
-          </div>
-          <div
-            class="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
-          >
-            <div
-              class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
-            >
-              <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-                role="table"
-              >
-                <table
-                  cellpadding="0"
-                  class="table-auto"
-                >
-                  <thead>
-                    <tr
-                      class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                      role="row"
-                    >
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--0"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Avatar
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--1"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Address
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--2"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Amount
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                      >
-                        <div
-                          class="flex flex-inline align-top hidden"
-                        >
-                          <div>
-                            Action
-                          </div>
-                        </div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    role="rowgroup"
-                  >
-                    <tr
-                      class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-                      data-testid="recipient-list__recipient-list-item"
-                    >
-                      <td
-                        class="py-6 w-14"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                              title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
-                            />
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6"
-                      >
-                        <div
-                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
-                        >
-                          <span>
-                            Recipient #1
-                          </span>
-                        </div>
-                        <div
-                          class="max-w-sm"
-                        >
-                          <div
-                            class="inline-flex items-center no-ligatures"
-                          >
-                            <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                              data-testid="address__wallet-address"
-                            >
-                              DNjuJE…M8Jtc9
-                            </span>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6"
-                      >
-                        <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
-                        >
-                          <span>
-                            Amount
-                          </span>
-                        </div>
-                        <div
-                          class="font-bold text-right text-theme-secondary-800"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            + 0.00000001 ARK
-                          </span>
-                        </div>
-                      </td>
-                      <td
-                        class="py-6 w-20 text-right"
-                      >
-                        <button
-                          class="Button__StyledButton-mdtvtf-0 hrpPWq"
-                          data-testid="recipient-list__remove-recipient"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            <div
-                              class="py-1"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  trash.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
         </div>
