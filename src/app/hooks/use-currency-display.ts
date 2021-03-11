@@ -13,6 +13,11 @@ export const useCurrencyDisplay = () => {
 		const sanitized = !isNil(inputValue?.display)
 			? BigNumber.make(inputValue?.display)
 			: BigNumber.make(inputValue);
+
+		if (isNaN(sanitized.toNumber())) {
+			return [];
+		}
+
 		return [Math.min(sanitized.toNumber(), Number(maxNumber))];
 	}, []);
 

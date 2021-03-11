@@ -75,8 +75,8 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				ref={ref}
 				onChange={handleInput}
 			>
-				{!disabled && inputValue.display && Number(min) < Number(max) && (
-					<div className="absolute bottom-0 px-1 w-full">
+				{!disabled && Number(min) < Number(max) && (
+					<div className={cn("absolute bottom-0 px-1 w-full", { invisible: !rangeValues.length })}>
 						<Range
 							step={sanitizedStep}
 							isInvalid={fieldContext?.isInvalid}
