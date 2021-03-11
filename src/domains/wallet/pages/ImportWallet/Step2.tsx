@@ -10,22 +10,29 @@ import React, { useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const MnemonicField = ({ network, profile }: { profile: Profile; network: Coins.Network }) => {
-	const { env } = useEnvironmentContext();
+const MnemonicField = ({
+	network,
+	profile,
+	label,
+	findAddress,
+	...props
+}: { profile: Profile; network: Coins.Network; label: string; findAddress: (value: string) => Promise<string> } & Omit<
+	React.HTMLProps<any>,
+	"ref"
+>) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
 	return (
 		<FormField name="value">
-			<FormLabel label={t("COMMON.MNEMONIC")} />
+			<FormLabel label={label} />
 			<InputPassword
 				ref={register({
 					required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-						field: t("COMMON.MNEMONIC"),
+						field: label,
 					}).toString(),
-					validate: async (passphrase) => {
-						const instance: Coins.Coin = await env.coin(network.coin(), network.id());
-						const address = await instance.identity().address().fromMnemonic(passphrase);
+					validate: async (value) => {
+						const address = await findAddress(value);
 
 						return (
 							!profile.wallets().findByAddress(address) ||
@@ -35,7 +42,7 @@ const MnemonicField = ({ network, profile }: { profile: Profile; network: Coins.
 						);
 					},
 				})}
-				data-testid="ImportWallet__mnemonic-input"
+				{...props}
 			/>
 		</FormField>
 	);
@@ -69,8 +76,23 @@ const AddressField = ({ network, profile }: { profile: Profile; network: Coins.N
 };
 
 const ImportInputField = ({ type, network, profile }: { type: string; network: Coins.Network; profile: Profile }) => {
+	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
+	const [coin] = useState(() => env.coin(network.coin(), network.id()));
+
 	if (type === "mnemonic") {
-		return <MnemonicField network={network} profile={profile} />;
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.MNEMONIC")}
+				data-testid="ImportWallet__mnemonic-input"
+				findAddress={async (value) => {
+					const instance = await coin;
+					return instance.identity().address().fromMnemonic(value);
+				}}
+			/>
+		);
 	}
 
 	if (type === "address") {
@@ -78,11 +100,33 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 	}
 
 	if (type === "privateKey") {
-		return <MnemonicField network={network} profile={profile} />;
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.PRIVATE_KEY")}
+				data-testid="ImportWallet__privatekey-input"
+				findAddress={async (value) => {
+					const instance = await coin;
+					return instance.identity().address().fromPrivateKey(value);
+				}}
+			/>
+		);
 	}
 
 	if (type === "wif") {
-		return <MnemonicField network={network} profile={profile} />;
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.WIF")}
+				data-testid="ImportWallet__wif-input"
+				findAddress={async (value) => {
+					const instance = await coin;
+					return instance.identity().address().fromWIF(value);
+				}}
+			/>
+		);
 	}
 
 	return null;
