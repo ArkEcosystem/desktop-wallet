@@ -44,7 +44,6 @@ export const InputFee = memo(
 					<InputRange
 						disabled={!showFeeOptions}
 						name="fee"
-						avg={avgHuman}
 						value={fee}
 						min={minHuman}
 						max={maxHuman}

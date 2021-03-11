@@ -7,7 +7,9 @@ export type InputFee = {
 };
 
 export const useFeeFormat = ({ defaultValue, value, avg }: any) => {
-	const toHuman = (inputValue: string | number) => BigNumber.make(inputValue).divide(1e8).toString();
+	const toHuman = (inputValue: string | number) =>
+		inputValue ? BigNumber.make(inputValue).divide(1e8).toString() : "";
+
 	const defaultFeeValue = value || defaultValue || avg;
 	const defaultHuman = toHuman(defaultFeeValue);
 

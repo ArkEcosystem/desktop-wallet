@@ -2,7 +2,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import { useCurrencyDisplay } from "app/hooks";
 import cn from "classnames";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
@@ -16,7 +16,6 @@ type CurrencyInput = {
 type Props = {
 	disabled?: boolean;
 	value?: CurrencyInput;
-	avg: any;
 	min: string;
 	max: string;
 	step: number;
@@ -26,12 +25,13 @@ type Props = {
 };
 
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, avg, magnitude, onChange, value, disabled }: Props, ref) => {
+	({ min, max, step, magnitude, onChange, value, disabled }: Props, ref) => {
 		const { formatRange, convertToCurrency } = useCurrencyDisplay();
 		const fieldContext = useFormField();
-		const [inputValue, setInputValue] = React.useState<CurrencyInput>(convertToCurrency(avg));
 
-		const rangeValues = useMemo(() => formatRange(inputValue, max), [formatRange, max, inputValue]);
+		const [inputValue, setInputValue] = useState<CurrencyInput>(convertToCurrency(value));
+		const rangeValues = useMemo(() => formatRange(inputValue, max), [formatRange, inputValue, max]);
+
 		const trackBackgroundMinValue = Number(inputValue.display);
 		const minValue = Math.min(Number(min), trackBackgroundMinValue);
 
@@ -45,13 +45,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		const handleRange = (values: number[]) => {
-			const amount = convertToCurrency(values[0].toString());
-			onChange?.(amount);
+			onChange?.(convertToCurrency(values[0]));
 		};
 
 		const backgroundColor = !fieldContext?.isInvalid
 			? "rgba(var(--theme-color-primary-rgb), 0.1)"
 			: "rgba(var(--theme-color-danger-rgb), 0.1)";
+
+		const sanitizedStep = sanitizeStep({ min: Number(minValue), max: Number(max), step });
 
 		return (
 			<InputCurrency
@@ -77,7 +78,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				{!disabled && inputValue.display && Number(min) < Number(max) && (
 					<div className="absolute bottom-0 px-1 w-full">
 						<Range
-							step={sanitizeStep({ min: Number(minValue), max: Number(max), step })}
+							step={sanitizedStep}
 							isInvalid={fieldContext?.isInvalid}
 							min={minValue}
 							max={Number(max)}
