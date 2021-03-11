@@ -1,7 +1,8 @@
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Image } from "app/components/Image";
+import { useTheme } from "app/hooks";
 import cn from "classnames";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 import { Size } from "types";
@@ -19,7 +20,7 @@ type Props = {
 	showUpdatingLabel?: boolean;
 };
 
-const PluginImageWrapper = styled.div<Props>(getStyles);
+const PluginImageWrapper = styled.div<{ size?: Size; variant?: string }>(getStyles);
 
 export const PluginImage = ({
 	size,
@@ -31,28 +32,37 @@ export const PluginImage = ({
 	className,
 	showUpdatingLabel,
 }: Props) => {
+	const { isDarkMode } = useTheme();
+
 	const { t } = useTranslation();
+
+	const colors = useMemo(
+		() => ({
+			strokeColor: isDarkMode ? "var(--theme-color-success-800)" : "var(--theme-color-success-200)",
+			progressColor: isDarkMode ? "var(--theme-color-success-600)" : "var(--theme-color-success-600)",
+		}),
+		[isDarkMode],
+	);
 
 	if (isUpdating) {
 		return (
 			<PluginImageWrapper
 				size={size}
-				className={cn(
-					"bg-theme-success-100 flex flex-col space-y-3 border border-theme-secondary-300 dark:border-theme-secondary-600 overflow-hidden",
-					className,
-				)}
+				className={className}
+				variant="progress"
 				data-testid="PluginImage__updating"
 			>
 				<CircularProgressBar
 					value={+(updatingProgress! * 100).toFixed(0)}
 					size={progressSize}
-					strokeWidth={2}
+					strokeWidth={3}
 					fontSize={0.8}
+					{...colors}
 				/>
 				{showUpdatingLabel && (
 					<p
 						data-testid="PluginImage__updating__label"
-						className="text-theme-secondary-600 dark:text-theme-secondary-text text-sm font-medium"
+						className="text-theme-success-600 text-sm font-semibold"
 					>
 						{t("COMMON.UPDATING")}
 					</p>

@@ -1,4 +1,5 @@
 import React from "react";
+import * as utils from "utils/electron-utils";
 import { render, screen } from "utils/testing-library";
 
 import { PluginImage } from "./PluginImage";
@@ -16,10 +17,14 @@ describe("PluginImage", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render updating element", () => {
+	it.each(["dark", "light"])("should render updating element in %s mode", (theme) => {
+		const utilsSpy = jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
+
 		const { container } = render(<PluginImage updatingProgress={25} isUpdating />);
 		expect(screen.getByTestId("PluginImage__updating")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
+
+		utilsSpy.mockRestore();
 	});
 
 	it("should render updating with label", () => {

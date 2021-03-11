@@ -210,6 +210,7 @@ export const translations: { [key: string]: any } = {
 	WALLET_ADDRESS: "Wallet Address",
 	WALLET_TYPE: "Wallet Type",
 	WALLETS: "Wallets",
+	EXPORT: "Export",
 	WARNING: "Warning",
 	WELCOME: "Welcome to ARK",
 	WILL: "will",
