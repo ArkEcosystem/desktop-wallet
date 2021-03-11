@@ -1,7 +1,7 @@
 import tw from "twin.macro";
 import { Size } from "types";
 
-const baseStyle = tw`transition-all duration-200 overflow-hidden`;
+const baseStyle = tw`flex flex-col space-y-3 items-center justify-center transition-all duration-200 overflow-hidden`;
 
 const getSize = (size?: Size): any => {
 	switch (size) {
@@ -16,4 +16,14 @@ const getSize = (size?: Size): any => {
 	}
 };
 
-export const getStyles = ({ size }: { size?: Size }) => [getSize(size), baseStyle];
+const getVariant = (variant?: string): any => {
+	if (variant === "progress") {
+		return tw`border border-theme-secondary-300 dark:border-theme-secondary-800 bg-theme-success-100 dark:bg-theme-success-900`;
+	}
+};
+
+export const getStyles = ({ size, variant }: { size?: Size; variant?: string }) => [
+	baseStyle,
+	getSize(size),
+	getVariant(variant),
+];

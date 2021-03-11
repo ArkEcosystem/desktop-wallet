@@ -1,7 +1,7 @@
 import { OriginalButton } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
-import { useThemeName } from "app/hooks";
+import { useTheme } from "app/hooks";
 import React from "react";
 import { FallbackProps } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export const ApplicationError = ({ resetErrorBoundary }: Partial<FallbackProps>) => {
 	const { t } = useTranslation();
 
-	const theme = useThemeName();
+	const { theme } = useTheme();
 
 	return (
 		<main className={`theme-${theme}`} data-testid="Main">
