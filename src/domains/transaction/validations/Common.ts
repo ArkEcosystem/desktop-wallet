@@ -5,13 +5,13 @@ export const common = (t: any) => ({
 	fee: (balance: BigNumber = BigNumber.ZERO, network?: Coins.Network) => ({
 		validate: {
 			valid: (fee?: string | number) => {
-				if (!fee) {
+				if (fee === undefined || fee === "") {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.FEE"),
 					});
 				}
 
-				const feeSatoshi = BigNumber.make(fee || 0);
+				const feeSatoshi = BigNumber.make(fee);
 
 				if (!network?.coin()) {
 					return true;
