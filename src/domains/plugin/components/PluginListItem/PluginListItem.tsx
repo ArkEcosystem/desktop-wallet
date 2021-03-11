@@ -20,6 +20,7 @@ type PluginListItemProps = {
 	isUpdating?: boolean;
 	updatingProgress?: any;
 	plugin: any;
+	showCategory?: boolean;
 };
 
 export const PluginListItem = ({
@@ -33,6 +34,7 @@ export const PluginListItem = ({
 	isUpdating,
 	updatingProgress,
 	plugin,
+	showCategory,
 }: PluginListItemProps) => {
 	const { t } = useTranslation();
 
@@ -102,9 +104,11 @@ export const PluginListItem = ({
 				<span>{plugin.author}</span>
 			</TableCell>
 
-			<TableCell>
-				<span>{t(`PLUGINS.CATEGORIES.${plugin.category.toUpperCase()}`)}</span>
-			</TableCell>
+			{showCategory && (
+				<TableCell>
+					<span>{t(`PLUGINS.CATEGORIES.${plugin.category.toUpperCase()}`)}</span>
+				</TableCell>
+			)}
 
 			<TableCell>
 				<span>v{plugin.version}</span>
@@ -151,7 +155,12 @@ export const PluginListItem = ({
 
 			<TableCell variant="end" className="w-16" innerClassName="justify-end">
 				{!plugin.isInstalled && (
-					<Button variant="secondary" onClick={handleInstall} data-testid="PluginListItem__install">
+					<Button
+						variant="secondary"
+						onClick={handleInstall}
+						data-testid="PluginListItem__install"
+						className="flex-1"
+					>
 						{t("COMMON.INSTALL")}
 					</Button>
 				)}

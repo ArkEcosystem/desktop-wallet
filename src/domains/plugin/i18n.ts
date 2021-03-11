@@ -57,18 +57,6 @@ export const translations: { [key: string]: any } = {
 			"Some of the plugins cannot be updated as they require a newer version of the Desktop Wallet. Pressing Continue will update plugins that can be updated.",
 	},
 
-	MODAL_BEST_PLUGINS: {
-		TITLE: "Best Applications of the Month",
-		DESCRIPTION:
-			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
-	},
-
-	MODAL_FEATURED_PLUGINS: {
-		TITLE: "Featured Plugins",
-		DESCRIPTION:
-			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products and easy-to-implement technology, underpinned by the ARK Public Network, empowers individuals to adopt and apply blockhain tecnology in their everyday lives.",
-	},
-
 	MODAL_UNINSTALL: {
 		TITLE: "Uninstall Plugin",
 		DESCRIPTION:
@@ -96,16 +84,15 @@ export const translations: { [key: string]: any } = {
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",
-		FEATURED_PLUGINS: "Featured Plugins",
-		TOP_RATED: "Top Rated",
-		TOP_UTILITIES: "Top Utilities",
+
+		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
 
 		VIEW: {
 			HOME: "Home",
 			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
-			THEME: "Theme",
+			EXCHANGE: "Exchange",
 			UTILITY: "Utility",
 		},
 	},
@@ -118,18 +105,12 @@ export const translations: { [key: string]: any } = {
 		DESKTOP_WALLET_VERSION: "Desktop Wallet Version",
 	},
 
-	REVIEW_BOX: {
-		AVERAGE_RATING: "Avg. Rating",
-		OUT_OF_X_REVIEWS: "Out of {{count}} reviews",
-	},
-
 	CATEGORIES: {
 		GAMING: "Gaming",
 		GAME: "Game",
 		LANGUAGE: "Language",
 		MY_PLUGINS: "My Plugins",
 		OTHER: "Other",
-		THEME: "Theme",
 		UTILITY: "Utility",
 		EXCHANGE: "Exchange",
 	},
@@ -138,7 +119,7 @@ export const translations: { [key: string]: any } = {
 		CATEGORIES: {
 			GAME: "Game",
 			UTILITY: "Utility",
-			THEME: "Theme",
+			EXCHANGE: "Exchange",
 			OTHER: "Other",
 		},
 	},

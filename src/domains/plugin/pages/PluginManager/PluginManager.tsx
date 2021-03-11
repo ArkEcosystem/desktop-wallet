@@ -1,4 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
 import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -17,13 +18,12 @@ import { PluginManualInstallModal } from "domains/plugin/components/PluginManual
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { paths } from "../../data";
-
 type PluginManagerHomeProps = {
+	onCurrentViewChange: (view: string) => void;
 	onDelete: any;
 	onSelect: (pluginId: string) => void;
 	onEnable: (plugin: any) => void;
@@ -31,150 +31,89 @@ type PluginManagerHomeProps = {
 	onInstall: any;
 	onLaunch: (plugin: any) => void;
 	viewType: string;
-	paths?: any;
 	isLoading?: boolean;
-	plugins: any[];
-};
-
-type PluginManagerProps = {
-	paths?: any;
+	pluginsByCategory: Record<string, any[]>;
 };
 
 const PluginManagerHome = ({
+	onCurrentViewChange,
 	onDelete,
 	onSelect,
 	onInstall,
 	onLaunch,
 	viewType,
-	paths,
-	plugins,
+	pluginsByCategory,
 	onEnable,
 	onDisable,
 	isLoading,
 }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
 
+	const renderPlugins = (plugins: any[], category: string) => {
+		if (viewType === "grid") {
+			return (
+				<PluginGrid
+					category={category}
+					plugins={plugins}
+					onSelect={onSelect}
+					onEnable={onEnable}
+					onDisable={onDisable}
+					onDelete={onDelete}
+					onInstall={onInstall}
+					onLaunch={onLaunch}
+					showPagination={false}
+					isLoading={isLoading}
+				/>
+			);
+		}
+
+		return (
+			<PluginList
+				plugins={plugins}
+				onClick={onSelect}
+				onLaunch={onLaunch}
+				onInstall={onInstall}
+				onEnable={onEnable}
+				onDisable={onDisable}
+				onDelete={onDelete}
+				showPagination={false}
+			/>
+		);
+	};
+
+	const categories = ["gaming", "utility", "exchange", "other"];
+
 	return (
-		<div>
-			<div data-testid="PluginManager__home__featured">
-				<div className="flex justify-between items-center mt-8 mb-6">
-					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}</h2>
+		<>
+			{categories.map((category: string) => {
+				const plugins: any[] = sortByDesc(pluginsByCategory[category] || [], "date").slice(0, 3);
 
-					<a
-						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}
-						data-testid="PluginManager__home__featured__view-more"
-						className="font-semibold cursor-pointer link"
-						href={paths.featured}
-					>
-						{t("COMMON.VIEW_MORE")}
-					</a>
-				</div>
+				if (plugins.length < 3 && viewType === "grid") {
+					plugins.push(...new Array(3 - plugins.length).fill(undefined));
+				}
 
-				{viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={onSelect}
-						onEnable={onEnable}
-						onDisable={onDisable}
-						onDelete={onDelete}
-						onInstall={onInstall}
-						onLaunch={onLaunch}
-						withPagination={false}
-						isLoading={isLoading}
-					/>
-				)}
-				{viewType === "list" && (
-					<PluginList
-						plugins={plugins}
-						onClick={onSelect}
-						onLaunch={onLaunch}
-						onInstall={onInstall}
-						onEnable={onEnable}
-						onDisable={onDisable}
-						onDelete={onDelete}
-						withPagination={false}
-					/>
-				)}
-			</div>
+				return (
+					<Section key={category}>
+						<div data-testid={`PluginManager__home__${category}`}>
+							<div className="flex justify-between items-center mb-6">
+								<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
 
-			<div data-testid="PluginManager__home__top-rated">
-				<div className="flex justify-between items-center mt-8 mb-6">
-					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}</h2>
-					<a
-						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}
-						data-testid="PluginManager__home__top-rated__view-more"
-						className="font-semibold cursor-pointer link"
-						href={paths.topRated}
-					>
-						{t("COMMON.VIEW_MORE")}
-					</a>
-				</div>
-				{viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={onSelect}
-						onEnable={onEnable}
-						onDisable={onDisable}
-						onDelete={onDelete}
-						onInstall={onInstall}
-						onLaunch={onLaunch}
-						withPagination={false}
-						isLoading={isLoading}
-					/>
-				)}
-				{viewType === "list" && (
-					<PluginList
-						plugins={plugins}
-						onClick={onSelect}
-						onInstall={onInstall}
-						onLaunch={onLaunch}
-						onEnable={onEnable}
-						onDisable={onDisable}
-						onDelete={onDelete}
-						withPagination={false}
-					/>
-				)}
-			</div>
+								<span
+									className="flex items-center font-semibold link space-x-2"
+									data-testid={`PluginManager__home__${category}__view-more`}
+									onClick={() => onCurrentViewChange(category)}
+								>
+									<span>{t("COMMON.VIEW_MORE")}</span>
+									<Icon name="ChevronRight" width={8} height={8} />
+								</span>
+							</div>
 
-			<div data-testid="PluginManager__home__top-utilities">
-				<div className="flex justify-between items-center mt-8 mb-6">
-					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
-					<a
-						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}
-						data-testid="PluginManager__home__top-utilities__view-more"
-						className="font-semibold cursor-pointer link"
-						href={paths.topUtilities}
-					>
-						{t("COMMON.VIEW_MORE")}
-					</a>
-				</div>
-				{viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={onSelect}
-						onEnable={onEnable}
-						onDisable={onDisable}
-						onDelete={onDelete}
-						onInstall={onInstall}
-						onLaunch={onLaunch}
-						withPagination={false}
-						isLoading={isLoading}
-					/>
-				)}
-				{viewType === "list" && (
-					<PluginList
-						plugins={plugins}
-						onClick={onSelect}
-						onLaunch={onLaunch}
-						onInstall={onInstall}
-						onEnable={onEnable}
-						onDisable={onDisable}
-						onDelete={onDelete}
-						withPagination={false}
-					/>
-				)}
-			</div>
-		</div>
+							{renderPlugins(plugins, category)}
+						</div>
+					</Section>
+				);
+			})}
+		</>
 	);
 };
 
@@ -194,7 +133,7 @@ const UpdateAllBanner = ({
 	}
 
 	return (
-		<EmptyBlock size="sm" className="mt-4">
+		<EmptyBlock size="sm" className="my-4">
 			<div className="flex items-center w-full justify-between">
 				{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
 				<Button disabled={isUpdatingAll} data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
@@ -205,7 +144,7 @@ const UpdateAllBanner = ({
 	);
 };
 
-export const PluginManager = ({ paths }: PluginManagerProps) => {
+export const PluginManager = () => {
 	const { t } = useTranslation();
 	const {
 		fetchPluginPackages,
@@ -231,24 +170,36 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [isUpdatingAll, setIsUpdatingAll] = useState(false);
 
-	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
-	const hasUpdateAvailableCount = allPlugins
-		.map(mapConfigToPluginData.bind(null, activeProfile))
-		.filter((item) => item.hasUpdateAvailable).length;
+	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
-	useEffect(() => {
+	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
+	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
+
+	useLayoutEffect(() => {
 		fetchPluginPackages();
 	}, [fetchPluginPackages]);
 
-	const homePackages = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
+	const pluginsByCategory = useMemo(() => {
+		const result: Record<string, any[]> = {};
 
-	const filteredPackages = useMemo(
-		() =>
-			allPlugins
-				.filter((config) => config.hasCategory(currentView))
-				.map(mapConfigToPluginData.bind(null, activeProfile)),
-		[currentView, filters], // eslint-disable-line react-hooks/exhaustive-deps
-	);
+		for (const plugin of plugins) {
+			/* istanbul ignore else */
+			if (!result[plugin.category]) {
+				result[plugin.category] = [];
+			}
+
+			result[plugin.category].push(plugin);
+		}
+
+		return result;
+	}, [plugins]);
+
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const filteredPackages = useMemo(() => pluginsByCategory[currentView] || [], [
+		currentView,
+		filters,
+		pluginsByCategory,
+	]);
 
 	const installedPlugins = pluginManager
 		.plugins()
@@ -298,6 +249,68 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const onDeletePlugin = () => {
 		setUninstallSelectedPlugin(undefined);
 		trigger();
+	};
+
+	const renderGrid = () => {
+		if (currentView === "my-plugins") {
+			return (
+				<PluginGrid
+					plugins={installedPlugins}
+					onSelect={handleSelectPlugin}
+					onDelete={handleDeletePlugin}
+					onEnable={handleEnablePlugin}
+					onDisable={handleDisablePlugin}
+					onInstall={openInstallModalPlugin}
+					onLaunch={handleLaunchPlugin}
+					onUpdate={handleUpdate}
+					isLoading={isFetchingPackages}
+				/>
+			);
+		}
+
+		return (
+			<PluginGrid
+				plugins={filteredPackages}
+				onSelect={handleSelectPlugin}
+				onDelete={handleDeletePlugin}
+				onEnable={handleEnablePlugin}
+				onDisable={handleDisablePlugin}
+				onInstall={openInstallModalPlugin}
+				onLaunch={handleLaunchPlugin}
+				isLoading={isFetchingPackages}
+			/>
+		);
+	};
+
+	const renderList = () => {
+		if (currentView === "my-plugins") {
+			return (
+				<PluginList
+					plugins={installedPlugins}
+					onClick={handleSelectPlugin}
+					onInstall={openInstallModalPlugin}
+					onDelete={handleDeletePlugin}
+					onEnable={handleEnablePlugin}
+					onDisable={handleDisablePlugin}
+					onLaunch={handleLaunchPlugin}
+					onUpdate={handleUpdate}
+					updatingStats={updatingStats}
+					showCategory={true}
+				/>
+			);
+		}
+
+		return (
+			<PluginList
+				plugins={filteredPackages}
+				onClick={handleSelectPlugin}
+				onInstall={openInstallModalPlugin}
+				onDelete={handleDeletePlugin}
+				onEnable={handleEnablePlugin}
+				onDisable={handleDisablePlugin}
+				onLaunch={handleLaunchPlugin}
+			/>
+		);
 	};
 
 	const onUpdateAll = () => {
@@ -369,111 +382,41 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					hasUpdatesAvailable={hasUpdateAvailableCount > 0}
 				/>
 
+				{currentView === "home" && (
+					<PluginManagerHome
+						isLoading={isFetchingPackages}
+						viewType={viewType}
+						pluginsByCategory={pluginsByCategory}
+						onCurrentViewChange={setCurrentView}
+						onInstall={openInstallModalPlugin}
+						onEnable={handleEnablePlugin}
+						onDisable={handleDisablePlugin}
+						onDelete={handleDeletePlugin}
+						onSelect={handleSelectPlugin}
+						onLaunch={handleLaunchPlugin}
+					/>
+				)}
+
 				<Section>
-					<div data-testid={`PluginManager__container--${currentView}`}>
-						<div className="flex justify-between items-center" />
+					{currentView !== "home" && (
+						<>
+							<h2 className="font-bold mb-6">
+								{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+							</h2>
 
-						{currentView === "home" && (
-							<PluginManagerHome
-								isLoading={isFetchingPackages}
-								paths={paths}
-								viewType={viewType}
-								plugins={homePackages}
-								onInstall={openInstallModalPlugin}
-								onEnable={handleEnablePlugin}
-								onDisable={handleDisablePlugin}
-								onDelete={handleDeletePlugin}
-								onSelect={handleSelectPlugin}
-								onLaunch={handleLaunchPlugin}
-							/>
-						)}
-
-						{currentView === "my-plugins" && viewType === "grid" && (
-							<div>
-								<h2 className="font-bold">
-									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-								</h2>
-
+							{currentView === "my-plugins" && (
 								<UpdateAllBanner
 									hasUpdateAvailableCount={hasUpdateAvailableCount}
 									isUpdatingAll={isUpdatingAll}
 									handleUpdateAll={onUpdateAll}
 								/>
+							)}
 
-								<PluginGrid
-									plugins={installedPlugins}
-									onSelect={handleSelectPlugin}
-									onDelete={handleDeletePlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onInstall={openInstallModalPlugin}
-									onLaunch={handleLaunchPlugin}
-									onUpdate={handleUpdate}
-									className="mt-6"
-									isLoading={isFetchingPackages}
-								/>
+							<div data-testid={`PluginManager__container--${currentView}`}>
+								{viewType === "grid" ? renderGrid() : renderList()}
 							</div>
-						)}
-
-						{currentView === "my-plugins" && viewType === "list" && (
-							<div className="flex flex-col">
-								<h2 className="font-bold">
-									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-								</h2>
-
-								<UpdateAllBanner
-									hasUpdateAvailableCount={hasUpdateAvailableCount}
-									isUpdatingAll={isUpdatingAll}
-									handleUpdateAll={onUpdateAll}
-								/>
-
-								<PluginList
-									plugins={installedPlugins}
-									onClick={handleSelectPlugin}
-									onInstall={openInstallModalPlugin}
-									onDelete={handleDeletePlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onLaunch={handleLaunchPlugin}
-									onUpdate={handleUpdate}
-									updatingStats={updatingStats}
-									className="mt-6"
-								/>
-							</div>
-						)}
-
-						{!["home", "my-plugins"].includes(currentView) && viewType === "grid" && (
-							<div>
-								<h2 className="font-bold">
-									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-								</h2>
-								<PluginGrid
-									plugins={filteredPackages}
-									onSelect={handleSelectPlugin}
-									onDelete={handleDeletePlugin}
-									onEnable={handleEnablePlugin}
-									onDisable={handleDisablePlugin}
-									onInstall={openInstallModalPlugin}
-									onLaunch={handleLaunchPlugin}
-									className="mt-6"
-									isLoading={isFetchingPackages}
-								/>
-							</div>
-						)}
-
-						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
-							<PluginList
-								plugins={filteredPackages}
-								onClick={handleSelectPlugin}
-								onInstall={openInstallModalPlugin}
-								onDelete={handleDeletePlugin}
-								onEnable={handleEnablePlugin}
-								onDisable={handleDisablePlugin}
-								onLaunch={handleLaunchPlugin}
-								className="mt-6"
-							/>
-						)}
-					</div>
+						</>
+					)}
 				</Section>
 			</Page>
 
@@ -510,8 +453,4 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 			)}
 		</>
 	);
-};
-
-PluginManager.defaultProps = {
-	paths,
 };
