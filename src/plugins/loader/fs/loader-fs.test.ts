@@ -7,7 +7,7 @@ describe("PluginLoaderFileSystem", () => {
 	let root: string;
 
 	beforeEach(() => {
-		root = path.resolve("src/tests/fixtures/plugins");
+		root = path.resolve("src/tests/fixtures/plugins/packages");
 		subject = new PluginLoaderFileSystem([root]);
 	});
 
@@ -32,7 +32,7 @@ describe("PluginLoaderFileSystem", () => {
 	it("should remove a valid folder", () => {
 		const fsExtra = require("fs-extra");
 		const removeMock = jest.spyOn(fsExtra, "remove").mockImplementation();
-		subject.remove(path.resolve("src/tests/fixtures/plugins/plugin-test-custom-buttom"));
+		subject.remove(path.resolve("src/tests/fixtures/plugins/packages/plugin-test-custom-buttom"));
 		expect(removeMock).toHaveBeenCalled();
 	});
 

@@ -375,7 +375,8 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			/>
 
 			<UpdateWalletName
-				wallet={wallet}
+				currentAlias={wallet.alias()}
+				walletId={wallet.id()}
 				profile={profile}
 				isOpen={modal === "wallet-name"}
 				onClose={() => setModal(undefined)}

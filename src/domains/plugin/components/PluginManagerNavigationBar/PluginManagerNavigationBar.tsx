@@ -45,7 +45,7 @@ export const PluginManagerNavigationBar = ({
 			data-testid="PluginManagerNavigationBar"
 			className="sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
 		>
-			<div className="container flex justify-between items-center px-14 mx-auto">
+			<div className="container flex justify-between items-center px-10 mx-auto">
 				<div>
 					<ul className="flex h-18">
 						{menu &&
@@ -60,13 +60,11 @@ export const PluginManagerNavigationBar = ({
 										}`}
 									>
 										<span>{menuItem.title}</span>
-										{
+										{menuItem.name !== "home" && (
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
-												{menuItem.name === "home"
-													? allPlugins.length
-													: countsByCategory[menuItem.name]}
+												{countsByCategory[menuItem.name]}
 											</span>
-										}
+										)}
 									</button>
 
 									{index < menu.length - 1 && (
@@ -139,8 +137,8 @@ PluginManagerNavigationBar.defaultProps = {
 			name: "utility",
 		},
 		{
-			title: "Theme",
-			name: "theme",
+			title: "Exchange",
+			name: "exchange",
 		},
 		{
 			title: "Other",

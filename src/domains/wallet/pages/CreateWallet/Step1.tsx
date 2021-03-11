@@ -3,13 +3,16 @@ import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
-	const { getValues, setValue } = useFormContext();
-	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
+	const { getValues, register, setValue } = useFormContext();
+
+	useEffect(() => {
+		register("isGeneratingWallet");
+	}, [register]);
 
 	const networks = useMemo(() => {
 		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
@@ -41,11 +44,13 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 			return;
 		}
 
-		setIsGeneratingWallet(true);
+		setValue("isGeneratingWallet", true);
+
 		const { mnemonic, wallet } = await profile.wallets().generate(network.coin(), network.id());
 		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
 		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
-		setIsGeneratingWallet(false);
+
+		setValue("isGeneratingWallet", false);
 	};
 
 	return (
@@ -62,7 +67,7 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					networks={networks}
 					selected={selectedNetwork}
 					onSelect={handleSelect}
-					disabled={isGeneratingWallet}
+					disabled={getValues("isGeneratingWallet")}
 				/>
 			</FormField>
 		</section>
