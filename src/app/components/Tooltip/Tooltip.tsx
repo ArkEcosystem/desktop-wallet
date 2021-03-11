@@ -1,5 +1,5 @@
 import Tippy, { TippyProps } from "@tippyjs/react";
-import { useThemeName } from "app/hooks";
+import { useTheme } from "app/hooks";
 import React from "react";
 import { Size } from "types";
 
@@ -10,7 +10,7 @@ export type TooltipProps = {
 } & TippyProps;
 
 export const Tooltip = ({ variant, ...props }: TooltipProps) => {
-	const theme = useThemeName();
+	const { theme } = useTheme();
 	if (!props.content) {
 		return <>{props.children}</>;
 	}
