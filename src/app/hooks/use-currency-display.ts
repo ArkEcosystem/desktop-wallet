@@ -5,7 +5,7 @@ import { useCallback } from "react";
 
 type CurrencyInput = {
 	display: string;
-	value: string;
+	value?: string;
 };
 
 export const useCurrencyDisplay = () => {
