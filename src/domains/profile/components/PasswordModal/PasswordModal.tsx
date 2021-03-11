@@ -15,7 +15,7 @@ type PasswordModalProps = {
 	onSubmit?: (password: string) => void;
 };
 
-export const PasswordModal = ({ isOpen, title, description, onCancel, onClose, onSubmit }: PasswordModalProps) => {
+export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit }: PasswordModalProps) => {
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { password } = form.watch();
@@ -43,12 +43,8 @@ export const PasswordModal = ({ isOpen, title, description, onCancel, onClose, o
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
-					<Button data-testid="PasswordModal__cancel-button" variant="secondary" onClick={onCancel}>
-						{t("COMMON.CANCEL")}
-					</Button>
-
 					<Button data-testid="PasswordModal__submit-button" type="submit" disabled={!form.formState.isValid}>
-						{t("COMMON.SUBMIT")}
+						{t("COMMON.CONFIRM")}
 					</Button>
 				</div>
 			</Form>
