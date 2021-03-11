@@ -17,6 +17,7 @@ export const translations: { [key: string]: any } = {
 	AVATAR: "Avatar",
 	AWAITING_SIGNATURE: "Awaiting Signature",
 	BACK: "Back",
+	BACK_TO_HOME: "Back to Home",
 	BACK_TO_WALLET: "Back to Wallet",
 	BACKGROUND: "Background",
 	REPEAT: "Repeat",
