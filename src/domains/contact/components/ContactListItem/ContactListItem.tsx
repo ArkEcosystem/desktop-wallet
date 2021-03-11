@@ -4,6 +4,7 @@ import { Avatar } from "app/components/Avatar";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
@@ -62,6 +63,14 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 							<TableCell className={borderClasses()} innerClassName="space-x-4">
 								<Avatar address={address.address()} size="lg" noShadow />
 								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
+							</TableCell>
+
+							<TableCell className={borderClasses()} innerClassName="space-x-4 justify-center">
+								<Clipboard data={address.address()}>
+									<div className="text-theme-primary-300 dark:text-theme-secondary-700">
+										<Icon name="Copy" />
+									</div>
+								</Clipboard>
 							</TableCell>
 
 							{!isCondensed() && (
