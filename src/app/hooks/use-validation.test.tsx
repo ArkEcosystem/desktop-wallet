@@ -30,6 +30,18 @@ describe("useValidation hook", () => {
 			expect(isValid).toBe(true);
 		});
 
+		it("should error for no fee", () => {
+			const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
+			const {
+				result: { current },
+			} = renderHook(() => useValidation(), { wrapper });
+			const balance = BigNumber.ZERO;
+			const validation = current.common.fee(balance, mockNetwork);
+			const isValid = validation.validate.valid("");
+
+			expect(isValid).not.toBe(true);
+		});
+
 		it("should error for zero balance", () => {
 			const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 			const {
