@@ -77,6 +77,14 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 		return <AddressField network={network} profile={profile} />;
 	}
 
+	if (type === "privateKey") {
+		return <MnemonicField network={network} profile={profile} />;
+	}
+
+	if (type === "wif") {
+		return <MnemonicField network={network} profile={profile} />;
+	}
+
 	return null;
 };
 
@@ -92,6 +100,8 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 		() => [
 			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
 			{ label: t("COMMON.ADDRESS"), value: "address" },
+			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
+			{ label: t("COMMON.WIF"), value: "wif" },
 		],
 		[t],
 	);
