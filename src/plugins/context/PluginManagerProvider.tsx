@@ -157,16 +157,21 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	// Plugin configurations loaded manually from URL
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
-	const allPlugins: PluginConfigurationData[] = useMemo(() => {
-		const localConfigurations = pluginManager
-			.plugins()
-			.all()
-			.map((item) => item.config());
+	const localConfigurations: PluginConfigurationData[] = useMemo(
+		() =>
+			filterPackages(
+				pluginManager
+					.plugins()
+					.all()
+					.map((item) => item.config()),
+			),
+		[filterPackages, pluginManager],
+	);
 
-		const merged = uniqBy([...localConfigurations, ...pluginPackages], (item) => item.id());
-
-		return merged;
-	}, [pluginManager, pluginPackages]);
+	const allPlugins: PluginConfigurationData[] = useMemo(
+		() => uniqBy([...localConfigurations, ...pluginPackages], (item) => item.id()),
+		[localConfigurations, pluginPackages],
+	);
 
 	const hasUpdateAvailable = useCallback(
 		(pluginId: string) => {

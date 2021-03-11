@@ -20,6 +20,7 @@ import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
 import { ReactComponent as CaretDown } from "./caret-down.svg";
 import { ReactComponent as CaretUp } from "./caret-up.svg";
+import { ReactComponent as Category } from "./category.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
 import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as CheckmarkBig } from "./checkmark-big.svg";
@@ -133,6 +134,7 @@ export const SvgCollection: any = {
 	Blockfolio,
 	Bridgechain,
 	Business,
+	Category,
 	CaretDown,
 	CaretUp,
 	ChartActiveDot,

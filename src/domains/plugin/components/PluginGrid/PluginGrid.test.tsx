@@ -1,3 +1,4 @@
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { fireEvent, render, screen } from "utils/testing-library";
@@ -39,6 +40,14 @@ const plugins = [
 ];
 
 describe("PluginGrid", () => {
+	beforeAll(() => {
+		jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+	});
+
+	afterAll(() => {
+		useRandomNumberHook.useRandomNumber.mockRestore();
+	});
+
 	it("should render pagination", async () => {
 		const morePlugins = [
 			{
@@ -101,19 +110,19 @@ describe("PluginGrid", () => {
 	it("should render skeletons", () => {
 		const { asFragment, findByText, getAllByTestId } = render(<PluginGrid isLoading plugins={[]} />);
 
-		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(8);
+		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(3);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render custom number of skeletons", () => {
-		const { asFragment, getAllByTestId } = render(<PluginGrid isLoading skeletonsLimit={10} plugins={[]} />);
+		const { asFragment, getAllByTestId } = render(<PluginGrid isLoading skeletonsLimit={3} plugins={[]} />);
 
-		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(10);
+		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(3);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render without pagination", async () => {
-		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} withPagination={false} />);
+		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} showPagination={false} />);
 
 		for (const plugin of plugins) {
 			expect(await findByText(plugin.title)).toBeTruthy();
