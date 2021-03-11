@@ -9,7 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useThemeName, useValidation } from "app/hooks";
+import { useTheme, useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -28,7 +28,7 @@ export const CreateProfile = () => {
 
 	const [avatarImage, setAvatarImage] = useState("");
 
-	const theme = useThemeName();
+	const { theme } = useTheme();
 	const { createProfile } = useValidation();
 
 	const formattedName = name.trim();
