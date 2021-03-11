@@ -34,7 +34,9 @@ export const SelectFileStep = ({ onBack, onFileSelected, onFileFormatChange, fil
 		event.preventDefault();
 		event.stopPropagation();
 
-		const firstAcceptedFileByExtension = [...event.dataTransfer.files].find(({ name }) => path.extname(name) === fileFormat);
+		const firstAcceptedFileByExtension = [...event.dataTransfer.files].find(
+			({ name }) => path.extname(name) === fileFormat,
+		);
 
 		if (!firstAcceptedFileByExtension) {
 			return;

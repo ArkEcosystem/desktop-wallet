@@ -1,4 +1,4 @@
-import { CreateProfile, ImportProfile,Welcome } from "./pages";
+import { CreateProfile, ImportProfile, Welcome } from "./pages";
 
 export const ProfileRoutes = [
 	{
