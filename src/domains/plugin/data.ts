@@ -12,11 +12,6 @@ export const pluginData = {
 	size: "4.2",
 };
 
-export const paths = {
-	featured: "/?path=/story/domains-plugin-pages-plugins-category--featured",
-	topRated: "/?path=/story/domains-plugin-pages-plugins-category--top-rated",
-};
-
 export const plugins = [
 	{
 		id: 0,

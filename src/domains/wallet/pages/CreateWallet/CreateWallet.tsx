@@ -29,8 +29,10 @@ export const CreateWallet = () => {
 	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
 	const form = useForm({ mode: "onChange" });
-	const { getValues, formState, register, setValue } = form;
+	const { getValues, formState, register, setValue, watch } = form;
 	const { isSubmitting, isValid } = formState;
+
+	const isGeneratingWallet = watch("isGeneratingWallet");
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -113,6 +115,7 @@ export const CreateWallet = () => {
 									<Button
 										data-testid="CreateWallet__continue-button"
 										disabled={!isValid}
+										isLoading={isGeneratingWallet}
 										onClick={handleNext}
 									>
 										{t("COMMON.CONTINUE")}

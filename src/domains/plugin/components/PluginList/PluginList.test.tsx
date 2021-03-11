@@ -87,7 +87,7 @@ describe("PluginList", () => {
 
 	it("should render without pagination", () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(
-			<PluginList plugins={plugins} withPagination={false} />,
+			<PluginList plugins={plugins} showPagination={false} />,
 		);
 
 		expect(getAllByTestId("TableRow")).toHaveLength(2);

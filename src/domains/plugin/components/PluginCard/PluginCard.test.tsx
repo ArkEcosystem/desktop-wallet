@@ -1,8 +1,9 @@
 import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render } from "utils/testing-library";
 
-import { PluginCard } from "./PluginCard";
+import { BlankPluginCard, PluginCard } from "./PluginCard";
 
 const basePlugin = {
 	id: "ark-explorer",
@@ -26,6 +27,18 @@ describe("PluginCard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without category", async () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: false,
+		};
+
+		const { asFragment, findByText } = render(<PluginCard plugin={plugin} showCategory={false} />);
+
+		expect(await findByText(plugin.title)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should trigger view", () => {
 		const plugin = {
 			...basePlugin,
@@ -40,72 +53,6 @@ describe("PluginCard", () => {
 
 		expect(onClick).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should trigger update", async () => {
-		const plugin = {
-			...basePlugin,
-			isInstalled: true,
-			hasUpdateAvailable: true,
-		};
-
-		const onUpdate = jest.fn();
-
-		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onUpdate={onUpdate} />);
-
-		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(await findByText(commonTranslations.UPDATE));
-
-		expect(onUpdate).toHaveBeenCalledTimes(1);
-	});
-
-	it("should trigger delete", async () => {
-		const plugin = {
-			...basePlugin,
-			isInstalled: true,
-		};
-
-		const onDelete = jest.fn();
-
-		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onDelete={onDelete} />);
-
-		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(await findByText(commonTranslations.DELETE));
-
-		expect(onDelete).toHaveBeenCalledTimes(1);
-	});
-
-	it("should trigger enable", async () => {
-		const plugin = {
-			...basePlugin,
-			isInstalled: true,
-		};
-
-		const onEnable = jest.fn();
-
-		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onEnable={onEnable} />);
-
-		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(await findByText(commonTranslations.ENABLE));
-
-		expect(onEnable).toHaveBeenCalledTimes(1);
-	});
-
-	it("should trigger disable", async () => {
-		const plugin = {
-			...basePlugin,
-			isInstalled: true,
-			isEnabled: true,
-		};
-
-		const onDisable = jest.fn();
-
-		const { findByText, getByTestId } = render(<PluginCard plugin={plugin} onDisable={onDisable} />);
-
-		fireEvent.click(getByTestId("dropdown__toggle"));
-		fireEvent.click(await findByText(commonTranslations.DISABLE));
-
-		expect(onDisable).toHaveBeenCalledTimes(1);
 	});
 
 	it("should render official icon", () => {
@@ -132,5 +79,34 @@ describe("PluginCard", () => {
 
 		expect(container).toHaveTextContent("grant.svg");
 		expect(asFragment()).toMatchSnapshot();
+	});
+});
+
+describe("BlankPluginCard", () => {
+	it("should render", async () => {
+		const { container, findByText } = render(<BlankPluginCard />);
+
+		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(await findByText(commonTranslations.NAME)).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with name", async () => {
+		const { container, findByText } = render(<BlankPluginCard name="test-name" />);
+
+		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(await findByText("test-name")).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with category", async () => {
+		const { container, findByText } = render(<BlankPluginCard category="exchange" />);
+
+		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(await findByText(pluginTranslations.CATEGORIES.EXCHANGE)).toBeTruthy();
+
+		expect(container).toMatchSnapshot();
 	});
 });

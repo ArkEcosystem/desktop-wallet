@@ -1,8 +1,8 @@
-import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
 import { render } from "testing-library";
 
-import { BlankExchangeCard, ExchangeCard } from "./ExchangeCard";
+import { ExchangeCard } from "./ExchangeCard";
 
 const exchange = { id: "test-exchange", title: "Test Exchange" };
 
@@ -14,14 +14,11 @@ describe("ExchangeCard", () => {
 
 		expect(container).toMatchSnapshot();
 	});
-});
 
-describe("BlankExchangeCard", () => {
-	it("should render when blank", async () => {
-		const { container, findByText } = render(<BlankExchangeCard />);
+	it("should render a blank card", async () => {
+		const { container, findByText } = render(<ExchangeCard exchange={undefined} />);
 
-		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
-		expect(await findByText(commonTranslations.EXCHANGE)).toBeTruthy();
+		expect(await findByText(pluginTranslations.CATEGORIES.EXCHANGE)).toBeTruthy();
 
 		expect(container).toMatchSnapshot();
 	});

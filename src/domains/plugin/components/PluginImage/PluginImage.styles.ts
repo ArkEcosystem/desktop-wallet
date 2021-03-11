@@ -6,13 +6,13 @@ const baseStyle = tw`flex flex-col space-y-3 items-center justify-center transit
 const getSize = (size?: Size): any => {
 	switch (size) {
 		case "xs":
-			return tw`min-w-6 min-h-6 h-6 w-6 rounded`;
+			return tw`flex-shrink-0 h-6 w-6 rounded`;
 		case "sm":
-			return tw`min-w-15 min-h-15 h-15 w-15 rounded-lg`;
+			return tw`flex-shrink-0 h-15 w-15 rounded-lg`;
 		case "lg":
-			return tw`min-w-44 min-h-44 h-44 w-44 rounded-3xl`;
+			return tw`flex-shrink-0 h-44 w-44 rounded-3xl`;
 		default:
-			return tw`min-w-25 min-h-25 h-25 w-25 rounded-xl`;
+			return tw`flex-shrink-0 h-25 w-25 rounded-xl`;
 	}
 };
 

@@ -1,4 +1,5 @@
 import { chunk } from "@arkecosystem/utils";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
 import { PluginListItem } from "domains/plugin/components/PluginListItem";
@@ -17,7 +18,8 @@ type PluginListProps = {
 	onInstall: any;
 	plugins: any[];
 	updatingStats?: any;
-	withPagination?: boolean;
+	showCategory?: boolean;
+	showPagination?: boolean;
 };
 
 export const PluginList = ({
@@ -32,7 +34,8 @@ export const PluginList = ({
 	onUpdate,
 	plugins,
 	updatingStats,
-	withPagination,
+	showCategory,
+	showPagination,
 }: PluginListProps) => {
 	const { t } = useTranslation();
 
@@ -56,10 +59,6 @@ export const PluginList = ({
 			accessor: "author",
 		},
 		{
-			Header: t("COMMON.CATEGORY"),
-			accessor: "category",
-		},
-		{
 			Header: t("COMMON.VERSION"),
 			accessor: "version",
 		},
@@ -71,7 +70,7 @@ export const PluginList = ({
 			Header: t("COMMON.STATUS"),
 			accessor: "isInstalled",
 			disableSortBy: true,
-			className: "justify-center",
+			className: "justify-center no-border",
 		},
 		{
 			Header: "Actions",
@@ -79,6 +78,17 @@ export const PluginList = ({
 			className: "hidden",
 		},
 	];
+
+	if (showCategory) {
+		columns.splice(2, 0, {
+			Header: t("COMMON.CATEGORY"),
+			accessor: "category",
+		});
+	}
+
+	if (!plugins.length) {
+		return <EmptyBlock>{t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
+	}
 
 	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];
 
@@ -97,18 +107,18 @@ export const PluginList = ({
 						onUpdate={onUpdate}
 						isUpdating={updatingStats?.[plugin.name]?.percent !== undefined}
 						updatingProgress={updatingStats?.[plugin.name]?.percent}
+						showCategory={showCategory}
 					/>
 				)}
 			</Table>
 
-			{withPagination && (
-				<div className="flex justify-center">
+			{showPagination && (
+				<div className="flex justify-center w-full mt-10">
 					<Pagination
 						currentPage={currentPage}
 						itemsPerPage={itemsPerPage}
 						totalCount={plugins.length}
 						onSelectPage={setCurrentPage}
-						className="mt-5"
 					/>
 				</div>
 			)}
@@ -118,5 +128,5 @@ export const PluginList = ({
 
 PluginList.defaultProps = {
 	itemsPerPage: 10,
-	withPagination: true,
+	showPagination: true,
 };
