@@ -31,6 +31,7 @@ const showOpenDialogParams = {
 };
 
 jest.mock("fs", () => ({
+	writeFileSync: jest.fn(),
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
@@ -444,7 +445,7 @@ describe("Settings", () => {
 	});
 
 	describe("advanced mode", () => {
-		it("should open and accept advanced mode disclaimer", () => {
+		it("should open and accept disclaimer", () => {
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -478,10 +479,61 @@ describe("Settings", () => {
 			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
 		});
 
+		it("should open, accept disclaimer and remember choice", () => {
+			const { getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/settings">
+					<Settings />
+				</Route>,
+				{
+					routes: [`/profiles/${profile.id()}/settings`],
+				},
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(
+				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("AdvancedMode__rememberChoice-toggle"));
+			});
+
+			act(() => {
+				fireEvent.click(getByTestId("AdvancedMode__accept-button"));
+			});
+
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
+
+			// uncheck toggle
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+
+			// check toggle again
+			act(() => {
+				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+			});
+
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
+
+			// reset setting
+			profile.settings().set(ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+		});
+
 		it.each([
 			["close", "modal__close-btn"],
 			["decline", "AdvancedMode__decline-button"],
-		])("should open and %s advanced mode disclaimer", (_, buttonId) => {
+		])("should open and %s disclaimer", (_, buttonId) => {
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -1092,5 +1144,56 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render export settings", async () => {
+		const { container, asFragment, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Export"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should export data", async () => {
+		const exportingProfile = env.profiles().create("Exporting Profile");
+
+		const dialogMock = jest
+			.spyOn(electron.remote.dialog, "showSaveDialog")
+			//@ts-ignore
+			.mockResolvedValue({ filePath: ["/test.dwe"] });
+
+		const { container, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				withProfileSynchronizer: true,
+				routes: [`/profiles/${exportingProfile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Export"));
+		});
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("Export-settings__submit-button"));
+		});
+
+		expect(dialogMock).toHaveBeenCalled();
+		dialogMock.mockRestore();
 	});
 });

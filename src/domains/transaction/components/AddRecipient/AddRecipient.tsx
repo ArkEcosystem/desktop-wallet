@@ -12,6 +12,7 @@ import { RecipientListItem } from "domains/transaction/components/RecipientList/
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import tw, { styled } from "twin.macro";
 
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
@@ -58,6 +59,18 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	);
 };
 
+const InputButtonStyled = styled.button`
+	& {
+		${tw`flex items-center px-5 h-full transition-colors duration-300 focus:outline-none rounded font-semibold border-2 border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700 dark:text-theme-secondary-200`};
+	}
+	&.active {
+		${tw`border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
+	}
+	&:disabled {
+		${tw`border border-theme-secondary-300 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700 cursor-not-allowed`},
+	}
+`;
+
 export const AddRecipient = ({
 	assetSymbol,
 	profile,
@@ -84,15 +97,23 @@ export const AddRecipient = ({
 	const { network, senderAddress, fee, recipientAddress, amount } = watch();
 	const { sendTransfer } = useValidation();
 
+	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
+
 	const remainingBalance = useMemo(() => {
-		const senderBalance = profile.wallets().findByAddress(senderAddress)?.balance() || BigNumber.ZERO;
+		const senderBalance = senderWallet?.balance() || BigNumber.ZERO;
 
 		if (isSingle) {
 			return senderBalance;
 		}
 
 		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
-	}, [addedRecipients, profile, senderAddress, isSingle]);
+	}, [addedRecipients, senderWallet, isSingle]);
+
+	const maximumAmount = useMemo(() => {
+		const maximum = senderWallet?.balance().minus(fee);
+
+		return maximum?.isPositive() ? maximum : undefined;
+	}, [fee, senderWallet]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
@@ -250,43 +271,61 @@ export const AddRecipient = ({
 
 					<FormField name="amount">
 						<FormLabel label={t("COMMON.AMOUNT")} />
-						<InputAmount
-							disabled={!isSenderFilled}
-							data-testid="AddRecipient__amount"
-							placeholder={t("COMMON.AMOUNT")}
-							value={getValues("displayAmount") || recipientsAmount}
-							onChange={(currency) => {
-								setValue("isSendAllSelected", false);
-								setValue("displayAmount", currency.display);
-								setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
-								singleRecipientOnChange(currency.value, recipientAddress);
-							}}
-						>
-							<InputAddonEnd>
-								<button
-									type="button"
-									data-testid="AddRecipient__send-all"
-									onClick={() => {
-										const remaining = remainingBalance.isGreaterThan(fee)
-											? remainingBalance.minus(fee)
-											: remainingBalance;
-
-										setValue("displayAmount", remaining.toHuman());
-
-										setValue("amount", remaining.toString(), {
-											shouldValidate: true,
-											shouldDirty: true,
-										});
-
-										singleRecipientOnChange(remaining.toString(), recipientAddress);
-										setValue("isSendAllSelected", true);
+						<div className="flex space-x-2">
+							<div className="flex-1">
+								<InputAmount
+									disabled={!isSenderFilled}
+									data-testid="AddRecipient__amount"
+									placeholder={t("COMMON.AMOUNT")}
+									value={getValues("displayAmount") || recipientsAmount}
+									onChange={(currency) => {
+										setValue("isSendAllSelected", false);
+										setValue("displayAmount", currency.display);
+										setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
+										singleRecipientOnChange(currency.value, recipientAddress);
 									}}
-									className="px-3 mx-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
 								>
-									{t("TRANSACTION.SEND_ALL")}
-								</button>
-							</InputAddonEnd>
-						</InputAmount>
+									{!errors.amount && isSingle && isSenderFilled && (
+										<InputAddonEnd>
+											<span className="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+												{t("COMMON.MAX")} {maximumAmount?.toHuman()}
+											</span>
+										</InputAddonEnd>
+									)}
+								</InputAmount>
+							</div>
+
+							{isSingle && (
+								<div className="inline-flex">
+									<InputButtonStyled
+										type="button"
+										disabled={!isSenderFilled}
+										className={`${getValues("isSendAllSelected") ? "active" : ""}`}
+										onClick={() => {
+											setValue("isSendAllSelected", !getValues("isSendAllSelected"));
+
+											if (getValues("isSendAllSelected")) {
+												const remaining = remainingBalance.isGreaterThan(fee)
+													? remainingBalance.minus(fee)
+													: remainingBalance;
+
+												setValue("displayAmount", remaining.toHuman());
+
+												setValue("amount", remaining.toString(), {
+													shouldValidate: true,
+													shouldDirty: true,
+												});
+
+												singleRecipientOnChange(remaining.toString(), recipientAddress);
+											}
+										}}
+										data-testid="AddRecipient__send-all"
+									>
+										{t("TRANSACTION.SEND_ALL")}
+									</InputButtonStyled>
+								</div>
+							)}
+						</div>
 					</FormField>
 				</div>
 

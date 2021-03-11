@@ -43,6 +43,7 @@ import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Entity } from "./entity.svg";
 import { ReactComponent as Exchange } from "./exchange.svg";
 import { ReactComponent as Explorer } from "./explorer.svg";
+import { ReactComponent as Export } from "./export.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
 import { ReactComponent as EyeTag } from "./eye-tag.svg";
@@ -227,4 +228,5 @@ export const SvgCollection: any = {
 	Vote,
 	VoteCombination,
 	Voted,
+	Export,
 };

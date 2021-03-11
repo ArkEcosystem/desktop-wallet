@@ -119,6 +119,19 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "Your plugin settings have been updated",
 	},
 
+	EXPORT: {
+		MENU_ITEM: "Export",
+		TITLE: "Export Profile",
+		SUBTITLE:
+			"Your exported Profile will not contain your mnemonic passphrases, only addresses and respective names.",
+		EXCLUDE_WALLETS_WITHOUT_NAME: "Exclude wallets without a name",
+		EXCLUDE_EMPTY_WALLETS: "Exclude empty wallets",
+		EXCLUDE_LEDGER_WALLETS: "Exclude Ledger wallets",
+		ADD_INFORMATION_ABOUT_THE_NETWORK: "Add information about the network",
+		SAVE_GENERAL_CUSTOMIZATIONS: "Save general settings customizations",
+		SUCCESS: "Your settings have been exported successfully",
+	},
+
 	MODAL_ADVANCED_MODE: {
 		TITLE: "Advanced Mode Disclaimer",
 		DISCLAIMER:
