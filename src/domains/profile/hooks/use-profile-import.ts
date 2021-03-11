@@ -3,62 +3,67 @@ import electron from "electron";
 import fs from "fs";
 import path from "path";
 
-export const useProfileImport = ({ env }: { env: Environment }) => {
-	const openFileToImport = async () => {
+import { ImportFile } from "../pages/ImportProfile/models";
+
+export const useProfileImport = () => {
+	const readFile = (filePath: string): ImportFile => {
+		const extension = path.extname(filePath);
+		const content = fs.readFileSync(filePath);
+		const name = path.basename(filePath);
+
+		return { name, content: content.toString(), extension };
+	};
+
+	const openFileToImport = async ({ extensions }: { extensions: string[] }) => {
 		const { filePaths } = await electron.remote.dialog.showOpenDialog({
 			properties: ["openFile"],
-			filters: [{ name: "", extensions: ["dwe", "json"] }],
+			filters: [{ name: "", extensions }],
 		});
 
 		if (!filePaths?.length) {
-			return {};
+			return;
 		}
 
-		const fileExtension = path.extname(filePaths[0]);
-		const fileContent = fs.readFileSync(filePaths[0]);
-
-		return { fileExtension, fileContent: fileContent.toString() };
+		return readFile(filePaths[0]);
 	};
 
-	const importProfileFromDwe = async (profileData: string, password?: string) => {
+	const importProfileFromDwe = async (env: Environment, profileData: string, password?: string) => {
 		let profile: Profile;
 
 		try {
 			profile = await env.profiles().import(profileData, password);
 		} catch (error) {
 			if (error.message.includes("Reason: Unexpected token")) {
-				throw new Error("Is encrypted");
+				throw new Error("PasswordRequired");
 			}
 			throw error;
 		}
 
-		if (env.profiles().findByName(profile.name())) {
-			throw new Error(`Profile with name ${profile.name()} already exists`);
-		}
+		// // env.profiles().fill({ [profile.id()]: profile.dump() });
+		//
+		// if (password) {
+		// 	env.profiles().findById(profile.id()).auth().setPassword(password);
+		// }
 
-		env.profiles().fill({ [profile.id()]: profile.dump() });
-
-		if (password) {
-			env.profiles().findById(profile.id()).auth().setPassword(password);
-		}
+		return profile;
 	};
 
-	const importLegacyProfile = async (profileData: string) => {
+	const importLegacyProfile = async (env: Environment, profileData: string) => {
 		let data: Record<string, any>;
 
 		try {
 			data = JSON.parse(profileData);
 		} catch (error) {
-			throw new Error("Unable to parse data due to corrupted format");
+			throw new Error("CorruptedData");
 		}
 
 		if (!data?.wallets?.length) {
-			throw new Error("Unable to find wallet information in the exported file");
+			throw new Error("MissingWallets");
 		}
 
-		const profile = env.profiles().create("V2 Import");
+		const profile = env.profiles().create("");
 
-		return Promise.all(
+		await Promise.all(
 			data.wallets.map((wallet: Record<string, any>) => {
 				if (wallet?.address && wallet?.balance.ARK) {
 					return profile.wallets().importByAddress(wallet.address, "ARK", "ark.mainnet");
@@ -70,29 +75,32 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 				}
 			}),
 		);
+
+		env.profiles().forget(profile.id());
+		return profile;
 	};
 
 	const importProfile = async ({
-		fileContent,
-		fileExtension,
 		password,
+		env,
+		file,
 	}: {
-		fileContent?: string;
-		fileExtension?: string;
+		env: Environment;
+		file?: ImportFile;
 		password?: string;
 	}) => {
-		if (!fileContent || !fileExtension) {
+		if (!file) {
 			return;
 		}
 
-		if (fileExtension === ".dwe") {
-			await importProfileFromDwe(fileContent, password);
+		if (file.extension === ".dwe") {
+			return await importProfileFromDwe(env, file.content, password);
 		}
 
-		if (fileExtension === ".json") {
-			await importLegacyProfile(fileContent);
+		if (file.extension === ".json") {
+			return await importLegacyProfile(env, file.content);
 		}
 	};
 
-	return { openFileToImport, importProfile };
+	return { openFileToImport, importProfile, readFile };
 };
