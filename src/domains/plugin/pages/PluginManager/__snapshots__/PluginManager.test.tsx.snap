@@ -351,11 +351,11 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -516,7 +516,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -528,7 +528,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -562,7 +562,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -574,7 +574,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -967,7 +967,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -979,7 +979,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -1013,7 +1013,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -1025,7 +1025,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -1416,11 +1416,11 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -2287,11 +2287,11 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -3158,11 +3158,11 @@ exports[`PluginManager should handle update all 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -4338,11 +4338,11 @@ exports[`PluginManager should render 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -4503,7 +4503,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -4515,7 +4515,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -4690,7 +4690,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -4702,7 +4702,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -4961,7 +4961,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -4973,7 +4973,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -5148,7 +5148,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -5160,7 +5160,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -5708,11 +5708,11 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -5873,7 +5873,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -5885,7 +5885,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -6060,7 +6060,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -6072,7 +6072,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -6289,7 +6289,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -6301,7 +6301,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -6476,7 +6476,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -6488,7 +6488,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -7036,11 +7036,11 @@ exports[`PluginManager should search for plugin 2`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -7201,7 +7201,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7213,7 +7213,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -7388,7 +7388,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7400,7 +7400,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -7575,7 +7575,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7587,7 +7587,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -7762,7 +7762,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7774,7 +7774,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -8306,11 +8306,11 @@ exports[`PluginManager should switch to exchange category by clicking on view mo
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -8846,11 +8846,11 @@ exports[`PluginManager should switch to gaming category by clicking on view more
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -9386,11 +9386,11 @@ exports[`PluginManager should switch to other category by clicking on view more 
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -9926,11 +9926,11 @@ exports[`PluginManager should switch to utility category by clicking on view mor
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -10296,7 +10296,7 @@ exports[`PluginManager should switch to utility category by clicking on view mor
 </DocumentFragment>
 `;
 
-exports[`PluginManager should toggle between list and grid on home 1`] = `
+exports[`PluginManager should toggle between list and grid on latest 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -10647,11 +10647,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -10812,7 +10812,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -10824,7 +10824,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -10999,7 +10999,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11011,7 +11011,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -11270,7 +11270,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11282,7 +11282,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -11457,7 +11457,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11469,7 +11469,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -12001,11 +12001,11 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -12722,11 +12722,11 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div

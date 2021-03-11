@@ -9,14 +9,14 @@ import { styled } from "twin.macro";
 import { defaultStyle } from "./styles";
 
 type PluginManagerNavigationBar = {
+	hasUpdatesAvailable?: boolean;
+	installedPluginsCount?: number;
+	menu: any[];
+	selectedView: any;
+	selectedViewType?: string;
+	onChange?: any;
 	onSelectGridView?: any;
 	onSelectListView?: any;
-	selectedViewType?: string;
-	menu: any[];
-	selected: any;
-	onChange?: any;
-	installedPluginsCount?: number;
-	hasUpdatesAvailable?: boolean;
 };
 
 const NavWrapper = styled.nav`
@@ -24,14 +24,14 @@ const NavWrapper = styled.nav`
 `;
 
 export const PluginManagerNavigationBar = ({
-	selected,
-	onChange,
+	hasUpdatesAvailable,
+	installedPluginsCount,
 	menu,
+	selectedView,
+	selectedViewType,
+	onChange,
 	onSelectGridView,
 	onSelectListView,
-	selectedViewType,
-	installedPluginsCount,
-	hasUpdatesAvailable,
 }: PluginManagerNavigationBar) => {
 	const { t } = useTranslation();
 	const { allPlugins } = usePluginManagerContext();
@@ -56,11 +56,11 @@ export const PluginManagerNavigationBar = ({
 										onClick={() => onChange(menuItem.name)}
 										title={menuItem.title}
 										className={`PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
-											selected === menuItem.name ? "active" : ""
+											selectedView === menuItem.name ? "active" : ""
 										}`}
 									>
 										<span>{menuItem.title}</span>
-										{menuItem.name !== "home" && (
+										{menuItem.name !== "latest" && (
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
 												{countsByCategory[menuItem.name]}
 											</span>
@@ -82,7 +82,7 @@ export const PluginManagerNavigationBar = ({
 							onClick={() => onChange("my-plugins")}
 							title="My Plugins"
 							className={`PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
-								selected === "my-plugins" ? "active" : ""
+								selectedView === "my-plugins" ? "active" : ""
 							}`}
 						>
 							<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
@@ -122,28 +122,6 @@ export const PluginManagerNavigationBar = ({
 };
 
 PluginManagerNavigationBar.defaultProps = {
-	selected: "home",
-	menu: [
-		{
-			title: "Home",
-			name: "home",
-		},
-		{
-			title: "Gaming",
-			name: "gaming",
-		},
-		{
-			title: "Utility",
-			name: "utility",
-		},
-		{
-			title: "Exchange",
-			name: "exchange",
-		},
-		{
-			title: "Other",
-			name: "other",
-		},
-	],
+	selectedView: "latest",
 	selectedViewType: "grid",
 };
