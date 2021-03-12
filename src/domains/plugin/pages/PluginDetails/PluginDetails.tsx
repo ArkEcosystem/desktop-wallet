@@ -5,7 +5,7 @@ import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { usePluginManagerContext } from "plugins";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 export const PluginDetails = () => {
@@ -15,6 +15,7 @@ export const PluginDetails = () => {
 
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
+	const [size, setSize] = useState<string>();
 
 	const {
 		allPlugins,
@@ -25,6 +26,7 @@ export const PluginDetails = () => {
 		mapConfigToPluginData,
 		updatePlugin,
 		updatingStats,
+		fetchSize,
 	} = usePluginManagerContext();
 
 	const pluginId = queryParams.get("pluginId");
@@ -70,11 +72,21 @@ export const PluginDetails = () => {
 		setIsInstallOpen(false);
 	};
 
+	useEffect(() => {
+		if (isInstalled) {
+			setSize(pluginData.size);
+			return;
+		}
+
+		fetchSize(pluginData.id);
+	}, [isInstalled]); // eslint-disable-line react-hooks/exhaustive-deps
+
 	return (
 		<Page profile={activeProfile}>
 			<Section border>
 				<PluginHeader
 					{...pluginData}
+					size={size}
 					isInstalled={isInstalled}
 					onDelete={() => setIsUninstallOpen(true)}
 					onReport={handleReportPlugin}
