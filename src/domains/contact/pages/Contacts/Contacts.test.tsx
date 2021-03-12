@@ -116,13 +116,13 @@ describe("Contacts", () => {
 			);
 		});
 
-		it("should render with contacts", () => {
+		it("should render", () => {
 			const { asFragment, getByTestId } = rendered;
 
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
-			expect(() => getByTestId("contacts__banner")).toThrow(/Unable to find an element by/);
+			expect(() => getByTestId("EmptyBlock")).toThrow(/Unable to find an element by/);
 
 			expect(asFragment()).toMatchSnapshot();
 		});
@@ -346,7 +346,7 @@ describe("Contacts", () => {
 			);
 		});
 
-		it("should render empty", () => {
+		it("should render", () => {
 			const { asFragment, getByTestId } = rendered;
 
 			expect(() => getByTestId("ContactList")).toThrow(/Unable to find an element by/);
@@ -354,7 +354,7 @@ describe("Contacts", () => {
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
-			expect(getByTestId("contacts__banner")).toBeTruthy();
+			expect(getByTestId("EmptyBlock")).toBeTruthy();
 
 			expect(asFragment()).toMatchSnapshot();
 		});

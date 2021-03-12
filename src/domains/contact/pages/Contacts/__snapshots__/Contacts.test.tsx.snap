@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contacts with contacts should render with contacts 1`] = `
+exports[`Contacts with contacts should render 1`] = `
 <DocumentFragment>
   <div
     class="flex relative flex-col min-h-screen"
@@ -347,7 +347,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
           class="container px-10 mx-auto"
@@ -1166,7 +1166,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Contacts without contacts should render empty 1`] = `
+exports[`Contacts without contacts should render 1`] = `
 <DocumentFragment>
   <div
     class="flex relative flex-col min-h-screen"
@@ -1483,25 +1483,17 @@ exports[`Contacts without contacts should render empty 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="text-center"
-            data-testid="contacts__banner"
+            class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6 "
+            data-testid="EmptyBlock"
           >
-            <svg
-              class="mx-auto"
-              height="175"
-            >
-              contacts-banner.svg
-            </svg>
-            <div
-              class="mt-8 text-theme-secondary-text"
-            >
-              Add your most frequent contacts for fast, easy payments
+            <div>
+              It looks like you don't have any Contacts yet. After adding new Contacts, they can be viewed here.
             </div>
           </div>
         </div>
