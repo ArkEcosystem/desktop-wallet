@@ -1784,7 +1784,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Recipient #1
@@ -1809,19 +1809,19 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Amount
                           </span>
                         </div>
                         <div
-                          class="font-bold text-right text-theme-secondary-800"
+                          class="font-semibold text-right"
                         >
                           <span
                             data-testid="Amount"
                           >
-                            + 0.00000001 ARK
+                            0.00000001 ARK
                           </span>
                         </div>
                       </td>
@@ -4610,7 +4610,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Recipient #1
@@ -4635,19 +4635,19 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Amount
                           </span>
                         </div>
                         <div
-                          class="font-bold text-right text-theme-secondary-800"
+                          class="font-semibold text-right"
                         >
                           <span
                             data-testid="Amount"
                           >
-                            + 0.00000001 ARK
+                            0.00000001 ARK
                           </span>
                         </div>
                       </td>
