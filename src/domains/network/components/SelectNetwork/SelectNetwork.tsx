@@ -155,6 +155,7 @@ export const SelectNetwork = ({
 					{publicNetworks.map((network: Network, index: number) => (
 						<NetworkOption
 							key={index}
+							disabled={disabled}
 							network={network}
 							iconClassName={optionClassName(network)}
 							onClick={() => toggleSelection(network)}
@@ -175,6 +176,7 @@ export const SelectNetwork = ({
 						{developmentNetworks.map((network: Network, index: number) => (
 							<NetworkOption
 								key={index}
+								disabled={disabled}
 								network={network}
 								iconClassName={optionClassName(network)}
 								onClick={() => toggleSelection(network)}

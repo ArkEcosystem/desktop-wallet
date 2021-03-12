@@ -2351,7 +2351,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
@@ -3253,7 +3253,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
