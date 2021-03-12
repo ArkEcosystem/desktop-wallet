@@ -2,23 +2,36 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type PasswordModalProps = {
 	title: string;
 	description: string;
+	error?: string;
 	isOpen: boolean;
 	onCancel?: any;
 	onClose?: any;
 	onSubmit?: (password: string) => void;
 };
 
-export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit }: PasswordModalProps) => {
+export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit, error }: PasswordModalProps) => {
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { password } = form.watch();
+
+	useEffect(() => {
+		if (!error) {
+			form.clearErrors();
+			return;
+		}
+
+		form.setError("password", {
+			type: "invalid",
+			message: error,
+		});
+	}, [error]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<Modal
