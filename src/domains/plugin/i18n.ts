@@ -69,10 +69,6 @@ export const translations: { [key: string]: any } = {
 		PLACEHOLDER: "Github Repository URL",
 	},
 
-	PAGE_PLUGINS_CATEGORY: {
-		LAYOUT_TITLE: "Plugin list",
-	},
-
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",
