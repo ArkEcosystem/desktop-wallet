@@ -106,10 +106,6 @@ export const ImportWallet = () => {
 				wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
 			} else if (type === "privateKey") {
 				wallet = await activeProfile.wallets().importByPrivateKey(network.coin(), network.id(), value);
-			} else if (type === "wif") {
-				const coin = await env.coin(network.coin(), network.id());
-				const privateKey = await coin.identity().privateKey().fromWIF(value);
-				wallet = await activeProfile.wallets().importByPrivateKey(network.coin(), network.id(), privateKey);
 			}
 
 			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
