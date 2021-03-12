@@ -2,14 +2,14 @@ import electron from "electron";
 import fs from "fs";
 import path from "path";
 
-export type ImportFile = {
+export type ReadableFile = {
 	content: string;
 	extension: string;
 	name: string;
 };
 
 export const useFiles = () => {
-	const readFileContents = (filePath: string): ImportFile => {
+	const readFileContents = (filePath: string): ReadableFile => {
 		const extension = path.extname(filePath);
 		const content = fs.readFileSync(filePath);
 		const name = path.basename(filePath);
