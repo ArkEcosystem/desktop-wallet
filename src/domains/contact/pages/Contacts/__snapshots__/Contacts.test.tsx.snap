@@ -428,9 +428,23 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold w-1"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--3"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top"
+                      >
+                        <div>
+                          Copy
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold w-1"
+                      colspan="1"
+                      data-testid="table__th--4"
                       role="columnheader"
                     >
                       <div
@@ -444,7 +458,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     <th
                       class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                       colspan="1"
-                      data-testid="table__th--4"
+                      data-testid="table__th--5"
                       role="columnheader"
                     >
                       <div
@@ -542,6 +556,32 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           >
                             D61mfS…J3Dyib
                           </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class=""
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
+                      >
+                        <div
+                          class="inline-block cursor-pointer"
+                          data-testid="clipboard__wrapper"
+                        >
+                          <div
+                            class="text-theme-primary-300 dark:text-theme-secondary-700"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -690,6 +730,32 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
+                      >
+                        <div
+                          class="inline-block cursor-pointer"
+                          data-testid="clipboard__wrapper"
+                        >
+                          <div
+                            class="text-theme-primary-300 dark:text-theme-secondary-700"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+                    >
+                      <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
@@ -795,6 +861,32 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
+                      >
+                        <div
+                          class="inline-block cursor-pointer"
+                          data-testid="clipboard__wrapper"
+                        >
+                          <div
+                            class="text-theme-primary-300 dark:text-theme-secondary-700"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+                    >
+                      <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
@@ -866,6 +958,32 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           >
                             DKrACQ…jfXYqu
                           </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class=""
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
+                      >
+                        <div
+                          class="inline-block cursor-pointer"
+                          data-testid="clipboard__wrapper"
+                        >
+                          <div
+                            class="text-theme-primary-300 dark:text-theme-secondary-700"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -966,6 +1084,32 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           >
                             D8rr7B…s6YUYD
                           </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class=""
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
+                      >
+                        <div
+                          class="inline-block cursor-pointer"
+                          data-testid="clipboard__wrapper"
+                        >
+                          <div
+                            class="text-theme-primary-300 dark:text-theme-secondary-700"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                copy.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </td>
