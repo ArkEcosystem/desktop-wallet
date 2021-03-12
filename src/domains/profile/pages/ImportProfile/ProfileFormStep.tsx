@@ -8,7 +8,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
-import { useThemeName, useValidation } from "app/hooks";
+import { useTheme, useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { FilePreview } from "domains/profile/components/FilePreview";
 import { ImportFile } from "domains/profile/pages/ImportProfile/models";
@@ -17,15 +17,35 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { setThemeSource } from "utils/electron-utils";
 
-type ProfileFormProps = {
+type ImportProfileFormProps = {
 	file?: ImportFile;
 	profile: Profile;
+	password?: string;
 	env: Environment;
-	onSave?: (profile: Profile) => void;
+	onSubmit?: (profile: Profile) => void;
 	onBack?: () => void;
 };
 
-const ProfileCreateForm = ({ profile, env, onSave, onBack }: ProfileFormProps) => {
+type CreateProfileFormProps = {
+	file?: ImportFile;
+	profile: Profile;
+	password?: string;
+	env: Environment;
+	showThemeToggleField?: boolean;
+	showCurrencyField?: boolean;
+	onSubmit?: (profile: Profile) => void;
+	onBack?: () => void;
+};
+
+const CreateProfileForm = ({
+	profile,
+	env,
+	password,
+	onSubmit,
+	onBack,
+	showThemeToggleField = true,
+	showCurrencyField = true,
+}: CreateProfileFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({
@@ -34,6 +54,8 @@ const ProfileCreateForm = ({ profile, env, onSave, onBack }: ProfileFormProps) =
 			name: profile?.name() || "",
 			currency: profile?.settings().get(ProfileSetting.ExchangeCurrency),
 			isDarkMode: profile?.settings().get(ProfileSetting.Theme) === "dark",
+			password,
+			confirmPassword: password,
 		},
 	});
 
@@ -46,9 +68,8 @@ const ProfileCreateForm = ({ profile, env, onSave, onBack }: ProfileFormProps) =
 	]);
 
 	const [avatarImage, setAvatarImage] = useState(profile?.avatar() || "");
-	console.log("avatar image", avatarImage, isDarkMode);
 
-	const theme = useThemeName();
+	const { theme } = useTheme();
 	const { createProfile } = useValidation();
 
 	const formattedName = name.trim();
@@ -86,20 +107,22 @@ const ProfileCreateForm = ({ profile, env, onSave, onBack }: ProfileFormProps) =
 		},
 	];
 
-	const handleSubmit = ({ name, password, currency, isDarkMode }: any) => {
+	const handleSubmit = ({ name, password: enteredPassword, currency, isDarkMode }: any) => {
 		profile = profile || env.profiles().create(name.trim());
 
 		profile.settings().set(ProfileSetting.Name, name);
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-
 		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 
-		if (password) {
-			profile.auth().setPassword(password);
+		if (currency) {
+			profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		}
 
-		onSave?.(profile);
+		if (enteredPassword) {
+			profile.auth().setPassword(enteredPassword);
+		}
+
+		onSubmit?.(profile);
 	};
 
 	return (
@@ -151,28 +174,32 @@ const ProfileCreateForm = ({ profile, env, onSave, onBack }: ProfileFormProps) =
 							<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
 						</FormField>
 
-						<FormField name="currency">
-							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
-							<Select
-								defaultValue={currency}
-								placeholder={t("COMMON.SELECT_OPTION", {
-									option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
-								})}
-								ref={register(createProfile.currency())}
-								options={PlatformSdkChoices.currencies}
-								onChange={(currency: any) =>
-									setValue("currency", currency.value, {
-										shouldDirty: true,
-										shouldValidate: true,
-									})
-								}
-							/>
-						</FormField>
+						{showCurrencyField && (
+							<FormField name="currency">
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
+								<Select
+									defaultValue={currency}
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+									})}
+									ref={register(createProfile.currency())}
+									options={PlatformSdkChoices.currencies}
+									onChange={(currency: any) =>
+										setValue("currency", currency.value, {
+											shouldDirty: true,
+											shouldValidate: true,
+										})
+									}
+								/>
+							</FormField>
+						)}
 					</div>
 
-					<div className="pb-4 mt-8">
-						<ListDivided items={otherItems} />
-					</div>
+					{showThemeToggleField && (
+						<div className="pb-4 mt-8">
+							<ListDivided items={otherItems} />
+						</div>
+					)}
 
 					<Divider />
 				</div>
@@ -191,7 +218,7 @@ const ProfileCreateForm = ({ profile, env, onSave, onBack }: ProfileFormProps) =
 	);
 };
 
-export const ProfileForm = ({ profile, env, onSave, onBack, file }: ProfileFormProps) => {
+export const ImportProfileForm = ({ profile, env, onSubmit, onBack, file, password }: ImportProfileFormProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -205,7 +232,15 @@ export const ProfileForm = ({ profile, env, onSave, onBack, file }: ProfileFormP
 
 				<Divider />
 
-				<ProfileCreateForm profile={profile} env={env} onSave={onSave} onBack={onBack} />
+				<CreateProfileForm
+					showThemeToggleField={false}
+					showCurrencyField={false}
+					profile={profile}
+					env={env}
+					onSubmit={onSubmit}
+					onBack={onBack}
+					password={password}
+				/>
 			</div>
 		</div>
 	);
