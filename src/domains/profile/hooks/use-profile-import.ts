@@ -5,6 +5,12 @@ import path from "path";
 
 import { ImportFile } from "../pages/ImportProfile/models";
 
+type ImportFileProps = {
+	env: Environment;
+	file?: ImportFile;
+	password?: string;
+};
+
 export const useProfileImport = () => {
 	const readFile = (filePath: string): ImportFile => {
 		const extension = path.extname(filePath);
@@ -33,17 +39,16 @@ export const useProfileImport = () => {
 		try {
 			profile = await env.profiles().import(profileData, password);
 		} catch (error) {
-			if (error.message.includes("Reason: Unexpected token")) {
+			if (error.message.includes("Reason: Unexpected token") && !password) {
 				throw new Error("PasswordRequired");
 			}
+
+			if (error.message.includes("Reason: Unexpected token") && password) {
+				throw new Error("InvalidPassword");
+			}
+
 			throw error;
 		}
-
-		// // env.profiles().fill({ [profile.id()]: profile.dump() });
-		//
-		// if (password) {
-		// 	env.profiles().findById(profile.id()).auth().setPassword(password);
-		// }
 
 		return profile;
 	};
@@ -73,6 +78,8 @@ export const useProfileImport = () => {
 					profile.settings().set(ProfileSetting.UseTestNetworks, true);
 					return profile.wallets().importByAddress(wallet.address, "DARK", "ark.devnet");
 				}
+
+				return null;
 			}),
 		);
 
@@ -80,15 +87,7 @@ export const useProfileImport = () => {
 		return profile;
 	};
 
-	const importProfile = async ({
-		password,
-		env,
-		file,
-	}: {
-		env: Environment;
-		file?: ImportFile;
-		password?: string;
-	}) => {
+	const importProfile = async ({ password, env, file }: ImportFileProps) => {
 		if (!file) {
 			return;
 		}
