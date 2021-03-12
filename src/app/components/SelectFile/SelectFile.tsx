@@ -1,5 +1,5 @@
 import { Icon } from "app/components/Icon";
-import { ReadableFile,useFiles } from "app/hooks/use-files";
+import { ReadableFile, useFiles } from "app/hooks/use-files";
 import path from "path";
 import React from "react";
 import { useTranslation } from "react-i18next";
