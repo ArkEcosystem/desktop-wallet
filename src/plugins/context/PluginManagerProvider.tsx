@@ -6,7 +6,7 @@ import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
 import appPkg from "../../../package.json";
@@ -269,6 +269,10 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const updatePlugin = useCallback(
 		async (name: string) => {
+			// @ts-ignore
+			const listener = (_, value: any) => setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+			ipcRenderer.on("plugin:download-progress", listener);
+
 			setUpdatingStats((prev) => ({ ...prev, [name]: { percent: 0.0 } }));
 
 			try {
@@ -279,20 +283,12 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				}, 1500);
 			} catch (e) {
 				setUpdatingStats((prev) => ({ ...prev, [name]: { failed: true } }));
+			} finally {
+				ipcRenderer.removeListener("plugin:download-progress", listener);
 			}
 		},
 		[downloadPlugin, installPlugin],
 	);
-
-	useEffect(() => {
-		// @ts-ignore
-		const listener = (_, value: any) => setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
-		ipcRenderer.on("plugin:download-progress", listener);
-
-		return () => {
-			ipcRenderer.removeListener("plugin:download-progress", listener);
-		};
-	}, []);
 
 	return {
 		pluginRegistry,
