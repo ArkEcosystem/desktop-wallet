@@ -114,7 +114,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	return (
 		<>
 			<Page profile={activeProfile}>
-				<Section>
+				<Section border>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
