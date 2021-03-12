@@ -66,8 +66,8 @@ export const SelectFileStep = ({ onBack, onFileSelected, onFileFormatChange, fil
 				onDrop={handleFileDrop}
 				className="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
 			>
-				{fileFormat === ".dwe" && <Icon name="File" width={40} height={40} />}
-				{fileFormat === ".json" && <Icon name="File" width={40} height={40} />}
+				{fileFormat === ".dwe" && <Icon name="DweFile" width={40} height={40} />}
+				{fileFormat === ".json" && <Icon name="JsonFile" width={40} height={40} />}
 
 				<div className="mt-8">
 					<span className="font-semibold">{t("PROFILE.IMPORT.SELECT_FILE_STEP.DRAG_AND_DROP")} </span>

@@ -196,12 +196,13 @@ const CreateProfileForm = ({
 					</div>
 
 					{showThemeToggleField && (
-						<div className="pb-4 mt-8">
-							<ListDivided items={otherItems} />
-						</div>
+						<>
+							<div className="pb-4 mt-8">
+								<ListDivided items={otherItems} />
+							</div>
+							<Divider />
+						</>
 					)}
-
-					<Divider />
 				</div>
 
 				<div className="flex justify-end pt-4 space-x-3">
