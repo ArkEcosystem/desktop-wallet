@@ -73,10 +73,8 @@ const RecipientListItem = ({
 			</td>
 
 			<td className="py-6">
-				<div className="mb-1 text-sm font-semibold text-theme-secondary-500">
-					<span>
-						{label || t("COMMON.RECIPIENT")} #{listIndex}
-					</span>
+				<div className="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
+					<span>{label || t("COMMON.RECIPIENT_#", { count: listIndex })}</span>
 				</div>
 				<div className="max-w-sm">
 					<Address
@@ -89,11 +87,11 @@ const RecipientListItem = ({
 
 			{showAmount && (
 				<td className="py-6">
-					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500">
+					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700">
 						<span>{t("COMMON.AMOUNT")}</span>
 					</div>
-					<div className="font-bold text-right text-theme-secondary-800">
-						<Amount ticker={assetSymbol!} value={amount!} showSign />
+					<div className="font-semibold text-right">
+						<Amount ticker={assetSymbol!} value={amount!} />
 					</div>
 				</td>
 			)}

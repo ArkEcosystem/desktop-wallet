@@ -18,8 +18,9 @@ interface ISelectionRange {
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 	({ onChange, value, as: Component, magnitude, children, errorClassName, ...props }: Props, ref: any) => {
-		const convertValue = useCallback((value: string) => Currency.fromString(value || "", magnitude), [magnitude]);
-		const [amount, setAmount] = useState(convertValue(value?.toString() || ""));
+		const convertValue = useCallback((value?: string) => Currency.fromString(value || "", magnitude), [magnitude]);
+
+		const [amount, setAmount] = useState<any>(convertValue(value?.toString()));
 		const [selectionRange, setSelectionRange] = useState<ISelectionRange>({
 			start: null,
 			end: null,
@@ -33,7 +34,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 					return value;
 				}
 
-				return convertValue(value?.toString() || "");
+				return convertValue(value?.toString());
 			};
 
 			setAmount(evaluateValue(value));

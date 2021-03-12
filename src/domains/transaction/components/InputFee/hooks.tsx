@@ -3,21 +3,23 @@ import { useEffect, useRef, useState } from "react";
 
 export type InputFee = {
 	display: string;
-	value: string;
+	value?: string;
 };
 
 export const useFeeFormat = ({ defaultValue, value, avg }: any) => {
-	const toHuman = (inputValue: string | number) => BigNumber.make(inputValue).divide(1e8).toString();
+	const toHuman = (inputValue: string | number) =>
+		inputValue ? BigNumber.make(inputValue).divide(1e8).toString() : "";
+
 	const defaultFeeValue = value || defaultValue || avg;
 	const defaultHuman = toHuman(defaultFeeValue);
 
 	const [fee, setFee] = useState<InputFee>({ display: defaultHuman, value: defaultFeeValue });
 
 	const feeFromValue = (feevalue?: string | number): InputFee => {
-		const value = BigNumber.make(feevalue || 0);
+		const value = feevalue ? BigNumber.make(feevalue) : undefined;
 		return {
-			display: value.divide(1e8).toString(),
-			value: value.toString(),
+			display: value ? value.divide(1e8).toString() : "",
+			value: value?.toString(),
 		};
 	};
 
@@ -31,7 +33,7 @@ export const useFeeFormat = ({ defaultValue, value, avg }: any) => {
 			setFee(feeFromValue(value));
 		}
 
-		const isFeeOutdated = !BigNumber.make(value).isEqualTo(updatedFee.current.value);
+		const isFeeOutdated = !BigNumber.make(value).isEqualTo(updatedFee.current.value || 0);
 		if (isFeeOutdated) {
 			setFee(feeFromValue(value));
 		}
