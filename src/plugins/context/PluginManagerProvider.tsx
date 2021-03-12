@@ -270,7 +270,13 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const updatePlugin = useCallback(
 		async (name: string) => {
 			// @ts-ignore
-			const listener = (_, value: any) => setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+			const listener = (_, value: any) => {
+				if (value.name !== name) {
+					return;
+				}
+				setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+			};
+
 			ipcRenderer.on("plugin:download-progress", listener);
 
 			setUpdatingStats((prev) => ({ ...prev, [name]: { percent: 0.0 } }));
@@ -278,6 +284,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			try {
 				const savedPath = await downloadPlugin(name);
 				await installPlugin(savedPath, name);
+
 				setTimeout(() => {
 					setUpdatingStats((prev) => ({ ...prev, [name]: { completed: true, failed: false } }));
 				}, 1500);

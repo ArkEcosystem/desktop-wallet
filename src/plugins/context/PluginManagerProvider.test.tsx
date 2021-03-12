@@ -359,7 +359,13 @@ describe("PluginManagerProvider", () => {
 
 		const onSpy = jest.spyOn(ipcRenderer, "on").mockImplementation((channel, listener) => {
 			if (channel === "plugin:download-progress") {
-				return listener(undefined, { totalBytes: 200, percent: 1, transferredBytes: 200 });
+				listener(undefined, {
+					name: plugin.config().name(),
+					totalBytes: 200,
+					percent: 1,
+					transferredBytes: 200,
+				});
+				listener(undefined, { name: "other-plugin", totalBytes: 200, percent: 1, transferredBytes: 200 });
 			}
 		});
 
