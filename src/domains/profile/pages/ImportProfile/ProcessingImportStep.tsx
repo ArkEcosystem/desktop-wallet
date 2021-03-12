@@ -1,8 +1,9 @@
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { FilePreview } from "domains/profile/components/FilePreview";
+import { PasswordModal } from "domains/profile/components/PasswordModal";
 import { useProfileImport } from "domains/profile/hooks/use-profile-import";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ImportFile } from "./models";
@@ -12,7 +13,8 @@ type ProcessingImportProps = {
 	file: ImportFile;
 	password?: string;
 	onSuccess?: (profile: any) => void;
-	onPasswordRequired?: () => void;
+	onBack?: () => void;
+	onPasswordChange?: (password?: string) => void;
 	onError?: (message: string) => void;
 };
 
@@ -20,25 +22,37 @@ export const ProcessingImport = ({
 	file,
 	env,
 	onError,
-	onPasswordRequired,
+	onBack,
+	onPasswordChange,
 	password,
 	onSuccess,
 }: ProcessingImportProps) => {
 	const { t } = useTranslation();
 	const { importProfile } = useProfileImport();
+	const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+	const [passwordError, setPasswordError] = useState<string>();
 
 	useEffect(() => {
 		const runImport = async () => {
 			let profile: Profile | undefined;
-			console.log("running profile import", password);
 
 			try {
+				if (isPasswordModalOpen) {
+					setIsPasswordModalOpen(false);
+				}
+
 				profile = await importProfile({ env, file, password });
-				console.log("profile", profile);
 				onSuccess?.(profile);
 			} catch (error) {
 				if (error.message === "PasswordRequired") {
-					return onPasswordRequired?.();
+					setIsPasswordModalOpen(true);
+					return;
+				}
+
+				if (error.message === "InvalidPassword") {
+					setIsPasswordModalOpen(true);
+					setPasswordError(t("COMMON.VALIDATION.SUBJECT_INVALID", { subject: t("COMMON.PASSWORD") }));
+					return;
 				}
 
 				onError?.(error.message);
@@ -48,7 +62,7 @@ export const ProcessingImport = ({
 		if (file) {
 			runImport();
 		}
-	}, [file, password]);
+	}, [file, env, password]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div className="mx-auto max-w-xl">
@@ -60,6 +74,26 @@ export const ProcessingImport = ({
 
 			<div className="mt-8">
 				<FilePreview file={file} variant="loading" />
+			</div>
+
+			<div className="text-left items-left">
+				<PasswordModal
+					error={passwordError}
+					isOpen={isPasswordModalOpen}
+					title={t("PROFILE.IMPORT.PASSWORD_TITLE")}
+					description={t("PROFILE.IMPORT.PASSWORD_DESCRIPTION")}
+					onSubmit={(enteredPassword) => {
+						setPasswordError(undefined);
+						setIsPasswordModalOpen(false);
+						onPasswordChange?.(enteredPassword);
+					}}
+					onClose={() => {
+						setPasswordError(undefined);
+						setIsPasswordModalOpen(false);
+						onPasswordChange?.(undefined);
+						onBack?.();
+					}}
+				/>
 			</div>
 		</div>
 	);

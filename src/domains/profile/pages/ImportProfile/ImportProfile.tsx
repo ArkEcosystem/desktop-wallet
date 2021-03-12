@@ -3,10 +3,9 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { PasswordModal } from "domains/profile/components/PasswordModal";
 import { ImportError } from "domains/profile/pages/ImportProfile/ErrorStep";
 import { ProcessingImport } from "domains/profile/pages/ImportProfile/ProcessingImportStep";
-import { ProfileForm } from "domains/profile/pages/ImportProfile/ProfileFormStep";
+import { ImportProfileForm } from "domains/profile/pages/ImportProfile/ProfileFormStep";
 import { SelectFileStep } from "domains/profile/pages/ImportProfile/SelectFileStep";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +22,6 @@ export const ImportProfile = () => {
 	const [fileFormat, setFileFormat] = useState(".dwe");
 	const [selectedFile, setSelectedFile] = useState<ImportFile>();
 	const [password, setPassword] = useState<string>();
-	const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 	const [profile, setProfile] = useState<Profile>();
 	const [error, setError] = useState<string>("");
 
@@ -38,7 +36,9 @@ export const ImportProfile = () => {
 	};
 
 	const handleProfileSave = (updatedProfile: Profile) => {
+		updatedProfile.save(password);
 		env.profiles().fill({ [updatedProfile.id()]: updatedProfile.dump() });
+
 		persist();
 		history.push("/");
 	};
@@ -69,7 +69,8 @@ export const ImportProfile = () => {
 										setProfile(profile);
 										setActiveTab(3);
 									}}
-									onPasswordRequired={() => setIsPasswordModalOpen(true)}
+									onPasswordChange={setPassword}
+									onBack={() => setActiveTab(1)}
 									onError={handleImportError}
 								/>
 							)}
@@ -77,13 +78,13 @@ export const ImportProfile = () => {
 
 						<TabPanel tabId={3}>
 							{profile && (
-								<ProfileForm
+								<ImportProfileForm
 									file={selectedFile}
 									env={env}
 									profile={profile}
-									onSave={handleProfileSave}
+									password={password}
+									onSubmit={handleProfileSave}
 									onBack={() => {
-										setIsPasswordModalOpen(false);
 										setPassword(undefined);
 										setActiveTab(1);
 									}}
@@ -102,23 +103,6 @@ export const ImportProfile = () => {
 							)}
 						</TabPanel>
 					</Tabs>
-
-					<div className="text-left items-left">
-						<PasswordModal
-							isOpen={isPasswordModalOpen}
-							title={t("PROFILE.IMPORT.PASSWORD_TITLE")}
-							description={t("PROFILE.IMPORT.PASSWORD_DESCRIPTION")}
-							onSubmit={(enteredPassword) => {
-								setIsPasswordModalOpen(false);
-								setPassword(enteredPassword);
-							}}
-							onClose={() => {
-								setIsPasswordModalOpen(false);
-								setPassword(undefined);
-								setActiveTab(1);
-							}}
-						/>
-					</div>
 				</div>
 			</Section>
 		</Page>
