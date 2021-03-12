@@ -28,7 +28,7 @@ export const ProcessingImport = ({
 	onSuccess,
 }: ProcessingImportProps) => {
 	const { t } = useTranslation();
-	const { importProfile } = useProfileImport();
+	const { importProfile } = useProfileImport({ env });
 	const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 	const [passwordError, setPasswordError] = useState<string>();
 
@@ -41,7 +41,7 @@ export const ProcessingImport = ({
 					setIsPasswordModalOpen(false);
 				}
 
-				profile = await importProfile({ env, file, password });
+				profile = await importProfile({ file, password });
 				onSuccess?.(profile);
 			} catch (error) {
 				if (error.message === "PasswordRequired") {

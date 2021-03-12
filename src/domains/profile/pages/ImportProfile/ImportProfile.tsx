@@ -54,7 +54,7 @@ export const ImportProfile = () => {
 							<SelectFileStep
 								fileFormat={fileFormat}
 								onFileFormatChange={setFileFormat}
-								onFileSelected={handleSelectedFiled}
+								onSelect={handleSelectedFiled}
 								onBack={() => history.push("/")}
 							/>
 						</TabPanel>

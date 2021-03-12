@@ -1,14 +1,13 @@
 import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { ImportFile } from "app/hooks/use-files";
+import { ReadableFile } from "app/hooks/use-files";
 
 type ImportFileProps = {
-	env: Environment;
-	file?: ImportFile;
+	file?: ReadableFile;
 	password?: string;
 };
 
-export const useProfileImport = () => {
-	const importProfileFromDwe = async (env: Environment, profileData: string, password?: string) => {
+export const useProfileImport = ({ env }: { env: Environment }) => {
+	const importProfileFromDwe = async (profileData: string, password?: string) => {
 		let profile: Profile;
 
 		try {
@@ -28,7 +27,7 @@ export const useProfileImport = () => {
 		return profile;
 	};
 
-	const importLegacyProfile = async (env: Environment, profileData: string) => {
+	const importLegacyProfile = async (profileData: string) => {
 		let data: Record<string, any>;
 
 		try {
@@ -62,17 +61,17 @@ export const useProfileImport = () => {
 		return profile;
 	};
 
-	const importProfile = async ({ password, env, file }: ImportFileProps) => {
+	const importProfile = async ({ password, file }: ImportFileProps) => {
 		if (!file) {
 			return;
 		}
 
 		if (file.extension === ".dwe") {
-			return await importProfileFromDwe(env, file.content, password);
+			return await importProfileFromDwe(file.content, password);
 		}
 
 		if (file.extension === ".json") {
-			return await importLegacyProfile(env, file.content);
+			return await importLegacyProfile(file.content);
 		}
 	};
 
