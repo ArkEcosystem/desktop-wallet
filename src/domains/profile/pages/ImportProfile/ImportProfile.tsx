@@ -47,7 +47,7 @@ export const ImportProfile = () => {
 		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 			<Section className="flex flex-col">
 				<div className="mx-auto max-w-xl">
-					<StepIndicator size={4} activeIndex={activeTab} />
+					<StepIndicator size={3} activeIndex={activeTab} />
 
 					<Tabs activeId={activeTab} className="mt-8">
 						<TabPanel tabId={1}>
