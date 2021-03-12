@@ -1,9 +1,5 @@
 import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import electron from "electron";
-import fs from "fs";
-import path from "path";
-
-import { ImportFile } from "../pages/ImportProfile/models";
+import { ImportFile } from "app/hooks/use-files";
 
 type ImportFileProps = {
 	env: Environment;
@@ -12,27 +8,6 @@ type ImportFileProps = {
 };
 
 export const useProfileImport = () => {
-	const readFile = (filePath: string): ImportFile => {
-		const extension = path.extname(filePath);
-		const content = fs.readFileSync(filePath);
-		const name = path.basename(filePath);
-
-		return { name, content: content.toString(), extension };
-	};
-
-	const openFileToImport = async ({ extensions }: { extensions: string[] }) => {
-		const { filePaths } = await electron.remote.dialog.showOpenDialog({
-			properties: ["openFile"],
-			filters: [{ name: "", extensions }],
-		});
-
-		if (!filePaths?.length) {
-			return;
-		}
-
-		return readFile(filePaths[0]);
-	};
-
 	const importProfileFromDwe = async (env: Environment, profileData: string, password?: string) => {
 		let profile: Profile;
 
@@ -101,5 +76,5 @@ export const useProfileImport = () => {
 		}
 	};
 
-	return { openFileToImport, importProfile, readFile };
+	return { importProfile };
 };

@@ -2,7 +2,7 @@ import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { useProfileImport } from "domains/profile/hooks/use-profile-import";
+import { useFiles } from "app/hooks/use-files";
 import path from "path";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -18,10 +18,10 @@ type SelectFileStepProps = {
 
 export const SelectFileStep = ({ onBack, onFileSelected, onFileFormatChange, fileFormat }: SelectFileStepProps) => {
 	const { t } = useTranslation();
-	const { openFileToImport, readFile } = useProfileImport();
+	const { openFile, readFileContents } = useFiles();
 
 	const handleBrowseFiles = async () => {
-		const file = await openFileToImport({ extensions: [fileFormat.replace(/\./g, "")] });
+		const file = await openFile({ extensions: [fileFormat.replace(/\./g, "")] });
 
 		if (!file) {
 			return;
@@ -42,7 +42,7 @@ export const SelectFileStep = ({ onBack, onFileSelected, onFileFormatChange, fil
 			return;
 		}
 
-		const file = readFile(firstAcceptedFileByExtension.path);
+		const file = readFileContents(firstAcceptedFileByExtension.path);
 		onFileSelected?.(file);
 	};
 
