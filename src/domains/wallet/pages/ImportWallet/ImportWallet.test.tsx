@@ -542,6 +542,96 @@ describe("ImportWallet", () => {
 		});
 	});
 
+	it("should import by WIF", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, queryByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
+
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-3")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-3"));
+			});
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__wif-input")).toBeInTheDocument());
+			const wifInput = getByTestId("ImportWallet__wif-input");
+			expect(wifInput).toBeTruthy();
+
+			await fireEvent.input(wifInput, {
+				target: { value: "SHjn7G4NygZH5LHvuhbMSdgrn42vqu3LdYzjxUoh2E9b7PdVsBPs" },
+			});
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => {
+				expect(profile.wallets().findByAddress("DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")).toBeTruthy();
+			});
+		});
+	});
+
 	it("should import by address and fill a wallet name", async () => {
 		const networkMock = jest.spyOn(env, "availableNetworks").mockReturnValue([
 			new Coins.Network("ARK", {

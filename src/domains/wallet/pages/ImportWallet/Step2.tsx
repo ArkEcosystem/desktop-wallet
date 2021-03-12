@@ -114,6 +114,21 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 		);
 	}
 
+	if (type === "wif") {
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.WIF")}
+				data-testid="ImportWallet__wif-input"
+				findAddress={async (value) => {
+					const instance = await coin;
+					return instance.identity().address().fromWIF(value);
+				}}
+			/>
+		);
+	}
+
 	return null;
 };
 
@@ -130,6 +145,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
 			{ label: t("COMMON.ADDRESS"), value: "address" },
 			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
+			{ label: t("COMMON.WIF"), value: "wif" },
 		],
 		[t],
 	);
