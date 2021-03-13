@@ -150,6 +150,7 @@ export const translations: { [key: string]: any } = {
 			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
 			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+			DECRYPT_WIF_ASSERTION: "Failed to decrypt WIF. Please check your password.",
 		},
 	},
 

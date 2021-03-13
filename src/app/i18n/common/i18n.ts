@@ -215,6 +215,7 @@ export const translations: { [key: string]: any } = {
 	WELCOME: "Welcome to ARK",
 	WILL: "will",
 	WIF: "WIF",
+	ENCRYPTED_WIF: "Encrypted WIF",
 	WORD: "Word",
 	X_OF_Y: "{{0}} of {{1}}",
 	YOU: "You",
