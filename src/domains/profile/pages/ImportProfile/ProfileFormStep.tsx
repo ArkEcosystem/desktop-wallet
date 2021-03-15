@@ -22,6 +22,8 @@ type ImportProfileFormProps = {
 	profile: Profile;
 	password?: string;
 	env: Environment;
+	showCurrencyField?: boolean;
+	showThemeToggleField?: boolean;
 	onSubmit?: (profile: Profile) => void;
 	onBack?: () => void;
 };
@@ -60,12 +62,17 @@ const CreateProfileForm = ({
 	});
 
 	const { watch, register, formState, setValue, trigger } = form;
-	const { name, confirmPassword, isDarkMode, currency } = watch([
-		"name",
-		"confirmPassword",
-		"isDarkMode",
-		"currency",
-	]);
+	const watchedFields = ["name", "confirmPassword"];
+
+	if (showCurrencyField) {
+		watchedFields.push("currency");
+	}
+
+	if (showThemeToggleField) {
+		watchedFields.push("isDarkMode");
+	}
+
+	const { name, confirmPassword, isDarkMode, currency } = watch(watchedFields);
 
 	const [avatarImage, setAvatarImage] = useState(profile?.avatar() || "");
 
@@ -219,7 +226,16 @@ const CreateProfileForm = ({
 	);
 };
 
-export const ImportProfileForm = ({ profile, env, onSubmit, onBack, file, password }: ImportProfileFormProps) => {
+export const ImportProfileForm = ({
+	profile,
+	env,
+	onSubmit,
+	onBack,
+	file,
+	password,
+	showThemeToggleField = false,
+	showCurrencyField = false,
+}: ImportProfileFormProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -234,8 +250,8 @@ export const ImportProfileForm = ({ profile, env, onSubmit, onBack, file, passwo
 				<Divider />
 
 				<CreateProfileForm
-					showThemeToggleField={false}
-					showCurrencyField={false}
+					showThemeToggleField={showThemeToggleField}
+					showCurrencyField={showCurrencyField}
 					profile={profile}
 					env={env}
 					onSubmit={onSubmit}
