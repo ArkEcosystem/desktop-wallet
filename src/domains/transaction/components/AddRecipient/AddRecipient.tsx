@@ -329,10 +329,13 @@ export const AddRecipient = ({
 					</FormField>
 				</div>
 
-				{!isSingle && !BigNumber.make(getValues("amount")).isZero() && !!recipientAddress && (
+				{!isSingle && (
 					<Button
 						disabled={
-							!!errors.amount || !!errors.recipientAddress || BigNumber.make(getValues("amount")).isZero()
+							!!errors.amount ||
+							!!errors.recipientAddress ||
+							!getValues("amount") ||
+							!getValues("recipientAddress")
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
