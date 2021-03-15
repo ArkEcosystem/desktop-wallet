@@ -79,7 +79,10 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size }
 							<a
 								data-testid="PluginSpecs__url"
 								href="/"
-								onClick={() => openExternal(url!)}
+								onClick={(evt) => {
+									evt.preventDefault();
+									openExternal(url!);
+								}}
 								className="link"
 							>
 								{domain}

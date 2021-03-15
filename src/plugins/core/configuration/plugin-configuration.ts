@@ -177,6 +177,16 @@ export class PluginConfigurationData {
 		return scopeRegex.test(name);
 	}
 
+	url() {
+		let data: any = this.#config.get("sourceProvider");
+
+		if (!data) {
+			data = this.#config.get("repository");
+		}
+
+		return data?.url?.replace(/git\+|\.git/, "");
+	}
+
 	async syncSize(dir?: string) {
 		const dist = this.get<{ unpackedSize: number }>("dist");
 
@@ -213,6 +223,7 @@ export class PluginConfigurationData {
 			description: this.description(),
 			isOfficial: this.isOfficial(),
 			minimumVersion: this.minimumVersion(),
+			url: this.url(),
 		};
 	}
 }
