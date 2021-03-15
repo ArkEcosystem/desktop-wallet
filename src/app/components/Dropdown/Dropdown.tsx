@@ -15,6 +15,7 @@ export type DropdownOption = {
 	label: string;
 	secondaryLabel?: string;
 	value: string | number;
+	disabled?: boolean;
 };
 
 export type DropdownOptionGroup = {
@@ -85,10 +86,18 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 		<ul data-testid="dropdown__options">
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<li
-					className="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+					aria-disabled={option.disabled}
+					className={`group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap ${
+						option.disabled
+							? "cursor-not-allowed select-none bg-theme-secondary-100 text-theme-secondary-400 dark:bg-theme-secondary-700 dark:text-theme-secondary-500"
+							: "cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+					}`}
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => {
+						if (option.disabled) {
+							return;
+						}
 						onSelect?.(option);
 						e.preventDefault();
 						e.stopPropagation();

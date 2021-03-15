@@ -1,6 +1,7 @@
 import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -66,7 +67,26 @@ export const PluginCard = ({
 
 	return (
 		<div data-testid={`PluginCard--${plugin.id}`}>
-			<Card onClick={onClick} actions={actions} onSelect={onSelect}>
+			<Card
+				onClick={onClick}
+				actions={actions}
+				onSelect={onSelect}
+				addonIcons={
+					<div className="flex items-center">
+						{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
+							<Tooltip
+								content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
+									minimumVersion: plugin.minimumVersion,
+								})}
+							>
+								<span data-testid="PluginCard__minimum-version-warning" className="ml-3 text-xl">
+									<Icon name="AlertWarning" className="text-theme-warning-500" />
+								</span>
+							</Tooltip>
+						)}
+					</div>
+				}
+			>
 				<div className="flex items-center space-x-4">
 					<div className="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg">
 						<PluginImage
