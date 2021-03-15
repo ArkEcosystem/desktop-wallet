@@ -376,7 +376,8 @@ export const translations: { [key: string]: any } = {
 
 	VALIDATION: {
 		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
-		FEE_BELOW_MINIMUM: "The selected fee is below the minimum  ({{min}} {{ coinId }}) and may not be forged",
+		AMOUNT_BELOW_MINIMUM: "The amount is below the minimum ({{min}} {{ coinId }})",
+		FEE_BELOW_MINIMUM: "The selected fee is below the minimum ({{min}} {{ coinId }}) and may not be forged",
 		FEE_ABOVE_MAXIMUM: "The selected fee is above the maximum ({{max}} {{ coinId }})",
 	},
 };

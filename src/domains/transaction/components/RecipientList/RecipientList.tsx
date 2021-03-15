@@ -74,7 +74,7 @@ const RecipientListItem = ({
 
 			<td className="py-6">
 				<div className="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
-					<span>{label || t("COMMON.RECIPIENT_#", { count: listIndex })}</span>
+					<span>{label || t("COMMON.RECIPIENT_#", { count: listIndex! + 1 })}</span>
 				</div>
 				<div className="max-w-sm">
 					<Address
@@ -100,7 +100,7 @@ const RecipientListItem = ({
 				<td className="py-6 w-20 text-right">
 					<Button
 						variant="danger"
-						onClick={() => typeof onRemove === "function" && onRemove(address)}
+						onClick={() => onRemove?.(listIndex!)}
 						data-testid="recipient-list__remove-recipient"
 					>
 						<div className="py-1">
@@ -122,12 +122,6 @@ export const RecipientList = ({
 	showAmount,
 	onRemove,
 }: RecipientListProps) => {
-	const onRemoveRecipient = (address: string) => {
-		if (typeof onRemove === "function") {
-			return onRemove(address);
-		}
-	};
-
 	const columns = [
 		{ Header: "Avatar", className: "hidden" },
 		{ Header: "Address", className: "hidden" },
@@ -151,10 +145,10 @@ export const RecipientList = ({
 						assetSymbol={assetSymbol}
 						isEditable={isEditable}
 						label={label}
-						listIndex={index + 1}
+						listIndex={index}
 						variant={variant}
 						walletName={recipient.walletName}
-						onRemove={() => onRemoveRecipient(recipient?.address)}
+						onRemove={onRemove}
 					/>
 				)}
 			</Table>
