@@ -2,7 +2,7 @@ import { ImportFile } from "domains/profile/pages/ImportProfile/models";
 import { ProcessingImport } from "domains/profile/pages/ImportProfile/ProcessingImportStep";
 import fs from "fs";
 import React from "react";
-import { act, env,fireEvent, render, waitFor } from "utils/testing-library";
+import { act, env, fireEvent, render, waitFor } from "utils/testing-library";
 
 let dwe: ImportFile;
 let passwordProtectedDwe: ImportFile;
