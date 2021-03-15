@@ -11,7 +11,6 @@ type PasswordModalProps = {
 	description: string;
 	error?: string;
 	isOpen: boolean;
-	onCancel?: any;
 	onClose?: any;
 	onSubmit?: (password: string) => void;
 };

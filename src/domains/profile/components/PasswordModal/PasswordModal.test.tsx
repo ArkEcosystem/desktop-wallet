@@ -36,20 +36,6 @@ describe("PasswordModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should cancel", async () => {
-		const onCancel = jest.fn();
-
-		const { getByTestId } = renderWithRouter(<PasswordModal isOpen={true} onCancel={onCancel} />);
-
-		act(() => {
-			fireEvent.click(getByTestId("PasswordModal__cancel-button"));
-		});
-
-		await waitFor(() => {
-			expect(onCancel).toBeCalled();
-		});
-	});
-
 	it("should submit", async () => {
 		const onSuccess = jest.fn();
 
