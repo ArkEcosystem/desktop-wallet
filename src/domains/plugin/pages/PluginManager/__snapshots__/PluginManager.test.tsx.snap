@@ -1557,7 +1557,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     My Plugins
                   </span>
                   <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="PluginManagerNavigationBar__my-plugins__count"
                   >
                     1
@@ -2444,7 +2444,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     My Plugins
                   </span>
                   <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="PluginManagerNavigationBar__my-plugins__count"
                   >
                     1
@@ -3331,13 +3331,13 @@ exports[`PluginManager should handle update all 1`] = `
                     My Plugins
                   </span>
                   <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="PluginManagerNavigationBar__my-plugins__count"
                   >
                     3
                   </span>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
+                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent ml-2 bg-theme-danger-500"
                     data-testid="PluginManagerNavigationBar_update-badge"
                   >
                     <span />
@@ -10474,11 +10474,7 @@ exports[`PluginManager should switch to utility category by clicking on view mor
 </DocumentFragment>
 `;
 
-<<<<<<< Updated upstream
-exports[`PluginManager should toggle between list and grid on latest 1`] = `
-=======
 exports[`PluginManager should toggle between list and grid on all 1`] = `
->>>>>>> Stashed changes
 <DocumentFragment>
   <div>
     <div
@@ -10828,15 +10824,9 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-<<<<<<< Updated upstream
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
-=======
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
->>>>>>> Stashed changes
                   >
                     <span>
                       Latest
@@ -11021,41 +11011,9 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
               All
             </h2>
             <div
-<<<<<<< Updated upstream
-              data-testid="PluginManager__latest__gaming"
-            >
-              <div
-                class="flex justify-between items-center mb-6"
-              >
-                <h2
-                  class="font-bold mb-0"
-                >
-                  Gaming
-                </h2>
-                <span
-                  class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__latest__gaming__view-more"
-                >
-                  <span>
-                    View More
-                  </span>
-                  <div
-                    class="sc-bdfBwQ fGHgjZ"
-                    height="8"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-right.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-=======
               data-testid="PluginManager__container--all"
             >
               <div
->>>>>>> Stashed changes
                 data-testid="PluginGrid"
               >
                 <div
@@ -11253,7 +11211,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
 </DocumentFragment>
 `;
 
-exports[`PluginManager should toggle between list and grid on home 1`] = `
+exports[`PluginManager should toggle between list and grid on latest 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -11604,11 +11562,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -11785,7 +11743,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11797,7 +11755,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -13836,13 +13794,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     My Plugins
                   </span>
                   <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="PluginManagerNavigationBar__my-plugins__count"
                   >
                     1
                   </span>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
+                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent ml-2 bg-theme-danger-500"
                     data-testid="PluginManagerNavigationBar_update-badge"
                   >
                     <span />
