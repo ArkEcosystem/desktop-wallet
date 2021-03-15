@@ -272,6 +272,25 @@ describe("Dropdown", () => {
 
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render with a disabled option", () => {
+		const { getByTestId, container, debug } = render(
+			<Dropdown options={[{ label: "Disabled Option", value: "disabled", disabled: true }]} />,
+		);
+
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		fireEvent.click(getByTestId("dropdown__option--0"));
+
+		// Keep it open
+		expect(toggle).toBeInTheDocument();
+
+		expect(container).toMatchSnapshot();
+	});
 });
 
 describe("ClickOutside Hook", () => {
