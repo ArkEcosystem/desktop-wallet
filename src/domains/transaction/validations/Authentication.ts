@@ -11,7 +11,7 @@ export const authentication = (t: any) => ({
 				if (generatedAddress === senderAddress) {
 					return true;
 				}
-				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_ADDRESS");
+				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 			},
 		},
 	}),
@@ -25,7 +25,7 @@ export const authentication = (t: any) => ({
 				if (generatedPublicKey === secondPublicKey) {
 					return true;
 				}
-				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_PUBLIC_KEY");
+				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 			},
 		},
 	}),
