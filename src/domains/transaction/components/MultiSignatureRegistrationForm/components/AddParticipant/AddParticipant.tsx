@@ -42,26 +42,33 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 		}
 	}, [wallet, defaultParticipants]);
 
-	useEffect(() => {
-		onChange?.(participants);
-	}, [onChange, participants]);
-
 	const addParticipant = () => {
 		const ref = lastValidationRef.current as ReadWriteWallet;
 		const participant = {
 			address: ref.address(),
 			publicKey: ref.publicKey()!,
 		};
-		setParticipants((prev) => [...prev, participant]);
+
+		const newParticipants = [...participants, participant];
+		setParticipants(newParticipants);
+		onChange?.(newParticipants);
+
 		setValue("address", "");
 	};
 
-	const removeParticipant = (address: string) => {
+	const removeParticipant = (index: number) => {
+		const { address } = participants[index];
+
 		if (address === wallet.address()) {
 			toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.REMOVE_OWN_ADDRESS"));
 			return;
 		}
-		setParticipants((prev) => prev.filter((wallet) => wallet.address !== address));
+
+		const remainingParticipants = [...participants];
+		remainingParticipants.splice(index, 1);
+
+		setParticipants(remainingParticipants);
+		onChange?.(remainingParticipants);
 	};
 
 	const findDuplicate = useCallback(

@@ -7,6 +7,7 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
+import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -37,6 +38,8 @@ const mnemonic = "buddy year cost vendor honey tonight viable nut female alarm d
 const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
 
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
+
+jest.setTimeout(20000);
 
 describe("ImportWallet", () => {
 	beforeAll(() => {
@@ -450,6 +453,275 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
+	});
+
+	it("should import by private key", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, queryByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
+
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-2")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-2"));
+			});
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__privatekey-input")).toBeInTheDocument());
+			const privateKeyInput = getByTestId("ImportWallet__privatekey-input");
+			expect(privateKeyInput).toBeTruthy();
+
+			await fireEvent.input(privateKeyInput, {
+				target: { value: "1e089e3c5323ad80a90767bdd5907297b4138163f027097fd3bdbeab528d2d68" },
+			});
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => {
+				expect(profile.wallets().findByAddress("DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")).toBeTruthy();
+			});
+		});
+	});
+
+	it("should import by encrypted WIF", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, queryByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
+
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-3")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-3"));
+			});
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__encryptedWif-input")).toBeInTheDocument());
+
+			await fireEvent.input(getByTestId("ImportWallet__encryptedWif-input"), {
+				target: { value: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL" },
+			});
+
+			await fireEvent.input(getByTestId("ImportWallet__encryptedWif__password-input"), {
+				target: { value: "password" },
+			});
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__third-step")).toBeInTheDocument(), {
+				timeout: 15000,
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => {
+				expect(profile.wallets().findByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")).toBeTruthy();
+			});
+		});
+	});
+
+	it("should fail to import by encrypted WIF", async () => {
+		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
+
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, queryByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
+
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-3")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-3"));
+			});
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__encryptedWif-input")).toBeInTheDocument());
+
+			await fireEvent.input(getByTestId("ImportWallet__encryptedWif-input"), {
+				target: { value: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL" },
+			});
+
+			await fireEvent.input(getByTestId("ImportWallet__encryptedWif__password-input"), {
+				target: { value: "wrong-password" },
+			});
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__third-step")).not.toBeInTheDocument(), {
+				timeout: 15000,
+			});
+		});
+
+		await waitFor(() =>
+			expect(toastSpy).toHaveBeenCalledWith("Failed to decrypt WIF. Please check your password."),
+		);
+		toastSpy.mockRestore();
 	});
 
 	it("should import by address and fill a wallet name", async () => {

@@ -644,7 +644,7 @@ exports[`SendIpfs should render form step 1`] = `
                 disabled=""
                 name="fee"
                 type="text"
-                value="0"
+                value=""
               />
             </div>
           </div>
@@ -1957,7 +1957,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div

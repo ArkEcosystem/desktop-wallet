@@ -27,9 +27,10 @@ export const sendTransfer = (t: any, env: Environment) => ({
 	recipientAddress: (network: Coins.Network, recipients: RecipientListItem[], isSingleRecipient: boolean) => ({
 		validate: {
 			valid: async (addressValue: string | undefined) => {
-				const address = addressValue ? addressValue.trim() : "";
+				const address = (addressValue || "").trim();
 				const shouldRequire = !address && !recipients.length;
 				const hasAddedRecipients = !address && !isSingleRecipient && recipients.length > 0;
+
 				if (!network) {
 					return false;
 				}
@@ -57,10 +58,10 @@ export const sendTransfer = (t: any, env: Environment) => ({
 		isSingleRecipient: boolean,
 	) => ({
 		validate: {
-			valid: (amountValue: any = BigNumber.ZERO) => {
-				const amount = BigNumber.make(amountValue);
+			valid: (amountValue: any) => {
+				const amount = BigNumber.make(amountValue || 0);
 				const hasSufficientBalance = balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero();
-				const shouldRequire = amount.isZero() && (isSingleRecipient || !recipients.length);
+				const shouldRequire = isSingleRecipient || !recipients.length;
 
 				if (!hasSufficientBalance) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
@@ -70,9 +71,18 @@ export const sendTransfer = (t: any, env: Environment) => ({
 				}
 
 				if (shouldRequire) {
-					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
-						field: t("COMMON.AMOUNT"),
-					});
+					if (amountValue === undefined || amountValue === "") {
+						return t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.AMOUNT"),
+						});
+					}
+
+					if (amount.isZero()) {
+						return t("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM", {
+							min: "0.00000001",
+							coinId: network.coin(),
+						});
+					}
 				}
 
 				return true;

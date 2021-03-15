@@ -19,11 +19,11 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__home"
-                title="Home"
+                data-testid="PluginManagerNavigationBar__latest"
+                title="Latest"
               >
                 <span>
-                  Home
+                  Latest
                 </span>
               </button>
               <div
@@ -200,11 +200,11 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                data-testid="PluginManagerNavigationBar__home"
-                title="Home"
+                data-testid="PluginManagerNavigationBar__latest"
+                title="Latest"
               >
                 <span>
-                  Home
+                  Latest
                 </span>
               </button>
               <div

@@ -1,12 +1,14 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import cn from "classnames";
 import { CoinNetworkExtended } from "domains/network/data";
 import React, { memo } from "react";
 
 type Network = Coins.Network & { extra?: CoinNetworkExtended };
 
 type Props = {
+	disabled?: boolean;
 	network?: Network;
 	as?: React.ElementType;
 	className?: string;
@@ -16,18 +18,24 @@ type Props = {
 	onClick?: () => void;
 };
 
-export const NetworkOption = memo(({ network, iconSize = 30, iconClassName, onClick, ...props }: Props) => {
+export const NetworkOption = memo(({ disabled, network, iconSize = 30, iconClassName, onClick, ...props }: Props) => {
 	if (!network?.extra) {
 		return <></>;
 	}
 
 	const iconColorClass = network.isLive() ? "text-theme-secondary-700" : "text-theme-primary-300";
 
+	const handleClick = (event: any) => {
+		if (!disabled) {
+			onClick?.();
+		}
+	};
+
 	return (
 		<li
-			className="inline-block cursor-pointer h-21"
+			className={cn("inline-block cursor-pointer h-21", { "cursor-not-allowed": disabled })}
 			data-testid="SelectNetwork__NetworkIcon--container"
-			onClick={onClick}
+			onClick={handleClick}
 		>
 			<Tooltip content={network.extra.displayName}>
 				<div
