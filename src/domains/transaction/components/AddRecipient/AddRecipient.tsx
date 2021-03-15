@@ -80,7 +80,7 @@ export const AddRecipient = ({
 	onChange,
 }: AddRecipientProps) => {
 	const { t } = useTranslation();
-	const [addedRecipients, setAddressRecipients] = useState<RecipientListItem[]>([]);
+	const [addedRecipients, setAddedRecipients] = useState<RecipientListItem[]>([]);
 	const [isSingle, setIsSingle] = useState(recipients!.length === 0);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 	const isMountedRef = useRef(false);
@@ -189,7 +189,7 @@ export const AddRecipient = ({
 			return;
 		}
 
-		setAddressRecipients(recipients);
+		setAddedRecipients(recipients);
 	}, [recipients, setValue, getValues]);
 
 	useEffect(() => {
@@ -223,17 +223,17 @@ export const AddRecipient = ({
 			},
 		];
 
-		setAddressRecipients(newRecipients);
+		setAddedRecipients(newRecipients);
 		onChange?.(newRecipients);
 		clearFields();
 	};
 
-	const handleRemoveRecipient = (address: string) => {
-		const index = addedRecipients.findIndex((addedRecipient: any) => addedRecipient.address === address);
-		const newRecipients = addedRecipients.concat();
-		newRecipients.splice(index, 1);
-		setAddressRecipients(newRecipients);
-		onChange?.(newRecipients);
+	const handleRemoveRecipient = (index: number) => {
+		const remainingRecipients = [...addedRecipients];
+		remainingRecipients.splice(index, 1);
+
+		setAddedRecipients(remainingRecipients);
+		onChange?.(remainingRecipients);
 	};
 
 	return (
