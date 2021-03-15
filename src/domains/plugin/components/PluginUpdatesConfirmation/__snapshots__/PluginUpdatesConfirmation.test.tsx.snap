@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plugin Updates Confirmation should render 1`] = `
+<div>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+      >
+        <button
+          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Plugin Updates
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="w-3/5 m-auto my-8"
+          >
+            generic-warning.svg
+          </svg>
+          <div
+            class="mt-1 text-theme-secondary-text whitespace-pre-line"
+          >
+            Some of the plugins cannot be updated as they require a newer version of the Desktop Wallet. Pressing Continue will update plugins that can be updated.
+          </div>
+          <div
+            class="mt-5"
+            data-testid="PluginUpdatesConfirmation"
+          >
+            <div
+              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+              role="table"
+            >
+              <table
+                cellpadding="0"
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                    role="row"
+                  >
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top"
+                      >
+                        <div>
+                          Name
+                        </div>
+                        <div
+                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end flex-row-reverse"
+                      >
+                        <div>
+                          Required Version
+                        </div>
+                        <div
+                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                        >
+                          <div
+                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                            height="5"
+                            role="img"
+                            width="8"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      style="width: 70%;"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                      >
+                        <div
+                          class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
+                          data-testid="PluginImage__logo"
+                        >
+                          <img
+                            alt="Logo"
+                            class="object-cover w-full h-full"
+                            src="https://ark.io/logo.png"
+                          />
+                        </div>
+                        <div
+                          class="flex items-center space-x-2"
+                        >
+                          <span
+                            class="font-semibold link important:px-0 flex items-center"
+                            data-testid="PluginUpdates__title"
+                          >
+                            ARK Explorer
+                          </span>
+                          <div
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
+                          >
+                            <svg>
+                              official-ark-plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                      >
+                        <span
+                          data-testid="PluginUpdates__minimum-version"
+                        >
+                          3.0.5
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    data-testid="TableRow"
+                  >
+                    <td
+                      style="width: 70%;"
+                    >
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                      >
+                        <div
+                          class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
+                          data-testid="PluginImage__placeholder"
+                        >
+                          <svg>
+                            plugin-logo-placeholder.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex items-center space-x-2"
+                        >
+                          <span
+                            class="font-semibold link important:px-0 flex items-center"
+                            data-testid="PluginUpdates__title"
+                          >
+                            Animal Avatars
+                          </span>
+                          <div
+                            class="sc-bdfBwQ eMktAO"
+                            height="20"
+                            width="14"
+                          >
+                            <svg>
+                              grant.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                      >
+                        <span
+                          data-testid="PluginUpdates__minimum-version"
+                        >
+                          3.1.0
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="flex justify-end mt-8 space-x-3"
+            >
+              <button
+                class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                data-testid="PluginUpdates__cancel-button"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Cancel
+                </div>
+              </button>
+              <button
+                class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                data-testid="PluginUpdates__continue-button"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  <span>
+                    Continue
+                  </span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
