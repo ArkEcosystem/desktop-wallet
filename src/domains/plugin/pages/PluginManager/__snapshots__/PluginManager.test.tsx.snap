@@ -3340,16 +3340,18 @@ exports[`PluginManager should handle update all 1`] = `
               My Plugins
             </h2>
             <div
-              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mt-4"
+              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mb-6"
               data-testid="EmptyBlock"
             >
               <div>
                 <div
                   class="flex items-center w-full justify-between"
                 >
-                  There are 2 updates available for your plugins. Would you like to update them all now?
+                  <span>
+                    There are 2 updates available for your plugins. Would you like to update them all now?
+                  </span>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ -mr-1"
                     data-testid="PluginManager__update-all"
                     type="button"
                   >
@@ -12904,16 +12906,18 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               My Plugins
             </h2>
             <div
-              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mt-4"
+              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mb-6"
               data-testid="EmptyBlock"
             >
               <div>
                 <div
                   class="flex items-center w-full justify-between"
                 >
-                  There is 1 update available for your plugins. Would you like to update it?
+                  <span>
+                    There is 1 update available for your plugins. Would you like to update it?
+                  </span>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ -mr-1"
                     data-testid="PluginManager__update-all"
                     type="button"
                   >

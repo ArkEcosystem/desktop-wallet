@@ -132,10 +132,15 @@ const UpdateAllBanner = ({
 	}
 
 	return (
-		<EmptyBlock size="sm" className="mt-4">
+		<EmptyBlock size="sm" className="mb-6">
 			<div className="flex items-center w-full justify-between">
-				{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-				<Button disabled={isUpdatingAll} data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
+				<span>{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}</span>
+				<Button
+					disabled={isUpdatingAll}
+					className="-mr-1"
+					data-testid="PluginManager__update-all"
+					onClick={handleUpdateAll}
+				>
 					{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
 				</Button>
 			</div>
@@ -262,6 +267,7 @@ export const PluginManager = () => {
 					onLaunch={handleLaunchPlugin}
 					onUpdate={handleUpdate}
 					isLoading={isFetchingPackages}
+					updatingStats={updatingStats}
 				/>
 			);
 		}
