@@ -1,0 +1,573 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Import Profile - Processing import should enter password again 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name export is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                dwe-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                export
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should handle import error 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name test.dwe is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                dwe-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                test.dwe
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should handle invalid password 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name export is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                dwe-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                export
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should not run import process if file is not provided 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name  is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    />
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should require password for password-protected profile import 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name export is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                dwe-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                export
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should show error if json import has an error 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name export is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                json-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                export
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should succesfully import dwe profile 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name profile.dwe is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                dwe-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                profile.dwe
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Processing import should succesfully import json profile 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          The file with name export is being imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-theme-secondary-text"
+    >
+      Please wait...
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                json-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                export
+              </span>
+            </div>
+          </div>
+          <div
+            class="Spinner-sc-1tybciv-0 gzGczR"
+            color="info"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="text-left items-left"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,3170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Import Profile - Profile Form Step should fail password confirmation 1`] = `
+<DocumentFragment>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="relative w-20 h-20"
+                    >
+                      <div
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                      >
+                        <img
+                          alt="Avatar"
+                          class="object-cover min-h-full"
+                          data-testid="SelectProfileImage__avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          AS
+                        </span>
+                        <div
+                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          data-testid="SelectProfileImage__upload-button"
+                        >
+                          <div
+                            class="flex justify-center items-center h-full"
+                          >
+                            <div
+                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                              height="18"
+                              width="24"
+                            >
+                              <svg>
+                                upload.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    aria-invalid="true"
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                  >
+                    <span
+                      data-errortext="'Password' should have at least 6 characters"
+                      data-testid="Input-error"
+                    >
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    aria-invalid="true"
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                  >
+                    <span
+                      data-errortext="Passwords do not match"
+                      data-testid="Input-error"
+                    >
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="currency"
+                >
+                  Currency
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    value="BTC"
+                  />
+                  <div
+                    class="relative w-full"
+                  >
+                    <div
+                      aria-expanded="true"
+                      aria-haspopup="listbox"
+                      aria-owns="downshift-67-menu"
+                      role="combobox"
+                    >
+                      <label
+                        for="downshift-66-input"
+                        id="downshift-67-label"
+                      />
+                      <div
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                        data-testid="SelectDropdownInput"
+                      >
+                        <span
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__typeahead"
+                        >
+                          BTC (Ƀ)
+                        </span>
+                        <input
+                          aria-activedescendant="downshift-67-item-0"
+                          aria-autocomplete="list"
+                          aria-controls="downshift-67-menu"
+                          aria-labelledby="downshift-67-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__input"
+                          id="downshift-66-input"
+                          name="currency"
+                          placeholder="Select Currency"
+                          value="BTC (Ƀ)"
+                        />
+                      </div>
+                      <ul
+                        aria-labelledby="downshift-67-label"
+                        class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                        id="downshift-67-menu"
+                        role="listbox"
+                      >
+                        <li
+                          aria-selected="true"
+                          class="select-list-option cursor-default is-highlighted"
+                          data-testid="select-list__toggle-option-0"
+                          id="downshift-67-item-0"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            BTC (Ƀ)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-1"
+                          id="downshift-67-item-1"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            ETH (Ξ)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-2"
+                          id="downshift-67-item-2"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            LTC (Ł)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-3"
+                          id="downshift-67-item-3"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            AUD (A$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-4"
+                          id="downshift-67-item-4"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            BRL (R$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-5"
+                          id="downshift-67-item-5"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            CAD (C$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-6"
+                          id="downshift-67-item-6"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            CHF (CHF)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-7"
+                          id="downshift-67-item-7"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            CNY (¥)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-8"
+                          id="downshift-67-item-8"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            EUR (€)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-9"
+                          id="downshift-67-item-9"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            GBP (£)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-10"
+                          id="downshift-67-item-10"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            HKD (HK$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-11"
+                          id="downshift-67-item-11"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            IDR (IDR)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-12"
+                          id="downshift-67-item-12"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            INR (₹)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-13"
+                          id="downshift-67-item-13"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            JPY (¥)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-14"
+                          id="downshift-67-item-14"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            KRW (₩)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-15"
+                          id="downshift-67-item-15"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            MXN (MX$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-16"
+                          id="downshift-67-item-16"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            RUB (₽)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-17"
+                          id="downshift-67-item-17"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            USD ($)
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
+                    >
+                      <div
+                        class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                        height="5"
+                        width="7"
+                      >
+                        <svg>
+                          caret-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <ul
+                class="sc-dlfnbm cOiGXi"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full "
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col space-y-2 w-full"
+                    >
+                      <div
+                        class="flex justify-between items-center space-x-5"
+                      >
+                        <span
+                          class="text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Dark Theme
+                        </span>
+                        <span>
+                          <label
+                            class="flex"
+                          >
+                            <input
+                              class="Toggle__Input-qyyifx-0 WGuGL"
+                              name="isDarkMode"
+                              type="checkbox"
+                            />
+                            <div
+                              class="Toggle__Handle-qyyifx-1 jztkAY"
+                              disabled=""
+                            >
+                              <span
+                                class="Toggle__HandleInner-qyyifx-2 kYXRoi"
+                                disabled=""
+                              />
+                            </div>
+                          </label>
+                        </span>
+                      </div>
+                      <span
+                        class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="list-divided-item__label--description"
+                      >
+                        When enabled, changes to a dark, high contrast theme.
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn"
+              data-testid="CreateProfile__submit-button"
+              disabled=""
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Import Profile - Profile Form Step should render profile form 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="relative w-20 h-20"
+                    >
+                      <div
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                      >
+                        <img
+                          alt="Avatar"
+                          class="object-cover min-h-full"
+                          data-testid="SelectProfileImage__avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          JO
+                        </span>
+                        <div
+                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          data-testid="SelectProfileImage__upload-button"
+                        >
+                          <div
+                            class="flex justify-center items-center h-full"
+                          >
+                            <div
+                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                              height="18"
+                              width="24"
+                            >
+                              <svg>
+                                upload.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (
+                    optional
+                    )
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (
+                    optional
+                    )
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="currency"
+                >
+                  Currency
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    value="BTC"
+                  />
+                  <div
+                    class="relative w-full"
+                  >
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="downshift-1-menu"
+                      role="combobox"
+                    >
+                      <label
+                        for="downshift-0-input"
+                        id="downshift-1-label"
+                      />
+                      <div
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                        data-testid="SelectDropdownInput"
+                      >
+                        <span
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__typeahead"
+                        >
+                          BTC (Ƀ)
+                        </span>
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="downshift-1-menu"
+                          aria-labelledby="downshift-1-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__input"
+                          id="downshift-0-input"
+                          name="currency"
+                          placeholder="Select Currency"
+                          value="BTC (Ƀ)"
+                        />
+                      </div>
+                      <ul
+                        aria-labelledby="downshift-1-label"
+                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        id="downshift-1-menu"
+                        role="listbox"
+                      />
+                    </div>
+                    <div
+                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
+                    >
+                      <div
+                        class="sc-bdfBwQ gLRWTb transition-transform "
+                        height="5"
+                        width="7"
+                      >
+                        <svg>
+                          caret-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <ul
+                class="sc-dlfnbm cOiGXi"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full "
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col space-y-2 w-full"
+                    >
+                      <div
+                        class="flex justify-between items-center space-x-5"
+                      >
+                        <span
+                          class="text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Dark Theme
+                        </span>
+                        <span>
+                          <label
+                            class="flex"
+                          >
+                            <input
+                              class="Toggle__Input-qyyifx-0 WGuGL"
+                              name="isDarkMode"
+                              type="checkbox"
+                            />
+                            <div
+                              class="Toggle__Handle-qyyifx-1 jztkAY"
+                              disabled=""
+                            >
+                              <span
+                                class="Toggle__HandleInner-qyyifx-2 kYXRoi"
+                                disabled=""
+                              />
+                            </div>
+                          </label>
+                        </span>
+                      </div>
+                      <span
+                        class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="list-divided-item__label--description"
+                      >
+                        When enabled, changes to a dark, high contrast theme.
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn"
+              data-testid="CreateProfile__submit-button"
+              disabled=""
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Profile Form Step should render profile form with empty profile 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="relative w-20 h-20"
+                    >
+                      <div
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                      >
+                        <img
+                          alt="Avatar"
+                          class="object-cover min-h-full"
+                          data-testid="SelectProfileImage__avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          TE
+                        </span>
+                        <div
+                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          data-testid="SelectProfileImage__upload-button"
+                        >
+                          <div
+                            class="flex justify-center items-center h-full"
+                          >
+                            <div
+                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                              height="18"
+                              width="24"
+                            >
+                              <svg>
+                                upload.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (
+                    optional
+                    )
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (
+                    optional
+                    )
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="currency"
+                >
+                  Currency
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    value="BTC"
+                  />
+                  <div
+                    class="relative w-full"
+                  >
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="downshift-13-menu"
+                      role="combobox"
+                    >
+                      <label
+                        for="downshift-12-input"
+                        id="downshift-13-label"
+                      />
+                      <div
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                        data-testid="SelectDropdownInput"
+                      >
+                        <span
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__typeahead"
+                        >
+                          BTC (Ƀ)
+                        </span>
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="downshift-13-menu"
+                          aria-labelledby="downshift-13-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__input"
+                          id="downshift-12-input"
+                          name="currency"
+                          placeholder="Select Currency"
+                          value="BTC (Ƀ)"
+                        />
+                      </div>
+                      <ul
+                        aria-labelledby="downshift-13-label"
+                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        id="downshift-13-menu"
+                        role="listbox"
+                      />
+                    </div>
+                    <div
+                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
+                    >
+                      <div
+                        class="sc-bdfBwQ gLRWTb transition-transform "
+                        height="5"
+                        width="7"
+                      >
+                        <svg>
+                          caret-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <ul
+                class="sc-dlfnbm cOiGXi"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full "
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col space-y-2 w-full"
+                    >
+                      <div
+                        class="flex justify-between items-center space-x-5"
+                      >
+                        <span
+                          class="text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Dark Theme
+                        </span>
+                        <span>
+                          <label
+                            class="flex"
+                          >
+                            <input
+                              class="Toggle__Input-qyyifx-0 WGuGL"
+                              name="isDarkMode"
+                              type="checkbox"
+                            />
+                            <div
+                              class="Toggle__Handle-qyyifx-1 jztkAY"
+                              disabled=""
+                            >
+                              <span
+                                class="Toggle__HandleInner-qyyifx-2 kYXRoi"
+                                disabled=""
+                              />
+                            </div>
+                          </label>
+                        </span>
+                      </div>
+                      <span
+                        class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="list-divided-item__label--description"
+                      >
+                        When enabled, changes to a dark, high contrast theme.
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn"
+              data-testid="CreateProfile__submit-button"
+              disabled=""
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Profile Form Step should render profile form with hidden fields 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="relative w-20 h-20"
+                    >
+                      <div
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                      >
+                        <img
+                          alt="Avatar"
+                          class="object-cover min-h-full"
+                          data-testid="SelectProfileImage__avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          JO
+                        </span>
+                        <div
+                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          data-testid="SelectProfileImage__upload-button"
+                        >
+                          <div
+                            class="flex justify-center items-center h-full"
+                          >
+                            <div
+                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                              height="18"
+                              width="24"
+                            >
+                              <svg>
+                                upload.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (
+                    optional
+                    )
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (
+                    optional
+                    )
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn"
+              data-testid="CreateProfile__submit-button"
+              disabled=""
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Import Profile - Profile Form Step should store profile 1`] = `
+<DocumentFragment>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="relative w-20 h-20"
+                    >
+                      <div
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                      >
+                        <img
+                          alt="Avatar"
+                          class="object-cover min-h-full"
+                          data-testid="SelectProfileImage__avatar"
+                          src="data:image/png;base64,avatarImage"
+                        />
+                        <div
+                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          data-testid="SelectProfileImage__upload-button"
+                        >
+                          <div
+                            class="flex justify-center items-center h-full"
+                          >
+                            <div
+                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                              height="18"
+                              width="24"
+                            >
+                              <svg>
+                                upload.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button
+                        class="Button__StyledButton-mdtvtf-0 cPeHIJ flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        data-testid="SelectProfileImage__remove-button"
+                        type="button"
+                      >
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          <div
+                            class="sc-bdfBwQ fdfkzt"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              close.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="currency"
+                >
+                  Currency
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    value="BTC"
+                  />
+                  <div
+                    class="relative w-full"
+                  >
+                    <div
+                      aria-expanded="true"
+                      aria-haspopup="listbox"
+                      aria-owns="downshift-25-menu"
+                      role="combobox"
+                    >
+                      <label
+                        for="downshift-24-input"
+                        id="downshift-25-label"
+                      />
+                      <div
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                        data-testid="SelectDropdownInput"
+                      >
+                        <span
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__typeahead"
+                        >
+                          BTC (Ƀ)
+                        </span>
+                        <input
+                          aria-activedescendant="downshift-25-item-0"
+                          aria-autocomplete="list"
+                          aria-controls="downshift-25-menu"
+                          aria-labelledby="downshift-25-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__input"
+                          id="downshift-24-input"
+                          name="currency"
+                          placeholder="Select Currency"
+                          value="BTC (Ƀ)"
+                        />
+                      </div>
+                      <ul
+                        aria-labelledby="downshift-25-label"
+                        class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                        id="downshift-25-menu"
+                        role="listbox"
+                      >
+                        <li
+                          aria-selected="true"
+                          class="select-list-option cursor-default is-highlighted"
+                          data-testid="select-list__toggle-option-0"
+                          id="downshift-25-item-0"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            BTC (Ƀ)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-1"
+                          id="downshift-25-item-1"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            ETH (Ξ)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-2"
+                          id="downshift-25-item-2"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            LTC (Ł)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-3"
+                          id="downshift-25-item-3"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            AUD (A$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-4"
+                          id="downshift-25-item-4"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            BRL (R$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-5"
+                          id="downshift-25-item-5"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            CAD (C$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-6"
+                          id="downshift-25-item-6"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            CHF (CHF)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-7"
+                          id="downshift-25-item-7"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            CNY (¥)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-8"
+                          id="downshift-25-item-8"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            EUR (€)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-9"
+                          id="downshift-25-item-9"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            GBP (£)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-10"
+                          id="downshift-25-item-10"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            HKD (HK$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-11"
+                          id="downshift-25-item-11"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            IDR (IDR)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-12"
+                          id="downshift-25-item-12"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            INR (₹)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-13"
+                          id="downshift-25-item-13"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            JPY (¥)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-14"
+                          id="downshift-25-item-14"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            KRW (₩)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-15"
+                          id="downshift-25-item-15"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            MXN (MX$)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-16"
+                          id="downshift-25-item-16"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            RUB (₽)
+                          </div>
+                        </li>
+                        <li
+                          aria-selected="false"
+                          class="select-list-option cursor-default "
+                          data-testid="select-list__toggle-option-17"
+                          id="downshift-25-item-17"
+                          role="option"
+                        >
+                          <div
+                            class="select-list-option__label"
+                          >
+                            USD ($)
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div
+                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
+                    >
+                      <div
+                        class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                        height="5"
+                        width="7"
+                      >
+                        <svg>
+                          caret-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <ul
+                class="sc-dlfnbm cOiGXi"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full "
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col space-y-2 w-full"
+                    >
+                      <div
+                        class="flex justify-between items-center space-x-5"
+                      >
+                        <span
+                          class="text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Dark Theme
+                        </span>
+                        <span>
+                          <label
+                            class="flex"
+                          >
+                            <input
+                              class="Toggle__Input-qyyifx-0 WGuGL"
+                              name="isDarkMode"
+                              type="checkbox"
+                            />
+                            <div
+                              class="Toggle__Handle-qyyifx-1 geejDn"
+                            >
+                              <span
+                                class="Toggle__HandleInner-qyyifx-2 gufSfU"
+                              />
+                            </div>
+                          </label>
+                        </span>
+                      </div>
+                      <span
+                        class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="list-divided-item__label--description"
+                      >
+                        When enabled, changes to a dark, high contrast theme.
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+              data-testid="CreateProfile__submit-button"
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Import Profile - Profile Form Step should update the avatar when removing focus from name input 1`] = `
+<DocumentFragment>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                        data-testid="Input"
+                        name="name"
+                      />
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="relative w-20 h-20"
+                    >
+                      <div
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                      >
+                        <img
+                          alt="Avatar"
+                          class="object-cover min-h-full"
+                          data-testid="SelectProfileImage__avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          TE
+                        </span>
+                        <div
+                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          data-testid="SelectProfileImage__upload-button"
+                        >
+                          <div
+                            class="flex justify-center items-center h-full"
+                          >
+                            <div
+                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                              height="18"
+                              width="24"
+                            >
+                              <svg>
+                                upload.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="currency"
+                >
+                  Currency
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    value="BTC"
+                  />
+                  <div
+                    class="relative w-full"
+                  >
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="downshift-101-menu"
+                      role="combobox"
+                    >
+                      <label
+                        for="downshift-100-input"
+                        id="downshift-101-label"
+                      />
+                      <div
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                        data-testid="SelectDropdownInput"
+                      >
+                        <span
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__typeahead"
+                        >
+                          BTC (Ƀ)
+                        </span>
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="downshift-101-menu"
+                          aria-labelledby="downshift-101-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__input"
+                          id="downshift-100-input"
+                          name="currency"
+                          placeholder="Select Currency"
+                          value="BTC (Ƀ)"
+                        />
+                      </div>
+                      <ul
+                        aria-labelledby="downshift-101-label"
+                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        id="downshift-101-menu"
+                        role="listbox"
+                      />
+                    </div>
+                    <div
+                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
+                    >
+                      <div
+                        class="sc-bdfBwQ gLRWTb transition-transform "
+                        height="5"
+                        width="7"
+                      >
+                        <svg>
+                          caret-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <ul
+                class="sc-dlfnbm cOiGXi"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full "
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col space-y-2 w-full"
+                    >
+                      <div
+                        class="flex justify-between items-center space-x-5"
+                      >
+                        <span
+                          class="text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Dark Theme
+                        </span>
+                        <span>
+                          <label
+                            class="flex"
+                          >
+                            <input
+                              class="Toggle__Input-qyyifx-0 WGuGL"
+                              name="isDarkMode"
+                              type="checkbox"
+                            />
+                            <div
+                              class="Toggle__Handle-qyyifx-1 jztkAY"
+                              disabled=""
+                            >
+                              <span
+                                class="Toggle__HandleInner-qyyifx-2 kYXRoi"
+                                disabled=""
+                              />
+                            </div>
+                          </label>
+                        </span>
+                      </div>
+                      <span
+                        class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="list-divided-item__label--description"
+                      >
+                        When enabled, changes to a dark, high contrast theme.
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+              data-testid="CreateProfile__submit-button"
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Import Profile - Profile Form Step should update the avatar when removing focus from name input 2`] = `
+<DocumentFragment>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Your profile addresses have been imported.
+        </div>
+      </div>
+    </div>
+    <div
+      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+    >
+      <div />
+      <div
+        class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+        type="horizontal"
+      />
+      <div>
+        <form
+          class="space-y-8"
+          data-testid="CreateProfile__form"
+        >
+          <div
+            class="mt-2"
+          >
+            <div
+              class="relative mt-8 space-y-8"
+            >
+              <div
+                class="flex justify-between -mt-4"
+              >
+                <div
+                  class="mr-6 w-full"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                  >
+                    <label
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      data-testid="FormLabel"
+                      for="name"
+                    >
+                      Name
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    >
+                      <input
+                        aria-invalid="true"
+                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                        data-testid="Input"
+                        name="name"
+                      />
+                      <div
+                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                      >
+                        <span
+                          data-errortext="'Name' is required"
+                          data-testid="Input-error"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              alert-warning.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="group space-y-2 undefined"
+                >
+                  <div
+                    class="flex flex-row"
+                  >
+                    <div
+                      class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                    >
+                      <div
+                        class="overflow-hidden h-full rounded-full"
+                      >
+                        <div
+                          class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                        >
+                          <button
+                            class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                            data-testid="SelectProfileImage__upload-button"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              <div
+                                class="sc-bdfBwQ cdgnVS text-theme-primary-600 dark:text-theme-secondary-200"
+                                height="18"
+                                width="24"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="password"
+                >
+                  Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="password"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="confirmPassword"
+                >
+                  Confirm Password
+                  <span
+                    class="ml-1 text-theme-secondary-text"
+                    data-testid="FormLabel__optional"
+                  >
+                    (optional)
+                  </span>
+                </label>
+                <div
+                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
+                    data-testid="Input"
+                    name="confirmPassword"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  data-testid="FormLabel"
+                  for="currency"
+                >
+                  Currency
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    value="BTC"
+                  />
+                  <div
+                    class="relative w-full"
+                  >
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="downshift-101-menu"
+                      role="combobox"
+                    >
+                      <label
+                        for="downshift-100-input"
+                        id="downshift-101-label"
+                      />
+                      <div
+                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                        data-testid="SelectDropdownInput"
+                      >
+                        <span
+                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__typeahead"
+                        >
+                          BTC (Ƀ)
+                        </span>
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="downshift-101-menu"
+                          aria-labelledby="downshift-101-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
+                          data-testid="SelectDropdownInput__input"
+                          id="downshift-100-input"
+                          name="currency"
+                          placeholder="Select Currency"
+                          value="BTC (Ƀ)"
+                        />
+                      </div>
+                      <ul
+                        aria-labelledby="downshift-101-label"
+                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        id="downshift-101-menu"
+                        role="listbox"
+                      />
+                    </div>
+                    <div
+                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
+                    >
+                      <div
+                        class="sc-bdfBwQ gLRWTb transition-transform "
+                        height="5"
+                        width="7"
+                      >
+                        <svg>
+                          caret-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="pb-4 mt-8"
+            >
+              <ul
+                class="sc-dlfnbm cOiGXi"
+                data-testid="list-divided__items"
+              >
+                <li
+                  class="flex flex-col w-full "
+                  data-testid="list-divided-item__wrapper"
+                >
+                  <div
+                    class="flex justify-between flex-col items-start"
+                    data-testid="list-divided-item__inner-wrapper"
+                  >
+                    <div
+                      class="flex flex-col space-y-2 w-full"
+                    >
+                      <div
+                        class="flex justify-between items-center space-x-5"
+                      >
+                        <span
+                          class="text-xl font-semibold"
+                          data-testid="list-divided-item__label"
+                        >
+                          Dark Theme
+                        </span>
+                        <span>
+                          <label
+                            class="flex"
+                          >
+                            <input
+                              class="Toggle__Input-qyyifx-0 WGuGL"
+                              name="isDarkMode"
+                              type="checkbox"
+                            />
+                            <div
+                              class="Toggle__Handle-qyyifx-1 jztkAY"
+                              disabled=""
+                            >
+                              <span
+                                class="Toggle__HandleInner-qyyifx-2 kYXRoi"
+                                disabled=""
+                              />
+                            </div>
+                          </label>
+                        </span>
+                      </div>
+                      <span
+                        class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="list-divided-item__label--description"
+                      >
+                        When enabled, changes to a dark, high contrast theme.
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end pt-4 space-x-3"
+          >
+            <button
+              class="Button__StyledButton-mdtvtf-0 iUSBMV"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Back
+              </div>
+            </button>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn"
+              data-testid="CreateProfile__submit-button"
+              disabled=""
+              type="submit"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Create
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
