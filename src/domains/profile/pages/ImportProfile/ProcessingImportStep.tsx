@@ -16,6 +16,7 @@ type ProcessingImportProps = {
 	onBack?: () => void;
 	onPasswordChange?: (password?: string) => void;
 	onError?: (message: string) => void;
+	shouldRequestPassword?: boolean;
 };
 
 export const ProcessingImport = ({
@@ -26,10 +27,11 @@ export const ProcessingImport = ({
 	onPasswordChange,
 	password,
 	onSuccess,
+	shouldRequestPassword = false,
 }: ProcessingImportProps) => {
 	const { t } = useTranslation();
 	const { importProfile } = useProfileImport({ env });
-	const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
+	const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(shouldRequestPassword);
 	const [passwordError, setPasswordError] = useState<string>();
 
 	useEffect(() => {
@@ -68,7 +70,7 @@ export const ProcessingImport = ({
 		<div className="mx-auto max-w-xl">
 			<Header
 				title={t("PROFILE.IMPORT.TITLE")}
-				subtitle={t("PROFILE.IMPORT.PROCESSING_IMPORT_STEP.DESCRIPTION", { name: file.name })}
+				subtitle={t("PROFILE.IMPORT.PROCESSING_IMPORT_STEP.DESCRIPTION", { name: file?.name })}
 			/>
 			<div className="text-theme-secondary-text">{t("PROFILE.IMPORT.PROCESSING_IMPORT_STEP.PLEASE_WAIT")}</div>
 
