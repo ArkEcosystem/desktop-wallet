@@ -511,6 +511,12 @@ describe("ImportWallet", () => {
 			const privateKeyInput = getByTestId("ImportWallet__privatekey-input");
 			expect(privateKeyInput).toBeTruthy();
 
+			fireEvent.input(privateKeyInput, {
+				target: { value: "invalid" },
+			});
+
+			await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).toHaveAttribute("disabled"));
+
 			await fireEvent.input(privateKeyInput, {
 				target: { value: "1e089e3c5323ad80a90767bdd5907297b4138163f027097fd3bdbeab528d2d68" },
 			});
@@ -601,11 +607,17 @@ describe("ImportWallet", () => {
 			const wifInput = getByTestId("ImportWallet__wif-input");
 			expect(wifInput).toBeTruthy();
 
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			fireEvent.input(wifInput, {
+				target: { value: "invalid" },
+			});
+
+			await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
+
 			await fireEvent.input(wifInput, {
 				target: { value: "SHjn7G4NygZH5LHvuhbMSdgrn42vqu3LdYzjxUoh2E9b7PdVsBPs" },
 			});
-
-			continueButton = getByTestId("ImportWallet__continue-button");
 
 			expect(continueButton).toBeTruthy();
 			await waitFor(() => {
