@@ -54,7 +54,7 @@ describe("SelectFile", () => {
 		act(() => {
 			fireEvent.dragOver(getByTestId("SelectFile__browse-files"), {
 				dataTransfer: {
-					files: [{ name: "sample-export.json", path: "path/to/sample-export/json" }],
+					files: [{ name: "sample-export.json", path: "path/to/sample-export.json" }],
 				},
 			});
 		});
@@ -62,7 +62,7 @@ describe("SelectFile", () => {
 		act(() => {
 			fireEvent.dragEnter(getByTestId("SelectFile__browse-files"), {
 				dataTransfer: {
-					files: [{ name: "sample-export.json", path: "path/to/sample-export/json" }],
+					files: [{ name: "sample-export.json", path: "path/to/sample-export.json" }],
 				},
 			});
 		});
@@ -70,7 +70,7 @@ describe("SelectFile", () => {
 		act(() => {
 			fireEvent.drop(getByTestId("SelectFile__browse-files"), {
 				dataTransfer: {
-					files: [{ name: "sample-export.json", path: "path/to/sample-export/json" }],
+					files: [{ name: "sample-export.json", path: "path/to/sample-export.json" }],
 				},
 			});
 		});

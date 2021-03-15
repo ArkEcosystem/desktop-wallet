@@ -16,7 +16,7 @@ export const ImportError = ({ file, onBack, onRetry }: ImportErrorProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="mx-auto max-w-xl">
+		<div className="mx-auto max-w-xl" data-testid="ImportError">
 			<Header title={t("PROFILE.IMPORT.TITLE")} subtitle={t("PROFILE.IMPORT.ERROR_STEP.DESCRIPTION")} />
 
 			<div className="mt-8">

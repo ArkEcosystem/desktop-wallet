@@ -67,7 +67,7 @@ export const ProcessingImport = ({
 	}, [file, env, password]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
-		<div className="mx-auto max-w-xl">
+		<div className="mx-auto max-w-xl" data-testid="ProcessingImport">
 			<Header
 				title={t("PROFILE.IMPORT.TITLE")}
 				subtitle={t("PROFILE.IMPORT.PROCESSING_IMPORT_STEP.DESCRIPTION", { name: file?.name })}

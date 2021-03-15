@@ -24,7 +24,7 @@ export const ImportProfile = () => {
 	const [password, setPassword] = useState<string>();
 	const [profile, setProfile] = useState<Profile>();
 
-	const handleSelectedFiled = (file: ImportFile) => {
+	const handleSelectedFile = (file: ImportFile) => {
 		setSelectedFile(file);
 		setActiveTab(2);
 	};
@@ -52,7 +52,7 @@ export const ImportProfile = () => {
 							<SelectFileStep
 								fileFormat={fileFormat}
 								onFileFormatChange={setFileFormat}
-								onSelect={handleSelectedFiled}
+								onSelect={handleSelectedFile}
 								onBack={() => history.push("/")}
 							/>
 						</TabPanel>
@@ -94,7 +94,7 @@ export const ImportProfile = () => {
 							{selectedFile && (
 								<ImportError
 									file={selectedFile}
-									onRetry={() => handleSelectedFiled(selectedFile)}
+									onRetry={() => handleSelectedFile(selectedFile)}
 									onBack={() => history.push("/")}
 								/>
 							)}

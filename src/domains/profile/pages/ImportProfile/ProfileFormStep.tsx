@@ -213,7 +213,7 @@ const CreateProfileForm = ({
 				</div>
 
 				<div className="flex justify-end pt-4 space-x-3">
-					<Button variant="secondary" onClick={onBack}>
+					<Button variant="secondary" onClick={onBack} data-testid="CreateProfile__back-button">
 						{t("COMMON.BACK")}
 					</Button>
 
