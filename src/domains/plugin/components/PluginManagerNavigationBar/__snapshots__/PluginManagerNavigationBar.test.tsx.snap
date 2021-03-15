@@ -8,7 +8,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="container flex justify-between items-center px-14 mx-auto"
+        class="container flex justify-between items-center px-10 mx-auto"
       >
         <div>
           <ul
@@ -24,11 +24,6 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               >
                 <span>
                   Home
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                >
-                  0
                 </span>
               </button>
               <div
@@ -82,11 +77,11 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__theme"
-                title="Theme"
+                data-testid="PluginManagerNavigationBar__exchange"
+                title="Exchange"
               >
                 <span>
-                  Theme
+                  Exchange
                 </span>
                 <span
                   class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -194,7 +189,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
       data-testid="PluginManagerNavigationBar"
     >
       <div
-        class="container flex justify-between items-center px-14 mx-auto"
+        class="container flex justify-between items-center px-10 mx-auto"
       >
         <div>
           <ul
@@ -210,11 +205,6 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               >
                 <span>
                   Home
-                </span>
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                >
-                  0
                 </span>
               </button>
               <div
@@ -268,11 +258,11 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                data-testid="PluginManagerNavigationBar__theme"
-                title="Theme"
+                data-testid="PluginManagerNavigationBar__exchange"
+                title="Exchange"
               >
                 <span>
-                  Theme
+                  Exchange
                 </span>
                 <span
                   class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"

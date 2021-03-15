@@ -127,7 +127,7 @@ describe("Plugin Configuration", () => {
 	it("should return plugin size from fs", async () => {
 		const subject = PluginConfigurationData.make(
 			{ name: "plugin-test" },
-			path.resolve("src/tests/fixtures/plugins/plugin-test-custom-buttom"),
+			path.resolve("src/tests/fixtures/plugins/packages/plugin-test-custom-buttom"),
 		);
 		await new Promise((r) => setTimeout(r, 100));
 		expect(subject.size()).toBe("0 B");

@@ -9,6 +9,10 @@ describe("useCurrencyDisplay hook", () => {
 		} = renderHook(() => useCurrencyDisplay());
 
 		const max = "30000";
+
+		const fromUndefinedDisplay = current.formatRange({ display: undefined }, max);
+		expect(fromUndefinedDisplay).toEqual([]);
+
 		const fromCurrency = current.formatRange({ display: "25", value: "2500000000" }, max);
 		expect(fromCurrency).toEqual([25]);
 

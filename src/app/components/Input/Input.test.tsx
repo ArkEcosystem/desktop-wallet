@@ -23,7 +23,7 @@ describe("Input", () => {
 	});
 
 	it("should render with invalid", () => {
-		const { getByTestId } = render(<Input as="select" isInvalid={true} />);
+		const { getByTestId } = render(<Input as="select" isInvalid={true} errorMessage="Field invalid" />);
 		const input = getByTestId("Input-error");
 		expect(input).toBeVisible();
 	});

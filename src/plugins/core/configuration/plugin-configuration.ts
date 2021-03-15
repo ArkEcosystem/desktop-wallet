@@ -86,7 +86,7 @@ export class PluginConfigurationData {
 	}
 
 	categories() {
-		const validCategories = ["gaming", "theme", "language", "utility", "exchange", "other"];
+		const validCategories = ["gaming", "language", "utility", "exchange", "other"];
 		// @ts-ignore
 		const categories: string[] = this.manifest().get("categories", ["other"]);
 
@@ -97,6 +97,10 @@ export class PluginConfigurationData {
 
 	hasCategory(categoryName: string) {
 		return this.categories().includes(categoryName);
+	}
+
+	date() {
+		return this.get("date");
 	}
 
 	description() {
@@ -205,6 +209,7 @@ export class PluginConfigurationData {
 			logo: this.logo(),
 			size: this.size(),
 			homepage: this.homepage(),
+			date: this.date(),
 			description: this.description(),
 			isOfficial: this.isOfficial(),
 			minimumVersion: this.minimumVersion(),

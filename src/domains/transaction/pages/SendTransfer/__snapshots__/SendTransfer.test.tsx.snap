@@ -793,7 +793,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -1784,7 +1784,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Recipient #1
@@ -1809,19 +1809,19 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Amount
                           </span>
                         </div>
                         <div
-                          class="font-bold text-right text-theme-secondary-800"
+                          class="font-semibold text-right"
                         >
                           <span
                             data-testid="Amount"
                           >
-                            + 0.00000001 ARK
+                            0.00000001 ARK
                           </span>
                         </div>
                       </td>
@@ -1919,7 +1919,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 disabled=""
                 name="fee"
                 type="text"
-                value="0"
+                value=""
               />
             </div>
           </div>
@@ -2748,7 +2748,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -3650,7 +3650,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -4150,7 +4150,7 @@ exports[`SendTransfer should render form step 1`] = `
                 disabled=""
                 name="fee"
                 type="text"
-                value="0"
+                value=""
               />
             </div>
           </div>
@@ -4610,7 +4610,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Recipient #1
@@ -4635,19 +4635,19 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                         class="py-6"
                       >
                         <div
-                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500"
+                          class="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
                           <span>
                             Amount
                           </span>
                         </div>
                         <div
-                          class="font-bold text-right text-theme-secondary-800"
+                          class="font-semibold text-right"
                         >
                           <span
                             data-testid="Amount"
                           >
-                            + 0.00000001 ARK
+                            0.00000001 ARK
                           </span>
                         </div>
                       </td>
@@ -4745,7 +4745,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 disabled=""
                 name="fee"
                 type="text"
-                value="0"
+                value=""
               />
             </div>
           </div>
@@ -5172,7 +5172,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                 disabled=""
                 name="fee"
                 type="text"
-                value="0"
+                value=""
               />
             </div>
           </div>
@@ -6511,7 +6511,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                 disabled=""
                                 name="fee"
                                 type="text"
-                                value="0"
+                                value=""
                               />
                             </div>
                           </div>
@@ -7378,7 +7378,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -8255,7 +8255,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>

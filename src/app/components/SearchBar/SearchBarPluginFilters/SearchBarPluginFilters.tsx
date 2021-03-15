@@ -68,8 +68,8 @@ export const SearchBarPluginFilters = ({ categories, initialValues, onReset, onC
 			value: "utility",
 		},
 		{
-			label: t("PLUGINS.FILTERS.CATEGORIES.THEME"),
-			value: "theme",
+			label: t("PLUGINS.FILTERS.CATEGORIES.EXCHANGE"),
+			value: "exchange",
 		},
 		{
 			label: t("PLUGINS.FILTERS.CATEGORIES.OTHER"),

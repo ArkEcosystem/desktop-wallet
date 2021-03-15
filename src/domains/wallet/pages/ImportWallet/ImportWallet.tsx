@@ -104,6 +104,8 @@ export const ImportWallet = () => {
 				wallet = await activeProfile.wallets().importByMnemonic(value, network.coin(), network.id());
 			} else if (type === "address") {
 				wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
+			} else if (type === "privateKey") {
+				wallet = await activeProfile.wallets().importByPrivateKey(network.coin(), network.id(), value);
 			}
 
 			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
