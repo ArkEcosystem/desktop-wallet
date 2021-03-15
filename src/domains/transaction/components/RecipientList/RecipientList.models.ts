@@ -11,7 +11,7 @@ export type RecipientListItem = {
 	variant?: "condensed";
 	walletName?: string;
 	showAmount?: boolean;
-	onRemove?: (address: string) => void;
+	onRemove?: (index: number) => void;
 };
 
 export type RecipientList = {
@@ -22,5 +22,5 @@ export type RecipientList = {
 	showAmount?: boolean;
 	label?: string;
 	variant?: "condensed";
-	onRemove?: (address: string) => void;
+	onRemove?: (index: number) => void;
 };

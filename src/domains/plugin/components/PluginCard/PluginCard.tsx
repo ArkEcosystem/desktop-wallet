@@ -12,6 +12,8 @@ type PluginCardProps = {
 	plugin: any;
 	onClick?: () => void;
 	onSelect?: (action: any) => void;
+	isUpdating?: boolean;
+	updatingProgress?: any;
 	showCategory?: boolean;
 };
 
@@ -46,7 +48,16 @@ export const BlankPluginCard = ({ name, category }: { name?: string; category?: 
 	);
 };
 
-export const PluginCard = ({ actions, category, plugin, onClick, onSelect, showCategory }: PluginCardProps) => {
+export const PluginCard = ({
+	actions,
+	category,
+	plugin,
+	onClick,
+	onSelect,
+	isUpdating,
+	updatingProgress,
+	showCategory,
+}: PluginCardProps) => {
 	const { t } = useTranslation();
 
 	if (plugin === undefined) {
@@ -58,7 +69,11 @@ export const PluginCard = ({ actions, category, plugin, onClick, onSelect, showC
 			<Card onClick={onClick} actions={actions} onSelect={onSelect}>
 				<div className="flex items-center space-x-4">
 					<div className="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg">
-						<PluginImage logoURL={plugin.logo} />
+						<PluginImage
+							logoURL={plugin.logo}
+							isUpdating={isUpdating}
+							updatingProgress={updatingProgress}
+						/>
 					</div>
 
 					<div className="flex flex-col truncate">
