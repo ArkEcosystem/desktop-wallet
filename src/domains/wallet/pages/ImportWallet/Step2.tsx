@@ -3,7 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { InputAddress, InputPassword } from "app/components/Input";
+import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useMemo, useState } from "react";
@@ -79,6 +79,7 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 	const [coin] = useState(() => env.coin(network.coin(), network.id()));
+	const { register } = useFormContext();
 
 	if (type === "mnemonic") {
 		return (
@@ -114,6 +115,34 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 		);
 	}
 
+	if (type === "encryptedWif") {
+		return (
+			<>
+				<FormField name="encryptedWif">
+					<FormLabel label={t("COMMON.ENCRYPTED_WIF")} />
+					<div className="relative">
+						<Input
+							ref={register({
+								required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("COMMON.ENCRYPTED_WIF"),
+								}).toString(),
+							})}
+							data-testid="ImportWallet__encryptedWif-input"
+						/>
+					</div>
+				</FormField>
+
+				<MnemonicField
+					network={network}
+					profile={profile}
+					label={t("COMMON.PASSWORD")}
+					data-testid="ImportWallet__encryptedWif__password-input"
+					findAddress={(value) => Promise.resolve(value)}
+				/>
+			</>
+		);
+	}
+
 	return null;
 };
 
@@ -130,6 +159,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
 			{ label: t("COMMON.ADDRESS"), value: "address" },
 			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
+			{ label: t("COMMON.ENCRYPTED_WIF"), value: "encryptedWif" },
 		],
 		[t],
 	);

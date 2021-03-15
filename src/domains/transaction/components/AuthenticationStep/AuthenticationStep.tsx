@@ -43,7 +43,7 @@ export const AuthenticationStep = ({
 	ledgerDetails?: React.ReactNode;
 } & LedgerStates) => {
 	const { t } = useTranslation();
-	const { register } = useFormContext();
+	const { errors, getValues, register } = useFormContext();
 
 	const isLedger = wallet.isLedger();
 	const { authentication } = useValidation();
@@ -67,6 +67,8 @@ export const AuthenticationStep = ({
 		);
 	}
 
+	const mnemonicIsValid = !!getValues("mnemonic") && !errors.mnemonic;
+
 	return (
 		<div data-testid="AuthenticationStep" className="space-y-8">
 			<Header
@@ -87,6 +89,7 @@ export const AuthenticationStep = ({
 					<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
 					<InputPassword
 						data-testid="AuthenticationStep__second-mnemonic"
+						disabled={!mnemonicIsValid}
 						ref={register(authentication.secondMnemonic(wallet.coin(), wallet.secondPublicKey()!))}
 					/>
 				</FormField>

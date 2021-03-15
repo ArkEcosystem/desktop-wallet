@@ -1677,6 +1677,18 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 </div>
               </fieldset>
             </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn mt-4 w-full"
+              data-testid="AddRecipient__add-button"
+              disabled=""
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Add Recipient
+              </div>
+            </button>
           </div>
           <div
             class="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -2351,7 +2363,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
@@ -3253,7 +3265,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
@@ -4503,6 +4515,18 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 </div>
               </fieldset>
             </div>
+            <button
+              class="Button__StyledButton-mdtvtf-0 kwcZQn mt-4 w-full"
+              data-testid="AddRecipient__add-button"
+              disabled=""
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                Add Recipient
+              </div>
+            </button>
           </div>
           <div
             class="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"

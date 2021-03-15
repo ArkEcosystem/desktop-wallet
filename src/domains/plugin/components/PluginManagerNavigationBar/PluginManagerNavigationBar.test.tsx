@@ -1,15 +1,25 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { PluginProviders } from "app/PluginProviders";
+import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
 import { fireEvent, render } from "utils/testing-library";
 
 import { PluginManagerNavigationBar } from "./PluginManagerNavigationBar";
 
+let menu: any[];
+
 describe("PluginManagerNavigationBar", () => {
+	beforeAll(() => {
+		menu = ["latest", "gaming", "utility", "exchange", "other"].map((name: string) => ({
+			title: pluginTranslations.PAGE_PLUGIN_MANAGER.VIEW[name.toUpperCase()],
+			name,
+		}));
+	});
+
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(
 			<PluginProviders>
-				<PluginManagerNavigationBar />
+				<PluginManagerNavigationBar menu={menu} />
 			</PluginProviders>,
 		);
 
@@ -19,7 +29,7 @@ describe("PluginManagerNavigationBar", () => {
 
 	it("should update selected", () => {
 		const { result } = renderHook(() => {
-			const [currentView, setCurrentView] = React.useState("home");
+			const [currentView, setCurrentView] = React.useState("latest");
 
 			return {
 				currentView,
@@ -30,14 +40,15 @@ describe("PluginManagerNavigationBar", () => {
 		const { asFragment, getByTestId, rerender } = render(
 			<PluginProviders>
 				<PluginManagerNavigationBar
-					selected={result.current.currentView}
+					menu={menu}
+					selectedView={result.current.currentView}
 					onChange={result.current.setCurrentView}
 				/>
 				,
 			</PluginProviders>,
 		);
 
-		const navIds = ["gaming", "utility", "exchange", "other", "my-plugins", "home"];
+		const navIds = ["gaming", "utility", "exchange", "other", "my-plugins", "latest"];
 
 		for (const navId of navIds) {
 			const navItem = getByTestId(`PluginManagerNavigationBar__${navId}`);
@@ -49,7 +60,8 @@ describe("PluginManagerNavigationBar", () => {
 			rerender(
 				<PluginProviders>
 					<PluginManagerNavigationBar
-						selected={result.current.currentView}
+						menu={menu}
+						selectedView={result.current.currentView}
 						onChange={result.current.setCurrentView}
 					/>
 					,
@@ -66,7 +78,7 @@ describe("PluginManagerNavigationBar", () => {
 	it("should show installed plugins count", () => {
 		const { asFragment, getByTestId } = render(
 			<PluginProviders>
-				<PluginManagerNavigationBar selected="" installedPluginsCount={8} />,
+				<PluginManagerNavigationBar menu={menu} selectedView="" installedPluginsCount={8} />,
 			</PluginProviders>,
 		);
 

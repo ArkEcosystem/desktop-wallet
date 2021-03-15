@@ -69,10 +69,6 @@ export const translations: { [key: string]: any } = {
 		PLACEHOLDER: "Github Repository URL",
 	},
 
-	PAGE_PLUGINS_CATEGORY: {
-		LAYOUT_TITLE: "Plugin list",
-	},
-
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",
@@ -80,7 +76,7 @@ export const translations: { [key: string]: any } = {
 		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
 
 		VIEW: {
-			HOME: "Home",
+			LATEST: "Latest",
 			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",

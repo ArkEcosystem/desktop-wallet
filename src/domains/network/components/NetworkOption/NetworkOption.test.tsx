@@ -2,7 +2,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
-import { env, getDefaultProfileId, render } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-library";
 
 import { NetworkOption } from "./NetworkOption";
 
@@ -26,6 +26,30 @@ describe("NetworkIcon", () => {
 		const { getByTestId } = render(<NetworkOption network={network} />, {});
 		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toHaveAttribute("aria-label", network.extra?.displayName);
 		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
+	});
+
+	it("should call onClick callback", () => {
+		const onClick = jest.fn();
+
+		const { getByTestId } = render(<NetworkOption network={network} onClick={onClick} />, {});
+		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toHaveAttribute("aria-label", network.extra?.displayName);
+		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
+
+		fireEvent.click(getByTestId("SelectNetwork__NetworkIcon--container"));
+
+		expect(onClick).toHaveBeenCalled();
+	});
+
+	it("should not call onClick callback if disabled", () => {
+		const onClick = jest.fn();
+
+		const { getByTestId } = render(<NetworkOption network={network} onClick={onClick} disabled />, {});
+		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toHaveAttribute("aria-label", network.extra?.displayName);
+		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
+
+		fireEvent.click(getByTestId("SelectNetwork__NetworkIcon--container"));
+
+		expect(onClick).not.toHaveBeenCalled();
 	});
 
 	it("should not render different class for testnet network", () => {
