@@ -64,7 +64,9 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 			return;
 		}
 
-		const remainingParticipants = [...participants].splice(index, 1);
+		const remainingParticipants = [...participants];
+		remainingParticipants.splice(index, 1);
+
 		setParticipants(remainingParticipants);
 		onChange?.(remainingParticipants);
 	};

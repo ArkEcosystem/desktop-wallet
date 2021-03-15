@@ -229,7 +229,9 @@ export const AddRecipient = ({
 	};
 
 	const handleRemoveRecipient = (index: number) => {
-		const remainingRecipients = [...addedRecipients].splice(index, 1);
+		const remainingRecipients = [...addedRecipients];
+		remainingRecipients.splice(index, 1);
+
 		setAddedRecipients(remainingRecipients);
 		onChange?.(remainingRecipients);
 	};

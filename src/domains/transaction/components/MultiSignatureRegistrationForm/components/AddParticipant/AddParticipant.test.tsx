@@ -244,8 +244,8 @@ describe("Add Participant", () => {
 
 		expect(onChange).toHaveBeenCalledWith([
 			{
-				address: wallet2.address(),
-				publicKey: wallet2.publicKey()!,
+				address: wallet.address(),
+				publicKey: wallet.publicKey()!,
 			},
 		]);
 	});
