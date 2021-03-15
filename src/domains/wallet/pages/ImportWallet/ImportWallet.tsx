@@ -10,6 +10,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
+import { toasts } from "app/services";
 import { useDashboardConfig } from "domains/dashboard/pages";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -91,34 +92,66 @@ export const ImportWallet = () => {
 		type,
 		value,
 		name,
+		encryptedWif,
 	}: {
 		network: Coins.Network;
 		type: string;
 		value: string;
 		name: string;
+		encryptedWif: string;
 	}) => {
 		let wallet: ReadWriteWallet | undefined;
 
 		if (!walletData) {
-			if (type === "mnemonic") {
-				wallet = await activeProfile.wallets().importByMnemonic(value, network.coin(), network.id());
-			} else if (type === "address") {
-				wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
-			} else if (type === "privateKey") {
-				wallet = await activeProfile.wallets().importByPrivateKey(network.coin(), network.id(), value);
-			} else if (type === "wif") {
-				wallet = await activeProfile
-					.wallets()
-					.importByWIF({ coin: network.coin(), network: network.id(), wif: value });
+			try {
+				if (type === "mnemonic") {
+					wallet = await activeProfile.wallets().importByMnemonic(value, network.coin(), network.id());
+				} else if (type === "address") {
+					wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
+				} else if (type === "privateKey") {
+					wallet = await activeProfile.wallets().importByPrivateKey(network.coin(), network.id(), value);
+				} else if (type === "wif") {
+					wallet = await activeProfile
+						.wallets()
+						.importByWIF({ coin: network.coin(), network: network.id(), wif: value });
+				} else if (type === "encryptedWif") {
+					try {
+						// `setTimeout` being used here to avoid blocking the thread
+						// as the decryption is a expensive calculation
+						wallet = await new Promise((resolve, reject) => {
+							setTimeout(
+								() =>
+									activeProfile
+										.wallets()
+										.importByWIFWithEncryption({
+											coin: network.coin(),
+											network: network.id(),
+											wif: encryptedWif,
+											password: value,
+										})
+										.then(resolve, reject),
+								0,
+							);
+						});
+					} catch (e) {
+						/* istanbul ignore else */
+						if (e.code === "ERR_ASSERTION") {
+							throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.DECRYPT_WIF_ASSERTION"));
+						}
+						throw e;
+					}
+				}
+
+				setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
+				setWalletData(wallet!);
+				await persist();
+
+				await syncNewWallet(network, wallet!);
+
+				setActiveTab(activeTab + 1);
+			} catch (e) {
+				toasts.error(e.message);
 			}
-
-			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
-			setWalletData(wallet!);
-			await persist();
-
-			await syncNewWallet(network, wallet!);
-
-			setActiveTab(activeTab + 1);
 		} else {
 			if (name) {
 				const formattedName = name.trim().substring(0, nameMaxLength);
@@ -185,7 +218,7 @@ export const ImportWallet = () => {
 
 									{activeTab === 2 && (
 										<Button
-											disabled={!isValid || isSubmitting}
+											disabled={isSubmitting || !isValid}
 											type="submit"
 											isLoading={isSubmitting}
 											data-testid="ImportWallet__continue-button"
