@@ -351,11 +351,11 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -516,7 +516,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -528,7 +528,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -562,7 +562,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -574,7 +574,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -967,7 +967,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -979,7 +979,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -1013,7 +1013,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -1025,7 +1025,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -1416,11 +1416,11 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -2287,11 +2287,11 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -2807,1186 +2807,6 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
 </DocumentFragment>
 `;
 
-exports[`PluginManager should handle update all 1`] = `
-<div>
-  <div>
-    <div
-      class="flex relative flex-col min-h-screen"
-    >
-      <nav
-        aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
-      >
-        <div
-          class="flex relative h-21"
-        >
-          <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
-            disabled=""
-          >
-            <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
-              height="10"
-              width="6"
-            >
-              <svg>
-                arrow-left.svg
-              </svg>
-            </div>
-          </button>
-          <div
-            class="flex flex-1 px-8 "
-          >
-            <div
-              class="flex items-center my-auto"
-            >
-              <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
-              >
-                <svg
-                  width="44"
-                >
-                  ark-logo.svg
-                </svg>
-              </div>
-            </div>
-            <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-            <div
-              class="flex items-center my-auto space-x-4"
-            >
-              <div>
-                <div
-                  class="relative"
-                >
-                  <span
-                    data-testid="dropdown__toggle"
-                  >
-                    <div
-                      class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
-                    >
-                      <button
-                        class="Button__StyledButton-mdtvtf-0 fHYGyx"
-                        data-testid="navbar__buttons--notifications"
-                        type="button"
-                      >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ liSwOQ p-1"
-                            height="18"
-                            width="15"
-                          >
-                            <svg>
-                              notification.svg
-                            </svg>
-                          </div>
-                          <div
-                            class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
-                          >
-                            <div
-                              class="w-2 h-2 rounded-full bg-theme-danger-500"
-                            />
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </span>
-                </div>
-              </div>
-              <div
-                class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              />
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
-                >
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
-                    data-testid="navbar__buttons--send"
-                    type="button"
-                  >
-                    <div
-                      class="flex relative items-center space-x-2"
-                    >
-                      <div
-                        class="sc-bdfBwQ iNulIV p-1"
-                        height="18"
-                        width="18"
-                      >
-                        <svg>
-                          sent.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              />
-              <div
-                class="flex overflow-hidden items-center rounded-lg"
-              >
-                <div
-                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
-                >
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 fHYGyx"
-                    data-testid="navbar__buttons--receive"
-                    type="button"
-                  >
-                    <div
-                      class="flex relative items-center space-x-2"
-                    >
-                      <div
-                        class="sc-bdfBwQ iSzUah p-1"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          qr-code.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              />
-            </div>
-            <div
-              class="flex items-center my-auto ml-8"
-            >
-              <div
-                class="text-right"
-              >
-                <div
-                  class="text-xs font-semibold text-theme-secondary-700"
-                >
-                  Your balance
-                </div>
-                <div
-                  class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
-                >
-                  <span
-                    data-testid="Amount"
-                  >
-                    0 BTC
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex my-0.5 ml-4 -space-x-2"
-              >
-                <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-secondary-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="relative"
-                >
-                  <span
-                    data-testid="dropdown__toggle"
-                  >
-                    <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
-                      data-testid="navbar__useractions"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                      >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div
-        class="flex flex-col flex-1"
-      >
-        <div
-          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
-        >
-          <div
-            class="container px-10 mx-auto"
-          >
-            <div
-              class="flex justify-between items-end bg-theme-background"
-            >
-              <div
-                class="space-y-4"
-              >
-                <h1
-                  class="mb-0 text-4xl"
-                  data-testid="header__title"
-                >
-                  Plugin Manager
-                </h1>
-                <div
-                  class="text-theme-secondary-text"
-                  data-testid="header__subtitle"
-                >
-                  Easy way to find, manage and install plugins
-                </div>
-              </div>
-              <div>
-                <div
-                  class="flex justify-end items-top"
-                >
-                  <div
-                    class="relative"
-                  >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                    >
-                      <div
-                        class="flex items-center space-x-3"
-                      >
-                        <span
-                          class="text-theme-primary-300 dark:text-theme-secondary-700"
-                        >
-                          Search
-                        </span>
-                        <div
-                          class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
-                          height="18"
-                          width="18"
-                        >
-                          <svg>
-                            search.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
-          data-testid="PluginManagerNavigationBar"
-        >
-          <div
-            class="container flex justify-between items-center px-10 mx-auto"
-          >
-            <div>
-              <ul
-                class="flex h-18"
-              >
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
-                  >
-                    <span>
-                      Home
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
-                  >
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
-                  >
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
-                  >
-                    <span>
-                      Other
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      3
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="flex h-18"
-            >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <span>
-                    My Plugins
-                  </span>
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
-                  >
-                    3
-                  </span>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 hgZeGJ flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
-                    data-testid="PluginManagerNavigationBar_update-badge"
-                  >
-                    <span />
-                  </span>
-                </button>
-              </div>
-              <div
-                class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
-              />
-              <div
-                class="flex items-center space-x-1"
-              >
-                <div
-                  class="group"
-                  data-testid="LayoutControls__grid"
-                >
-                  <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
-                    data-testid="LayoutControls__grid--icon"
-                  >
-                    <div
-                      class="sc-bdfBwQ iyevwF"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        grid-view.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="group"
-                  data-testid="LayoutControls__list"
-                >
-                  <div
-                    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
-                    data-testid="LayoutControls__list--icon"
-                  >
-                    <div
-                      class="sc-bdfBwQ iyevwF"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        list-view.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <div
-          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
-        >
-          <div
-            class="container px-10 mx-auto"
-          >
-            <h2
-              class="font-bold mb-6"
-            >
-              My Plugins
-            </h2>
-            <div
-              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mt-4"
-              data-testid="EmptyBlock"
-            >
-              <div>
-                <div
-                  class="flex items-center w-full justify-between"
-                >
-                  There are 2 updates available for your plugins. Would you like to update them all now?
-                  <button
-                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
-                    data-testid="PluginManager__update-all"
-                    type="button"
-                  >
-                    <div
-                      class="flex relative items-center space-x-2"
-                    >
-                      Update All
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              data-testid="PluginManager__container--my-plugins"
-            >
-              <div
-                data-testid="PluginList"
-              >
-                <div
-                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-                  role="table"
-                >
-                  <table
-                    cellpadding="0"
-                    class="table-auto"
-                  >
-                    <thead>
-                      <tr
-                        class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                        role="row"
-                      >
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--0"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Name
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--1"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Author
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--2"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Category
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--3"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Version
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--4"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Size
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
-                          colspan="1"
-                          data-testid="table__th--5"
-                          role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top justify-center no-border"
-                          >
-                            <div>
-                              Status
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--6"
-                          role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top hidden"
-                          >
-                            <div>
-                              Actions
-                            </div>
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody
-                      role="rowgroup"
-                    >
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
-                          >
-                            <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg>
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                            <div
-                              class="flex items-center space-x-2 text-left"
-                            >
-                              <span
-                                class="font-semibold link flex items-center space-x-2"
-                                data-testid="PluginListItem__link"
-                              >
-                                Delegate Calculator Plugin
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Unknown
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Other
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v
-                              1.0.0
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              0 B
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="mx-auto text-2xl text-theme-danger-400"
-                              data-testid="PluginListItem__disabled"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  status-failed.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <div
-                              class="flex items-center space-x-2"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="relative"
-                                  >
-                                    <span
-                                      class="Badge__Wrapper-sc-1d7juq8-0 jFYtKo flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
-                                      data-testid="PluginListItem__update-badge"
-                                    >
-                                      <span />
-                                    </span>
-                                    <button
-                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                      type="button"
-                                    >
-                                      <div
-                                        class="flex relative items-center space-x-2"
-                                      >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            settings.svg
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </button>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
-                          >
-                            <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg>
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                            <div
-                              class="flex items-center space-x-2 text-left"
-                            >
-                              <span
-                                class="font-semibold link flex items-center space-x-2"
-                                data-testid="PluginListItem__link"
-                              >
-                                Test Plugin
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Unknown
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Other
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v
-                              0.0.0
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              0 B
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="mx-auto text-2xl text-theme-success-500"
-                              data-testid="PluginListItem__enabled"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  status-ok.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <div
-                              class="flex items-center space-x-2"
-                            >
-                              <button
-                                class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                                data-testid="PluginListItem__launch"
-                                type="button"
-                              >
-                                <div
-                                  class="flex relative items-center space-x-2"
-                                >
-                                  Launch
-                                </div>
-                              </button>
-                              <div
-                                class="relative"
-                              >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="relative"
-                                  >
-                                    <button
-                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                      type="button"
-                                    >
-                                      <div
-                                        class="flex relative items-center space-x-2"
-                                      >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            settings.svg
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </button>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                        data-testid="TableRow"
-                      >
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
-                          >
-                            <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg>
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                            <div
-                              class="flex items-center space-x-2 text-left"
-                            >
-                              <span
-                                class="font-semibold link flex items-center space-x-2"
-                                data-testid="PluginListItem__link"
-                              >
-                                Transaction Export Plugin
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Unknown
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Other
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v
-                              1.0.0
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              0 B
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="mx-auto text-2xl text-theme-danger-400"
-                              data-testid="PluginListItem__disabled"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  status-failed.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <div
-                              class="flex items-center space-x-2"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="relative"
-                                  >
-                                    <span
-                                      class="Badge__Wrapper-sc-1d7juq8-0 jFYtKo flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
-                                      data-testid="PluginListItem__update-badge"
-                                    >
-                                      <span />
-                                    </span>
-                                    <button
-                                      class="Button__StyledButton-mdtvtf-0 OTOjy text-left"
-                                      type="button"
-                                    >
-                                      <div
-                                        class="flex relative items-center space-x-2"
-                                      >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            settings.svg
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </button>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div
-                  class="flex justify-center w-full mt-10"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`PluginManager should render 1`] = `
 <DocumentFragment>
   <div>
@@ -4338,11 +3158,11 @@ exports[`PluginManager should render 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -4503,7 +3323,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -4515,7 +3335,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -4690,7 +3510,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -4702,7 +3522,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -4789,6 +3609,9 @@ exports[`PluginManager should render 1`] = `
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
+                        <div
+                          class="flex items-center"
+                        />
                         <div
                           class="relative"
                         >
@@ -4879,6 +3702,9 @@ exports[`PluginManager should render 1`] = `
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
+                          class="flex items-center"
+                        />
+                        <div
                           class="relative"
                         >
                           <span
@@ -4961,7 +3787,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -4973,7 +3799,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -5148,7 +3974,7 @@ exports[`PluginManager should render 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -5160,7 +3986,7 @@ exports[`PluginManager should render 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -5708,11 +4534,11 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -5873,7 +4699,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -5885,7 +4711,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -6060,7 +4886,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -6072,7 +4898,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -6159,6 +4985,9 @@ exports[`PluginManager should search for plugin 1`] = `
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
+                        <div
+                          class="flex items-center"
+                        />
                         <div
                           class="relative"
                         >
@@ -6289,7 +5118,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -6301,7 +5130,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -6476,7 +5305,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -6488,7 +5317,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -7036,11 +5865,11 @@ exports[`PluginManager should search for plugin 2`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -7201,7 +6030,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7213,7 +6042,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -7388,7 +6217,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7400,7 +6229,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -7575,7 +6404,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7587,7 +6416,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -7762,7 +6591,7 @@ exports[`PluginManager should search for plugin 2`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -7774,7 +6603,7 @@ exports[`PluginManager should search for plugin 2`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -8306,11 +7135,11 @@ exports[`PluginManager should switch to exchange category by clicking on view mo
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -8846,11 +7675,11 @@ exports[`PluginManager should switch to gaming category by clicking on view more
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -9386,11 +8215,11 @@ exports[`PluginManager should switch to other category by clicking on view more 
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -9926,11 +8755,11 @@ exports[`PluginManager should switch to utility category by clicking on view mor
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -10170,6 +8999,9 @@ exports[`PluginManager should switch to utility category by clicking on view mor
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
+                          class="flex items-center"
+                        />
+                        <div
                           class="relative"
                         >
                           <span
@@ -10259,6 +9091,9 @@ exports[`PluginManager should switch to utility category by clicking on view mor
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
+                          class="flex items-center"
+                        />
+                        <div
                           class="relative"
                         >
                           <span
@@ -10296,7 +9131,7 @@ exports[`PluginManager should switch to utility category by clicking on view mor
 </DocumentFragment>
 `;
 
-exports[`PluginManager should toggle between list and grid on home 1`] = `
+exports[`PluginManager should toggle between list and grid on latest 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -10647,11 +9482,11 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -10812,7 +9647,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__gaming"
+              data-testid="PluginManager__latest__gaming"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -10824,7 +9659,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__gaming__view-more"
+                  data-testid="PluginManager__latest__gaming__view-more"
                 >
                   <span>
                     View More
@@ -10999,7 +9834,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__utility"
+              data-testid="PluginManager__latest__utility"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11011,7 +9846,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__utility__view-more"
+                  data-testid="PluginManager__latest__utility__view-more"
                 >
                   <span>
                     View More
@@ -11098,6 +9933,9 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
+                        <div
+                          class="flex items-center"
+                        />
                         <div
                           class="relative"
                         >
@@ -11188,6 +10026,9 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
+                          class="flex items-center"
+                        />
+                        <div
                           class="relative"
                         >
                           <span
@@ -11270,7 +10111,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__exchange"
+              data-testid="PluginManager__latest__exchange"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11282,7 +10123,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__exchange__view-more"
+                  data-testid="PluginManager__latest__exchange__view-more"
                 >
                   <span>
                     View More
@@ -11457,7 +10298,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="container px-10 mx-auto"
           >
             <div
-              data-testid="PluginManager__home__other"
+              data-testid="PluginManager__latest__other"
             >
               <div
                 class="flex justify-between items-center mb-6"
@@ -11469,7 +10310,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 </h2>
                 <span
                   class="flex items-center font-semibold link space-x-2"
-                  data-testid="PluginManager__home__other__view-more"
+                  data-testid="PluginManager__latest__other__view-more"
                 >
                   <span>
                     View More
@@ -12001,11 +10842,11 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -12245,6 +11086,9 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
+                          class="flex items-center"
+                        />
+                        <div
                           class="relative"
                         >
                           <span
@@ -12333,6 +11177,9 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                       <div
                         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
+                        <div
+                          class="flex items-center"
+                        />
                         <div
                           class="relative"
                         >
@@ -12722,11 +11569,11 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 >
                   <button
                     class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                    data-testid="PluginManagerNavigationBar__home"
-                    title="Home"
+                    data-testid="PluginManagerNavigationBar__latest"
+                    title="Latest"
                   >
                     <span>
-                      Home
+                      Latest
                     </span>
                   </button>
                   <div
@@ -12904,16 +11751,18 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               My Plugins
             </h2>
             <div
-              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mt-4"
+              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mb-6"
               data-testid="EmptyBlock"
             >
               <div>
                 <div
                   class="flex items-center w-full justify-between"
                 >
-                  There is 1 update available for your plugins. Would you like to update it?
+                  <span>
+                    There is 1 update available for your plugins. Would you like to update it?
+                  </span>
                   <button
-                    class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                    class="Button__StyledButton-mdtvtf-0 ePkfgQ -mr-1"
                     data-testid="PluginManager__update-all"
                     type="button"
                   >

@@ -1,4 +1,6 @@
 export const translations: { [key: string]: any } = {
+	REQUIRED_VERSION: "Required Version",
+
 	NEW_UPDATES_AVAILABLE: "New updates available",
 	NEW_VERSION_AVAILABLE: "New version available",
 
@@ -49,6 +51,12 @@ export const translations: { [key: string]: any } = {
 		WEBSOCKET: "Allows connections to websockets",
 	},
 
+	MODAL_UPDATES_CONFIRMATION: {
+		TITLE: "Plugin Updates",
+		DESCRIPTION:
+			"Some of the plugins cannot be updated as they require a newer version of the Desktop Wallet. Pressing Continue will update plugins that can be updated.",
+	},
+
 	MODAL_UNINSTALL: {
 		TITLE: "Uninstall Plugin",
 		DESCRIPTION:
@@ -69,10 +77,6 @@ export const translations: { [key: string]: any } = {
 		PLACEHOLDER: "Github Repository URL",
 	},
 
-	PAGE_PLUGINS_CATEGORY: {
-		LAYOUT_TITLE: "Plugin list",
-	},
-
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",
@@ -80,7 +84,7 @@ export const translations: { [key: string]: any } = {
 		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
 
 		VIEW: {
-			HOME: "Home",
+			LATEST: "Latest",
 			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",

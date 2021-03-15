@@ -217,6 +217,7 @@ export const translations: { [key: string]: any } = {
 	WELCOME: "Welcome to ARK",
 	WILL: "will",
 	WIF: "WIF",
+	ENCRYPTED_WIF: "Encrypted WIF",
 	WORD: "Word",
 	X_OF_Y: "{{0}} of {{1}}",
 	YOU: "You",
@@ -279,8 +280,7 @@ export const translations: { [key: string]: any } = {
 	INPUT_PASSPHRASE: {
 		VALIDATION: {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
-			MNEMONIC_NOT_MATCH_ADDRESS: "The mnemonic does not match the sender address",
-			MNEMONIC_NOT_MATCH_PUBLIC_KEY: "The mnemonic does not match the second public key",
+			MNEMONIC_NOT_MATCH_WALLET: "This mnemonic does not correspond to your wallet",
 		},
 	},
 

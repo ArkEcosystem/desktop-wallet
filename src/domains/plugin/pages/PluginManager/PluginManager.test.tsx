@@ -66,9 +66,9 @@ describe("PluginManager", () => {
 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export")).toHaveLength(
-				1,
-			),
+			expect(
+				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+			).toHaveLength(1),
 		);
 
 		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
@@ -76,31 +76,31 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle between list and grid on home", async () => {
+	it("should toggle between list and grid on latest", async () => {
 		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export")).toHaveLength(
-				1,
-			),
+			expect(
+				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+			).toHaveLength(1),
 		);
 
 		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__utility")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
-		expect(within(getByTestId("PluginManager__home__utility")).getByTestId("PluginList")).toBeTruthy(),
+		expect(within(getByTestId("PluginManager__latest__utility")).getByTestId("PluginList")).toBeTruthy(),
 			act(() => {
 				fireEvent.click(getByTestId("LayoutControls__grid--icon"));
 			});
 
-		expect(within(getByTestId("PluginManager__home__utility")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -109,7 +109,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByText } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId(`PluginManager__home__${category}`)).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId(`PluginManager__latest__${category}`)).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -139,11 +139,13 @@ describe("PluginManager", () => {
 			const { asFragment, getByTestId, getAllByText } = rendered;
 
 			await waitFor(() =>
-				expect(within(getByTestId(`PluginManager__home__${category}`)).getByTestId("PluginGrid")).toBeTruthy(),
+				expect(
+					within(getByTestId(`PluginManager__latest__${category}`)).getByTestId("PluginGrid"),
+				).toBeTruthy(),
 			);
 
 			act(() => {
-				fireEvent.click(getByTestId(`PluginManager__home__${category}__view-more`));
+				fireEvent.click(getByTestId(`PluginManager__latest__${category}__view-more`));
 			});
 
 			expect(getByTestId(`PluginManager__container--${category}`)).toBeTruthy();
@@ -152,11 +154,11 @@ describe("PluginManager", () => {
 		},
 	);
 
-	it.skip("should download & install plugin on home", async () => {
+	it.skip("should download & install plugin on latest", async () => {
 		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -247,7 +249,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -290,7 +292,7 @@ describe("PluginManager", () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -315,7 +317,7 @@ describe("PluginManager", () => {
 		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -342,7 +344,7 @@ describe("PluginManager", () => {
 		const { asFragment, getByTestId, getAllByTestId, getAllByText } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -382,7 +384,7 @@ describe("PluginManager", () => {
 		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -419,7 +421,7 @@ describe("PluginManager", () => {
 		const { getAllByTestId, getByTestId } = rendered;
 
 		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__home__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
 		act(() => {
@@ -451,14 +453,16 @@ describe("PluginManager", () => {
 		toastSpy.mockRestore();
 	});
 
-	it("should select plugin on home grids", async () => {
+	it("should select plugin on latest grids", async () => {
 		const { getByTestId, getAllByText, getAllByTestId } = rendered;
 
 		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
 		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
 
 		act(() => {
-			fireEvent.click(within(getByTestId("PluginManager__home__utility")).getAllByText("Transaction Export")[0]);
+			fireEvent.click(
+				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export")[0],
+			);
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
@@ -656,7 +660,39 @@ describe("PluginManager", () => {
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
-	it("should handle update all", async () => {
+	it("should show and close the update confirmation modal", async () => {
+		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = "100.0.0";
+
+		const plugin = new PluginController(
+			{ name: "@dated/transaction-export-plugin", version: "1.0.0" },
+			() => void 0,
+		);
+		pluginManager.plugins().push(plugin);
+
+		const { getByTestId, queryByTestId, getByText } = rendered;
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+
+		fireEvent.click(getByTestId("PluginManager__update-all"));
+
+		await waitFor(() => expect(getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
+
+		expect(getByText("100.0.0")).toBeInTheDocument();
+
+		fireEvent.click(getByTestId("PluginUpdates__cancel-button"));
+
+		await waitFor(() => expect(queryByTestId("PluginUpdatesConfirmation")).not.toBeInTheDocument());
+
+		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = undefined;
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should show and continue the update confirmation modal", async () => {
+		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = "100.0.0";
+
 		let downloadsCount = 0;
 		let installCount = 0;
 
@@ -683,20 +719,24 @@ describe("PluginManager", () => {
 		pluginManager.plugins().push(plugin);
 		pluginManager.plugins().push(plugin2);
 
-		const { getByTestId, container } = rendered;
+		const { getByTestId, getAllByText, getByText } = rendered;
 
 		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
 		fireEvent.click(getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__update-all"));
-		});
+		fireEvent.click(getByTestId("PluginManager__update-all"));
+
+		await waitFor(() => expect(getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
+
+		expect(getAllByText("100.0.0").length).toBeGreaterThan(0);
+
+		fireEvent.click(getByTestId("PluginUpdates__continue-button"));
 
 		await waitFor(() => expect(downloadsCount).toBe(2));
 		await waitFor(() => expect(installCount).toBe(2));
 
-		expect(container).toMatchSnapshot();
+		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = undefined;
 	});
 });

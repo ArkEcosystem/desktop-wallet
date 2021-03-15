@@ -20,6 +20,7 @@ type PluginGridProps = {
 	onUpdate?: (plugin: any) => void;
 	onSelect: any;
 	plugins: any[];
+	updatingStats?: any;
 	isLoading?: boolean;
 	skeletonsLimit?: number;
 	showPagination?: boolean;
@@ -37,6 +38,7 @@ export const PluginGrid = ({
 	onInstall,
 	onUpdate,
 	plugins,
+	updatingStats,
 	showPagination,
 	isLoading,
 	skeletonsLimit = 3,
@@ -68,6 +70,7 @@ export const PluginGrid = ({
 					result.push({
 						label: t("COMMON.UPDATE"),
 						value: "update",
+						disabled: plugin.isMinimumVersionSatisfied === false,
 					});
 				}
 
@@ -142,6 +145,8 @@ export const PluginGrid = ({
 						actions={getActions(plugin)}
 						category={category}
 						plugin={plugin}
+						isUpdating={updatingStats?.[plugin.name]?.percent !== undefined}
+						updatingProgress={updatingStats?.[plugin.name]?.percent}
 						onClick={() => onSelect(plugin)}
 						onSelect={(action: any) => handlePluginAction(plugin, action)}
 					/>

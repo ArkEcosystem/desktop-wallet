@@ -1,4 +1,3 @@
-import { contacts } from "domains/contact/images";
 import { error } from "domains/error/images";
 import { news } from "domains/news/images";
 import { plugin } from "domains/plugin/images";
@@ -30,7 +29,6 @@ export const images = {
 		WelcomeBanner,
 		...ImagesDark,
 	},
-	contacts,
 	news,
 	error,
 	plugin,
