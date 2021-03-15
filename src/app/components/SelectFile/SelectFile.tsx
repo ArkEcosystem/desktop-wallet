@@ -16,6 +16,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 	const handleBrowseFiles = async () => {
 		const file = await openFile({ extensions: [fileFormat.replace(/\./g, "")] });
 
+		/* istanbul ignore next */
 		if (!file) {
 			return;
 		}
@@ -59,7 +60,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 				<span
 					onClick={handleBrowseFiles}
 					title={t("PROFILE.IMPORT.SELECT_FILE_STEP.UPLOAD_TITLE")}
-					data-testid="PluginManager__home__featured__view-more"
+					data-testid="SelectFile__browse-files"
 					className="font-semibold cursor-pointer link"
 				>
 					{t("PROFILE.IMPORT.SELECT_FILE_STEP.BROWSE_FILES")}
