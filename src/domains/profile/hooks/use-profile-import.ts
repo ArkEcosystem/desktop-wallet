@@ -50,7 +50,7 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 
 				if (wallet?.address && wallet?.balance.DARK) {
 					profile.settings().set(ProfileSetting.UseTestNetworks, true);
-					return profile.wallets().importByAddress(wallet.address, "DARK", "ark.devnet");
+					return profile.wallets().importByAddress(wallet.address, "ARK", "ark.devnet");
 				}
 
 				return null;
