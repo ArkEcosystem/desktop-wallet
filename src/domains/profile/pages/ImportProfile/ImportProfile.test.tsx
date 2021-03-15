@@ -4,7 +4,7 @@ import { ImportProfile } from "domains/profile/pages/ImportProfile/ImportProfile
 import fs from "fs";
 import { createMemoryHistory } from "history";
 import React from "react";
-import { act, env, fireEvent, renderWithRouter,waitFor } from "utils/testing-library";
+import { act, env, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 
 const passwordProtectedDwe = fs.readFileSync("src/tests/fixtures/profile/import/password-protected-profile.dwe");
 const corruptedDwe = fs.readFileSync("src/tests/fixtures/profile/import/corrupted-profile.dwe");
