@@ -2010,7 +2010,13 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          N/A
+                          <a
+                            class="link"
+                            data-testid="PluginSpecs__url"
+                            href="/"
+                          >
+                            github.com
+                          </a>
                         </span>
                       </div>
                     </div>

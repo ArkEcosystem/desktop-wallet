@@ -199,4 +199,22 @@ describe("Plugin Configuration", () => {
 			version: "0.0.1",
 		});
 	});
+
+	it("should return url from source provider", () => {
+		const url = "https://github.com/arkecosystem/my-plugin";
+		const subject = PluginConfigurationData.make({ sourceProvider: { url } });
+		expect(subject.url()).toBe(url);
+	});
+
+	it("should return url from repository field", () => {
+		const url = "git+https://github.com/arkecosystem/my-plugin.git";
+		const subject = PluginConfigurationData.make({ repository: { type: "git", url } });
+		expect(subject.url()).toBe("https://github.com/arkecosystem/my-plugin");
+	});
+
+	it("should return url from homepage", () => {
+		const url = "https://github.com/arkecosystem/my-plugin#readme";
+		const subject = PluginConfigurationData.make({ homepage: url });
+		expect(subject.url()).toBe(url);
+	});
 });

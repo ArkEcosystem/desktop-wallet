@@ -178,13 +178,17 @@ export class PluginConfigurationData {
 	}
 
 	url() {
-		let data: any = this.#config.get("sourceProvider");
+		let url = this.#config.get<{ url: string }>("sourceProvider")?.url; // PSDK registry field
 
-		if (!data) {
-			data = this.#config.get("repository");
+		if (!url) {
+			url = this.#config.get<{ url: string }>("repository")?.url;
 		}
 
-		return data?.url?.replace(/git\+|\.git/, "");
+		if (!url) {
+			url = this.#config.get("homepage");
+		}
+
+		return url?.replace(/^git\+/, "").replace(/\.git$/, "");
 	}
 
 	async syncSize(dir?: string) {
