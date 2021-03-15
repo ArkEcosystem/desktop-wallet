@@ -31,6 +31,7 @@ const showOpenDialogParams = {
 };
 
 jest.mock("fs", () => ({
+	writeFileSync: jest.fn(),
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
@@ -1143,5 +1144,56 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render export settings", async () => {
+		const { container, asFragment, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Export"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should export data", async () => {
+		const exportingProfile = env.profiles().create("Exporting Profile");
+
+		const dialogMock = jest
+			.spyOn(electron.remote.dialog, "showSaveDialog")
+			//@ts-ignore
+			.mockResolvedValue({ filePath: ["/test.dwe"] });
+
+		const { container, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				withProfileSynchronizer: true,
+				routes: [`/profiles/${exportingProfile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Export"));
+		});
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("Export-settings__submit-button"));
+		});
+
+		expect(dialogMock).toHaveBeenCalled();
+		dialogMock.mockRestore();
 	});
 });

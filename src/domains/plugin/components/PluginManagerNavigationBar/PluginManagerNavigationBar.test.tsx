@@ -1,7 +1,7 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { PluginProviders } from "app/PluginProviders";
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render } from "utils/testing-library";
 
 import { PluginManagerNavigationBar } from "./PluginManagerNavigationBar";
 
@@ -37,7 +37,7 @@ describe("PluginManagerNavigationBar", () => {
 			</PluginProviders>,
 		);
 
-		const navIds = ["gaming", "utility", "theme", "other", "my-plugins", "home"];
+		const navIds = ["gaming", "utility", "exchange", "other", "my-plugins", "home"];
 
 		for (const navId of navIds) {
 			const navItem = getByTestId(`PluginManagerNavigationBar__${navId}`);

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LedgerImportStep should render 1`] = `
+exports[`LedgerImportStep should render with multiple import 1`] = `
 <div>
   <section
-    class="space-y-8"
+    class="space-y-6"
     data-testid="LedgerImportStep"
   >
     <div
@@ -64,103 +64,228 @@ exports[`LedgerImportStep should render 1`] = `
     <ul>
       <li>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cDuLPV py-4 no-ligatures"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Address
-            </div>
             <div
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="flex items-center space-x-3"
               >
-                <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                  data-testid="address__wallet-address"
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                  data-testid="Avatar"
                 >
-                  DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
-                </span>
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="inline-flex items-center no-ligatures"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base font-bold"
+                      data-testid="address__wallet-name"
+                    >
+                      <span
+                        class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                        data-testid="TruncateEnd"
+                      >
+                        Custom N…
+                      </span>
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 font-bold text-theme-secondary-400 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
+                    </span>
+                  </div>
+                  <p
+                    class="text-theme-secondary-500 text-sm mt-1 font-medium"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0 DARK
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-            data-testid="Avatar"
+          <button
+            class="Button__StyledButton-mdtvtf-0 iUSBMV"
+            data-testid="LedgerImportStep__edit-alias"
+            type="button"
           >
             <div
-              class="w-full h-full"
+              class="flex relative items-center space-x-2"
             >
-              <img
-                alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                title="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-              />
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  edit.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
+      </li>
+      <li>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cDuLPV py-4 no-ligatures"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Balance
-            </div>
-            <div
               class="font-semibold"
             >
-              <span
-                data-testid="Amount"
+              <div
+                class="flex items-center space-x-3"
               >
-                0 DARK
-              </span>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="inline-flex items-center no-ligatures"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 font-bold  truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                    </span>
+                  </div>
+                  <p
+                    class="text-theme-secondary-500 text-sm mt-1 font-medium"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0 DARK
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-        >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+          <button
+            class="Button__StyledButton-mdtvtf-0 iUSBMV"
+            data-testid="LedgerImportStep__edit-alias"
+            type="button"
           >
-            Wallet name
-            <span
-              class="ml-1 text-theme-secondary-text"
-              data-testid="FormLabel__optional"
+            <div
+              class="flex relative items-center space-x-2"
             >
-              (
-              optional
-              )
-            </span>
-          </label>
-          <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-              data-testid="ImportWallet__name-input"
-              name="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-            />
-          </div>
-        </fieldset>
-        <div
-          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-          type="horizontal"
-        />
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  edit.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
       </li>
+    </ul>
+  </section>
+</div>
+`;
+
+exports[`LedgerImportStep should render with single import 1`] = `
+<div>
+  <section
+    class="space-y-6"
+    data-testid="LedgerImportStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Completed
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Wallet import is complete. Now you can use it.
+        </div>
+      </div>
+    </div>
+    <div
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+      data-testid="TransactionDetail"
+    >
+      <div
+        class="flex-1 space-y-2"
+      >
+        <div
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+        >
+          Cryptoasset
+        </div>
+        <div
+          class="font-semibold"
+        >
+          ARK Devnet
+        </div>
+      </div>
+      <div
+        aria-label="ARK Devnet"
+        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+        data-testid="NetworkIcon-ARK-ark.devnet"
+      >
+        <div
+          class="sc-bdfBwQ iyevwF"
+          data-testid="NetworkIcon__icon"
+          height="20"
+          width="20"
+        >
+          <svg>
+            ark.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <ul>
       <li>
         <div
           class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
@@ -264,7 +389,7 @@ exports[`LedgerImportStep should render 1`] = `
 exports[`LedgerImportStep should show an error message for duplicate name 1`] = `
 <div>
   <section
-    class="space-y-8"
+    class="space-y-6"
     data-testid="LedgerImportStep"
   >
     <div
@@ -323,105 +448,6 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
       </div>
     </div>
     <ul>
-      <li>
-        <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Address
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <div
-                class="inline-flex items-center no-ligatures"
-              >
-                <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-            data-testid="Avatar"
-          >
-            <div
-              class="w-full h-full"
-            >
-              <img
-                alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                title="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Balance
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <span
-                data-testid="Amount"
-              >
-                0 DARK
-              </span>
-            </div>
-          </div>
-        </div>
-        <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-        >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-          >
-            Wallet name
-            <span
-              class="ml-1 text-theme-secondary-text"
-              data-testid="FormLabel__optional"
-            >
-              (
-              optional
-              )
-            </span>
-          </label>
-          <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-              data-testid="ImportWallet__name-input"
-              name="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-            />
-          </div>
-        </fieldset>
-        <div
-          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-          type="horizontal"
-        />
-      </li>
       <li>
         <div
           class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
@@ -525,7 +551,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
 exports[`LedgerImportStep should show an error message for duplicate name in the form 1`] = `
 <div>
   <section
-    class="space-y-8"
+    class="space-y-6"
     data-testid="LedgerImportStep"
   >
     <div
@@ -586,197 +612,160 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
     <ul>
       <li>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cDuLPV py-4 no-ligatures"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Address
-            </div>
             <div
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="flex items-center space-x-3"
               >
-                <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                  data-testid="address__wallet-address"
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                  data-testid="Avatar"
                 >
-                  DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
-                </span>
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      title="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="inline-flex items-center no-ligatures"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base font-bold"
+                      data-testid="address__wallet-name"
+                    >
+                      <span
+                        class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                        data-testid="TruncateEnd"
+                      >
+                        Custom N…
+                      </span>
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 font-bold text-theme-secondary-400 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
+                    </span>
+                  </div>
+                  <p
+                    class="text-theme-secondary-500 text-sm mt-1 font-medium"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0 DARK
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-            data-testid="Avatar"
+          <button
+            class="Button__StyledButton-mdtvtf-0 iUSBMV"
+            data-testid="LedgerImportStep__edit-alias"
+            type="button"
           >
             <div
-              class="w-full h-full"
+              class="flex relative items-center space-x-2"
             >
-              <img
-                alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                title="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Balance
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <span
-                data-testid="Amount"
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
               >
-                0 DARK
-              </span>
+                <svg>
+                  edit.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
-        <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-        >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-          >
-            Wallet name
-            <span
-              class="ml-1 text-theme-secondary-text"
-              data-testid="FormLabel__optional"
-            >
-              (
-              optional
-              )
-            </span>
-          </label>
-          <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-              data-testid="ImportWallet__name-input"
-              name="names.DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
-            />
-          </div>
-        </fieldset>
-        <div
-          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-          type="horizontal"
-        />
       </li>
       <li>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cDuLPV py-4 no-ligatures"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Address
-            </div>
             <div
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="flex items-center space-x-3"
               >
-                <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                  data-testid="address__wallet-address"
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                  data-testid="Avatar"
                 >
-                  DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
-                </span>
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="inline-flex items-center no-ligatures"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 font-bold  truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                    </span>
+                  </div>
+                  <p
+                    class="text-theme-secondary-500 text-sm mt-1 font-medium"
+                  >
+                    <span
+                      data-testid="Amount"
+                    >
+                      0 DARK
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-            data-testid="Avatar"
+          <button
+            class="Button__StyledButton-mdtvtf-0 iUSBMV"
+            data-testid="LedgerImportStep__edit-alias"
+            type="button"
           >
             <div
-              class="w-full h-full"
+              class="flex relative items-center space-x-2"
             >
-              <img
-                alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-          data-testid="TransactionDetail"
-        >
-          <div
-            class="flex-1 space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-            >
-              Balance
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <span
-                data-testid="Amount"
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
               >
-                0 DARK
-              </span>
+                <svg>
+                  edit.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
-        <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-        >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-          >
-            Wallet name
-            <span
-              class="ml-1 text-theme-secondary-text"
-              data-testid="FormLabel__optional"
-            >
-              (
-              optional
-              )
-            </span>
-          </label>
-          <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-              data-testid="ImportWallet__name-input"
-              name="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            />
-          </div>
-        </fieldset>
       </li>
     </ul>
   </section>

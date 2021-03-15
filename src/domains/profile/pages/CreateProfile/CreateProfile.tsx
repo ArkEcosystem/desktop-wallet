@@ -2,6 +2,7 @@ import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { InputDefault, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
@@ -9,7 +10,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useThemeName, useValidation } from "app/hooks";
+import { useTheme, useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -28,7 +29,7 @@ export const CreateProfile = () => {
 
 	const [avatarImage, setAvatarImage] = useState("");
 
-	const theme = useThemeName();
+	const { theme } = useTheme();
 	const { createProfile } = useValidation();
 
 	const formattedName = name.trim();
@@ -87,8 +88,10 @@ export const CreateProfile = () => {
 		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
 			<Section className="flex flex-col flex-1 justify-center">
 				<div className="mx-auto -mt-10 max-w-lg">
-					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
-					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
+					<Header
+						title={t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}
+						subtitle={t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}
+					/>
 
 					<Form
 						className="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"

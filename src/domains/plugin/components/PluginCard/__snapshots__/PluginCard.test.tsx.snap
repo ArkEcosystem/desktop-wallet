@@ -1,72 +1,190 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BlankPluginCard should render 1`] = `
+<div>
+  <div
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
+    data-testid="Card"
+  >
+    <div
+      class="flex items-center space-x-4"
+    >
+      <div
+        class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+      />
+      <div
+        class="flex flex-col truncate"
+      >
+        <span
+          class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+        >
+          Author
+        </span>
+        <div
+          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+        >
+          Name
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`BlankPluginCard should render with category 1`] = `
+<div>
+  <div
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
+    data-testid="Card"
+  >
+    <div
+      class="flex items-center space-x-4"
+    >
+      <div
+        class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+      />
+      <div
+        class="flex flex-col truncate"
+      >
+        <span
+          class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+        >
+          Author
+        </span>
+        <div
+          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+        >
+          Name
+        </div>
+        <div
+          class="flex items-center space-x-2 mt-4 text-theme-primary-100 dark:text-theme-secondary-800"
+        >
+          <div
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
+          >
+            <svg>
+              category.svg
+            </svg>
+          </div>
+          <span
+            class="text-sm font-semibold"
+          >
+            Exchange
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`BlankPluginCard should render with name 1`] = `
+<div>
+  <div
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
+    data-testid="Card"
+  >
+    <div
+      class="flex items-center space-x-4"
+    >
+      <div
+        class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+      />
+      <div
+        class="flex flex-col truncate"
+      >
+        <span
+          class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+        >
+          Author
+        </span>
+        <div
+          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+        >
+          test-name
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+    />
+  </div>
+</div>
+`;
+
 exports[`PluginCard should render 1`] = `
 <DocumentFragment>
   <div
     data-testid="PluginCard--ark-explorer"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
       data-testid="Card"
     >
       <div
-        class="flex flex-col h-full items-between"
+        class="flex items-center space-x-4"
       >
         <div
-          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-          data-testid="PluginImage__placeholder"
+          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
         >
-          <svg>
-            plugin-logo-placeholder.svg
-          </svg>
-        </div>
-        <div>
           <div
-            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+            data-testid="PluginImage__placeholder"
+          >
+            <svg>
+              plugin-logo-placeholder.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col truncate"
+        >
+          <span
+            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            ARK.io
+          </span>
+          <div
+            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
           >
             <div
               class="truncate"
             >
               ARK Explorer
             </div>
-            <div />
+            <span />
           </div>
           <div
-            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
           >
             <div
-              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="sc-bdfBwQ iyevwF"
+              height="20"
+              width="20"
             >
-              ARK.io
+              <svg>
+                category.svg
+              </svg>
             </div>
+            <span
+              class="text-sm font-semibold"
+            >
+              Utility
+            </span>
           </div>
         </div>
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
-        <div
-          class="relative"
-        >
-          <span
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="flex overflow-hidden justify-center w-4"
-            >
-              <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </span>
-        </div>
-      </div>
+      />
     </div>
   </div>
 </DocumentFragment>
@@ -78,30 +196,41 @@ exports[`PluginCard should render grant icon 1`] = `
     data-testid="PluginCard--ark-explorer"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
       data-testid="Card"
     >
       <div
-        class="flex flex-col h-full items-between"
+        class="flex items-center space-x-4"
       >
         <div
-          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-          data-testid="PluginImage__placeholder"
+          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
         >
-          <svg>
-            plugin-logo-placeholder.svg
-          </svg>
-        </div>
-        <div>
           <div
-            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+            data-testid="PluginImage__placeholder"
+          >
+            <svg>
+              plugin-logo-placeholder.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col truncate"
+        >
+          <span
+            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            ARK.io
+          </span>
+          <div
+            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
           >
             <div
               class="truncate"
             >
               ARK Explorer
             </div>
-            <div>
+            <span>
               <div
                 class="sc-bdfBwQ iyevwF"
                 height="20"
@@ -111,44 +240,31 @@ exports[`PluginCard should render grant icon 1`] = `
                   grant.svg
                 </svg>
               </div>
-            </div>
+            </span>
           </div>
           <div
-            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
           >
             <div
-              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="sc-bdfBwQ iyevwF"
+              height="20"
+              width="20"
             >
-              ARK.io
+              <svg>
+                category.svg
+              </svg>
             </div>
+            <span
+              class="text-sm font-semibold"
+            >
+              Utility
+            </span>
           </div>
         </div>
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
-        <div
-          class="relative"
-        >
-          <span
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="flex overflow-hidden justify-center w-4"
-            >
-              <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </span>
-        </div>
-      </div>
+      />
     </div>
   </div>
 </DocumentFragment>
@@ -160,30 +276,41 @@ exports[`PluginCard should render official icon 1`] = `
     data-testid="PluginCard--ark-explorer"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-52"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
       data-testid="Card"
     >
       <div
-        class="flex flex-col h-full items-between"
+        class="flex items-center space-x-4"
       >
         <div
-          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-          data-testid="PluginImage__placeholder"
+          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
         >
-          <svg>
-            plugin-logo-placeholder.svg
-          </svg>
-        </div>
-        <div>
           <div
-            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+            data-testid="PluginImage__placeholder"
+          >
+            <svg>
+              plugin-logo-placeholder.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col truncate"
+        >
+          <span
+            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            ARK.io
+          </span>
+          <div
+            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
           >
             <div
               class="truncate"
             >
               ARK Explorer
             </div>
-            <div>
+            <span>
               <div
                 class="sc-bdfBwQ fpbFeh"
                 height="16"
@@ -193,44 +320,83 @@ exports[`PluginCard should render official icon 1`] = `
                   official-ark-plugin.svg
                 </svg>
               </div>
-            </div>
+            </span>
           </div>
           <div
-            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
           >
             <div
-              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="sc-bdfBwQ iyevwF"
+              height="20"
+              width="20"
             >
-              ARK.io
+              <svg>
+                category.svg
+              </svg>
             </div>
+            <span
+              class="text-sm font-semibold"
+            >
+              Utility
+            </span>
           </div>
         </div>
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PluginCard should render without category 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="PluginCard--ark-explorer"
+  >
+    <div
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
+      data-testid="Card"
+    >
+      <div
+        class="flex items-center space-x-4"
       >
         <div
-          class="relative"
+          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+        >
+          <div
+            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+            data-testid="PluginImage__placeholder"
+          >
+            <svg>
+              plugin-logo-placeholder.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col truncate"
         >
           <span
-            data-testid="dropdown__toggle"
+            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            ARK.io
+          </span>
+          <div
+            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
           >
             <div
-              class="flex overflow-hidden justify-center w-4"
+              class="truncate"
             >
-              <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
+              ARK Explorer
             </div>
-          </span>
+            <span />
+          </div>
         </div>
       </div>
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
     </div>
   </div>
 </DocumentFragment>
@@ -242,67 +408,65 @@ exports[`PluginCard should trigger view 1`] = `
     data-testid="PluginCard--ark-explorer"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj h-52"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
       data-testid="Card"
     >
       <div
-        class="flex flex-col h-full items-between"
+        class="flex items-center space-x-4"
       >
         <div
-          class="PluginImage__PluginImageWrapper-iwox49-0 fFiZfl mb-4 mr-4"
-          data-testid="PluginImage__placeholder"
+          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
         >
-          <svg>
-            plugin-logo-placeholder.svg
-          </svg>
-        </div>
-        <div>
           <div
-            class="flex items-center mb-2 space-x-2 text-lg font-semibold text-theme-primary-600"
+            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+            data-testid="PluginImage__placeholder"
+          >
+            <svg>
+              plugin-logo-placeholder.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex flex-col truncate"
+        >
+          <span
+            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            ARK.io
+          </span>
+          <div
+            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
           >
             <div
               class="truncate"
             >
               ARK Explorer
             </div>
-            <div />
+            <span />
           </div>
           <div
-            class="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
           >
             <div
-              class="pr-4 border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="sc-bdfBwQ iyevwF"
+              height="20"
+              width="20"
             >
-              ARK.io
+              <svg>
+                category.svg
+              </svg>
             </div>
+            <span
+              class="text-sm font-semibold"
+            >
+              Utility
+            </span>
           </div>
         </div>
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
-        <div
-          class="relative"
-        >
-          <span
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="flex overflow-hidden justify-center w-4"
-            >
-              <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </div>
-          </span>
-        </div>
-      </div>
+      />
     </div>
   </div>
 </DocumentFragment>

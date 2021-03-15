@@ -88,6 +88,10 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 			Header: t("COMMON.ADDRESS"),
 		},
 		{
+			Header: t("COMMON.COPY"),
+			minimumWidth: true,
+		},
+		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
 			className: "whitespace-nowrap justify-center no-border",
 			minimumWidth: true,
@@ -110,7 +114,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	return (
 		<>
 			<Page profile={activeProfile}>
-				<Section>
+				<Section border>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}

@@ -5,7 +5,7 @@ import { useCallback } from "react";
 
 type CurrencyInput = {
 	display: string;
-	value: string;
+	value?: string;
 };
 
 export const useCurrencyDisplay = () => {
@@ -13,6 +13,11 @@ export const useCurrencyDisplay = () => {
 		const sanitized = !isNil(inputValue?.display)
 			? BigNumber.make(inputValue?.display)
 			: BigNumber.make(inputValue);
+
+		if (isNaN(sanitized.toNumber())) {
+			return [];
+		}
+
 		return [Math.min(sanitized.toNumber(), Number(maxNumber))];
 	}, []);
 

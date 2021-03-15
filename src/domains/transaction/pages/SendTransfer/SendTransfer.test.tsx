@@ -948,9 +948,20 @@ describe("SendTransfer", () => {
 
 		// Fee
 		act(() => {
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "" } });
+		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue(""));
+
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
+
+		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 		});
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+
+		await waitFor(() => expect(() => getByTestId("Input-error")).toThrow());
 
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 		await act(async () => {

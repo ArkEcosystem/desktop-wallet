@@ -10,7 +10,7 @@ exports[`PluginHeader should render properly 1`] = `
       class="flex w-full"
     >
       <div
-        class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt"
+        class="PluginImage__PluginImageWrapper-iwox49-0 cSvQPa"
         data-testid="PluginImage__placeholder"
       >
         <svg>
@@ -206,7 +206,7 @@ exports[`PluginHeader should render updating plugin 1`] = `
       class="flex w-full"
     >
       <div
-        class="PluginImage__PluginImageWrapper-iwox49-0 RzjMt"
+        class="PluginImage__PluginImageWrapper-iwox49-0 kKmcXm"
         data-testid="PluginImage__updating"
       >
         <svg
@@ -218,21 +218,21 @@ exports[`PluginHeader should render updating plugin 1`] = `
             cx="20"
             cy="20"
             fill="transparent"
-            r="19"
-            stroke="var(--theme-color-success-200)"
-            stroke-width="2"
+            r="18.5"
+            stroke="var(--theme-color-success-800)"
+            stroke-width="3"
           />
           <circle
             cx="20"
             cy="20"
             fill="transparent"
-            r="19"
+            r="18.5"
             stroke="var(--theme-color-success-600)"
-            stroke-dasharray="119.38052083641213"
-            stroke-dashoffset="95.50441666912971"
+            stroke-dasharray="116.23892818282235"
+            stroke-dashoffset="92.99114254625788"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
+            stroke-width="3"
             transform="rotate(-90 20 20)"
           />
           <text
@@ -258,7 +258,7 @@ exports[`PluginHeader should render updating plugin 1`] = `
           </text>
         </svg>
         <p
-          class="text-theme-secondary-600 dark:text-theme-secondary-text text-sm font-medium"
+          class="text-theme-success-600 text-sm font-semibold"
           data-testid="PluginImage__updating__label"
         >
           Updating...

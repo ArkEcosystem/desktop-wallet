@@ -35,7 +35,7 @@ describe("SearchBarPluginFilters", () => {
 
 		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
 		expect(getByTestId("SearchBarPluginFilters-category-utility")).toBeTruthy();
-		expect(getByTestId("SearchBarPluginFilters-category-theme")).toBeTruthy();
+		expect(getByTestId("SearchBarPluginFilters-category-exchange")).toBeTruthy();
 		expect(getByTestId("SearchBarPluginFilters-category-other")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
