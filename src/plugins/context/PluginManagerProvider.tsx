@@ -310,10 +310,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 		try {
 			const size = await pluginRegistry.size(pkg);
-			console.log(size);
 			return prettyBytes(size);
-		} catch {
-			console.error("Failed");
+		} catch (e) {
+			console.error(e);
 			return undefined;
 		}
 	};

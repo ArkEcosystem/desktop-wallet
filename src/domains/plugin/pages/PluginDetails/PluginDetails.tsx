@@ -16,6 +16,7 @@ export const PluginDetails = () => {
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
 	const [isInstallOpen, setIsInstallOpen] = React.useState(false);
 	const [size, setSize] = useState<string>();
+	const [isLoadingSize, setIsLoadingSize] = useState(false);
 
 	const {
 		allPlugins,
@@ -72,13 +73,20 @@ export const PluginDetails = () => {
 		setIsInstallOpen(false);
 	};
 
+	const checkSizeRemote = async () => {
+		setIsLoadingSize(true);
+		const result = await fetchSize(pluginData.id);
+		setSize(result);
+		setIsLoadingSize(false);
+	};
+
 	useEffect(() => {
 		if (isInstalled) {
 			setSize(pluginData.size);
 			return;
 		}
 
-		fetchSize(pluginData.id);
+		checkSizeRemote();
 	}, [isInstalled]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
@@ -86,6 +94,7 @@ export const PluginDetails = () => {
 			<Section border>
 				<PluginHeader
 					{...pluginData}
+					isLoadingSize={isLoadingSize}
 					size={size}
 					isInstalled={isInstalled}
 					onDelete={() => setIsUninstallOpen(true)}

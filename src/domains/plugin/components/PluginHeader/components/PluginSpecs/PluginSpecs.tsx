@@ -1,4 +1,5 @@
 import { Icon } from "app/components/Icon";
+import { Spinner } from "app/components/Spinner";
 // @ts-ignore
 import extractDomain from "extract-domain";
 import React from "react";
@@ -13,6 +14,7 @@ type Props = {
 	size?: string;
 	logo?: string;
 	isOfficial?: boolean;
+	isLoadingSize?: boolean;
 };
 
 type GridColProps = {
@@ -47,7 +49,7 @@ const GridCol = ({ children, padding }: GridColProps) => {
 	return <div className={mountClassName()}>{children}</div>;
 };
 
-export const PluginSpecs = ({ author, category, url, version, isOfficial, size }: Props) => {
+export const PluginSpecs = ({ author, category, url, version, isOfficial, size, isLoadingSize }: Props) => {
 	const domain = url && extractDomain(url);
 	const { t } = useTranslation();
 
@@ -100,7 +102,7 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size }
 
 				<GridCol padding="pl-8">
 					<GridItem label={t("COMMON.SIZE")} textDirection="right">
-						{size || "N/A"}
+						{isLoadingSize ? <Spinner size="sm" /> : size || "N/A"}
 					</GridItem>
 				</GridCol>
 			</div>
