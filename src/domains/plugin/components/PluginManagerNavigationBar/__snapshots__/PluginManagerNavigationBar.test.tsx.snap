@@ -35,6 +35,22 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             >
               <button
                 class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__all"
+                title="All"
+              >
+                <span>
+                  All
+                </span>
+              </button>
+              <div
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+            </li>
+            <li
+              class="flex"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__gaming"
                 title="Gaming"
               >
@@ -205,6 +221,22 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               >
                 <span>
                   Latest
+                </span>
+              </button>
+              <div
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+              />
+            </li>
+            <li
+              class="flex"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__all"
+                title="All"
+              >
+                <span>
+                  All
                 </span>
               </button>
               <div

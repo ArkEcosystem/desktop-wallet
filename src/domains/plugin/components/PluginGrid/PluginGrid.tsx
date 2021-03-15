@@ -167,6 +167,6 @@ export const PluginGrid = ({
 };
 
 PluginGrid.defaultProps = {
-	itemsPerPage: 20,
+	itemsPerPage: 15,
 	showPagination: true,
 };
