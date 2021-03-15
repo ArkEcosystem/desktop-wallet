@@ -39,7 +39,7 @@ export const SelectFileStep = ({ onBack, onSelect, onFileFormatChange, fileForma
 					<span
 						onClick={() => onFileFormatChange?.(".json")}
 						title={t("PROFILE.IMPORT.SELECT_FILE_STEP.CLICK_HERE")}
-						data-testid="PluginManager__home__featured__view-more"
+						data-testid="SelectFileStep__change-file"
 						className="font-semibold cursor-pointer link"
 					>
 						{t("PROFILE.IMPORT.SELECT_FILE_STEP.CLICK_HERE")}
@@ -54,7 +54,7 @@ export const SelectFileStep = ({ onBack, onSelect, onFileFormatChange, fileForma
 			)}
 
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button data-testid="SendTransfer__button--back" variant="secondary" onClick={handleBack}>
+				<Button data-testid="SelectFileStep__back" variant="secondary" onClick={handleBack}>
 					{t("COMMON.BACK")}
 				</Button>
 			</div>
