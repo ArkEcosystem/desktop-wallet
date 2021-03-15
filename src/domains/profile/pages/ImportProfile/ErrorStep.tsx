@@ -8,12 +8,11 @@ import { ImportFile } from "./models";
 
 type ImportErrorProps = {
 	file: ImportFile;
-	error: string;
 	onRetry?: () => void;
 	onBack?: () => void;
 };
 
-export const ImportError = ({ file, error, onBack, onRetry }: ImportErrorProps) => {
+export const ImportError = ({ file, onBack, onRetry }: ImportErrorProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -25,10 +24,10 @@ export const ImportError = ({ file, error, onBack, onRetry }: ImportErrorProps) 
 			</div>
 
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button data-testid="SendTransfer__button--back" variant="secondary" onClick={onBack}>
+				<Button data-testid="ImportError__back" variant="secondary" onClick={onBack}>
 					{t("COMMON.BACK_TO_HOME")}
 				</Button>
-				<Button data-testid="--back" onClick={onRetry}>
+				<Button data-testid="ImportError__retry" onClick={onRetry}>
 					{t("COMMON.RETRY")}
 				</Button>
 			</div>

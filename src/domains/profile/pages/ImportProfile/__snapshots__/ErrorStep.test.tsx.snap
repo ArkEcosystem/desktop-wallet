@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Import Profile - Error Step should render 1`] = `
+<div>
+  <div
+    class="mx-auto max-w-xl"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Import Profile
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          An error occurred while importing the profile, try importing again. Select Retry to re-import the profile. If the error occurs again, you can contact our support team.
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-8"
+    >
+      <div
+        class="p-4 border-2 rounded-lg border-theme-secondary-200 dark:border-theme-secondary-800"
+      >
+        <div
+          class="flex items-center justify-between space-x-4"
+        >
+          <div
+            class="flex space-x-4 items-center"
+          >
+            <div
+              class="sc-bdfBwQ fTnhmh"
+              height="40"
+              width="40"
+            >
+              <svg>
+                dwe-file.svg
+              </svg>
+            </div>
+            <div
+              class="font-semibold"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0"
+                data-testid="TruncateMiddle"
+              >
+                filename
+              </span>
+            </div>
+          </div>
+          <div
+            class="rounded-full text-theme-danger-500 bg-theme-danger-200 w-6 h-6 flex justify-center items-center"
+          >
+            <div
+              class="sc-bdfBwQ exFKrJ"
+              height="1em"
+              width="10"
+            >
+              <svg>
+                close.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-end mt-8 space-x-3"
+    >
+      <button
+        class="Button__StyledButton-mdtvtf-0 iUSBMV"
+        data-testid="ImportError__back"
+        type="button"
+      >
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          Back to Home
+        </div>
+      </button>
+      <button
+        class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+        data-testid="ImportError__retry"
+        type="button"
+      >
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          Retry
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

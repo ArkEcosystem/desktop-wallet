@@ -23,15 +23,13 @@ export const ImportProfile = () => {
 	const [selectedFile, setSelectedFile] = useState<ImportFile>();
 	const [password, setPassword] = useState<string>();
 	const [profile, setProfile] = useState<Profile>();
-	const [error, setError] = useState<string>("");
 
 	const handleSelectedFiled = (file: ImportFile) => {
 		setSelectedFile(file);
 		setActiveTab(2);
 	};
 
-	const handleImportError = (errorMessage: string) => {
-		setError(errorMessage);
+	const handleImportError = () => {
 		setActiveTab(10);
 	};
 
@@ -96,7 +94,6 @@ export const ImportProfile = () => {
 							{selectedFile && (
 								<ImportError
 									file={selectedFile}
-									error={error}
 									onRetry={() => handleSelectedFiled(selectedFile)}
 									onBack={() => history.push("/")}
 								/>
