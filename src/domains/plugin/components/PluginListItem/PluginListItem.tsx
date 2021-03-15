@@ -46,7 +46,11 @@ export const PluginListItem = ({
 		const result: DropdownOption[] = [];
 
 		if (plugin.hasUpdateAvailable) {
-			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+			result.push({
+				label: t("COMMON.UPDATE"),
+				value: "update",
+				disabled: plugin.isMinimumVersionSatisfied === false,
+			});
 		}
 
 		if (plugin.isEnabled) {
