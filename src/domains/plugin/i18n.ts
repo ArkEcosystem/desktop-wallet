@@ -76,7 +76,7 @@ export const translations: { [key: string]: any } = {
 		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
 
 		VIEW: {
-			HOME: "Home",
+			LATEST: "Latest",
 			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
