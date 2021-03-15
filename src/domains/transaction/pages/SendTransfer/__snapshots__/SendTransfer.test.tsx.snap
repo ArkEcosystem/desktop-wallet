@@ -424,7 +424,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
@@ -6814,7 +6814,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               role="listbox"
                             >
                               <li
-                                class="inline-block cursor-pointer h-21"
+                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
                                 data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
