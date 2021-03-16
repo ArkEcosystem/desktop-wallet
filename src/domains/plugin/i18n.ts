@@ -1,4 +1,6 @@
 export const translations: { [key: string]: any } = {
+	REQUIRED_VERSION: "Required Version",
+
 	NEW_UPDATES_AVAILABLE: "New updates available",
 	NEW_VERSION_AVAILABLE: "New version available",
 
@@ -47,6 +49,12 @@ export const translations: { [key: string]: any } = {
 		WALLET_TABS: "Allows showing an additional tab/page on the Wallet screen",
 		WEBFRAME: "Allows showing remote URL pages within a frame",
 		WEBSOCKET: "Allows connections to websockets",
+	},
+
+	MODAL_UPDATES_CONFIRMATION: {
+		TITLE: "Plugin Updates",
+		DESCRIPTION:
+			"Some of the plugins cannot be updated as they require a newer version of the Desktop Wallet. Pressing Continue will update plugins that can be updated.",
 	},
 
 	MODAL_UNINSTALL: {

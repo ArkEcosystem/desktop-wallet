@@ -16,6 +16,7 @@ import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
+import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
 import React, { useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -168,6 +169,7 @@ export const PluginManager = () => {
 	const [currentView, setCurrentView] = useState("latest");
 	const [viewType, setViewType] = useState("grid");
 
+	const [updatesConfirmationPlugins, setUpdatesConfirmationPlugins] = useState<any[] | undefined>(undefined);
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
@@ -317,7 +319,17 @@ export const PluginManager = () => {
 		);
 	};
 
+	const onUpdateAll = () => {
+		const notSatisfiedPlugins = allPlugins
+			.map(mapConfigToPluginData.bind(null, activeProfile))
+			.filter((item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied);
+
+		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
+	};
+
 	const handleUpdateAll = async () => {
+		setUpdatesConfirmationPlugins(undefined);
+
 		setIsUpdatingAll(true);
 		const availablePackages = allPlugins
 			.map(mapConfigToPluginData.bind(null, activeProfile))
@@ -408,7 +420,7 @@ export const PluginManager = () => {
 								<UpdateAllBanner
 									hasUpdateAvailableCount={hasUpdateAvailableCount}
 									isUpdatingAll={isUpdatingAll}
-									handleUpdateAll={handleUpdateAll}
+									handleUpdateAll={onUpdateAll}
 								/>
 							)}
 
@@ -433,6 +445,13 @@ export const PluginManager = () => {
 				isOpen={isManualInstallModalOpen}
 				onClose={() => setIsManualInstallModalOpen(false)}
 				onSuccess={handleManualInstall}
+			/>
+
+			<PluginUpdatesConfirmation
+				isOpen={!!updatesConfirmationPlugins}
+				plugins={updatesConfirmationPlugins!}
+				onClose={() => setUpdatesConfirmationPlugins(undefined)}
+				onContinue={handleUpdateAll}
 			/>
 
 			{uninstallSelectedPlugin && (

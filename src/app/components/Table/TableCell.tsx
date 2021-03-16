@@ -9,12 +9,12 @@ type TableCellProps = {
 	innerClassName?: string;
 	isCompact?: boolean;
 	children: React.ReactNode;
-};
+} & React.HTMLProps<any>;
 
 const TableCellInnerWrapper = styled.div<TableCellProps>(getStyles);
 
-export const TableCell = ({ variant, className, innerClassName, isCompact, children }: TableCellProps) => (
-	<td className={className}>
+export const TableCell = ({ variant, className, innerClassName, isCompact, children, ...props }: TableCellProps) => (
+	<td className={className} {...props}>
 		<TableCellInnerWrapper variant={variant} className={innerClassName} isCompact={isCompact}>
 			{children}
 		</TableCellInnerWrapper>
