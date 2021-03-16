@@ -275,6 +275,14 @@ export const PluginManager = () => {
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
 
+	const onUpdateAll = () => {
+		const notSatisfiedPlugins = allPlugins
+			.map(mapConfigToPluginData.bind(null, activeProfile))
+			.filter((item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied);
+
+		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
+	};
+
 	const handleUpdateAll = async () => {
 		setUpdatesConfirmationPlugins(undefined);
 
