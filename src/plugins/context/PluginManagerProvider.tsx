@@ -311,9 +311,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		try {
 			const size = await pluginRegistry.size(pkg);
 			return prettyBytes(size);
-		} catch (e) {
-			console.error(e);
-			return undefined;
+		} catch {
+			/* istanbul ignore next */
+			return;
 		}
 	};
 

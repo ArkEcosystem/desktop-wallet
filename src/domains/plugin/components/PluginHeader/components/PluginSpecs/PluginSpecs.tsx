@@ -1,5 +1,5 @@
 import { Icon } from "app/components/Icon";
-import { Spinner } from "app/components/Spinner";
+import { Skeleton } from "app/components/Skeleton";
 // @ts-ignore
 import extractDomain from "extract-domain";
 import React from "react";
@@ -102,7 +102,13 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size, 
 
 				<GridCol padding="pl-8">
 					<GridItem label={t("COMMON.SIZE")} textDirection="right">
-						{isLoadingSize ? <Spinner size="sm" /> : size || "N/A"}
+						{isLoadingSize ? (
+							<span data-testid="PluginSpecs__size-skeleton">
+								<Skeleton width={60} height={20} className="mt-0.5" />
+							</span>
+						) : (
+							<span data-testid="PluginSpecs__size">{size || "N/A"}</span>
+						)}
 					</GridItem>
 				</GridCol>
 			</div>

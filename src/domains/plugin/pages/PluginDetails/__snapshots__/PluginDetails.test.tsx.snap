@@ -477,7 +477,11 @@ exports[`PluginDetails should render properly 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -994,7 +998,11 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1531,7 +1539,11 @@ exports[`PluginDetails should report plugin 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2050,7 +2062,11 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2600,7 +2616,11 @@ exports[`PluginDetails should update package 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
