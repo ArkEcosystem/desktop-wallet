@@ -49,7 +49,6 @@ export const SendTransfer = () => {
 			remainingBalance: wallet?.balance?.(),
 			recipients: [],
 		},
-		shouldUnregister: false,
 	});
 
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
