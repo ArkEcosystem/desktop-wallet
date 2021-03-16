@@ -42,18 +42,20 @@ type NavigationBarProps = {
 	userActions?: Action[];
 	avatarImage?: string;
 	onUserAction?: any;
+	noBorder?: boolean;
+	noShadow?: boolean;
 };
 
-const NavWrapper = styled.nav<{ noShadow?: boolean; scroll?: number }>`
+const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?: number }>`
 	${defaultStyle}
 
 	${tw`sticky border-b border-theme-background inset-x-0 top-0 bg-theme-background transition-all duration-200`}
 
+	${({ noBorder }) => noBorder ? tw`border-transparent` : tw`border-theme-secondary-300 dark:border-theme-secondary-800`};
+
 	${({ noShadow, scroll }) => {
-		if (!noShadow) {
-			return scroll
-				? tw`shadow-header-smooth dark:shadow-header-smooth-dark`
-				: tw`border-theme-secondary-300 dark:border-theme-secondary-800`;
+		if (!noShadow && scroll) {
+			return tw`shadow-header-smooth dark:shadow-header-smooth-dark`;
 		}
 	}};
 `;
@@ -134,6 +136,8 @@ export const NavigationBar = ({
 	variant,
 	menu,
 	userActions,
+	noBorder,
+	noShadow,
 }: NavigationBarProps) => {
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -194,7 +198,12 @@ export const NavigationBar = ({
 	const scroll = useScroll();
 
 	return (
-		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"} scroll={scroll}>
+		<NavWrapper
+			aria-labelledby="main menu"
+			noBorder={noBorder !== undefined ? noBorder : variant !== "full"}
+			noShadow={noShadow}
+			scroll={scroll}
+		>
 			<div className="flex relative h-21">
 				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
 
