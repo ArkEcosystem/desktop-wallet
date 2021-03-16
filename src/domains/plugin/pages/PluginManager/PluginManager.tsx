@@ -268,17 +268,9 @@ export const PluginManager = () => {
 	}, [currentView, installedPlugins, plugins, filteredPackages]);
 
 	const onUpdateAll = () => {
-		const notSatisfiedPlugins = allPlugins
-			.map(mapConfigToPluginData.bind(null, activeProfile))
-			.filter((item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied);
-
-		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
-	};
-
-	const onUpdateAll = () => {
-		const notSatisfiedPlugins = allPlugins
-			.map(mapConfigToPluginData.bind(null, activeProfile))
-			.filter((item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied);
+		const notSatisfiedPlugins = plugins.filter(
+			(item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied,
+		);
 
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
@@ -287,9 +279,7 @@ export const PluginManager = () => {
 		setUpdatesConfirmationPlugins(undefined);
 
 		setIsUpdatingAll(true);
-		const availablePackages = allPlugins
-			.map(mapConfigToPluginData.bind(null, activeProfile))
-			.filter((pluginData) => pluginData.hasUpdateAvailable);
+		const availablePackages = plugins.filter((pluginData) => pluginData.hasUpdateAvailable);
 
 		const entries = chunk(availablePackages, 2);
 
