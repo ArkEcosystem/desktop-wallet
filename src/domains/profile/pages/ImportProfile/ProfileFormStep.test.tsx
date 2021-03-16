@@ -6,6 +6,7 @@ import electron from "electron";
 import { createMemoryHistory } from "history";
 import os from "os";
 import React from "react";
+import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 let profile: Profile;
 
@@ -134,6 +135,56 @@ describe("Import Profile - Profile Form Step", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should store new profile with password", async () => {
+		const profilesCount = env.profiles().count();
+
+		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<ImportProfileForm env={env} showCurrencyField={true} showThemeToggleField={true} />
+			</EnvironmentProvider>,
+		);
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+
+		// Upload avatar image
+		await act(async () => {
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		const profiles = env.profiles().values();
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "profile2" } });
+		fireEvent.click(container.querySelector("input[name=isDarkMode]"));
+
+		await act(async () => {
+			fireEvent.change(getAllByTestId("Input")[1], { target: { value: "password" } });
+			fireEvent.change(getAllByTestId("Input")[2], { target: { value: "password" } });
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		expect(env.profiles().count()).toBe(profilesCount + 1);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should fail password confirmation", async () => {
 		const emptyProfile = env.profiles().create("test4");
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
@@ -150,7 +201,7 @@ describe("Import Profile - Profile Form Step", () => {
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "asdasdas" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
-		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		fireEvent.change(selectDropdown, { target: { value: "none" } });
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		fireEvent.change(getAllByTestId("Input")[1], { target: { value: "test password" } });
@@ -173,13 +224,16 @@ describe("Import Profile - Profile Form Step", () => {
 
 	it("should update the avatar when removing focus from name input", async () => {
 		const emptyProfile = env.profiles().create("test6");
-		const { asFragment, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const shouldUseDarkColorsSpy = jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(false);
+
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<ImportProfileForm
 					env={env}
 					profile={emptyProfile}
-					showCurrencyField={true}
-					showThemeToggleField={true}
+					showThemeToggleField={false}
+					showCurrencyField={false}
+					shouldValidate
 				/>
 			</EnvironmentProvider>,
 		);
@@ -190,6 +244,14 @@ describe("Import Profile - Profile Form Step", () => {
 
 		await act(async () => {
 			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+		});
+
+		act(() => getAllByTestId("Input")[1].focus());
+
+		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "te" } });
 		});
 
 		act(() => getAllByTestId("Input")[1].focus());
@@ -218,6 +280,22 @@ describe("Import Profile - Profile Form Step", () => {
 
 		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
 
+		// Upload avatar image
+		await act(async () => {
+			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
+		});
+
+		expect(() => getByTestId("SelectProfileImage__avatar")).toBeTruthy();
+
+		act(() => getAllByTestId("Input")[0].focus());
+
+		await act(async () => {
+			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+		});
+
+		act(() => getAllByTestId("Input")[1].focus());
+
 		expect(asFragment()).toMatchSnapshot();
+		shouldUseDarkColorsSpy.mockRestore();
 	});
 });

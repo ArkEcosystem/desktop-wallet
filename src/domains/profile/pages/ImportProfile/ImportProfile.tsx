@@ -81,6 +81,7 @@ export const ImportProfile = () => {
 									env={env}
 									profile={profile}
 									password={password}
+									shouldValidate
 									onSubmit={handleProfileSave}
 									onBack={() => {
 										setPassword(undefined);

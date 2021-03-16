@@ -17,17 +17,6 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { setThemeSource } from "utils/electron-utils";
 
-type ImportProfileFormProps = {
-	file?: ImportFile;
-	profile: Profile;
-	password?: string;
-	env: Environment;
-	showCurrencyField?: boolean;
-	showThemeToggleField?: boolean;
-	onSubmit?: (profile: Profile) => void;
-	onBack?: () => void;
-};
-
 type CreateProfileFormProps = {
 	file?: ImportFile;
 	profile: Profile;
@@ -35,6 +24,7 @@ type CreateProfileFormProps = {
 	env: Environment;
 	showThemeToggleField?: boolean;
 	showCurrencyField?: boolean;
+	shouldValidate?: boolean;
 	onSubmit?: (profile: Profile) => void;
 	onBack?: () => void;
 };
@@ -47,6 +37,7 @@ const CreateProfileForm = ({
 	onBack,
 	showThemeToggleField = true,
 	showCurrencyField = true,
+	shouldValidate = false,
 }: CreateProfileFormProps) => {
 	const { t } = useTranslation();
 
@@ -74,14 +65,20 @@ const CreateProfileForm = ({
 
 	const { name, confirmPassword, isDarkMode, currency } = watch(watchedFields);
 
-	const [avatarImage, setAvatarImage] = useState(profile?.avatar() || "");
+	const [avatarImage, setAvatarImage] = useState(profile?.avatar());
 
 	const { theme } = useTheme();
 	const { createProfile } = useValidation();
 
-	const formattedName = name.trim();
+	const formattedName = name?.trim();
 
-	const isSvg = useMemo(() => avatarImage.endsWith("</svg>"), [avatarImage]);
+	const isSvg = useMemo(() => avatarImage?.endsWith("</svg>"), [avatarImage]);
+
+	useEffect(() => {
+		if (shouldValidate) {
+			trigger();
+		}
+	}, [shouldValidate]);
 
 	useEffect(() => {
 		if (!formattedName && isSvg) {
@@ -120,10 +117,7 @@ const CreateProfileForm = ({
 		profile.settings().set(ProfileSetting.Name, name);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		profile.settings().set(ProfileSetting.Avatar, avatarImage);
-
-		if (currency) {
-			profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		}
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 
 		if (enteredPassword) {
 			profile.auth().setPassword(enteredPassword);
@@ -144,8 +138,8 @@ const CreateProfileForm = ({
 									<InputDefault
 										ref={register(createProfile.name())}
 										onBlur={() => {
-											if (!avatarImage || isSvg) {
-												setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
+											if (!avatarImage?.length || isSvg) {
+												setAvatarImage(AvatarSDK.make(formattedName));
 											}
 										}}
 									/>
@@ -233,9 +227,10 @@ export const ImportProfileForm = ({
 	onBack,
 	file,
 	password,
-	showThemeToggleField = false,
-	showCurrencyField = false,
-}: ImportProfileFormProps) => {
+	showThemeToggleField,
+	showCurrencyField,
+	shouldValidate,
+}: CreateProfileFormProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -250,6 +245,7 @@ export const ImportProfileForm = ({
 				<Divider />
 
 				<CreateProfileForm
+					shouldValidate={shouldValidate}
 					showThemeToggleField={showThemeToggleField}
 					showCurrencyField={showCurrencyField}
 					profile={profile}
