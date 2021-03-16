@@ -1,7 +1,10 @@
 import { Alert } from "app/components/Alert";
 import { Slider } from "app/components/Slider";
-import React from "react";
+import { TruncateEnd } from "app/components/TruncateEnd";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+
+import { PluginPermissionsModal } from "../PluginPermissionsModal/PluginPermissionsModal";
 
 type Props = {
 	description?: string;
@@ -13,6 +16,10 @@ type Props = {
 export const PluginInfo = ({ description, permissions, images, minimumVersion }: Props) => {
 	const { t } = useTranslation();
 	const hasRequirements = !!minimumVersion;
+	const [showPermissionsModal, setShowPermissionsModal] = useState(false);
+	const permissionsString = permissions
+		.map((permission: string) => t(`PLUGINS.PERMISSIONS.${permission}`))
+		.join(", ");
 
 	return (
 		<>
@@ -28,9 +35,20 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 			{permissions.length ? (
 				<div className="mt-8">
 					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.PERMISSIONS")}</p>
-					<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__permissions">
-						{permissions.join(", ")}
-					</p>
+					<div className="mt-3 inline-flex items-baseline space-x-2">
+						<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__permissions">
+							<TruncateEnd maxChars={50} showTooltip={false} text={permissionsString} />
+						</p>
+						{permissionsString.length > 50 ? (
+							<button
+								data-testid="plugin-info__view-permissions"
+								onClick={() => setShowPermissionsModal(true)}
+								className="link"
+							>
+								{t("COMMON.VIEW_ALL_DETAILS")}
+							</button>
+						) : null}
+					</div>
 				</div>
 			) : null}
 
@@ -89,6 +107,12 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 					By installing it on your wallet, you assume every responsibility
 				</Alert>
 			</div>
+
+			<PluginPermissionsModal
+				permissions={permissions}
+				isOpen={showPermissionsModal}
+				onClose={() => setShowPermissionsModal(false)}
+			/>
 		</>
 	);
 };
