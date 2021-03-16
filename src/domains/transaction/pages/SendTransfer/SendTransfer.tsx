@@ -68,6 +68,7 @@ export const SendTransfer = () => {
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
+		register("fees");
 		register("fee", common.fee(remainingBalance, wallet?.network?.()));
 		register("smartbridge", sendTransfer.smartbridge());
 
