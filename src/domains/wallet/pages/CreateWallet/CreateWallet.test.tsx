@@ -4,6 +4,7 @@ import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { toasts } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
+import { translations as walletTranslations } from "domains/wallet/i18n";
 import electron from "electron";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -16,6 +17,7 @@ import {
 	getDefaultProfileId,
 	render,
 	renderWithRouter,
+	screen,
 	waitFor,
 } from "utils/testing-library";
 
@@ -132,7 +134,7 @@ describe("CreateWallet", () => {
 			navigator.clipboard = { writeText: writeTextMock };
 
 			act(() => {
-				fireEvent.click(getByTestId(`CreateWallet__copy`));
+				fireEvent.click(getByTestId("CreateWallet__copy"));
 			});
 
 			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
@@ -166,7 +168,7 @@ describe("CreateWallet", () => {
 			);
 
 			await act(async () => {
-				fireEvent.click(getByTestId(`CreateWallet__download`));
+				fireEvent.click(getByTestId("CreateWallet__download"));
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
@@ -198,7 +200,7 @@ describe("CreateWallet", () => {
 			);
 
 			await act(async () => {
-				fireEvent.click(getByTestId(`CreateWallet__download`));
+				fireEvent.click(getByTestId("CreateWallet__download"));
 			});
 
 			expect(toastSpy).not.toHaveBeenCalled();
@@ -230,7 +232,7 @@ describe("CreateWallet", () => {
 			);
 
 			await act(async () => {
-				fireEvent.click(getByTestId(`CreateWallet__download`));
+				fireEvent.click(getByTestId("CreateWallet__download"));
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
@@ -340,44 +342,46 @@ describe("CreateWallet", () => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
+
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
 		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
 
-		act(() => {
-			fireEvent.click(continueButton);
-		});
-
-		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__second-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(backButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__second-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__third-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(backButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__second-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__third-step")).toBeTruthy());
 
 		const walletMnemonic = passphrase.split(" ");
 		for (let i = 0; i < 3; i++) {
@@ -396,27 +400,27 @@ describe("CreateWallet", () => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(backButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__third-step")).toBeTruthy());
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 		act(() => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy());
 
 		act(() => {
 			if (alias) {
 				fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: alias } });
 			}
 
-			fireEvent.click(getByTestId(`CreateWallet__save-button`));
+			fireEvent.click(getByTestId("CreateWallet__save-button"));
 		});
 
 		const wallet = profile.wallets().first();
@@ -484,19 +488,19 @@ describe("CreateWallet", () => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__second-step")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId(`CreateWallet__back-button`));
+			fireEvent.click(getByTestId("CreateWallet__back-button"));
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__second-step")).toBeTruthy());
 
 		act(() => {
 			history.push("/");
@@ -504,6 +508,50 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show an error message if wallet generation failed", async () => {
+		const walletSpy = jest.spyOn(profile.wallets(), "generate").mockRejectedValue(new Error("failed"));
+
+		const history = createMemoryHistory();
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
+		history.push(createURL);
+
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
+			{
+				routes: [createURL, "/"],
+				history,
+			},
+		);
+		await waitFor(() => expect(screen.getByTestId("CreateWallet__first-step")).toBeTruthy());
+
+		const selectNetworkInput = screen.getByTestId("SelectNetworkInput__input");
+
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		const continueButton = screen.getByTestId("CreateWallet__continue-button");
+
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
+		await waitFor(() =>
+			expect(
+				screen.getByText(walletTranslations.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.GENERATION_ERROR),
+			).toBeTruthy(),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+
+		walletSpy.mockRestore();
 	});
 
 	it("should show an error message for duplicate name", async () => {
@@ -553,13 +601,13 @@ describe("CreateWallet", () => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__second-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__third-step")).toBeTruthy());
 
 		const walletMnemonic = passphrase.split(" ");
 		for (let i = 0; i < 3; i++) {
@@ -578,7 +626,7 @@ describe("CreateWallet", () => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy());
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
 		expect(walletNameInput).toBeTruthy();
