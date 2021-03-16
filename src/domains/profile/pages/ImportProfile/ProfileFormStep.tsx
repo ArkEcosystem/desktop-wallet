@@ -78,7 +78,7 @@ const CreateProfileForm = ({
 		if (shouldValidate) {
 			trigger();
 		}
-	}, [shouldValidate]);
+	}, [shouldValidate, trigger]);
 
 	useEffect(() => {
 		if (!formattedName && isSvg) {
