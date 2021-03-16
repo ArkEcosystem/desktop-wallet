@@ -21,6 +21,7 @@ type Props = {
 	isOfficial?: boolean;
 	isEnabled?: boolean;
 	hasUpdateAvailable?: boolean;
+	isMinimumVersionSatisfied?: boolean;
 	onReport?: () => void;
 	onInstall?: () => void;
 	hasLaunch?: boolean;
@@ -49,7 +50,11 @@ export const PluginHeader = ({
 		const result: DropdownOption[] = [];
 
 		if (props.hasUpdateAvailable) {
-			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+			result.push({
+				label: t("COMMON.UPDATE"),
+				value: "update",
+				disabled: props.isMinimumVersionSatisfied === false,
+			});
 		}
 
 		if (props.isEnabled) {
