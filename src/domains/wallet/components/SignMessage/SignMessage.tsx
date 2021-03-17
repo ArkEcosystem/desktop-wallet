@@ -25,8 +25,6 @@ type SignMessageProps = {
 	onCancel?: () => void;
 };
 
-type SignedMessageProps = { message: string; signatory: string; signature: string };
-
 const initialState: SignedMessage = {
 	message: "",
 	signatory: "",
@@ -136,7 +134,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 					</TabPanel>
 
 					<TabPanel tabId="signed">
-						<SignedStep signedMessage={signedMessage} />
+						<SignedStep signedMessage={signedMessage} wallet={wallet} />
 					</TabPanel>
 
 					{activeTab === "form" && (
