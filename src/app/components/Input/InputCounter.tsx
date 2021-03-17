@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React, { useState } from "react";
 
 import { useFormField } from "../Form/useFormField";
@@ -7,7 +8,6 @@ type Props = {
 	maxLength?: number;
 	maxLengthLabel?: string;
 	defaultValue?: string;
-	errorClassName?: string;
 } & React.InputHTMLAttributes<any>;
 
 export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
@@ -22,7 +22,6 @@ export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Pr
 	return (
 		<Input
 			data-testid="InputCounter__input"
-			className={fieldContext?.isInvalid ? "pr-28" : "pr-18"}
 			ref={ref}
 			{...props}
 			onChange={handleChange}
@@ -30,7 +29,9 @@ export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Pr
 				end: (
 					<span
 						data-testid="InputCounter__counter"
-						className="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+						className={cn("font-semibold text-sm", {
+							"text-theme-secondary-500 dark:text-theme-secondary-700": !fieldContext?.isInvalid,
+						})}
 					>
 						{length}/{props.maxLengthLabel}
 					</span>

@@ -239,7 +239,7 @@ export const AddRecipient = ({
 		!errors.amount && isSingle && isSenderFilled
 			? {
 					end: (
-						<span className="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+						<span className="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
 						</span>
 					),

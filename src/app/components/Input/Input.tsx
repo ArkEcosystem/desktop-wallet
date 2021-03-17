@@ -11,8 +11,9 @@ type InputProps = {
 	isInvalid?: boolean;
 	isFocused?: boolean;
 	hideInputValue?: boolean;
+	suggestion?: string;
 	errorMessage?: string;
-	// errorClassName?: string;
+	innerClassName?: string;
 	addons?: any;
 } & React.HTMLProps<any>;
 
@@ -21,7 +22,7 @@ export const InputWrapperStyled = styled.div<{ disabled?: boolean; invalid?: boo
 
 	${({ disabled, invalid }) => {
 		if (disabled) {
-			return tw`border-theme-secondary-300 dark:border-theme-secondary-700`;
+			return tw`border-theme-secondary-300 dark:border-theme-secondary-700 bg-theme-secondary-100 dark:bg-theme-secondary-800`;
 		}
 
 		if (invalid) {
@@ -48,7 +49,18 @@ type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
 	(
-		{ isInvalid, className, isFocused, errorMessage, addons, disabled, hideInputValue, ...props }: InputProps,
+		{
+			isInvalid,
+			className,
+			innerClassName,
+			isFocused,
+			errorMessage,
+			addons,
+			disabled,
+			suggestion,
+			hideInputValue,
+			...props
+		}: InputProps,
 		ref,
 	) => {
 		const fieldContext = useFormField();
@@ -85,23 +97,38 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 				<InputWrapperStyled className={className} disabled={disabled} invalid={isInvalidValue}>
 					{addons?.start !== undefined && addons.start}
 
-					<InputStyled
-						data-testid="Input"
-						className={cn("flex-1 p-0 border-none bg-transparent focus:ring-0 no-ligatures", {
-							"text-transparent": hideInputValue,
-							"text-theme-secondary-text": !hideInputValue && disabled,
-						})}
-						name={fieldContext?.name}
-						aria-invalid={isInvalidValue}
-						disabled={disabled}
-						ref={ref}
-						{...props}
-					/>
+					<div className={cn("relative flex flex-1", { invisible: hideInputValue })}>
+						<InputStyled
+							data-testid="Input"
+							className={cn(
+								"p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full",
+								innerClassName,
+								{ "text-theme-secondary-text": disabled },
+							)}
+							name={fieldContext?.name}
+							aria-invalid={isInvalidValue}
+							disabled={disabled}
+							ref={ref}
+							{...props}
+						/>
+
+						{suggestion && (
+							<span
+								data-testid="SelectDropdownInput__suggestion"
+								className={cn(
+									"absolute top-0 flex items-center font-normal opacity-50 pointer-events-none",
+									innerClassName,
+								)}
+							>
+								{suggestion}
+							</span>
+						)}
+					</div>
 
 					{(isInvalidValue || addons?.end) && (
 						<div
 							className={cn(
-								"flex items-center space-x-2 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800",
+								"flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800",
 								{
 									"text-theme-danger-500": isInvalidValue,
 									"text-theme-primary-300 dark:text-theme-secondary-600": !isInvalidValue,
@@ -121,7 +148,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 								</Tooltip>
 							)}
 
-							{addons?.end && <div className={cn({ "pl-2": isInvalidValue })}>{addons.end}</div>}
+							{addons?.end && <div className={cn({ "pl-3": isInvalidValue })}>{addons.end}</div>}
 						</div>
 					)}
 				</InputWrapperStyled>

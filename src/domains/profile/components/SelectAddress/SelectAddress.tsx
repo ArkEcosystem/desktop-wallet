@@ -52,15 +52,10 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 
 		return (
 			<>
-				{/*
-					data-testid="SelectAddress__wrapper"
-					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
-					type="button"
-					 */}
 				<div className="relative">
 					<button
 						type="button"
-						className="absolute inset-0 flex items-center ml-px px-14 w-full"
+						className="absolute inset-0 flex items-center border border-transparent px-14 w-full"
 						onClick={() => setSearchWalletIsOpen(true)}
 						disabled={disabled}
 					>

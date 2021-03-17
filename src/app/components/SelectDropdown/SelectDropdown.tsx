@@ -1,6 +1,6 @@
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonEnd } from "app/components/Input";
+import { Input } from "app/components/Input";
 import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
 import cn from "classnames";
 import { useCombobox } from "downshift";
@@ -132,7 +132,7 @@ const SelectDropdown = ({
 		selectItem(defaultSelectedItem || null);
 	}, [defaultSelectedItem, selectItem]);
 
-	const inputTypeAhead = useMemo(() => {
+	const suggestion = useMemo(() => {
 		const firstMatch = options.find((option) => isMatch(inputValue, option));
 		if (inputValue && firstMatch) {
 			return [inputValue, firstMatch.label.slice(inputValue.length)].join("");
@@ -141,12 +141,28 @@ const SelectDropdown = ({
 
 	const data = isTyping && inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
 
+	if (showCaret && !addons?.end) {
+		addons = {
+			...addons,
+			end: (
+				<span className="w-10 pointer-events-none text-theme-secondary-500">
+					<Icon
+						name="CaretDown"
+						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+						width={7}
+						height={5}
+					/>
+				</span>
+			),
+		};
+	}
+
 	return (
 		<div className="relative w-full">
 			<div {...getComboboxProps()}>
 				<label {...getLabelProps()} />
 				<SelectDropdownInput
-					suggestion={inputTypeAhead}
+					suggestion={suggestion}
 					disabled={disabled}
 					addons={addons}
 					{...getInputProps({
@@ -222,17 +238,6 @@ const SelectDropdown = ({
 						))}
 				</SelectOptionsList>
 			</div>
-
-			{showCaret && (
-				<InputAddonEnd className="w-10 pointer-events-none text-theme-secondary-500">
-					<Icon
-						name="CaretDown"
-						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-						width={7}
-						height={5}
-					/>
-				</InputAddonEnd>
-			)}
 		</div>
 	);
 };
