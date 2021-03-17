@@ -80,6 +80,8 @@ export const translations: { [key: string]: any } = {
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address",
+			GENERATION_ERROR:
+				"An error occurred while creating your new address, please try again. If the error persists, kindly get in touch with our support team.",
 		},
 
 		PASSPHRASE_STEP: {
