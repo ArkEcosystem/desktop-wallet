@@ -55,7 +55,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-26"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               value=""
@@ -129,7 +129,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-26"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               value=""
@@ -183,37 +183,6 @@ exports[`ReceiveFundsForm should not show smartbridge if is not supported by net
             />
           </div>
         </fieldset>
-        <div
-          class="mt-8"
-          data-testid="ReceiveFundsForm__smartbridge-warning"
-        >
-          <div
-            class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
-          >
-            <div
-              class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
-            >
-              <div
-                class="sc-bdfBwQ hteSKx"
-                height="1.25em"
-                width="1.25em"
-              >
-                <svg>
-                  alert-warning.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col"
-            >
-              <p
-                class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
-              >
-                Please note that you have exceeded the number of characters allowed, anything over 255 characters will not appear in smartbridges.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </form>
@@ -275,7 +244,7 @@ exports[`ReceiveFundsForm should render 1`] = `
             class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-26"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               value=""
@@ -288,111 +257,6 @@ exports[`ReceiveFundsForm should render 1`] = `
             </div>
           </div>
         </fieldset>
-      </div>
-    </div>
-  </form>
-</DocumentFragment>
-`;
-
-exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`] = `
-<DocumentFragment>
-  <form
-    class="space-y-8"
-    data-testid="Form"
-  >
-    <div
-      data-testid="ReceiveFundsForm"
-    >
-      <div
-        class="mt-8 space-y-8"
-      >
-        <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-        >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="amount"
-          >
-            Amount
-          </label>
-          <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="ReceiveFundsForm__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
-          </div>
-        </fieldset>
-        <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-        >
-          <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-            data-testid="FormLabel"
-            for="smartbridge"
-          >
-            Smartbridge
-            <span
-              class="ml-1 text-theme-secondary-text"
-              data-testid="FormLabel__optional"
-            >
-              (optional)
-            </span>
-          </label>
-          <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-          >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-26"
-              data-testid="ReceiveFundsForm__smartbridge"
-              name="smartbridge"
-              value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            />
-            <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO pl-2 text-sm pointer-events-none text-theme-secondary-500 pr-2"
-              data-testid="InputCounter__counter"
-            >
-              256/255
-            </div>
-          </div>
-        </fieldset>
-        <div
-          class="mt-8"
-          data-testid="ReceiveFundsForm__smartbridge-warning"
-        >
-          <div
-            class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
-          >
-            <div
-              class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
-            >
-              <div
-                class="sc-bdfBwQ hteSKx"
-                height="1.25em"
-                width="1.25em"
-              >
-                <svg>
-                  alert-warning.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col"
-            >
-              <p
-                class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
-              >
-                Please note that you have exceeded the number of characters allowed, anything over 255 characters will not appear in smartbridges.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </form>

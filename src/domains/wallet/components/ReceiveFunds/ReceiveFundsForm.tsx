@@ -1,5 +1,4 @@
 import { FeatureFlag, Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Alert } from "app/components/Alert";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
 import { useValidation } from "app/hooks";
@@ -43,17 +42,10 @@ export const ReceiveFundsForm = ({ network }: { network?: Network }) => {
 						<InputCounter
 							ref={register(receiveFunds.smartbridge())}
 							data-testid="ReceiveFundsForm__smartbridge"
-							className="pr-26"
 							defaultValue={smartbridge}
 							maxLengthLabel={maxLength.toString()}
 						/>
 					</FormField>
-				)}
-
-				{smartbridge?.length > maxLength && (
-					<div className="mt-8" data-testid="ReceiveFundsForm__smartbridge-warning">
-						<Alert variant="warning">{t("WALLETS.MODAL_RECEIVE_FUNDS.WARNING", { maxLength })}</Alert>
-					</div>
 				)}
 			</div>
 		</div>
