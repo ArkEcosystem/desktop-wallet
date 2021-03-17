@@ -80,28 +80,27 @@ exports[`CreatePeer should render create peer modal 1`] = `
                     id="CustomPeers__network-label"
                   />
                   <div
-                    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                    data-testid="SelectNetworkInput"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
                     <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
+                      class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                      data-testid="SelectNetworkInput__network"
+                    />
+                    <div
+                      class="relative flex flex-1"
                     >
-                      <div
-                        class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
-                        data-testid="SelectNetworkInput__network"
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="CustomPeers__network-menu"
+                        aria-labelledby="CustomPeers__network-label"
+                        autocomplete="off"
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="SelectNetworkInput__input"
+                        id="CustomPeers__network-input"
+                        placeholder="Enter a cryptoasset name"
+                        value=""
                       />
                     </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-controls="CustomPeers__network-menu"
-                      aria-labelledby="CustomPeers__network-label"
-                      autocomplete="off"
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
-                      data-testid="SelectNetworkInput__input"
-                      id="CustomPeers__network-input"
-                      placeholder="Enter a cryptoasset name"
-                      value=""
-                    />
                   </div>
                 </div>
                 <div
@@ -300,14 +299,18 @@ exports[`CreatePeer should render create peer modal 1`] = `
                 />
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
               >
-                <input
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="PeerForm__name-input"
-                  name="name"
-                  value=""
-                />
+                <div
+                  class="relative flex flex-1"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    data-testid="PeerForm__name-input"
+                    name="name"
+                    value=""
+                  />
+                </div>
               </div>
             </fieldset>
             <fieldset
@@ -325,14 +328,18 @@ exports[`CreatePeer should render create peer modal 1`] = `
                 />
               </label>
               <div
-                class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
               >
-                <input
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="PeerForm__host-input"
-                  name="host"
-                  value=""
-                />
+                <div
+                  class="relative flex flex-1"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    data-testid="PeerForm__host-input"
+                    name="host"
+                    value=""
+                  />
+                </div>
               </div>
             </fieldset>
             <fieldset

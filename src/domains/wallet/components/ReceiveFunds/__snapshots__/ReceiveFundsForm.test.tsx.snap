@@ -23,16 +23,20 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             Amount
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="ReceiveFundsForm__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value="10"
-            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__amount"
+                name="amount"
+                placeholder="Amount"
+                type="text"
+                value="10"
+              />
+            </div>
           </div>
         </fieldset>
         <fieldset
@@ -52,19 +56,31 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             </span>
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-24"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-24"
-              data-testid="ReceiveFundsForm__smartbridge"
-              name="smartbridge"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO pl-2 text-sm pointer-events-none text-theme-secondary-500 pr-2"
-              data-testid="InputCounter__counter"
+              class="relative flex flex-1"
             >
-              0/255
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__smartbridge"
+                name="smartbridge"
+                value=""
+              />
+            </div>
+            <div
+              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            >
+              <div
+                class=""
+              >
+                <span
+                  class="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  data-testid="InputCounter__counter"
+                >
+                  0/255
+                </span>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -97,16 +113,20 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             Amount
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="ReceiveFundsForm__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__amount"
+                name="amount"
+                placeholder="Amount"
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </fieldset>
         <fieldset
@@ -126,19 +146,31 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             </span>
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-24"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-24"
-              data-testid="ReceiveFundsForm__smartbridge"
-              name="smartbridge"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO pl-2 text-sm pointer-events-none text-theme-secondary-500 pr-2"
-              data-testid="InputCounter__counter"
+              class="relative flex flex-1"
             >
-              4/255
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__smartbridge"
+                name="smartbridge"
+                value=""
+              />
+            </div>
+            <div
+              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            >
+              <div
+                class=""
+              >
+                <span
+                  class="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  data-testid="InputCounter__counter"
+                >
+                  4/255
+                </span>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -171,16 +203,20 @@ exports[`ReceiveFundsForm should not show smartbridge if is not supported by net
             Amount
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="ReceiveFundsForm__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__amount"
+                name="amount"
+                placeholder="Amount"
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </fieldset>
         <div
@@ -243,16 +279,20 @@ exports[`ReceiveFundsForm should render 1`] = `
             Amount
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="ReceiveFundsForm__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__amount"
+                name="amount"
+                placeholder="Amount"
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </fieldset>
         <fieldset
@@ -272,19 +312,31 @@ exports[`ReceiveFundsForm should render 1`] = `
             </span>
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-24"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-24"
-              data-testid="ReceiveFundsForm__smartbridge"
-              name="smartbridge"
-              value=""
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO pl-2 text-sm pointer-events-none text-theme-secondary-500 pr-2"
-              data-testid="InputCounter__counter"
+              class="relative flex flex-1"
             >
-              0/255
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__smartbridge"
+                name="smartbridge"
+                value=""
+              />
+            </div>
+            <div
+              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            >
+              <div
+                class=""
+              >
+                <span
+                  class="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  data-testid="InputCounter__counter"
+                >
+                  0/255
+                </span>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -317,16 +369,20 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
             Amount
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-              data-testid="ReceiveFundsForm__amount"
-              name="amount"
-              placeholder="Amount"
-              type="text"
-              value=""
-            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__amount"
+                name="amount"
+                placeholder="Amount"
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </fieldset>
         <fieldset
@@ -346,19 +402,31 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
             </span>
           </label>
           <div
-            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-24"
           >
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-24"
-              data-testid="ReceiveFundsForm__smartbridge"
-              name="smartbridge"
-              value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-            />
             <div
-              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO pl-2 text-sm pointer-events-none text-theme-secondary-500 pr-2"
-              data-testid="InputCounter__counter"
+              class="relative flex flex-1"
             >
-              256/255
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="ReceiveFundsForm__smartbridge"
+                name="smartbridge"
+                value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              />
+            </div>
+            <div
+              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            >
+              <div
+                class=""
+              >
+                <span
+                  class="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                  data-testid="InputCounter__counter"
+                >
+                  256/255
+                </span>
+              </div>
             </div>
           </div>
         </fieldset>

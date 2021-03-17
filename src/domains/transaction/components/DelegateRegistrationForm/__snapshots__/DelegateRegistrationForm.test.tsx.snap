@@ -131,17 +131,21 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
               />
             </label>
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
             >
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                data-testid="Input__username"
-                name="username"
-                value="thisisaveryveryverylongdelegatename"
-              />
               <div
-                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                class="relative flex flex-1"
+              >
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="Input__username"
+                  name="username"
+                  value="thisisaveryveryverylongdelegatename"
+                />
+              </div>
+              <div
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
               >
                 <span
                   data-errortext="'Delegate Name' should have at most 20 characters"
@@ -182,45 +186,18 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                    data-testid="InputCurrency"
-                    name="fee"
-                    type="text"
-                    value="2"
-                  />
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
-                    >
-                      <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
-                      >
-                        <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
                 </div>
               </div>
@@ -398,14 +375,18 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               />
             </label>
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
             >
-              <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                data-testid="Input__username"
-                name="username"
-                value=""
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="Input__username"
+                  name="username"
+                  value=""
+                />
+              </div>
             </div>
           </fieldset>
           <fieldset
@@ -430,45 +411,18 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                    data-testid="InputCurrency"
-                    name="fee"
-                    type="text"
-                    value="2"
-                  />
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
-                    >
-                      <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
-                      >
-                        <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
                 </div>
               </div>
@@ -868,14 +822,18 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               />
             </label>
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
             >
-              <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                data-testid="Input__username"
-                name="username"
-                value=""
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="Input__username"
+                  name="username"
+                  value=""
+                />
+              </div>
             </div>
           </fieldset>
           <fieldset
@@ -900,45 +858,18 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                    data-testid="InputCurrency"
-                    name="fee"
-                    type="text"
-                    value="10"
-                  />
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
-                    >
-                      <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
-                      >
-                        <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="10"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="10"
+                    />
                   </div>
                 </div>
               </div>
@@ -1116,14 +1047,18 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               />
             </label>
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
             >
-              <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                data-testid="Input__username"
-                name="username"
-                value="test_delegate"
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="Input__username"
+                  name="username"
+                  value="test_delegate"
+                />
+              </div>
             </div>
           </fieldset>
           <fieldset
@@ -1148,45 +1083,18 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                    data-testid="InputCurrency"
-                    name="fee"
-                    type="text"
-                    value="2"
-                  />
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
-                    >
-                      <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
-                      >
-                        <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
                 </div>
               </div>
@@ -1364,17 +1272,21 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
               />
             </label>
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
             >
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                data-testid="Input__username"
-                name="username"
-                value="arkx"
-              />
               <div
-                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                class="relative flex flex-1"
+              >
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="Input__username"
+                  name="username"
+                  value="arkx"
+                />
+              </div>
+              <div
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
               >
                 <span
                   data-errortext="'Delegate Name' already exists"
@@ -1415,45 +1327,18 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 class="flex-1"
               >
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                    data-testid="InputCurrency"
-                    name="fee"
-                    type="text"
-                    value="2"
-                  />
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
-                    >
-                      <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
-                      >
-                        <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
                 </div>
               </div>
@@ -1631,17 +1516,21 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
               />
             </label>
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
             >
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                data-testid="Input__username"
-                name="username"
-                value="<invalid>"
-              />
               <div
-                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                class="relative flex flex-1"
+              >
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="Input__username"
+                  name="username"
+                  value="<invalid>"
+                />
+              </div>
+              <div
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
               >
                 <span
                   data-errortext="The following characters are not allowed: '<', '>'"
@@ -1682,45 +1571,18 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 class="flex-1"
               >
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                    data-testid="InputCurrency"
-                    name="fee"
-                    type="text"
-                    value="2"
-                  />
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
-                    >
-                      <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
-                      >
-                        <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
                 </div>
               </div>

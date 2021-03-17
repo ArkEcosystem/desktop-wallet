@@ -82,7 +82,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -102,13 +102,17 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -169,18 +173,21 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                     >
-                      <input
-                        aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          aria-invalid="true"
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                       >
                         <span
                           data-errortext="'Password' should have at least 6 characters"
@@ -196,25 +203,25 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </svg>
                           </div>
                         </span>
-                      </div>
-                      <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
-                      >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <div
+                          class="pl-3"
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -233,18 +240,21 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                     >
-                      <input
-                        aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          aria-invalid="true"
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                       >
                         <span
                           data-errortext="Passwords do not match"
@@ -260,25 +270,25 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </svg>
                           </div>
                         </span>
-                      </div>
-                      <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
-                      >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <div
+                          class="pl-3"
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -299,13 +309,21 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -320,32 +338,56 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             id="downshift-119-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-119-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-119-menu"
-                              aria-labelledby="downshift-119-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-118-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-119-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-119-menu"
+                                aria-labelledby="downshift-119-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-118-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-119-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-119-menu"
                             role="listbox"
                           >
@@ -585,19 +627,6 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             </li>
                           </ul>
                         </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -781,7 +810,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -801,16 +830,20 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                         >
-                          <input
-                            aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                            data-testid="Input"
-                            name="name"
-                          />
                           <div
-                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              aria-invalid="true"
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
+                          <div
+                            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                           >
                             <span
                               data-errortext="A profile with this name already exists"
@@ -887,33 +920,40 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -934,33 +974,40 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -981,13 +1028,21 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -1002,32 +1057,56 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             id="downshift-47-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-47-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-47-menu"
-                              aria-labelledby="downshift-47-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-46-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-47-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-47-menu"
+                                aria-labelledby="downshift-47-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-46-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-47-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-47-menu"
                             role="listbox"
                           >
@@ -1267,19 +1346,6 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             </li>
                           </ul>
                         </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -1463,7 +1529,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -1483,16 +1549,20 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                         >
-                          <input
-                            aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                            data-testid="Input"
-                            name="name"
-                          />
                           <div
-                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              aria-invalid="true"
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
+                          <div
+                            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                           >
                             <span
                               data-errortext="'Name' should have at most 42 characters"
@@ -1569,33 +1639,40 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -1616,33 +1693,40 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -1663,13 +1747,21 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -1684,32 +1776,56 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             id="downshift-69-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-69-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-69-menu"
-                              aria-labelledby="downshift-69-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-68-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-69-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-69-menu"
+                                aria-labelledby="downshift-69-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-68-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-69-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-69-menu"
                             role="listbox"
                           >
@@ -1949,19 +2065,6 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             </li>
                           </ul>
                         </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -2145,7 +2248,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -2165,16 +2268,20 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                         >
-                          <input
-                            aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                            data-testid="Input"
-                            name="name"
-                          />
                           <div
-                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              aria-invalid="true"
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
+                          <div
+                            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                           >
                             <span
                               data-errortext="'Name' is required"
@@ -2271,33 +2378,40 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -2318,33 +2432,40 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -2365,13 +2486,21 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value=""
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value=""
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -2386,41 +2515,52 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             id="downshift-175-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <input
-                              aria-autocomplete="list"
-                              aria-controls="downshift-175-menu"
-                              aria-labelledby="downshift-175-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-174-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value=""
-                            />
+                            <div
+                              class="relative flex flex-1"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-175-menu"
+                                aria-labelledby="downshift-175-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-174-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-175-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA"
                             id="downshift-175-menu"
                             role="listbox"
                           />
-                        </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform "
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -2605,7 +2745,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -2625,13 +2765,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -2692,33 +2836,40 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -2739,33 +2890,40 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -2786,13 +2944,21 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -2807,32 +2973,56 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             id="downshift-219-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-219-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-219-menu"
-                              aria-labelledby="downshift-219-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-218-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-219-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-219-menu"
+                                aria-labelledby="downshift-219-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-218-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-219-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-219-menu"
                             role="listbox"
                           >
@@ -3072,19 +3262,6 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             </li>
                           </ul>
                         </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -3267,7 +3444,7 @@ exports[`CreateProfile should render 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -3287,13 +3464,17 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -3354,33 +3535,40 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -3401,33 +3589,40 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -3448,13 +3643,21 @@ exports[`CreateProfile should render 1`] = `
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value=""
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value=""
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -3469,41 +3672,52 @@ exports[`CreateProfile should render 1`] = `
                             id="downshift-1-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <input
-                              aria-autocomplete="list"
-                              aria-controls="downshift-1-menu"
-                              aria-labelledby="downshift-1-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-0-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value=""
-                            />
+                            <div
+                              class="relative flex flex-1"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-1-menu"
+                                aria-labelledby="downshift-1-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-0-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-1-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA"
                             id="downshift-1-menu"
                             role="listbox"
                           />
-                        </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform "
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -3688,7 +3902,7 @@ exports[`CreateProfile should store profile 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -3708,13 +3922,17 @@ exports[`CreateProfile should store profile 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -3795,33 +4013,40 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -3842,33 +4067,40 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -3889,13 +4121,21 @@ exports[`CreateProfile should store profile 1`] = `
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -3910,32 +4150,56 @@ exports[`CreateProfile should store profile 1`] = `
                             id="downshift-9-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-9-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-9-menu"
-                              aria-labelledby="downshift-9-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-8-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-9-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-9-menu"
+                                aria-labelledby="downshift-9-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-8-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-9-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-9-menu"
                             role="listbox"
                           >
@@ -4175,19 +4439,6 @@ exports[`CreateProfile should store profile 1`] = `
                             </li>
                           </ul>
                         </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -4370,7 +4621,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -4390,13 +4641,17 @@ exports[`CreateProfile should store profile with password 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -4457,33 +4712,40 @@ exports[`CreateProfile should store profile with password 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -4502,33 +4764,40 @@ exports[`CreateProfile should store profile with password 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -4549,13 +4818,21 @@ exports[`CreateProfile should store profile with password 1`] = `
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -4570,32 +4847,56 @@ exports[`CreateProfile should store profile with password 1`] = `
                             id="downshift-91-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-91-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-91-menu"
-                              aria-labelledby="downshift-91-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-90-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-91-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-91-menu"
+                                aria-labelledby="downshift-91-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-90-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-91-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-91-menu"
                             role="listbox"
                           >
@@ -4835,19 +5136,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                             </li>
                           </ul>
                         </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -5030,7 +5318,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -5050,13 +5338,17 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -5123,33 +5415,40 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -5170,33 +5469,40 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -5217,13 +5523,21 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value=""
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value=""
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -5238,41 +5552,52 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             id="downshift-149-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <input
-                              aria-autocomplete="list"
-                              aria-controls="downshift-149-menu"
-                              aria-labelledby="downshift-149-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-148-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value=""
-                            />
+                            <div
+                              class="relative flex flex-1"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-149-menu"
+                                aria-labelledby="downshift-149-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-148-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-149-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA"
                             id="downshift-149-menu"
                             role="listbox"
                           />
-                        </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform "
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -5457,7 +5782,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -5477,16 +5802,20 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                         >
-                          <input
-                            aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                            data-testid="Input"
-                            name="name"
-                          />
                           <div
-                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              aria-invalid="true"
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
+                          <div
+                            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                           >
                             <span
                               data-errortext="'Name' is required"
@@ -5563,33 +5892,40 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -5610,33 +5946,40 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -5657,13 +6000,21 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value=""
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value=""
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -5678,41 +6029,52 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             id="downshift-149-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <input
-                              aria-autocomplete="list"
-                              aria-controls="downshift-149-menu"
-                              aria-labelledby="downshift-149-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-148-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value=""
-                            />
+                            <div
+                              class="relative flex flex-1"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="downshift-149-menu"
+                                aria-labelledby="downshift-149-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-148-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-149-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA"
                             id="downshift-149-menu"
                             role="listbox"
                           />
-                        </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform "
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -5897,7 +6259,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   class="relative mt-8 space-y-8"
                 >
                   <div
-                    class="flex justify-between -mt-4"
+                    class="flex items-end justify-between -mt-4"
                   >
                     <div
                       class="mr-6 w-full"
@@ -5917,13 +6279,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                         >
-                          <input
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                            data-testid="Input"
-                            name="name"
-                          />
+                          <div
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input"
+                              name="name"
+                            />
+                          </div>
                         </div>
                       </fieldset>
                     </div>
@@ -5984,33 +6350,40 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="password"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="password"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -6031,33 +6404,40 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                      data-testid="InputPassword"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                        data-testid="Input"
-                        name="confirmPassword"
-                        type="password"
-                      />
                       <div
-                        class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                        class="relative flex flex-1"
                       >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                          data-testid="InputPassword__toggle"
-                          type="button"
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="confirmPassword"
+                          type="password"
+                        />
+                      </div>
+                      <div
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <div
+                          class=""
                         >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            data-testid="InputPassword__toggle"
+                            type="button"
                           >
-                            <svg>
-                              eye.svg
-                            </svg>
-                          </div>
-                        </button>
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </fieldset>
@@ -6078,13 +6458,21 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     <div
                       class="relative w-full"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                        data-testid="select-list__input"
-                        name="currency"
-                        readonly=""
-                        value="BTC"
-                      />
+                      <div
+                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                      >
+                        <div
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="select-list__input"
+                            name="currency"
+                            readonly=""
+                            value="BTC"
+                          />
+                        </div>
+                      </div>
                       <div
                         class="relative w-full"
                       >
@@ -6099,32 +6487,56 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             id="downshift-189-label"
                           />
                           <div
-                            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                            data-testid="SelectDropdownInput"
+                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE cursor-default"
                           >
-                            <span
-                              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__typeahead"
+                            <div
+                              class="relative flex flex-1"
                             >
-                              BTC (Ƀ)
-                            </span>
-                            <input
-                              aria-activedescendant="downshift-189-item-0"
-                              aria-autocomplete="list"
-                              aria-controls="downshift-189-menu"
-                              aria-labelledby="downshift-189-label"
-                              autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                              data-testid="SelectDropdownInput__input"
-                              id="downshift-188-input"
-                              name="currency"
-                              placeholder="Select Currency"
-                              value="BTC (Ƀ)"
-                            />
+                              <input
+                                aria-activedescendant="downshift-189-item-0"
+                                aria-autocomplete="list"
+                                aria-controls="downshift-189-menu"
+                                aria-labelledby="downshift-189-label"
+                                autocomplete="off"
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="SelectDropdownInput__input"
+                                id="downshift-188-input"
+                                name="currency"
+                                placeholder="Select Currency"
+                                value="BTC (Ƀ)"
+                              />
+                              <span
+                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                data-testid="SelectDropdownInput__suggestion"
+                              >
+                                BTC (Ƀ)
+                              </span>
+                            </div>
+                            <div
+                              class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                            >
+                              <div
+                                class=""
+                              >
+                                <span
+                                  class="w-10 pointer-events-none text-theme-secondary-500"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                    height="5"
+                                    width="7"
+                                  >
+                                    <svg>
+                                      caret-down.svg
+                                    </svg>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
                           </div>
                           <ul
                             aria-labelledby="downshift-189-label"
-                            class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                            class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                             id="downshift-189-menu"
                             role="listbox"
                           >
@@ -6363,19 +6775,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               </div>
                             </li>
                           </ul>
-                        </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                        >
-                          <div
-                            class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                            height="5"
-                            width="7"
-                          >
-                            <svg>
-                              caret-down.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </div>

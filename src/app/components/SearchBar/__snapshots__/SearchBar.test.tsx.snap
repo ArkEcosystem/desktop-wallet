@@ -21,11 +21,19 @@ exports[`SearchBar should render 1`] = `
       <div
         class="flex-1 pl-4 mr-4 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
-        <input
-          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures border-none shadow-none"
-          data-testid="Input"
-          placeholder="What would you like to search for?"
-        />
+        <div
+          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE border-none shadow-none"
+        >
+          <div
+            class="relative flex flex-1"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              data-testid="Input"
+              placeholder="What would you like to search for?"
+            />
+          </div>
+        </div>
       </div>
       <button
         class="Button__StyledButton-mdtvtf-0 ePkfgQ my-1"

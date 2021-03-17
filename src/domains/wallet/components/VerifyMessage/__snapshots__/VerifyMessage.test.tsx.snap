@@ -148,14 +148,18 @@ exports[`VerifyMessage should render 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="VerifyMessage_message-content"
-                        name="signed-message-content"
-                        value=""
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="VerifyMessage_message-content"
+                          name="signed-message-content"
+                          value=""
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -312,13 +316,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <div
-                    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                      data-testid="VerifyMessage__message-input"
-                      name="message"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="VerifyMessage__message-input"
+                        name="message"
+                      />
+                    </div>
                   </div>
                 </fieldset>
                 <fieldset
@@ -336,15 +344,20 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <div
-                    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
+                    disabled=""
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                      data-testid="VerifyMessage__signatory-input"
-                      disabled=""
-                      name="signatory"
-                      value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
+                        data-testid="VerifyMessage__signatory-input"
+                        disabled=""
+                        name="signatory"
+                        value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
+                      />
+                    </div>
                   </div>
                 </fieldset>
                 <fieldset
@@ -362,13 +375,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <div
-                    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                      data-testid="VerifyMessage__signature-input"
-                      name="signature"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="VerifyMessage__signature-input"
+                        name="signature"
+                      />
+                    </div>
                   </div>
                 </fieldset>
               </div>
