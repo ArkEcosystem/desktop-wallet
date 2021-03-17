@@ -113,6 +113,15 @@ export const translations: { [key: string]: any } = {
 	PAGE_IMPORT_WALLET: {
 		TITLE: "Import Wallet",
 
+		ENCRYPT_PASSWORD_STEP: {
+			TITLE: "Encryption Password",
+			OPTIONAL: "optional",
+			WARNING:
+				"You can optionally encrypt your mnemonic passphrase on your local device. Then, you can sign transactions with the password instead. If you lose your local device, you CANNOT restore your funds with the encryption password. Make sure your mnemonic passphrase is stored safely to protect your funds.",
+			PASSWORD_LABEL: "Encryption Password",
+			CONFIRM_PASSWORD_LABEL: "Confirm Encryption Password",
+		},
+
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to import your existing wallet address",
