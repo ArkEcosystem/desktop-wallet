@@ -361,7 +361,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         >
                           <span
                             data-errortext="Invalid Mnemonic"
-                            data-testid="Input-error"
+                            data-testid="Input__error"
                           >
                             <div
                               class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -1963,7 +1963,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 />
                                 <span
                                   class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="SelectDropdownInput__suggestion"
+                                  data-testid="Input__suggestion"
                                 >
                                   ARK Devnet
                                 </span>
@@ -2138,7 +2138,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           >
                             <span
                               data-errortext="'IPFS Hash' is invalid"
-                              data-testid="Input-error"
+                              data-testid="Input__error"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"

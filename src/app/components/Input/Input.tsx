@@ -82,7 +82,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		if (isInvalidValue) {
 			addonsEnd.push(
 				<Tooltip content={errorMessageValue} variant="sm">
-					<span data-errortext={errorMessageValue} data-testid="Input-error">
+					<span data-errortext={errorMessageValue} data-testid="Input__error">
 						<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
 					</span>
 				</Tooltip>,
@@ -115,7 +115,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 
 						{suggestion && (
 							<span
-								data-testid="SelectDropdownInput__suggestion"
+								data-testid="Input__suggestion"
 								className={cn(
 									"absolute top-0 flex items-center font-normal opacity-50 pointer-events-none",
 									innerClassName,
@@ -138,7 +138,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 						>
 							{isInvalidValue && (
 								<Tooltip content={errorMessageValue} variant="sm">
-									<span data-errortext={errorMessageValue} data-testid="Input-error">
+									<span data-errortext={errorMessageValue} data-testid="Input__error">
 										<Icon
 											name={"AlertWarning"}
 											className="text-theme-danger-500"

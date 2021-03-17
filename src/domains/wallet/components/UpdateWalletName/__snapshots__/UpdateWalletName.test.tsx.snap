@@ -206,7 +206,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                   >
                     <span
                       data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -343,7 +343,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                   >
                     <span
                       data-errortext="A Wallet named 'ark wallet 2' already exists on this profile"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -480,7 +480,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                   >
                     <span
                       data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -617,7 +617,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                   >
                     <span
                       data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -754,7 +754,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                   >
                     <span
                       data-errortext="'Name' is invalid"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -891,7 +891,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                   >
                     <span
                       data-errortext="'Name' should have at most 42 characters"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"

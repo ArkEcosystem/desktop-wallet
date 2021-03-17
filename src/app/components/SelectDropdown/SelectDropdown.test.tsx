@@ -151,7 +151,7 @@ describe("SelectDropdown", () => {
 		expect(getByTestId("select-list__input")).toHaveValue("1");
 	});
 
-	it("should show typeahead when typing has found at least one match", () => {
+	it("should show suggestion when typing has found at least one match", () => {
 		const { getByTestId } = render(<Select options={options} />);
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
@@ -159,7 +159,7 @@ describe("SelectDropdown", () => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
 		});
 
-		expect(getByTestId("SelectDropdownInput__typeahead")).toHaveTextContent("Option 1");
+		expect(getByTestId("Input__suggestion")).toHaveTextContent("Option 1");
 	});
 
 	it("should select first matching option with enter", () => {

@@ -392,7 +392,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 />
                                 <span
                                   class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="SelectDropdownInput__suggestion"
+                                  data-testid="Input__suggestion"
                                 >
                                   ARK Devnet
                                 </span>
@@ -1300,7 +1300,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         >
                           <span
                             data-errortext="Invalid Mnemonic"
-                            data-testid="Input-error"
+                            data-testid="Input__error"
                           >
                             <div
                               class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -2464,7 +2464,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 />
                                 <span
                                   class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="SelectDropdownInput__suggestion"
+                                  data-testid="Input__suggestion"
                                 >
                                   ARK Devnet
                                 </span>
@@ -3431,7 +3431,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 />
                                 <span
                                   class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="SelectDropdownInput__suggestion"
+                                  data-testid="Input__suggestion"
                                 >
                                   ARK Devnet
                                 </span>
@@ -7483,7 +7483,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 />
                                 <span
                                   class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="SelectDropdownInput__suggestion"
+                                  data-testid="Input__suggestion"
                                 >
                                   ARK Devnet
                                 </span>
@@ -8452,7 +8452,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 />
                                 <span
                                   class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="SelectDropdownInput__suggestion"
+                                  data-testid="Input__suggestion"
                                 >
                                   ARK Devnet
                                 </span>

@@ -893,7 +893,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: "123" } });
 
 			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
+				expect(getByTestId("Input__error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
@@ -956,7 +956,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
 
 			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
+				expect(getByTestId("Input__error")).toBeVisible();
 			});
 
 			act(() => {
@@ -976,7 +976,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
 			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
+				expect(getByTestId("Input__error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");

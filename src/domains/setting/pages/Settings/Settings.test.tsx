@@ -653,7 +653,7 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		act(() => {
@@ -663,7 +663,7 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		act(() => {
@@ -728,7 +728,7 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		act(() => {

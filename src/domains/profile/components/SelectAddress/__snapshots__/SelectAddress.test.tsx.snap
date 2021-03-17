@@ -3,7 +3,7 @@
 exports[`SelectAddress should render disabled 1`] = `
 <div>
   <button
-    class="relative"
+    class="relative w-full"
     data-testid="SelectAddress__wrapper"
     disabled=""
     type="button"
@@ -60,7 +60,7 @@ exports[`SelectAddress should render disabled 1`] = `
 exports[`SelectAddress should render empty 1`] = `
 <div>
   <button
-    class="relative"
+    class="relative w-full"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -116,7 +116,7 @@ exports[`SelectAddress should render empty 1`] = `
 exports[`SelectAddress should render invalid 1`] = `
 <div>
   <button
-    class="relative"
+    class="relative w-full"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -148,7 +148,7 @@ exports[`SelectAddress should render invalid 1`] = `
         class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
       >
         <span
-          data-testid="Input-error"
+          data-testid="Input__error"
         >
           <div
             class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -186,7 +186,7 @@ exports[`SelectAddress should render invalid 1`] = `
 exports[`SelectAddress should render with preselected address 1`] = `
 <div>
   <button
-    class="relative"
+    class="relative w-full"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -260,7 +260,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
 exports[`SelectAddress should render with preselected verified address 1`] = `
 <div>
   <button
-    class="relative"
+    class="relative w-full"
     data-testid="SelectAddress__wrapper"
     type="button"
   >

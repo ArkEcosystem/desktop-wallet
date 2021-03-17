@@ -191,7 +191,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       >
                         <span
                           data-errortext="'Password' should have at least 6 characters"
-                          data-testid="Input-error"
+                          data-testid="Input__error"
                         >
                           <div
                             class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -258,7 +258,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       >
                         <span
                           data-errortext="Passwords do not match"
-                          data-testid="Input-error"
+                          data-testid="Input__error"
                         >
                           <div
                             class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -358,7 +358,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>
@@ -847,7 +847,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           >
                             <span
                               data-errortext="A profile with this name already exists"
-                              data-testid="Input-error"
+                              data-testid="Input__error"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -1077,7 +1077,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>
@@ -1566,7 +1566,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           >
                             <span
                               data-errortext="'Name' should have at most 42 characters"
-                              data-testid="Input-error"
+                              data-testid="Input__error"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -1796,7 +1796,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>
@@ -2285,7 +2285,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           >
                             <span
                               data-errortext="'Name' is required"
-                              data-testid="Input-error"
+                              data-testid="Input__error"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -2993,7 +2993,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>
@@ -4170,7 +4170,7 @@ exports[`CreateProfile should store profile 1`] = `
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>
@@ -4867,7 +4867,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>
@@ -5819,7 +5819,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           >
                             <span
                               data-errortext="'Name' is required"
-                              data-testid="Input-error"
+                              data-testid="Input__error"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -6507,7 +6507,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               />
                               <span
                                 class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="SelectDropdownInput__suggestion"
+                                data-testid="Input__suggestion"
                               >
                                 BTC (Ƀ)
                               </span>

@@ -193,7 +193,7 @@ exports[`SelectDropdown should render invalid 1`] = `
         class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
       >
         <span
-          data-testid="Input-error"
+          data-testid="Input__error"
         >
           <div
             class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -491,7 +491,7 @@ exports[`SelectDropdown should render with initial default value 1`] = `
             />
             <span
               class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-              data-testid="SelectDropdownInput__suggestion"
+              data-testid="Input__suggestion"
             >
               Option 3
             </span>
