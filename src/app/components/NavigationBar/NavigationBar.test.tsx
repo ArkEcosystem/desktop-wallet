@@ -29,8 +29,8 @@ describe("NavigationBar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render as logo-only variant", () => {
-		const { container, asFragment } = renderWithRouter(<NavigationBar variant="logo-only" />);
+	it.each([true, false])("should render as logo-only variant", (noBorder) => {
+		const { container, asFragment } = renderWithRouter(<NavigationBar variant="logo-only" noBorder={noBorder} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

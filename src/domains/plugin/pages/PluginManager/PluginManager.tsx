@@ -256,73 +256,21 @@ export const PluginManager = () => {
 		trigger();
 	};
 
-	const renderGrid = () => {
-		if (currentView === "my-plugins") {
-			return (
-				<PluginGrid
-					plugins={installedPlugins}
-					onSelect={handleSelectPlugin}
-					onDelete={handleDeletePlugin}
-					onEnable={handleEnablePlugin}
-					onDisable={handleDisablePlugin}
-					onInstall={openInstallModalPlugin}
-					onLaunch={handleLaunchPlugin}
-					onUpdate={handleUpdate}
-					isLoading={isFetchingPackages}
-					updatingStats={updatingStats}
-				/>
-			);
+	const viewPlugins = useMemo(() => {
+		switch (currentView) {
+			case "my-plugins":
+				return installedPlugins;
+			case "all":
+				return plugins;
+			default:
+				return filteredPackages;
 		}
-
-		return (
-			<PluginGrid
-				plugins={filteredPackages}
-				onSelect={handleSelectPlugin}
-				onDelete={handleDeletePlugin}
-				onEnable={handleEnablePlugin}
-				onDisable={handleDisablePlugin}
-				onInstall={openInstallModalPlugin}
-				onLaunch={handleLaunchPlugin}
-				isLoading={isFetchingPackages}
-			/>
-		);
-	};
-
-	const renderList = () => {
-		if (currentView === "my-plugins") {
-			return (
-				<PluginList
-					plugins={installedPlugins}
-					onClick={handleSelectPlugin}
-					onInstall={openInstallModalPlugin}
-					onDelete={handleDeletePlugin}
-					onEnable={handleEnablePlugin}
-					onDisable={handleDisablePlugin}
-					onLaunch={handleLaunchPlugin}
-					onUpdate={handleUpdate}
-					updatingStats={updatingStats}
-					showCategory={true}
-				/>
-			);
-		}
-
-		return (
-			<PluginList
-				plugins={filteredPackages}
-				onClick={handleSelectPlugin}
-				onInstall={openInstallModalPlugin}
-				onDelete={handleDeletePlugin}
-				onEnable={handleEnablePlugin}
-				onDisable={handleDisablePlugin}
-				onLaunch={handleLaunchPlugin}
-			/>
-		);
-	};
+	}, [currentView, installedPlugins, plugins, filteredPackages]);
 
 	const onUpdateAll = () => {
-		const notSatisfiedPlugins = allPlugins
-			.map(mapConfigToPluginData.bind(null, activeProfile))
-			.filter((item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied);
+		const notSatisfiedPlugins = plugins.filter(
+			(item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied,
+		);
 
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
@@ -330,14 +278,12 @@ export const PluginManager = () => {
 	const handleUpdateAll = () => {
 		setUpdatesConfirmationPlugins(undefined);
 
-		const availablePackages = allPlugins
-			.map(mapConfigToPluginData.bind(null, activeProfile))
-			.filter((pluginData) => pluginData.hasUpdateAvailable);
+		const availablePackages = plugins.filter((pluginData) => pluginData.hasUpdateAvailable);
 
 		startUpdate(availablePackages.map((item) => item.id));
 	};
 
-	const menu = ["latest", ...categories].map((name: string) => ({
+	const menu = ["latest", "all", ...categories].map((name: string) => ({
 		title: t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${name.toUpperCase()}`),
 		name,
 	}));
@@ -419,7 +365,35 @@ export const PluginManager = () => {
 							)}
 
 							<div data-testid={`PluginManager__container--${currentView}`}>
-								{viewType === "grid" ? renderGrid() : renderList()}
+								{viewType === "grid" && (
+									<PluginGrid
+										plugins={viewPlugins}
+										onSelect={handleSelectPlugin}
+										onDelete={handleDeletePlugin}
+										onEnable={handleEnablePlugin}
+										onDisable={handleDisablePlugin}
+										onInstall={openInstallModalPlugin}
+										onLaunch={handleLaunchPlugin}
+										onUpdate={handleUpdate}
+										updatingStats={updatingStats}
+										isLoading={isFetchingPackages}
+									/>
+								)}
+
+								{viewType === "list" && (
+									<PluginList
+										plugins={viewPlugins}
+										onClick={handleSelectPlugin}
+										onInstall={openInstallModalPlugin}
+										onDelete={handleDeletePlugin}
+										onEnable={handleEnablePlugin}
+										onDisable={handleDisablePlugin}
+										onLaunch={handleLaunchPlugin}
+										onUpdate={handleUpdate}
+										updatingStats={updatingStats}
+										showCategory={currentView === "my-plugins" || currentView === "all"}
+									/>
+								)}
 							</div>
 						</>
 					)}

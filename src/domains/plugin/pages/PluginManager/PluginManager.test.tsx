@@ -105,6 +105,33 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should toggle between list and grid on all", async () => {
+		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManagerNavigationBar__all"));
+		});
+
+		await waitFor(() =>
+			expect(
+				within(getByTestId("PluginManager__container--all")).getAllByText("Transaction Export"),
+			).toHaveLength(1),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		expect(within(getByTestId("PluginManager__container--all")).getByTestId("PluginList")).toBeTruthy(),
+			act(() => {
+				fireEvent.click(getByTestId("LayoutControls__grid--icon"));
+			});
+
+		expect(within(getByTestId("PluginManager__container--all")).getByTestId("PluginGrid")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it.each(["utility"])("should toggle between list and grid on %s tab", async (category) => {
 		const { asFragment, getByTestId, getAllByText } = rendered;
 
