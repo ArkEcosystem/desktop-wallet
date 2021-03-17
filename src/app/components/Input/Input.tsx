@@ -97,7 +97,15 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 					/>
 
 					{(isInvalidValue || addons?.end) && (
-						<div className="flex items-center space-x-2 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800">
+						<div
+							className={cn(
+								"flex items-center space-x-2 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800",
+								{
+									"text-theme-danger-500": isInvalidValue,
+									"text-theme-primary-300 dark:text-theme-secondary-600": !isInvalidValue,
+								},
+							)}
+						>
 							{isInvalidValue && (
 								<Tooltip content={errorMessageValue} variant="sm">
 									<span data-errortext={errorMessageValue} data-testid="Input-error">
