@@ -6,7 +6,10 @@ type Props = {
 };
 
 export const FirstStep = ({ plugin }: Props) => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const validPermissions = plugin.permissions.filter((permission: string) =>
+		i18n.exists(`PLUGINS.PERMISSIONS.${permission}`),
+	);
 
 	return (
 		<section data-testid="InstallPlugin__step--first">
@@ -15,7 +18,7 @@ export const FirstStep = ({ plugin }: Props) => {
 			</p>
 			<div className="max-w-sm">
 				<ul className="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text">
-					{plugin.permissions?.map((permission: string) => (
+					{validPermissions.map((permission: string) => (
 						<li key={permission}>{t(`PLUGINS.PERMISSIONS.${permission}`)}</li>
 					))}
 				</ul>

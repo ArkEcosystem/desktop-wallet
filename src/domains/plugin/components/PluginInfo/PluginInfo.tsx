@@ -14,10 +14,13 @@ type Props = {
 };
 
 export const PluginInfo = ({ description, permissions, images, minimumVersion }: Props) => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const hasRequirements = !!minimumVersion;
 	const [showPermissionsModal, setShowPermissionsModal] = useState(false);
-	const permissionsString = permissions
+	const validPermissions = permissions.filter((permission: string) =>
+		i18n.exists(`PLUGINS.PERMISSIONS.${permission}`),
+	);
+	const permissionsString = validPermissions
 		.map((permission: string) => t(`PLUGINS.PERMISSIONS.${permission}`))
 		.join(", ");
 
@@ -109,7 +112,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 			</div>
 
 			<PluginPermissionsModal
-				permissions={permissions}
+				permissions={validPermissions}
 				isOpen={showPermissionsModal}
 				onClose={() => setShowPermissionsModal(false)}
 			/>
