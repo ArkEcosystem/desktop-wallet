@@ -49,7 +49,6 @@ export const SendTransfer = () => {
 			remainingBalance: wallet?.balance?.(),
 			recipients: [],
 		},
-		shouldUnregister: false,
 	});
 
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
@@ -69,6 +68,7 @@ export const SendTransfer = () => {
 		register("network", sendTransfer.network());
 		register("recipients");
 		register("senderAddress", sendTransfer.senderAddress());
+		register("fees");
 		register("fee", common.fee(remainingBalance, wallet?.network?.()));
 		register("smartbridge", sendTransfer.smartbridge());
 
