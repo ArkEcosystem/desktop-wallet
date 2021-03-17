@@ -553,17 +553,18 @@ exports[`SendIpfs should render form step 1`] = `
         <div
           data-testid="sender-address"
         >
-          <div
-            class="relative"
+          <button
+            class="relative w-full"
+            data-testid="SelectAddress__wrapper"
+            type="button"
           >
-            <button
+            <span
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
-              type="button"
             >
               <div
                 class="inline-flex items-center no-ligatures"
               />
-            </button>
+            </span>
             <div
               class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
             >
@@ -603,7 +604,7 @@ exports[`SendIpfs should render form step 1`] = `
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </fieldset>
       <fieldset
@@ -659,20 +660,24 @@ exports[`SendIpfs should render form step 1`] = `
             class="flex-1"
           >
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
-              disabled=""
+              class="relative"
             >
               <div
-                class="relative flex flex-1"
+                class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
+                disabled=""
               >
-                <input
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
-                  data-testid="InputCurrency"
-                  disabled=""
-                  name="fee"
-                  type="text"
-                  value=""
-                />
+                <div
+                  class="relative flex flex-1"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
+                    data-testid="InputCurrency"
+                    disabled=""
+                    name="fee"
+                    type="text"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -2026,12 +2031,13 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         <div
                           data-testid="sender-address"
                         >
-                          <div
-                            class="relative"
+                          <button
+                            class="relative w-full"
+                            data-testid="SelectAddress__wrapper"
+                            type="button"
                           >
-                            <button
+                            <span
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
-                              type="button"
                             >
                               <div
                                 class="inline-flex items-center no-ligatures"
@@ -2043,7 +2049,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                   D8rr7B1d6TL6p…sKp1VBMs6YUYD
                                 </span>
                               </div>
-                            </button>
+                            </span>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                             >
@@ -2094,7 +2100,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </fieldset>
                       <fieldset
@@ -2169,18 +2175,22 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             class="flex-1"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                              class="relative"
                             >
                               <div
-                                class="relative flex flex-1"
+                                class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                               >
-                                <input
-                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                                  data-testid="InputCurrency"
-                                  name="fee"
-                                  type="text"
-                                  value="5"
-                                />
+                                <div
+                                  class="relative flex flex-1"
+                                >
+                                  <input
+                                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                    data-testid="InputCurrency"
+                                    name="fee"
+                                    type="text"
+                                    value="5"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>

@@ -52,15 +52,16 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 
 		return (
 			<>
-				<div className="relative">
-					<button
-						type="button"
-						className="absolute inset-0 flex items-center border border-transparent px-14 w-full"
-						onClick={() => setSearchWalletIsOpen(true)}
-						disabled={disabled}
-					>
+				<button
+					data-testid="SelectAddress__wrapper"
+					className="relative w-full"
+					type="button"
+					onClick={() => setSearchWalletIsOpen(true)}
+					disabled={disabled}
+				>
+					<span className="absolute inset-0 flex items-center border border-transparent px-14 w-full">
 						<Address maxChars={30} address={selectedAddress} />
-					</button>
+					</span>
 
 					<Input
 						data-testid="SelectAddress__input"
@@ -83,7 +84,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 							),
 						}}
 					/>
-				</div>
+				</button>
 
 				<SearchWallet
 					isOpen={searchWalletIsOpen}

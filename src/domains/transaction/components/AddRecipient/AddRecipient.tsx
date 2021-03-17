@@ -4,6 +4,7 @@ import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
+import cn from "classnames";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { InputAmount } from "domains/transaction/components/InputAmount";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -254,9 +255,9 @@ export const AddRecipient = ({
 
 			<SubForm
 				data-testid="AddRecipient__form-wrapper"
-				className={`${showMultiPaymentOption ? "mt-6" : ""}`}
+				className={cn({ "mt-6": showMultiPaymentOption })}
 				noBackground={isSingle}
-				noPadding={!showMultiPaymentOption}
+				noPadding={isSingle}
 			>
 				<div className="space-y-8">
 					<FormField name="recipientAddress">
@@ -303,7 +304,7 @@ export const AddRecipient = ({
 									<InputButtonStyled
 										type="button"
 										disabled={!isSenderFilled}
-										className={`${getValues("isSendAllSelected") ? "active" : ""}`}
+										className={cn({ active: getValues("isSendAllSelected") })}
 										onClick={() => {
 											setValue("isSendAllSelected", !getValues("isSendAllSelected"));
 
