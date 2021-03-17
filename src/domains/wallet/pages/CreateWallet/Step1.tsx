@@ -1,18 +1,25 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
-	const { getValues, register, setValue } = useFormContext();
-
-	useEffect(() => {
-		register("isGeneratingWallet");
-	}, [register]);
+export const FirstStep = ({
+	env,
+	profile,
+	isLoading,
+	showError,
+}: {
+	env: Environment;
+	profile: Profile;
+	isLoading: boolean;
+	showError: boolean;
+}) => {
+	const { getValues, setValue } = useFormContext();
 
 	const networks = useMemo(() => {
 		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
@@ -29,45 +36,31 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 
 	const { t } = useTranslation();
 
-	const handleSelect = async (network?: Coins.Network | null) => {
-		const currentWallet = getValues("wallet");
-
+	const handleSelect = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
-		setValue("wallet", null, { shouldValidate: true, shouldDirty: true });
-		setValue("mnemonic", null, { shouldValidate: true, shouldDirty: true });
-
-		if (currentWallet) {
-			profile.wallets().forget(currentWallet.id());
-		}
-
-		if (!network) {
-			return;
-		}
-
-		setValue("isGeneratingWallet", true);
-
-		const { mnemonic, wallet } = await profile.wallets().generate(network.coin(), network.id());
-		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
-		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
-
-		setValue("isGeneratingWallet", false);
 	};
 
 	return (
-		<section data-testid="CreateWallet__first-step" className="space-y-8">
+		<section data-testid="CreateWallet__first-step">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE")}
 			/>
 
-			<FormField name="network">
+			{showError && (
+				<div className="mt-6 -mb-2">
+					<Alert variant="danger">{t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.GENERATION_ERROR")}</Alert>
+				</div>
+			)}
+
+			<FormField name="network" className="flex flex-col space-y-2 mt-8">
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="CreateWallet__network"
 					networks={networks}
 					selected={selectedNetwork}
 					onSelect={handleSelect}
-					disabled={getValues("isGeneratingWallet")}
+					disabled={isLoading}
 				/>
 			</FormField>
 		</section>

@@ -10,7 +10,7 @@ exports[`PluginDetails should render properly 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -477,7 +477,11 @@ exports[`PluginDetails should render properly 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -547,7 +551,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -994,7 +998,11 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1064,7 +1072,7 @@ exports[`PluginDetails should report plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -1531,7 +1539,11 @@ exports[`PluginDetails should report plugin 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1601,7 +1613,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -2010,7 +2022,28 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          N/A
+                          <a
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            data-testid="PluginSpecs__url"
+                            rel="noopener noreferrer"
+                            to="https://github.com/dated/transaction-export-plugin"
+                          >
+                            <span
+                              class="underline-dotted"
+                            >
+                              github.com
+                            </span>
+                            <div
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </a>
                         </span>
                       </div>
                     </div>
@@ -2050,7 +2083,11 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2133,7 +2170,7 @@ exports[`PluginDetails should update package 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -2600,7 +2637,11 @@ exports[`PluginDetails should update package 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>

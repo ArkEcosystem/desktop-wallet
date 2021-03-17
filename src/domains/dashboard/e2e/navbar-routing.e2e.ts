@@ -38,7 +38,7 @@ test("should navigate to transaction send page", async (t) => {
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("[data-testid=navbar__buttons--send]").hasAttribute("disabled")).notOk();
 	await t.click(Selector("[data-testid=navbar__buttons--send]"));
-	await t.click(Selector("div").withExactText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION));
+	await t.click(Selector("div").withExactText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.NETWORK_STEP.SUBTITLE));
 	await t.expect(getLocation()).contains("/send-transfer");
 });
 

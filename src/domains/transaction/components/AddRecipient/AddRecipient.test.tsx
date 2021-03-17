@@ -538,7 +538,7 @@ describe("AddRecipient", () => {
 
 	it("should fill inputs in the single tab if one recipient is added in the multiple tab", async () => {
 		const values = {
-			amount: BigNumber.ONE,
+			amount: "0.00000001",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -561,7 +561,7 @@ describe("AddRecipient", () => {
 						profile={profile}
 						assetSymbol="ARK"
 						maxAvailableAmount={BigNumber.make(80)}
-						recipients={[{ address: values.recipientAddress, amount: BigNumber.ONE }]}
+						recipients={[]}
 					/>
 				</FormProvider>
 			);
@@ -569,10 +569,32 @@ describe("AddRecipient", () => {
 
 		render(<Component />);
 
+		act(() => {
+			fireEvent.click(screen.getByTestId("AddRecipient__multi"));
+		});
+
+		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+			target: {
+				value: values.recipientAddress,
+			},
+		});
+
+		fireEvent.input(screen.getByTestId("AddRecipient__amount"), {
+			target: {
+				value: values.amount,
+			},
+		});
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("AddRecipient__add-button"));
+		});
+
 		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(1));
 
-		fireEvent.click(screen.getByTestId("AddRecipient__single"));
+		act(() => {
+			fireEvent.click(screen.getByTestId("AddRecipient__single"));
+		});
 
-		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue("0.00000001"));
+		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue(values.amount));
 	});
 });
