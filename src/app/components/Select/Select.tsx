@@ -1,24 +1,31 @@
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
+import { Input } from "app/components/Input";
 import React from "react";
 
 type SelectProps = { isInvalid?: boolean } & React.SelectHTMLAttributes<any>;
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 	({ placeholder, children, ...props }: SelectProps, ref) => (
-		<InputGroup>
-			<Input data-testid="Select" as="select" ref={ref} className="pr-12" errorClassName="mr-12" {...props}>
-				{placeholder && (
-					<option value="" disabled>
-						{placeholder}
-					</option>
-				)}
-				{children}
-			</Input>
-			<InputAddonEnd className="w-12 text-lg pointer-events-none text-theme-secondary-text">
-				<Icon name="ChevronDown" />
-			</InputAddonEnd>
-		</InputGroup>
+		<Input
+			data-testid="Select"
+			as="select"
+			ref={ref}
+			addons={{
+				end: (
+					<span className="w-12 text-lg pointer-events-none text-theme-secondary-text">
+						<Icon name="ChevronDown" />
+					</span>
+				),
+			}}
+			{...props}
+		>
+			{placeholder && (
+				<option value="" disabled>
+					{placeholder}
+				</option>
+			)}
+			{children}
+		</Input>
 	),
 );
 

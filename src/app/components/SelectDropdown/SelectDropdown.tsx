@@ -2,6 +2,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd } from "app/components/Input";
 import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
+import cn from "classnames";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ type Option = {
 };
 
 type SelectProps = {
+	addons?: any;
 	options: Option[];
 	defaultValue?: string;
 	inputClassName?: string;
@@ -21,11 +23,11 @@ type SelectProps = {
 	showCaret?: boolean;
 	disabled?: boolean;
 	allowFreeInput?: boolean;
-	errorClassName?: string;
 	onChange?: (selected: Option) => void;
 } & React.InputHTMLAttributes<any>;
 
 type SelectDropdownProps = {
+	addons?: any;
 	options: Option[];
 	defaultSelectedItem?: Option;
 	placeholder?: string;
@@ -34,13 +36,13 @@ type SelectDropdownProps = {
 	isInvalid?: boolean;
 	disabled?: boolean;
 	allowFreeInput?: boolean;
-	errorClassName?: string;
 	onSelectedItemChange: any;
 } & React.InputHTMLAttributes<any>;
 
 const itemToString = (item: Option | null) => item?.label || "";
 
 const SelectDropdown = ({
+	addons,
 	options,
 	defaultSelectedItem,
 	placeholder,
@@ -50,7 +52,6 @@ const SelectDropdown = ({
 	inputClassName,
 	allowFreeInput = false,
 	showCaret = true,
-	errorClassName = "mr-8",
 	id,
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
@@ -147,9 +148,10 @@ const SelectDropdown = ({
 				<SelectDropdownInput
 					suggestion={inputTypeAhead}
 					disabled={disabled}
+					addons={addons}
 					{...getInputProps({
 						placeholder,
-						className: `cursor-default ${isInvalid && " pr-16"} ${inputClassName}`,
+						className: cn("cursor-default", inputClassName),
 						onFocus: openMenu,
 						onBlur: (event) => {
 							if (allowFreeInput) {
@@ -187,7 +189,6 @@ const SelectDropdown = ({
 							}
 						},
 					})}
-					errorClassName={errorClassName}
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
@@ -239,6 +240,7 @@ const SelectDropdown = ({
 export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 	(
 		{
+			addons,
 			options,
 			defaultValue,
 			placeholder,
@@ -248,7 +250,6 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			isInvalid,
 			disabled,
 			onChange,
-			errorClassName,
 			id,
 		}: SelectProps,
 		ref,
@@ -278,7 +279,6 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 				/>
 				<SelectDropdown
 					id={id}
-					errorClassName={errorClassName}
 					allowFreeInput={allowFreeInput}
 					showCaret={showCaret}
 					inputClassName={inputClassName}
@@ -287,6 +287,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					placeholder={placeholder}
 					disabled={disabled}
 					isInvalid={isInvalidField}
+					addons={addons}
 					onSelectedItemChange={({ selected }: { selected: Option }) => {
 						setSelected(selected);
 

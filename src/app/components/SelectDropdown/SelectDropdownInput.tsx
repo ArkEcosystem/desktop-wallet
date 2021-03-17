@@ -1,26 +1,30 @@
-import { Input, InputAddon, InputGroup } from "app/components/Input";
+import { Input } from "app/components/Input";
+import cn from "classnames";
 import React from "react";
 
 type Props = {
+	addons?: any;
 	suggestion?: string;
 	errorClassName?: string;
 } & React.InputHTMLAttributes<any>;
 
 const TypeAhead = ({ value, className }: { value?: string; className?: string }) => (
-	<InputAddon
-		as="span"
+	<span
 		data-testid="SelectDropdownInput__typeahead"
-		className={`py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none ${className}`}
+		className={cn(
+			"absolute flex items-center inset-0 ml-px px-14 font-normal opacity-50 pointer-events-none",
+			className,
+		)}
 	>
 		{value}
-	</InputAddon>
+	</span>
 );
 
 export const SelectDropdownInput = React.forwardRef<HTMLInputElement, Props>(({ suggestion, ...props }: Props, ref) => (
-	<InputGroup data-testid="SelectDropdownInput">
+	<div data-testid="SelectDropdownInput" className="relative">
 		{suggestion && <TypeAhead value={suggestion} className={props.className} />}
 		<Input data-testid="SelectDropdownInput__input" ref={ref} {...props} />
-	</InputGroup>
+	</div>
 ));
 
 SelectDropdownInput.displayName = "SelectDropdownInput";

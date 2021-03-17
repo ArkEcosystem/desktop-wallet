@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { useFormField } from "../Form/useFormField";
 import { Input } from "./Input";
-import { InputAddonEnd, InputGroup } from "./InputGroup";
 
 type Props = {
 	maxLength?: number;
@@ -21,23 +20,23 @@ export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Pr
 	};
 
 	return (
-		<InputGroup>
-			<Input
-				data-testid="InputCounter__input"
-				className={fieldContext?.isInvalid ? "pr-28" : "pr-18"}
-				ref={ref}
-				{...props}
-				onChange={handleChange}
-			/>
-			<InputAddonEnd
-				data-testid="InputCounter__counter"
-				className={`pl-2 text-sm pointer-events-none text-theme-secondary-500 ${
-					fieldContext?.isInvalid ? "pr-12" : "pr-2"
-				}`}
-			>
-				{length}/{props.maxLengthLabel}
-			</InputAddonEnd>
-		</InputGroup>
+		<Input
+			data-testid="InputCounter__input"
+			className={fieldContext?.isInvalid ? "pr-28" : "pr-18"}
+			ref={ref}
+			{...props}
+			onChange={handleChange}
+			addons={{
+				end: (
+					<span
+						data-testid="InputCounter__counter"
+						className="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+					>
+						{length}/{props.maxLengthLabel}
+					</span>
+				),
+			}}
+		/>
 	);
 });
 

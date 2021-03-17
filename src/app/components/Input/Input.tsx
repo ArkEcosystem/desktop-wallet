@@ -10,8 +10,9 @@ type InputProps = {
 	as?: React.ElementType;
 	isInvalid?: boolean;
 	isFocused?: boolean;
+	hideInputValue?: boolean;
 	errorMessage?: string;
-	errorClassName?: string;
+	// errorClassName?: string;
 	addons?: any;
 } & React.HTMLProps<any>;
 
@@ -47,7 +48,7 @@ type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
 	(
-		{ isInvalid, className, isFocused, errorClassName, errorMessage, addons, disabled, ...props }: InputProps,
+		{ isInvalid, className, isFocused, errorMessage, addons, disabled, hideInputValue, ...props }: InputProps,
 		ref,
 	) => {
 		const fieldContext = useFormField();
@@ -87,7 +88,8 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 					<InputStyled
 						data-testid="Input"
 						className={cn("flex-1 p-0 border-none bg-transparent focus:ring-0 no-ligatures", {
-							"dark:bg-theme-secondary-800 text-theme-secondary-text": disabled,
+							"text-transparent": hideInputValue,
+							"text-theme-secondary-text": !hideInputValue && disabled,
 						})}
 						name={fieldContext?.name}
 						aria-invalid={isInvalidValue}

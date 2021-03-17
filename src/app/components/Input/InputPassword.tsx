@@ -1,14 +1,12 @@
 import { Icon } from "app/components/Icon";
 import React from "react";
 
-import { useFormField } from "../Form/useFormField";
 import { Input } from "./Input";
 
 type InputPasswordProps = React.InputHTMLAttributes<any>;
 
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProps>((props, ref) => {
 	const [show, setShow] = React.useState(false);
-	const fieldContext = useFormField();
 	const togglePasswordVisibilty = () => setShow(!show);
 
 	return (

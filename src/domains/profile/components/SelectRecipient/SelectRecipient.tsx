@@ -5,7 +5,6 @@ import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Select } from "app/components/SelectDropdown";
-import cn from "classnames";
 import { useProfileAddresses } from "domains/profile/hooks/use-profile-addresses";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
@@ -26,13 +25,13 @@ const ProfileAvatar = ({ address }: any) => {
 	if (!address) {
 		return (
 			<Circle
-				className="mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+				className="bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
 				size="sm"
 				noShadow
 			/>
 		);
 	}
-	return <Avatar address={address} size="sm" className="mx-3" noShadow />;
+	return <Avatar address={address} size="sm" noShadow />;
 };
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
@@ -87,27 +86,28 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		return (
 			<div>
 				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
-					<ProfileAvatar address={selectedAddress} />
 					<Select
 						showCaret={false}
-						inputClassName={cn({ "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
 						isInvalid={isInvalidValue}
 						disabled={disabled}
 						defaultValue={selectedAddress}
 						ref={ref}
 						options={recipientAddresses}
 						allowFreeInput={true}
-						errorClassName="mr-12"
 						onChange={(option: any) => onInputChange(option.value)}
+						addons={{
+							start: <ProfileAvatar address={selectedAddress} />,
+							end: (
+								<div
+									data-testid="SelectRecipient__select-recipient"
+									className="flex items-center cursor-pointer"
+									onClick={openRecipients}
+								>
+									<Icon name="User" width={20} height={20} />
+								</div>
+							),
+						}}
 					/>
-
-					<div
-						data-testid="SelectRecipient__select-recipient"
-						className="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 z-20"
-						onClick={openRecipients}
-					>
-						<Icon name="User" width={20} height={20} />
-					</div>
 				</div>
 
 				<SearchRecipient
