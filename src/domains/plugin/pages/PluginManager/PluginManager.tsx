@@ -1,7 +1,6 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
-import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
@@ -17,6 +16,7 @@ import { PluginManagerNavigationBar } from "domains/plugin/components/PluginMana
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
+import { usePluginUpdateQueue } from "domains/plugin/hooks/use-plugin-update-queue";
 import { PluginController, usePluginManagerContext } from "plugins";
 import React, { useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -165,6 +165,7 @@ export const PluginManager = () => {
 	const history = useHistory();
 	const { pluginManager, mapConfigToPluginData, updatePlugin } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
+	const { startUpdate, isUpdating: isUpdatingAll } = usePluginUpdateQueue();
 
 	const [currentView, setCurrentView] = useState("latest");
 	const [viewType, setViewType] = useState("grid");
@@ -173,7 +174,6 @@ export const PluginManager = () => {
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
-	const [isUpdatingAll, setIsUpdatingAll] = useState(false);
 
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
@@ -327,20 +327,14 @@ export const PluginManager = () => {
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
 
-	const handleUpdateAll = async () => {
+	const handleUpdateAll = () => {
 		setUpdatesConfirmationPlugins(undefined);
 
-		setIsUpdatingAll(true);
 		const availablePackages = allPlugins
 			.map(mapConfigToPluginData.bind(null, activeProfile))
 			.filter((pluginData) => pluginData.hasUpdateAvailable);
 
-		const entries = chunk(availablePackages, 2);
-
-		for (const packages of entries) {
-			await Promise.allSettled(packages.map((packageData) => updatePlugin(packageData.name)));
-		}
-		setIsUpdatingAll(false);
+		startUpdate(availablePackages.map((item) => item.id));
 	};
 
 	const menu = ["latest", ...categories].map((name: string) => ({

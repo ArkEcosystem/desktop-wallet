@@ -1,17 +1,21 @@
 /* eslint-disable arrow-body-style */
-import { useCallback, useEffect, useState } from "react";
+import { usePluginManagerContext } from "plugins";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-export const usePluginUpdateQueue = (ids: string[]) => {
+export const usePluginUpdateQueue = () => {
 	const [queue, setQueue] = useState<string[]>([]);
 	const [isUpdating, setIsUpdating] = useState(false);
-	const [isCompleted, setIsCompleted] = useState(false);
+	const [isUpdateCompleted, setIsUpdateCompleted] = useState(false);
+	const { updatePlugin } = usePluginManagerContext();
+	const initialQueueRef = useRef<string[]>([]);
 
 	const currentId = queue[0];
 
-	const start = () => {
+	const startUpdate = (ids: string[]) => {
+		initialQueueRef.current = ids;
 		setQueue(ids);
 		setIsUpdating(true);
-		setIsCompleted(false);
+		setIsUpdateCompleted(false);
 	};
 
 	const next = () => {
@@ -19,14 +23,16 @@ export const usePluginUpdateQueue = (ids: string[]) => {
 	};
 
 	const update = useCallback(async () => {
-		// TODO:
-		console.log("update", currentId);
-		await new Promise((resolve) => setTimeout(resolve, 2000));
-		next();
-	}, [currentId]);
+		await updatePlugin(currentId);
+		setTimeout(() => next(), 0);
+	}, [currentId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-	const hasInQueue = (id: string) => {
-		return queue.indexOf(id) > 0;
+	const hasUpdateComplete = (id: string) => {
+		return initialQueueRef.current.indexOf(id) >= 0 && !hasInUpdateQueue(id);
+	};
+
+	const hasInUpdateQueue = (id: string) => {
+		return queue.indexOf(id) >= 0;
 	};
 
 	useEffect(() => {
@@ -36,7 +42,7 @@ export const usePluginUpdateQueue = (ids: string[]) => {
 
 		if (!queue.length) {
 			setIsUpdating(false);
-			setIsCompleted(true);
+			setIsUpdateCompleted(true);
 			return;
 		}
 
@@ -44,9 +50,10 @@ export const usePluginUpdateQueue = (ids: string[]) => {
 	}, [isUpdating, queue, update]);
 
 	return {
-		start,
-		isCompleted,
+		startUpdate,
+		isUpdateCompleted,
 		isUpdating,
-		hasInQueue,
+		hasInUpdateQueue,
+		hasUpdateComplete,
 	};
 };
