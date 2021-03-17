@@ -87,13 +87,10 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		return (
 			<div>
 				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
-					<div className="absolute left-1 z-20">
-						<ProfileAvatar address={selectedAddress} />
-					</div>
-
+					<ProfileAvatar address={selectedAddress} />
 					<Select
 						showCaret={false}
-						inputClassName={cn("pl-16", { "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
+						inputClassName={cn({ "pr-11": !isInvalidValue, "pr-18": isInvalidValue })}
 						isInvalid={isInvalidValue}
 						disabled={disabled}
 						defaultValue={selectedAddress}

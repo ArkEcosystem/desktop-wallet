@@ -5,7 +5,6 @@ import React, { useEffect, useRef } from "react";
 import tw, { styled } from "twin.macro";
 
 import { useFormField } from "../Form/useFormField";
-import { InputAddonEnd } from "./InputGroup";
 
 type InputProps = {
 	as?: React.ElementType;
@@ -13,24 +12,31 @@ type InputProps = {
 	isFocused?: boolean;
 	errorMessage?: string;
 	errorClassName?: string;
+	addons?: any;
 } & React.HTMLProps<any>;
+
+export const InputWrapperStyled = styled.div<{ disabled?: boolean; invalid?: boolean }>`
+	${tw`flex items-center h-14 px-4 py-3 space-x-2 overflow-hidden w-full appearance-none rounded border text-theme-text transition-colors duration-200 focus-within:ring-1`}
+
+	${({ disabled, invalid }) => {
+		if (disabled) {
+			return tw`border-theme-secondary-300 dark:border-theme-secondary-700`;
+		}
+
+		if (invalid) {
+			return tw`border-theme-danger-500 focus-within:ring-theme-danger-500`;
+		}
+
+		return tw`border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:ring-theme-primary-600`;
+	}}
+`;
 
 const InputStyled = styled.input`
 	&:focus {
-		${tw`outline-none border-theme-primary-600`}
-		box-shadow: 0 0 0 1px var(--theme-color-primary-600);
+		${tw`outline-none`}
 	}
 	&::placeholder {
 		${tw`text-theme-secondary-400 dark:text-theme-secondary-700`}
-	}
-	&:disabled {
-		${tw`border-theme-secondary-300 dark:border-theme-secondary-700 bg-theme-secondary-100 dark:bg-theme-secondary-800 text-theme-secondary-text`}
-	}
-	&[aria-invalid="true"] {
-		${tw`border-theme-danger-500`}
-		&:focus {
-			box-shadow: 0 0 0 1px var(--theme-color-danger-500);
-		}
 	}
 	&.shadow-none {
 		${tw`shadow-none`}
@@ -40,7 +46,10 @@ const InputStyled = styled.input`
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
-	({ isInvalid, className, isFocused, errorClassName, errorMessage, ...props }: InputProps, ref) => {
+	(
+		{ isInvalid, className, isFocused, errorClassName, errorMessage, addons, disabled, ...props }: InputProps,
+		ref,
+	) => {
 		const fieldContext = useFormField();
 
 		const isInvalidValue = fieldContext?.isInvalid || isInvalid;
@@ -54,29 +63,58 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			}
 		}, [focusRef, isFocused]);
 
+		const addonsEnd: any = [];
+
+		if (isInvalidValue) {
+			addonsEnd.push(
+				<Tooltip content={errorMessageValue} variant="sm">
+					<span data-errortext={errorMessageValue} data-testid="Input-error">
+						<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
+					</span>
+				</Tooltip>,
+			);
+		}
+
+		if (addons?.end) {
+			addonsEnd.push(addons.end);
+		}
+
 		return (
 			<>
-				<InputStyled
-					data-testid="Input"
-					className={cn(
-						"overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures",
-						className,
-					)}
-					name={fieldContext?.name}
-					aria-invalid={isInvalidValue}
-					ref={ref}
-					{...props}
-				/>
+				<InputWrapperStyled className={className} disabled={disabled} invalid={isInvalidValue}>
+					{addons?.start !== undefined && addons.start}
 
-				{isInvalidValue && (
-					<InputAddonEnd className={cn("my-px mr-4", errorClassName)}>
-						<Tooltip content={errorMessageValue} variant="sm">
-							<span data-errortext={errorMessageValue} data-testid="Input-error">
-								<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
-							</span>
-						</Tooltip>
-					</InputAddonEnd>
-				)}
+					<InputStyled
+						data-testid="Input"
+						className={cn("flex-1 p-0 border-none bg-transparent focus:ring-0 no-ligatures", {
+							"dark:bg-theme-secondary-800 text-theme-secondary-text": disabled,
+						})}
+						name={fieldContext?.name}
+						aria-invalid={isInvalidValue}
+						disabled={disabled}
+						ref={ref}
+						{...props}
+					/>
+
+					{(isInvalidValue || addons?.end) && (
+						<div className="flex items-center space-x-2 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800">
+							{isInvalidValue && (
+								<Tooltip content={errorMessageValue} variant="sm">
+									<span data-errortext={errorMessageValue} data-testid="Input-error">
+										<Icon
+											name={"AlertWarning"}
+											className="text-theme-danger-500"
+											width={20}
+											height={20}
+										/>
+									</span>
+								</Tooltip>
+							)}
+
+							{addons?.end && <div className={cn({ "pl-2": isInvalidValue })}>{addons.end}</div>}
+						</div>
+					)}
+				</InputWrapperStyled>
 			</>
 		);
 	},

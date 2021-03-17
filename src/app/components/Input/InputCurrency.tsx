@@ -2,9 +2,9 @@ import { Currency } from "@arkecosystem/platform-sdk-intl";
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { Input } from "./Input";
-import { InputGroup } from "./InputGroup";
 
 type Props = {
+	addons?: any;
 	onChange?: (value: any) => void;
 	magnitude?: number;
 	errorClassName?: string;
@@ -59,18 +59,14 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		}
 
 		return (
-			<InputGroup>
-				<Input
-					data-testid="InputCurrency"
-					type="text"
-					value={amount.display}
-					onChange={handleInput}
-					ref={ref}
-					{...props}
-					errorClassName={errorClassName}
-				/>
-				{children}
-			</InputGroup>
+			<Input
+				data-testid="InputCurrency"
+				type="text"
+				value={amount.display}
+				onChange={handleInput}
+				ref={ref}
+				{...props}
+			/>
 		);
 	},
 );

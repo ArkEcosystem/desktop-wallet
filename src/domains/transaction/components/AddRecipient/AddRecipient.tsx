@@ -2,7 +2,6 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { InputAddonEnd } from "app/components/Input";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
@@ -236,6 +235,17 @@ export const AddRecipient = ({
 		onChange?.(remainingRecipients);
 	};
 
+	const addons =
+		!errors.amount && isSingle && isSenderFilled
+			? {
+					end: (
+						<span className="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
+						</span>
+					),
+			  }
+			: undefined;
+
 	return (
 		<AddRecipientWrapper>
 			{showMultiPaymentOption && (
@@ -278,21 +288,14 @@ export const AddRecipient = ({
 									data-testid="AddRecipient__amount"
 									placeholder={t("COMMON.AMOUNT")}
 									value={getValues("displayAmount") || recipientsAmount}
+									addons={addons}
 									onChange={(currency) => {
 										setValue("isSendAllSelected", false);
 										setValue("displayAmount", currency.display);
 										setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
 										singleRecipientOnChange(currency.value, recipientAddress);
 									}}
-								>
-									{!errors.amount && isSingle && isSenderFilled && (
-										<InputAddonEnd>
-											<span className="px-4 font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
-												{t("COMMON.MAX")} {maximumAmount?.toHuman()}
-											</span>
-										</InputAddonEnd>
-									)}
-								</InputAmount>
+								/>
 							</div>
 
 							{isSingle && (
