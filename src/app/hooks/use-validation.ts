@@ -10,7 +10,7 @@ import {
 	sendTransfer,
 	sendVote,
 } from "domains/transaction/validations";
-import { receiveFunds } from "domains/wallet/validations";
+import { importWallet,receiveFunds } from "domains/wallet/validations";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -30,6 +30,7 @@ export const useValidation = () => {
 			receiveFunds: receiveFunds(t),
 			createProfile: createProfile(t, env),
 			settings: settings(t, env),
+			importWallet: importWallet(t),
 		}),
 		[t, env],
 	);
