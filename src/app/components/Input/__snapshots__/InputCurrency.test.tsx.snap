@@ -3,17 +3,21 @@
 exports[`InputCurrency should render 1`] = `
 <DocumentFragment>
   <div
-    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+    class="relative"
   >
     <div
-      class="relative flex flex-1"
+      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
     >
-      <input
-        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-        data-testid="InputCurrency"
-        type="text"
-        value=""
-      />
+      <div
+        class="relative flex flex-1"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          data-testid="InputCurrency"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>

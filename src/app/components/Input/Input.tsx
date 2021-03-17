@@ -59,6 +59,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			disabled,
 			suggestion,
 			hideInputValue,
+			style,
 			...props
 		}: InputProps,
 		ref,
@@ -94,7 +95,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 
 		return (
 			<>
-				<InputWrapperStyled className={className} disabled={disabled} invalid={isInvalidValue}>
+				<InputWrapperStyled style={style} className={className} disabled={disabled} invalid={isInvalidValue}>
 					{addons?.start !== undefined && addons.start}
 
 					<div className={cn("relative flex flex-1", { invisible: hideInputValue })}>

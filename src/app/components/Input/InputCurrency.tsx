@@ -58,14 +58,17 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		}
 
 		return (
-			<Input
-				data-testid="InputCurrency"
-				type="text"
-				value={amount.display}
-				onChange={handleInput}
-				ref={ref}
-				{...props}
-			/>
+			<div className="relative">
+				<Input
+					data-testid="InputCurrency"
+					type="text"
+					value={amount.display}
+					onChange={handleInput}
+					ref={ref}
+					{...props}
+				/>
+				{children}
+			</div>
 		);
 	},
 );
