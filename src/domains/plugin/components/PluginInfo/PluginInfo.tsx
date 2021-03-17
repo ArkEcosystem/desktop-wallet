@@ -45,7 +45,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 								onClick={() => setShowPermissionsModal(true)}
 								className="link"
 							>
-								{t("COMMON.VIEW_ALL_DETAILS")}
+								{t("COMMON.VIEW_ALL")}
 							</button>
 						) : null}
 					</div>
