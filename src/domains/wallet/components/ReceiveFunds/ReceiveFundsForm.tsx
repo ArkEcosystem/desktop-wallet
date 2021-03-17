@@ -43,11 +43,10 @@ export const ReceiveFundsForm = ({ network }: { network?: Network }) => {
 						<InputCounter
 							ref={register(receiveFunds.smartbridge())}
 							data-testid="ReceiveFundsForm__smartbridge"
-							className="pr-24"
+							className="pr-26"
 							defaultValue={smartbridge}
 							maxLengthLabel={maxLength.toString()}
 						/>
-						<FormHelperText />
 					</FormField>
 				)}
 
