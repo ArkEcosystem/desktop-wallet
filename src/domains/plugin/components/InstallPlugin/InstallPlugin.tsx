@@ -19,7 +19,6 @@ type InstallPluginProps = {
 	repositoryURL?: string;
 };
 
-/* TODO: Show steps with download and installation progress*/
 export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProps) => {
 	const { t } = useTranslation();
 	const { downloadPlugin, installPlugin } = usePluginManagerContext();

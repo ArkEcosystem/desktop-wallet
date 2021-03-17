@@ -4,7 +4,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
   >
     <div
       class="flex relative h-21"
@@ -250,7 +250,7 @@ exports[`NavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
   >
     <div
       class="flex relative h-21"
@@ -518,7 +518,38 @@ exports[`NavigationBar should render as logo-only variant 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 iaiHKx"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 noNGK"
+  >
+    <div
+      class="flex relative h-21"
+    >
+      <div
+        class="flex flex-1 px-8 ml-12"
+      >
+        <div
+          class="flex items-center my-auto"
+        >
+          <div
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+          >
+            <svg
+              width="44"
+            >
+              ark-logo.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`NavigationBar should render as logo-only variant 2`] = `
+<DocumentFragment>
+  <nav
+    aria-labelledby="main menu"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
   >
     <div
       class="flex relative h-21"
@@ -549,7 +580,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
   >
     <div
       class="flex relative h-21"
@@ -795,7 +826,7 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 jbQhFq"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 gLengV"
   >
     <div
       class="flex relative h-21"
@@ -965,7 +996,7 @@ exports[`NavigationBar should render with title 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
   >
     <div
       class="flex relative h-21"
