@@ -14,7 +14,7 @@ export const EncryptPasswordStep = () => {
 	const { importWallet } = useValidation();
 
 	return (
-		<section data-testid="ImportWallet__first-step" className="space-y-8">
+		<section data-testid="EncryptPassword" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.TITLE")}
 				titleSuffix={<span className="text-theme-secondary-500">optional</span>}
