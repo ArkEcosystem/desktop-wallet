@@ -141,7 +141,7 @@ const SelectDropdown = ({
 
 	const data = isTyping && inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
 
-	if (showCaret && !addons?.end) {
+	if (showCaret) {
 		addons = {
 			...addons,
 			end: (
