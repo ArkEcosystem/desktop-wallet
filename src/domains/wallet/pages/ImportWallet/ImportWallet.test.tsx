@@ -514,11 +514,113 @@ describe("ImportWallet", () => {
 			const privateKeyInput = getByTestId("ImportWallet__privatekey-input");
 			expect(privateKeyInput).toBeTruthy();
 
+			fireEvent.input(privateKeyInput, {
+				target: { value: "invalid" },
+			});
+
+			await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).toHaveAttribute("disabled"));
+
 			await fireEvent.input(privateKeyInput, {
 				target: { value: "1e089e3c5323ad80a90767bdd5907297b4138163f027097fd3bdbeab528d2d68" },
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => {
+				expect(profile.wallets().findByAddress("DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")).toBeTruthy();
+			});
+		});
+	});
+
+	it("should import by WIF", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, queryByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			act(() => {
+				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			});
+
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-3")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-3"));
+			});
+
+			await waitFor(() => expect(queryByTestId("ImportWallet__wif-input")).toBeInTheDocument());
+			const wifInput = getByTestId("ImportWallet__wif-input");
+			expect(wifInput).toBeTruthy();
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			fireEvent.input(wifInput, {
+				target: { value: "invalid" },
+			});
+
+			await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
+
+			await fireEvent.input(wifInput, {
+				target: { value: "SHjn7G4NygZH5LHvuhbMSdgrn42vqu3LdYzjxUoh2E9b7PdVsBPs" },
+			});
 
 			expect(continueButton).toBeTruthy();
 			await waitFor(() => {
@@ -594,10 +696,10 @@ describe("ImportWallet", () => {
 				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
 			});
 
-			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-3")).toBeInTheDocument());
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-4")).toBeInTheDocument());
 
 			act(() => {
-				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-3"));
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-4"));
 			});
 
 			await waitFor(() => expect(queryByTestId("ImportWallet__encryptedWif-input")).toBeInTheDocument());
@@ -688,10 +790,10 @@ describe("ImportWallet", () => {
 				fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
 			});
 
-			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-3")).toBeInTheDocument());
+			await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-4")).toBeInTheDocument());
 
 			act(() => {
-				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-3"));
+				fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-4"));
 			});
 
 			await waitFor(() => expect(queryByTestId("ImportWallet__encryptedWif-input")).toBeInTheDocument());

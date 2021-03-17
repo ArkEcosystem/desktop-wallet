@@ -80,6 +80,8 @@ export const translations: { [key: string]: any } = {
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address",
+			GENERATION_ERROR:
+				"An error occurred while creating your new address, please try again. If the error persists, kindly get in touch with our support team.",
 		},
 
 		PASSPHRASE_STEP: {
@@ -150,6 +152,8 @@ export const translations: { [key: string]: any } = {
 			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
 			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
+			INVALID_WIF: "Invalid WIF",
+			INVALID_PRIVATE_KEY: "Invalid Private Key",
 			DECRYPT_WIF_ASSERTION: "Failed to decrypt WIF. Please check your password.",
 		},
 	},

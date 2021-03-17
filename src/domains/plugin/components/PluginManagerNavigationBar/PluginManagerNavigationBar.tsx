@@ -9,8 +9,8 @@ import { styled } from "twin.macro";
 import { defaultStyle } from "./styles";
 
 type PluginManagerNavigationBar = {
-	hasUpdatesAvailable?: boolean;
-	installedPluginsCount?: number;
+	hasUpdatesAvailable: boolean;
+	installedPluginsCount: number;
 	menu: any[];
 	selectedView: any;
 	selectedViewType?: string;
@@ -60,7 +60,7 @@ export const PluginManagerNavigationBar = ({
 										}`}
 									>
 										<span>{menuItem.title}</span>
-										{menuItem.name !== "latest" && (
+										{!["latest", "all"].includes(menuItem.name) && (
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
 												{countsByCategory[menuItem.name]}
 											</span>
@@ -86,24 +86,26 @@ export const PluginManagerNavigationBar = ({
 							}`}
 						>
 							<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
-							{installedPluginsCount ? (
+
+							{installedPluginsCount > 0 && (
 								<span
 									data-testid="PluginManagerNavigationBar__my-plugins__count"
-									className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700 mr-2"
+									className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
 								>
 									{installedPluginsCount}
 								</span>
-							) : null}
-							{hasUpdatesAvailable ? (
+							)}
+
+							{hasUpdatesAvailable && (
 								<Tooltip content={t("PLUGINS.NEW_UPDATES_AVAILABLE")}>
 									<Badge
 										data-testid="PluginManagerNavigationBar_update-badge"
 										size="sm"
-										className="bg-theme-danger-500"
+										className="ml-2 bg-theme-danger-500"
 										position="right"
 									/>
 								</Tooltip>
-							) : null}
+							)}
 						</button>
 					</div>
 

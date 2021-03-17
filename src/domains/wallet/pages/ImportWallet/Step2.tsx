@@ -32,14 +32,18 @@ const MnemonicField = ({
 						field: label,
 					}).toString(),
 					validate: async (value) => {
-						const address = await findAddress(value);
+						try {
+							const address = await findAddress(value);
 
-						return (
-							!profile.wallets().findByAddress(address) ||
-							t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
-								address,
-							}).toString()
-						);
+							return (
+								!profile.wallets().findByAddress(address) ||
+								t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
+									address,
+								}).toString()
+							);
+						} catch (e) {
+							return e.message;
+						}
 					},
 				})}
 				{...props}
@@ -108,8 +112,31 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 				label={t("COMMON.PRIVATE_KEY")}
 				data-testid="ImportWallet__privatekey-input"
 				findAddress={async (value) => {
-					const instance = await coin;
-					return instance.identity().address().fromPrivateKey(value);
+					try {
+						const instance = await coin;
+						return await instance.identity().address().fromPrivateKey(value);
+					} catch {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
+					}
+				}}
+			/>
+		);
+	}
+
+	if (type === "wif") {
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.WIF")}
+				data-testid="ImportWallet__wif-input"
+				findAddress={async (value) => {
+					try {
+						const instance = await coin;
+						return await instance.identity().address().fromWIF(value);
+					} catch (e) {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
+					}
 				}}
 			/>
 		);
@@ -159,6 +186,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
 			{ label: t("COMMON.ADDRESS"), value: "address" },
 			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
+			{ label: t("COMMON.WIF"), value: "wif" },
 			{ label: t("COMMON.ENCRYPTED_WIF"), value: "encryptedWif" },
 		],
 		[t],

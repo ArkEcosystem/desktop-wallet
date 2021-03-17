@@ -110,6 +110,10 @@ export const ImportWallet = () => {
 					wallet = await activeProfile.wallets().importByAddress(value, network.coin(), network.id());
 				} else if (type === "privateKey") {
 					wallet = await activeProfile.wallets().importByPrivateKey(network.coin(), network.id(), value);
+				} else if (type === "wif") {
+					wallet = await activeProfile
+						.wallets()
+						.importByWIF({ coin: network.coin(), network: network.id(), wif: value });
 				} else if (type === "encryptedWif") {
 					try {
 						// `setTimeout` being used here to avoid blocking the thread

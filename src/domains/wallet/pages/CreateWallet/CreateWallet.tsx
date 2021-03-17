@@ -7,7 +7,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { useDashboardConfig } from "domains/dashboard/pages";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -29,15 +29,16 @@ export const CreateWallet = () => {
 	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
 	const form = useForm({ mode: "onChange" });
-	const { getValues, formState, register, setValue, watch } = form;
+	const { getValues, formState, register, setValue } = form;
 	const { isSubmitting, isValid } = formState;
 
-	const isGeneratingWallet = watch("isGeneratingWallet");
+	const [isGeneratingWallet, setIsGeneratingWallet] = useState(false);
+	const [showError, setShowError] = useState(false);
 
 	useEffect(() => {
 		register("network", { required: true });
-		register("wallet", { required: true });
-		register("mnemonic", { required: true });
+		register("wallet");
+		register("mnemonic");
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
@@ -57,27 +58,55 @@ export const CreateWallet = () => {
 		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
 	};
 
-	useEffect(
-		() => () => {
-			const currentWallet = getValues("wallet");
+	const forgetTemporaryWallet = useCallback(() => {
+		const currentWallet = getValues("wallet");
 
-			if (currentWallet) {
-				activeProfile.wallets().forget(currentWallet.id());
-			}
-		},
-		[activeProfile, getValues],
-	);
+		if (currentWallet) {
+			activeProfile.wallets().forget(currentWallet.id());
+		}
+	}, [activeProfile, getValues]);
+
+	const generateWallet = async () => {
+		const network = getValues("network");
+
+		const { mnemonic, wallet } = await activeProfile.wallets().generate(network.coin(), network.id());
+
+		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
+		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
+	};
+
+	useEffect(() => forgetTemporaryWallet, [forgetTemporaryWallet]);
 
 	const handleBack = () => {
 		if (activeTab === 1) {
 			return history.push(`/profiles/${activeProfile.id()}/dashboard`);
 		}
 
+		if (activeTab === 2) {
+			forgetTemporaryWallet();
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
-	const handleNext = () => {
-		setActiveTab(activeTab + 1);
+	const handleNext = async () => {
+		const newIndex = activeTab + 1;
+
+		if (newIndex === 2) {
+			setShowError(false);
+			setIsGeneratingWallet(true);
+
+			try {
+				await generateWallet();
+				setActiveTab(newIndex);
+			} catch {
+				setShowError(true);
+			} finally {
+				setIsGeneratingWallet(false);
+			}
+		} else {
+			setActiveTab(newIndex);
+		}
 	};
 
 	return (
@@ -89,7 +118,12 @@ export const CreateWallet = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep env={env} profile={activeProfile} />
+								<FirstStep
+									env={env}
+									profile={activeProfile}
+									isLoading={isGeneratingWallet}
+									showError={showError}
+								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
@@ -114,7 +148,7 @@ export const CreateWallet = () => {
 								{activeTab < 4 && (
 									<Button
 										data-testid="CreateWallet__continue-button"
-										disabled={!isValid}
+										disabled={!isValid || isGeneratingWallet}
 										isLoading={isGeneratingWallet}
 										onClick={handleNext}
 									>
