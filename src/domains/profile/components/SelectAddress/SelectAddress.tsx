@@ -10,7 +10,6 @@ import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWal
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-
 type SelectAddressProps = {
 	address?: string;
 	wallets: ReadWriteWallet[];
