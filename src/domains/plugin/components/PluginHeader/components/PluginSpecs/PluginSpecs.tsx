@@ -1,10 +1,10 @@
 import { Icon } from "app/components/Icon";
+import { Link } from "app/components/Link";
 import { Skeleton } from "app/components/Skeleton";
 // @ts-ignore
 import extractDomain from "extract-domain";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { openExternal } from "utils/electron-utils";
 
 type Props = {
 	author?: string;
@@ -78,14 +78,9 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size, 
 				<GridCol padding="pl-8">
 					<GridItem label={t("COMMON.URL")}>
 						{domain ? (
-							<a
-								data-testid="PluginSpecs__url"
-								href="/"
-								onClick={() => openExternal(url!)}
-								className="link"
-							>
+							<Link data-testid="PluginSpecs__url" to={url} isExternal>
 								{domain}
-							</a>
+							</Link>
 						) : (
 							"N/A"
 						)}

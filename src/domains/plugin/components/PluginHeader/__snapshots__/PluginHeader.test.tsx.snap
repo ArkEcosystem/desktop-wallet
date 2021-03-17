@@ -139,11 +139,26 @@ exports[`PluginHeader should render properly 1`] = `
                   class="font-semibold text-theme-secondary-text"
                 >
                   <a
-                    class="link"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="PluginSpecs__url"
-                    href="/"
+                    rel="noopener noreferrer"
+                    to="https://github.com/arkecosystem"
                   >
-                    github.com
+                    <span
+                      class="underline-dotted"
+                    >
+                      github.com
+                    </span>
+                    <div
+                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      data-testid="Link__external"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        redirect.svg
+                      </svg>
+                    </div>
                   </a>
                 </span>
               </div>
@@ -390,11 +405,26 @@ exports[`PluginHeader should render updating plugin 1`] = `
                   class="font-semibold text-theme-secondary-text"
                 >
                   <a
-                    class="link"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="PluginSpecs__url"
-                    href="/"
+                    rel="noopener noreferrer"
+                    to="https://github.com/arkecosystem"
                   >
-                    github.com
+                    <span
+                      class="underline-dotted"
+                    >
+                      github.com
+                    </span>
+                    <div
+                      class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                      data-testid="Link__external"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        redirect.svg
+                      </svg>
+                    </div>
                   </a>
                 </span>
               </div>
