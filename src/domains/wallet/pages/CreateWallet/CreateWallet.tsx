@@ -24,6 +24,7 @@ export const CreateWallet = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
+	const [encryptionPassword, setEncryptionPassword] = useState();
 	const activeProfile = useActiveProfile();
 	const nameMaxLength = 42;
 
@@ -44,6 +45,8 @@ export const CreateWallet = () => {
 
 	const submitForm = async ({ name }: any) => {
 		const wallet = getValues("wallet");
+
+		// TODO: Set password encryption to mnemonic if set
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
@@ -87,11 +90,22 @@ export const CreateWallet = () => {
 			forgetTemporaryWallet();
 		}
 
+		if (activeTab === 4 || activeTab === 5) {
+			setEncryptionPassword(undefined);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
 	const handleNext = async () => {
 		const newIndex = activeTab + 1;
+
+		if (newIndex === 5) {
+			const isUsingEncryption = await form.trigger(["encryptionPassword", "confirmEncryptionPassword"]);
+			if (isUsingEncryption) {
+				setEncryptionPassword(form.getValues("encryptionPassword"));
+			}
+		}
 
 		if (newIndex === 2) {
 			setShowError(false);
