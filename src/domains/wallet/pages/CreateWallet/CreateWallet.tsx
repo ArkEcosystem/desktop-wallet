@@ -7,6 +7,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { useDashboardConfig } from "domains/dashboard/pages";
+import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -114,7 +115,7 @@ export const CreateWallet = () => {
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+						<StepIndicator size={5} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
@@ -132,39 +133,52 @@ export const CreateWallet = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
+								<EncryptPasswordStep />
+							</TabPanel>
+							<TabPanel tabId={5}>
 								<FourthStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-3">
-								<Button
-									disabled={isSubmitting}
-									data-testid="CreateWallet__back-button"
-									variant="secondary"
-									onClick={handleBack}
-								>
-									{t("COMMON.BACK")}
-								</Button>
+							<div className="flex justify-between mt-10">
+								<div>
+									{activeTab === 4 && (
+										<Button data-testid="CreateWallet__continue-button" onClick={handleNext}>
+											{t("COMMON.SKIP")}
+										</Button>
+									)}
+								</div>
 
-								{activeTab < 4 && (
+								<div className="flex justify-end space-x-3">
 									<Button
-										data-testid="CreateWallet__continue-button"
-										disabled={!isValid || isGeneratingWallet}
-										isLoading={isGeneratingWallet}
-										onClick={handleNext}
+										disabled={isSubmitting}
+										data-testid="CreateWallet__back-button"
+										variant="secondary"
+										onClick={handleBack}
 									>
-										{t("COMMON.CONTINUE")}
+										{t("COMMON.BACK")}
 									</Button>
-								)}
 
-								{activeTab === 4 && (
-									<Button
-										disabled={!isValid || isSubmitting}
-										type="submit"
-										data-testid="CreateWallet__save-button"
-									>
-										{t("COMMON.SAVE_FINISH")}
-									</Button>
-								)}
+									{activeTab < 5 && (
+										<Button
+											data-testid="CreateWallet__continue-button"
+											disabled={!isValid}
+											isLoading={isGeneratingWallet}
+											onClick={handleNext}
+										>
+											{t("COMMON.CONTINUE")}
+										</Button>
+									)}
+
+									{activeTab === 5 && (
+										<Button
+											disabled={!isValid || isSubmitting}
+											type="submit"
+											data-testid="CreateWallet__save-button"
+										>
+											{t("COMMON.SAVE_FINISH")}
+										</Button>
+									)}
+								</div>
 							</div>
 						</div>
 					</Tabs>
