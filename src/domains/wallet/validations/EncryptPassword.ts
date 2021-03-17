@@ -1,4 +1,4 @@
-export const importWallet = (t: any) => ({
+export const encryptPassword = (t: any) => ({
 	password: () => ({
 		minLength: {
 			value: 6,

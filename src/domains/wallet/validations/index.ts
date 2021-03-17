@@ -1,2 +1,2 @@
-export * from "./ImportWallet";
+export * from "./EncryptPassword";
 export * from "./ReceiveFunds";
