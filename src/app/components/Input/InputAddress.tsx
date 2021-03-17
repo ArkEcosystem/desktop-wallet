@@ -12,7 +12,6 @@ export type InputAddressProps = {
 	registerRef?: (options: ValidationRules) => (ref: HTMLInputElement | null) => void;
 	additionalRules?: ValidationRules;
 	onValidAddress?: (address: string) => void;
-	onQRCodeClick?: () => void;
 	onChange?: (address: string) => void;
 	useDefaultRules?: boolean;
 } & React.InputHTMLAttributes<any>;
@@ -23,7 +22,6 @@ export const InputAddress = ({
 	registerRef,
 	additionalRules,
 	onValidAddress,
-	onQRCodeClick,
 	useDefaultRules,
 	...props
 }: InputAddressProps) => {
