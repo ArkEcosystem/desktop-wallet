@@ -29,6 +29,7 @@ import {
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
+import { NetworkStep } from "./NetworkStep";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
@@ -110,6 +111,29 @@ describe("SendTransfer", () => {
 		const { getByTestId, asFragment } = rendered;
 
 		expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		useNetworksMock.mockRestore();
+	});
+
+	it("should render network step without test networks", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+
+		let rendered: RenderResult;
+
+		await hookAct(async () => {
+			rendered = render(
+				<FormProvider {...form.current}>
+					<NetworkStep networks={env.availableNetworks()} profile={profile} />
+				</FormProvider>,
+			);
+		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(getByTestId("SendTransfer__network-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		useNetworksMock.mockRestore();
@@ -212,7 +236,7 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render transfer form without selected wallet", async () => {
+	it("should render network selection without selected wallet", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
 
 		const history = createMemoryHistory();
@@ -230,7 +254,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -302,7 +326,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -338,7 +362,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -349,6 +373,14 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
+
+		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		});
+
+		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		await waitFor(() =>
 			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
@@ -375,7 +407,7 @@ describe("SendTransfer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
 		// Select cryptoasset
 		act(() => {
@@ -386,6 +418,12 @@ describe("SendTransfer", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
 
 		await waitFor(() =>
@@ -605,6 +643,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back"));
 		});
+
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		// Step 2
@@ -909,9 +948,20 @@ describe("SendTransfer", () => {
 
 		// Fee
 		act(() => {
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "" } });
+		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue(""));
+
+		await waitFor(() => {
+			expect(getByTestId("Input-error")).toBeVisible();
+		});
+
+		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 		});
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+
+		await waitFor(() => expect(() => getByTestId("Input-error")).toThrow());
 
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 		await act(async () => {

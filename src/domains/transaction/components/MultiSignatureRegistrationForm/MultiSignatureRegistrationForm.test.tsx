@@ -75,6 +75,7 @@ describe("MultiSignature Registration Form", () => {
 	it("should fill form", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		result.current.register("fee");
+		result.current.register("participants");
 
 		const { rerender } = render(<Component form={result.current} />);
 		await waitForNextUpdate();
@@ -95,9 +96,29 @@ describe("MultiSignature Registration Form", () => {
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
 		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
 
+		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+			target: {
+				value: wallet2.address(),
+			},
+		});
+
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+
 		rerender(<Component form={result.current} />);
 
 		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
+		await waitFor(() =>
+			expect(result.current.getValues("participants")).toEqual([
+				{
+					address: wallet.address(),
+					publicKey: wallet.publicKey(),
+				},
+				{
+					address: wallet2.address(),
+					publicKey: wallet2.publicKey(),
+				},
+			]),
+		);
 	});
 
 	it("should render review step", () => {

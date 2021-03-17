@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contacts with contacts should render with contacts 1`] = `
+exports[`Contacts should render with contacts 1`] = `
 <DocumentFragment>
   <div
     class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -272,7 +272,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
           class="container px-10 mx-auto"
@@ -347,7 +347,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
           class="container px-10 mx-auto"
@@ -1002,159 +1002,6 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       />
                     </td>
                   </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="ContactListItem__user--avatar"
-                        >
-                          <img
-                            alt="name"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                            title="name"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
-                          >
-                            NA
-                          </span>
-                        </div>
-                        <span
-                          class="font-semibold"
-                          data-testid="ContactListItem__name"
-                        >
-                          name
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-                      >
-                        <div
-                          aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
-                          data-testid="NetworkIcon-ARK-ark.devnet"
-                        >
-                          <div
-                            class="sc-bdfBwQ iyevwF"
-                            data-testid="NetworkIcon__icon"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          class="inline-flex items-center no-ligatures"
-                        >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B…s6YUYD
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
-                      >
-                        <div
-                          class="inline-block cursor-pointer"
-                          data-testid="clipboard__wrapper"
-                        >
-                          <div
-                            class="text-theme-primary-300 dark:text-theme-secondary-700"
-                          >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                copy.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
-                      />
-                    </td>
-                    <td
-                      class=""
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      >
-                        <div
-                          class="relative"
-                        >
-                          <span
-                            data-testid="dropdown__toggle"
-                          >
-                            <button
-                              class="Button__StyledButton-mdtvtf-0 OTOjy"
-                              type="button"
-                            >
-                              <div
-                                class="flex relative items-center space-x-2"
-                              >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
-                                >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </button>
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -1166,14 +1013,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Contacts without contacts should render empty 1`] = `
+exports[`Contacts should render without contacts 1`] = `
 <DocumentFragment>
   <div
     class="flex relative flex-col min-h-screen"
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -1438,7 +1285,7 @@ exports[`Contacts without contacts should render empty 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 gGdSDT hasBorder"
       >
         <div
           class="container px-10 mx-auto"
@@ -1483,25 +1330,17 @@ exports[`Contacts without contacts should render empty 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="text-center"
-            data-testid="contacts__banner"
+            class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6 "
+            data-testid="EmptyBlock"
           >
-            <svg
-              class="mx-auto"
-              height="175"
-            >
-              contacts-banner.svg
-            </svg>
-            <div
-              class="mt-8 text-theme-secondary-text"
-            >
-              Add your most frequent contacts for fast, easy payments
+            <div>
+              It looks like you don't have any Contacts yet. After adding new Contacts, they can be viewed here.
             </div>
           </div>
         </div>

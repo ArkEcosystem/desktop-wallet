@@ -3,39 +3,50 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { InputAddress, InputPassword } from "app/components/Input";
+import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const MnemonicField = ({ network, profile }: { profile: Profile; network: Coins.Network }) => {
-	const { env } = useEnvironmentContext();
+const MnemonicField = ({
+	network,
+	profile,
+	label,
+	findAddress,
+	...props
+}: { profile: Profile; network: Coins.Network; label: string; findAddress: (value: string) => Promise<string> } & Omit<
+	React.HTMLProps<any>,
+	"ref"
+>) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
 	return (
 		<FormField name="value">
-			<FormLabel label={t("COMMON.MNEMONIC")} />
+			<FormLabel label={label} />
 			<InputPassword
 				ref={register({
 					required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-						field: t("COMMON.MNEMONIC"),
+						field: label,
 					}).toString(),
-					validate: async (passphrase) => {
-						const instance: Coins.Coin = await env.coin(network.coin(), network.id());
-						const address = await instance.identity().address().fromMnemonic(passphrase);
+					validate: async (value) => {
+						try {
+							const address = await findAddress(value);
 
-						return (
-							!profile.wallets().findByAddress(address) ||
-							t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
-								address,
-							}).toString()
-						);
+							return (
+								!profile.wallets().findByAddress(address) ||
+								t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
+									address,
+								}).toString()
+							);
+						} catch (e) {
+							return e.message;
+						}
 					},
 				})}
-				data-testid="ImportWallet__mnemonic-input"
+				{...props}
 			/>
 		</FormField>
 	);
@@ -69,12 +80,94 @@ const AddressField = ({ network, profile }: { profile: Profile; network: Coins.N
 };
 
 const ImportInputField = ({ type, network, profile }: { type: string; network: Coins.Network; profile: Profile }) => {
+	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
+	const [coin] = useState(() => env.coin(network.coin(), network.id()));
+	const { register } = useFormContext();
+
 	if (type === "mnemonic") {
-		return <MnemonicField network={network} profile={profile} />;
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.MNEMONIC")}
+				data-testid="ImportWallet__mnemonic-input"
+				findAddress={async (value) => {
+					const instance = await coin;
+					return instance.identity().address().fromMnemonic(value);
+				}}
+			/>
+		);
 	}
 
 	if (type === "address") {
 		return <AddressField network={network} profile={profile} />;
+	}
+
+	if (type === "privateKey") {
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.PRIVATE_KEY")}
+				data-testid="ImportWallet__privatekey-input"
+				findAddress={async (value) => {
+					try {
+						const instance = await coin;
+						return await instance.identity().address().fromPrivateKey(value);
+					} catch {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
+					}
+				}}
+			/>
+		);
+	}
+
+	if (type === "wif") {
+		return (
+			<MnemonicField
+				network={network}
+				profile={profile}
+				label={t("COMMON.WIF")}
+				data-testid="ImportWallet__wif-input"
+				findAddress={async (value) => {
+					try {
+						const instance = await coin;
+						return await instance.identity().address().fromWIF(value);
+					} catch (e) {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
+					}
+				}}
+			/>
+		);
+	}
+
+	if (type === "encryptedWif") {
+		return (
+			<>
+				<FormField name="encryptedWif">
+					<FormLabel label={t("COMMON.ENCRYPTED_WIF")} />
+					<div className="relative">
+						<Input
+							ref={register({
+								required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("COMMON.ENCRYPTED_WIF"),
+								}).toString(),
+							})}
+							data-testid="ImportWallet__encryptedWif-input"
+						/>
+					</div>
+				</FormField>
+
+				<MnemonicField
+					network={network}
+					profile={profile}
+					label={t("COMMON.PASSWORD")}
+					data-testid="ImportWallet__encryptedWif__password-input"
+					findAddress={(value) => Promise.resolve(value)}
+				/>
+			</>
+		);
 	}
 
 	return null;
@@ -92,6 +185,9 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 		() => [
 			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
 			{ label: t("COMMON.ADDRESS"), value: "address" },
+			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
+			{ label: t("COMMON.WIF"), value: "wif" },
+			{ label: t("COMMON.ENCRYPTED_WIF"), value: "encryptedWif" },
 		],
 		[t],
 	);

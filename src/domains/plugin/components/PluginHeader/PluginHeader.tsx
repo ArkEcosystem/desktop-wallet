@@ -21,6 +21,7 @@ type Props = {
 	isOfficial?: boolean;
 	isEnabled?: boolean;
 	hasUpdateAvailable?: boolean;
+	isMinimumVersionSatisfied?: boolean;
 	onReport?: () => void;
 	onInstall?: () => void;
 	hasLaunch?: boolean;
@@ -30,6 +31,7 @@ type Props = {
 	onDisable?: () => void;
 	onUpdate?: () => void;
 	updatingStats?: any;
+	isLoadingSize?: boolean;
 };
 
 export const PluginHeader = ({
@@ -49,7 +51,11 @@ export const PluginHeader = ({
 		const result: DropdownOption[] = [];
 
 		if (props.hasUpdateAvailable) {
-			result.push({ label: t("COMMON.UPDATE"), value: "update" });
+			result.push({
+				label: t("COMMON.UPDATE"),
+				value: "update",
+				disabled: props.isMinimumVersionSatisfied === false,
+			});
 		}
 
 		if (props.isEnabled) {
@@ -156,4 +162,8 @@ export const PluginHeader = ({
 			</div>
 		</div>
 	);
+};
+
+PluginHeader.defaultProps = {
+	isLoadingSize: false,
 };

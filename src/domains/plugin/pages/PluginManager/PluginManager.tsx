@@ -16,12 +16,15 @@ import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
+import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
 import { PluginController, usePluginManagerContext } from "plugins";
 import React, { useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-type PluginManagerHomeProps = {
+const categories = ["gaming", "utility", "exchange", "other"];
+
+type LatestPluginsProps = {
 	onCurrentViewChange: (view: string) => void;
 	onDelete: any;
 	onSelect: (pluginId: string) => void;
@@ -34,7 +37,7 @@ type PluginManagerHomeProps = {
 	pluginsByCategory: Record<string, any[]>;
 };
 
-const PluginManagerHome = ({
+const LatestPlugins = ({
 	onCurrentViewChange,
 	onDelete,
 	onSelect,
@@ -45,7 +48,7 @@ const PluginManagerHome = ({
 	onEnable,
 	onDisable,
 	isLoading,
-}: PluginManagerHomeProps) => {
+}: LatestPluginsProps) => {
 	const { t } = useTranslation();
 
 	const renderPlugins = (plugins: any[], category: string) => {
@@ -80,8 +83,6 @@ const PluginManagerHome = ({
 		);
 	};
 
-	const categories = ["gaming", "utility", "exchange", "other"];
-
 	return (
 		<>
 			{categories.map((category: string) => {
@@ -93,13 +94,13 @@ const PluginManagerHome = ({
 
 				return (
 					<Section key={category}>
-						<div data-testid={`PluginManager__home__${category}`}>
+						<div data-testid={`PluginManager__latest__${category}`}>
 							<div className="flex justify-between items-center mb-6">
 								<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
 
 								<span
 									className="flex items-center font-semibold link space-x-2"
-									data-testid={`PluginManager__home__${category}__view-more`}
+									data-testid={`PluginManager__latest__${category}__view-more`}
 									onClick={() => onCurrentViewChange(category)}
 								>
 									<span>{t("COMMON.VIEW_MORE")}</span>
@@ -132,10 +133,15 @@ const UpdateAllBanner = ({
 	}
 
 	return (
-		<EmptyBlock size="sm" className="mt-4">
+		<EmptyBlock size="sm" className="mb-6">
 			<div className="flex items-center w-full justify-between">
-				{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}
-				<Button disabled={isUpdatingAll} data-testid="PluginManager__update-all" onClick={handleUpdateAll}>
+				<span>{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}</span>
+				<Button
+					disabled={isUpdatingAll}
+					className="-mr-1"
+					data-testid="PluginManager__update-all"
+					onClick={handleUpdateAll}
+				>
 					{isUpdatingAll ? t("COMMON.UPDATING") : t("PLUGINS.UPDATE_ALL")}
 				</Button>
 			</div>
@@ -160,9 +166,10 @@ export const PluginManager = () => {
 	const { pluginManager, mapConfigToPluginData, updatePlugin } = usePluginManagerContext();
 	const { persist } = useEnvironmentContext();
 
-	const [currentView, setCurrentView] = useState("home");
+	const [currentView, setCurrentView] = useState("latest");
 	const [viewType, setViewType] = useState("grid");
 
+	const [updatesConfirmationPlugins, setUpdatesConfirmationPlugins] = useState<any[] | undefined>(undefined);
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
@@ -249,73 +256,30 @@ export const PluginManager = () => {
 		trigger();
 	};
 
-	const renderGrid = () => {
-		if (currentView === "my-plugins") {
-			return (
-				<PluginGrid
-					plugins={installedPlugins}
-					onSelect={handleSelectPlugin}
-					onDelete={handleDeletePlugin}
-					onEnable={handleEnablePlugin}
-					onDisable={handleDisablePlugin}
-					onInstall={openInstallModalPlugin}
-					onLaunch={handleLaunchPlugin}
-					onUpdate={handleUpdate}
-					isLoading={isFetchingPackages}
-				/>
-			);
+	const viewPlugins = useMemo(() => {
+		switch (currentView) {
+			case "my-plugins":
+				return installedPlugins;
+			case "all":
+				return plugins;
+			default:
+				return filteredPackages;
 		}
+	}, [currentView, installedPlugins, plugins, filteredPackages]);
 
-		return (
-			<PluginGrid
-				plugins={filteredPackages}
-				onSelect={handleSelectPlugin}
-				onDelete={handleDeletePlugin}
-				onEnable={handleEnablePlugin}
-				onDisable={handleDisablePlugin}
-				onInstall={openInstallModalPlugin}
-				onLaunch={handleLaunchPlugin}
-				isLoading={isFetchingPackages}
-			/>
+	const onUpdateAll = () => {
+		const notSatisfiedPlugins = plugins.filter(
+			(item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied,
 		);
-	};
 
-	const renderList = () => {
-		if (currentView === "my-plugins") {
-			return (
-				<PluginList
-					plugins={installedPlugins}
-					onClick={handleSelectPlugin}
-					onInstall={openInstallModalPlugin}
-					onDelete={handleDeletePlugin}
-					onEnable={handleEnablePlugin}
-					onDisable={handleDisablePlugin}
-					onLaunch={handleLaunchPlugin}
-					onUpdate={handleUpdate}
-					updatingStats={updatingStats}
-					showCategory={true}
-				/>
-			);
-		}
-
-		return (
-			<PluginList
-				plugins={filteredPackages}
-				onClick={handleSelectPlugin}
-				onInstall={openInstallModalPlugin}
-				onDelete={handleDeletePlugin}
-				onEnable={handleEnablePlugin}
-				onDisable={handleDisablePlugin}
-				onLaunch={handleLaunchPlugin}
-			/>
-		);
+		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
 
 	const handleUpdateAll = async () => {
+		setUpdatesConfirmationPlugins(undefined);
+
 		setIsUpdatingAll(true);
-		const availablePackages = allPlugins
-			.map(mapConfigToPluginData.bind(null, activeProfile))
-			.filter((pluginData) => pluginData.hasUpdateAvailable);
+		const availablePackages = plugins.filter((pluginData) => pluginData.hasUpdateAvailable);
 
 		const entries = chunk(availablePackages, 2);
 
@@ -324,6 +288,11 @@ export const PluginManager = () => {
 		}
 		setIsUpdatingAll(false);
 	};
+
+	const menu = ["latest", "all", ...categories].map((name: string) => ({
+		title: t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${name.toUpperCase()}`),
+		name,
+	}));
 
 	return (
 		<>
@@ -361,17 +330,18 @@ export const PluginManager = () => {
 				</Section>
 
 				<PluginManagerNavigationBar
-					selected={currentView}
-					onChange={setCurrentView}
+					hasUpdatesAvailable={hasUpdateAvailableCount > 0}
+					installedPluginsCount={installedPlugins.length}
+					menu={menu}
+					selectedView={currentView}
 					selectedViewType={viewType}
+					onChange={setCurrentView}
 					onSelectGridView={() => setViewType("grid")}
 					onSelectListView={() => setViewType("list")}
-					installedPluginsCount={installedPlugins.length}
-					hasUpdatesAvailable={hasUpdateAvailableCount > 0}
 				/>
 
-				{currentView === "home" && (
-					<PluginManagerHome
+				{currentView === "latest" && (
+					<LatestPlugins
 						isLoading={isFetchingPackages}
 						viewType={viewType}
 						pluginsByCategory={pluginsByCategory}
@@ -386,7 +356,7 @@ export const PluginManager = () => {
 				)}
 
 				<Section>
-					{currentView !== "home" && (
+					{currentView !== "latest" && (
 						<>
 							<h2 className="font-bold mb-6">
 								{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
@@ -396,12 +366,40 @@ export const PluginManager = () => {
 								<UpdateAllBanner
 									hasUpdateAvailableCount={hasUpdateAvailableCount}
 									isUpdatingAll={isUpdatingAll}
-									handleUpdateAll={handleUpdateAll}
+									handleUpdateAll={onUpdateAll}
 								/>
 							)}
 
 							<div data-testid={`PluginManager__container--${currentView}`}>
-								{viewType === "grid" ? renderGrid() : renderList()}
+								{viewType === "grid" && (
+									<PluginGrid
+										plugins={viewPlugins}
+										onSelect={handleSelectPlugin}
+										onDelete={handleDeletePlugin}
+										onEnable={handleEnablePlugin}
+										onDisable={handleDisablePlugin}
+										onInstall={openInstallModalPlugin}
+										onLaunch={handleLaunchPlugin}
+										onUpdate={handleUpdate}
+										updatingStats={updatingStats}
+										isLoading={isFetchingPackages}
+									/>
+								)}
+
+								{viewType === "list" && (
+									<PluginList
+										plugins={viewPlugins}
+										onClick={handleSelectPlugin}
+										onInstall={openInstallModalPlugin}
+										onDelete={handleDeletePlugin}
+										onEnable={handleEnablePlugin}
+										onDisable={handleDisablePlugin}
+										onLaunch={handleLaunchPlugin}
+										onUpdate={handleUpdate}
+										updatingStats={updatingStats}
+										showCategory={currentView === "my-plugins" || currentView === "all"}
+									/>
+								)}
 							</div>
 						</>
 					)}
@@ -421,6 +419,13 @@ export const PluginManager = () => {
 				isOpen={isManualInstallModalOpen}
 				onClose={() => setIsManualInstallModalOpen(false)}
 				onSuccess={handleManualInstall}
+			/>
+
+			<PluginUpdatesConfirmation
+				isOpen={!!updatesConfirmationPlugins}
+				plugins={updatesConfirmationPlugins!}
+				onClose={() => setUpdatesConfirmationPlugins(undefined)}
+				onContinue={handleUpdateAll}
 			/>
 
 			{uninstallSelectedPlugin && (

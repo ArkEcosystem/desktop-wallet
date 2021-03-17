@@ -10,7 +10,7 @@ exports[`PluginDetails should render properly 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -477,7 +477,11 @@ exports[`PluginDetails should render properly 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -547,7 +551,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -994,7 +998,11 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1064,7 +1072,7 @@ exports[`PluginDetails should report plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -1531,7 +1539,11 @@ exports[`PluginDetails should report plugin 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1601,7 +1613,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -2050,7 +2062,11 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2133,7 +2149,7 @@ exports[`PluginDetails should update package 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 fEprgm"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hRqfZa"
     >
       <div
         class="flex relative h-21"
@@ -2600,7 +2616,11 @@ exports[`PluginDetails should update package 1`] = `
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0 B
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2617,26 +2637,6 @@ exports[`PluginDetails should update package 1`] = `
         <div
           class="container px-10 mx-auto"
         >
-          <div
-            class="mt-8"
-          >
-            <p
-              class="font-bold"
-            >
-              Requirements
-            </p>
-            <p
-              class="mt-3 text-theme-secondary-600"
-              data-testid="plugin-info__mininum-version"
-            >
-              <span>
-                Desktop Wallet Version
-                 v
-                4.0.0
-                +
-              </span>
-            </p>
-          </div>
           <div
             class="mt-8"
           >

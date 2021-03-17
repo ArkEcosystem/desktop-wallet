@@ -6,20 +6,24 @@ import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import { PluginLoaderFileSystem } from "plugins/loader/fs";
 import { PluginService } from "plugins/types";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import prettyBytes from "pretty-bytes";
+import React, { useCallback, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
 import appPkg from "../../../package.json";
 import { PluginController, PluginManager } from "../core";
+
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<{
 		packages: PluginConfigurationData[];
 		configurations: PluginConfigurationData[];
+		registryPlugins: RegistryPlugin[];
 	}>({
 		packages: [],
 		configurations: [],
+		registryPlugins: [],
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 	const [updatingStats, setUpdatingStats] = useState<Record<string, any>>({});
@@ -96,16 +100,16 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const fetchPluginPackages = useCallback(async () => {
-		let packages: RegistryPlugin[] = [];
+		let registryPlugins: RegistryPlugin[] = [];
 		try {
 			setIsFetchingPackages(true);
-			packages = await pluginRegistry.all();
+			registryPlugins = await pluginRegistry.all();
 		} catch {
 			/* istanbul ignore next */
 			toasts.error(`Failed to fetch packages`);
 		}
 
-		const configurations = packages
+		const configurations = registryPlugins
 			.filter((config) => !!config.sourceProvider())
 			.map((config) =>
 				PluginConfigurationData.make({
@@ -128,7 +132,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			);
 
 		setIsFetchingPackages(false);
-		setState((prev: any) => ({ ...prev, packages: configurations }));
+		setState((prev: any) => ({ ...prev, packages: configurations, registryPlugins }));
 	}, [pluginRegistry]);
 
 	const filterPackages = useCallback(
@@ -269,30 +273,49 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const updatePlugin = useCallback(
 		async (name: string) => {
+			// @ts-ignore
+			const listener = (_, value: any) => {
+				if (value.name !== name) {
+					return;
+				}
+				setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+			};
+
+			ipcRenderer.on("plugin:download-progress", listener);
+
 			setUpdatingStats((prev) => ({ ...prev, [name]: { percent: 0.0 } }));
 
 			try {
 				const savedPath = await downloadPlugin(name);
 				await installPlugin(savedPath, name);
+
 				setTimeout(() => {
 					setUpdatingStats((prev) => ({ ...prev, [name]: { completed: true, failed: false } }));
 				}, 1500);
 			} catch (e) {
 				setUpdatingStats((prev) => ({ ...prev, [name]: { failed: true } }));
+			} finally {
+				ipcRenderer.removeListener("plugin:download-progress", listener);
 			}
 		},
 		[downloadPlugin, installPlugin],
 	);
 
-	useEffect(() => {
-		// @ts-ignore
-		const listener = (_, value: any) => setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
-		ipcRenderer.on("plugin:download-progress", listener);
+	const fetchSize = async (pluginId: string) => {
+		const pkg = state.registryPlugins.find((item) => item.id() === pluginId);
 
-		return () => {
-			ipcRenderer.removeListener("plugin:download-progress", listener);
-		};
-	}, []);
+		if (!pkg) {
+			return;
+		}
+
+		try {
+			const size = await pluginRegistry.size(pkg);
+			return prettyBytes(size);
+		} catch {
+			/* istanbul ignore next */
+			return;
+		}
+	};
 
 	return {
 		pluginRegistry,
@@ -315,6 +338,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		updatePlugin,
 		updatingStats,
 		filters,
+		fetchSize,
 		filterBy: (appliedFilters: any) => {
 			setFilters({ ...filters, ...appliedFilters });
 		},

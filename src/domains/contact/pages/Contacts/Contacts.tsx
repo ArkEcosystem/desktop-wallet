@@ -1,9 +1,9 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
-import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
@@ -114,7 +114,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	return (
 		<>
 			<Page profile={activeProfile}>
-				<Section>
+				<Section border>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
@@ -128,16 +128,8 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 					/>
 				</Section>
 
-				<Section className="flex-1">
-					{!contacts.length && (
-						<div data-testid="contacts__banner" className="text-center">
-							<Image name="ContactsBanner" domain="contacts" height={175} className="mx-auto" />
-
-							<div className="mt-8 text-theme-secondary-text">
-								{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
-							</div>
-						</div>
-					)}
+				<Section>
+					{!contacts.length && <EmptyBlock>{t("CONTACTS.CONTACTS_PAGE.EMPTY_MESSAGE")}</EmptyBlock>}
 
 					{!!contacts.length && (
 						<div className="w-full" data-testid="ContactList">

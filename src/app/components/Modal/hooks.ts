@@ -24,10 +24,14 @@ export const useModal = ({ isOpen, onClose }: { isOpen: boolean; onClose?: any }
 	);
 
 	useEffect(() => {
-		document.addEventListener("keyup", onEscKey, false);
+		if (isOpen) {
+			document.addEventListener("keyup", onEscKey, false);
+		} else {
+			document.removeEventListener("keyup", onEscKey);
+		}
 
 		return () => {
 			document.removeEventListener("keyup", onEscKey);
 		};
-	}, [onEscKey]);
+	}, [isOpen, onEscKey]);
 };

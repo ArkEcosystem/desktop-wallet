@@ -5,6 +5,11 @@ import { useTranslation } from "react-i18next";
 
 import { useFeeFormat } from "./hooks";
 
+export type InputFee = {
+	display: string;
+	value?: string;
+};
+
 export type InputFeeProps = {
 	defaultValue?: any;
 	value?: any;
@@ -13,12 +18,7 @@ export type InputFeeProps = {
 	max: string;
 	step: number;
 	showFeeOptions?: boolean;
-	onChange?: (value: { display: string; value: string }) => void;
-};
-
-export type InputFee = {
-	display: string;
-	value: string;
+	onChange?: (value: InputFee) => void;
 };
 
 export const InputFee = memo(
@@ -44,7 +44,6 @@ export const InputFee = memo(
 					<InputRange
 						disabled={!showFeeOptions}
 						name="fee"
-						avg={avgHuman}
 						value={fee}
 						min={minHuman}
 						max={maxHuman}

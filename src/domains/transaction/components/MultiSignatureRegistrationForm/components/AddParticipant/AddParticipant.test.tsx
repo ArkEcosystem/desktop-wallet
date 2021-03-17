@@ -244,8 +244,8 @@ describe("Add Participant", () => {
 
 		expect(onChange).toHaveBeenCalledWith([
 			{
-				address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-				publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+				address: wallet.address(),
+				publicKey: wallet.publicKey()!,
 			},
 		]);
 	});
