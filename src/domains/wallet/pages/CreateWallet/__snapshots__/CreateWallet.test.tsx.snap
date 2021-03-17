@@ -30,7 +30,7 @@ exports[`CreateWallet 1st step should render 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -207,7 +207,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -822,7 +822,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -1415,16 +1415,16 @@ exports[`CreateWallet should create a wallet with alias 2`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Wallet name
                         <span
-                          class="ml-1 text-theme-secondary-text"
+                          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="FormLabel__optional"
                         >
-                          (optional)
+                          optional
                         </span>
                       </label>
                       <div
@@ -1813,7 +1813,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -2406,16 +2406,16 @@ exports[`CreateWallet should create a wallet without alias 2`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Wallet name
                         <span
-                          class="ml-1 text-theme-secondary-text"
+                          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="FormLabel__optional"
                         >
-                          (optional)
+                          optional
                         </span>
                       </label>
                       <div
@@ -2806,7 +2806,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -3099,16 +3099,16 @@ exports[`CreateWallet should render 4th step 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
         Wallet name
         <span
-          class="ml-1 text-theme-secondary-text"
+          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
           data-testid="FormLabel__optional"
         >
-          (optional)
+          optional
         </span>
       </label>
       <div
@@ -3461,7 +3461,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >

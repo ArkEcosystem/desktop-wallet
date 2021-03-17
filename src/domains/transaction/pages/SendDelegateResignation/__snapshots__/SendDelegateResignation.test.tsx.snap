@@ -436,7 +436,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="fee"
                       >
@@ -454,18 +454,22 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                           class="flex-1"
                         >
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="relative"
                           >
                             <div
-                              class="relative flex flex-1"
+                              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                             >
-                              <input
-                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                                data-testid="InputCurrency"
-                                name="fee"
-                                type="text"
-                                value="1"
-                              />
+                              <div
+                                class="relative flex flex-1"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="InputCurrency"
+                                  name="fee"
+                                  type="text"
+                                  value="1"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -981,7 +985,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="fee"
                       >
@@ -999,18 +1003,22 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           class="flex-1"
                         >
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="relative"
                           >
                             <div
-                              class="relative flex flex-1"
+                              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                             >
-                              <input
-                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                                data-testid="InputCurrency"
-                                name="fee"
-                                type="text"
-                                value="25"
-                              />
+                              <div
+                                class="relative flex flex-1"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="InputCurrency"
+                                  name="fee"
+                                  type="text"
+                                  value="25"
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1976,7 +1984,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="mnemonic"
                       >
@@ -2028,7 +2036,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="secondMnemonic"
                       >
@@ -3206,7 +3214,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="mnemonic"
                       >
@@ -3273,7 +3281,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="secondMnemonic"
                       >

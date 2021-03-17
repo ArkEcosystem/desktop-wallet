@@ -10,7 +10,7 @@ exports[`PeerForm should render 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc my-8"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -241,7 +241,7 @@ exports[`PeerForm should render 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -270,7 +270,7 @@ exports[`PeerForm should render 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="host"
       >
@@ -299,16 +299,16 @@ exports[`PeerForm should render 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="type"
       >
         Type
         <span
-          class="ml-1 text-theme-secondary-text"
+          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
           data-testid="FormLabel__optional"
         >
-          (optional)
+          optional
         </span>
       </label>
       <label
@@ -359,7 +359,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc my-8"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -608,7 +608,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
@@ -637,7 +637,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="host"
       >
@@ -666,16 +666,16 @@ exports[`PeerForm should render the peer on the form 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="type"
       >
         Type
         <span
-          class="ml-1 text-theme-secondary-text"
+          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
           data-testid="FormLabel__optional"
         >
-          (optional)
+          optional
         </span>
       </label>
       <label

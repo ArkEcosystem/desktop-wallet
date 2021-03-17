@@ -335,7 +335,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -447,7 +447,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -584,7 +584,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="recipientAddress"
                                 >
@@ -694,7 +694,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="amount"
                                 >
@@ -755,7 +755,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="smartbridge"
                         >
@@ -796,7 +796,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -1271,7 +1271,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="mnemonic"
                       >
@@ -1433,7 +1433,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -1495,7 +1495,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -1632,7 +1632,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
@@ -1742,7 +1742,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="amount"
                 >
@@ -1983,7 +1983,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="smartbridge"
         >
@@ -2024,7 +2024,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="fee"
         >
@@ -2405,7 +2405,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -2519,7 +2519,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -2674,7 +2674,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="recipientAddress"
                                 >
@@ -2782,7 +2782,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="amount"
                                 >
@@ -2853,7 +2853,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="smartbridge"
                         >
@@ -2894,7 +2894,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -3372,7 +3372,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -3486,7 +3486,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -3641,7 +3641,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="recipientAddress"
                                 >
@@ -3749,7 +3749,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="amount"
                                 >
@@ -3820,7 +3820,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="smartbridge"
                         >
@@ -3861,7 +3861,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -4037,7 +4037,7 @@ exports[`SendTransfer should render form step 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -4099,7 +4099,7 @@ exports[`SendTransfer should render form step 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -4236,7 +4236,7 @@ exports[`SendTransfer should render form step 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
@@ -4346,7 +4346,7 @@ exports[`SendTransfer should render form step 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="amount"
                 >
@@ -4407,7 +4407,7 @@ exports[`SendTransfer should render form step 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="smartbridge"
         >
@@ -4448,7 +4448,7 @@ exports[`SendTransfer should render form step 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="fee"
         >
@@ -4527,7 +4527,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -4589,7 +4589,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -4726,7 +4726,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
@@ -4836,7 +4836,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="amount"
                 >
@@ -5077,7 +5077,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="smartbridge"
         >
@@ -5118,7 +5118,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="fee"
         >
@@ -5197,7 +5197,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -5259,7 +5259,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -5396,7 +5396,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="recipientAddress"
                 >
@@ -5506,7 +5506,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="amount"
                 >
@@ -5567,7 +5567,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="smartbridge"
         >
@@ -5608,7 +5608,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="fee"
         >
@@ -6567,7 +6567,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -6661,7 +6661,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -6798,7 +6798,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="recipientAddress"
                                 >
@@ -6908,7 +6908,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="amount"
                                 >
@@ -6969,7 +6969,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="smartbridge"
                         >
@@ -7010,7 +7010,7 @@ exports[`SendTransfer should render transfer form without selected wallet 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -7426,7 +7426,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -7538,7 +7538,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -7693,7 +7693,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="recipientAddress"
                                 >
@@ -7801,7 +7801,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="amount"
                                 >
@@ -7874,7 +7874,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="smartbridge"
                         >
@@ -7917,7 +7917,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -8395,7 +8395,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -8507,7 +8507,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -8644,7 +8644,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="recipientAddress"
                                 >
@@ -8754,7 +8754,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                               >
                                 <label
-                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                                   data-testid="FormLabel"
                                   for="amount"
                                 >
@@ -8815,7 +8815,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="smartbridge"
                         >
@@ -8856,7 +8856,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >

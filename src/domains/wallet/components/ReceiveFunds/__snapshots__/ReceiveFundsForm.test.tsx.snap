@@ -16,26 +16,30 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
+            class="relative"
           >
             <div
-              class="relative flex flex-1"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
             >
-              <input
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__amount"
-                name="amount"
-                placeholder="Amount"
-                type="text"
-                value="10"
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="ReceiveFundsForm__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value="10"
+                />
+              </div>
             </div>
           </div>
         </fieldset>
@@ -43,16 +47,16 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-secondary-text"
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
             >
-              (optional)
+              optional
             </span>
           </label>
           <div
@@ -106,26 +110,30 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
+            class="relative"
           >
             <div
-              class="relative flex flex-1"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
             >
-              <input
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__amount"
-                name="amount"
-                placeholder="Amount"
-                type="text"
-                value=""
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="ReceiveFundsForm__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+              </div>
             </div>
           </div>
         </fieldset>
@@ -133,16 +141,16 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-secondary-text"
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
             >
-              (optional)
+              optional
             </span>
           </label>
           <div
@@ -196,26 +204,30 @@ exports[`ReceiveFundsForm should not show smartbridge if is not supported by net
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
+            class="relative"
           >
             <div
-              class="relative flex flex-1"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
             >
-              <input
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__amount"
-                name="amount"
-                placeholder="Amount"
-                type="text"
-                value=""
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="ReceiveFundsForm__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+              </div>
             </div>
           </div>
         </fieldset>
@@ -272,26 +284,30 @@ exports[`ReceiveFundsForm should render 1`] = `
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
+            class="relative"
           >
             <div
-              class="relative flex flex-1"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
             >
-              <input
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__amount"
-                name="amount"
-                placeholder="Amount"
-                type="text"
-                value=""
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="ReceiveFundsForm__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+              </div>
             </div>
           </div>
         </fieldset>
@@ -299,16 +315,16 @@ exports[`ReceiveFundsForm should render 1`] = `
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-secondary-text"
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
             >
-              (optional)
+              optional
             </span>
           </label>
           <div
@@ -362,26 +378,30 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
+            class="relative"
           >
             <div
-              class="relative flex flex-1"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
             >
-              <input
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__amount"
-                name="amount"
-                placeholder="Amount"
-                type="text"
-                value=""
-              />
+              <div
+                class="relative flex flex-1"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="ReceiveFundsForm__amount"
+                  name="amount"
+                  placeholder="Amount"
+                  type="text"
+                  value=""
+                />
+              </div>
             </div>
           </div>
         </fieldset>
@@ -389,16 +409,16 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-secondary-text"
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
             >
-              (optional)
+              optional
             </span>
           </label>
           <div

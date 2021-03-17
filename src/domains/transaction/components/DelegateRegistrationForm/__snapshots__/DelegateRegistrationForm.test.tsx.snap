@@ -120,7 +120,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -168,7 +168,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -186,18 +186,53 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                  class="relative"
                 >
                   <div
-                    class="relative flex flex-1"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="InputCurrency"
+                        name="fee"
+                        type="text"
+                        value="2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 px-1 w-full"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="Range__Track-sc-10itqc2-0 sgjTD"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -364,7 +399,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -393,7 +428,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -411,18 +446,53 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                  class="relative"
                 >
                   <div
-                    class="relative flex flex-1"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="InputCurrency"
+                        name="fee"
+                        type="text"
+                        value="2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 px-1 w-full"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="Range__Track-sc-10itqc2-0 sgjTD"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -811,7 +881,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -840,7 +910,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -858,18 +928,53 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                  class="relative"
                 >
                   <div
-                    class="relative flex flex-1"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="10"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="InputCurrency"
+                        name="fee"
+                        type="text"
+                        value="10"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 px-1 w-full"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="Range__Track-sc-10itqc2-0 sgjTD"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="10"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1036,7 +1141,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -1065,7 +1170,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1083,18 +1188,53 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                  class="relative"
                 >
                   <div
-                    class="relative flex flex-1"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="InputCurrency"
+                        name="fee"
+                        type="text"
+                        value="2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 px-1 w-full"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="Range__Track-sc-10itqc2-0 sgjTD"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1261,7 +1401,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -1309,7 +1449,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1327,18 +1467,53 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 class="flex-1"
               >
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                  class="relative"
                 >
                   <div
-                    class="relative flex flex-1"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="InputCurrency"
+                        name="fee"
+                        type="text"
+                        value="2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 px-1 w-full"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="Range__Track-sc-10itqc2-0 sgjTD"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1505,7 +1680,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
@@ -1553,7 +1728,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1571,18 +1746,53 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 class="flex-1"
               >
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                  class="relative"
                 >
                   <div
-                    class="relative flex flex-1"
+                    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="InputCurrency"
-                      name="fee"
-                      type="text"
-                      value="2"
-                    />
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="InputCurrency"
+                        name="fee"
+                        type="text"
+                        value="2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 px-1 w-full"
+                  >
+                    <div
+                      class="flex flex-wrap justify-center"
+                      data-testid="Range"
+                    >
+                      <div
+                        class="Range__Track-sc-10itqc2-0 sgjTD"
+                        data-testid="Range__track"
+                        style="transform: scale(1); cursor: pointer;"
+                      >
+                        <div
+                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                          data-testid="Range__track__filled"
+                        >
+                          <div
+                            aria-valuemax="10"
+                            aria-valuemin="0"
+                            aria-valuenow="2"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                            data-testid="Range__thumb"
+                            draggable="false"
+                            role="slider"
+                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                            tabindex="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
