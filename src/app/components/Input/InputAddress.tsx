@@ -1,5 +1,4 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Icon } from "app/components/Icon";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { ValidationRules } from "react-hook-form";
@@ -52,26 +51,7 @@ export const InputAddress = ({
 	};
 	const rules = useDefaultRules ? defaultRules : {};
 
-	return (
-		<Input
-			ref={registerRef?.(rules)}
-			type="text"
-			data-testid="InputAddress__input"
-			{...props}
-			addons={{
-				end: (
-					<button
-						data-testid="InputAddress__qr-button"
-						type="button"
-						className="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
-						onClick={onQRCodeClick}
-					>
-						<Icon name="QrCode" width={20} height={20} />
-					</button>
-				),
-			}}
-		/>
-	);
+	return <Input ref={registerRef?.(rules)} type="text" data-testid="InputAddress__input" {...props} />;
 };
 
 InputAddress.defaultProps = {
