@@ -4,7 +4,7 @@ import electron, { ipcRenderer } from "electron";
 import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginConfigurationData } from "plugins/core/configuration";
-import React from "react";
+import React, { useState } from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { PluginManagerProvider, usePluginManagerContext } from "./PluginManagerProvider";
@@ -543,5 +543,36 @@ describe("PluginManagerProvider", () => {
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
+	it("should fetch plugin size", async () => {
+		const Component = () => {
+			const { fetchPluginPackages, fetchSize, pluginPackages } = usePluginManagerContext();
+			const [size, setSize] = useState<string>();
+
+			return (
+				<div>
+					<button onClick={() => fetchPluginPackages()}>Fetch Plugins</button>
+					<button onClick={() => fetchSize(pluginPackages?.[0]?.id()).then(setSize)}>Fetch Size</button>
+					<span>Plugins {pluginPackages.length}</span>
+					<span>Size {size || "N/A"}</span>
+				</div>
+			);
+		};
+
+		render(
+			<PluginManagerProvider manager={manager} services={[]}>
+				<Component />
+			</PluginManagerProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch Size"));
+		expect(screen.getByText("Size N/A")).toBeInTheDocument();
+
+		fireEvent.click(screen.getByText("Fetch Plugins"));
+		await waitFor(() => expect(screen.getByText("Plugins 2")).toBeInTheDocument());
+
+		fireEvent.click(screen.getByText("Fetch Size"));
+		await waitFor(() => expect(screen.getByText("Size 304 kB")).toBeInTheDocument());
 	});
 });
