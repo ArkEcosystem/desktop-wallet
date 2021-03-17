@@ -184,7 +184,11 @@ exports[`PluginHeader should render properly 1`] = `
                 <span
                   class="font-semibold text-theme-secondary-text"
                 >
-                  4.2 Mb
+                  <span
+                    data-testid="PluginSpecs__size"
+                  >
+                    4.2 Mb
+                  </span>
                 </span>
               </div>
             </div>
@@ -431,7 +435,11 @@ exports[`PluginHeader should render updating plugin 1`] = `
                 <span
                   class="font-semibold text-theme-secondary-text"
                 >
-                  4.2 Mb
+                  <span
+                    data-testid="PluginSpecs__size"
+                  >
+                    4.2 Mb
+                  </span>
                 </span>
               </div>
             </div>

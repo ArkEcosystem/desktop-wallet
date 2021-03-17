@@ -31,6 +31,7 @@ type Props = {
 	onDisable?: () => void;
 	onUpdate?: () => void;
 	updatingStats?: any;
+	isLoadingSize?: boolean;
 };
 
 export const PluginHeader = ({
@@ -161,4 +162,8 @@ export const PluginHeader = ({
 			</div>
 		</div>
 	);
+};
+
+PluginHeader.defaultProps = {
+	isLoadingSize: false,
 };
