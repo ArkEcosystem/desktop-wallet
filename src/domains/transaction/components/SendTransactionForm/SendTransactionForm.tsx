@@ -15,6 +15,7 @@ type SendTransactionFormProps = {
 	profile: Profile;
 	transactionType: string;
 	hasWalletId: boolean;
+	disableNetworkField?: boolean;
 };
 
 export const SendTransactionForm = ({
@@ -23,6 +24,7 @@ export const SendTransactionForm = ({
 	networks,
 	profile,
 	transactionType,
+	disableNetworkField,
 }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
@@ -93,7 +95,7 @@ export const SendTransactionForm = ({
 					id="SendTransactionForm__network"
 					networks={availableNetworks}
 					selected={network}
-					disabled={hasWalletId && !!senderAddress}
+					disabled={disableNetworkField || (hasWalletId && !!senderAddress)}
 					onSelect={handleSelectNetwork}
 				/>
 			</FormField>
@@ -132,6 +134,7 @@ export const SendTransactionForm = ({
 };
 
 SendTransactionForm.defaultProps = {
+	disableNetworkField: false,
 	transactionType: "transfer",
 	hasWalletId: false,
 };

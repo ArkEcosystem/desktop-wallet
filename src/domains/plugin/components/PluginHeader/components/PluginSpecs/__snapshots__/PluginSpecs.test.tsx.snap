@@ -67,11 +67,26 @@ exports[`PluginSpecs should render properly 1`] = `
             class="font-semibold text-theme-secondary-text"
           >
             <a
-              class="link"
+              class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
               data-testid="PluginSpecs__url"
-              href="/"
+              rel="noopener noreferrer"
+              to="https://github.com/arkecosystem/explorer"
             >
-              github.com
+              <span
+                class="underline-dotted"
+              >
+                github.com
+              </span>
+              <div
+                class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </a>
           </span>
         </div>
@@ -112,7 +127,11 @@ exports[`PluginSpecs should render properly 1`] = `
           <span
             class="font-semibold text-theme-secondary-text"
           >
-            4.2 Mb
+            <span
+              data-testid="PluginSpecs__size"
+            >
+              4.2 Mb
+            </span>
           </span>
         </div>
       </div>
@@ -241,11 +260,146 @@ exports[`PluginSpecs should render without url and size 1`] = `
           <span
             class="font-semibold text-theme-secondary-text"
           >
-            N/A
+            <span
+              data-testid="PluginSpecs__size"
+            >
+              N/A
+            </span>
           </span>
         </div>
       </div>
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`PluginSpecs should show loading state for size 1`] = `
+<div>
+  <div
+    class="flex justify-between space-4"
+  >
+    <div
+      class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
+    >
+      <div
+        class="flex"
+      >
+        <div
+          class="flex flex-col undefined"
+        >
+          <span
+            class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            Author
+          </span>
+          <span
+            class="font-semibold text-theme-secondary-text"
+          >
+            <div
+              class="flex items-center"
+            >
+              <span
+                class="font-semibold text-theme-secondary-text"
+              >
+                ARK Ecosystem
+              </span>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex pl-8"
+      >
+        <div
+          class="flex flex-col undefined"
+        >
+          <span
+            class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            Category
+          </span>
+          <span
+            class="font-semibold text-theme-secondary-text"
+          >
+            Utility
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex pl-8"
+      >
+        <div
+          class="flex flex-col undefined"
+        >
+          <span
+            class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            URL
+          </span>
+          <span
+            class="font-semibold text-theme-secondary-text"
+          >
+            N/A
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
+    >
+      <div
+        class="flex pl-8"
+      >
+        <div
+          class="flex flex-col text-right"
+        >
+          <span
+            class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            Version
+          </span>
+          <span
+            class="font-semibold text-theme-secondary-text"
+          >
+            1.3.8
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex pl-8"
+      >
+        <div
+          class="flex flex-col text-right"
+        >
+          <span
+            class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            Size
+          </span>
+          <span
+            class="font-semibold text-theme-secondary-text"
+          >
+            <span
+              data-testid="PluginSpecs__size-skeleton"
+            >
+              <span>
+                <span
+                  class="flex items-center leading-none"
+                >
+                  <span
+                    class="react-loading-skeleton mt-0.5 css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 60px; height: 20px;"
+                  >
+                    ‌
+                  </span>
+                  ‌
+                </span>
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;

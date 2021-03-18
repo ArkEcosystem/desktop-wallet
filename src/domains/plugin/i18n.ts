@@ -85,10 +85,11 @@ export const translations: { [key: string]: any } = {
 
 		VIEW: {
 			LATEST: "Latest",
+			ALL: "All",
+			EXCHANGE: "Exchange",
 			GAMING: "Gaming",
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
-			EXCHANGE: "Exchange",
 			UTILITY: "Utility",
 		},
 	},
@@ -105,7 +106,6 @@ export const translations: { [key: string]: any } = {
 		GAMING: "Gaming",
 		GAME: "Game",
 		LANGUAGE: "Language",
-		MY_PLUGINS: "My Plugins",
 		OTHER: "Other",
 		UTILITY: "Utility",
 		EXCHANGE: "Exchange",

@@ -1,7 +1,7 @@
 import { fireEvent } from "@testing-library/react";
 import { ipcRenderer } from "electron";
 import React from "react";
-import { render } from "testing-library";
+import { render, screen } from "utils/testing-library";
 
 import { PluginSpecs } from "./PluginSpecs";
 
@@ -41,5 +41,14 @@ describe("PluginSpecs", () => {
 		expect(await findByText("Utility")).toBeTruthy();
 		expect(await findAllByText("N/A")).toHaveLength(2);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show loading state for size", () => {
+		const { container } = render(
+			<PluginSpecs author="ARK Ecosystem" category="Utility" version="1.3.8" isLoadingSize />,
+		);
+
+		expect(screen.getByTestId("PluginSpecs__size-skeleton")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 	});
 });
