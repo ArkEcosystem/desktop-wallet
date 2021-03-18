@@ -1,4 +1,4 @@
-import { Environment,Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 
 type WalletImportTypes = {
 	profile: Profile;

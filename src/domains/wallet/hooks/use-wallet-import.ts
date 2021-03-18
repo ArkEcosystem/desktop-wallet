@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { useTranslation } from "react-i18next";
 
 type PrivateKey = string;

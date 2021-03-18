@@ -9,6 +9,7 @@ export const encryptPassword = (t: any) => ({
 		},
 	}),
 	confirmPassword: (password: string) => ({
-		validate: (confirmPassword: string) => !!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
+		validate: (confirmPassword: string) =>
+			!!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
 	}),
 });
