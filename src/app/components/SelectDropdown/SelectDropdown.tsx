@@ -18,7 +18,7 @@ type SelectProps = {
 	addons?: any;
 	options: Option[];
 	defaultValue?: string;
-	inputClassName?: string;
+	innerClassName?: string;
 	isInvalid?: boolean;
 	showCaret?: boolean;
 	disabled?: boolean;
@@ -31,7 +31,7 @@ type SelectDropdownProps = {
 	options: Option[];
 	defaultSelectedItem?: Option;
 	placeholder?: string;
-	inputClassName?: string;
+	innerClassName?: string;
 	showCaret?: boolean;
 	isInvalid?: boolean;
 	disabled?: boolean;
@@ -49,7 +49,8 @@ const SelectDropdown = ({
 	disabled,
 	onSelectedItemChange,
 	isInvalid,
-	inputClassName,
+	className,
+	innerClassName,
 	allowFreeInput = false,
 	showCaret = true,
 	id,
@@ -165,9 +166,10 @@ const SelectDropdown = ({
 					suggestion={suggestion}
 					disabled={disabled}
 					addons={addons}
+					innerClassName={cn("cursor-default", innerClassName)}
 					{...getInputProps({
 						placeholder,
-						className: cn("cursor-default", inputClassName),
+						className,
 						onFocus: openMenu,
 						onBlur: (event) => {
 							if (allowFreeInput) {
@@ -249,7 +251,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			options,
 			defaultValue,
 			placeholder,
-			inputClassName,
+			className,
+			innerClassName,
 			allowFreeInput,
 			showCaret,
 			isInvalid,
@@ -286,7 +289,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					id={id}
 					allowFreeInput={allowFreeInput}
 					showCaret={showCaret}
-					inputClassName={inputClassName}
+					className={className}
+					innerClassName={innerClassName}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
