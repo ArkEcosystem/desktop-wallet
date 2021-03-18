@@ -24,7 +24,7 @@ export const CreateWallet = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [encryptionPassword, setEncryptionPassword] = useState();
+	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
 	const nameMaxLength = 42;
 
@@ -44,9 +44,23 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		const wallet = getValues("wallet");
+		let wallet = getValues("wallet");
 
-		// TODO: Set password encryption to mnemonic if set
+		if (encryptionPassword) {
+			try {
+				const mnemonic = getValues("mnemonic");
+				const coin = wallet.network().coin();
+				const network = wallet.network().id();
+
+				forgetTemporaryWallet();
+
+				wallet = await activeProfile
+					.wallets()
+					.importByMnemonicWithEncryption(mnemonic, coin, network, encryptionPassword);
+			} catch (error) {
+				setShowError(true);
+			}
+		}
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
