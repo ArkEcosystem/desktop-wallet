@@ -35,6 +35,11 @@ describe("SelectDropdown", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render without caret", () => {
+		const { container } = render(<Select options={options} showCaret={false} />);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render with initial default value", () => {
 		const { container } = render(<Select options={options} defaultValue="3" />);
 		expect(container).toMatchSnapshot();
