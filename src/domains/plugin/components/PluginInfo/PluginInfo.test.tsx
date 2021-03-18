@@ -37,7 +37,7 @@ describe("PluginInfo", () => {
 	});
 
 	it("should open and close the plugin permissions modal", async () => {
-		const permissions = ["EVENTS", "PROFILE"];
+		const permissions = ["EVENTS", "PROFILE", "CUSTOM_PERMISSION"];
 
 		const { asFragment, getByTestId, queryByTestId } = render(<PluginInfo permissions={permissions} />);
 
