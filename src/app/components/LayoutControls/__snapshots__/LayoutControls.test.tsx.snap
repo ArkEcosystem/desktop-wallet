@@ -1,29 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ControlButton should render 1`] = `
-<DocumentFragment>
-  <div
-    class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
-  />
-</DocumentFragment>
-`;
-
-exports[`ControlButton should render active 1`] = `
-<DocumentFragment>
-  <div
-    class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
-  />
-</DocumentFragment>
-`;
-
-exports[`ControlButton should render changed with dot 1`] = `
-<DocumentFragment>
-  <div
-    class="LayoutControls__ControlButton-j2iwgi-0 bMHgZY"
-  />
-</DocumentFragment>
-`;
-
 exports[`LayoutControls should render 1`] = `
 <DocumentFragment>
   <div
@@ -34,7 +10,7 @@ exports[`LayoutControls should render 1`] = `
       data-testid="LayoutControls__grid"
     >
       <div
-        class="LayoutControls__ControlButton-j2iwgi-0 gNexJa"
+        class="ControlButton-sc-1xp1l1a-0 kAaalh"
         data-testid="LayoutControls__grid--icon"
       >
         <div
@@ -53,7 +29,7 @@ exports[`LayoutControls should render 1`] = `
       data-testid="LayoutControls__list"
     >
       <div
-        class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
+        class="ControlButton-sc-1xp1l1a-0 irDSCf"
         data-testid="LayoutControls__list--icon"
       >
         <div

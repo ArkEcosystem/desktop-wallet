@@ -1,7 +1,8 @@
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
+import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
-import { ControlButton, LayoutControls } from "app/components/LayoutControls";
+import { LayoutControls } from "app/components/LayoutControls";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
 import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";

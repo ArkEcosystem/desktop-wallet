@@ -251,7 +251,9 @@ export const Votes = () => {
 								onReset={() => setSearchQuery("")}
 								debounceTimeout={100}
 							/>
+
 							<div className="mr-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown
