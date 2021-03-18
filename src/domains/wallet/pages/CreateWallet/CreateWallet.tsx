@@ -114,13 +114,6 @@ export const CreateWallet = () => {
 	const handleNext = async () => {
 		const newIndex = activeTab + 1;
 
-		if (newIndex === 5) {
-			const isUsingEncryption = await form.trigger(["encryptionPassword", "confirmEncryptionPassword"]);
-			if (isUsingEncryption) {
-				setEncryptionPassword(form.getValues("encryptionPassword"));
-			}
-		}
-
 		if (newIndex === 2) {
 			setShowError(false);
 			setIsGeneratingWallet(true);
@@ -136,6 +129,14 @@ export const CreateWallet = () => {
 		} else {
 			setActiveTab(newIndex);
 		}
+	};
+
+	const handlePasswordSubmit = async () => {
+		const isUsingEncryption = await form.trigger(["encryptionPassword", "confirmEncryptionPassword"]);
+		if (isUsingEncryption) {
+			setEncryptionPassword(form.getValues("encryptionPassword"));
+		}
+		handleNext();
 	};
 
 	return (
@@ -186,12 +187,28 @@ export const CreateWallet = () => {
 										{t("COMMON.BACK")}
 									</Button>
 
-									{activeTab < 5 && (
+									{activeTab < 4 && (
 										<Button
 											data-testid="CreateWallet__continue-button"
 											disabled={!isValid}
 											isLoading={isGeneratingWallet}
 											onClick={handleNext}
+										>
+											{t("COMMON.CONTINUE")}
+										</Button>
+									)}
+
+									{activeTab === 4 && (
+										<Button
+											data-testid="CreateWallet__continue-button"
+											disabled={
+												!isValid ||
+												isGeneratingWallet ||
+												!form.watch("encryptionPassword") ||
+												!form.watch("confirmEncryptionPassword")
+											}
+											isLoading={isGeneratingWallet}
+											onClick={handlePasswordSubmit}
 										>
 											{t("COMMON.CONTINUE")}
 										</Button>
