@@ -3,7 +3,7 @@ import "./styles/app.css";
 import { App } from "app";
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 // Based on https://github.com/fvilers/disable-react-devtools.
 if (process.env.NODE_ENV && ["development", "production"].includes(process.env.NODE_ENV)) {
@@ -23,8 +23,8 @@ if (process.env.NODE_ENV && ["development", "production"].includes(process.env.N
 }
 
 ReactDOM.render(
-	<BrowserRouter>
+	<HashRouter>
 		<App />
-	</BrowserRouter>,
+	</HashRouter>,
 	document.getElementById("root"),
 );
