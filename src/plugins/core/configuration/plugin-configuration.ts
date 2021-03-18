@@ -177,6 +177,20 @@ export class PluginConfigurationData {
 		return scopeRegex.test(name);
 	}
 
+	url() {
+		let url = this.#config.get<{ url: string }>("sourceProvider")?.url; // PSDK registry field
+
+		if (!url) {
+			url = this.#config.get<{ url: string }>("repository")?.url;
+		}
+
+		if (!url) {
+			url = this.#config.get("homepage");
+		}
+
+		return url?.replace(/^git\+/, "").replace(/\.git$/, "");
+	}
+
 	async syncSize(dir?: string) {
 		const dist = this.get<{ unpackedSize: number }>("dist");
 
@@ -213,6 +227,7 @@ export class PluginConfigurationData {
 			description: this.description(),
 			isOfficial: this.isOfficial(),
 			minimumVersion: this.minimumVersion(),
+			url: this.url(),
 		};
 	}
 }

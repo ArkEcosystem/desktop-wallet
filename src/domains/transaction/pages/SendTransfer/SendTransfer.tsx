@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -21,15 +21,20 @@ import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
 import { TransferLedgerReview } from "./LedgerReview";
+import { NetworkStep } from "./NetworkStep";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const location = useLocation();
+	const profile = useActiveProfile();
 	const { walletId: hasWalletId } = useParams();
 	const { state } = location;
 
-	const [activeTab, setActiveTab] = useState(1);
+	const showNetworkStep = !state && !hasWalletId;
+	const firstTabIndex = showNetworkStep ? 0 : 1;
+
+	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
 	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
@@ -39,7 +44,14 @@ export const SendTransfer = () => {
 	const activeWallet = useActiveWallet();
 
 	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
-	const networks = useMemo(() => env.availableNetworks(), [env]);
+
+	const networks = useMemo(() => {
+		const results: Record<string, Coins.Network> = {};
+		for (const wallet of profile.wallets().values()) {
+			results[wallet.networkId()] = wallet.network();
+		}
+		return Object.values(results);
+	}, [profile]);
 
 	const form = useForm({
 		mode: "onChange",
@@ -54,7 +66,7 @@ export const SendTransfer = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected } = watch();
+	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
 	const { sendTransfer, common } = useValidation();
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
@@ -116,6 +128,7 @@ export const SendTransfer = () => {
 		setValue("senderAddress", wallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		for (const network of networks) {
+			/* istanbul ignore else */
 			if (network.coin() === wallet.coinId() && network.id() === wallet.networkId()) {
 				setValue("network", network, { shouldValidate: true, shouldDirty: true });
 
@@ -203,7 +216,7 @@ export const SendTransfer = () => {
 		// Abort any existing listener
 		abortRef.current.abort();
 
-		if (activeTab === 1) {
+		if (activeTab === firstTabIndex) {
 			return history.go(-1);
 		}
 
@@ -239,15 +252,23 @@ export const SendTransfer = () => {
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+						<StepIndicator
+							size={showNetworkStep ? 5 : 4}
+							activeIndex={showNetworkStep ? activeTab + 1 : activeTab}
+						/>
 
 						<div className="mt-8">
+							<TabPanel tabId={0}>
+								<NetworkStep profile={activeProfile} networks={networks} />
+							</TabPanel>
+
 							<TabPanel tabId={1}>
 								<FormStep
 									networks={networks}
 									profile={activeProfile}
 									deeplinkProps={state}
 									hasWalletId={hasWalletId}
+									disableNetworkField={showNetworkStep}
 								/>
 							</TabPanel>
 
@@ -293,7 +314,9 @@ export const SendTransfer = () => {
 												</Button>
 												<Button
 													data-testid="SendTransfer__button--continue"
-													disabled={!isValid || isSubmitting}
+													disabled={
+														activeTab === 0 && network ? false : !isValid || isSubmitting
+													}
 													onClick={async () => await handleNext()}
 													isLoading={isSubmitting || isConfirming}
 												>

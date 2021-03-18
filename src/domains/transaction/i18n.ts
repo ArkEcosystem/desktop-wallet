@@ -318,6 +318,10 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_TRANSACTION_SEND: {
+		NETWORK_STEP: {
+			TITLE: "Select a Cryptoasset",
+			SUBTITLE: "Select a cryptoasset to create your new wallet address",
+		},
 		FIRST_STEP: {
 			TITLE: "Send",
 			DESCRIPTION: "Enter details to send your money",
