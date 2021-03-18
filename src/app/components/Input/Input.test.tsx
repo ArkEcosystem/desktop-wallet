@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "testing-library";
+import { render } from "utils/testing-library";
 
 import { Input } from "./Input";
 
@@ -10,21 +10,37 @@ describe("Input", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with a custom element", () => {
-		const { getByTestId } = render(<Input as="select" />);
+	it("should render as custom element", () => {
+		const { asFragment, getByTestId } = render(<Input as="select" />);
 		const input = getByTestId("Input");
 		expect(input.tagName).toEqual("SELECT");
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with focus", () => {
-		const { getByTestId } = render(<Input as="select" isFocused />);
+		const { asFragment, getByTestId } = render(<Input isFocused />);
 		const input = getByTestId("Input");
-		expect(input.tagName).toEqual("SELECT");
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with invalid", () => {
-		const { getByTestId } = render(<Input as="select" isInvalid={true} errorMessage="Field invalid" />);
+		const { asFragment, getByTestId } = render(<Input isInvalid={true} errorMessage="Field invalid" />);
 		const input = getByTestId("Input__error");
 		expect(input).toBeVisible();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with addons", () => {
+		const { asFragment, getByText } = render(
+			<Input addons={{ start: <span>start</span>, end: <span>end</span> }} />,
+		);
+
+		expect(getByText("start")).toBeTruthy();
+		expect(getByText("end")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
