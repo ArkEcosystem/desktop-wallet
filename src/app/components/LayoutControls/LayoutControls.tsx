@@ -10,7 +10,7 @@ type LayoutControlsProps = {
 
 export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedViewType }: LayoutControlsProps) => (
 	<div className="flex items-center space-x-1">
-		<div data-testid="LayoutControls__grid" className="group">
+		<div data-testid="LayoutControls__grid">
 			<ControlButton
 				data-testid="LayoutControls__grid--icon"
 				isActive={selectedViewType === "grid"}
@@ -20,7 +20,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 			</ControlButton>
 		</div>
 
-		<div data-testid="LayoutControls__list" className="group">
+		<div data-testid="LayoutControls__list">
 			<ControlButton
 				data-testid="LayoutControls__list--icon"
 				isActive={selectedViewType === "list"}

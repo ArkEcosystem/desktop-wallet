@@ -2,6 +2,7 @@ import { ProfileSetting, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/p
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
+import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
@@ -34,16 +35,21 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
-	const [searchQuery, setSearchQuery] = useState("");
-	const [walletsDisplayType, setWalletsDisplayType] = useState("all");
-	const [selectedNetworkIds, setSelectedNetworkIds] = useState(
-		uniq(
+	const defaultConfiguration = {
+		walletsDisplayType: "all",
+		selectedNetworkIds: uniq(
 			activeProfile
 				.wallets()
 				.values()
 				.map((wallet) => wallet.network().id()),
 		),
-	);
+	};
+
+	const [searchQuery, setSearchQuery] = useState("");
+
+	const [walletsDisplayType, setWalletsDisplayType] = useState(defaultConfiguration.walletsDisplayType);
+	const [selectedNetworkIds, setSelectedNetworkIds] = useState(defaultConfiguration.selectedNetworkIds);
+
 	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
@@ -127,6 +133,18 @@ export const Votes = () => {
 			}
 		},
 	};
+
+	const isFilterChanged = useMemo(() => {
+		if (walletsDisplayType !== defaultConfiguration.walletsDisplayType) {
+			return true;
+		}
+
+		if (selectedNetworkIds.length < defaultConfiguration.selectedNetworkIds.length) {
+			return true;
+		}
+
+		return false;
+	}, [walletsDisplayType, selectedNetworkIds, defaultConfiguration]);
 
 	const loadVotes = useCallback(
 		(address) => {
@@ -244,7 +262,7 @@ export const Votes = () => {
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
-						<div className="flex items-center space-x-8 text-theme-primary-200">
+						<div className="flex items-center space-x-5 text-theme-primary-200">
 							<HeaderSearchBar
 								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
 								onSearch={setSearchQuery}
@@ -252,16 +270,18 @@ export const Votes = () => {
 								debounceTimeout={100}
 							/>
 
-							<div className="mr-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+							<div className="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown
 										position="right"
 										toggleContent={
-											<div className="cursor-pointer">
-												<Icon name="Filters" width={20} height={20} />
-											</div>
+											<ControlButton isChanged={isFilterChanged}>
+												<div className="flex items-center justify-center h-5 w-5">
+													<Icon name="Filters" width={17} height={19} />
+												</div>
+											</ControlButton>
 										}
 									>
 										<div className="py-7 px-10 w-128">

@@ -3,23 +3,43 @@
 exports[`ControlButton should render 1`] = `
 <DocumentFragment>
   <div
-    class="ControlButton-sc-1xp1l1a-0 irDSCf"
-  />
+    class="group"
+  >
+    <div
+      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
+    />
+  </div>
 </DocumentFragment>
 `;
 
 exports[`ControlButton should render active 1`] = `
 <DocumentFragment>
   <div
-    class="ControlButton-sc-1xp1l1a-0 kAaalh"
-  />
+    class="group"
+  >
+    <div
+      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 hkVZRt"
+    />
+  </div>
 </DocumentFragment>
 `;
 
 exports[`ControlButton should render changed with dot 1`] = `
 <DocumentFragment>
   <div
-    class="ControlButton-sc-1xp1l1a-0 fPlJYP"
-  />
+    class="group"
+  >
+    <div
+      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
+    >
+      <div
+        class="flex absolute right-0 justify-center items-center mr-2 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background"
+      >
+        <div
+          class="w-2 h-2 rounded-full bg-theme-danger-500"
+        />
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;

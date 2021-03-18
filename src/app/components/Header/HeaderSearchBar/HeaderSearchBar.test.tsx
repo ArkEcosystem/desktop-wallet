@@ -28,16 +28,6 @@ describe("HeaderSearchBar", () => {
 		expect(getByTestId("extra-slot")).toBeTruthy();
 	});
 
-	it("should show the with custom label slot", () => {
-		const { getByTestId } = render(
-			<HeaderSearchBar>
-				<div data-testid="custom-content">custom</div>
-			</HeaderSearchBar>,
-		);
-
-		expect(getByTestId("custom-content")).toBeTruthy();
-	});
-
 	it("should hide the searchbar when clicked outside", () => {
 		const onSearch = jest.fn();
 
