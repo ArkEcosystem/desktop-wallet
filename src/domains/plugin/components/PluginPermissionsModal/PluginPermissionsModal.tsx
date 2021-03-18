@@ -20,7 +20,7 @@ export const PluginPermissionsModal = ({ permissions, isOpen, onClose }: Props) 
 				<div className="w-full">
 					<ul className="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text">
 						{permissions.map((permission: string) => (
-							<li key={permission}>{t(`PLUGINS.PERMISSIONS.${permission}`)}</li>
+							<li key={permission}>{permission}</li>
 						))}
 					</ul>
 				</div>

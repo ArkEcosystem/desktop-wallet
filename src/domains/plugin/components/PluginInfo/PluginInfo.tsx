@@ -17,12 +17,11 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 	const { t, i18n } = useTranslation();
 	const hasRequirements = !!minimumVersion;
 	const [showPermissionsModal, setShowPermissionsModal] = useState(false);
-	const validPermissions = permissions.filter((permission: string) =>
-		i18n.exists(`PLUGINS.PERMISSIONS.${permission}`),
-	);
-	const permissionsString = validPermissions
-		.map((permission: string) => t(`PLUGINS.PERMISSIONS.${permission}`))
-		.join(", ");
+	const translatedPermissions = permissions.map((permission: string) => {
+		const key = `PLUGINS.PERMISSIONS.${permission}`;
+		return i18n.exists(key) ? t(key) : permission;
+	});
+	const permissionsString = translatedPermissions.join(", ");
 
 	return (
 		<>
@@ -112,7 +111,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 			</div>
 
 			<PluginPermissionsModal
-				permissions={validPermissions}
+				permissions={translatedPermissions}
 				isOpen={showPermissionsModal}
 				onClose={() => setShowPermissionsModal(false)}
 			/>
