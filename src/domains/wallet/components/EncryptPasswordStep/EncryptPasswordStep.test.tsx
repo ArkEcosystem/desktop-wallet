@@ -5,7 +5,7 @@ import { render } from "utils/testing-library";
 
 import { EncryptPasswordStep } from "./EncryptPasswordStep";
 
-describe("ImportWallet - Password Encryption Step", () => {
+describe("EncryptPasswordStep", () => {
 	it("should render", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
