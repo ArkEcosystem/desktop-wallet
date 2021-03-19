@@ -18,7 +18,9 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 				position="right"
 				toggleContent={
 					<ControlButton isChanged={selectedOption !== "all"}>
-						<Icon name="Filters" width={17} height={19} />
+						<div className="flex items-center justify-center h-5 w-5">
+							<Icon name="Filters" width={17} height={19} />
+						</div>
 					</ControlButton>
 				}
 			>
