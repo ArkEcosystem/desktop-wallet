@@ -113,23 +113,30 @@ export const translations: { [key: string]: any } = {
 		PLUGIN_SOURCE: {
 			TITLE: "Plugin Source",
 			DESCRIPTION: "Turn this feature on, you can upload plugins to your wallet from third-party sources.",
-			LOAD_FROM: "Load plugins from",
+			LOAD_FROM: "Load from",
 		},
 		ADD_PLUGIN: "Add Plugin",
 		SUCCESS: "Your plugin settings have been updated",
 	},
 
 	EXPORT: {
+		ADD_INFORMATION_ABOUT_THE_NETWORK: "Add information about the network",
 		MENU_ITEM: "Export",
-		TITLE: "Export Profile",
+		SAVE_GENERAL_CUSTOMIZATIONS: "Save general settings customizations",
 		SUBTITLE:
 			"Your exported Profile will not contain your mnemonic passphrases, only addresses and respective names.",
-		EXCLUDE_WALLETS_WITHOUT_NAME: "Exclude wallets without a name",
-		EXCLUDE_EMPTY_WALLETS: "Exclude empty wallets",
-		EXCLUDE_LEDGER_WALLETS: "Exclude Ledger wallets",
-		ADD_INFORMATION_ABOUT_THE_NETWORK: "Add information about the network",
-		SAVE_GENERAL_CUSTOMIZATIONS: "Save general settings customizations",
 		SUCCESS: "Your settings have been exported successfully",
+		TITLE: "Export Profile",
+		OPTIONS: {
+			EXCLUDE_EMPTY_WALLETS: {
+				TITLE: "Exclude Empty Wallets",
+				DESCRIPTION: "Wallets with a balance of 0 will not be exported.",
+			},
+			EXCLUDE_LEDGER_WALLETS: {
+				TITLE: "Exclude Ledger wallets",
+				DESCRIPTION: "Ledger hardware addresses will not be exported.",
+			},
+		},
 	},
 
 	MODAL_ADVANCED_MODE: {
