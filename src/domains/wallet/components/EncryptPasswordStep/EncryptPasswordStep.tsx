@@ -17,7 +17,7 @@ export const EncryptPasswordStep = () => {
 		<section data-testid="EncryptPassword" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.TITLE")}
-				titleSuffix={<span className="text-theme-secondary-500 dark:text-theme-secondary-800">optional</span>}
+				titleSuffix={<span className="text-theme-secondary-500 dark:text-theme-secondary-800">{t("COMMON.OPTIONAL")}</span>}
 			/>
 
 			<Alert variant="warning">{t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.WARNING")}</Alert>
