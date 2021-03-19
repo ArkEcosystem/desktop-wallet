@@ -259,10 +259,10 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render form and use location state", async () => {
+	it.only("should render form and use location state", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
-		history.push(transferURL, { memo: "ARK", coin: "ark", network: "ark.devnet" });
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?memo=ARK&coin=ark&network=ark.devnet`;
+		history.push(transferURL);
 
 		let rendered: RenderResult;
 

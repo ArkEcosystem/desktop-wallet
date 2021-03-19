@@ -2,6 +2,7 @@ import { URI } from "@arkecosystem/platform-sdk-support/dist/uri";
 import { useEnvironmentContext } from "app/contexts";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
+import querystring from "querystring";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { matchPath, useHistory } from "react-router-dom";
@@ -18,7 +19,7 @@ const useDeepLinkHandler = () => {
 
 	/** useActiveProfile has no effect here because it is not within the routes */
 	const verifyForProfileSelected = () => {
-		const match = matchPath<{ profileId: string }>(window.location.pathname, {
+		const match = matchPath<{ profileId: string }>(history.location.pathname, {
 			path: "/profiles/:profileId",
 		});
 
@@ -40,11 +41,11 @@ const useDeepLinkHandler = () => {
 				try {
 					const profileId = verifyForProfileSelected();
 
+					const deeplinkSchema = uriService.deserialize(deeplink);
+
 					if (!profileId) {
 						return toasts.warning(t("COMMON.SELECT_A_PROFILE"));
 					}
-
-					const deeplinkSchema = uriService.deserialize(deeplink);
 
 					const profile = env.profiles().findById(profileId);
 
@@ -72,8 +73,10 @@ const useDeepLinkHandler = () => {
 						);
 					}
 
+					const queryParams = querystring.encode(deeplinkSchema);
+
 					if (deeplinkSchema.method === "transfer") {
-						return navigate(`/profiles/${profileId}/send-transfer`, deeplinkSchema);
+						return navigate(`/profiles/${profileId}/send-transfer?${queryParams}`);
 					}
 
 					return navigate("/");

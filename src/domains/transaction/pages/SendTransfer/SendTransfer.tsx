@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
@@ -17,7 +17,7 @@ import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
 import { TransferLedgerReview } from "./LedgerReview";
@@ -26,12 +26,22 @@ import { NetworkStep } from "./NetworkStep";
 export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
-	const location = useLocation();
 	const profile = useActiveProfile();
 	const { walletId: hasWalletId } = useParams();
-	const { state } = location;
 
-	const showNetworkStep = !state && !hasWalletId;
+	const queryParams = useQueryParams();
+
+	const deepLinkParams = useMemo(() => {
+		const result: Record<string, string> = {};
+		for (const [key, value] of queryParams.entries()) {
+			result[key] = value;
+		}
+		return result;
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+	const hasDeepLinkParams = Object.keys(deepLinkParams).length > 0;
+
+	const showNetworkStep = !hasDeepLinkParams && !hasWalletId;
 	const firstTabIndex = showNetworkStep ? 0 : 1;
 
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
@@ -106,19 +116,21 @@ export const SendTransfer = () => {
 	}, [activeProfile, hasWalletId, senderAddress]);
 
 	useEffect(() => {
-		if (!state) {
+		if (Object.keys(deepLinkParams).length === 0) {
 			return;
 		}
 
 		setValue(
 			"network",
-			networks.find((item) => item.coin().toLowerCase() === state.coin && item.id() === state.network),
+			networks.find(
+				(item) => item.coin().toLowerCase() === deepLinkParams.coin && item.id() === deepLinkParams.network,
+			),
 		);
 
-		if (state.memo) {
-			setValue("smartbridge", state.memo);
+		if (deepLinkParams.memo) {
+			setValue("smartbridge", deepLinkParams.memo);
 		}
-	}, [state, setValue, networks]);
+	}, [deepLinkParams, setValue, networks]);
 
 	useEffect(() => {
 		if (!wallet?.address?.()) {
@@ -266,7 +278,7 @@ export const SendTransfer = () => {
 								<FormStep
 									networks={networks}
 									profile={activeProfile}
-									deeplinkProps={state}
+									deeplinkProps={deepLinkParams}
 									hasWalletId={hasWalletId}
 									disableNetworkField={showNetworkStep}
 								/>
