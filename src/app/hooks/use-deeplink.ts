@@ -85,7 +85,7 @@ const useDeepLinkHandler = () => {
 				}
 			}
 		},
-		[t, uriService, navigate, allAvailableNetworks, env],
+		[t, uriService, navigate, allAvailableNetworks, env], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 
 	useEffect((): any => {
