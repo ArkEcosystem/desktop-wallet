@@ -28,6 +28,7 @@ const useDeepLinkHandler = () => {
 		}
 
 		const { profileId } = match.params;
+
 		if (profileId === "create") {
 			return false;
 		}
