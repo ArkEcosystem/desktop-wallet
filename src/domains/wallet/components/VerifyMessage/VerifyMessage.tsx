@@ -1,19 +1,19 @@
 // UI Elements
-import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
+import { useValidation } from "app/hooks";
+import cn from "classnames";
 import { VerifyMessageStatus } from "domains/wallet/components/VerifyMessageStatus";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type Props = {
 	isOpen: boolean;
-	signatory?: string;
 	profileId: string;
 	walletId: string;
 	onSubmit?: any;
@@ -21,25 +21,115 @@ type Props = {
 	onClose?: any;
 };
 
-export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signatory, isOpen, onClose }: Props) => {
-	const { env } = useEnvironmentContext();
-	const form = useForm();
+const JsonForm = () => {
 	const { t } = useTranslation();
 
-	const { register } = form;
-	const [verifyAddress, setVerifyAddress] = useState(true);
+	const { register, unregister, setValue } = useFormContext();
+
+	const { verifyMessage } = useValidation();
+
+	useEffect(() => {
+		register("jsonString", verifyMessage.jsonString());
+	}, [register, verifyMessage]);
+
+	useEffect(() => {
+		unregister(["signatory", "message", "signature"]);
+	}, [unregister]);
+
+	return (
+		<div data-testid="VerifyMessage__json" className="mt-4">
+			<FormField name="jsonString">
+				<FormLabel label={t("WALLETS.MODAL_VERIFY_MESSAGE.JSON_STRING")} />
+				<InputDefault
+					data-testid="VerifyMessage__json-jsonString"
+					placeholder={'{"signatory": "...", "signature": "...", "message": "..."}'}
+					onChange={(event: ChangeEvent<HTMLInputElement>) =>
+						setValue("jsonString", event.target.value, {
+							shouldDirty: true,
+							shouldValidate: true,
+						})
+					}
+				/>
+			</FormField>
+		</div>
+	);
+};
+
+const ManualForm = () => {
+	const { t } = useTranslation();
+
+	const { register, unregister } = useFormContext();
+
+	useEffect(() => {
+		unregister("jsonString");
+	}, [unregister]);
+
+	return (
+		<div data-testid="VerifyMessage__manual" className="mt-4 space-y-8">
+			<FormField name="signatory">
+				<FormLabel label={t("COMMON.PUBLIC_KEY")} />
+				<InputDefault
+					data-testid="VerifyMessage__manual-signatory"
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.PUBLIC_KEY"),
+						}).toString(),
+					})}
+				/>
+			</FormField>
+
+			<FormField name="message">
+				<FormLabel label={t("COMMON.MESSAGE")} />
+				<InputDefault
+					data-testid="VerifyMessage__manual-message"
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.MESSAGE"),
+						}).toString(),
+					})}
+				/>
+			</FormField>
+
+			<FormField name="signature">
+				<FormLabel label={t("COMMON.SIGNATURE")} />
+				<InputDefault
+					data-testid="VerifyMessage__manual-signature"
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.SIGNATURE"),
+						}).toString(),
+					})}
+				/>
+			</FormField>
+		</div>
+	);
+};
+
+export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen, onClose }: Props) => {
+	const { env } = useEnvironmentContext();
+
+	const form = useForm({ mode: "onChange" });
+	const { t } = useTranslation();
+
+	const { getValues, formState } = form;
+	const { isValid } = formState;
+
+	const [verificationMethod, setVerificationMethod] = useState("manual");
 	const [isMessageVerified, setIsMessageVerified] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
+	const isJson = verificationMethod === "json";
+
 	const handleSubmit = async () => {
-		let isVerified = false;
-		const formValues = form.getValues();
 		const profile = env?.profiles().findById(profileId);
 		const wallet = profile?.wallets().findById(walletId);
 
 		try {
-			const signedMessage = verifyAddress ? JSON.parse(formValues["signed-message-content"]) : formValues;
-			isVerified = await wallet?.message().verify(signedMessage);
+			const signedMessage = isJson
+				? JSON.parse(getValues("jsonString"))
+				: getValues(["signatory", "message", "signature"]);
+			const isVerified = await wallet?.message().verify(signedMessage);
+
 			setIsSubmitted(true);
 			setIsMessageVerified(isVerified);
 			onSubmit?.(isVerified);
@@ -50,79 +140,13 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 		}
 	};
 
-	const renderFormContent = () => {
-		if (verifyAddress) {
-			return (
-				<div className="mt-8">
-					<Alert>
-						<span>{`Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}`}</span>
-					</Alert>
-
-					<div className="mt-8">
-						<FormField name="signed-message-content">
-							<FormLabel label="Signed message content" />
-							<InputDefault
-								data-testid="VerifyMessage_message-content"
-								defaultValue={""}
-								ref={register({ required: true })}
-							/>
-							<FormHelperText />
-						</FormField>
-					</div>
-				</div>
-			);
-		}
-
-		return (
-			<div data-testid="noverify-address__content">
-				<FormField name="message" className="mt-8">
-					<FormLabel label={t("COMMON.MESSAGE")} />
-					<InputDefault
-						data-testid="VerifyMessage__message-input"
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.MESSAGE"),
-							}).toString(),
-						})}
-					/>
-					<FormHelperText />
-				</FormField>
-				<FormField name="signatory" className="mt-8">
-					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
-					<InputDefault
-						data-testid="VerifyMessage__signatory-input"
-						defaultValue={signatory}
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.PUBLIC_KEY"),
-							}).toString(),
-						})}
-						disabled
-					/>
-					<FormHelperText />
-				</FormField>
-				<FormField name="signature" className="mt-8">
-					<FormLabel label={t("COMMON.SIGNATURE")} />
-					<InputDefault
-						data-testid="VerifyMessage__signature-input"
-						ref={register({
-							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-								field: t("COMMON.SIGNATURE"),
-							}).toString(),
-						})}
-					/>
-					<FormHelperText />
-				</FormField>
-			</div>
-		);
-	};
+	const statusKey = isMessageVerified ? "SUCCESS" : "ERROR";
 
 	if (isSubmitted) {
-		const statusKey = isMessageVerified ? "SUCCESS" : "FAIL";
 		return (
 			<VerifyMessageStatus
-				title={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}_TITLE`)}
-				description={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}_DESCRIPTION`)}
+				title={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}.TITLE`)}
+				description={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}.DESCRIPTION`)}
 				type={isMessageVerified ? "success" : "error"}
 				isOpen={isOpen}
 				onClose={() => {
@@ -141,33 +165,45 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 			onClose={() => onClose?.()}
 		>
 			<div className="mt-8">
-				<div className="flex flex-col pb-6 border-b border-dashed border-theme-secondary-400">
-					<div className="flex flex-col">
-						<div className="flex justify-between items-center">
-							<div className="text-lg font-semibold">
-								{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY_JSON.TITLE")}
-							</div>
+				<h3>{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.TITLE")}</h3>
+				<span className="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700">
+					{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.DESCRIPTION")}
+				</span>
 
-							<Toggle
-								data-testid="verify-address__toggle"
-								checked={verifyAddress}
-								onChange={(event) => setVerifyAddress(event.target.checked)}
-							/>
-						</div>
+				<div className="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700">
+					<div
+						className={cn("text-lg font-semibold", {
+							"text-theme-secondary-700 dark:text-theme-secondary-200": isJson,
+						})}
+					>
+						{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.JSON")}
+					</div>
 
-						<div className="pr-12 mt-1 text-sm text-theme-secondary-500">
-							{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY_JSON.DESCRIPTION")}
-						</div>
+					<Toggle
+						data-testid="VerifyMessage__toggle"
+						checked={!isJson}
+						onChange={(event) => setVerificationMethod(event.target.checked ? "manual" : "json")}
+						alwaysOn
+					/>
+
+					<div
+						className={cn("text-lg font-semibold", {
+							"text-theme-secondary-700 dark:text-theme-secondary-200": !isJson,
+						})}
+					>
+						{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.MANUAL")}
 					</div>
 				</div>
 
 				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
-					{renderFormContent()}
+					{isJson ? <JsonForm /> : <ManualForm />}
+
 					<div className="flex justify-end space-x-3">
 						<Button variant="secondary" data-testid="VerifyMessage__cancel" onClick={onCancel}>
 							{t("COMMON.CANCEL")}
 						</Button>
-						<Button data-testid="VerifyMessage__submit" onClick={handleSubmit} type="submit">
+
+						<Button data-testid="VerifyMessage__submit" type="submit" disabled={!isValid}>
 							{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY")}
 						</Button>
 					</div>

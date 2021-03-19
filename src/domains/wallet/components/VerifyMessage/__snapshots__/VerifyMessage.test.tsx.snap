@@ -42,7 +42,7 @@ exports[`VerifyMessage should render 1`] = `
         <h2
           class="mb-0 text-3xl font-bold"
         >
-          Verify Message
+          Verify
         </h2>
         <div
           class="flex-1"
@@ -50,48 +50,48 @@ exports[`VerifyMessage should render 1`] = `
           <div
             class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
-            To make sure that you are the owner of this wallet, you can pass the check. and this more text.
+            Authenticate a message from an address below.
           </div>
           <div
             class="mt-8"
           >
+            <h3>
+              Verification Method
+            </h3>
+            <span
+              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              Provide JSON string or manually input fields.
+            </span>
             <div
-              class="flex flex-col pb-6 border-b border-dashed border-theme-secondary-400"
+              class="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
               <div
-                class="flex flex-col"
+                class="text-lg font-semibold"
               >
+                JSON
+              </div>
+              <label
+                class="flex"
+              >
+                <input
+                  checked=""
+                  class="Toggle__Input-qyyifx-0 WGuGL"
+                  data-testid="VerifyMessage__toggle"
+                  type="checkbox"
+                />
                 <div
-                  class="flex justify-between items-center"
+                  class="Toggle__Handle-qyyifx-1 geejDn"
                 >
-                  <div
-                    class="text-lg font-semibold"
-                  >
-                    Verify JSON
-                  </div>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      checked=""
-                      class="Toggle__Input-qyyifx-0 WGuGL"
-                      data-testid="verify-address__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 geejDn"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                      />
-                    </div>
-                  </label>
+                  <span
+                    class="Toggle__HandleInner-qyyifx-2 kDQYeO"
+                  />
                 </div>
-                <div
-                  class="pr-12 mt-1 text-sm text-theme-secondary-500"
-                >
-                  You can verify only text using a JSON public key
-                </div>
+              </label>
+              <div
+                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+              >
+                Manual
               </div>
             </div>
             <form
@@ -100,229 +100,11 @@ exports[`VerifyMessage should render 1`] = `
               id="VerifyMessage__form"
             >
               <div
-                class="mt-8"
-              >
-                <div
-                  class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
-                >
-                  <div
-                    class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
-                  >
-                    <div
-                      class="sc-bdfBwQ hteSKx"
-                      height="1.25em"
-                      width="1.25em"
-                    >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="flex flex-col"
-                  >
-                    <p
-                      class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
-                    >
-                      <span>
-                        Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div
-                  class="mt-8"
-                >
-                  <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-                  >
-                    <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                      data-testid="FormLabel"
-                      for="signed-message-content"
-                    >
-                      Signed message content
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                    >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="VerifyMessage_message-content"
-                        name="signed-message-content"
-                        value=""
-                      />
-                    </div>
-                  </fieldset>
-                </div>
-              </div>
-              <div
-                class="flex justify-end space-x-3"
-              >
-                <button
-                  class="Button__StyledButton-mdtvtf-0 iUSBMV"
-                  data-testid="VerifyMessage__cancel"
-                  type="button"
-                >
-                  <div
-                    class="flex relative items-center space-x-2"
-                  >
-                    Cancel
-                  </div>
-                </button>
-                <button
-                  class="Button__StyledButton-mdtvtf-0 ePkfgQ"
-                  data-testid="VerifyMessage__submit"
-                  type="submit"
-                >
-                  <div
-                    class="flex relative items-center space-x-2"
-                  >
-                    Verify
-                  </div>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`VerifyMessage should render the non verify address content 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="Button__StyledButton-mdtvtf-0 fHYGyx w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Verify Message
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="mt-1 text-theme-secondary-text whitespace-pre-line"
-          >
-            To make sure that you are the owner of this wallet, you can pass the check. and this more text.
-          </div>
-          <div
-            class="mt-8"
-          >
-            <div
-              class="flex flex-col pb-6 border-b border-dashed border-theme-secondary-400"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between items-center"
-                >
-                  <div
-                    class="text-lg font-semibold"
-                  >
-                    Verify JSON
-                  </div>
-                  <label
-                    class="flex"
-                  >
-                    <input
-                      checked=""
-                      class="Toggle__Input-qyyifx-0 WGuGL"
-                      data-testid="verify-address__toggle"
-                      type="checkbox"
-                    />
-                    <div
-                      class="Toggle__Handle-qyyifx-1 geejDn"
-                    >
-                      <span
-                        class="Toggle__HandleInner-qyyifx-2 gufSfU"
-                      />
-                    </div>
-                  </label>
-                </div>
-                <div
-                  class="pr-12 mt-1 text-sm text-theme-secondary-500"
-                >
-                  You can verify only text using a JSON public key
-                </div>
-              </div>
-            </div>
-            <form
-              class="space-y-8"
-              data-testid="Form"
-              id="VerifyMessage__form"
-            >
-              <div
-                data-testid="noverify-address__content"
+                class="mt-4 space-y-8"
+                data-testid="VerifyMessage__manual"
               >
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
-                >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
-                    data-testid="FormLabel"
-                    for="message"
-                  >
-                    Message
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
-                  <div
-                    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                  >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                      data-testid="VerifyMessage__message-input"
-                      name="message"
-                    />
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                 >
                   <label
                     class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -340,15 +122,37 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   >
                     <input
                       class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                      data-testid="VerifyMessage__signatory-input"
-                      disabled=""
+                      data-testid="VerifyMessage__manual-signatory"
                       name="signatory"
-                      value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
                     />
                   </div>
                 </fieldset>
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                >
+                  <label
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                    data-testid="FormLabel"
+                    for="message"
+                  >
+                    Message
+                    <div
+                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
+                  </label>
+                  <div
+                    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+                      data-testid="VerifyMessage__manual-message"
+                      name="message"
+                    />
+                  </div>
+                </fieldset>
+                <fieldset
+                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                 >
                   <label
                     class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
@@ -366,7 +170,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   >
                     <input
                       class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                      data-testid="VerifyMessage__signature-input"
+                      data-testid="VerifyMessage__manual-signature"
                       name="signature"
                     />
                   </div>
@@ -387,8 +191,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   </div>
                 </button>
                 <button
-                  class="Button__StyledButton-mdtvtf-0 ePkfgQ"
+                  class="Button__StyledButton-mdtvtf-0 kwcZQn"
                   data-testid="VerifyMessage__submit"
+                  disabled=""
                   type="submit"
                 >
                   <div

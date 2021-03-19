@@ -61,17 +61,24 @@ export const translations: { [key: string]: any } = {
 	},
 
 	MODAL_VERIFY_MESSAGE: {
-		TITLE: "Verify Message",
-		DESCRIPTION: "To make sure that you are the owner of this wallet, you can pass the check. and this more text.",
+		TITLE: "Verify",
+		DESCRIPTION: "Authenticate a message from an address below.",
 		VERIFY: "Verify",
-		VERIFY_JSON: {
-			TITLE: "Verify JSON",
-			DESCRIPTION: "You can verify only text using a JSON public key",
+		JSON_STRING: "JSON String",
+		VERIFICATION_METHOD: {
+			TITLE: "Verification Method",
+			DESCRIPTION: "Provide JSON string or manually input fields.",
+			JSON: "JSON",
+			MANUAL: "Manual",
 		},
-		SUCCESS_TITLE: "Confirmed",
-		SUCCESS_DESCRIPTION: "Verification was successfully confirmed",
-		FAIL_TITLE: "Failed",
-		FAIL_DESCRIPTION: "Verification failed",
+		SUCCESS: {
+			TITLE: "Success",
+			DESCRIPTION: "Message was successfully verified.",
+		},
+		ERROR: {
+			TITLE: "Failure",
+			DESCRIPTION: "Message could not be verified.",
+		},
 	},
 
 	PAGE_CREATE_WALLET: {

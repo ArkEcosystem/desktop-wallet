@@ -13,18 +13,24 @@ const Handle = styled.div<{ disabled?: boolean }>`
 	${({ disabled }) => (disabled ? tw`cursor-not-allowed` : tw`cursor-pointer`)}
 `;
 
-const HandleInner = styled.span<{ disabled?: boolean }>`
+const HandleInner = styled.span<{ alwaysOn?: boolean; disabled?: boolean }>`
 	margin-top: 2px;
 	width: 16px;
 	height: 16px;
 	${tw`rounded-full absolute transform -translate-y-1/2 transition transition-colors transition-transform ease-in-out duration-200`}
 
-	${({ disabled }) =>
+	${({ alwaysOn, disabled }) =>
 		disabled
 			? tw`bg-theme-primary-100 dark:bg-theme-secondary-800`
 			: css`
 					${Input} ~ ${Handle} & {
-						${tw`bg-theme-secondary-400 dark:bg-theme-secondary-600`}
+						${(alwaysOn) => {
+							if (alwaysOn) {
+								return tw`bg-theme-primary-600`;
+							}
+
+							return tw`bg-theme-secondary-400 dark:bg-theme-secondary-600`;
+						}}
 					}
 
 					${Input}:checked ~ ${Handle} & {
@@ -41,26 +47,17 @@ const HandleInner = styled.span<{ disabled?: boolean }>`
 			  `}
 `;
 
-type ToggleProps = { baseColor?: string; disabled?: boolean } & React.InputHTMLAttributes<any>;
+type ToggleProps = { alwaysOn?: boolean; disabled?: boolean } & React.InputHTMLAttributes<any>;
 
-export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>((props, ref) => {
-	const inputProps = { ...props };
-
-	const { disabled } = inputProps;
-
-	for (const prop of ["disabled"]) {
-		// @ts-ignore
-		delete inputProps[prop];
-	}
-
-	return (
+export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
+	({ alwaysOn, disabled, ...props }: ToggleProps, ref) => (
 		<label className="flex">
-			<Input type="checkbox" ref={ref} {...inputProps} />
+			<Input type="checkbox" ref={ref} {...props} />
 			<Handle disabled={disabled}>
-				<HandleInner disabled={disabled} />
+				<HandleInner alwaysOn={alwaysOn} disabled={disabled} />
 			</Handle>
 		</label>
-	);
-});
+	),
+);
 
 Toggle.displayName = "Toggle";
