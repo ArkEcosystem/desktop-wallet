@@ -24,13 +24,7 @@ const HandleInner = styled.span<{ alwaysOn?: boolean; disabled?: boolean }>`
 			? tw`bg-theme-primary-100 dark:bg-theme-secondary-800`
 			: css`
 					${Input} ~ ${Handle} & {
-						${(alwaysOn) => {
-							if (alwaysOn) {
-								return tw`bg-theme-primary-600`;
-							}
-
-							return tw`bg-theme-secondary-400 dark:bg-theme-secondary-600`;
-						}}
+						${alwaysOn ? tw`bg-theme-primary-600` : tw`bg-theme-secondary-400 dark:bg-theme-secondary-600`}
 					}
 
 					${Input}:checked ~ ${Handle} & {
