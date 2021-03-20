@@ -67,7 +67,7 @@ export const translations: { [key: string]: any } = {
 		JSON_STRING: "JSON String",
 		VERIFICATION_METHOD: {
 			TITLE: "Verification Method",
-			DESCRIPTION: "Provide JSON string or manually input fields.",
+			DESCRIPTION: "Input fields manually or provide a JSON string.",
 			JSON: "JSON",
 			MANUAL: "Manual",
 		},
