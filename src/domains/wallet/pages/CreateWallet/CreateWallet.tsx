@@ -131,11 +131,8 @@ export const CreateWallet = () => {
 		}
 	};
 
-	const handlePasswordSubmit = async () => {
-		const isUsingEncryption = await form.trigger(["encryptionPassword", "confirmEncryptionPassword"]);
-		if (isUsingEncryption) {
-			setEncryptionPassword(form.getValues("encryptionPassword"));
-		}
+	const handlePasswordSubmit = () => {
+		setEncryptionPassword(form.getValues("encryptionPassword"));
 		handleNext();
 	};
 
@@ -171,7 +168,7 @@ export const CreateWallet = () => {
 							<div className="flex justify-between mt-10">
 								<div>
 									{activeTab === 4 && (
-										<Button data-testid="CreateWallet__continue-button" onClick={handleNext}>
+										<Button data-testid="CreateWallet__skip-button" onClick={handleNext}>
 											{t("COMMON.SKIP")}
 										</Button>
 									)}
