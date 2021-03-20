@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act,renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { fireEvent, render, waitFor } from "utils/testing-library";
