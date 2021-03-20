@@ -123,15 +123,11 @@ export const ImportWallet = () => {
 	};
 
 	const handleFinish = async () => {
-		if (!walletData) {
-			return;
-		}
-
 		const name = form.getValues("name");
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
-			walletData.setAlias(formattedName);
+			walletData?.setAlias(formattedName);
 			await persist();
 		}
 
