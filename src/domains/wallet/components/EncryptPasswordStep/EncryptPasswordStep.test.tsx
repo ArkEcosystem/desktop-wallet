@@ -1,7 +1,8 @@
-import { renderHook } from "@testing-library/react-hooks";
+/* eslint-disable @typescript-eslint/require-await */
+import { act,renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { render } from "utils/testing-library";
+import { fireEvent, render, waitFor } from "utils/testing-library";
 
 import { EncryptPasswordStep } from "./EncryptPasswordStep";
 
@@ -15,6 +16,55 @@ describe("EncryptPasswordStep", () => {
 		);
 
 		expect(getByTestId("EncryptPassword")).toBeInTheDocument();
+		expect(asFragment).toMatchSnapshot();
+	});
+
+	it("should change password", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const { getAllByTestId, asFragment } = render(
+			<FormProvider {...form.current}>
+				<EncryptPasswordStep />
+			</FormProvider>,
+		);
+
+		expect(getAllByTestId("InputPassword").length).toEqual(2);
+		const passwordField = getAllByTestId("Input")[0];
+
+		await act(async () => {
+			fireEvent.input(passwordField, {
+				target: {
+					value: "password",
+				},
+			});
+		});
+
+		await waitFor(() => expect(passwordField).toHaveValue("password"));
+		expect(asFragment).toMatchSnapshot();
+	});
+	it("should trigger password confirmation validation when password is entered", async () => {
+		const { result: form } = renderHook(() =>
+			useForm({ defaultValues: { confirmEncryptionPassword: "password" } }),
+		);
+		const { getAllByTestId, asFragment } = render(
+			<FormProvider {...form.current}>
+				<EncryptPasswordStep />
+			</FormProvider>,
+		);
+
+		expect(getAllByTestId("InputPassword").length).toEqual(2);
+		const passwordField = getAllByTestId("Input")[0];
+		const confirmPasswordField = getAllByTestId("Input")[1];
+
+		await act(async () => {
+			fireEvent.input(passwordField, {
+				target: {
+					value: "password",
+				},
+			});
+		});
+
+		await waitFor(() => expect(passwordField).toHaveValue("password"));
+		await waitFor(() => expect(confirmPasswordField).toHaveValue("password"));
 		expect(asFragment).toMatchSnapshot();
 	});
 });
