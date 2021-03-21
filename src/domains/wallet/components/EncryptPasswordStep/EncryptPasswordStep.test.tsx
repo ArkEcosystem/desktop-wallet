@@ -41,6 +41,7 @@ describe("EncryptPasswordStep", () => {
 		await waitFor(() => expect(passwordField).toHaveValue("password"));
 		expect(asFragment).toMatchSnapshot();
 	});
+
 	it("should trigger password confirmation validation when password is entered", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({ defaultValues: { confirmEncryptionPassword: "password" } }),
