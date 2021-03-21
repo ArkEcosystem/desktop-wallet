@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { MnemonicVerification } from "../../components/MnemonicVerification";
 
-export const ThirdStep = () => {
+export const ConfirmPassphraseStep = () => {
 	const { getValues, register, setValue, watch } = useFormContext();
 	const isVerified: boolean = getValues("verification");
 	const mnemonic = watch("mnemonic");

@@ -8,7 +8,7 @@ import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({
+export const SelectNetworkStep = ({
 	env,
 	profile,
 	isLoading,

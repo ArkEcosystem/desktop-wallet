@@ -13,10 +13,10 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
-import { FourthStep } from "./Step4";
+import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
+import { SelectNetworkStep } from "./SelectNetworkStep";
+import { SuccessStep } from "./SuccessStep";
+import { WalletOverviewStep } from "./WalletOverviewStep";
 
 export const CreateWallet = () => {
 	const { env, persist } = useEnvironmentContext();
@@ -145,7 +145,7 @@ export const CreateWallet = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep
+								<SelectNetworkStep
 									env={env}
 									profile={activeProfile}
 									isLoading={isGeneratingWallet}
@@ -153,16 +153,16 @@ export const CreateWallet = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<WalletOverviewStep />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<ConfirmPassphraseStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<EncryptPasswordStep />
 							</TabPanel>
 							<TabPanel tabId={5}>
-								<FourthStep nameMaxLength={nameMaxLength} profile={activeProfile} />
+								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
 
 							<div className="flex justify-between mt-10">

@@ -12,7 +12,7 @@ import { saveFile } from "utils/electron-utils";
 
 import { MnemonicList } from "../../components/MnemonicList";
 
-export const SecondStep = () => {
+export const WalletOverviewStep = () => {
 	const { getValues, unregister, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
