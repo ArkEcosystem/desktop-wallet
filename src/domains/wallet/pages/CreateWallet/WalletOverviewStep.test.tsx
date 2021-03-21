@@ -20,7 +20,7 @@ describe("WalletOverviewStep", () => {
 		}
 	});
 
-	describe("Render 2nd step", () => {
+	describe("Render step", () => {
 		it("should render", async () => {
 			const { result: form } = renderHook(() =>
 				useForm({

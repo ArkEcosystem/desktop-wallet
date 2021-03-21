@@ -41,7 +41,7 @@ export const SelectNetworkStep = ({
 	};
 
 	return (
-		<section data-testid="CreateWallet__first-step">
+		<section data-testid="CreateWallet__SelectNetworkStep">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE")}

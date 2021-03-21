@@ -9,7 +9,7 @@ import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 
 let profile: Profile;
 
-describe("CreateWallet - Step 3", () => {
+describe("ConfirmPassphraseStep", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
@@ -32,7 +32,7 @@ describe("CreateWallet - Step 3", () => {
 			</FormProvider>,
 		);
 
-		expect(getByTestId("CreateWallet__third-step")).toBeTruthy();
+		expect(getByTestId("CreateWallet__ConfirmPassphraseStep")).toBeTruthy();
 		expect(getAllByTestId("MnemonicVerificationOptions__button").length).toBeGreaterThan(1);
 
 		expect(form.current.getValues()).toEqual({ verification: undefined });

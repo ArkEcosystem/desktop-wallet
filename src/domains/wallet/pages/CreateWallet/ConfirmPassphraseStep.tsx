@@ -24,7 +24,7 @@ export const ConfirmPassphraseStep = () => {
 	}, [isVerified, register]);
 
 	return (
-		<section data-testid="CreateWallet__third-step" className="space-y-8">
+		<section data-testid="CreateWallet__ConfirmPassphraseStep" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_CONFIRMATION_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_CONFIRMATION_STEP.SUBTITLE")}

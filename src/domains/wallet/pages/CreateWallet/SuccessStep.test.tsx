@@ -10,7 +10,7 @@ import { SuccessStep } from "./SuccessStep";
 
 let profile: Profile;
 
-describe("CreateWallet - Step 4", () => {
+describe("SuccessStep", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
@@ -37,7 +37,7 @@ describe("CreateWallet - Step 4", () => {
 			</FormProvider>,
 		);
 
-		expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy();
+		expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		expect(getByText("ARK Devnet")).toBeTruthy();

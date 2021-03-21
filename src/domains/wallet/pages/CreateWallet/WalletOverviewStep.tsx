@@ -52,7 +52,7 @@ export const WalletOverviewStep = () => {
 	};
 
 	return (
-		<section data-testid="CreateWallet__second-step" className="space-y-8">
+		<section data-testid="CreateWallet__WalletOverviewStep" className="space-y-8">
 			<Header title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.TITLE")} />
 
 			<Alert>{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.WARNING")}</Alert>

@@ -23,7 +23,7 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="CreateWallet__fourth-step" className="space-y-8">
+		<section data-testid="CreateWallet__SuccessStep" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}

@@ -29,7 +29,7 @@ describe("SelectNetworkStep", () => {
 				</FormProvider>,
 			);
 
-			expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
+			expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
 
 			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -46,7 +46,7 @@ describe("SelectNetworkStep", () => {
 				</FormProvider>,
 			);
 
-			expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
+			expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy();
 
 			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 			expect(selectNetworkInput).toBeTruthy();
