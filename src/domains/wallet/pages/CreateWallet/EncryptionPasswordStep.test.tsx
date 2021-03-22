@@ -146,8 +146,8 @@ describe("EncryptionPasswordStep", () => {
 
 		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());
 
-		const passwordInput = getAllByTestId("Input")[0];
-		const confirmPassword = getAllByTestId("Input")[1];
+		const passwordInput = getAllByTestId("InputPassword")[0];
+		const confirmPassword = getAllByTestId("InputPassword")[1];
 
 		actAsync(() => {
 			fireEvent.input(passwordInput, { target: { value: "password" } });
@@ -284,8 +284,8 @@ describe("EncryptionPasswordStep", () => {
 
 		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());
 
-		const passwordInput = getAllByTestId("Input")[0];
-		const confirmPassword = getAllByTestId("Input")[1];
+		const passwordInput = getAllByTestId("InputPassword")[0];
+		const confirmPassword = getAllByTestId("InputPassword")[1];
 
 		actAsync(() => {
 			fireEvent.input(passwordInput, { target: { value: "password" } });
