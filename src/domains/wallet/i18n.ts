@@ -2,16 +2,17 @@ export const translations: { [key: string]: any } = {
 	MESSAGE: "Message",
 	SIGNATORY: "Signatory",
 	SIGNATURE: "Signature",
+	WALLET_NAME: "Wallet Name",
 
 	MODAL_NAME_WALLET: {
-		TITLE: "Name Wallet",
-		DESCRIPTION: "You can enter the name of your wallet for a quick search in your wallet.",
+		TITLE: "Wallet Name",
+		DESCRIPTION: "Enter a name for this wallet address (only visible to you).",
 	},
 
 	MODAL_DELETE_WALLET: {
 		TITLE: "Delete Wallet",
 		DESCRIPTION:
-			"Do you really want to remove your wallet? Before deleting, make sure that you have the passphrase for this wallet.",
+			"Are you sure you wish to delete this wallet? Before deleting, make sure the mnemonic passphrase is secured safely.",
 	},
 
 	MODAL_RECEIVE_FUNDS: {
@@ -47,7 +48,7 @@ export const translations: { [key: string]: any } = {
 
 		FORM_STEP: {
 			TITLE: "Sign Message",
-			DESCRIPTION: "Insert a message below to sign using your private key",
+			DESCRIPTION: "Provide a message below and sign with your mnemonic passphrase.",
 		},
 
 		LEDGER_CONFIRMATION_STEP: {
@@ -85,7 +86,7 @@ export const translations: { [key: string]: any } = {
 
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
-			SUBTITLE: "Select a cryptoasset to create your new wallet address",
+			SUBTITLE: "Select a cryptoasset to create your new wallet address.",
 			GENERATION_ERROR:
 				"An error occurred while creating your new address, please try again. If the error persists, kindly get in touch with our support team.",
 		},
@@ -93,24 +94,22 @@ export const translations: { [key: string]: any } = {
 		PASSPHRASE_STEP: {
 			TITLE: "Your Passphrase",
 			WARNING:
-				"This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.",
-			DOWNLOAD: {
-				TITLE: "Download Your Passphrase",
-				DESCRIPTION: "You can also download and safely store your passphrase.",
+				"You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.",
+			COPY_OR_DOWNLOAD: {
+				TITLE: "Copy or Download Mnemonic Passphrase",
+				DESCRIPTION: "You can copy or download your mnemonic, but store it safely.",
 			},
 		},
 
 		PASSPHRASE_CONFIRMATION_STEP: {
 			TITLE: "Confirm Your Passphrase",
-			SUBTITLE: "Confirm your password to continue",
+			SUBTITLE: "Confirm your mnemonic passphrase to continue.",
 		},
 
 		PROCESS_COMPLETED_STEP: {
 			TITLE: "Completed",
-			SUBTITLE: "Wallet creation is complete. Now you can use it.",
+			SUBTITLE: "The wallet address has been successfully created.",
 		},
-
-		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
 			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
@@ -132,7 +131,7 @@ export const translations: { [key: string]: any } = {
 
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
-			SUBTITLE: "Select a cryptoasset to import your existing wallet address",
+			SUBTITLE: "Select a cryptoasset to import your existing wallet address.",
 		},
 
 		LEDGER_CONNECTION_STEP: {
@@ -142,12 +141,17 @@ export const translations: { [key: string]: any } = {
 
 		LEDGER_SCAN_STEP: {
 			TITLE: "Accounts",
-			SUBTITLE: "Select the addresses that you want to import",
+			SUBTITLE: "Select the addresses that you want to import.",
+		},
+
+		LEDGER_IMPORT_STEP: {
+			TITLE: "Completed",
+			SUBTITLE: "Your Ledger addresses have been imported.",
 		},
 
 		METHOD_STEP: {
 			TITLE: "Import Wallet",
-			SUBTITLE: "Select the import method by which you want to import the address to your Profile",
+			SUBTITLE: "Select the import method by which you want to import the address to your Profile.",
 			TYPE: "Import Type",
 		},
 
@@ -160,8 +164,6 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Completed",
 			SUBTITLE: "Wallet import is complete. Now you can use it.",
 		},
-
-		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
 			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
@@ -200,7 +202,7 @@ export const translations: { [key: string]: any } = {
 		VOTES: {
 			TITLE: "My Vote",
 			TITLE_plural: "My Votes",
-			EMPTY_DESCRIPTION: "You have not yet voted for a delegate",
+			EMPTY_DESCRIPTION: "You have not voted for a Delegate yet.",
 			VOTING_FOR: "Voting for",
 			MULTIVOTE: "Multivote",
 			DELEGATE_STATUS: "Delegate Status",
