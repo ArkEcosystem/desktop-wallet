@@ -40,13 +40,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -69,7 +69,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -85,7 +85,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -102,7 +102,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -173,7 +173,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
+                      class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                     >
                       <div
                         class="relative flex flex-1"
@@ -181,7 +181,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         <input
                           aria-invalid="true"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -207,7 +207,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           class="pl-3"
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -240,7 +240,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
+                      class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                     >
                       <div
                         class="relative flex flex-1"
@@ -248,7 +248,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         <input
                           aria-invalid="true"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -274,7 +274,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           class="pl-3"
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -310,7 +310,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -338,7 +338,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             id="downshift-119-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -768,13 +768,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -797,7 +797,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -813,7 +813,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -830,7 +830,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
+                          class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                         >
                           <div
                             class="relative flex flex-1"
@@ -920,14 +920,14 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -939,7 +939,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -974,14 +974,14 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -993,7 +993,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -1029,7 +1029,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -1057,7 +1057,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             id="downshift-47-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -1487,13 +1487,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -1516,7 +1516,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -1532,7 +1532,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -1549,7 +1549,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
+                          class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                         >
                           <div
                             class="relative flex flex-1"
@@ -1639,14 +1639,14 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -1658,7 +1658,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -1693,14 +1693,14 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -1712,7 +1712,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -1748,7 +1748,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -1776,7 +1776,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             id="downshift-69-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -2206,13 +2206,13 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -2235,7 +2235,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -2251,7 +2251,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -2268,7 +2268,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
+                          class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                         >
                           <div
                             class="relative flex flex-1"
@@ -2378,14 +2378,14 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -2397,7 +2397,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -2432,14 +2432,14 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -2451,7 +2451,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -2487,7 +2487,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -2515,7 +2515,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             id="downshift-175-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -2703,13 +2703,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -2732,7 +2732,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -2748,7 +2748,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -2765,7 +2765,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -2836,14 +2836,14 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -2855,7 +2855,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -2890,14 +2890,14 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -2909,7 +2909,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -2945,7 +2945,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -2973,7 +2973,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             id="downshift-219-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -3402,13 +3402,13 @@ exports[`CreateProfile should render 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -3431,7 +3431,7 @@ exports[`CreateProfile should render 1`] = `
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -3447,7 +3447,7 @@ exports[`CreateProfile should render 1`] = `
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -3464,7 +3464,7 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -3535,14 +3535,14 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -3554,7 +3554,7 @@ exports[`CreateProfile should render 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -3589,14 +3589,14 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -3608,7 +3608,7 @@ exports[`CreateProfile should render 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -3644,7 +3644,7 @@ exports[`CreateProfile should render 1`] = `
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -3672,7 +3672,7 @@ exports[`CreateProfile should render 1`] = `
                             id="downshift-1-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -3860,13 +3860,13 @@ exports[`CreateProfile should store profile 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -3889,7 +3889,7 @@ exports[`CreateProfile should store profile 1`] = `
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -3905,7 +3905,7 @@ exports[`CreateProfile should store profile 1`] = `
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -3922,7 +3922,7 @@ exports[`CreateProfile should store profile 1`] = `
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -4013,14 +4013,14 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -4032,7 +4032,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -4067,14 +4067,14 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -4086,7 +4086,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -4122,7 +4122,7 @@ exports[`CreateProfile should store profile 1`] = `
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -4150,7 +4150,7 @@ exports[`CreateProfile should store profile 1`] = `
                             id="downshift-9-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -4579,13 +4579,13 @@ exports[`CreateProfile should store profile with password 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -4608,7 +4608,7 @@ exports[`CreateProfile should store profile with password 1`] = `
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -4624,7 +4624,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -4641,7 +4641,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -4712,14 +4712,14 @@ exports[`CreateProfile should store profile with password 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -4731,7 +4731,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -4764,14 +4764,14 @@ exports[`CreateProfile should store profile with password 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -4783,7 +4783,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -4819,7 +4819,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -4847,7 +4847,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             id="downshift-91-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -5276,13 +5276,13 @@ exports[`CreateProfile should update the avatar when removing focus from name in
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -5305,7 +5305,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -5321,7 +5321,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -5338,7 +5338,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -5415,14 +5415,14 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -5434,7 +5434,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5469,14 +5469,14 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -5488,7 +5488,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5524,7 +5524,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -5552,7 +5552,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             id="downshift-149-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -5740,13 +5740,13 @@ exports[`CreateProfile should update the avatar when removing focus from name in
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -5769,7 +5769,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -5785,7 +5785,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -5802,7 +5802,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
+                          class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                         >
                           <div
                             class="relative flex flex-1"
@@ -5892,14 +5892,14 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -5911,7 +5911,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -5946,14 +5946,14 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -5965,7 +5965,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -6001,7 +6001,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -6029,7 +6029,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             id="downshift-149-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"
@@ -6217,13 +6217,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="mx-auto max-w-lg"
+            class="max-w-lg mx-auto"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -6246,7 +6246,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
               </div>
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -6262,7 +6262,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="flex items-end justify-between -mt-4"
                   >
                     <div
-                      class="mr-6 w-full"
+                      class="w-full mr-6"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -6279,7 +6279,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                         >
                           <div
                             class="relative flex flex-1"
@@ -6350,14 +6350,14 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="password"
                           type="password"
                         />
@@ -6369,7 +6369,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -6404,14 +6404,14 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
                       >
                         <input
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                          data-testid="Input"
+                          data-testid="InputPassword"
                           name="confirmPassword"
                           type="password"
                         />
@@ -6423,7 +6423,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -6459,7 +6459,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="relative w-full"
                     >
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hlKLIE sr-only"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
                       >
                         <div
                           class="relative flex flex-1"
@@ -6487,7 +6487,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             id="downshift-189-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                           >
                             <div
                               class="relative flex flex-1"

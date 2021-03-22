@@ -430,8 +430,8 @@ describe("ImportWallet", () => {
 				expect(getByTestId("EncryptPassword")).toBeTruthy();
 			});
 
-			const passwordInput = getAllByTestId("Input")[0];
-			const confirmPassword = getAllByTestId("Input")[1];
+			const passwordInput = getAllByTestId("InputPassword")[0];
+			const confirmPassword = getAllByTestId("InputPassword")[1];
 
 			fireEvent.input(passwordInput, { target: { value: "password" } });
 			fireEvent.input(confirmPassword, { target: { value: "password" } });

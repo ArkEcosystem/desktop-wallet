@@ -2,7 +2,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Checkbox } from "app/components/Checkbox";
 import { Clipboard } from "app/components/Clipboard";
 import { Input, InputCurrency } from "app/components/Input";
-import { Modal } from "app/components/Modal";
+// import { Modal } from "app/components/Modal";
 import { Spinner } from "app/components/Spinner";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { runUnknownCode } from "plugins/loader/vm";
@@ -96,7 +96,8 @@ export class PluginControllerRepository {
 			try {
 				const callback = runUnknownCode(entry.source, entry.sourcePath, {
 					ark: {
-						Components: { Box, Tabs, TabPanel, Spinner, Clipboard, Input, InputCurrency, Checkbox, Modal },
+						// @TODO: register Modal causes a circular dependency which causes the PluginManager to be undefined when imported
+						Components: { Box, Tabs, TabPanel, Spinner, Clipboard, Input, InputCurrency, Checkbox },
 					},
 				});
 				const plugin = new PluginController(

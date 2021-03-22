@@ -54,7 +54,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -65,13 +65,17 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -125,35 +129,38 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                 class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                 >
-                  <input
-                    aria-invalid="true"
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                    class="relative flex flex-1"
+                  >
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
                       data-errortext="'Password' should have at least 6 characters"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -165,25 +172,25 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </svg>
                       </div>
                     </span>
-                  </div>
-                  <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
-                  >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <div
+                      class="pl-3"
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -191,7 +198,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                 class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
@@ -202,22 +209,25 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                   />
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 hryStd"
                 >
-                  <input
-                    aria-invalid="true"
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                    class="relative flex flex-1"
+                  >
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
                       data-errortext="Passwords do not match"
-                      data-testid="Input-error"
+                      data-testid="Input__error"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -229,25 +239,25 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </svg>
                       </div>
                     </span>
-                  </div>
-                  <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
-                  >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <div
+                      class="pl-3"
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -255,7 +265,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="currency"
                 >
@@ -268,13 +278,21 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                 <div
                   class="relative w-full"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                    data-testid="select-list__input"
-                    name="currency"
-                    readonly=""
-                    value="BTC"
-                  />
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+                  >
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        value="BTC"
+                      />
+                    </div>
+                  </div>
                   <div
                     class="relative w-full"
                   >
@@ -289,32 +307,56 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         id="downshift-111-label"
                       />
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                        data-testid="SelectDropdownInput"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                       >
-                        <span
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__typeahead"
+                        <div
+                          class="relative flex flex-1"
                         >
-                          BTC (Ƀ)
-                        </span>
-                        <input
-                          aria-activedescendant="downshift-111-item-0"
-                          aria-autocomplete="list"
-                          aria-controls="downshift-111-menu"
-                          aria-labelledby="downshift-111-label"
-                          autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__input"
-                          id="downshift-110-input"
-                          name="currency"
-                          placeholder="Select Currency"
-                          value="BTC (Ƀ)"
-                        />
+                          <input
+                            aria-activedescendant="downshift-111-item-0"
+                            aria-autocomplete="list"
+                            aria-controls="downshift-111-menu"
+                            aria-labelledby="downshift-111-label"
+                            autocomplete="off"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                            data-testid="SelectDropdownInput__input"
+                            id="downshift-110-input"
+                            name="currency"
+                            placeholder="Select Currency"
+                            value="BTC (Ƀ)"
+                          />
+                          <span
+                            class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            data-testid="Input__suggestion"
+                          >
+                            BTC (Ƀ)
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        >
+                          <div
+                            class=""
+                          >
+                            <span
+                              class="w-10 pointer-events-none text-theme-secondary-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                height="5"
+                                width="7"
+                              >
+                                <svg>
+                                  caret-down.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <ul
                         aria-labelledby="downshift-111-label"
-                        class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                        class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                         id="downshift-111-menu"
                         role="listbox"
                       >
@@ -554,19 +596,6 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                       </ul>
                     </div>
-                    <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                    >
-                      <div
-                        class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                        height="5"
-                        width="7"
-                      >
-                        <svg>
-                          caret-down.svg
-                        </svg>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -723,7 +752,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -734,13 +763,17 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -794,48 +827,53 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (
                     optional
-                    )
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -843,48 +881,53 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
                   Confirm Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (
                     optional
-                    )
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -892,7 +935,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="currency"
                 >
@@ -905,13 +948,21 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                 <div
                   class="relative w-full"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                    data-testid="select-list__input"
-                    name="currency"
-                    readonly=""
-                    value="BTC"
-                  />
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+                  >
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        value="BTC"
+                      />
+                    </div>
+                  </div>
                   <div
                     class="relative w-full"
                   >
@@ -926,47 +977,58 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                         id="downshift-1-label"
                       />
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                        data-testid="SelectDropdownInput"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                       >
-                        <span
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__typeahead"
+                        <div
+                          class="relative flex flex-1"
                         >
-                          BTC (Ƀ)
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="downshift-1-menu"
-                          aria-labelledby="downshift-1-label"
-                          autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__input"
-                          id="downshift-0-input"
-                          name="currency"
-                          placeholder="Select Currency"
-                          value="BTC (Ƀ)"
-                        />
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="downshift-1-menu"
+                            aria-labelledby="downshift-1-label"
+                            autocomplete="off"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                            data-testid="SelectDropdownInput__input"
+                            id="downshift-0-input"
+                            name="currency"
+                            placeholder="Select Currency"
+                            value="BTC (Ƀ)"
+                          />
+                          <span
+                            class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            data-testid="Input__suggestion"
+                          >
+                            BTC (Ƀ)
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        >
+                          <div
+                            class=""
+                          >
+                            <span
+                              class="w-10 pointer-events-none text-theme-secondary-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ gLRWTb transition-transform "
+                                height="5"
+                                width="7"
+                              >
+                                <svg>
+                                  caret-down.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <ul
                         aria-labelledby="downshift-1-label"
-                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        class="styles__SelectOptionsList-b2falt-0 heJAAA"
                         id="downshift-1-menu"
                         role="listbox"
                       />
-                    </div>
-                    <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                    >
-                      <div
-                        class="sc-bdfBwQ gLRWTb transition-transform "
-                        height="5"
-                        width="7"
-                      >
-                        <svg>
-                          caret-down.svg
-                        </svg>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1124,7 +1186,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1135,13 +1197,17 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -1195,48 +1261,53 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (
                     optional
-                    )
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -1244,48 +1315,53 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
                   Confirm Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (
                     optional
-                    )
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -1293,7 +1369,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="currency"
                 >
@@ -1306,13 +1382,21 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                 <div
                   class="relative w-full"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                    data-testid="select-list__input"
-                    name="currency"
-                    readonly=""
-                    value="BTC"
-                  />
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+                  >
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        value="BTC"
+                      />
+                    </div>
+                  </div>
                   <div
                     class="relative w-full"
                   >
@@ -1327,47 +1411,58 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                         id="downshift-25-label"
                       />
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                        data-testid="SelectDropdownInput"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                       >
-                        <span
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__typeahead"
+                        <div
+                          class="relative flex flex-1"
                         >
-                          BTC (Ƀ)
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="downshift-25-menu"
-                          aria-labelledby="downshift-25-label"
-                          autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__input"
-                          id="downshift-24-input"
-                          name="currency"
-                          placeholder="Select Currency"
-                          value="BTC (Ƀ)"
-                        />
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="downshift-25-menu"
+                            aria-labelledby="downshift-25-label"
+                            autocomplete="off"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                            data-testid="SelectDropdownInput__input"
+                            id="downshift-24-input"
+                            name="currency"
+                            placeholder="Select Currency"
+                            value="BTC (Ƀ)"
+                          />
+                          <span
+                            class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            data-testid="Input__suggestion"
+                          >
+                            BTC (Ƀ)
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        >
+                          <div
+                            class=""
+                          >
+                            <span
+                              class="w-10 pointer-events-none text-theme-secondary-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ gLRWTb transition-transform "
+                                height="5"
+                                width="7"
+                              >
+                                <svg>
+                                  caret-down.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <ul
                         aria-labelledby="downshift-25-label"
-                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        class="styles__SelectOptionsList-b2falt-0 heJAAA"
                         id="downshift-25-menu"
                         role="listbox"
                       />
-                    </div>
-                    <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                    >
-                      <div
-                        class="sc-bdfBwQ gLRWTb transition-transform "
-                        height="5"
-                        width="7"
-                      >
-                        <svg>
-                          caret-down.svg
-                        </svg>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1525,7 +1620,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1536,13 +1631,17 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -1596,48 +1695,53 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (
                     optional
-                    )
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -1645,48 +1749,53 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
                   Confirm Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (
                     optional
-                    )
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -1694,7 +1803,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="currency"
                 >
@@ -1707,13 +1816,21 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                 <div
                   class="relative w-full"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                    data-testid="select-list__input"
-                    name="currency"
-                    readonly=""
-                    value="BTC"
-                  />
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+                  >
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        value="BTC"
+                      />
+                    </div>
+                  </div>
                   <div
                     class="relative w-full"
                   >
@@ -1728,47 +1845,58 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                         id="downshift-13-label"
                       />
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                        data-testid="SelectDropdownInput"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                       >
-                        <span
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__typeahead"
+                        <div
+                          class="relative flex flex-1"
                         >
-                          BTC (Ƀ)
-                        </span>
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="downshift-13-menu"
-                          aria-labelledby="downshift-13-label"
-                          autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__input"
-                          id="downshift-12-input"
-                          name="currency"
-                          placeholder="Select Currency"
-                          value="BTC (Ƀ)"
-                        />
+                          <input
+                            aria-autocomplete="list"
+                            aria-controls="downshift-13-menu"
+                            aria-labelledby="downshift-13-label"
+                            autocomplete="off"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                            data-testid="SelectDropdownInput__input"
+                            id="downshift-12-input"
+                            name="currency"
+                            placeholder="Select Currency"
+                            value="BTC (Ƀ)"
+                          />
+                          <span
+                            class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            data-testid="Input__suggestion"
+                          >
+                            BTC (Ƀ)
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        >
+                          <div
+                            class=""
+                          >
+                            <span
+                              class="w-10 pointer-events-none text-theme-secondary-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ gLRWTb transition-transform "
+                                height="5"
+                                width="7"
+                              >
+                                <svg>
+                                  caret-down.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <ul
                         aria-labelledby="downshift-13-label"
-                        class="styles__SelectOptionsList-b2falt-1 cGgIup"
+                        class="styles__SelectOptionsList-b2falt-0 heJAAA"
                         id="downshift-13-menu"
                         role="listbox"
                       />
-                    </div>
-                    <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                    >
-                      <div
-                        class="sc-bdfBwQ gLRWTb transition-transform "
-                        height="5"
-                        width="7"
-                      >
-                        <svg>
-                          caret-down.svg
-                        </svg>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1926,7 +2054,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1937,13 +2065,17 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -2011,46 +2143,53 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -2058,7 +2197,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
@@ -2069,33 +2208,40 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                   />
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -2103,7 +2249,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="currency"
                 >
@@ -2116,13 +2262,21 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                 <div
                   class="relative w-full"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                    data-testid="select-list__input"
-                    name="currency"
-                    readonly=""
-                    value="BTC"
-                  />
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+                  >
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        value="BTC"
+                      />
+                    </div>
+                  </div>
                   <div
                     class="relative w-full"
                   >
@@ -2137,32 +2291,56 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         id="downshift-79-label"
                       />
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                        data-testid="SelectDropdownInput"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                       >
-                        <span
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__typeahead"
+                        <div
+                          class="relative flex flex-1"
                         >
-                          BTC (Ƀ)
-                        </span>
-                        <input
-                          aria-activedescendant="downshift-79-item-0"
-                          aria-autocomplete="list"
-                          aria-controls="downshift-79-menu"
-                          aria-labelledby="downshift-79-label"
-                          autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__input"
-                          id="downshift-78-input"
-                          name="currency"
-                          placeholder="Select Currency"
-                          value="BTC (Ƀ)"
-                        />
+                          <input
+                            aria-activedescendant="downshift-79-item-0"
+                            aria-autocomplete="list"
+                            aria-controls="downshift-79-menu"
+                            aria-labelledby="downshift-79-label"
+                            autocomplete="off"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                            data-testid="SelectDropdownInput__input"
+                            id="downshift-78-input"
+                            name="currency"
+                            placeholder="Select Currency"
+                            value="BTC (Ƀ)"
+                          />
+                          <span
+                            class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            data-testid="Input__suggestion"
+                          >
+                            BTC (Ƀ)
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        >
+                          <div
+                            class=""
+                          >
+                            <span
+                              class="w-10 pointer-events-none text-theme-secondary-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                height="5"
+                                width="7"
+                              >
+                                <svg>
+                                  caret-down.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <ul
                         aria-labelledby="downshift-79-label"
-                        class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                        class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                         id="downshift-79-menu"
                         role="listbox"
                       >
@@ -2402,19 +2580,6 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                       </ul>
                     </div>
-                    <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                    >
-                      <div
-                        class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                        height="5"
-                        width="7"
-                      >
-                        <svg>
-                          caret-down.svg
-                        </svg>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -2568,7 +2733,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -2579,13 +2744,17 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -2653,46 +2822,53 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -2700,46 +2876,53 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
                   Confirm Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -2747,7 +2930,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="currency"
                 >
@@ -2760,13 +2943,21 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                 <div
                   class="relative w-full"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures sr-only"
-                    data-testid="select-list__input"
-                    name="currency"
-                    readonly=""
-                    value="BTC"
-                  />
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+                  >
+                    <div
+                      class="relative flex flex-1"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="select-list__input"
+                        name="currency"
+                        readonly=""
+                        value="BTC"
+                      />
+                    </div>
+                  </div>
                   <div
                     class="relative w-full"
                   >
@@ -2781,32 +2972,56 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         id="downshift-37-label"
                       />
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                        data-testid="SelectDropdownInput"
+                        class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                       >
-                        <span
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__typeahead"
+                        <div
+                          class="relative flex flex-1"
                         >
-                          BTC (Ƀ)
-                        </span>
-                        <input
-                          aria-activedescendant="downshift-37-item-0"
-                          aria-autocomplete="list"
-                          aria-controls="downshift-37-menu"
-                          aria-labelledby="downshift-37-label"
-                          autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures cursor-default undefined undefined"
-                          data-testid="SelectDropdownInput__input"
-                          id="downshift-36-input"
-                          name="currency"
-                          placeholder="Select Currency"
-                          value="BTC (Ƀ)"
-                        />
+                          <input
+                            aria-activedescendant="downshift-37-item-0"
+                            aria-autocomplete="list"
+                            aria-controls="downshift-37-menu"
+                            aria-labelledby="downshift-37-label"
+                            autocomplete="off"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                            data-testid="SelectDropdownInput__input"
+                            id="downshift-36-input"
+                            name="currency"
+                            placeholder="Select Currency"
+                            value="BTC (Ƀ)"
+                          />
+                          <span
+                            class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            data-testid="Input__suggestion"
+                          >
+                            BTC (Ƀ)
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        >
+                          <div
+                            class=""
+                          >
+                            <span
+                              class="w-10 pointer-events-none text-theme-secondary-500"
+                            >
+                              <div
+                                class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                height="5"
+                                width="7"
+                              >
+                                <svg>
+                                  caret-down.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </div>
                       </div>
                       <ul
                         aria-labelledby="downshift-37-label"
-                        class="styles__SelectOptionsList-b2falt-1 cGgIup is-open"
+                        class="styles__SelectOptionsList-b2falt-0 heJAAA is-open"
                         id="downshift-37-menu"
                         role="listbox"
                       >
@@ -3046,19 +3261,6 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                       </ul>
                     </div>
-                    <div
-                      class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO w-10 pointer-events-none text-theme-secondary-500"
-                    >
-                      <div
-                        class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
-                        height="5"
-                        width="7"
-                      >
-                        <svg>
-                          caret-down.svg
-                        </svg>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -3212,7 +3414,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -3223,13 +3425,17 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -3283,46 +3489,53 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -3330,46 +3543,53 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
                   Confirm Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -3462,7 +3682,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                     class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -3473,13 +3693,17 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       />
                     </label>
                     <div
-                      class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                        data-testid="Input"
-                        name="name"
-                      />
+                      <div
+                        class="relative flex flex-1"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="Input"
+                          name="name"
+                        />
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -3547,46 +3771,53 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="password"
                 >
                   Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="password"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -3594,46 +3825,53 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="confirmPassword"
                 >
                   Confirm Password
                   <span
-                    class="ml-1 text-theme-secondary-text"
+                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     data-testid="FormLabel__optional"
                   >
-                    (optional)
+                    optional
                   </span>
                 </label>
                 <div
-                  class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                  data-testid="InputPassword"
+                  class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                 >
-                  <input
-                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-12"
-                    data-testid="Input"
-                    name="confirmPassword"
-                    type="password"
-                  />
                   <div
-                    class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                    class="relative flex flex-1"
                   >
-                    <button
-                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                      data-testid="InputPassword__toggle"
-                      type="button"
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputPassword"
+                      name="confirmPassword"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class=""
                     >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                      <button
+                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                        data-testid="InputPassword__toggle"
+                        type="button"
                       >
-                        <svg>
-                          eye.svg
-                        </svg>
-                      </div>
-                    </button>
+                        <div
+                          class="sc-bdfBwQ fPrsah"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            eye.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </fieldset>

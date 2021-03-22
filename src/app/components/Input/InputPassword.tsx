@@ -11,6 +11,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 
 	return (
 		<Input
+			data-testid="InputPassword"
 			ref={ref}
 			type={show ? "text" : "password"}
 			addons={{
@@ -19,7 +20,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 						data-testid="InputPassword__toggle"
 						type="button"
 						onClick={togglePasswordVisibilty}
-						className="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+						className="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
 					>
 						<Icon name={show ? "EyeOff" : "Eye"} />
 					</button>

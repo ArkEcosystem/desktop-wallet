@@ -173,8 +173,8 @@ describe("Import Profile - Profile Form Step", () => {
 		fireEvent.click(container.querySelector("input[name=isDarkMode]"));
 
 		await act(async () => {
-			fireEvent.change(getAllByTestId("Input")[1], { target: { value: "password" } });
-			fireEvent.change(getAllByTestId("Input")[2], { target: { value: "password" } });
+			fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "password" } });
+			fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "password" } });
 		});
 
 		await act(async () => {
@@ -204,18 +204,18 @@ describe("Import Profile - Profile Form Step", () => {
 		fireEvent.change(selectDropdown, { target: { value: "none" } });
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
-		fireEvent.change(getAllByTestId("Input")[1], { target: { value: "test password" } });
-		fireEvent.change(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+		fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "test password" } });
+		fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "wrong" } });
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "password" } });
-		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "password" } });
+		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "password" } });
+		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "password" } });
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 
-		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "test password" } });
-		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "wrong" } });
+		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "wrong" } });
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
@@ -246,7 +246,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 		});
 
-		act(() => getAllByTestId("Input")[1].focus());
+		act(() => getAllByTestId("InputPassword")[1].focus());
 
 		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
 
@@ -254,7 +254,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "te" } });
 		});
 
-		act(() => getAllByTestId("Input")[1].focus());
+		act(() => getAllByTestId("InputPassword")[0].focus());
 
 		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
 
@@ -264,7 +264,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile" } });
 		});
 
-		act(() => getAllByTestId("Input")[1].focus());
+		act(() => getAllByTestId("InputPassword")[0].focus());
 
 		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
 
@@ -276,7 +276,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
 		});
 
-		act(() => getAllByTestId("Input")[1].focus());
+		act(() => getAllByTestId("InputPassword")[0].focus());
 
 		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
 
@@ -293,7 +293,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 		});
 
-		act(() => getAllByTestId("Input")[1].focus());
+		act(() => getAllByTestId("InputPassword")[0].focus());
 
 		expect(asFragment()).toMatchSnapshot();
 		shouldUseDarkColorsSpy.mockRestore();
