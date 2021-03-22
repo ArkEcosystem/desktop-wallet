@@ -172,9 +172,8 @@ describe("LedgerImportStep", () => {
 
 		await act(async () => {
 			fireEvent.click(screen.getByTestId("UpdateWalletName__cancel"));
+			await waitFor(() => expect(screen.queryByTestId("UpdateWalletName__input")).not.toBeInTheDocument());
 		});
-
-		await waitFor(() => expect(screen.queryByTestId("UpdateWalletName__input")).not.toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
 	});
