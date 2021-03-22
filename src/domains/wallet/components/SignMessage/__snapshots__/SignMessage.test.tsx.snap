@@ -408,3 +408,123 @@ exports[`SignMessage should render for ledger wallets 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`SignMessage should render signed step with wallet alias 1`] = `
+<div>
+  <section>
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Message Successfully Signed
+        </h1>
+      </div>
+    </div>
+    <div
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
+      data-testid="TransactionDetail"
+    >
+      <div
+        class="flex-1 space-y-2"
+      >
+        <div
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+        >
+          Signatory
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <div
+            class="inline-flex items-center no-ligatures"
+          >
+            <span
+              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+              data-testid="address__wallet-name"
+            >
+              <span
+                class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                data-testid="TruncateEnd"
+              >
+                my-alias
+              </span>
+            </span>
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+              data-testid="address__wallet-address"
+            >
+              DLMm5AiKSX…J8mQ6MqjCv
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+        data-testid="Avatar"
+      >
+        <div
+          class="w-full h-full"
+        >
+          <img
+            alt="DLMm5AiKSXobaV6YFcUboPZVJ8mQ6MqjCv"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"45\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"60\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+            title="DLMm5AiKSXobaV6YFcUboPZVJ8mQ6MqjCv"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp text-lg break-all no-ligatures"
+      data-testid="TransactionDetail"
+    >
+      <div
+        class="flex-1 space-y-2"
+      >
+        <div
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+        >
+          Message
+        </div>
+        <div
+          class="font-semibold"
+        >
+          Hello World
+        </div>
+      </div>
+    </div>
+    <div
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj undefined no-ligatures"
+      data-testid="TransactionDetail"
+    >
+      <div
+        class="flex-1 space-y-2"
+      >
+        <div
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+        >
+          Signature
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <textarea
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures mt-2 rounded-lg"
+            data-testid="TextArea"
+            name="signature"
+            style="height: 4px;"
+            wrap="hard"
+          >
+            {"message":"Hello World","signatory":"0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f","signature":"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1"}
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

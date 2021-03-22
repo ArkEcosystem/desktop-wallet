@@ -10,7 +10,9 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { render } from "utils/testing-library";
 
+import { SignedStep } from "./SignedStep";
 import { SignMessage } from "./SignMessage";
 
 const history = createMemoryHistory();
@@ -80,6 +82,20 @@ describe("SignMessage", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		isLedgerMock.mockRestore();
+	});
+
+	it("should render signed step with wallet alias", () => {
+		jest.spyOn(wallet, "alias").mockReturnValue("my-alias");
+		const signedMessage = {
+			message: "Hello World",
+			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
+			signature:
+				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
+		};
+
+		const { container, getByText } = render(<SignedStep wallet={wallet} signedMessage={signedMessage} />);
+		expect(getByText("my-alias")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should sign message", async () => {
