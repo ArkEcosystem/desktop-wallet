@@ -140,7 +140,7 @@ export const ImportWallet = () => {
 				<Form
 					className="mx-auto max-w-xl"
 					context={form}
-					onSubmit={importAndSaveWallet as any}
+					onSubmit={walletData ? handleFinish : (importAndSaveWallet as any)}
 					data-testid="ImportWallet__form"
 				>
 					{isLedgerImport ? (
