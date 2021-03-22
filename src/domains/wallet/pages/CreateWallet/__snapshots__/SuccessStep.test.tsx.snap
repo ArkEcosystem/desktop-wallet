@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuccessStep should render 4th step 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="CreateWallet__SuccessStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Completed
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Wallet creation is complete. Now you can use it.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+        data-testid="TransactionDetail"
+      >
+        <div
+          class="flex-1 space-y-2"
+        >
+          <div
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+          >
+            Cryptoasset
+          </div>
+          <div
+            class="font-semibold"
+          >
+            ARK Devnet
+          </div>
+        </div>
+        <div
+          aria-label="ARK Devnet"
+          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+          data-testid="NetworkIcon-ARK-ark.devnet"
+        >
+          <div
+            class="sc-bdfBwQ iyevwF"
+            data-testid="NetworkIcon__icon"
+            height="20"
+            width="20"
+          >
+            <svg>
+              ark.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd undefined no-ligatures"
+        data-testid="TransactionDetail"
+      >
+        <div
+          class="flex-1 space-y-2"
+        >
+          <div
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+          >
+            Address
+          </div>
+          <div
+            class="font-semibold"
+          >
+            <div
+              class="inline-flex items-center no-ligatures"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                TEST-WALLET-ADDRESS
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full"
+          >
+            <img
+              alt="TEST-WALLET-ADDRESS"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+              title="TEST-WALLET-ADDRESS"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Wallet name
+        <span
+          class="ml-1 text-theme-secondary-text"
+          data-testid="FormLabel__optional"
+        >
+          (optional)
+        </span>
+      </label>
+      <div
+        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
+          data-testid="CreateWallet__wallet-name"
+          name="name"
+        />
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;

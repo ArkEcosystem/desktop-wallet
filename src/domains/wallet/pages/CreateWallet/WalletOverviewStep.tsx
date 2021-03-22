@@ -12,7 +12,7 @@ import { saveFile } from "utils/electron-utils";
 
 import { MnemonicList } from "../../components/MnemonicList";
 
-export const SecondStep = () => {
+export const WalletOverviewStep = () => {
 	const { getValues, unregister, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
@@ -52,7 +52,7 @@ export const SecondStep = () => {
 	};
 
 	return (
-		<section data-testid="CreateWallet__second-step" className="space-y-8">
+		<section data-testid="CreateWallet__WalletOverviewStep" className="space-y-8">
 			<Header title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.TITLE")} />
 
 			<Alert>{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.WARNING")}</Alert>

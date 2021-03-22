@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectNetworkStep Render 1st step should render 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="CreateWallet__SelectNetworkStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Select a Cryptoasset
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Select a cryptoasset to create your new wallet address
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="CreateWallet__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="CreateWallet__network-input"
+            id="CreateWallet__network-label"
+          />
+          <div
+            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
+            >
+              <div
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="CreateWallet__network-menu"
+              aria-labelledby="CreateWallet__network-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="CreateWallet__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="mt-6"
+        >
+          <div
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+          >
+            PUBLIC NETWORKS
+          </div>
+          <ul
+            aria-labelledby="CreateWallet__network-label"
+            class="grid grid-cols-6 gap-3"
+            id="CreateWallet__network-menu"
+            role="listbox"
+          >
+            <li
+              class="inline-block cursor-pointer h-21"
+              data-testid="SelectNetwork__NetworkIcon--container"
+            >
+              <div
+                aria-label="ARK"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                data-testid="NetworkIcon-ARK-ark.mainnet"
+              >
+                <div
+                  class="sc-bdfBwQ caqoGN"
+                  data-testid="NetworkIcon__icon"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </li>
+            <li
+              class="inline-block cursor-pointer h-21"
+              data-testid="SelectNetwork__NetworkIcon--container"
+            >
+              <div
+                aria-label="Compendia"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                data-testid="NetworkIcon-ARK-compendia.mainnet"
+              >
+                <div
+                  class="sc-bdfBwQ caqoGN"
+                  data-testid="NetworkIcon__icon"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    bind.svg
+                  </svg>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="mt-6"
+        >
+          <div
+            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+          >
+            DEVELOPMENT NETWORKS
+          </div>
+          <ul
+            aria-labelledby="CreateWallet__network-label"
+            class="grid grid-cols-6 gap-3"
+            id="CreateWallet__network-menu"
+            role="listbox"
+          >
+            <li
+              class="inline-block cursor-pointer h-21"
+              data-testid="SelectNetwork__NetworkIcon--container"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                data-testid="NetworkIcon-ARK-ark.devnet"
+              >
+                <div
+                  class="sc-bdfBwQ caqoGN"
+                  data-testid="NetworkIcon__icon"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`SelectNetworkStep Render 1st step should render without test networks 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="CreateWallet__SelectNetworkStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Select a Cryptoasset
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Select a cryptoasset to create your new wallet address
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-owns="CreateWallet__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="CreateWallet__network-input"
+            id="CreateWallet__network-label"
+          />
+          <div
+            class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
+            >
+              <div
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="CreateWallet__network-menu"
+              aria-labelledby="CreateWallet__network-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="CreateWallet__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="mt-6"
+        >
+          <ul
+            aria-labelledby="CreateWallet__network-label"
+            class="grid grid-cols-6 gap-3"
+            id="CreateWallet__network-menu"
+            role="listbox"
+          >
+            <li
+              class="inline-block cursor-pointer h-21"
+              data-testid="SelectNetwork__NetworkIcon--container"
+            >
+              <div
+                aria-label="ARK"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                data-testid="NetworkIcon-ARK-ark.mainnet"
+              >
+                <div
+                  class="sc-bdfBwQ caqoGN"
+                  data-testid="NetworkIcon__icon"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </li>
+            <li
+              class="inline-block cursor-pointer h-21"
+              data-testid="SelectNetwork__NetworkIcon--container"
+            >
+              <div
+                aria-label="Compendia"
+                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                data-testid="NetworkIcon-ARK-compendia.mainnet"
+              >
+                <div
+                  class="sc-bdfBwQ caqoGN"
+                  data-testid="NetworkIcon__icon"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    bind.svg
+                  </svg>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;

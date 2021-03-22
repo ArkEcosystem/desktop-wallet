@@ -525,14 +525,19 @@ exports[`SendIpfs should render form step 1`] = `
             </div>
           </div>
           <div
-            class=""
+            class="hidden"
+            data-testid="SelectNetwork__options"
           >
-            <ul
-              aria-labelledby="SendTransactionForm__network-label"
-              class="grid grid-cols-6 gap-3"
-              id="SendTransactionForm__network-menu"
-              role="listbox"
-            />
+            <div
+              class=""
+            >
+              <ul
+                aria-labelledby="SendTransactionForm__network-label"
+                class="grid grid-cols-6 gap-3"
+                id="SendTransactionForm__network-menu"
+                role="listbox"
+              />
+            </div>
           </div>
         </div>
       </fieldset>
@@ -1971,46 +1976,51 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             </div>
                           </div>
                           <div
-                            class=""
+                            class="hidden"
+                            data-testid="SelectNetwork__options"
                           >
-                            <ul
-                              aria-labelledby="SendTransactionForm__network-label"
-                              class="grid grid-cols-6 gap-3"
-                              id="SendTransactionForm__network-menu"
-                              role="listbox"
-                            />
-                          </div>
-                          <div
-                            class="mt-6"
-                          >
-                            <ul
-                              aria-labelledby="SendTransactionForm__network-label"
-                              class="grid grid-cols-6 gap-3"
-                              id="SendTransactionForm__network-menu"
-                              role="listbox"
+                            <div
+                              class=""
                             >
-                              <li
-                                class="inline-block cursor-pointer h-21 cursor-not-allowed"
-                                data-testid="SelectNetwork__NetworkIcon--container"
+                              <ul
+                                aria-labelledby="SendTransactionForm__network-label"
+                                class="grid grid-cols-6 gap-3"
+                                id="SendTransactionForm__network-menu"
+                                role="listbox"
+                              />
+                            </div>
+                            <div
+                              class="mt-6"
+                            >
+                              <ul
+                                aria-labelledby="SendTransactionForm__network-label"
+                                class="grid grid-cols-6 gap-3"
+                                id="SendTransactionForm__network-menu"
+                                role="listbox"
                               >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
+                                <li
+                                  class="inline-block cursor-pointer h-21 cursor-not-allowed"
+                                  data-testid="SelectNetwork__NetworkIcon--container"
                                 >
                                   <div
-                                    class="sc-bdfBwQ caqoGN"
-                                    data-testid="NetworkIcon__icon"
-                                    height="30"
-                                    width="30"
+                                    aria-label="ARK Devnet"
+                                    class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
                                   >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
+                                    <div
+                                      class="sc-bdfBwQ caqoGN"
+                                      data-testid="NetworkIcon__icon"
+                                      height="30"
+                                      width="30"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
                                   </div>
-                                </div>
-                              </li>
-                            </ul>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </fieldset>

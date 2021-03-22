@@ -110,13 +110,18 @@ exports[`AddAssets should render a modal 1`] = `
                 </div>
                 <div
                   class=""
+                  data-testid="SelectNetwork__options"
                 >
-                  <ul
-                    aria-labelledby="AddAssets__network-label"
-                    class="grid grid-cols-6 gap-3"
-                    id="AddAssets__network-menu"
-                    role="listbox"
-                  />
+                  <div
+                    class=""
+                  >
+                    <ul
+                      aria-labelledby="AddAssets__network-label"
+                      class="grid grid-cols-6 gap-3"
+                      id="AddAssets__network-menu"
+                      role="listbox"
+                    />
+                  </div>
                 </div>
               </div>
             </fieldset>

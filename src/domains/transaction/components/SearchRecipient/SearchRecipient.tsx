@@ -106,7 +106,12 @@ export const SearchRecipient = ({
 			accessor: "type",
 		},
 		{
-			Header: <HeaderSearchBar placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.SEARCH_PLACEHOLDER")} />,
+			Header: (
+				<HeaderSearchBar
+					placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.SEARCH_PLACEHOLDER")}
+					noToggleBorder
+				/>
+			),
 			accessor: "search",
 			className: "justify-end no-border",
 			disableSortBy: true,

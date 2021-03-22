@@ -137,6 +137,7 @@ export const SearchWallet = ({
 							onSearch={setQuery}
 							onReset={() => setQuery("")}
 							debounceTimeout={100}
+							noToggleBorder
 						/>
 					),
 					accessor: "search",
@@ -155,6 +156,7 @@ export const SearchWallet = ({
 						onSearch={setQuery}
 						onReset={() => setQuery("")}
 						debounceTimeout={100}
+						noToggleBorder
 					/>
 				),
 				accessor: "search",

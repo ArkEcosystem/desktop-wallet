@@ -10,21 +10,27 @@ exports[`HeaderSearchBar should render 1`] = `
       data-testid="header-search-bar__button"
     >
       <div
-        class="flex items-center space-x-3"
+        class="group"
       >
-        <span
-          class="text-theme-primary-300 dark:text-theme-secondary-700"
-        >
-          Search
-        </span>
         <div
-          class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
-          height="18"
-          width="18"
+          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
         >
-          <svg>
-            search.svg
-          </svg>
+          <div
+            class="flex items-center h-5 space-x-3"
+          >
+            <span>
+              Search
+            </span>
+            <div
+              class="sc-bdfBwQ iNulIV"
+              height="18"
+              width="18"
+            >
+              <svg>
+                search.svg
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </button>

@@ -7,15 +7,16 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { useDashboardConfig } from "domains/dashboard/pages";
+import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { ThirdStep } from "./Step3";
-import { FourthStep } from "./Step4";
+import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
+import { SelectNetworkStep } from "./SelectNetworkStep";
+import { SuccessStep } from "./SuccessStep";
+import { WalletOverviewStep } from "./WalletOverviewStep";
 
 export const CreateWallet = () => {
 	const { env, persist } = useEnvironmentContext();
@@ -23,6 +24,7 @@ export const CreateWallet = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
+	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
 	const nameMaxLength = 42;
 
@@ -42,7 +44,23 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		const wallet = getValues("wallet");
+		let wallet = getValues("wallet");
+
+		if (encryptionPassword) {
+			try {
+				const mnemonic = getValues("mnemonic");
+				const coin = wallet.network().coin();
+				const network = wallet.network().id();
+
+				forgetTemporaryWallet();
+
+				wallet = await activeProfile
+					.wallets()
+					.importByMnemonicWithEncryption(mnemonic, coin, network, encryptionPassword);
+			} catch (error) {
+				setShowError(true);
+			}
+		}
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
@@ -86,6 +104,10 @@ export const CreateWallet = () => {
 			forgetTemporaryWallet();
 		}
 
+		if (activeTab === 4 || activeTab === 5) {
+			setEncryptionPassword(undefined);
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
@@ -109,16 +131,21 @@ export const CreateWallet = () => {
 		}
 	};
 
+	const handlePasswordSubmit = () => {
+		setEncryptionPassword(form.getValues("encryptionPassword"));
+		handleNext();
+	};
+
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+						<StepIndicator size={5} activeIndex={activeTab} />
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep
+								<SelectNetworkStep
 									env={env}
 									profile={activeProfile}
 									isLoading={isGeneratingWallet}
@@ -126,45 +153,74 @@ export const CreateWallet = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep />
+								<WalletOverviewStep />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep />
+								<ConfirmPassphraseStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep nameMaxLength={nameMaxLength} profile={activeProfile} />
+								<EncryptPasswordStep />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-3">
-								<Button
-									disabled={isSubmitting}
-									data-testid="CreateWallet__back-button"
-									variant="secondary"
-									onClick={handleBack}
-								>
-									{t("COMMON.BACK")}
-								</Button>
+							<div className="flex justify-between mt-10">
+								<div>
+									{activeTab === 4 && (
+										<Button data-testid="CreateWallet__skip-button" onClick={handleNext}>
+											{t("COMMON.SKIP")}
+										</Button>
+									)}
+								</div>
 
-								{activeTab < 4 && (
+								<div className="flex justify-end space-x-3">
 									<Button
-										data-testid="CreateWallet__continue-button"
-										disabled={!isValid || isGeneratingWallet}
-										isLoading={isGeneratingWallet}
-										onClick={handleNext}
+										disabled={isSubmitting}
+										data-testid="CreateWallet__back-button"
+										variant="secondary"
+										onClick={handleBack}
 									>
-										{t("COMMON.CONTINUE")}
+										{t("COMMON.BACK")}
 									</Button>
-								)}
 
-								{activeTab === 4 && (
-									<Button
-										disabled={!isValid || isSubmitting}
-										type="submit"
-										data-testid="CreateWallet__save-button"
-									>
-										{t("COMMON.SAVE_FINISH")}
-									</Button>
-								)}
+									{activeTab < 4 && (
+										<Button
+											data-testid="CreateWallet__continue-button"
+											disabled={!isValid}
+											isLoading={isGeneratingWallet}
+											onClick={handleNext}
+										>
+											{t("COMMON.CONTINUE")}
+										</Button>
+									)}
+
+									{activeTab === 4 && (
+										<Button
+											data-testid="CreateWallet__continue-button"
+											disabled={
+												!isValid ||
+												isGeneratingWallet ||
+												!form.watch("encryptionPassword") ||
+												!form.watch("confirmEncryptionPassword")
+											}
+											isLoading={isGeneratingWallet}
+											onClick={handlePasswordSubmit}
+										>
+											{t("COMMON.CONTINUE")}
+										</Button>
+									)}
+
+									{activeTab === 5 && (
+										<Button
+											disabled={!isValid || isSubmitting}
+											type="submit"
+											data-testid="CreateWallet__save-button"
+										>
+											{t("COMMON.SAVE_FINISH")}
+										</Button>
+									)}
+								</div>
 							</div>
 						</div>
 					</Tabs>

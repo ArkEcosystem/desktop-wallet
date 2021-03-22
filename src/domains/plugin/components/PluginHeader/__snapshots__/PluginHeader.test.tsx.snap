@@ -176,12 +176,16 @@ exports[`PluginHeader should render properly 1`] = `
                 <span
                   class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Version
+                  Size
                 </span>
                 <span
                   class="font-semibold text-theme-secondary-text"
                 >
-                  1.3.8
+                  <span
+                    data-testid="PluginSpecs__size"
+                  >
+                    4.2 Mb
+                  </span>
                 </span>
               </div>
             </div>
@@ -194,16 +198,12 @@ exports[`PluginHeader should render properly 1`] = `
                 <span
                   class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Size
+                  Version
                 </span>
                 <span
                   class="font-semibold text-theme-secondary-text"
                 >
-                  <span
-                    data-testid="PluginSpecs__size"
-                  >
-                    4.2 Mb
-                  </span>
+                  1.3.8
                 </span>
               </div>
             </div>
@@ -442,12 +442,16 @@ exports[`PluginHeader should render updating plugin 1`] = `
                 <span
                   class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Version
+                  Size
                 </span>
                 <span
                   class="font-semibold text-theme-secondary-text"
                 >
-                  1.3.8
+                  <span
+                    data-testid="PluginSpecs__size"
+                  >
+                    4.2 Mb
+                  </span>
                 </span>
               </div>
             </div>
@@ -460,16 +464,12 @@ exports[`PluginHeader should render updating plugin 1`] = `
                 <span
                   class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Size
+                  Version
                 </span>
                 <span
                   class="font-semibold text-theme-secondary-text"
                 >
-                  <span
-                    data-testid="PluginSpecs__size"
-                  >
-                    4.2 Mb
-                  </span>
+                  1.3.8
                 </span>
               </div>
             </div>

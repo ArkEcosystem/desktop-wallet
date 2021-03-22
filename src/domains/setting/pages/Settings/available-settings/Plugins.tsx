@@ -1,5 +1,4 @@
 import { Button } from "app/components/Button";
-import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
@@ -46,9 +45,7 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={pluginItems} />
 
-				<Divider dashed />
-
-				<div className="flex justify-end pt-2 w-full">
+				<div className="flex justify-end mt-8 w-full">
 					<Button data-testid="Plugins-settings__submit-button" type="submit">
 						{t("COMMON.SAVE")}
 					</Button>

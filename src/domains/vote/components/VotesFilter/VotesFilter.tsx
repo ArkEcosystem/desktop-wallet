@@ -1,7 +1,9 @@
 import { Checkbox } from "app/components/Checkbox";
+import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -15,14 +17,16 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 			<Dropdown
 				position="right"
 				toggleContent={
-					<div className="cursor-pointer">
-						<Icon name="Filters" width={20} height={20} />
-					</div>
+					<ControlButton isChanged={selectedOption !== "all"} isActive={selectedOption !== "all"}>
+						<div className="flex items-center justify-center w-5 h-5">
+							<Icon name="Filters" width={17} height={19} />
+						</div>
+					</ControlButton>
 				}
 			>
-				<div className="py-4 px-6 w-64">
+				<div className="w-64 px-6 py-4">
 					<label
-						className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+						className="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
 						data-testid="VotesFilter__option--all"
 					>
 						<span>
@@ -41,11 +45,10 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 						content={totalCurrentVotes === 0 && "You have not yet voted for delegates"}
 					>
 						<label
-							className={`flex items-center block px-2 pb-1 space-x-3 rounded-md ${
-								totalCurrentVotes > 0
-									? "cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
-									: "text-theme-secondary-400"
-							}`}
+							className={cn("flex items-center px-2 pb-1 space-x-3 rounded-md", {
+								"cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100": totalCurrentVotes,
+								"text-theme-secondary-400": !totalCurrentVotes,
+							})}
 							data-testid="VotesFilter__option--current"
 						>
 							<span>

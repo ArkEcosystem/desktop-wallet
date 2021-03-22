@@ -95,6 +95,14 @@ describe("Plugin Configuration", () => {
 		expect(subject.permissions()).toEqual(["LAUNCH", "HTTP"]);
 	});
 
+	it("should return only valid permissions", () => {
+		const subject = PluginConfigurationData.make({
+			name: "plugin-test",
+			"desktop-wallet": { permissions: ["launch", "HTTP", "MY_CUSTOM_PERMISSION"] },
+		});
+		expect(subject.permissions()).toEqual(["LAUNCH", "HTTP"]);
+	});
+
 	it("should return urls", () => {
 		const subject = PluginConfigurationData.make({
 			name: "plugin-test",

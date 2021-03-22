@@ -8,6 +8,7 @@ import { useFormField } from "../Form/useFormField";
 
 type InputProps = {
 	as?: React.ElementType;
+	ignoreContext?: boolean;
 	isInvalid?: boolean;
 	isFocused?: boolean;
 	hideInputValue?: boolean;
@@ -18,7 +19,7 @@ type InputProps = {
 } & React.HTMLProps<any>;
 
 export const InputWrapperStyled = styled.div<{ disabled?: boolean; invalid?: boolean }>`
-	${tw`flex items-center h-14 px-4 py-3 space-x-2 overflow-hidden w-full appearance-none rounded border text-theme-text transition-colors duration-200 focus-within:ring-1`}
+	${tw`flex items-center w-full px-4 py-3 space-x-2 overflow-hidden transition-colors duration-200 border rounded appearance-none h-14 text-theme-text focus-within:ring-1`}
 
 	${({ disabled, invalid }) => {
 		if (disabled) {
@@ -54,6 +55,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			className,
 			innerClassName,
 			isFocused,
+			ignoreContext,
 			errorMessage,
 			addons,
 			disabled,
@@ -64,7 +66,11 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		}: InputProps,
 		ref,
 	) => {
-		const fieldContext = useFormField();
+		let fieldContext = useFormField();
+
+		if (ignoreContext) {
+			fieldContext = undefined;
+		}
 
 		const isInvalidValue = fieldContext?.isInvalid || isInvalid;
 		const errorMessageValue = fieldContext?.errorMessage || errorMessage;

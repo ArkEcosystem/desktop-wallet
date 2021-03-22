@@ -25,10 +25,10 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	return (
 		<div className="flex justify-end items-top">
 			{showSearchBar && (
-				<>
+				<div className="flex items-center space-x-5 text-theme-primary-200">
 					<HeaderSearchBar onSearch={onSearch} />
 					<div className="pl-8 my-auto ml-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-				</>
+				</div>
 			)}
 
 			<Button data-testid="contacts__add-contact-btn" className="whitespace-nowrap" onClick={onAddContact}>

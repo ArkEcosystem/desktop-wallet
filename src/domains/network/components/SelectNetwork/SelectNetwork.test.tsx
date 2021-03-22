@@ -15,6 +15,12 @@ describe("SelectNetwork", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with hidden options", () => {
+		const { container, getByTestId } = render(<SelectNetwork networks={availableNetworksMock} hideOptions />);
+		expect(getByTestId("SelectNetwork__options")).toHaveClass("hidden");
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should filter the network icons based on the input value", () => {
 		const { getAllByTestId, getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");

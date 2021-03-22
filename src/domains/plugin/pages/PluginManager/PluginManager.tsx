@@ -18,7 +18,7 @@ import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUni
 import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
 import { usePluginUpdateQueue } from "domains/plugin/hooks/use-plugin-update-queue";
 import { PluginController, usePluginManagerContext } from "plugins";
-import React, { useLayoutEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -151,15 +151,7 @@ const UpdateAllBanner = ({
 
 export const PluginManager = () => {
 	const { t } = useTranslation();
-	const {
-		fetchPluginPackages,
-		allPlugins,
-		isFetchingPackages,
-		trigger,
-		updatingStats,
-		filters,
-		filterBy,
-	} = usePluginManagerContext();
+	const { allPlugins, isFetchingPackages, trigger, updatingStats, filters, filterBy } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -177,12 +169,8 @@ export const PluginManager = () => {
 
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
-	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
+	const isAdvancedMode = activeProfile.settings().get<boolean>(ProfileSetting.AdvancedMode, false)!;
 	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
-
-	useLayoutEffect(() => {
-		fetchPluginPackages();
-	}, [fetchPluginPackages]);
 
 	const pluginsByCategory = useMemo(() => {
 		const result: Record<string, any[]> = {};
@@ -296,7 +284,7 @@ export const PluginManager = () => {
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
 						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
 						extra={
-							<div className="flex justify-end items-top">
+							<div className="flex justify-end items-top text-theme-primary-200">
 								<HeaderSearchBar
 									defaultQuery={filters.query}
 									label={t("COMMON.SEARCH")}
@@ -304,9 +292,10 @@ export const PluginManager = () => {
 										filterBy({ query });
 									}}
 								/>
-								{isAdvancedMode ? (
+
+								{isAdvancedMode && (
 									<>
-										<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+										<div className="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 										<Button
 											data-testid="PluginManager_header--install"
 											onClick={() => setIsManualInstallModalOpen(true)}
@@ -317,7 +306,7 @@ export const PluginManager = () => {
 											</div>
 										</Button>
 									</>
-								) : null}
+								)}
 							</div>
 						}
 					/>

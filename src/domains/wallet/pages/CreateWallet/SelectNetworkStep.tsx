@@ -8,7 +8,7 @@ import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({
+export const SelectNetworkStep = ({
 	env,
 	profile,
 	isLoading,
@@ -41,7 +41,7 @@ export const FirstStep = ({
 	};
 
 	return (
-		<section data-testid="CreateWallet__first-step">
+		<section data-testid="CreateWallet__SelectNetworkStep">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE")}
