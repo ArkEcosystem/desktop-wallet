@@ -39,6 +39,7 @@ import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
 import { ReactComponent as Download } from "./download.svg";
+import { ReactComponent as DweFile } from "./dwe-file.svg";
 import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Entity } from "./entity.svg";
 import { ReactComponent as Exchange } from "./exchange.svg";
@@ -58,6 +59,7 @@ import { ReactComponent as Id } from "./id.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as InformationCircle } from "./information-circle.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
+import { ReactComponent as JsonFile } from "./json-file.svg";
 import { ReactComponent as Key } from "./key.svg";
 import { ReactComponent as Ledger } from "./ledger.svg";
 import { ReactComponent as Link } from "./link.svg";
@@ -229,4 +231,6 @@ export const SvgCollection: any = {
 	VoteCombination,
 	Voted,
 	Export,
+	DweFile,
+	JsonFile,
 };
