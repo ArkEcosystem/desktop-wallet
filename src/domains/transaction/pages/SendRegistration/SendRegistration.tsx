@@ -5,7 +5,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useFees } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useFees, usePrevious } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
@@ -14,7 +14,7 @@ import { MultiSignatureRegistrationForm } from "domains/transaction/components/M
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import { useFeeConfirmation } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -26,7 +26,7 @@ type SendRegistrationProps = {
 	formDefaultValues?: any;
 };
 
-export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) => {
+export const SendRegistration = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
@@ -41,12 +41,20 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
+	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, watch } = form;
+	const { formState, register, setError, setValue, trigger, watch } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const { fee, fees } = watch();
+
+	const previousFee = usePrevious(fee);
+
+	useLayoutEffect(() => {
+		if (fee && previousFee === undefined) {
+			trigger("fee");
+		}
+	}, [fee, previousFee, trigger]);
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
 
@@ -88,7 +96,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	}, [activeWallet, env, setValue]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		setFeesByRegistrationType(registrationType);
 
 		switch (registrationType) {
@@ -252,16 +260,4 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 			</Section>
 		</Page>
 	);
-};
-
-SendRegistration.defaultProps = {
-	formDefaultValues: {
-		fees: {
-			static: "5",
-			min: "0",
-			avg: "0",
-			max: "0",
-		},
-		fee: "0",
-	},
 };

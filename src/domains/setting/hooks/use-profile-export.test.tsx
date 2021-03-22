@@ -15,7 +15,6 @@ describe("useProfileExport", () => {
 
 		const exportedData = result.current.formatExportData({
 			excludeEmptyWallets: true,
-			excludeWalletsWithoutName: true,
 			excludeLedgerWallets: true,
 		});
 
@@ -29,7 +28,6 @@ describe("useProfileExport", () => {
 
 		const exportedData = result.current.formatExportData({
 			excludeEmptyWallets: false,
-			excludeWalletsWithoutName: false,
 			excludeLedgerWallets: false,
 		});
 
@@ -44,7 +42,6 @@ describe("useProfileExport", () => {
 
 		const exportedData = result.current.formatExportData({
 			excludeEmptyWallets: false,
-			excludeWalletsWithoutName: false,
 			excludeLedgerWallets: false,
 		});
 

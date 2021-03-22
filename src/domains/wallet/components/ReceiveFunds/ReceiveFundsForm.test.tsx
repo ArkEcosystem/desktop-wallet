@@ -72,27 +72,6 @@ describe("ReceiveFundsForm", () => {
 		});
 	});
 
-	it("should show alert if smartbridge value is too long", async () => {
-		const smartbridge = Array(256).fill("x").join("");
-		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));
-
-		await act(async () => {
-			const { asFragment, getByTestId } = render(
-				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm network={network} />
-				</Form>,
-			);
-			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
-
-			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), { target: { value: smartbridge } });
-			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe(smartbridge));
-			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
-			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge-warning")).toBeInTheDocument());
-
-			expect(asFragment()).toMatchSnapshot();
-		});
-	});
-
 	it("should not show smartbridge if is not supported by network", async () => {
 		const smartbridge = Array(256).fill("x").join("");
 		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));

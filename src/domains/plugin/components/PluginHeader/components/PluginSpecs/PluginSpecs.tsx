@@ -90,12 +90,6 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size, 
 
 			<div className="flex space-x-8 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800">
 				<GridCol padding="pl-8">
-					<GridItem label={t("COMMON.VERSION")} textDirection="right">
-						{version!}
-					</GridItem>
-				</GridCol>
-
-				<GridCol padding="pl-8">
 					<GridItem label={t("COMMON.SIZE")} textDirection="right">
 						{isLoadingSize ? (
 							<span data-testid="PluginSpecs__size-skeleton">
@@ -104,6 +98,12 @@ export const PluginSpecs = ({ author, category, url, version, isOfficial, size, 
 						) : (
 							<span data-testid="PluginSpecs__size">{size || "N/A"}</span>
 						)}
+					</GridItem>
+				</GridCol>
+
+				<GridCol padding="pl-8">
+					<GridItem label={t("COMMON.VERSION")} textDirection="right">
+						{version!}
 					</GridItem>
 				</GridCol>
 			</div>

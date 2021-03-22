@@ -13,8 +13,16 @@ describe("Toggle", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render disable", () => {
-		const { container, asFragment, getByRole } = render(<Toggle disabled={true} />);
+	it("should render disabled", () => {
+		const { container, asFragment, getByRole } = render(<Toggle disabled />);
+
+		expect(container).toBeTruthy();
+		expect(getByRole("checkbox")).not.toHaveAttribute("checked", "");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render always on", () => {
+		const { container, asFragment, getByRole } = render(<Toggle alwaysOn />);
 
 		expect(container).toBeTruthy();
 		expect(getByRole("checkbox")).not.toHaveAttribute("checked", "");

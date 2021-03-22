@@ -31,7 +31,7 @@ export class ProfileMiddleware implements Middleware {
 		if (match) {
 			const { profileId } = match.params;
 
-			if (profileId === "create") {
+			if (["create", "import"].includes(profileId)) {
 				if (this.state.intervalId) {
 					this.clearActivityState();
 				}

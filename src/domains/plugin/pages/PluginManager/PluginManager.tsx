@@ -18,7 +18,7 @@ import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUni
 import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
 import { usePluginUpdateQueue } from "domains/plugin/hooks/use-plugin-update-queue";
 import { PluginController, usePluginManagerContext } from "plugins";
-import React, { useLayoutEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -151,15 +151,7 @@ const UpdateAllBanner = ({
 
 export const PluginManager = () => {
 	const { t } = useTranslation();
-	const {
-		fetchPluginPackages,
-		allPlugins,
-		isFetchingPackages,
-		trigger,
-		updatingStats,
-		filters,
-		filterBy,
-	} = usePluginManagerContext();
+	const { allPlugins, isFetchingPackages, trigger, updatingStats, filters, filterBy } = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
@@ -179,10 +171,6 @@ export const PluginManager = () => {
 
 	const isAdvancedMode = activeProfile.settings().get<boolean>(ProfileSetting.AdvancedMode, false)!;
 	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
-
-	useLayoutEffect(() => {
-		fetchPluginPackages();
-	}, [fetchPluginPackages]);
 
 	const pluginsByCategory = useMemo(() => {
 		const result: Record<string, any[]> = {};

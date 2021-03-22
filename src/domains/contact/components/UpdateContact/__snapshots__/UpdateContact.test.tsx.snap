@@ -137,13 +137,18 @@ exports[`UpdateContact should render a modal 1`] = `
                     </div>
                     <div
                       class=""
+                      data-testid="SelectNetwork__options"
                     >
-                      <ul
-                        aria-labelledby="ContactForm__network-label"
-                        class="grid grid-cols-6 gap-3"
-                        id="ContactForm__network-menu"
-                        role="listbox"
-                      />
+                      <div
+                        class=""
+                      >
+                        <ul
+                          aria-labelledby="ContactForm__network-label"
+                          class="grid grid-cols-6 gap-3"
+                          id="ContactForm__network-menu"
+                          role="listbox"
+                        />
+                      </div>
                     </div>
                   </div>
                 </fieldset>

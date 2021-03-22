@@ -2,6 +2,7 @@ import { Checkbox } from "app/components/Checkbox";
 import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { ControlButton } from "app/components/LayoutControls";
 import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
 import React from "react";
@@ -17,7 +18,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 			<Dropdown
 				position="right"
 				toggleContent={
-					<ControlButton isChanged={selectedOption !== "all"}>
+					<ControlButton isChanged={selectedOption !== "all"} isActive={selectedOption !== "all"}>
 						<div className="flex items-center justify-center h-5 w-5">
 							<Icon name="Filters" width={17} height={19} />
 						</div>

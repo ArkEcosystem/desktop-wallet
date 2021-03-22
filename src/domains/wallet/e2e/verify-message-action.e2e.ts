@@ -19,7 +19,7 @@ test("Should open and cancel verify message modal", async (t) => {
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE,
 		),
 	);
 
@@ -36,7 +36,7 @@ test("Should open and close verify message modal", async (t) => {
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE,
 		),
 	);
 
@@ -53,7 +53,7 @@ test("Should fail verification", async (t) => {
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE,
 		),
 	);
 
@@ -64,12 +64,14 @@ test("Should fail verification", async (t) => {
 		message: "Wrong message",
 	};
 
-	await t.typeText(Selector("[data-testid=VerifyMessage_message-content]"), JSON.stringify(mockFailingMessage));
+	await t.click(Selector("[data-testid=VerifyMessage__toggle]").sibling(-1));
+
+	await t.typeText(Selector("[data-testid=VerifyMessage__json-jsonString]"), JSON.stringify(mockFailingMessage));
 
 	await t.click(Selector("[data-testid=VerifyMessage__submit]"));
 	await t
 		.expect(
-			Selector("[data-testid=modal__inner]").withText(translations.WALLETS.MODAL_VERIFY_MESSAGE.FAIL_TITLE)
+			Selector("[data-testid=modal__inner]").withText(translations.WALLETS.MODAL_VERIFY_MESSAGE.ERROR.TITLE)
 				.exists,
 		)
 		.ok();
@@ -82,7 +84,7 @@ test("Should successfully verify message", async (t) => {
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
 	await t.click(
 		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations.WALLETS.MODAL_VERIFY_MESSAGE.TITLE,
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE,
 		),
 	);
 
@@ -93,12 +95,14 @@ test("Should successfully verify message", async (t) => {
 		message: "Hello World",
 	};
 
-	await t.typeText(Selector("[data-testid=VerifyMessage_message-content]"), JSON.stringify(mockSuccessMessage));
+	await t.click(Selector("[data-testid=VerifyMessage__toggle]").sibling(-1));
+
+	await t.typeText(Selector("[data-testid=VerifyMessage__json-jsonString]"), JSON.stringify(mockSuccessMessage));
 
 	await t.click(Selector("[data-testid=VerifyMessage__submit]"));
 	await t
 		.expect(
-			Selector("[data-testid=modal__inner]").withText(translations.WALLETS.MODAL_VERIFY_MESSAGE.SUCCESS_TITLE)
+			Selector("[data-testid=modal__inner]").withText(translations.WALLETS.MODAL_VERIFY_MESSAGE.SUCCESS.TITLE)
 				.exists,
 		)
 		.ok();
