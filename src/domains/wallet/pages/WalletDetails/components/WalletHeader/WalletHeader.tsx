@@ -362,7 +362,6 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				onCancel={() => setModal(undefined)}
 				walletId={wallet.id()}
 				profileId={profile.id()}
-				signatory={wallet.publicKey()}
 			/>
 
 			<ReceiveFunds

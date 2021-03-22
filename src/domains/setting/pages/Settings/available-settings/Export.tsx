@@ -23,22 +23,8 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	const walletExportOptions = [
 		{
 			isFloatingLabel: true,
-			label: t("SETTINGS.EXPORT.EXCLUDE_WALLETS_WITHOUT_NAME"),
-			labelClass: "text-lg text-theme-secondary-text",
-			labelAddon: (
-				<Toggle
-					ref={register}
-					name="excludeWalletsWithoutName"
-					defaultChecked={false}
-					data-testid="Plugin-settings__toggle--exclude-without-name"
-				/>
-			),
-			wrapperClass: "py-4",
-		},
-		{
-			isFloatingLabel: true,
-			label: t("SETTINGS.EXPORT.EXCLUDE_EMPTY_WALLETS"),
-			labelClass: "text-lg text-theme-secondary-text",
+			label: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_EMPTY_WALLETS.TITLE"),
+			labelDescription: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_EMPTY_WALLETS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register}
@@ -47,12 +33,12 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 					data-testid="Plugin-settings__toggle--exclude-empty-wallets"
 				/>
 			),
-			wrapperClass: "py-4",
+			wrapperClass: "pt-4 pb-6",
 		},
 		{
 			isFloatingLabel: true,
-			label: t("SETTINGS.EXPORT.EXCLUDE_LEDGER_WALLETS"),
-			labelClass: "text-lg text-theme-secondary-text",
+			label: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_LEDGER_WALLETS.TITLE"),
+			labelDescription: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_LEDGER_WALLETS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register}
@@ -61,15 +47,13 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 					data-testid="Plugin-settings__toggle--exclude-ledger-wallets"
 				/>
 			),
-			wrapperClass: "py-4",
+			wrapperClass: "pt-6",
 		},
 	];
 
 	const exportDataToFile = async () => {
 		const exportData = formatExportData({
-			excludeWalletsWithoutName: context.getValues("excludeWalletsWithoutName"),
-			excludeEmptyWallets: context.getValues("excludeEmptyWallets"),
-			excludeLedgerWallets: context.getValues("excludeLedgerWallets"),
+			...context.getValues("excludeEmptyWallets", "excludeLedgerWallets"),
 		});
 
 		const defaultPath = `profile-${profile.id()}.dwe`;
@@ -93,10 +77,11 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 			<Header title={t("SETTINGS.EXPORT.TITLE")} subtitle={t("SETTINGS.EXPORT.SUBTITLE")} />
 
 			<Form id="export-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
-				<h2 className="mt-8 mb-0">{t("COMMON.WALLETS")}</h2>
+				<h2 className="mb-0">{t("COMMON.WALLETS")}</h2>
+
 				<ListDivided items={walletExportOptions} />
 
-				<div className="flex justify-end pt-2 w-full space-x-3">
+				<div className="flex justify-end w-full space-x-3 mt-8">
 					<Button data-testid="Export-settings__submit-button" type="submit">
 						{t("COMMON.EXPORT")}
 					</Button>

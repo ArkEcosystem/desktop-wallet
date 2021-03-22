@@ -454,12 +454,16 @@ exports[`PluginDetails should render properly 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Version
+                          Size
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0.0.0
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -472,16 +476,12 @@ exports[`PluginDetails should render properly 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Size
+                          Version
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            data-testid="PluginSpecs__size"
-                          >
-                            0 B
-                          </span>
+                          0.0.0
                         </span>
                       </div>
                     </div>
@@ -975,12 +975,16 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Version
+                          Size
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0.0.0
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -993,16 +997,12 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Size
+                          Version
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            data-testid="PluginSpecs__size"
-                          >
-                            N/A
-                          </span>
+                          0.0.0
                         </span>
                       </div>
                     </div>
@@ -1516,12 +1516,16 @@ exports[`PluginDetails should report plugin 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Version
+                          Size
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          0.0.0
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -1534,16 +1538,12 @@ exports[`PluginDetails should report plugin 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Size
+                          Version
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            data-testid="PluginSpecs__size"
-                          >
-                            0 B
-                          </span>
+                          0.0.0
                         </span>
                       </div>
                     </div>
@@ -2060,12 +2060,16 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Version
+                          Size
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          1.0.3
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            N/A
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2078,16 +2082,12 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Size
+                          Version
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            data-testid="PluginSpecs__size"
-                          >
-                            N/A
-                          </span>
+                          1.0.3
                         </span>
                       </div>
                     </div>
@@ -2614,12 +2614,16 @@ exports[`PluginDetails should update package 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Version
+                          Size
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          1.0.0
+                          <span
+                            data-testid="PluginSpecs__size"
+                          >
+                            0 B
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -2632,16 +2636,12 @@ exports[`PluginDetails should update package 1`] = `
                         <span
                           class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                         >
-                          Size
+                          Version
                         </span>
                         <span
                           class="font-semibold text-theme-secondary-text"
                         >
-                          <span
-                            data-testid="PluginSpecs__size"
-                          >
-                            0 B
-                          </span>
+                          1.0.0
                         </span>
                       </div>
                     </div>
