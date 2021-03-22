@@ -6,8 +6,8 @@ import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { createMemoryHistory } from "history";
 import nock from "nock";
-import { LaunchPluginService, PluginController } from "plugins";
-import React from "react";
+import { LaunchPluginService, PluginController, usePluginManagerContext } from "plugins";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 import { env } from "utils/testing-library";
@@ -44,11 +44,21 @@ describe("PluginManager", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		history.push(pluginsURL);
 
+		const Component = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+
+			useEffect(() => {
+				fetchPluginPackages();
+			}, []);
+
+			return <PluginManager />;
+		};
+
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/plugins">
 					<PluginProviders>
-						<PluginManager />
+						<Component />
 					</PluginProviders>
 				</Route>,
 				{

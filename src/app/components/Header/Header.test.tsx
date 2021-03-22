@@ -42,4 +42,13 @@ describe("Header", () => {
 		expect(getAllByTestId("header__extra")).toHaveLength(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with title suffix", () => {
+		const { container, asFragment } = render(
+			<Header title="Header test" titleSuffix="suffix" subtitle="Subtitle test" />,
+		);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

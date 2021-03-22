@@ -61,17 +61,24 @@ export const translations: { [key: string]: any } = {
 	},
 
 	MODAL_VERIFY_MESSAGE: {
-		TITLE: "Verify Message",
-		DESCRIPTION: "To make sure that you are the owner of this wallet, you can pass the check. and this more text.",
+		TITLE: "Verify",
+		DESCRIPTION: "Authenticate a message from an address below.",
 		VERIFY: "Verify",
-		VERIFY_JSON: {
-			TITLE: "Verify JSON",
-			DESCRIPTION: "You can verify only text using a JSON public key",
+		JSON_STRING: "JSON String",
+		VERIFICATION_METHOD: {
+			TITLE: "Verification Method",
+			DESCRIPTION: "Input fields manually or provide a JSON string.",
+			JSON: "JSON",
+			MANUAL: "Manual",
 		},
-		SUCCESS_TITLE: "Confirmed",
-		SUCCESS_DESCRIPTION: "Verification was successfully confirmed",
-		FAIL_TITLE: "Failed",
-		FAIL_DESCRIPTION: "Verification failed",
+		SUCCESS: {
+			TITLE: "Success",
+			DESCRIPTION: "Message was successfully verified.",
+		},
+		ERROR: {
+			TITLE: "Failure",
+			DESCRIPTION: "Message could not be verified.",
+		},
 	},
 
 	PAGE_CREATE_WALLET: {
@@ -114,6 +121,15 @@ export const translations: { [key: string]: any } = {
 
 	PAGE_IMPORT_WALLET: {
 		TITLE: "Import Wallet",
+
+		ENCRYPT_PASSWORD_STEP: {
+			TITLE: "Encryption Password",
+			OPTIONAL: "optional",
+			WARNING:
+				"You can optionally encrypt your mnemonic passphrase on your local device. Then, you can sign transactions with the password instead. If you lose your local device, you CANNOT restore your funds with the encryption password. Make sure your mnemonic passphrase is stored safely to protect your funds.",
+			PASSWORD_LABEL: "Encryption Password",
+			CONFIRM_PASSWORD_LABEL: "Confirm Encryption Password",
+		},
 
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",

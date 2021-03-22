@@ -1,7 +1,7 @@
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
-import { Input, InputGroup } from "app/components/Input";
+import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { toasts } from "app/services";
 import { githubProvider } from "domains/transaction/entity/providers";
@@ -57,14 +57,12 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 
 				<FormField name="url" className="mt-8">
 					<FormLabel>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.PLACEHOLDER")}</FormLabel>
-					<InputGroup>
-						<Input
-							data-testid="PluginManualInstallModal__input"
-							value={url}
-							onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
-							isInvalid={isInvalid}
-						/>
-					</InputGroup>
+					<Input
+						data-testid="PluginManualInstallModal__input"
+						value={url}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
+						isInvalid={isInvalid}
+					/>
 				</FormField>
 
 				<div className="flex space-x-3 justify-end mt-8">

@@ -18,17 +18,7 @@ describe("InputAddress", () => {
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<TestInputAddress coin="ARK" network="ark.devnet" />);
 		expect(getByTestId("InputAddress__input")).toBeInTheDocument();
-		expect(getByTestId("InputAddress__qr-button")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should emit event whe clicking on qr button", () => {
-		const onQRButtonClick = jest.fn();
-		const { getByTestId } = render(
-			<TestInputAddress coin="ARK" network="ark.devnet" onQRCodeClick={onQRButtonClick} />,
-		);
-		fireEvent.click(getByTestId("InputAddress__qr-button"));
-		expect(onQRButtonClick).toHaveBeenCalled();
 	});
 
 	it("should validate a wrong address", async () => {

@@ -61,7 +61,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -70,12 +70,20 @@ exports[`UpdateWalletName should render a modal 1`] = `
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="false"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                >
+                  <div
+                    class="relative flex flex-1"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                </div>
               </div>
             </fieldset>
             <div
@@ -171,7 +179,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -180,29 +188,37 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
                 <div
-                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                 >
-                  <span
-                    data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
-                    data-testid="Input-error"
+                  <div
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-danger-500"
-                      height="20"
-                      width="20"
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  >
+                    <span
+                      data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
+                      data-testid="Input__error"
                     >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </span>
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -300,7 +316,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -309,29 +325,37 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
                 <div
-                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                 >
-                  <span
-                    data-errortext="A Wallet named 'ark wallet 2' already exists on this profile"
-                    data-testid="Input-error"
+                  <div
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-danger-500"
-                      height="20"
-                      width="20"
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  >
+                    <span
+                      data-errortext="A Wallet named 'ark wallet 2' already exists on this profile"
+                      data-testid="Input__error"
                     >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </span>
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -429,7 +453,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -438,29 +462,37 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
                 <div
-                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                 >
-                  <span
-                    data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
-                    data-testid="Input-error"
+                  <div
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-danger-500"
-                      height="20"
-                      width="20"
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  >
+                    <span
+                      data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
+                      data-testid="Input__error"
                     >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </span>
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -558,7 +590,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -567,29 +599,37 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
                 <div
-                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                 >
-                  <span
-                    data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
-                    data-testid="Input-error"
+                  <div
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-danger-500"
-                      height="20"
-                      width="20"
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  >
+                    <span
+                      data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
+                      data-testid="Input__error"
                     >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </span>
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -687,7 +727,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -696,29 +736,37 @@ exports[`UpdateWalletName should show error message when name consists only of w
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
                 <div
-                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                 >
-                  <span
-                    data-errortext="'Name' is invalid"
-                    data-testid="Input-error"
+                  <div
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-danger-500"
-                      height="20"
-                      width="20"
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  >
+                    <span
+                      data-errortext="'Name' is invalid"
+                      data-testid="Input__error"
                     >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </span>
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -816,7 +864,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -825,29 +873,37 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               <div
                 class="relative"
               >
-                <input
-                  aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                  data-testid="UpdateWalletName__input"
-                  name="name"
-                />
                 <div
-                  class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                  class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                 >
-                  <span
-                    data-errortext="'Name' should have at most 42 characters"
-                    data-testid="Input-error"
+                  <div
+                    class="relative flex flex-1"
                   >
-                    <div
-                      class="sc-bdfBwQ iyevwF text-theme-danger-500"
-                      height="20"
-                      width="20"
+                    <input
+                      aria-invalid="true"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="UpdateWalletName__input"
+                      name="name"
+                    />
+                  </div>
+                  <div
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  >
+                    <span
+                      data-errortext="'Name' should have at most 42 characters"
+                      data-testid="Input__error"
                     >
-                      <svg>
-                        alert-warning.svg
-                      </svg>
-                    </div>
-                  </span>
+                      <div
+                        class="sc-bdfBwQ iyevwF text-theme-danger-500"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          alert-warning.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>

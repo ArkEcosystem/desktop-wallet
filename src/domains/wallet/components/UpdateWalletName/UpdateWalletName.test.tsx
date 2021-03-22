@@ -107,7 +107,7 @@ describe("UpdateWalletName", () => {
 				fireEvent.input(getByTestId("UpdateWalletName__input"), { target: { value: name } });
 			});
 
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 			expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
 
 			expect(asFragment()).toMatchSnapshot();

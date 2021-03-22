@@ -3,12 +3,16 @@
 exports[`InputDefault should render a default input 1`] = `
 <DocumentFragment>
   <div
-    class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+    class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
   >
-    <input
-      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-      data-testid="Input"
-    />
+    <div
+      class="relative flex flex-1"
+    >
+      <input
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+        data-testid="Input"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

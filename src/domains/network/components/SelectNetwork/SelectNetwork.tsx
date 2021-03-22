@@ -1,4 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import cn from "classnames";
 import { NetworkOption } from "domains/network/components/NetworkOption";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
@@ -18,19 +19,21 @@ type SelectNetworkProps = {
 	value?: string;
 	id?: string;
 	disabled?: boolean;
+	hideOptions?: boolean;
 	onSelect?: (network?: Coins.Network | null) => void;
 };
 
 export const itemToString = (item: Network | null) => item?.extra?.displayName || "";
 
 export const SelectNetwork = ({
+	selected,
 	networks,
 	placeholder,
 	onSelect,
 	name,
 	id,
 	disabled,
-	selected,
+	hideOptions,
 }: SelectNetworkProps) => {
 	const { t } = useTranslation();
 	const [items, setItems] = useState<Network[]>([]);
@@ -91,7 +94,7 @@ export const SelectNetwork = ({
 	const publicNetworks = items.filter((network) => network.isLive());
 	const developmentNetworks = items.filter((network) => !network.isLive());
 
-	const inputTypeAhead = React.useMemo(() => {
+	const suggestion = React.useMemo(() => {
 		const matches = items.filter((network: Network) => isMatch(inputValue, network));
 		if (inputValue && matches.length > 0) {
 			return [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
@@ -123,7 +126,7 @@ export const SelectNetwork = ({
 				<label {...getLabelProps()} />
 				<SelectNetworkInput
 					network={selectedItem}
-					suggestion={inputTypeAhead}
+					suggestion={suggestion}
 					disabled={disabled}
 					{...getInputProps({
 						name,
@@ -144,36 +147,16 @@ export const SelectNetwork = ({
 				/>
 			</div>
 
-			<div className={publicNetworks.length > 0 ? "mt-6" : ""}>
-				{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
-					<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
-						{t("COMMON.PUBLIC_NETWORKS").toUpperCase()}
-					</div>
-				)}
-
-				<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-					{publicNetworks.map((network: Network, index: number) => (
-						<NetworkOption
-							key={index}
-							disabled={disabled}
-							network={network}
-							iconClassName={optionClassName(network)}
-							onClick={() => toggleSelection(network)}
-						/>
-					))}
-				</ul>
-			</div>
-
-			{developmentNetworks.length > 0 && (
-				<div className="mt-6">
-					{publicNetworks.length > 0 && (
+			<div data-testid="SelectNetwork__options" className={cn({ hidden: hideOptions })}>
+				<div className={publicNetworks.length > 0 ? "mt-6" : ""}>
+					{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
 						<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
-							{t("COMMON.DEVELOPMENT_NETWORKS").toUpperCase()}
+							{t("COMMON.PUBLIC_NETWORKS").toUpperCase()}
 						</div>
 					)}
 
 					<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-						{developmentNetworks.map((network: Network, index: number) => (
+						{publicNetworks.map((network: Network, index: number) => (
 							<NetworkOption
 								key={index}
 								disabled={disabled}
@@ -184,7 +167,29 @@ export const SelectNetwork = ({
 						))}
 					</ul>
 				</div>
-			)}
+
+				{developmentNetworks.length > 0 && (
+					<div className="mt-6">
+						{publicNetworks.length > 0 && (
+							<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
+								{t("COMMON.DEVELOPMENT_NETWORKS").toUpperCase()}
+							</div>
+						)}
+
+						<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
+							{developmentNetworks.map((network: Network, index: number) => (
+								<NetworkOption
+									key={index}
+									disabled={disabled}
+									network={network}
+									iconClassName={optionClassName(network)}
+									onClick={() => toggleSelection(network)}
+								/>
+							))}
+						</ul>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };

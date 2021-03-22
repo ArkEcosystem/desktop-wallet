@@ -10,8 +10,6 @@ import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWal
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { SelectAddressWrapper } from "./SelectAddress.styles";
-
 type SelectAddressProps = {
 	address?: string;
 	wallets: ReadWriteWallet[];
@@ -25,13 +23,13 @@ const ProfileAvatar = ({ address }: any) => {
 	if (!address) {
 		return (
 			<Circle
-				className="mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+				className="bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
 				size="sm"
 				noShadow
 			/>
 		);
 	}
-	return <Avatar address={address} size="sm" className="mx-4" noShadow />;
+	return <Avatar address={address} size="sm" noShadow />;
 };
 
 export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProps>(
@@ -53,34 +51,40 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 		};
 
 		return (
-			<div>
-				<SelectAddressWrapper
+			<>
+				<button
 					data-testid="SelectAddress__wrapper"
-					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
+					className="relative w-full"
 					type="button"
 					onClick={() => setSearchWalletIsOpen(true)}
 					disabled={disabled}
 				>
-					<ProfileAvatar address={selectedAddress} />
-					<Address maxChars={30} address={selectedAddress} />
-					<div className="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600">
-						{isVerified && (
-							<div className="rounded-full text-theme-success-400 bg-theme-success-100">
-								<Icon name="Checkmark" width={18} height={18} />
-							</div>
-						)}
-						<Icon name="User" width={20} height={20} />
-					</div>
-				</SelectAddressWrapper>
+					<span className="absolute inset-0 flex items-center border border-transparent px-14 w-full">
+						<Address maxChars={30} address={selectedAddress} />
+					</span>
 
-				<Input
-					data-testid="SelectAddress__input"
-					ref={ref}
-					value={selectedAddress || ""}
-					className="hidden"
-					readOnly
-					isInvalid={isInvalidField}
-				/>
+					<Input
+						data-testid="SelectAddress__input"
+						ref={ref}
+						value={selectedAddress || ""}
+						hideInputValue={true}
+						readOnly
+						isInvalid={isInvalidField}
+						addons={{
+							start: <ProfileAvatar address={selectedAddress} />,
+							end: (
+								<div className="flex items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600">
+									{isVerified && (
+										<div className="rounded-full text-theme-success-400 bg-theme-success-100">
+											<Icon name="Checkmark" width={18} height={18} />
+										</div>
+									)}
+									<Icon name="User" width={20} height={20} />
+								</div>
+							),
+						}}
+					/>
+				</button>
 
 				<SearchWallet
 					isOpen={searchWalletIsOpen}
@@ -94,7 +98,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					onSelectWallet={handleSelectWallet}
 					onClose={() => setSearchWalletIsOpen(false)}
 				/>
-			</div>
+			</>
 		);
 	},
 );

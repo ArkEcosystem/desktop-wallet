@@ -15,6 +15,12 @@ describe("SelectNetwork", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with hidden options", () => {
+		const { container, getByTestId } = render(<SelectNetwork networks={availableNetworksMock} hideOptions />);
+		expect(getByTestId("SelectNetwork__options")).toHaveClass("hidden");
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should filter the network icons based on the input value", () => {
 		const { getAllByTestId, getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");
@@ -43,14 +49,14 @@ describe("SelectNetwork", () => {
 		expect(getAllByTestId("SelectNetwork__NetworkIcon--container")).toHaveLength(availableNetworksLength);
 	});
 
-	it("should show typeahead when typing has found at least one match", () => {
+	it("should show suggestion when typing has found at least one match", () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bitco" } });
 		});
 
-		expect(getByTestId("SelectNetworkInput__typeahead")).toHaveTextContent("Bitcoin");
+		expect(getByTestId("Input__suggestion")).toHaveTextContent("Bitcoin");
 	});
 
 	it("should select first matching asset with enter", () => {

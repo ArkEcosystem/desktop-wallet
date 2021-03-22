@@ -69,7 +69,6 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 								}),
 						  }
 				}
-				className={cn({ "pr-12": fieldContext?.isInvalid })}
 				magnitude={magnitude}
 				value={inputValue.display}
 				ref={ref}

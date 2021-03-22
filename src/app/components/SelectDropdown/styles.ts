@@ -1,40 +1,8 @@
 import tw, { styled } from "twin.macro";
 
-export const SelectToggleButton = styled.button`
-	& {
-		min-height: 50px;
-		${tw`inline-block w-full px-4 py-3 pr-12 text-left transition-background duration-200 border rounded outline-none appearance-none bg-theme-background text-theme-secondary-500`}
-		${tw`border-theme-secondary-300 dark:border-theme-secondary-800`}
-	}
-
-	&:focus {
-		${tw`outline-none`}
-	}
-
-	&:disabled {
-		${tw`border-theme-secondary-300 dark:border-theme-secondary-800 bg-theme-secondary-100 text-theme-secondary-text`}
-	}
-
-	&.is-open {
-		${tw`border-theme-primary-600`}
-		box-shadow: 0 0 0 1px var(--theme-color-primary-600);
-	}
-
-	&.is-invalid {
-		${tw`border-theme-danger-500`}
-		&.is-open {
-			box-shadow: 0 0 0 1px var(--theme-color-danger-500);
-		}
-	}
-
-	&.is-selected {
-		${tw`text-theme-text`}
-	}
-`;
-
 export const SelectOptionsList = styled.ul`
 	& {
-		${tw`absolute z-10 w-full bg-theme-background rounded-lg shadow-xl outline-none top-14`}
+		${tw`absolute z-10 w-full bg-theme-background rounded-lg shadow-xl outline-none top-16`}
 	}
 
 	&.is-open {

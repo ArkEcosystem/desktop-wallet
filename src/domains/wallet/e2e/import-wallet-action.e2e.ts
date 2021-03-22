@@ -42,6 +42,9 @@ test("should import a wallet by mnemonic", async (t) => {
 	await t.typeText(passphraseInput, "buddy year cost vendor honey tonight viable nut female alarm duck symptom");
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
+	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
+	await t.click(Selector("[data-testid=ImportWallet__skip-button]"));
+
 	// Fill a wallet name
 	const walletNameInput = Selector("input[name=name]");
 
@@ -112,7 +115,7 @@ test("should show an error message for invalid address", async (t) => {
 
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
-	await t.expect(Selector('[data-testid="Input-error"]').exists).ok({ timeout: 5000 });
+	await t.expect(Selector('[data-testid="Input__error"]').exists).ok({ timeout: 5000 });
 });
 
 test("should show an error message for duplicate address", async (t) => {
@@ -142,6 +145,9 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
+	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
+	await t.click(Selector("[data-testid=ImportWallet__skip-button]"));
+
 	// Try to import a duplicate wallet
 	await t.click(Selector("a").withExactText("Portfolio"));
 
@@ -166,5 +172,5 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
-	await t.expect(Selector('[data-testid="Input-error"]').exists).ok();
+	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
 });

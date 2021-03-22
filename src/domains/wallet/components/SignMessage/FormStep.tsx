@@ -2,7 +2,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input, InputAddonStart, InputDefault, InputGroup, InputPassword } from "app/components/Input";
+import { Input, InputDefault, InputPassword } from "app/components/Input";
 import { useValidation } from "app/hooks";
 import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
@@ -24,12 +24,14 @@ export const FormStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 			<FormField name="signatory-address">
 				<FormLabel label={t("WALLETS.SIGNATORY")} />
-				<InputGroup>
-					<InputAddonStart>
-						<Avatar address={wallet.address()} size="sm" className="ml-4" noShadow />
-					</InputAddonStart>
-					<Input value={wallet.address()} className="font-semibold pl-15" disabled />
-				</InputGroup>
+				<Input
+					innerClassName="font-semibold"
+					value={wallet.address()}
+					addons={{
+						start: <Avatar address={wallet.address()} size="sm" noShadow />,
+					}}
+					disabled
+				/>
 			</FormField>
 
 			<FormField name="message">

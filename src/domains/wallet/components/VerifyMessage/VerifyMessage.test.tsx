@@ -2,7 +2,7 @@
 
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "testing-library";
 
 import { VerifyMessage } from "./VerifyMessage";
 
@@ -26,189 +26,180 @@ describe("VerifyMessage", () => {
 		});
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = render(
-			<VerifyMessage
-				isOpen={true}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
+	const renderComponent = async ({
+		isOpen = true,
+		walletId = wallet.id(),
+		profileId = profile.id(),
+		...props
+	}: any) => {
+		const result = render(<VerifyMessage isOpen={isOpen} walletId={walletId} profileId={profileId} {...props} />);
 
-		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
+		const submitButton = screen.getByTestId("VerifyMessage__submit");
 
-	it("should render the non verify address content", () => {
-		const { asFragment, getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
-
-		const verifyAddressToggle = getByTestId("verify-address__toggle");
-		act(() => {
-			fireEvent.click(verifyAddressToggle);
+		await waitFor(() => {
+			expect(submitButton).toBeDisabled();
 		});
-		expect(getByTestId("noverify-address__content")).toBeTruthy();
+
+		return result;
+	};
+
+	it("should render", async () => {
+		const { asFragment } = await renderComponent({});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should open verify message modal and cancel", () => {
-		const onCancel = jest.fn();
-		const { getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				onCancel={onCancel}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
+	it("should switch between manual and json input", async () => {
+		await renderComponent({});
 
-		const cancelButton = getByTestId("VerifyMessage__cancel");
+		const toggle = screen.getByTestId("VerifyMessage__toggle");
+
+		expect(screen.getByTestId("VerifyMessage__manual")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(screen.getByTestId("VerifyMessage__json")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(screen.getByTestId("VerifyMessage__manual")).toBeTruthy();
+	});
+
+	it("should open verify message modal and cancel", async () => {
+		const onCancel = jest.fn();
+
+		await renderComponent({ onCancel });
+
+		const cancelButton = screen.getByTestId("VerifyMessage__cancel");
+
 		act(() => {
 			fireEvent.click(cancelButton);
 		});
-		expect(onCancel).toBeCalled();
+
+		expect(onCancel).toHaveBeenCalled();
 	});
 
-	it("should open verify message modal and close modal", () => {
+	it("should open verify message modal and close modal", async () => {
 		const onClose = jest.fn();
-		const { getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				onClose={onClose}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
 
-		const closeButton = getByTestId("modal__close-btn");
+		await renderComponent({ onClose });
+
+		const closeButton = screen.getByTestId("modal__close-btn");
+
 		act(() => {
 			fireEvent.click(closeButton);
 		});
-		expect(onClose).toBeCalled();
+
+		expect(onClose).toHaveBeenCalled();
 	});
 
-	it("should not verify if empty inputs", async () => {
+	it("should verify message", async () => {
 		const onSubmit = jest.fn();
-		const { getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				onSubmit={onSubmit}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
 
-		const submitButton = getByTestId("VerifyMessage__submit");
+		await renderComponent({ onSubmit });
+
+		const signatoryInput = screen.getByTestId("VerifyMessage__manual-signatory");
+		const messageInput = screen.getByTestId("VerifyMessage__manual-message");
+		const signatureInput = screen.getByTestId("VerifyMessage__manual-signature");
+
 		act(() => {
-			fireEvent.click(submitButton);
+			fireEvent.input(signatoryInput, { target: { value: signedMessage.signatory } });
 		});
+
+		act(() => {
+			fireEvent.input(messageInput, { target: { value: signedMessage.message } });
+		});
+
+		act(() => {
+			fireEvent.input(signatureInput, { target: { value: signedMessage.signature } });
+		});
+
+		const submitButton = screen.getByTestId("VerifyMessage__submit");
 
 		await waitFor(() => {
-			expect(onSubmit).toBeCalledWith(false);
+			expect(submitButton).not.toBeDisabled();
 		});
-	});
-
-	it("should verify message ", async () => {
-		const onSubmit = jest.fn();
-		const { getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				onSubmit={onSubmit}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
-
-		const verifyAddressToggle = getByTestId("verify-address__toggle");
-
-		act(() => {
-			fireEvent.click(verifyAddressToggle);
-		});
-
-		const verifyMessageInput = getByTestId("VerifyMessage__message-input");
-		const verifySignatureInput = getByTestId("VerifyMessage__signature-input");
-
-		act(() => {
-			fireEvent.change(verifyMessageInput, { target: { value: signedMessage.message } });
-		});
-		act(() => {
-			fireEvent.change(verifySignatureInput, { target: { value: signedMessage.signature } });
-		});
-
-		const submitButton = getByTestId("VerifyMessage__submit");
 
 		act(() => {
 			fireEvent.click(submitButton);
 		});
 
 		await waitFor(() => {
-			expect(onSubmit).toBeCalledWith(true);
+			expect(onSubmit).toHaveBeenCalledWith(true);
+		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("success-banner.svg");
 		});
 	});
 
 	it("should verify message using json", async () => {
 		const onSubmit = jest.fn();
-		const { getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				onSubmit={onSubmit}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
 
-		const submitButton = getByTestId("VerifyMessage__submit");
-		const messageContent = getByTestId("VerifyMessage_message-content");
+		await renderComponent({ onSubmit });
+
+		const toggle = screen.getByTestId("VerifyMessage__toggle");
 
 		act(() => {
-			fireEvent.change(messageContent, { target: { value: JSON.stringify(signedMessage) } });
+			fireEvent.click(toggle);
 		});
 
-		expect(messageContent).toHaveValue(JSON.stringify(signedMessage));
+		const jsonStringInput = screen.getByTestId("VerifyMessage__json-jsonString");
+
+		act(() => {
+			fireEvent.input(jsonStringInput, { target: { value: JSON.stringify(signedMessage) } });
+		});
+
+		expect(jsonStringInput).toHaveValue(JSON.stringify(signedMessage));
+
+		const submitButton = screen.getByTestId("VerifyMessage__submit");
+
+		await waitFor(() => {
+			expect(submitButton).not.toBeDisabled();
+		});
 
 		act(() => {
 			fireEvent.click(submitButton);
 		});
 
 		await waitFor(() => {
-			expect(onSubmit).toBeCalledWith(true);
-			expect(getByTestId("modal__inner")).toBeTruthy();
+			expect(onSubmit).toHaveBeenCalledWith(true);
 		});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("modal__close-btn"));
+		await waitFor(() => {
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("success-banner.svg");
 		});
 	});
 
-	it("should not verify message using invalid json", async () => {
+	it("should fail to verify with invalid signature", async () => {
 		const onSubmit = jest.fn();
-		const { getByTestId } = render(
-			<VerifyMessage
-				isOpen={true}
-				onSubmit={onSubmit}
-				signatory={signedMessage.signatory}
-				walletId={wallet.id()}
-				profileId={profile.id()}
-			/>,
-		);
 
-		const submitButton = getByTestId("VerifyMessage__submit");
-		const messageContent = getByTestId("VerifyMessage_message-content");
+		await renderComponent({ onSubmit });
+
+		const signatoryInput = screen.getByTestId("VerifyMessage__manual-signatory");
+		const messageInput = screen.getByTestId("VerifyMessage__manual-message");
+		const signatureInput = screen.getByTestId("VerifyMessage__manual-signature");
 
 		act(() => {
-			fireEvent.change(messageContent, { target: { value: "test" } });
+			fireEvent.input(signatoryInput, { target: { value: signedMessage.signatory } });
+		});
+
+		act(() => {
+			fireEvent.input(messageInput, { target: { value: signedMessage.message } });
+		});
+
+		act(() => {
+			fireEvent.input(signatureInput, { target: { value: "fake-signature" } });
+		});
+
+		const submitButton = screen.getByTestId("VerifyMessage__submit");
+
+		await waitFor(() => {
+			expect(submitButton).not.toBeDisabled();
 		});
 
 		act(() => {
@@ -216,7 +207,63 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(onSubmit).toBeCalledWith(false);
+			expect(onSubmit).toHaveBeenCalledWith(false);
 		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("error-banner.svg");
+		});
+
+		await act(async () => {
+			fireEvent.click(screen.getByTestId("modal__close-btn"));
+		});
+	});
+
+	it("should fail to verify using invalid data", async () => {
+		const onSubmit = jest.fn();
+
+		await renderComponent({ onSubmit });
+
+		const signatoryInput = screen.getByTestId("VerifyMessage__manual-signatory");
+		const messageInput = screen.getByTestId("VerifyMessage__manual-message");
+		const signatureInput = screen.getByTestId("VerifyMessage__manual-signature");
+
+		const messageSpy = jest.spyOn(wallet.message(), "verify").mockRejectedValue(new Error());
+
+		act(() => {
+			fireEvent.input(signatoryInput, { target: { value: signedMessage.signatory } });
+		});
+
+		act(() => {
+			fireEvent.input(messageInput, { target: { value: signedMessage.message } });
+		});
+
+		act(() => {
+			fireEvent.input(signatureInput, { target: { value: "fake-signature" } });
+		});
+
+		const submitButton = screen.getByTestId("VerifyMessage__submit");
+
+		await waitFor(() => {
+			expect(submitButton).not.toBeDisabled();
+		});
+
+		act(() => {
+			fireEvent.click(submitButton);
+		});
+
+		await waitFor(() => {
+			expect(onSubmit).toHaveBeenCalledWith(false);
+		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("error-banner.svg");
+		});
+
+		await act(async () => {
+			fireEvent.click(screen.getByTestId("modal__close-btn"));
+		});
+
+		messageSpy.mockRestore();
 	});
 });

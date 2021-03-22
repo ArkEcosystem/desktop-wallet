@@ -1,7 +1,8 @@
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonEnd } from "app/components/Input";
+import { Input } from "app/components/Input";
 import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
+import cn from "classnames";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,43 +15,44 @@ type Option = {
 };
 
 type SelectProps = {
+	addons?: any;
 	options: Option[];
 	defaultValue?: string;
-	inputClassName?: string;
+	innerClassName?: string;
 	isInvalid?: boolean;
 	showCaret?: boolean;
 	disabled?: boolean;
 	allowFreeInput?: boolean;
-	errorClassName?: string;
 	onChange?: (selected: Option) => void;
 } & React.InputHTMLAttributes<any>;
 
 type SelectDropdownProps = {
+	addons?: any;
 	options: Option[];
 	defaultSelectedItem?: Option;
 	placeholder?: string;
-	inputClassName?: string;
+	innerClassName?: string;
 	showCaret?: boolean;
 	isInvalid?: boolean;
 	disabled?: boolean;
 	allowFreeInput?: boolean;
-	errorClassName?: string;
 	onSelectedItemChange: any;
 } & React.InputHTMLAttributes<any>;
 
 const itemToString = (item: Option | null) => item?.label || "";
 
 const SelectDropdown = ({
+	addons,
 	options,
 	defaultSelectedItem,
 	placeholder,
 	disabled,
 	onSelectedItemChange,
 	isInvalid,
-	inputClassName,
+	className,
+	innerClassName,
 	allowFreeInput = false,
 	showCaret = true,
-	errorClassName = "mr-8",
 	id,
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
@@ -131,7 +133,7 @@ const SelectDropdown = ({
 		selectItem(defaultSelectedItem || null);
 	}, [defaultSelectedItem, selectItem]);
 
-	const inputTypeAhead = useMemo(() => {
+	const suggestion = useMemo(() => {
 		const firstMatch = options.find((option) => isMatch(inputValue, option));
 		if (inputValue && firstMatch) {
 			return [inputValue, firstMatch.label.slice(inputValue.length)].join("");
@@ -140,16 +142,34 @@ const SelectDropdown = ({
 
 	const data = isTyping && inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options;
 
+	if (showCaret) {
+		addons = {
+			...addons,
+			end: (
+				<span className="w-10 pointer-events-none text-theme-secondary-500">
+					<Icon
+						name="CaretDown"
+						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+						width={7}
+						height={5}
+					/>
+				</span>
+			),
+		};
+	}
+
 	return (
 		<div className="relative w-full">
 			<div {...getComboboxProps()}>
 				<label {...getLabelProps()} />
 				<SelectDropdownInput
-					suggestion={inputTypeAhead}
+					suggestion={suggestion}
 					disabled={disabled}
+					addons={addons}
+					innerClassName={cn("cursor-default", innerClassName)}
 					{...getInputProps({
 						placeholder,
-						className: `cursor-default ${isInvalid && " pr-16"} ${inputClassName}`,
+						className,
 						onFocus: openMenu,
 						onBlur: (event) => {
 							if (allowFreeInput) {
@@ -187,7 +207,6 @@ const SelectDropdown = ({
 							}
 						},
 					})}
-					errorClassName={errorClassName}
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
 					{isOpen &&
@@ -221,17 +240,6 @@ const SelectDropdown = ({
 						))}
 				</SelectOptionsList>
 			</div>
-
-			{showCaret && (
-				<InputAddonEnd className="w-10 pointer-events-none text-theme-secondary-500">
-					<Icon
-						name="CaretDown"
-						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-						width={7}
-						height={5}
-					/>
-				</InputAddonEnd>
-			)}
 		</div>
 	);
 };
@@ -239,16 +247,17 @@ const SelectDropdown = ({
 export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 	(
 		{
+			addons,
 			options,
 			defaultValue,
 			placeholder,
-			inputClassName,
+			className,
+			innerClassName,
 			allowFreeInput,
 			showCaret,
 			isInvalid,
 			disabled,
 			onChange,
-			errorClassName,
 			id,
 		}: SelectProps,
 		ref,
@@ -278,15 +287,16 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 				/>
 				<SelectDropdown
 					id={id}
-					errorClassName={errorClassName}
 					allowFreeInput={allowFreeInput}
 					showCaret={showCaret}
-					inputClassName={inputClassName}
+					className={className}
+					innerClassName={innerClassName}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
 					disabled={disabled}
 					isInvalid={isInvalidField}
+					addons={addons}
 					onSelectedItemChange={({ selected }: { selected: Option }) => {
 						setSelected(selected);
 

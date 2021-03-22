@@ -39,7 +39,7 @@ const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
 
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
 
-jest.setTimeout(20000);
+jest.setTimeout(30000);
 
 describe("ImportWallet", () => {
 	beforeAll(() => {
@@ -350,6 +350,12 @@ describe("ImportWallet", () => {
 			await fireEvent.click(continueButton);
 
 			await waitFor(() => {
+				expect(getByTestId("EncryptPassword")).toBeTruthy();
+			});
+
+			await fireEvent.click(getByTestId("ImportWallet__skip-button"));
+
+			await waitFor(() => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
@@ -363,6 +369,81 @@ describe("ImportWallet", () => {
 
 			await waitFor(() => {
 				expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
+			});
+		});
+	});
+
+	it("should import by mnemonic and use encryption password", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, asFragment, getAllByTestId } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			const continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
+			expect(passphraseInput).toBeTruthy();
+
+			fireEvent.input(passphraseInput, { target: { value: "some mnemonic" } });
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__continue-button")).not.toHaveAttribute("disabled");
+			});
+
+			fireEvent.click(getByTestId("ImportWallet__continue-button"));
+
+			await waitFor(() => {
+				expect(getByTestId("EncryptPassword")).toBeTruthy();
+			});
+
+			const passwordInput = getAllByTestId("Input")[0];
+			const confirmPassword = getAllByTestId("Input")[1];
+
+			fireEvent.input(passwordInput, { target: { value: "password" } });
+			fireEvent.input(confirmPassword, { target: { value: "password" } });
+
+			await waitFor(() => {
+				expect(confirmPassword).toHaveValue("password");
+			});
+
+			fireEvent.click(getByTestId("ImportWallet__continue-button"));
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 		});
 	});
@@ -573,8 +654,6 @@ describe("ImportWallet", () => {
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
-
-		expect(asFragment()).toMatchSnapshot();
 
 		await actAsync(async () => {
 			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -995,7 +1074,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: "123" } });
 
 			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
+				expect(getByTestId("Input__error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
@@ -1058,7 +1137,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(passphraseInput, { target: { value: mnemonic } });
 
 			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
+				expect(getByTestId("Input__error")).toBeVisible();
 			});
 
 			act(() => {
@@ -1078,7 +1157,7 @@ describe("ImportWallet", () => {
 			await fireEvent.input(addressInput, { target: { value: identityAddress } });
 
 			await waitFor(() => {
-				expect(getByTestId("Input-error")).toBeVisible();
+				expect(getByTestId("Input__error")).toBeVisible();
 			});
 
 			continueButton = getByTestId("ImportWallet__continue-button");
@@ -1148,6 +1227,12 @@ describe("ImportWallet", () => {
 			});
 
 			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("EncryptPassword")).toBeTruthy();
+			});
+
+			await fireEvent.click(getByTestId("ImportWallet__skip-button"));
 
 			await waitFor(() => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();

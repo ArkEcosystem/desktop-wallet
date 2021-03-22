@@ -101,7 +101,7 @@ describe("SignIn", () => {
 		// wait for formState.isValid to be updated
 		await findByTestId("SignIn__submit-button");
 
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
 
@@ -144,7 +144,7 @@ describe("SignIn", () => {
 		await findByTestId("SignIn__submit-button");
 
 		await waitFor(
-			() => expect(getByTestId("Input-error")).toHaveAttribute("data-errortext", "The Password is invalid"),
+			() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "The Password is invalid"),
 			{ timeout: 10000 },
 		);
 	});

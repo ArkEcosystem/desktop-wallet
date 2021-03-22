@@ -5,6 +5,7 @@ import du from "du";
 import parseAuthor from "parse-author";
 import semver from "semver";
 
+import { allPermissions } from "./permissions";
 import { schema } from "./schema";
 
 export class PluginConfigurationData {
@@ -117,7 +118,8 @@ export class PluginConfigurationData {
 
 	permissions() {
 		const permissions = this.manifest().get<string[]>("permissions") || [];
-		return uniq(permissions.map((permission: string) => permission.toUpperCase()));
+		const validPermissions = permissions.filter((permission) => allPermissions.includes(permission.toUpperCase()));
+		return uniq(validPermissions.map((permission: string) => permission.toUpperCase()));
 	}
 
 	urls() {
