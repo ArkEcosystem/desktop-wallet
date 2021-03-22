@@ -14,7 +14,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_RESET_PROFILE: {
 		TITLE: "Reset Profile Settings",
 		DESCRIPTION:
-			"By performing this action, all of your Profile settings will be restored to default. This action won't delete your wallets or plugins. Do you want to reset settings? This action cannot be undone.",
+			"By performing this action, all of your Profile settings will be restored to default. This won't delete your wallets or plugins. This action cannot be undone. Do you want to reset your settings?",
 		SUCCESS: "Your profile was reset successfully",
 	},
 	MODAL_HISTORY: {

@@ -7,16 +7,16 @@ export const translations: { [key: string]: any } = {
 		SUBTITLE: "Customize your wallet to suit your needs.",
 		PERSONAL: {
 			TITLE: "Personal Details",
-			PROFILE_IMAGE: "Profile Image",
+			PROFILE_IMAGE: "Select Profile Image",
 			DELETE_AVATAR: "Delete Avatar",
 			UPLOAD_AVATAR: "Upload Avatar",
-			NAME: "Name",
+			NAME: "Profile Name",
 			PASSWORD: "Password",
 			CONFIRM_PASSWORD: "Confirm Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
-			MARKET_PROVIDER: "Market Provider",
+			MARKET_PROVIDER: "Price Source",
 			TIME_FORMAT: "Time Format",
 			VALIDATION: {
 				NAME_EXISTS: "Profile name already exists",
@@ -26,26 +26,26 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Security",
 			SCREENSHOT_PROTECTION: {
 				TITLE: "Screenshot Protection",
-				DESCRIPTION: "This protection will protect your money from unwanted Screenshot you PC.",
+				DESCRIPTION: "When enabled, wallet application is hidden from screen-capturing software.",
 			},
 			ADVANCED_MODE: {
 				TITLE: "Advanced Mode",
-				DESCRIPTION:
-					"Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.",
+				DESCRIPTION: "Allows installations from direct URLs. Enable at your own risk.",
 			},
 			AUTOMATIC_SIGN_OUT_PERIOD: {
-				TITLE: "Automatic Sign Out Period",
+				TITLE: "Auto Log-Off",
 			},
 		},
 		OTHER: {
 			TITLE: "Other",
 			DARK_THEME: {
 				TITLE: "Dark Theme",
-				DESCRIPTION: "When enabled, changes to a dark, high contrast theme.",
+				DESCRIPTION: "Enables a dark, high contrast scheme.",
 			},
 			DEVELOPMENT_NETWORKS: {
-				TITLE: "Development Networks",
-				DESCRIPTION: "When enabled, allows application to add development and test networks.",
+				TITLE: "Development and Test Networks",
+				DESCRIPTION:
+					"To create or import wallets from development and test networks, you must first enable this feature.",
 			},
 			ERROR_REPORTING: {
 				TITLE: "Error Reporting",
@@ -63,8 +63,10 @@ export const translations: { [key: string]: any } = {
 	PASSWORD: {
 		MENU_ITEM: "Password",
 		TITLE: "Profile Password",
-		SUBTITLE_CREATE: "Provide a password below to secure your user profile.",
-		SUBTITLE_UPDATE: "Change the password used to access your profile below.",
+		SUBTITLE: {
+			CREATE: "Set your password below to secure your Profile.",
+			UPDATE: "Change the password used to secure your Profile below.",
+		},
 		BUTTON: {
 			CREATE: "Set Password",
 			UPDATE: "Change Password",
@@ -82,15 +84,14 @@ export const translations: { [key: string]: any } = {
 	PEERS: {
 		MENU_ITEM: "Peers",
 		TITLE: "Peer Settings",
-		SUBTITLE: "Customize your network peer settings.",
+		SUBTITLE: "Manage your peer settings for your wallet.",
 		BROADCAST_TRANSACTIONS: {
 			TITLE: "Broadcast to Multiple Peers",
-			DESCRIPTION: "Toggle to send transactions to multiple network peers. (Recommended)",
+			DESCRIPTION: "Broadcasts your transactions to mulitple peers for additional reliability.",
 		},
 		CUSTOM_PEERS: {
 			TITLE: "Use Custom Peers",
-			DESCRIPTION:
-				"Customize your individual peers by network. <1/> Note: Only use trusted peers. Using an unknown peer may put your funds at risk.",
+			DESCRIPTION: "Manages your list of custom peers for Blockchain networks.",
 		},
 		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
@@ -109,11 +110,11 @@ export const translations: { [key: string]: any } = {
 	PLUGINS: {
 		MENU_ITEM: "Plugins",
 		TITLE: "Plugin Settings",
-		SUBTITLE: "Customize your wallet to suit your needs.",
+		SUBTITLE: "Manage your Plugin settings below.",
 		PLUGIN_SOURCE: {
 			TITLE: "Plugin Source",
-			DESCRIPTION: "Turn this feature on, you can upload plugins to your wallet from third-party sources.",
-			LOAD_FROM: "Load from",
+			DESCRIPTION: "Allows Plugins to be installed from third-party sources.",
+			LOAD_FROM: "Load plugins from",
 		},
 		ADD_PLUGIN: "Add Plugin",
 		SUCCESS: "Your plugin settings have been updated",
