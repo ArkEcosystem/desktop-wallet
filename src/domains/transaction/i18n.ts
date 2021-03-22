@@ -4,7 +4,7 @@ export const translations: { [key: string]: any } = {
 	ADD_LINK: "Add Link",
 	ADD_RECIPIENT: "Add Recipient",
 	ADDRESS: "Address",
-	ALL_HISTORY: "All History",
+	ALL: "All",
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",

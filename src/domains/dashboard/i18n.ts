@@ -13,7 +13,7 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_HISTORY: {
 		TITLE: "Transaction History",
 		EMPTY_MESSAGE:
-			"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
+			"You don't have any transactions yet. Once transactions have been made they will show up in your history.",
 	},
 
 	WALLET_CONTROLS: {
