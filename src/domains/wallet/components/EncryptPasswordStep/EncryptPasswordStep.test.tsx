@@ -28,7 +28,7 @@ describe("EncryptPasswordStep", () => {
 		);
 
 		expect(getAllByTestId("InputPassword").length).toEqual(2);
-		const passwordField = getAllByTestId("Input")[0];
+		const passwordField = getAllByTestId("InputPassword")[0];
 
 		await act(async () => {
 			fireEvent.input(passwordField, {
@@ -53,8 +53,8 @@ describe("EncryptPasswordStep", () => {
 		);
 
 		expect(getAllByTestId("InputPassword").length).toEqual(2);
-		const passwordField = getAllByTestId("Input")[0];
-		const confirmPasswordField = getAllByTestId("Input")[1];
+		const passwordField = getAllByTestId("InputPassword")[0];
+		const confirmPasswordField = getAllByTestId("InputPassword")[1];
 
 		await act(async () => {
 			fireEvent.input(passwordField, {

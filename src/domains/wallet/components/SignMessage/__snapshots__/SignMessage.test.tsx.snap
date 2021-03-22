@@ -91,7 +91,7 @@ exports[`SignMessage should render 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
+                      class="Input__InputWrapperStyled-wu99qs-0 cQSAQc"
                       disabled=""
                     >
                       <div
@@ -136,7 +136,7 @@ exports[`SignMessage should render 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
@@ -164,7 +164,7 @@ exports[`SignMessage should render 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
@@ -183,7 +183,7 @@ exports[`SignMessage should render 1`] = `
                           class=""
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                            class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -330,7 +330,7 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
+                      class="Input__InputWrapperStyled-wu99qs-0 cQSAQc"
                       disabled=""
                     >
                       <div
@@ -375,7 +375,7 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                       />
                     </label>
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                      class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                     >
                       <div
                         class="relative flex flex-1"
@@ -530,15 +530,23 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
         <div
           class="font-semibold"
         >
-          <textarea
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures mt-2 rounded-lg"
-            data-testid="TextArea"
-            name="signature"
-            style="height: 4px;"
-            wrap="hard"
+          <div
+            class="Input__InputWrapperStyled-wu99qs-0 vKSQU mt-2 rounded-lg"
           >
-            {"message":"Hello World","signatory":"0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f","signature":"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1"}
-          </textarea>
+            <div
+              class="relative flex flex-1"
+            >
+              <textarea
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="TextArea"
+                name="signature"
+                style="height: 4px;"
+                wrap="hard"
+              >
+                {"message":"Hello World","signatory":"0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f","signature":"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1"}
+              </textarea>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -7,14 +7,14 @@ import { InputPassword } from "./InputPassword";
 describe("InputPassword", () => {
 	it("should render as a password field", () => {
 		const { asFragment, getByTestId } = render(<InputPassword />);
-		const input = getByTestId("Input");
+		const input = getByTestId("InputPassword");
 		expect(input).toHaveAttribute("type", "password");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle the input type", () => {
 		const { getByTestId } = render(<InputPassword />);
-		const input = getByTestId("Input");
+		const input = getByTestId("InputPassword");
 		const toggle = getByTestId("InputPassword__toggle");
 		fireEvent.click(toggle);
 		expect(input).toHaveAttribute("type", "text");
@@ -34,7 +34,7 @@ describe("InputPassword", () => {
 			</FormFieldProvider>
 		);
 		const { asFragment, getByTestId } = render(tree);
-		const input = getByTestId("Input");
+		const input = getByTestId("InputPassword");
 		expect(input).toHaveAttribute("type", "password");
 		expect(asFragment()).toMatchSnapshot();
 	});
